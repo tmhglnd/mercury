@@ -23,9 +23,9 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 2. $ open mercury_ide_v.x.x.maxproj
 ```
 
-## Modify Patchers
+## Modify Code
 
-`Patchers` - The Cycling'74 Coding environment is needed to edit/modify/contribute to the source code patchers of this project.
+`Patchers` - Requires the Max8 Coding environment to edit/modify the patchers of this project.
 
 `JS Code` - Can be modified and build upon through a standard code-editor such as VSCode or Atom.
 
