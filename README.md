@@ -25,15 +25,23 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 
 ## Modify Patchers
 
-**You need the Cycling'74 Coding environment to edit/modify/contribute to the source code patchers of this project.**
+`Patchers` - The Cycling'74 Coding environment is needed to edit/modify/contribute to the source code patchers of this project.
 
-## Bundled Dependencies
+`JS Code` - Can be modified and build upon through a standard code-editor such as VSCode or Atom.
+
+`GenExpr Code` - Can be modified and build upon through a standard code-editor such as VSCode or Atom.
+
+## Build Application
+
+The Cycling'74 Coding environment is needed to build the application from the `mercury_ide_v.x.x.maxproj` file.
+
+<!-- ## Bundled Dependencies -->
 
 ## Further reading and listening
 
 1. [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
 2. [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
-3. [
+3. [Music on bandcamp](http://timohoogland.bandcamp.com)
 
 ## Licenses
 
@@ -41,4 +49,4 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 2. Sound Files - Individually licensed, listed under media/README.md
 3. Documentation - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
 4. Examples - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
-5. Max8 IDE - Proprietary Software, Max (c) 1990-2019 Cycling'74 / IRCAM All rights reserverd
+5. Max8 - Proprietary Software, Max (c) 1990-2019 Cycling'74 / IRCAM All rights reserverd
