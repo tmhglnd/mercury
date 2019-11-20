@@ -1,0 +1,70 @@
+{
+	"synth" : 	{
+		"amp" : 0.6,
+		"beat" : 1,
+		"time" : 1,
+		"env" : [ 2, 400, 0, 0 ],
+		"pan" : 0,
+		"note" : [ 0, 0 ],
+		"res" : 0.9,
+		"fm_index" : 2,
+		"fm_depth" : 100,
+		"fm_env" : [ 5, 200, 0, 0 ],
+		"stretch" : 0,
+		"slide" : 0,
+		"wave2" : [ "off" ],
+		"deep" : 0,
+		"name" : "no_name",
+		"group" : "no_group",
+		"detune" : 0
+	}
+,
+	"poly_synth" : 	{
+		"amp" : 0.5,
+		"beat" : 1,
+		"time" : 1,
+		"env" : [ 2, 400, 0, 0 ],
+		"pan" : 0,
+		"note" : [ 0, 0 ],
+		"res" : 0.9,
+		"fm_index" : 2,
+		"fm_depth" : 100,
+		"fm_env" : [ 5, 200, 0, 0 ],
+		"stretch" : 0,
+		"slide" : 0,
+		"wave2" : [ "off" ],
+		"deep" : 0,
+		"name" : "no_name",
+		"group" : "no_group",
+		"detune" : 0
+	}
+,
+	"sample" : 	{
+		"note" : [ 0, 0 ],
+		"speed" : 1,
+		"amp" : 1,
+		"beat" : 1,
+		"stretch" : [ 0, 0, "efficient" ],
+		"time" : 1,
+		"env" : -1,
+		"pan" : 0,
+		"offset" : 0,
+		"name" : "no_name",
+		"group" : "no_group"
+	}
+,
+	"loop" : 	{
+		"note" : [ 0, 0 ],
+		"speed" : 1,
+		"amp" : 0.6,
+		"beat" : 1,
+		"stretch" : [ 1, 0, "efficient" ],
+		"time" : 1,
+		"env" : -1,
+		"pan" : 0,
+		"offset" : 0,
+		"name" : "no_name",
+		"group" : "no_group"
+	}
+
+}

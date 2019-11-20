@@ -1,0 +1,46 @@
+//=====================================================================
+// dspLib.genexpr
+//
+// A library with different DSP effects and methods for the
+// gen~ codebox environment in Max
+//=====================================================================
+
+// distortion algorithm from: 
+// Digital Audio Effects (DAFX) book by Udo Zölzer
+// f(x) = sign(x) * (1 - e^-|x|)
+tubeDrive(sig, amt){
+	d = max(amt, 1); //minimum gain of 1
+	g = 1 / sqrt(d); //equal power gain reduction
+	a = sig * d; //apply gain
+	return (1 - exp(-abs(a))) * g * sign(a);
+}
+
+// Sigmoid function from:
+// https://en.wikipedia.org/wiki/Sigmoid_function
+// tanh is often used as a quick-and-easy softclipping algorithm
+// f(x) = tanh(x)
+softClip(sig, amt){
+	d = max(amt, 1); //minimum gain of 1
+	g = 1 / sqrt(d); //equal power gain reduction
+	a = sig * d; //apply gain
+	return tanh(a) * g;
+}
+
+// Sigmoid function from:
+// https://en.wikipedia.org/wiki/Sigmoid_function
+// f(x) = x / (1 + |x| )
+overDrive(sig, amt){
+	d = max(amt, 1); //minimum gain of 1
+	g = 1 / sqrt(d); //equal power gain reduction
+	a = sig * d; //apply gain
+	return (a / (abs(a) + 1)) * g;
+}
+
+// zero-crossing distortion / cross-over distortion
+// A distortion applied to the crossing of the signal through the 0
+// f(x)
+crossDrive(sig, amt){
+	d = max(amt, 1); //minimum gain of 1
+	g = 1 / d; //gain reduction
+	return pow(abs(sig), g) * sign(sig) * g;
+}

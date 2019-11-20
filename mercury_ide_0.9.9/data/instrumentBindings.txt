@@ -1,0 +1,8 @@
+synth, sine triangle saw square blip fm;
+sine, synth_simple 0;
+triangle, synth_simple 0;
+saw, synth_simple 0;
+square, synth_simple 0;
+sample, sampler 1;
+blip, synth_blip 2;
+fm, synth_fm 3;

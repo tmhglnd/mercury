@@ -1,0 +1,4 @@
+0, sine sin si sinewave;
+1, triangle tri tr triwave trianglewave;
+2, square squ sq squarewave squwave;
+3, saw sa sawtooth sawwave sawtoothwave;
