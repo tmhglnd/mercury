@@ -1,6 +1,6 @@
 # Mercury Live Coding Environment
 
-> A minimal and human-readable language for the live coding of algorithmic electronic music, focussed towards Algoraves.
+**A minimal and human-readable language for the live coding of algorithmic electronic music, focussed towards Algoraves.**
 
 Programmed in Cycling'74s Max8 creative coding environment, as an abstracted layer on the Max/MSP audio engine and with the use of Javascript for parsing and lexing and Jitter and OpenGL for the visuals and the responsive texteditor.
 
