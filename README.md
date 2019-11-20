@@ -73,7 +73,7 @@ The Cycling'74 Coding environment is needed to build the application from the `m
 ## Licenses
 
 1. Main Source - [The GNU GPL v.3 License](https://choosealicense.com/licenses/gpl-3.0/) (c) Timo Hoogland 2019
-2. Sound Files - Individually licensed, listed under media/README.md
+2. Sound Files - Individually licensed, listed under [media/README.md](/mercury_ide_0.9.9/media/README.md)
 3. Documentation - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
 4. Examples - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
 5. Max8 - Proprietary Software, Max (c) 1990-2019 Cycling'74 / IRCAM All rights reserverd
