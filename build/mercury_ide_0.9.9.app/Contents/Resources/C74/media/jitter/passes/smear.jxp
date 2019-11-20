@@ -1,8 +1,0 @@
-<jitterpass>
-	<pass name="smear">
-		<subpass file="co.accum.erase.jxs">
-			<input source="COLOR" />
-			<input source="HISTORY" />
-		</subpass>		
-	</pass>
-</jitterpass>

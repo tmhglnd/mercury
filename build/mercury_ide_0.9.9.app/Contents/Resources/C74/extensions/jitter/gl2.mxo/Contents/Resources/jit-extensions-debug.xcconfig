@@ -1,3 +1,0 @@
-#include "../../jit-externs/jit-external-debug.xcconfig"
-
-DSTROOT = $(EXTENSIONS_ROOT)/jitter
