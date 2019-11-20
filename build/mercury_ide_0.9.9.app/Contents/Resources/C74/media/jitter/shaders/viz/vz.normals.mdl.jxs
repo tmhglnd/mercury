@@ -1,0 +1,55 @@
+<jittershader name="normals-model">
+	<description>
+	Maps normal directions to colors for debugging.
+	</description>
+	<language name="glsl" version="1.0">
+		<program name="vp" type="vertex">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL vertex program for a coloring based on the surface
+ * normal directions of a model.
+ *
+ */
+
+varying vec3 normal;	// surface normal
+
+void main(void)
+{
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+	
+	// get raw normal direction
+	normal = gl_Normal.xyz;
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a coloring based on the surface
+ * normal directions of a model.
+ *
+ */
+
+varying vec3 normal;	// surface normal
+
+void main(void)
+{
+	// get unsigned color from normal direction
+	vec3 color = (normalize( normal ) * 0.5 + 0.5);
+	
+	// set outgoing fragment color
+	gl_FragColor = vec4( color, 1.0 );
+}
+]]>		
+		</program>
+	</language>	
+</jittershader>

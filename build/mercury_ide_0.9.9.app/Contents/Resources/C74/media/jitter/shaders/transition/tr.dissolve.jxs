@@ -1,0 +1,54 @@
+<jittershader name="dissolve">
+	<description>
+	cascading sinusoidal noise dissolve wipe
+	</description>
+	<param name="amt" type="float" default="1." />
+	<param name="freq" type="float" default="1." />
+	<param name="fade" type="float" default="0." />
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="amt" program="fp" />
+		<bind param="freq" program="fp" />
+		<bind param="fade" program="fp" />	
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// Andrew Benson - andrewb@cycling74.com
+// Copyright 2006 - Cycling '74
+//fragment shader for dissolve transition effects
+//and cheap noise generator
+
+//setup for 2 texture
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+varying vec2 texdim0;
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+uniform float amt;
+uniform float freq;
+uniform float fade;
+
+void main()
+{   
+	vec4 a = texture2DRect(tex0, texcoord0);
+	vec4 b = texture2DRect(tex1, texcoord1);
+
+	//pseudo-random noise function, using cascaded sine-functions
+	vec2 c = mod(texcoord0,texdim0);
+	float xs1 = sin(c.x*c.y/(abs(freq)+1.));
+	float xs2 = sin(xs1*533.);
+	float xs3 = abs(sin(xs2*1013.));
+	
+	vec4 mixa = mix(b,a,smoothstep(amt,amt-fade,xs3));
+	
+	// output texture
+	gl_FragColor = mixa;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

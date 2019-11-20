@@ -2,8 +2,8 @@
 	"name" : "mercury_ide_0.9.9",
 	"version" : 1,
 	"creationdate" : 3615958543,
-	"modificationdate" : 3657113990,
-	"viewrect" : [ 81.0, 76.0, 342.0, 733.0 ],
+	"modificationdate" : 3657115122,
+	"viewrect" : [ 30.0, 65.0, 342.0, 733.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -142,6 +142,11 @@
 		}
 ,
 		"other" : 		{
+			"icon.icns" : 			{
+				"kind" : "file",
+				"local" : 1
+			}
+,
 			"IBMPlexMono-SemiBold.ttf" : 			{
 				"kind" : "file",
 				"local" : 1

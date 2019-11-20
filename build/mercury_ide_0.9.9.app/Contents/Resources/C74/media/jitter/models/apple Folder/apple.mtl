@@ -1,0 +1,23 @@
+#
+# Wavefront material file: d:\objets web\objets\apple\apple.mtl
+#
+# Bounding box of geometry = (23.5545,0.709068,-36.6852) to (88.9368,78.2681,32.2648).
+
+newmtl material__14
+	Ns 6
+	d 1
+	illum 2
+	Kd 0.347059 0.192157 0.0
+	Ks 0.044902 0.044902 0.044902
+	Ka 0.211765 0.0628877 0.123209
+	map_Kd stem_color.tif
+
+newmtl material__13
+	Ns 6
+	d 1
+	illum 2
+	Kd 0.892157 0.188235 0.078431
+	Ks 0.1 0.05 0.2
+	Ka 0. 0. 0.
+	map_Kd skin.tif
+

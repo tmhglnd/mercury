@@ -1,0 +1,8 @@
+{ "categories" : [
+	{ "name" : "Numbers",
+	"color" : [0.863, 0.863, 0.392, 1.0],
+	 "say_objects" : 0,
+	"primary_classes" : ["number", "flonum", "number~"]
+	}
+	]
+}

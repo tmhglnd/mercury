@@ -1,0 +1,83 @@
+<jittershader name="mat.oren-nayer.1.light.jxs">
+	<description>
+		Oren-Nayer shading model with 1 light
+	</description>
+	<param name="Ka" type="vec4" default="0.0 0.0 0.0 1.">
+		<description>Ambient Multiplier</description>
+	</param>
+	<param name="Kd" type="vec4" default="1. 1. 1. 1.">
+		<description>Diffuse Multiplier</description>
+	</param>
+	<param name="lookup" type="int" default="0">
+		<description>Diffuse Multiplier</description>
+	</param>
+	<texture file="oren-nayer.lut.exr" rectangle="0" filter="none none" wrap="clampedge clampedge" mipmap="none" anisotropy="0" />
+	<language name="glsl" version="1.0">
+		<bind param="Ka" program="fp" />
+		<bind param="Kd" program="fp" />
+		<bind param="lookup" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+
+varying vec3 N;
+varying vec3 V;
+
+void main(void)
+{
+	gl_Position = ftransform();
+	
+	//eye vectors
+	V = (gl_ModelViewMatrix*gl_Vertex).xyz;
+	N = normalize(gl_NormalMatrix * gl_Normal);
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+#define NUM_LIGHTS	1
+
+#define MAT_VARS	vec3 L;			\
+	float VdotN;					\
+	float LdotN;					\
+	float irradiance;				\
+	float angleDifference;			\
+	float lut_val;
+
+#define LIGHT(num)	L = normalize(gl_LightSource[num].position.xyz - V);		\
+	VdotN = dot(Pn, Nn);														\
+	LdotN = dot(L, Nn);															\
+	irradiance = max(0., LdotN);												\
+	angleDifference = max(0., dot(normalize(Pn-Nn*VdotN), normalize(L-Nn*LdotN)));	\
+	lut_val = texture2D( lookup, vec2(VdotN, LdotN)*0.5+0.5).r;						\
+	color += gl_LightSource[num].ambient*Ka+gl_LightSource[num].diffuse*Kd*(A+B*angleDifference*lut_val)*irradiance;
+
+
+uniform vec4 Ka;
+uniform vec4 Kd;
+uniform sampler2D lookup;
+
+varying vec3 N;
+varying vec3 V;
+
+void main(void)
+{
+	vec3 Pn = -normalize(V);
+	vec3 Nn = normalize(N);
+
+	float roughnessSquared = 0.5;
+	float A = 1. - (0.5*roughnessSquared)/(roughnessSquared+0.33);
+	float B = 1. - (0.45*roughnessSquared)/(roughnessSquared+0.09);
+
+	vec4 color = vec4(0., 0., 0., 0.);
+
+	MAT_VARS
+	LIGHT(0)
+
+	gl_FragColor = color;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

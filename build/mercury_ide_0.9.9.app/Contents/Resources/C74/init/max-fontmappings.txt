@@ -1,0 +1,14 @@
+max system windows genericfontmap "Sans Serif" Arial;
+max system windows genericsavefontmap Arial "Sans Serif";
+max system macintosh genericfontmap "Sans Serif" Arial;
+max system macintosh genericsavefontmap Arial "Sans Serif";
+max system windows genericfontmap "Fixedwidth Serif" "Courier New";
+max system windows genericsavefontmap "Courier New" "Fixedwidth Serif";
+max system macintosh genericfontmap "Fixedwidth Serif" Courier;
+max system macintosh genericsavefontmap Courier "Fixedwidth Serif";
+max system windows genericfontmap "Proportional Serif" "Times New Roman";
+max system windows genericsavefontmap "Times New Roman" "Proportional Serif";
+max system macintosh genericfontmap "Proportional Serif" "Times New Roman";
+max system macintosh genericsavefontmap "Times New Roman" "Proportional Serif";
+max system macintosh fontmap Times "Times Roman";
+max system macintosh fontmap Futura "Futura Medium";

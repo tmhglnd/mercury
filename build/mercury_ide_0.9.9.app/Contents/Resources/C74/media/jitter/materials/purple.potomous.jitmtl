@@ -1,0 +1,24 @@
+{
+	"diffuse_model" : "toon",
+	"specular_model" : "toon",
+	"fog" : "none",
+	"params" : 	{
+		"specular_size" : -0.126,
+		"specular_smooth" : 2.141,
+		"diffuse_size" : 0.31,
+		"diffuse_smooth" : 1.238
+	}
+,
+	"textures" : 	{
+
+	}
+,
+	"filename" : "purple.potomous.jitmtl",
+	"color" : [ 0.619196, 0.0, 0.868772, 1.0 ],
+	"mat_emission" : [ 0.0, 0.0, 0.0, 1.0 ],
+	"mat_ambient" : [ 0.730327, 0.0, 0.8851, 1.0 ],
+	"mat_diffuse" : [ 0.619196, 0.0, 0.868772, 1.0 ],
+	"mat_specular" : [ 1.0, 0.992355, 0.998093, 1.0 ],
+	"shininess" : [ 5.55 ],
+	"fog_params" : [ 0.5, 0.5, 0.5, 0.0, 1.0, 1.0, 100.0 ]
+}

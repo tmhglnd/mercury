@@ -1,0 +1,9 @@
+{
+	"comment" : 	{
+		"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "commentWhite",
+	"multi" : 0
+}

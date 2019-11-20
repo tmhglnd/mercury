@@ -1,0 +1,43 @@
+<jittershader name="rgb2yuv">
+	<language name="glsl" version="1.0">
+		<program name="basic" type="vertex" source="sh.basic.vp.glsl" />
+		<program name="rgb2yuv" type="fragment">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2003, ATI Technologies, Inc., All rights reserved.
+//
+// Permission to use, copy, modify, and distribute this software and its 
+// documentation for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appear in all copies and derivative
+// works and that both the copyright notice and this permission notice appear in
+// support documentation, and that the name of ATI Technologies, Inc. not be used
+// in advertising or publicity pertaining to distribution of the software without
+// specific, written prior permission.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+// vertex to fragment shader io
+varying vec2 TC;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// entry point
+void main()
+{
+    mat4 rgb2yuv = mat4 (0.299,0.587,0.114,0,
+                        -0.147,-0.279,0.436,0,
+                         0.615,-0.515,-0.1,0,
+                         0,0,0,1);
+
+    vec4 C = texture2DRect(tex0, TC);
+    C = rgb2yuv * C;
+
+    gl_FragColor = C + vec4 (0,0.5,0.5,1);
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>

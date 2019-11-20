@@ -1,0 +1,70 @@
+<jittershader name="stripes">
+	<description>Shader for generating an adaptively antialiased procedural stripe pattern</description>
+	<param name="lightpos" type="vec3" default="4.0 4.0 4.0" />
+	<param name="freq" type="float" default="16.0" />
+	<language name="glsl" version="1.0">
+		<bind param="lightpos" program="vp" />
+		<bind param="freq" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+//
+// Vertex shader for adaptively antialiasing a procedural stripe pattern
+//
+// Author: Randi Rost
+//         based on a shader by Bert Freudenberg
+//
+// Copyright (c) 2002-2005 3Dlabs Inc. Ltd. 
+//
+// See 3Dlabs-License.txt for license information
+//
+
+uniform vec3  lightpos;
+
+varying float V;
+varying float lightintensity;
+ 
+void main(void)
+{
+    vec3 pos        = vec3(gl_ModelViewMatrix * gl_Vertex);
+    vec3 tnorm      = normalize(gl_NormalMatrix * gl_Normal);
+    vec3 lightVec   = normalize(lightpos - pos);
+
+    lightintensity = max(dot(lightVec, tnorm), 0.0);
+
+    V = gl_MultiTexCoord0.s;  // try .s for vertical stripes
+
+    gl_Position = ftransform();
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+//
+// Fragment shader for adaptively antialiasing a procedural stripe pattern
+//
+// Author: Randi Rost
+//         based on a shader by Bert Freudenberg
+//
+// Copyright (c) 2002-2005 3Dlabs Inc. Ltd. 
+//
+// See 3Dlabs-License.txt for license information
+//
+
+varying float V;                    // generic varying
+varying float lightintensity;
+
+uniform float freq;            // Stripe freq = 16
+
+void main (void)
+{
+    float sawtooth = fract(V * freq);
+    float triangle = abs(2.0 * sawtooth - 1.0);
+    float dp = length(vec2 (dFdx(V), dFdy(V)));
+    float edge = dp * freq * 2.0;
+    float square = smoothstep(0.5 - edge, 0.5 + edge, triangle);
+    gl_FragColor = vec4 (vec3 (square), 1.0) * lightintensity;
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

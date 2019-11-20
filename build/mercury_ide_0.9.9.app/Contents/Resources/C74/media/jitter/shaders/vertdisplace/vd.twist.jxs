@@ -1,0 +1,83 @@
+<jittershader name="twist">
+	<param name="amount" type="float" default="0." />
+	<param name="height" type="float" default="5." />
+	<param name="color_map" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="amount" program="vp" />
+		<bind param="height" program="vp" />
+		<bind param="color_map" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+	#define ANGLE_DEG_MAX 90.
+	uniform float amount;
+	uniform float height;
+	varying vec3 normal, lightDir[3], eyeVec;
+	
+	vec4 DoTwist( vec4 pos, float t )
+	{
+		float st = sin(t);
+		float ct = cos(t);
+		vec4 new_pos;
+		new_pos.x = pos.x*ct - pos.z*st;
+		new_pos.z = pos.x*st + pos.z*ct;
+		new_pos.y = pos.y;
+		new_pos.w = pos.w;
+		return( new_pos );
+	}
+	
+	void main()
+	{	
+		float angle_deg = ANGLE_DEG_MAX*sin(amount);
+		float angle_rad = angle_deg * 3.14159 / 180.0;
+		float ang = (height*0.5 + gl_Vertex.y)/height * angle_rad;
+		vec4 twistedPosition = DoTwist( gl_Vertex, (height*0.5 + gl_Vertex.y)/height * angle_rad );
+		vec4 twistedNormal = DoTwist( vec4(gl_Normal, 0.0), (height*0.5 + gl_Vertex.y)/height * angle_rad );
+	
+		gl_Position = gl_ModelViewProjectionMatrix * twistedPosition;
+		
+		vec3 vVertex = vec3(gl_ModelViewMatrix * twistedPosition);
+		lightDir[0] = vec3(gl_LightSource[0].position.xyz - vVertex);
+		lightDir[1] = vec3(gl_LightSource[1].position.xyz - vVertex);
+		lightDir[2] = vec3(gl_LightSource[2].position.xyz - vVertex);
+		eyeVec = -vVertex;
+		normal = gl_NormalMatrix * twistedNormal.xyz;
+
+		gl_TexCoord[0] = gl_TextureMatrix[0] * gl_MultiTexCoord0;
+	}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+		uniform sampler2D color_map;
+		varying vec3 normal, lightDir[3], eyeVec;
+		
+		void main (void)
+		{
+			vec3 E, R, N, L;
+			float specular, lambertTerm;
+			int i;
+		
+			vec4 colorMap = texture2D(color_map, gl_TexCoord[0].xy );
+			
+			vec4 final_color = (gl_FrontLightModelProduct.sceneColor * gl_FrontMaterial.ambient);
+			final_color += (gl_LightSource[0].ambient + gl_LightSource[1].ambient) * gl_FrontMaterial.ambient;
+			final_color *= colorMap;
+			
+			N = normalize(normal);
+			E = normalize(eyeVec);
+			
+			for( i=0; i<3; i++ ) {
+				L = normalize(lightDir[i]);
+				lambertTerm = clamp( dot(N,L), 0.0, 1.0);
+				final_color += gl_LightSource[i].diffuse * gl_FrontMaterial.diffuse * lambertTerm * colorMap; 
+				R = reflect(-L, N);
+				specular = pow( max(dot(R, E), 0.0), gl_FrontMaterial.shininess );
+				final_color += gl_LightSource[i].specular * gl_FrontMaterial.specular * specular; 
+			}
+
+			gl_FragColor = final_color;
+		}		
+]]>	
+		</program>
+	</language>
+</jittershader>

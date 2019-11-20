@@ -1,0 +1,63 @@
+<jittershader name="sharpen-interp">
+	<description>Shader for for modifying image sharpness by interpolation and extrapolation</description>
+	<param name="image" type="int" default="0" />
+	<param name="blurry" type="int" default="1" />
+	<param name="alpha" type="float" default="1.0" />
+	<language name="glsl" version="1.0">
+		<bind param="image" program="fp" />
+		<bind param="blurry" program="fp" />
+		<bind param="alpha" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+//
+// Vertex shader for modifying image sharpness by
+// interpolation and extrapolation
+//
+// Author: Randi Rost
+//
+// Copyright (c) 2003-2005: 3Dlabs, Inc.
+//
+// See 3Dlabs-License.txt for license information
+//
+
+varying vec2 texcoord;
+
+void main (void)
+
+{
+    gl_Position = ftransform();
+    texcoord    = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+//
+// Fragment shader for modifying image sharpness by
+// interpolation and extrapolation
+//
+// Author: Randi Rost
+//
+// Copyright (c) 2003-2005: 3Dlabs, Inc.
+//
+// See 3Dlabs-License.txt for license information
+//
+
+const vec3 lumcoeff = vec3 (0.2125, 0.7154, 0.0721);
+
+varying vec2      texcoord;
+uniform float     alpha;
+uniform sampler2DRect image;
+uniform sampler2DRect blurry;
+
+void main (void)
+{
+    vec3 texColor  = texture2DRect(image, texcoord).rgb;
+    vec3 blurred   = vec3 (texture2DRect(blurry, texcoord));
+    vec3 color     = texColor * alpha + blurred * (1.0 - alpha);
+    gl_FragColor   = vec4 (color, 1.0);
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

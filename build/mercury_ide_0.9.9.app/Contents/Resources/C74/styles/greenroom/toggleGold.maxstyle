@@ -1,0 +1,9 @@
+{
+	"default" : 	{
+		"bgcolor" : [ 0.639216, 0.458824, 0.070588, 1.0 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "toggleGold",
+	"multi" : 0
+}

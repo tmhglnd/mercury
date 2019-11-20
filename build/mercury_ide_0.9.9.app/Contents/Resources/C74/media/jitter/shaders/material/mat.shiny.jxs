@@ -1,0 +1,63 @@
+<jittershader name="mat-plastic-light-dir">
+	<param name="eyePosition" type="vec3" state="CAMERA_POSITION" />
+	<param name="lightPosition" type="vec3" state="LIGHT0_POSITION" />
+	<param name="lightColor" type="vec3" state="LIGHT0_DIFFUSE" />
+	<param name="globalAmbient" type="vec3" default="0.1 0.1 0.1" />
+	<param name="Ka" type="vec3" default="1.0 1.0 1.0" />
+	<param name="Ke" type="vec3" default="0.0 0.0 0.0" />
+	<param name="Kd" type="vec3" default="0.6 0.6 0.6" />
+	<param name="Ks" type="vec3" default="1.0 1.0 1.0" />
+	<param name="shininess" type="float" default="8.0" />
+	<language name="glsl" version="1.0">
+		<bind param="eyePosition" program="shiny" />
+		<bind param="lightPosition" program="shiny" />
+		<bind param="lightColor" program="shiny" />
+		<bind param="globalAmbient" program="shiny" />
+		<bind param="Ka" program="shiny" />
+		<bind param="Ke" program="shiny" />
+		<bind param="Kd" program="shiny" />
+		<bind param="Ks" program="shiny" />
+		<bind param="shininess" program="shiny" />
+		<program name="basic" type="vertex" source="sh.basic.vp.glsl" />	
+		<program name="shiny" type="fragment"> 
+<![CDATA[
+	uniform vec3 globalAmbient;
+	uniform vec3 lightColor;
+	uniform vec3 lightPosition;
+	uniform vec3 eyePosition;
+	uniform vec3 Ke;
+	uniform vec3 Ka;
+	uniform vec3 Kd;
+	uniform vec3 Ks;
+	uniform float  shininess;
+
+	varying vec4 P;
+	varying vec3 N;
+
+void main()
+{
+  // Compute emissive term
+  vec3 emissive = Ke;
+
+  // Compute ambient term
+  vec3 ambient = Ka * globalAmbient;
+
+  // Compute the diffuse term
+  vec3 L = normalize(lightPosition - P.xyz);
+  float diffuseLight = max(dot(L, N), 0.);
+  vec3 diffuse = Kd * lightColor * diffuseLight;
+
+  // Compute the specular term
+  vec3 V = normalize(eyePosition - P.xyz);
+  vec3 H = normalize(L + V);
+  float specularLight = pow(max(dot(H, N), 0.), shininess);
+  if (diffuseLight <= 0.) specularLight = 0.;
+  vec3 specular = Ks * lightColor * specularLight;
+
+  gl_FragColor.xyz = emissive + ambient + diffuse + specular;
+  gl_FragColor.w = 1.;
+}
+]]>
+		</program>		
+	</language>
+</jittershader>

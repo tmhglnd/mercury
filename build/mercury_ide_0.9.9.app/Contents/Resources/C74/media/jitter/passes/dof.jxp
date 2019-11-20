@@ -1,0 +1,22 @@
+<jitterpass>
+	<pass name="dof">
+		<bind name="blur_width" param="width" default="0.1" />
+		<subpass file="cf.gaussian.2p.jxs" dimscale="0.5 0.5">
+			<input source="COLOR" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>	
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>		
+		<subpass file="mrt.dof.jxs" output="COLOR">
+			<input source="COLOR" />
+			<input source="NORMALS" />
+			<input source="PREVIOUS" />
+		</subpass>
+	</pass>
+</jitterpass>	

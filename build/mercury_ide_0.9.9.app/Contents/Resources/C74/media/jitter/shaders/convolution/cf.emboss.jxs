@@ -1,0 +1,55 @@
+<jittershader name="emboss">
+	<description>
+	A simple 5 tap emboss filter
+	</description>
+	
+	<param name="width" type="float" default="2">
+		<description>Width of filter</description>
+	</param>	
+	<param name="offset" type="vec4" default="0.5 0.5 0.5 0.5">
+		<description>Offset</description>
+	</param>
+
+	<language name="glsl" version="1.0">
+		<bind param="offset" program="fp" />
+		<bind param="width" program="vp" />
+		<program name="vp" type="vertex" source="cf.box8.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a simple emboss filter.
+ *
+ */
+ 
+uniform sampler2DRect image;
+uniform vec4 offset;
+
+varying vec2 texcoord00;
+varying vec2 texcoord01;
+varying vec2 texcoord02;
+varying vec2 texcoord10;
+varying vec2 texcoord12;
+varying vec2 texcoord20;
+varying vec2 texcoord21;
+varying vec2 texcoord22;
+
+void main()
+{
+	vec4 emboss = texture2DRect(image, texcoord00);
+
+	emboss += texture2DRect(image, texcoord01);
+	emboss += texture2DRect(image, texcoord10);
+	emboss -= texture2DRect(image, texcoord12);
+	emboss -= texture2DRect(image, texcoord21);
+	emboss -= texture2DRect(image, texcoord22);
+
+	gl_FragColor = emboss + offset;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

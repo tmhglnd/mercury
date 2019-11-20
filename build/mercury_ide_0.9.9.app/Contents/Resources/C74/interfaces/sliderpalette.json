@@ -1,0 +1,9 @@
+{ "categories" : [
+	{ "name" : "Sliders",
+	"color" : [0.792, 0.803, 0.565, 1.0],
+	 "say_objects" : 0,
+	"primary_classes" : ["slider", "dial", "gain~", "kslider", "multislider", "rslider", "nodes", "nslider", "pictslider"],
+	"secondary_classes" : []
+	}
+	]
+}

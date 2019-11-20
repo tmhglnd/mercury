@@ -1,0 +1,101 @@
+<jittershader name="crosstile">
+	<param name="Kd" type="float" default="1" />
+	<param name="fuzz" type="float" default="0.1" />
+	<param name="sfreq" type="float" default="8" />
+	<param name="tfreq" type="float" default="8" />
+	<param name="color1" type="vec4" default="0.2 0.7 0.2 1.0" />
+	<param name="color2" type="vec4" default="0.2 0.2 0.8 1.0" />
+	<param name="colorbase" type="vec4" default="1.0 1.0 0.0 1.0" />
+	<param name="intensity" type="float" default="1.0" />
+	<param name="lightcolor" type="vec4" default="1.0 1.0 1.0 1.0" />
+	<param name="dir" type="vec4" default="-0.2 -0.5 -1.0 0.0" />
+	<language name="glsl" version="1.0">
+		<bind param="Kd" program="crosstile" />
+		<bind param="fuzz" program="crosstile" />
+		<bind param="sfreq" program="crosstile" />
+		<bind param="tfreq" program="crosstile" />
+		<bind param="color1" program="crosstile" />
+		<bind param="color2" program="crosstile" />
+		<bind param="colorbase" program="crosstile" />
+		<bind param="intensity" program="crosstile" />
+		<bind param="lightcolor" program="crosstile" />
+		<bind param="dir" program="crosstile" />
+		<program name="basic" type="vertex" source="sh.basic.vp.glsl" />
+		<program name="crosstile" type="fragment">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2003, ATI Technologies, Inc., All rights reserved.
+//
+// Permission to use, copy, modify, and distribute this software and its 
+// documentation for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appear in all copies and derivative
+// works and that both the copyright notice and this permission notice appear in
+// support documentation, and that the name of ATI Technologies, Inc. not be used
+// in advertising or publicity pertaining to distribution of the software without
+// specific, written prior permission.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+#define pulse(a,b,fuzz,x) (smoothstep((a)-(fuzz),(a),(x)) - smoothstep((b)-(fuzz),(b),(x)))
+#define blend(a,b,x)	(mix((a),(b),(x)))
+
+// vertex to fragment shader io
+varying vec3 N;
+varying vec4 T;
+
+// globals
+uniform float Kd;
+uniform float fuzz;
+uniform float sfreq;
+uniform float tfreq;
+uniform vec4 color1;
+uniform vec4 color2;
+uniform vec4 colorbase;
+uniform vec4 lightcolor;
+uniform float intensity;
+uniform vec4 dir;
+
+// diffuse function
+vec4 
+diffuse(vec3 Nn)
+{
+    vec4 C;
+    vec3 L2;
+    vec4 Cl2;
+    C = vec4 (0,0,0,1);
+    L2 = vec3(dir);
+    Cl2 = lightcolor * intensity;
+    L2 = -L2;
+    C = C + Cl2 * max(0.0, dot(Nn, normalize(L2)));
+    return C;
+}
+
+// entry point
+void 
+main()
+{
+    vec4 surface_color = colorbase;
+    vec4 surface_opac = vec4 (1, 1, 1, 1);
+
+    float s = T[0], t = T[1];
+    float ss = mod(s * sfreq, 1.0);
+    float tt = mod(t * tfreq, 1.0);
+
+    vec4 layer_color = color1;
+    float layer_opac = pulse(0.35, 0.65, fuzz, ss);
+    surface_color = blend(surface_color, layer_color, layer_opac);
+    
+    layer_color = color2;
+    layer_opac = pulse(0.35, 0.65, fuzz, tt);
+    surface_color = mix(surface_color, layer_color, layer_opac);
+
+    vec3 Nf = normalize(N);
+
+    gl_FragColor = surface_color * Kd * diffuse(Nf);
+}
+]]>
+
+		</program>
+	</language>
+</jittershader>

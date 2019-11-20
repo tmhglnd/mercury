@@ -1,0 +1,71 @@
+<jittershader name="mrt.simple.render.jxs">
+	<param name="tex_color" type="int" default="0" />
+	<param name="tex_normals" type="int" default="1" />	
+	<param name="projmat" type="mat4" state="PROJECTION_MATRIX" />
+	<param name="farDistance" type="float" state="FAR_CLIP" />
+	<param name="farCorner" type="vec3" state="FAR_CORNER" />	
+	<language name="glsl" version="1.2">
+		<bind param="tex_normals" program="fp" />
+		<bind param="tex_color" program="fp" />
+		<bind param="projmat" program="fp" />		
+		<bind param="farDistance" program="fp" />
+		<bind param="farCorner" program="vp" />			
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec2 uv_rect;
+varying vec3 ray;
+uniform vec3 farCorner;
+
+void main()
+{
+	gl_Position = vec4(sign(gl_Vertex).xy,0,1);
+	vec2 uv;
+	uv.x = 0.5 * (1. + gl_Position.x);
+	uv.y = 0.5 * (1. + gl_Position.y);
+	uv_rect = vec2(gl_TextureMatrix[0] * vec4(uv, 1,1));	
+	ray = farCorner * vec3(gl_Position.xy, 1);
+}
+
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+#version 120
+varying vec2 uv_rect;
+varying vec3 ray;
+
+uniform sampler2DRect tex_normals;
+uniform sampler2DRect tex_color;
+uniform mat4 projmat;
+uniform float farDistance;
+
+float finalDepth(vec4 p)
+{
+    return (p.z / p.w) * 0.5 + 0.5;
+}
+
+void main()
+{
+	vec4 norm_depth = texture2DRect(tex_normals, uv_rect);
+	vec3 norm = norm_depth.xyz;
+	float depth = norm_depth.w;
+
+	// Clip fragment if depth is too close, so the skybox can be rendered on the background
+	if(depth-0.0001<0.0)
+		discard;    
+		
+	// clamp to prevent small circle in center of frame at far plane 		
+	depth = min(depth, (1.0 - farDistance*0.0001));
+	
+	vec4 image = texture2DRect(tex_color, uv_rect);	
+	gl_FragColor = vec4(image.rgb, 0);
+
+	vec3 viewPos = normalize(ray) * farDistance * depth;
+	vec4 projPos = projmat * vec4(viewPos, 1);
+	gl_FragDepth = finalDepth(projPos);
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

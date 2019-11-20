@@ -1,0 +1,67 @@
+<jittershader name="shrinkwipe">
+	<description>
+	growing vertical and horizontal grid wipe
+	</description>
+	<param name="wipe" type="vec2" default="0.0 0.0">
+		<description>xy wipe factor</description>
+	</param>
+	<param name="scale" type="vec2" default="1.0 1.0">
+		<description>cell size</description>
+	</param>
+	<param name="fade" type="vec2" default="0. 0." />
+	<param name="invert" type="float" default="0." />
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="wipe" program="fp" />
+		<bind param="scale" program="fp" />
+		<bind param="fade" program="fp" />
+		<bind param="invert" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// Andrew Benson - andrewb@cycling74.com
+//Copyright 2006 - Cycling '74
+
+//fragment shader for rectangular vignette wipe transition
+
+//setup for 2 texture
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+varying vec2 texdim0;
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+//wipe state
+uniform vec2 wipe;
+uniform vec2 scale;
+uniform vec2 fade;
+uniform float invert;
+
+void main()
+{   
+
+	vec4 a = texture2DRect(tex0, texcoord0);
+	vec4 b = texture2DRect(tex1, texcoord1);
+	vec4 inva = mix(a,b,invert);
+	vec4 invb = mix(b,a,invert);
+	vec2 nc = texcoord0/texdim0;	
+	vec2 sc = mod(abs(nc*scale),1.);
+	
+
+	// calculate position
+	vec2 check = smoothstep(wipe*0.5+fade,wipe*0.5,mix(sc,1.-sc,step(0.5,sc)));
+	float valu = check.x*check.y;
+	vec4 wiped = mix(invb,inva,valu);
+	
+
+	// output texture
+	gl_FragColor = vec4 (wiped);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

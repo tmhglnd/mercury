@@ -1,0 +1,104 @@
+<jittershader name="checker">
+	<description>
+	Checkerboard pattern w/anti-aliasing.
+	</description>
+	<param name="color1" type="vec3" default="0.0 0.0 0.0">
+		<description>Color 1</description>
+	</param>
+	<param name="color2" type="vec3" default="1.0 1.0 1.0">
+		<description>Color 2</description>
+	</param>
+	<param name="avgcolor" type="vec3" default="0.5 0.5 0.5">
+		<description>The average color of 1 + 2</description>
+	</param>
+	<param name="freq" type="float" default="12.0">
+		<description>Frequency of checker pattern</description>
+	</param>
+	<param name="fuzz" type="float" default="0.01">
+		<description>Fuzziness of patterm</description>
+	</param>
+	<language name="glsl" version="1.0">
+		<bind param="color1" program="fp" />
+		<bind param="color2" program="fp" />
+		<bind param="avgcolor" program="fp" />
+		<bind param="freq" program="fp" />
+		<bind param="fuzz" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling 74
+ *
+ * GLSL vertex program for a generating an anti-aliased checkerboard pattern.
+ *
+ */
+
+varying vec2 texcoord;
+
+void main()
+{
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+
+	// transform texcoord	
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling 74
+ *
+ * GLSL fragment program for a generating an anti-aliased checkerboard pattern.
+ *
+ */
+
+uniform vec3  color1;		// first color for pattern
+uniform vec3  color2;		// second color for pattern
+uniform vec3  avgcolor;		// average color of object
+uniform float freq;		// frequency of pattern
+uniform float fuzz;		// fuzziness of pattern
+
+varying vec2  texcoord;		// texture coordinates
+
+void main(void)
+{
+	vec3 color;
+
+	// calculate the amount to smooth
+	vec2 smooth = vec2(fuzz * freq * 2.0);
+	float smoothmax = max(smooth.s, smooth.t);
+
+	// determine the position in the checkerboard pattern
+	vec2 patternpos = fract(texcoord * freq);
+
+	// smooth the transition
+	if (smoothmax < 0.5)
+	{
+		// compute pattern color by blending with a smoothstep filter
+		vec2 p = smoothstep(vec2 (0.5), smooth + vec2 (0.5), patternpos) +
+			(1.0 - smoothstep(vec2(0.0), smooth, patternpos));
+
+		// mix the resulting color for each cell boundary
+		color = mix(color1, color2, p.x * p.y + (1.0 - p.x) * (1.0 - p.y));
+
+		// mix the average color at the maximum limit
+		color = mix(color, avgcolor, smoothstep(0.125, 0.5, smoothmax));
+	}
+	else
+	{
+		// use only the average color if limit has been reached
+		color = avgcolor;
+	}
+
+	// set the outgoing color
+	gl_FragColor = vec4(color, 1.0);
+}
+]]>
+	</program>
+    </language>
+</jittershader>

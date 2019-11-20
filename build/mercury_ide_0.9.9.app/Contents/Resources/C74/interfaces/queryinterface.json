@@ -1,0 +1,191 @@
+{
+	"query-interface" : {
+		"quantifiers" : [
+			{
+				"identifier" 	: "dates",
+				"labels" 		: [ "Days", "Weeks", "Months", "Years" ],
+				"messages" 		: [ "days", "weeks", "months", "years" ]
+			},
+			{
+				"identifier" 	: "sizes",
+				"labels" 		: [ "KB", "MB", "GB" ],
+				"messages" 		: ["kb", "mb", "gb" ]
+			}
+		],
+		"arguments" : [
+			{
+				"identifier" 	: "textfield",
+				"textstyle" 	: "general"
+			},
+			{
+				"identifier" 	: "datefield",
+				"textstyle" 	: "numeric",
+				"quantifier" 	: "dates"
+			},
+			{
+				"identifier" 	: "datefield_extended",
+				"textstyle" 	: "datetime"
+			},
+			{
+				"identifier" 	: "sizefield",
+				"textstyle" 	: "numeric",
+				"quantifier" 	: "sizes"
+			},
+			{
+				"identifier" 	: "kindmenu",
+				"textstyle" 	: "menu"
+			},
+			{
+				"identifier"	: "none",
+				"textstyle"		: "none"
+			}
+		],
+		"comparisons" : [
+			{
+				"message" 		: "is",
+				"label" 		: "Is",
+				"arguments" 	: "textfield"
+			},
+			{
+				"message" 		: "is-nomenu",
+				"arguments" 	: "textfield"
+			},
+			{
+				"message" 		: "contains",
+				"label" 		: "Contains",
+				"arguments" 	: "textfield"
+			}, 
+			{
+				"message" 		: "beginswith",
+				"label" 		: "Begins With",
+				"arguments" 	: "textfield"
+			},
+			{
+				"message" 		: "endswith",
+				"label" 		: "Ends With",
+				"arguments" 	: "textfield"
+			},
+			{
+				"message" 		: "not",
+				"label" 		: "Not",
+				"arguments" 	: "textfield"
+			},
+			{
+				"message" 		: "anydate",
+				"label" 		: "Any Date"
+			},
+			{
+				"message" 		: "today",
+				"label" 		: "Today"
+			},
+			{
+				"message" 		: "sinceyesterday",
+				"label" 		: "Last Two Days"
+			},
+			{
+				"message" 		: "thisweek",
+				"label" 		: "This Week"
+			},
+			{
+				"message" 		: "last2weeks",
+				"label" 		: "Last Two Weeks"
+			},
+			{
+				"message" 		: "thismonth",
+				"label" 		: "This Month"
+			},
+			{
+				"message" 		: "last2months",
+				"label" 		: "Last Two Months"
+			},
+			{
+				"message" 		: "withinlast",
+				"label" 		: "Within Last",
+				"arguments" 	: "datefield",
+				"quantifiers"	: "dates"
+			},
+			{
+				"message" 		: "date-exactly",
+				"label" 		: "Exactly",
+				"arguments" 	: "datefield_extended"
+			},
+			{
+				"message" 		: "date-before",
+				"label" 		: "Before",
+				"arguments" 	: "datefield_extended"
+			},
+			{
+				"message" 		: "date-after",
+				"label" 		: "After",
+				"arguments" 	: "datefield_extended"
+			},
+			{
+				"message" 		: "kindenum",
+				"enummsg" 		: "listdoctypes",
+				"enumtarget" 	: "max"
+			},
+			{	
+				"message" 		: "kindis",
+				"label" 		: "Is ",
+				"arguments" 	: "kindmenu"
+			},
+			{	
+				"message" 		: "kindnot",
+				"label" 		: "Is Not ",
+				"arguments" 	: "kindmenu"
+			},
+			{
+				"message" 		: "greaterthan",
+				"label" 		: "Greater than",
+				"arguments" 	: "sizefield",
+				"quantifiers"	: "sizes"
+			},
+			{
+				"message" 		: "lessthan",
+				"label" 		: "Less than",
+				"arguments" 	: "sizefield",
+				"quantifiers"	: "sizes"
+			}
+		],
+		"fields" : 
+		[
+			{
+				"identifier" 	: "name",
+				"label" 		: "Name",
+				"comparisons" 	: [ "contains", "beginswith", "endswith", "is", "not" ]
+			},
+			{
+				"identifier" 	: "kind",
+				"label" 		: "Kind",
+				"comparisons" 	: [ "kindis" , "kindnot" ]
+			},
+			{
+				"identifier" 	: "lastmodified",
+				"label" 		: "Modified",
+				"comparisons" 	: [ "anydate", "-", "today", "sinceyesterday", "thisweek",
+									"last2weeks", "thismonth", "last2months", "-", "withinlast",
+									"date-exactly", "date-before", "date-after" ]
+			},
+			{
+				"identifier" 	: "tag",
+				"label"			: "Tag",
+				"comparisons" 	: [ "contains", "beginswith", "endswith", "is", "not" ]
+			},
+			{
+				"identifier" 	: "text",
+				"label"			: "Text",
+				"comparisons" 	: [ "contains" ]
+			},
+			{
+				"identifier" 	: "size",
+				"label" 		: "Size",
+				"comparisons" 	: [ "greaterthan", "lessthan" ]
+			},
+			{
+				"identifier" 	: "author",
+				"label" 		: "Author",
+				"comparisons" 	: [ "contains", "beginswith", "endswith", "is", "not" ]
+			}
+		]
+	}
+}

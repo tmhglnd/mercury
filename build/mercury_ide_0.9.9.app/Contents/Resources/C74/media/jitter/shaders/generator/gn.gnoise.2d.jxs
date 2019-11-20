@@ -1,0 +1,98 @@
+<jittershader name="gnoise">
+	<texture file="gn.gradperm.png" rectangle="0" filter="none none" wrap="repeat repeat" mipmap="none" anisotropy="0" />
+	<param name="gradperm" type="int" default="0" />
+	<param name="offset" type="vec2" default="0.0 0.0" />
+	<param name="scale" type="vec2" default="2.0 2.0" />
+	<language name="glsl" version="1.0">
+		<bind param="offset" program="vp" />
+		<bind param="scale" program="vp" />	
+		<bind param="gradperm" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+varying vec2 pos;
+varying vec4 basecolor;
+
+uniform vec2 offset;
+uniform vec2 scale;
+
+void main( void )
+{
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+	pos = offset + scale * vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	basecolor = gl_Color;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment"> 
+<![CDATA[
+/*
+ * Author: Stefan Gustavson ITN-LiTH (stegu@itn.liu.se) 2004-12-05
+ * You may use, modify and redistribute this code free of charge,
+ * provided that my name and this notice appears intact.
+ */
+
+uniform sampler2D gradperm;
+
+/*
+ * Both 2D and 3D texture coordinates are defined, for testing purposes.
+ */
+varying vec2 pos;
+varying vec4 basecolor;
+
+/*
+ * To create offsets of one texel and one half texel in the
+ * texture lookup, we need to know the texture image size.
+ */
+#define ONE 0.00390625
+#define ONEHALF 0.001953125
+// The numbers above are 1/256 and 0.5/256, change accordingly
+// if you change the code to use another texture size.
+
+
+float fade(float t) {
+  // return t*t*(3.0-2.0*t);
+  return t*t*t*(t*(t*6.0-15.0)+10.0);
+}
+
+float gnoise(vec2 P)
+{
+	P = mod(P, vec2(256));
+	vec2 Pi = ONE*floor(P)+ONEHALF;
+	vec2 Pf = fract(P);
+
+	// Noise contribution from lower left corner
+	vec2 grad00 = texture2D(gradperm, Pi).rg * 4.0 - 1.0;
+	float n00 = dot(grad00, Pf);
+
+	// Noise contribution from lower right corner
+	vec2 grad10 = texture2D(gradperm, Pi + vec2(ONE, 0.0)).rg * 4.0 - 1.0;
+	float n10 = dot(grad10, Pf - vec2(1.0, 0.0));
+
+	// Noise contribution from upper left corner
+	vec2 grad01 = texture2D(gradperm, Pi + vec2(0.0, ONE)).rg * 4.0 - 1.0;
+	float n01 = dot(grad01, Pf - vec2(0.0, 1.0));
+
+	// Noise contribution from upper right corner
+	vec2 grad11 = texture2D(gradperm, Pi + vec2(ONE, ONE)).rg * 4.0 - 1.0;
+	float n11 = dot(grad11, Pf - vec2(1.0, 1.0));
+
+	// Blend contributions along x
+	vec2 n_x = mix(vec2(n00, n01), vec2(n10, n11), fade(Pf.x));
+
+	// Blend contributions along y
+	float n_xy = mix(n_x.x, n_x.y, fade(Pf.y));
+
+	// We're done, return the final noise value.
+	return n_xy;
+}
+
+void main( void )
+{
+	float n = gnoise(pos + 240.0);
+	n = clamp(n, -1.0, 1.0);
+	gl_FragColor = basecolor * vec4(0.5 + 0.5 * vec3(n, n, n), 1.0);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

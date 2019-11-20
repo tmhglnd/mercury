@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="90.72" height="100.44" viewBox="0, 0, 84, 93">
+  <g id="Image" transform="translate(0, 0)">
+    <g>
+      <path d="M75,24 L75,84 L57,84 L57,24 L75,24 z" fill="#000000"/>
+      <path d="M75,24 L75,84 L57,84 L57,24 L75,24 z" fill-opacity="0" stroke="#FFFFFF" stroke-width="4"/>
+    </g>
+    <g>
+      <path d="M51,45 L51,84 L33,84 L33,45 L51,45 z" fill="#000000"/>
+      <path d="M51,45 L51,84 L33,84 L33,45 L51,45 z" fill-opacity="0" stroke="#FFFFFF" stroke-width="4"/>
+    </g>
+    <g>
+      <path d="M27,9 L27,84 L9,84 L9,9 L27,9 z" fill="#000000"/>
+      <path d="M27,9 L27,84 L9,84 L9,9 L27,9 z" fill-opacity="0" stroke="#FFFFFF" stroke-width="4"/>
+    </g>
+  </g>
+</svg>

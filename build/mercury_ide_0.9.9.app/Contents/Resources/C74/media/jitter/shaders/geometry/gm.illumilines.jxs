@@ -1,0 +1,94 @@
+<jittershader name="gm.illumilines.jxs">
+	<description>Basic Illumilines Geometry Shader</description>
+	<param name="Kd" type="vec4" default="0.2 0.2 0.2 0.8" />
+	<param name="Ks" type="vec4" default="1. 1. 1. 0.8" />
+	<param name="shininess" type="float" default="80." />
+	<language name="glsl" version="1.2">
+		<bind param="Kd" program="fp" />
+		<bind param="Ks" program="fp" />
+		<bind param="shininess" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+#version 120
+
+void main(void)
+{
+	//just send the things as they are
+	gl_Position = gl_ModelViewMatrix*gl_Vertex;
+	gl_FrontColor = gl_Color;
+}
+
+]]>		
+		</program>
+		<program name="gp" vertices_out="2" input_type="lines_adjacency" output_type="line_strip" type="geometry">
+<![CDATA[
+
+#version 120
+#extension GL_EXT_geometry_shader4 : enable
+
+varying out vec3 P;
+varying out vec3 T;
+
+void main(void)
+{
+	gl_FrontColor = gl_FrontColorIn[1];
+	T = gl_PositionIn[2].xyz - gl_PositionIn[1].xyz;
+	P = gl_PositionIn[1].xyz;
+	gl_Position = gl_ProjectionMatrix*gl_PositionIn[1];
+	EmitVertex();
+	
+	gl_FrontColor = gl_FrontColorIn[2];
+	T = gl_PositionIn[3].xyz - gl_PositionIn[2].xyz;
+	P = gl_PositionIn[2].xyz;
+	gl_Position = gl_ProjectionMatrix*gl_PositionIn[2];
+	EmitVertex();
+	
+	EndPrimitive();
+}
+
+
+
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+#version 120
+
+uniform vec4 Kd;
+uniform vec4 Ks;
+uniform float shininess;
+
+varying vec3 P;
+varying vec3 T;
+
+
+void main (void)
+{
+	vec3 Tn = normalize(T);
+	vec3 Ln = normalize(gl_LightSource[0].position.xyz - P.xyz);
+	vec3 Vn = normalize(P.xyz);
+	float distance = length(P.xyz);
+	
+	float lightDotTangent = dot(Ln, Tn);
+	float viewDotTangent = dot(Vn, Tn);
+	
+	//also diffuse term
+	float lightDotNormal = sqrt(1. - lightDotTangent*lightDotTangent);	
+	
+	float specularTerm = lightDotNormal * sqrt(1. - viewDotTangent*viewDotTangent) - 
+						lightDotTangent * viewDotTangent;
+
+	specularTerm = max(specularTerm, 0.);
+	specularTerm = pow(min(specularTerm, 1.), shininess);
+
+	float diffuseTerm = lightDotNormal;
+	
+	gl_FragColor = (diffuseTerm*Kd + specularTerm*Ks);
+}
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

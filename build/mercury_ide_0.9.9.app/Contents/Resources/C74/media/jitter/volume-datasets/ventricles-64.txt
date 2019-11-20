@@ -1,0 +1,14 @@
+MRI Ventricles Volume Dataset
+
+COURTESY
+
+www.volvis.org - Dirk Bartz, VCM, University of TŸbingen, Germany.
+
+DESCRIPTION
+
+1.5T MRT 3D CISS dataset of a human head that highlights the CSF 
+(Cerebro-Spinal-Fluid) filled cavities of the head.
+
+ALTERATIONS
+
+Downsampled to 64x64x64 by Cycling 74.

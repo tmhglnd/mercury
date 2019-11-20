@@ -1,0 +1,47 @@
+<jitterpass>
+	<pass name="bloom">
+		<bind name="blur_width" param="width" default="0.5" />
+		<subpass file="hdr.bloom.jxs" dimscale="0.5 0.5">
+			<input source="COLOR" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>	
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>	
+		<subpass file="hdr.bloom.combine.jxs" output="COLOR">
+			<input source="COLOR" />
+			<input source="PREVIOUS" />
+		</subpass>
+	</pass>
+	<pass name="bloom-tonemap">
+		<bind name="blur_width" param="width" default="0.5" />
+		<subpass file="hdr.bloom.jxs" dimscale="0.5 0.5">
+			<input source="COLOR" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>	
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>	
+		<subpass file="hdr.bloom.tonemap.jxs" output="COLOR">
+			<input source="COLOR" />
+			<input source="PREVIOUS" />
+		</subpass>
+	</pass>		
+
+</jitterpass>

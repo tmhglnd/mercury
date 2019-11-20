@@ -1,0 +1,404 @@
+{
+	"maxdb" : {
+		"filters" :
+		[
+			{
+				"filter" : "ignore",
+				"path" : "C74:/externals/ad",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "C74:/externals/mididrivers",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/default-definitions",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/default-settings",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/extensions",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/init",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/interfaces",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "C74:/externals/jitter/Cg.framework",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/jit-init",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/jsextensions",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/object-icons",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "*/images",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "C74:/docs/unibrowser",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/java-doc",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "package@*:/support",
+				"kind" : "*"
+			},
+			{
+				"filter" : "ignore",
+				"path" : "*/node_modules",
+				"kind" : "*"
+			}
+		],
+
+		"exclusions" : ["opened","progress","ca1d","ls.central","ls.mono","ls.ratelag","step.overplay","zeropoint~","max","dsp","jit_kernel","jit.group-gl","jit.group-mop","jbox","parameters","paraminspector","playlist","jit.qt.engine","jit.avf.engine", "mc.wrapper~"],
+
+		"internals" : ["+","-","*","/","%",">","<","<=",">=","==","!=","&","&&","|","||","<<",">>","abs","accum","active","bag","bangbang","bendin","bendout","bpatcher","change","chooser","closebang","ctlin","ctlout","del","dict","dict.view","error","expr","float","follow","freebang","gate","grab","if","inlet","int","jweb","jstrigger","key","keyup","loadbang","maxurl","menubar","midiformat","midiin","midiout","midiparse","notein","noteout","onecopy","opened","outlet","pack","patcher","pcontrol","pgmin","pgmout","polyin","polyout","preset","print","pvar","random","receive","route","routepass","rtin","savebang","select","send","seq","setclock","stripnote","sustain","swap","switch","sysexin","table","themecolor","thispatcher","touchin","touchout","trigger","unpack","value","mappings"],
+
+		"genobjects" : {
+			"genobject_common" : [
+				"abs","absdiff","acos","acosh","add","and","asin","asinh","atan","atan2","atanh","bool","cartopol","ceil","clamp","clip","codebox","constant","cos","cosh","degrees","degtorad","div","e","eq","eqp","exp","exp2","expr","fastcos","fastexp","fastpow","fastsin","fasttan","float","floor","fold","fract","gate","gen","gt","gte","gtep","gtp","halfpi","hypot","in","int","invpi","ln","ln10","ln2","log","log10","log10e","log2","log2e","lt","lte","ltep","ltp","max","maximum","min","minimum","mix","mod","mul","neg","neq","neqp","noise","not","or","out","param","pass","phi","pi","poltocar","pow","radians","radtodeg","rdiv","receive","rmod","rsub","scale","selector","send","setparam","sign","sin","sinh","smoothstep","sqrt","sqrt1_2","sqrt2","step","sub","switch","tan","tanh","trunc","twopi","wrap","xor"],
+			"genobject_dsp" : [
+				"accum","atodb","buffer","change","channels","counter","cycle","data","dbtoa","dcblock","delay","delta","dim","elapsed","fftfullspect","ffthop","fftinfo","fftoffset","fftsize","fixdenorm","fixnan","ftom","history","interp","isdenorm","isnan","latch","lookup","mstosamps","mtof","mulequals","nearest","peek","phasewrap","phasor","plusequals","poke","rate","round","sah","sample","samplerate","sampstoms","slide","splat","t60","t60time","train","triangle","vectorisize","vectorsize","voice","wave"],
+			"genobject_jit" : [
+				"cell","circle","concat","cone","cross","cylinder","dim","dot","faceforward","hsl2rgb","length","nearest","nearestpix","norm","normalize","plane","qconj","qmul","qrot","reflect","refract","rgb2hsl","rotor","sample","samplepix","snorm","sphere","swiz","torus","vec"]
+		},
+
+		"fakeobjects" : {
+			"jit.qt.movie" : {
+				"realobject" : "jit.movie",
+				"displayname" : "jit.movie [QT]",
+				"helpname"	: "jit.movie",
+				"refpagename" : "jit.qt.movie",
+				"package" : "Jitter"
+			},
+			"jit.qt.record" : {
+				"realobject" : "jit.record",
+				"displayname" : "jit.record [QT]",
+				"helpname"	: "jit.record",
+				"refpagename" : "jit.qt.record",
+				"package" : "Jitter"
+			},
+			"jit.qt.grab" : {
+				"realobject" : "jit.grab",
+				"displayname" : "jit.grab [QT]",
+				"helpname"	: "jit.grab",
+				"refpagename" : "jit.qt.grab",
+				"package" : "Jitter"
+			}
+		},
+
+		"externals" : {
+			"flonum" : {
+				"object" : "number"
+			},
+			"qmetro" : {
+				"object" : "metro"
+			},
+			"qlim" : {
+				"object" : "speedlim"
+			},
+			"clocker" : {
+				"object" : "metro"
+			},
+			"plusbutton" : {
+				"object" : "querylib"
+			},
+			"live.arrows" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.button" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.dial" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.drop" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.line" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.menu" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.numbox" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.slider" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.tab" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.text" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"live.toggle" : {
+				"object" : "live.guilib",
+				"package" : "Max for Live"
+			},
+			"playlist~" : {
+				"object" : "playlist",
+				"package" : "MSP"
+			},
+			"jit.playlist" : {
+				"object" : "playlist",
+				"package" : "Jitter"
+			},
+			"amxd~" : {
+				"object" : "max~"
+			},
+			"mc.amxd~" : {
+				"object" : "max~"
+			},
+			"vstscan" : {
+				"object" : "setplugpath"
+			},
+			"rpnin" : {
+				"object" : "nrpnin"
+			},
+			"rpnout" : {
+				"object" : "nrpnout"
+			},
+			"mc.function" : {
+				"object" : "function"
+			},
+			"mc.matrix~" : {
+				"object" : "matrix~"
+			},
+			"mc.number~" : {
+				"object" : "number~"
+			},
+			"mc.record~" : {
+				"object" : "record~"
+			},
+			"mc.playlist~" : {
+				"object" : "playlist~"
+			},
+			"mc.adc~" : {
+				"object" : "adc~"
+			},
+			"mc.ezadc~" : {
+				"object" : "ezadc~"
+			},
+			"mc.dac~" : {
+				"object" : "dac~"
+			},
+			"mc.ezdac~" : {
+				"object" : "ezdac~"
+			},
+			"mc.live.gain~" : {
+				"object" : "live.gain~"
+			}
+		},
+
+		"aliases" : {
+			"!-" : "rminus",
+			"!/" : "rdiv",
+			"!-" : "rminus",
+			"+~" : "plus~",
+			"-~" : "minus~",
+			"*~" : "times~",
+			"/~" : "div~",
+			"%~" : "modulo~",
+			">~" : "greaterthan~",
+			"<~" : "lessthan~",
+			"+=~" : "plusequals~",
+			"<=~" : "lessthaneq~",
+			">=~" : "greaterthaneq~",
+			"==~" : "equals~",
+			"!=~" : "notequals~",
+			"!-~" : "rminus~",
+			"!/~" : "rdiv~",
+			"p" : "patcher",
+			"f" : "float",
+			"i" : "int",
+			"b" : "bangbang",
+			"v" : "value",
+			"t" : "trigger",
+			"s" : "send",
+			"r" : "receive",
+			"del" : "delay",
+			"sel" : "select",
+			"ggate" : "gswitch2",
+			"audiounit~" : "vst~",
+			"mc.combine~" : "mc.pack~",
+
+			"zl.group" : "zl",
+			"zl.join" : "zl",
+			"zl.iter" : "zl",
+			"zl.len" : "zl",
+			"zl.reg" : "zl",
+			"zl.rev" : "zl",
+			"zl.rot" : "zl",
+			"zl.scramble" : "zl",
+			"zl.sect" : "zl",
+			"zl.slice" : "zl",
+			"zl.ecils" : "zl",
+			"zl.sub" : "zl",
+			"zl.nth" : "zl",
+			"zl.mth" : "zl",
+			"zl.lookup" : "zl",
+			"zl.queue" : "zl",
+			"zl.stack" : "zl",
+			"zl.union" : "zl",
+			"zl.sort" : "zl",
+			"zl.sum" : "zl",
+			"zl.median" : "zl",
+			"zl.stream" : "zl",
+			"zl.unique" : "zl",
+			"zl.lace" : "zl",
+			"zl.delace" : "zl",
+			"zl.change" : "zl",
+			"zl.compare" : "zl",
+			"zl.thin" : "zl",
+			"zl.filter" : "zl",
+			"zl.swap" : "zl",
+			"zl.indexmap" : "zl",
+
+			"jit.pass" : "jit.op",
+			"jit.mult" : "jit.op",
+			"jit.*" : "jit.op",
+			"jit.div" : "jit.op",
+			"jit./" : "jit.op",
+			"jit.add" : "jit.op",
+			"jit.+" : "jit.op",
+			"jit.addmod" : "jit.op",
+			"jit.+m" : "jit.op",
+			"jit.sub" : "jit.op",
+			"jit.-" : "jit.op",
+			"jit.submod" : "jit.op",
+			"jit.-m" : "jit.op",
+			"jit.mod" : "jit.op",
+			"jit.%" : "jit.op",
+			"jit.min" : "jit.op",
+			"jit.max" : "jit.op",
+			"jit.avg" : "jit.op",
+			"jit.abs" : "jit.op",
+			"jit.absdiff" : "jit.op",
+			"jit.flippass" : "jit.op",
+			"jit.!pass" : "jit.op",
+			"jit.flipdiv" : "jit.op",
+			"jit.!/" : "jit.op",
+			"jit.flipsub" : "jit.op",
+			"jit.!-" : "jit.op",
+			"jit.flipmod" : "jit.op",
+			"jit.!%" : "jit.op",
+			"jit.fold" : "jit.op",
+			"jit.wrap" : "jit.op",
+			"jit.bitand" : "jit.op",
+			"jit.&" : "jit.op",
+			"jit.bitor" : "jit.op",
+			"jit.|" : "jit.op",
+			"jit.bitxor" : "jit.op",
+			"jit.^" : "jit.op",
+			"jit.bitnot" : "jit.op",
+			"jit.~" : "jit.op",
+			"jit.rshift" : "jit.op",
+			"jit.>>" : "jit.op",
+			"jit.lshift" : "jit.op",
+			"jit.<<" : "jit.op",
+			"jit.and" : "jit.op",
+			"jit.&&" : "jit.op",
+			"jit.or" : "jit.op",
+			"jit.||" : "jit.op",
+			"jit.not" : "jit.op",
+			"jit.!" : "jit.op",
+			"jit.gt" : "jit.op",
+			"jit.>" : "jit.op",
+			"jit.lt" : "jit.op",
+			"jit.<" : "jit.op",
+			"jit.gte" : "jit.op",
+			"jit.>=" : "jit.op",
+			"jit.lte" : "jit.op",
+			"jit.<=" : "jit.op",
+			"jit.eq" : "jit.op",
+			"jit.==" : "jit.op",
+			"jit.neq" : "jit.op",
+			"jit.!=" : "jit.op",
+			"jit.gtp" : "jit.op",
+			"jit.>p" : "jit.op",
+			"jit.ltp" : "jit.op",
+			"jit.<p" : "jit.op",
+			"jit.gtep" : "jit.op",
+			"jit.>=p" : "jit.op",
+			"jit.ltep" : "jit.op",
+			"jit.<=p" : "jit.op",
+			"jit.eqp" : "jit.op",
+			"jit.==p" : "jit.op",
+			"jit.neqp" : "jit.op",
+			"jit.!=p" : "jit.op",
+			"jit.sin" : "jit.op",
+			"jit.cos" : "jit.op",
+			"jit.tan" : "jit.op",
+			"jit.asin" : "jit.op",
+			"jit.acos" : "jit.op",
+			"jit.atan" : "jit.op",
+			"jit.atan2" : "jit.op",
+			"jit.sinh" : "jit.op",
+			"jit.cosh" : "jit.op",
+			"jit.tanh" : "jit.op",
+			"jit.asinh" : "jit.op",
+			"jit.acosh" : "jit.op",
+			"jit.atanh" : "jit.op",
+			"jit.exp" : "jit.op",
+			"jit.exp2" : "jit.op",
+			"jit.ln" : "jit.op",
+			"jit.log" : "jit.op",
+			"jit.log2" : "jit.op",
+			"jit.log10" : "jit.op",
+			"jit.hypot" : "jit.op",
+			"jit.pow" : "jit.op",
+			"jit.sqrt" : "jit.op",
+			"jit.ceil" : "jit.op",
+			"jit.floor" : "jit.op",
+			"jit.round" : "jit.op",
+			"jit.trunc" : "jit.op",
+			"jit.gl.layer" : "jit.gl.videoplane"
+		}
+	}
+}

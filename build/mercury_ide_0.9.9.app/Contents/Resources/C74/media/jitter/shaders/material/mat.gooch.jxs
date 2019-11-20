@@ -1,0 +1,127 @@
+<jittershader name="sh-mat-gooch-simple">
+	<description>
+	Untextured material lit with a point light w/gooch shading calculated per pixel.
+	</description>
+	<param name="lightpos" type="vec3" state="LIGHT0_POSITION">
+		<description>Position of Light Source</description>
+	</param>
+	<param name="warmcolor" type="vec4" default="0.6 0.7 0.0 1.0">
+		<description>Warm Color</description>
+	</param>
+	<param name="coolcolor" type="vec4" default="0.0 0.0 0.6 1.0">
+		<description>Cool Color</description>
+	</param>
+	<param name="basecolor" type="vec4" default="0.75 0.75 0.75 1.0">
+		<description>Cool Color</description>
+	</param>
+	<param name="warm" type="float" default="0.45">
+		<description>Warm Threshold</description>
+	</param>
+	<param name="cool" type="float" default="0.45">
+		<description>Cool Threshold</description>
+	</param>
+	<param name="shininess" type="float" default="32.0">
+		<description>Shininess</description>
+	</param>
+	<language name="glsl" version="1.0">
+		<bind param="lightpos" program="vp" />
+		<bind param="warmcolor" program="fp" />
+		<bind param="coolcolor" program="fp" />
+		<bind param="basecolor" program="fp" />
+		<bind param="warm" program="fp" />
+		<bind param="cool" program="fp" />
+		<bind param="shininess" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL vertex program for a simple gooch material lit by a 
+ * point light source calculated per pixel/fragment.  The lack
+ * of a silhouette makes this implemetation simple.
+ *
+ */
+
+uniform vec3 lightpos;
+
+varying float ndotl;
+varying vec3 normal;
+varying vec3 lightdir;
+varying vec3 reflect;
+varying vec3 viewdir;
+
+void main(void)
+{
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+	
+	// get camera position based on mv matrix
+	vec4 campos = gl_ModelViewMatrix * gl_Vertex;
+
+	// transform normal into view space
+	normal = normalize(gl_NormalMatrix * gl_Normal);
+
+	// compute view vector in view space
+	viewdir = vec3(normalize(-campos.xyz));  
+
+	// get light direction in view space
+	lightdir = normalize(lightpos - normal);
+	
+	// get reflect vector
+	reflect = normalize( 2.0 * dot( normal, lightdir) * normal - lightdir );    
+
+	// compute dot product of normal with light dir
+	ndotl = 0.5 * (dot(lightdir, normal) + 1.0);
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a simple gooch material lit by a 
+ * point light source calculated per pixel/fragment.  The lack
+ * of a silhouette makes this implementation simple.
+ *
+ */
+
+uniform float warm;
+uniform float cool;
+uniform float shininess;
+
+uniform vec4 warmcolor;
+uniform vec4 coolcolor;
+uniform vec4 basecolor;
+
+varying float ndotl;
+varying vec3 reflect;
+varying vec3 viewdir;
+
+void main()
+{
+	vec4 coolterm = min(coolcolor + cool * basecolor, 1.0);
+	vec4 warmterm = min(warmcolor + warm * basecolor, 1.0); 
+
+	// blend between cool and warm contributions
+	vec4 finalcolor = mix(coolterm, warmterm, ndotl);
+
+	// calculate lighting
+	vec3 ref = normalize(reflect);
+	vec3 view = normalize(viewdir);
+
+	// calculate specular intensity
+	float specularity = max(dot(ref, view), 0.0);
+	specularity = pow(specularity, shininess);
+
+	// calculate final color by adding specular term to final color
+	gl_FragColor = min(finalcolor + specularity, 1.0);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

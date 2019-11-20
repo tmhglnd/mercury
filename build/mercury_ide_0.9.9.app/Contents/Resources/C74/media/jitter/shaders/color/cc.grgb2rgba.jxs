@@ -1,0 +1,61 @@
+<jittershader name="grgb2rgba">
+	<description>
+	converts packed grgb data as rgba data to full chroma rgba data
+	</description>
+	<param name="chromasmooth" type="float" default="1." />
+	<language name="glsl" version="1.0">
+		<bind param="chromasmooth" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthru.xform.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// texcoords
+varying vec2 texcoord0;
+
+// parameters
+uniform float chromasmooth;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// entry point
+void main()
+{   
+	// round to nearest pixel centered coordinates 
+	// (reason for adding 0.5 to account for GL_LINEAR)
+	vec2 coord_left = vec2(floor(texcoord0.x)+0.5,texcoord0.y);
+	vec2 coord_right = vec2(floor(texcoord0.x+1.)+0.5,texcoord0.y);
+	vec2 coord_frak = (texcoord0 - coord_left);
+	
+	// sample uyvy data points (are actually yvyu since to argb => rgba)
+	vec4 rgbg_left = texture2DRect(tex0, coord_left);
+	vec4 rgbg_right = texture2DRect(tex0, coord_right);
+
+	vec4 rgba_val;	
+
+	// uninterpolated green from left and right 
+	// green samples within the single macro pixel 
+	// pick appropriate green sample for our pixel coord	
+	rgba_val.g = mix(rgbg_left.a,rgbg_left.g,float(coord_frak.x>=0.));
+
+	// grab appropriate red + blue samples with smoothing if turned on
+	rgba_val.rb = mix(rgbg_left.rb,rgbg_right.rb,vec2(0.5));
+	rgba_val.rb = mix(rgbg_left.rb,rgba_val.rb,vec2(coord_frak.x>=0.&&chromasmooth>0.5));
+
+	// set alpha to one
+	rgba_val.a = 1.;
+	
+	gl_FragColor = rgba_val;
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>
+
+
+
+
+
+
+

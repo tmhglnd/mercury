@@ -1,0 +1,46 @@
+<jittershader name="scalebias">
+	<description>
+	Scale and offset color channels
+	</description>
+	<param name="scale" type="vec4" default="1.0 1.0 1.0 1.0">
+		<description>Scale factor (r, g, b, a)</description>
+	</param>
+	<param name="bias" type="vec4" default="0.0 0.0 0.0 0.0">
+		<description>Bias amount (r, g, b, a)</description>
+	</param>
+	<param name="image" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="image" program="fp" />
+		<bind param="scale" program="fp" />
+		<bind param="bias" program="fp" />		
+		<program name="vp" type="vertex">
+<![CDATA[
+varying vec2 texcoord;
+void main (void)
+{
+    gl_Position = ftransform();
+    texcoord    = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+varying vec2 texcoord;
+uniform sampler2DRect image;
+uniform vec4 scale;
+uniform vec4 bias;
+
+void main(void) 
+{
+	//get texture value
+	vec4 texColor = texture2DRect(image, texcoord);
+	// multiply the current color with scale values
+	texColor *= scale;
+	// add bias values
+	texColor += bias; 
+	gl_FragColor = texColor;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

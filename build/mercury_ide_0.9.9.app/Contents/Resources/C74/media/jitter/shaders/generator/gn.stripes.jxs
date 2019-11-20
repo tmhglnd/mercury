@@ -1,0 +1,109 @@
+<jittershader name="stripes">
+	<description>Shader for generating procedural stripes</description>
+	<param name="lightpos" type="vec3" default="4.0 4.0 4.0" />
+	<param name="lightcolor" type="vec3" default="0.9 0.8 0.7" />
+	<param name="eyepos" type="vec3" default="0.0 0.0 4.0" />
+	<param name="specular" type="vec3" default="0.2 0.2 0.2" />
+	<param name="ambient" type="vec3" default="0.2 0.2 0.2" />
+	<param name="kd" type="float" default="0.8" />
+	<param name="stripecolor" type="vec3" default="1.0 0.5 0.0" />
+	<param name="backcolor" type="vec3" default="0.2 0.2 1.0" />
+	<param name="width" type="float" default="0.5" />
+	<param name="fuzz" type="float" default="0.1" />
+	<param name="scale" type="float" default="10.0" />
+	<language name="glsl" version="1.0">
+		<bind param="lightpos" program="vp" />
+		<bind param="lightcolor" program="vp" />
+		<bind param="eyepos" program="vp" />
+		<bind param="specular" program="vp" />
+		<bind param="ambient" program="vp" />
+		<bind param="kd" program="vp" />
+		<bind param="stripecolor" program="fp" />
+		<bind param="backcolor" program="fp" />
+		<bind param="width" program="fp" />
+		<bind param="fuzz" program="fp" />
+		<bind param="scale" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+//
+// Vertex shader for drawing procedural stripes
+//
+// Author: OGLSL implementation by Ian Nurse
+//
+// Copyright (C) 2002-2005  LightWork Design Ltd.
+//          www.lightworkdesign.com
+//
+// See LightworkDesign-License.txt for license information
+//
+
+uniform vec3  lightpos;
+uniform vec3  lightcolor;
+uniform vec3  eyepos;
+uniform vec3  specular;
+uniform vec3  ambient;
+uniform float kd;
+
+varying vec3  diffuse;
+varying vec3  spec;
+
+void main(void)
+{
+    vec3 pos = vec3 (gl_ModelViewMatrix * gl_Vertex);
+    vec3 tnorm      = normalize(gl_NormalMatrix * gl_Normal);
+    vec3 lightVec   = normalize(lightpos - pos);
+    vec3 viewVec    = normalize(eyepos - pos);
+    vec3 Hvec       = normalize(viewVec + lightVec);
+
+    float ks = clamp(dot(Hvec, tnorm), 0.0, 1.0);
+    ks = pow(ks, 16.0);
+
+    diffuse    = lightcolor * vec3 (kd * dot(lightVec, tnorm));
+    diffuse    = clamp(ambient + diffuse, 0.0, 1.0);
+    spec   = clamp((lightcolor * specular * ks), 0.0, 1.0);
+
+    gl_TexCoord[0]  = gl_MultiTexCoord0;
+    gl_Position     = ftransform();
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+//
+// Fragment shader for drawing procedural stripes
+//
+// Author: OGLSL implementation by Ian Nurse
+//
+// Copyright (C) 2002-2005  LightWork Design Ltd.
+//          www.lightworkdesign.com
+//
+// See LightworkDesign-License.txt for license information
+//
+
+uniform vec3  stripecolor;
+uniform vec3  backcolor;
+uniform float width;
+uniform float fuzz;
+uniform float scale;
+
+varying vec3  diffuse;
+varying vec3  spec;
+
+void main(void)
+{
+    float scaled_t = fract(gl_TexCoord[0].t * scale);
+
+    float frac1 = clamp(scaled_t / fuzz, 0.0, 1.0);
+    float frac2 = clamp((scaled_t - width) / fuzz, 0.0, 1.0);
+
+    frac1 = frac1 * (1.0 - frac2);
+    frac1 = frac1 * frac1 * (3.0 - (2.0 * frac1));
+   
+    vec3 finalColor = mix(backcolor, stripecolor, frac1);
+    finalColor = finalColor * diffuse + spec;
+
+    gl_FragColor = vec4 (finalColor, 1.0);
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

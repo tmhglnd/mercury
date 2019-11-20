@@ -1,0 +1,56 @@
+<jittershader name="mrt">
+	<param name="tex_color" type="int" default="0" />
+	<param name="tex_velocity" type="int" default="1" />		
+	<param name="velocity_scale" type="float" default="5.0" />			
+	<language name="glsl" version="1.2">
+		<bind param="tex_color" program="fp" />
+		<bind param="tex_velocity" program="fp" />				
+		<bind param="velocity_scale" program="fp" />					
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec2 texcoord;
+varying vec2 texdim0;
+
+void main()
+{
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	texdim0 = vec2 (abs(gl_TextureMatrix[0][0][0]),abs(gl_TextureMatrix[0][1][1]));
+}
+
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+#version 120
+varying vec2 texcoord;
+varying vec2 texdim0;
+uniform sampler2DRect tex_color; 
+uniform sampler2DRect tex_velocity;
+uniform float velocity_scale;
+float MAX_MOTION_SAMPLES = 128;
+
+void main()
+{	
+	vec4 image = texture2DRect( tex_color, texcoord);
+	vec2 velocity = texture2DRect( tex_velocity, texcoord).xy; 
+	velocity*=velocity_scale;
+	float speed = length(velocity*texdim0);
+	float nSamples = clamp(speed, 1.0, MAX_MOTION_SAMPLES);
+	float halfSamps = nSamples/2.0;
+	int count = 1;
+	
+	for (int i = 1; i < halfSamps; ++i) {
+		image += texture2DRect(tex_color, texcoord + velocity*i);
+		image += texture2DRect(tex_color, texcoord - velocity*i);
+		count +=2;
+	}
+	image /= count;
+	gl_FragColor = image;
+}
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

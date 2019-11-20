@@ -1,0 +1,71 @@
+<jittershader name="vignettes">
+	<description>
+	oval-grid transition effect
+	</description>
+	<param name="wipe" type="float" default="0.0">
+		<description>wipe factor</description>
+	</param>
+	<param name="fade" type="float" default="0.0">
+		<description>feather amount</description>
+	</param>
+	<param name="scale" type="vec2" default="1.0 1.0">
+		<description>column width</description>
+	</param>
+	
+	<param name="invert" type="float" default="0." />
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="wipe" program="fp" />
+		<bind param="fade" program="fp" />
+		<bind param="scale" program="fp" />
+		<bind param="invert" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+// Andrew Benson - andrewb@cycling74.com
+//Copyright 2006 - Cycling '74
+
+//fragment shader for oval vignette wipe transition
+
+//setup for 2 texture
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+varying vec2 texdim0;
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+//wipe state
+uniform float wipe;
+uniform float fade;
+uniform vec2 scale;
+uniform float invert;
+
+
+void main()
+{   
+
+	vec4 a = texture2DRect(tex0, texcoord0);
+	vec4 b = texture2DRect(tex1, texcoord1);
+	vec4 inva = mix(a,b,invert);
+	vec4 invb = mix(b,a,invert);
+	vec2 sz = texdim0*scale;
+	vec2 per = mod(texcoord0,sz)/sz;
+
+	
+
+	// calculate position
+	float dist = distance(vec2(0.5),per);
+	float check = smoothstep (wipe,wipe+fade,dist);
+	vec4 wiped = mix(invb,inva,check);
+	
+	// output texture
+	gl_FragColor = vec4 (wiped);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

@@ -1,0 +1,24 @@
+{
+	"diffuse_model" : "toon",
+	"specular_model" : "toon",
+	"fog" : "none",
+	"params" : 	{
+		"specular_size" : 0.193,
+		"specular_smooth" : 0.11,
+		"diffuse_size" : 0.705,
+		"diffuse_smooth" : 0.127
+	}
+,
+	"textures" : 	{
+
+	}
+,
+	"filename" : "blue.toon.jitmtl",
+	"color" : [ 0.0, 0.570962, 0.898192, 1.0 ],
+	"mat_emission" : [ 0.0, 0.0, 0.0, 1.0 ],
+	"mat_ambient" : [ 0.0, 0.273259, 0.429862, 1.0 ],
+	"mat_diffuse" : [ 0.0, 0.570962, 0.898192, 1.0 ],
+	"mat_specular" : [ 1.0, 1.0, 1.0, 1.0 ],
+	"shininess" : [ 8.0 ],
+	"fog_params" : [ 0.5, 0.5, 0.5, 0.0, 1.0, 1.0, 100.0 ]
+}

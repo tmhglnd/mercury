@@ -1,0 +1,112 @@
+<jittershader name="bricks">
+	<description>Shader for generating procedural bricks</description>
+	<param name="lightpos" type="vec3" default="0.0 0.0 4.0" />
+	<param name="brickcolor" type="vec3" default="1.0 0.3 0.2" />
+	<param name="mortarcolor" type="vec3" default="0.85 0.86 0.84" />
+	<param name="bricksize" type="vec2" default="0.30 0.15" />
+	<param name="brickpct" type="vec2" default="0.90 0.85" />
+	<param name="mortarpct" type="vec2" default="0.10 0.15" />
+	<language name="glsl" version="1.0">
+		<bind param="lightpos" program="vp" />
+		<bind param="brickcolor" program="fp" />
+		<bind param="mortarcolor" program="fp" />
+		<bind param="bricksize" program="fp" />
+		<bind param="brickpct" program="fp" />
+		<bind param="mortarpct" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+//
+// Vertex shader for antialiased procedural bricks
+//
+// Authors: Dave Baldwin, Steve Koren, Randi Rost
+//          based on a shader by Darwyn Peachey
+//
+// Copyright (c) 2002-2005 3Dlabs Inc. Ltd. 
+//
+// See 3Dlabs-License.txt for license information
+//
+
+uniform vec3 lightpos;
+
+const float ks = 0.3;
+const float kd  = 1.0 - ks;
+
+varying float lightintensity;
+varying vec2  modelpos;
+
+void main(void)
+{
+    vec3 ecPosition = vec3 (gl_ModelViewMatrix * gl_Vertex);
+    vec3 tnorm      = normalize(gl_NormalMatrix * gl_Normal);
+    vec3 lightVec   = normalize(lightpos - ecPosition);
+    vec3 reflectVec = reflect(-lightVec, tnorm);
+    vec3 viewVec    = normalize(-ecPosition);
+    float diffuse   = max(dot(lightVec, tnorm), 0.0);
+    float spec      = 0.0;
+
+    if (diffuse > 0.0)
+    {
+        spec = max(dot(reflectVec, viewVec), 0.0);
+        spec = pow(spec, 16.0);
+    }
+
+    lightintensity  = kd * diffuse +
+                      ks * spec;
+
+    modelpos      = gl_Vertex.xy;
+    gl_Position     = ftransform();
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+//
+// Fragment shader for antialiased procedural bricks
+//
+// Authors: Dave Baldwin, Randi Rost
+//          based on a shader by Darwyn Peachey
+//
+// Copyright (c) 2002-2005 3Dlabs Inc. Ltd. 
+//
+// See 3Dlabs-License.txt for license information
+//
+
+uniform vec3  brickcolor, mortarcolor;
+uniform vec2  bricksize;
+uniform vec2  brickpct;
+uniform vec2  mortarpct;
+
+varying vec2  modelpos;
+varying float lightintensity;
+
+#define integral(x, p, notp) ((floor(x)*(p)) + max(fract(x)-(notp), 0.0))
+
+void main(void)
+{
+    vec2 position, fw, useBrick;
+    vec3 color;
+ 
+    // Determine position within the brick pattern
+    position = modelpos / bricksize;
+
+    // Adjust every other row by an offset of half a brick
+    if (fract(position.y * 0.5) > 0.5)
+        position.x += 0.5;
+
+    // Calculate filter size
+    fw = fwidth(position);
+  
+    // Perform filtering by integrating the 2D pulse made by the
+    // brick pattern over the filter width and height
+    useBrick = (integral(position + fw, brickpct, mortarpct) - 
+                integral(position, brickpct, mortarpct)) / fw;
+
+    // Determine final color
+    color  = mix(mortarcolor, brickcolor, useBrick.x * useBrick.y);
+    color *= lightintensity;
+    gl_FragColor = vec4 (color, 1.0);
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

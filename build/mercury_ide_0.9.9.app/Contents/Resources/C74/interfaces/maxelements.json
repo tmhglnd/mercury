@@ -1,0 +1,355 @@
+{ "maxelements" :
+	[
+	{
+		"class" : "transactions",
+		"elements" : [
+		{
+			"id" : "insertobject",
+			"label" : "Insert Object"
+		},
+		{
+			"id" : "insertobjects",
+			"label" : "Insert Objects"
+		},
+		{
+			"id" : "removeobject",
+			"label" : "Remove Object"
+		},
+		{
+			"id" : "removeobjects",
+			"label" : "Remove Objects"
+		},
+		{
+			"id" : "movesegment",
+			"label" : "Move Segment"
+		},
+		{
+			"id" : "sizebox",
+			"label" : "Size Box"
+		},
+		{
+			"id" : "sizeboxes",
+			"label" : "Size Boxes"
+		},
+		{
+			"id" : "delete",
+			"label" : "Delete"
+		},
+		{
+			"id" : "delete",
+			"label" : "Delete"
+		},
+		{
+			"id" : "move",
+			"label" : "Move"
+		},
+		{
+			"id" : "movelines",
+			"label" : "Move Lines"
+		},
+		{
+			"id" : "removesegment",
+			"label" : "Remove Segment"
+		},
+		{
+			"id" : "size",
+			"label" : "Size"
+		},
+		{
+			"id" : "saveboxrects",
+			"label" : "Save Box Rects"
+		},
+		{
+			"id" : "setboxrect",
+			"label" : "Set Box Rect"
+		},
+		{
+			"id" : "changezorder",
+			"label" : "Change Z-Order"
+		},
+		{
+			"id" : "typing",
+			"label" : "Typing"
+		},
+		{
+			"id" : "insertline",
+			"label" : "Insert Line"
+		},
+		{
+			"id" : "insertlines",
+			"label" : "Insert Lines"
+		},
+		{
+			"id" : "removeline",
+			"label" : "Remove Line"
+		},
+		{
+			"id" : "removelines",
+			"label" : "Remove Lines"
+		},
+		{
+			"id" : "connect",
+			"label" : "Connect"
+		},
+		{
+			"id" : "replace",
+			"label" : "Replace"
+		},
+		{
+			"id" : "patcherattrchange",
+			"label" : "Patcher Attribute Change"
+		},
+		{
+			"id" : "parameterattrchange",
+			"label" : "Parameter Attribute Change"
+		},
+		{
+			"id" : "attrchange",
+			"label" : "Attribute Change"
+		},
+		{
+			"id" : "pasteattr",
+			"label" : "Paste Attribute"
+		},
+		{
+			"id" : "changefont",
+			"label" : "Change Font"
+		},
+		{
+			"id" : "dragpatcher",
+			"label" : "Drag Patcher"
+		},
+		{
+			"id" : "colorchange",
+			"label" : "Color Change"
+		},
+        {
+            "id" : "stylechange",
+            "label" : "Style Change"
+        },
+        {
+			"id" : "snapshot",
+			"label" : "Snapshot"
+		},
+        {
+			"id" : "restoresnapshot",
+			"label" : "Restore Snapshot"
+		},
+        {
+			"id" : "deletesnapshot",
+			"label" : "Delete Snapshot"
+		},
+        {
+			"id" : "movesnapshot",
+			"label" : "Move Snapshot"
+		},
+        {
+			"id" : "currentsnapshot",
+			"label" : "Current Snapshot"
+		},
+        {
+			"id" : "renamesnapshot",
+			"label" : "Rename Snapshot"
+		},
+        {
+			"id" : "embedsnapshot",
+			"label" : "Embed Snapshot"
+		},
+		{
+			"id" : "parameterbanks_state",
+			"label" : "Parameter Bank Edit"
+		},
+		{
+			"id" : "boxgroup_create",
+			"label" : "Group Objects"
+		},
+		{
+			"id" : "boxgroup_create_wrapper",
+			"label" : "Group Objects"
+		},
+		{
+			"id" : "boxgroup_delete",
+			"label" : "Ungroup Objects"
+		},
+		{
+			"id" : "boxgroup_delete_wrapper",
+			"label" : "Ungroup Objects"
+		},
+		{
+			"id" : "boxgroup_append",
+			"label" : "Append to Group"
+		},
+		{
+			"id" : "boxgroup_remove",
+			"label" : "Remove from Group"
+		},
+		{
+			"id" : "mapping_state",
+			"label" : "Edit Mappings"
+		},
+		{
+			"id" : "mapping_update",
+			"label" : "Edit Mapping"
+		},
+		{
+			"id" : "mapping_update_wrapper",
+			"label" : "Edit Mappings"
+		},
+		{
+			"id" : "mapping_delete",
+			"label" : "Delete Mapping"
+		},
+		{
+			"id" : "mapping_delete_wrapper",
+			"label" : "Delete Mappings"
+		},
+		{
+			"id" : "mapping_create",
+			"label" : "Add Mapping"
+		},
+		{
+			"id" : "mapping_create_wrapper",
+			"label" : "Add Mapping"
+		}
+		]
+	},
+	{
+		"class" : "things",
+		"elements" : [
+		{
+			"id" : "box",
+			"label" : "Box"
+		},
+		{
+			"id" : "boxes",
+			"label" : "Boxes"
+		}
+		]
+	},
+	{
+		"class" : "find",
+		"elements" : [
+		{
+			"id" : "selectall",
+			"label" : "Select All"
+		},
+		{
+			"id" : "prev",
+			"label" : "Prev"
+		},
+		{
+			"id" : "next",
+			"label" : "Next"
+		},
+		{
+			"id" : "done",
+			"label" : "Done"
+		},
+		{
+			"id" : "topresults",
+			"label" : "TopResults"
+		},
+		{
+			"id" : "subpatcherresults",
+			"label" : "SubpatcherResults"
+		}
+		]
+	},
+	{
+		"class" : "colorselector",
+		"elements" : [
+		{
+			"id" : "store",
+			"label" : "store"
+		},
+		{
+			"id" : "load",
+			"label" : "load..."
+		},
+		{
+			"id" : "save",
+			"label" : "save..."
+		}
+		]
+	},
+	{
+		"class" : "dialogs",
+		"elements" : [
+		{
+			"id" : "sendmessage",
+			"label" : "Send Message to"
+		},
+		{
+			"id" : "prototypename",
+			"label" : "Prototype Name"
+		}
+		]
+	},
+	{
+		"class" : "dataview",
+		"elements" : [
+		{
+			"id" : "choose",
+			"label" : "Choose..."
+		},
+		{
+			"id" : "view",
+			"label" : "View"
+		},
+		{
+			"id" : "edit",
+			"label" : "Edit"
+		}
+		]
+	},
+    {
+        "class" : "datenames",
+        "elements" : [
+        {
+        "id" : "today",
+        "label" : "Today"
+        },
+        {
+        "id" : "yesterday",
+        "label" : "Yesterday"
+        },
+        {
+        "id" : "2daysago",
+        "label" : "Two Days Ago"
+        },
+        {
+        "id" : "3daysago",
+        "label" : "Three Days Ago"
+        },
+        {
+        "id" : "4daysago",
+        "label" : "Four Days Ago"
+        },
+        {
+        "id" : "5daysago",
+        "label" : "Five Days Ago"
+        },
+        {
+        "id" : "6daysago",
+        "label" : "Six Days Ago"
+        },
+        {
+        "id" : "7daysago",
+        "label" : "Seven Days Ago"
+        },
+        {
+        "id" : "last2weeks",
+        "label" : "Last Two Weeks"
+        },
+        {
+        "id" : "last30days",
+        "label" : "Last 30 Days"
+        },
+        {
+        "id" : "morethan30days",
+        "label" : "More Than 30 Days Ago"
+        }
+        ]
+    }
+	]
+}

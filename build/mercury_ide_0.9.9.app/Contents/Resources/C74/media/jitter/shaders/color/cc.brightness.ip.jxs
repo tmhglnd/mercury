@@ -1,0 +1,54 @@
+<jittershader name="brightness-interp">
+	<description>Shader for for modifying image brightness by interpolation and extrapolation</description>
+	<param name="image" type="int" default="0" />
+	<param name="alpha" type="float" default="1.0" />
+	<language name="glsl" version="1.0">
+		<bind param="image" program="fp" />
+		<bind param="alpha" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+// Vertex shader for modifying image brightness by
+// interpolation and extrapolation
+//
+// Author: Randi Rost
+//
+// Copyright (c) 2003-2005: 3Dlabs, Inc.
+//
+// See 3Dlabs-License.txt for license information
+//
+
+varying vec2 texcoord;
+
+void main (void)
+{
+    gl_Position = ftransform();
+    texcoord    = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+//
+// Fragment shader for modifying image brightness by
+// interpolation and extrapolation
+//
+// Author: Randi Rost
+//
+// Copyright (c) 2003-2005: 3Dlabs, Inc.
+//
+// See 3Dlabs-License.txt for license information
+//
+
+varying vec2 texcoord;
+uniform float alpha;
+uniform sampler2DRect image;
+
+void main (void)
+{
+    gl_FragColor  = texture2DRect(image, texcoord) * alpha;
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

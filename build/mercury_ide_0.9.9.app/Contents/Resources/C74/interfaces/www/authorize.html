@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="August Black, Cycling '74"/>
+    <style>
+				@font-face {
+					font-family: 'Lato';
+					font-style: normal;
+					font-weight: 400;
+					src: url('../../fonts/Lato-Regular.ttf') format('truetype');
+				}
+        body {
+          background-color: white;
+          height: 100%;
+					font-family: 'Lato', Arial, Helvetica;
+					font-size: 1.0em;
+        	font-weight: 400;
+        }
+        div {
+          margin: 0.5em;
+          padding-bottom: 0.5em;
+        }
+        .offline {
+          padding-bottom: 0.15em;
+        }
+        .hidden {
+          display: none;
+          visibility: hidden;
+        }
+        #noConnectionContainer {
+          margin:2em;
+        }
+        #errorMsg {
+          color: red;
+        }
+        #authStatus {
+          font-size: 1.25rem
+        }
+
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div id="noConnectionContainer" class="hidden">
+      <div id="errorMsg"></div>
+      <div id="authStatus"></div>
+      <div></div>
+      <div class='offline'>Max can't establish an internet connection.</div>
+      <div class='offline'>Check your network settings and try again.</div>
+      <div class='offline'>You will only need a network connection if you are trying to re-authorize Max.</div>
+    </div>
+    <script type="text/javascript" src="js/authorize.js"></script>
+  </body>
+</html>

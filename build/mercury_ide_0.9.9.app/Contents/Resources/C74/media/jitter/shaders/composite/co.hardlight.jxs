@@ -1,0 +1,58 @@
+<jittershader name="hardlight">
+	<description>
+	Hard light composite operator
+	</description>
+	<param name="amount" type="vec4" default="1. 1. 1. 1.">
+		<description>Blend amount</description>
+	</param>
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />	
+	<language name="glsl" version="1.0">
+		<bind param="amount" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthru.xform.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// texcoords
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+// samplers
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+// blend amount
+uniform vec4 amount;
+
+// entry point
+void main()
+{   
+	vec4 one = vec4(1.0);
+	vec4 two = vec4(2.0);
+	vec4 mid = vec4(0.5);
+	vec4 lumcoeff = vec4(0.2125,0.7154,0.0721,0.0);
+
+	vec4 a = texture2DRect(tex0, texcoord0);
+	vec4 b = texture2DRect(tex1, texcoord1);
+
+	vec4 branch1;
+	vec4 branch2;
+	vec4 result;
+	float luminance = dot(b,lumcoeff);
+	float mixamount;
+	
+	mixamount = clamp((luminance - 0.45) * 10., 0., 1.);
+	branch1 = two * a * b;
+	branch2 = one - (two * (one - a) * (one - b));
+
+	result = mix(branch1,branch2,vec4(mixamount));
+
+	gl_FragColor = mix(a,result,amount);
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>

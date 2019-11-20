@@ -1,0 +1,21 @@
+{
+	"diffuse_model" : "minnaert",
+	"specular_model" : "blinn",
+	"fog" : "none",
+	"params" : 	{
+		"darkness" : 1.0
+	}
+,
+	"textures" : 	{
+
+	}
+,
+	"filename" : "red.velvet.jitmtl",
+	"color" : [ 1.0, 0.0, 0.18143, 1.0 ],
+	"mat_emission" : [ 0.0, 0.0, 0.0, 1.0 ],
+	"mat_ambient" : [ 0.0, 0.0, 0.0, 1.0 ],
+	"mat_diffuse" : [ 1.0, 0.0, 0.18143, 1.0 ],
+	"mat_specular" : [ 0.128954, 0.128954, 0.128954, 1.0 ],
+	"shininess" : [ 98.0 ],
+	"fog_params" : [ 0.5, 0.5, 0.5, 0.0, 1.0, 1.0, 100.0 ]
+}

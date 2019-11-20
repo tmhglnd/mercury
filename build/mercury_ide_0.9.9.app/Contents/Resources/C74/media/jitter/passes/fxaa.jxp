@@ -1,0 +1,7 @@
+<jitterpass>
+	<pass name="fxaa">
+		<subpass file="mrt.fxaa.jxs" output="COLOR">
+			<input source="COLOR" />
+		</subpass>
+	</pass>
+</jitterpass>

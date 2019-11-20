@@ -1,0 +1,11 @@
+{
+	"default" : 	{
+		"elementcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+		"bgcolor" : [ 0.654902, 0.572549, 0.376471, 1.0 ],
+		"color" : [ 0.0, 0.0, 0.0, 1.0 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "multisliderGold&Black",
+	"multi" : 0
+}

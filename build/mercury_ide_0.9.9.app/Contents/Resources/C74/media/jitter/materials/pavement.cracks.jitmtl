@@ -1,0 +1,35 @@
+{
+	"diffuse_model" : "oren_nayer",
+	"specular_model" : "phong",
+	"tex_diffuse" : 1,
+	"fog" : "none",
+	"params" : 	{
+		"diffuse" : 0,
+		"roughness" : 0.09
+	}
+,
+	"textures" : 	{
+		"diffuse" : 		{
+			"type" : "char",
+			"colormode" : "auto",
+			"rectangle" : 1,
+			"correction" : "nicest",
+			"filter" : "linear",
+			"mipmap" : "none",
+			"texgen" : "",
+			"wrap" : [ "clampedge", "clampedge", "clampedge" ],
+			"bordercolor" : [ 0.5, 0.5, 0.5, 1.0 ],
+			"anisotropy" : 0
+		}
+
+	}
+,
+	"filename" : "pavement.cracks.jitmtl",
+	"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+	"mat_emission" : [ 0.0, 0.0, 0.0, 1.0 ],
+	"mat_ambient" : [ 0.143648, 0.14374, 0.143618, 1.0 ],
+	"mat_diffuse" : [ 1.0, 1.0, 1.0, 1.0 ],
+	"mat_specular" : [ 0.0, 0.0, 0.0, 1.0 ],
+	"shininess" : [ 133.0 ],
+	"fog_params" : [ 0.5, 0.5, 0.5, 0.0, 1.0, 1.0, 100.0 ]
+}

@@ -1,0 +1,68 @@
+<jittershader name="resample">
+	<description>
+	 shader for performing srcdim/dstdim operations
+	</description>
+	<param name="srcdim" type="vec4" default="0. 0. 1. 1.">
+		<description>define source dimensions to use</description>
+	</param>
+	<param name="dstdim" type="vec4" default="0. 0. 1. 1.">
+		<description>define destination dimensions to use</description>
+	</param>
+	<param name="interp" type="float" default="0.">
+		<description>interpolation on/off</description>
+	</param>
+	<param name="tex0" type="int" default="0" />	
+	<language name="glsl" version="1.0">
+		<bind param="dstdim" program="fp" />
+		<bind param="srcdim" program="fp" />
+		<bind param="interp" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// Andrew Benson - andrewb@cycling74.com
+//Copyright 2006 - Cycling '74
+
+//fragment shader for performing texture resampling, using srcdim/dstdim messages
+
+// texcoords
+varying vec2 texcoord0;
+varying vec2 texdim0;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// resample dimensions
+uniform vec4 srcdim;
+uniform vec4 dstdim;
+uniform float interp;
+
+// entry point
+void main()
+{
+	vec4 sm = clamp(srcdim,0.,1.)*vec4(texdim0.xyxy);
+	vec4 dm = dstdim*vec4(texdim0.xyxy);
+
+	//redefine texcoords based on dstdim
+	vec2 scale = vec2(dm.zw-dm.xy);
+	vec2 off = vec2(texcoord0-dm.xy);
+
+	//normalize texcoords using dstdim
+	vec2 norm = vec2(off/scale);
+	
+	//define range of srcdim
+	vec2 range = vec2 (sm.z-sm.x,sm.w-sm.y);
+
+	//set to new range using srcdim_xy as offset
+	vec2 use = vec2 (norm*range+sm.xy);
+	bool bnd = all(bvec4(texcoord0.x>dm.x,texcoord0.x<dm.z,texcoord0.y>dm.y,texcoord0.y<dm.w));
+	
+	gl_FragColor = texture2DRect(tex0,mix(floor(use),use,interp))*float(bnd);
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>

@@ -1,0 +1,108 @@
+<jittershader name="spiderweb">
+	<param name="cRadialWebs" type="float" default="10" />
+	<param name="cCrossWebs" type="float" default="20" />
+	<param name="rWebDiam" type="float" default="0.002" />
+	<param name="rWebCenterT" type="float" default="0.5" />
+	<param name="rWebCenterS" type="float" default="0.5" />
+	<language name="glsl" version="1.0">
+		<bind param="cRadialWebs" program="spiderweb" />
+		<bind param="cCrossWebs" program="spiderweb" />
+		<bind param="rWebDiam" program="spiderweb" />
+		<bind param="rWebCenterT" program="spiderweb" />
+		<bind param="rWebCenterS" program="spiderweb" />
+		<program name="basic" type="vertex" source="sh.basic.vp.glsl" />
+		<program name="spiderweb" type="fragment">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2003, ATI Technologies, Inc., All rights reserved.
+//
+// Permission to use, copy, modify, and distribute this software and its 
+// documentation for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appear in all copies and derivative
+// works and that both the copyright notice and this permission notice appear in
+// support documentation, and that the name of ATI Technologies, Inc. not be used
+// in advertising or publicity pertaining to distribution of the software without
+// specific, written prior permission.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+// vertex to fragment shader io
+varying vec4 T;
+varying vec4 Cs;
+
+// globals
+uniform float cRadialWebs;
+uniform float cCrossWebs;
+uniform float rWebDiam;
+uniform float rWebCenterT;
+uniform float rWebCenterS;
+
+// sqr function
+float
+sqr(float x)
+{	
+	return x*x; 
+}
+
+// dist function
+float dist (float x, float y)
+{
+	return (sqrt(sqr(x)+sqr(y)));
+}
+
+// gaussian function
+float Gaussian(float x, float m, float s)
+{
+	return (exp2(-sqr(x-m)/sqr(s) * 0.693147));
+}
+
+// entry point
+void
+main()
+{
+	float s = T[0], t = T[1];
+	float TT=t-rWebCenterT;
+	float SS=s-rWebCenterS;
+
+	float rRadius = dist(SS,TT);
+	float rAngle=atan(TT, SS);
+
+	float rAngleStep=2.0*3.141592/cRadialWebs;
+	float rDist;
+
+  	float rAccum=0.0;
+	float cRadSeg;
+	float cCrossSeg;
+
+	/* Calculate which radial section its in */
+	cRadSeg=floor(rAngle/rAngleStep);
+
+	/* Color Radial Webs */
+	rAccum+=Gaussian(rAngle, cRadSeg*rAngleStep, rWebDiam / rRadius);
+	rAccum+=Gaussian(rAngle, mod((cRadSeg+1.0),cRadialWebs)*rAngleStep, rWebDiam / rRadius);
+                  
+	rDist=(SS * cos((cRadSeg+0.5)*rAngleStep) +
+				TT * sin((cRadSeg+.5)*rAngleStep));                   
+
+	/* Calculate which cross section its in */
+	cCrossSeg=floor(rDist * cCrossWebs / 2.0);
+                  
+	/* Color Tangential Webs */
+	rAccum+=Gaussian(rDist, cCrossSeg/cCrossWebs * 2.0, rWebDiam / rRadius);
+
+                 
+	rAccum+=Gaussian(rDist, (cCrossSeg+1.0)/cCrossWebs*2.0, rWebDiam / rRadius);
+
+
+	/* clamp to [0,1] */
+	rAccum=clamp(rAccum,0.0,1.0);
+
+	gl_FragColor = mix(vec4 (0,0,0,0), Cs, rAccum);
+	gl_FragColor[3] = rAccum;
+
+}
+]]>
+		</program>
+	</language>
+</jittershader>

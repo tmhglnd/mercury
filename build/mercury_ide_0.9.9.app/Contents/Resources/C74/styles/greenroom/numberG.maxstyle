@@ -1,0 +1,9 @@
+{
+	"default" : 	{
+		"elementcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "numberG",
+	"multi" : 0
+}

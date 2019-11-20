@@ -1,0 +1,134 @@
+<jittershader name="uyvy2rgba.exp">
+	<description>
+	converts packed uyvy data as rgba data to full chroma rgba data
+	</description>
+	<param name="chromasmooth" type="float" default="1." />
+	<param name="brightness" type="float" default="1." />
+	<param name="contrast" type="float" default="1." />
+	<param name="saturation" type="float" default="1." />
+	<param name="exponent" type="float" default="1." />
+	<param name="scale" type="vec4" default="1. 1. 1. 1." />
+	<param name="bias" type="vec4" default="0. 0. 0. 0." />
+	<language name="glsl" version="1.0">
+		<bind param="chromasmooth" program="fp" />
+		<bind param="brightness" program="fp" />
+		<bind param="contrast" program="fp" />
+		<bind param="saturation" program="fp" />
+		<bind param="exponent" program="fp" />
+		<bind param="scale" program="fp" />
+		<bind param="bias" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthru.xform.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// texcoords
+varying vec2 texcoord0;
+
+// parameters
+uniform float chromasmooth;
+uniform float brightness;
+uniform float contrast;
+uniform float saturation;
+uniform float exponent;
+uniform vec4 scale;
+uniform vec4 bias;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// entry point
+void main()
+{   
+	// round to nearest pixel centered coordinates 
+	// (reason for adding 0.5 to account for GL_LINEAR)
+	vec2 coord_left = vec2(floor(texcoord0.x)+0.5,texcoord0.y);
+	vec2 coord_right = vec2(floor(texcoord0.x+1.)+0.5,texcoord0.y);
+	vec2 coord_frak = (texcoord0 - coord_left);
+	
+	// sample uyvy data points (are actually yvyu since to argb => rgba)
+	vec4 yvyu_left = texture2DRect(tex0, coord_left);
+	vec4 yvyu_right = texture2DRect(tex0, coord_right);
+
+	vec3 yuv_val;
+	float y0,y1;
+	vec4 rgba_val;	
+
+	// uninterpolated luminance from left (y0) and right (y1) 
+	// luminance samples within the single macro pixel 
+	y0 = yvyu_left.x;
+	y1 = yvyu_left.z;
+
+	// pick appropriate luminance sample for our pixel coord	
+	yuv_val.x = mix(y0,y1,float(coord_frak.x>=0.));
+
+	// grab appropriate chroma sample with smoothing if turned on
+	yuv_val.zy = mix(yvyu_left.yw,yvyu_right.yw,vec2(0.5));
+	yuv_val.zy = mix(yvyu_left.yw,yuv_val.zy,vec2(coord_frak.x>=0.&&chromasmooth>0.5));
+
+/*
+	CCIR 601/ITU-R. more info on http://www.fourcc.org
+	Y: 0. - 1. normalized to the range (16-235)
+	U/V(Cb/Cr): -0.5 - 0.5 to the range (0-255), 
+	though UV looks like it's not using full range 
+	here in QT, so we're doing some extra scaling (16-242)
+
+	Y  = 0.299R + 0.587G + 0.114B
+	Cb = (B-Y)*0.565
+	Cr = (R-Y)*0.713
+
+	with reciprocal versions:
+	R = Y + 1.403Cr
+	G = Y - 0.344Cb - 0.714Cr
+	B = Y + 1.770Cb	
+
+	the following could be made more efficient
+	by concatenating some mathematical operations, 
+	but left as is for illustration/simplicity.
+
+*/		
+
+	// normalize YUV data to appropriate range
+	// Y: 0. - 1. normalized to the range (16-235)	
+	// U: normalized to the range (16-242)	
+	// V:  normalized to the range (16-242)	
+	yuv_val = yuv_val * vec3(1.164,1.128,1.128)-vec3(0.0628); 
+
+	// apply brightness, contrast saturation in YUV 
+	// (equivalent to following)
+	//	yuv_val.x = ((yuv_val.x+(brightness-1.))-0.5)*contrast+0.5;
+	//	yuv_val.y = (yuv_val.y-0.5)*saturation; 	// U(Cb): -0.5 - 0.5 
+	//	yuv_val.z = (yuv_val.z-0.5)*saturation; 	// V(Cr): -0.5 - 0.5 
+	yuv_val = (yuv_val + vec3(brightness-1.5,-0.5,-0.5))  
+				* vec3(contrast,saturation,saturation)
+				+ vec3(0.5,0.,0.);
+	
+	// YUV to RGB colorspace conversion
+	// (equivalent to following)
+	//rgba_val.r = yuv_val.x + 1.403*yuv_val.z;
+	//rgba_val.g = yuv_val.x - 0.344*yuv_val.y - 0.714*yuv_val.z;
+	//rgba_val.b = yuv_val.x + 1.770*yuv_val.y;
+	rgba_val.r = dot(yuv_val,vec3(1.,0.,1.403));
+	rgba_val.g = dot(yuv_val,vec3(1.,-0.344,-0.714));
+	rgba_val.b = dot(yuv_val,vec3(1.,1.770,0.));
+	
+	// apply scale, bias and then exponent in RGB
+	rgba_val = rgba_val*scale+bias;
+	// the following exponential mapping can be expensive on some GPUs. 
+	rgba_val = pow(max(rgba_val,vec4(0.)),vec4(exponent)); 
+
+	// set alpha to one
+	rgba_val.a = 1.;
+	
+	gl_FragColor = rgba_val;
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+{
+	"keymap" : 	{
+		"a" : "move -1 0 0",
+		"d" : "move 1 0 0",
+		"z" : "move 0 -1 0",
+		"q" : "move 0 1 0",
+		"w" : "move 0 0 -1",
+		"s" : "move 0 0 1"
+	}
+,
+	"mousemap" : 	{
+		"mouse_down_horizontal" : "turn 0 -1 0",
+		"mouse_down_vertical" : "turn -1 0 0"
+	}
+
+}

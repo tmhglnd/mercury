@@ -1,0 +1,47 @@
+<jittershader name="sharpen">
+	<description>
+	A simple sharpen filter
+	</description>
+	
+	<param name="width" type="float" default="0.">
+		<description>Width of image</description>
+	</param>	
+
+	<language name="glsl" version="1.0">
+		<bind param="width" program="vp" />
+		<program name="vp" type="vertex" source="cf.diag5.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a simple 5-tap sharpen filter.
+ *
+ */
+ 
+uniform sampler2DRect image;
+
+varying vec2 texcoord11;
+varying vec2 texcoord00;
+varying vec2 texcoord02;
+varying vec2 texcoord20;
+varying vec2 texcoord22;
+
+void main()
+{
+	vec4 s11 = texture2DRect(image, texcoord11);
+	vec4 s00 = texture2DRect(image, texcoord00);
+	vec4 s02 = texture2DRect(image, texcoord02);
+	vec4 s20 = texture2DRect(image, texcoord20);
+	vec4 s22 = texture2DRect(image, texcoord22);
+
+	vec4 sharp = 5.0 * s11 - (s00 + s02 + s20 + s22);
+
+	gl_FragColor = sharp;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

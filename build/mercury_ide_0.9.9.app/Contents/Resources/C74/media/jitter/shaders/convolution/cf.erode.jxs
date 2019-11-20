@@ -1,0 +1,51 @@
+<jittershader name="erode">
+	<description>
+	A simple 9-tap erode filter
+	</description>
+	<param name="width" type="float" default="2">
+		<description>Width of filter</description>
+	</param>	
+	<language name="glsl" version="1.0">
+		<bind param="width" program="vp" />
+		<program name="vp" type="vertex" source="cf.box8.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a simple erode filter.
+ *
+ */
+ 
+uniform sampler2DRect image;
+
+varying vec2 texcoord00;
+varying vec2 texcoord01;
+varying vec2 texcoord02;
+varying vec2 texcoord10;
+varying vec2 texcoord12;
+varying vec2 texcoord20;
+varying vec2 texcoord21;
+varying vec2 texcoord22;
+
+void main()
+{
+	vec4 erode = texture2DRect(image, 0.5 * (texcoord10 + texcoord12));
+	
+	erode = min(erode, texture2DRect(image, texcoord00));
+	erode = min(erode, texture2DRect(image, texcoord01));
+	erode = min(erode, texture2DRect(image, texcoord02));
+	erode = min(erode, texture2DRect(image, texcoord10));
+	erode = min(erode, texture2DRect(image, texcoord12));
+	erode = min(erode, texture2DRect(image, texcoord20));
+	erode = min(erode, texture2DRect(image, texcoord21));
+	erode = min(erode, texture2DRect(image, texcoord22));
+
+	gl_FragColor = erode;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

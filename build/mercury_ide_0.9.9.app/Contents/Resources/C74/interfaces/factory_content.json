@@ -1,0 +1,641 @@
+{
+  "collections": [
+    {
+      "name": "Examples",
+      "type": "container",
+      "contents": [
+        {
+          "name": "effects",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/effects\""
+          ]
+        },
+        {
+          "name": "fft-fun",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/fft-fun\""
+          ]
+        },
+        {
+          "name": "filters",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/filters\""
+          ]
+        },
+        {
+          "name": "gen",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/gen\""
+          ]
+        },
+        {
+          "name": "interface",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/interface\""
+          ]
+        },
+        {
+          "name": "javascript",
+          "type": "container",
+          "contents": [
+            {
+              "name": "dict",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/dict\""
+              ]
+            },
+            {
+              "name": "file",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/file\""
+              ]
+            },
+            {
+              "name": "jspainter",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/jspainter\""
+              ]
+            },
+            {
+              "name": "jsrequire",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/jsrequire\""
+              ]
+            },
+            {
+              "name": "lists+strings",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/lists+strings\""
+              ]
+            },
+            {
+              "name": "math",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/math\""
+              ]
+            },
+            {
+              "name": "patcher-scripting",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/patcher-scripting\""
+              ]
+            },
+            {
+              "name": "simulation",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/simulation\""
+              ]
+            },
+            {
+              "name": "snapshots",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/snapshots\""
+              ]
+            },
+            {
+              "name": "ui",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/ui\""
+              ]
+            },
+            {
+              "name": "ui-canvas",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/ui-canvas\""
+              ]
+            },
+            {
+              "name": "ui-mgraphics",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/javascript/ui-mgraphics\""
+              ]
+            }
+          ]
+        },
+        {
+          "name": "jitter-examples",
+          "type": "container",
+          "contents": [
+            {
+              "name": "3rd_Party",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/3rd_Party\""
+              ]
+            },
+            {
+              "name": "audio",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/audio\""
+              ]
+            },
+            {
+              "name": "demos",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/demos\""
+              ]
+            },
+            {
+              "name": "gen",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/gen\""
+              ]
+            },
+            {
+              "name": "java",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/java\""
+              ]
+            },
+            {
+              "name": "javascript",
+              "type": "container",
+              "contents": [
+                {
+                  "name": "matrix",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/javascript/matrix\""
+                  ]
+                },
+                {
+                  "name": "other",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/javascript/other\""
+                  ]
+                },
+                {
+                  "name": "render",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/javascript/render\""
+                  ]
+                },
+                {
+                  "name": "ui",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/javascript/ui\""
+                  ]
+                },
+                {
+                  "name": "video",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/javascript/video\""
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "materials",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/materials\""
+              ]
+            },
+            {
+              "name": "other",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/other\""
+              ]
+            },
+            {
+              "name": "overview",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/overview\""
+              ]
+            },
+            {
+              "name": "render",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/jitter-examples/render\""
+              ]
+            },
+            {
+              "name": "video",
+              "type": "container",
+              "contents": [
+                {
+                  "name": "analysis",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/analysis\""
+                  ]
+                },
+                {
+                  "name": "color",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/color\""
+                  ]
+                },
+                {
+                  "name": "keying",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/keying\""
+                  ]
+                },
+                {
+                  "name": "matrix",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/matrix\""
+                  ]
+                },
+                {
+                  "name": "misc",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/misc\""
+                  ]
+                },
+                {
+                  "name": "op",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/op\""
+                  ]
+                },
+                {
+                  "name": "quicktime",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/quicktime\""
+                  ]
+                },
+                {
+                  "name": "spatial",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/spatial\""
+                  ]
+                },
+                {
+                  "name": "uyvy",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/jitter-examples/video/uyvy\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "legacy-examples",
+          "type": "container",
+          "contents": [
+            {
+              "name": "5-point-1-fun",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/legacy-examples/5-point-1-fun\""
+              ]
+            },
+            {
+              "name": "effects",
+              "type": "container",
+              "contents": [
+                {
+                  "name": "reverb",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/legacy-examples/effects/reverb\""
+                  ]
+                },
+                {
+                  "name": "signal-limiter",
+                  "type": "query",
+                  "contents": [
+                    "path:\"Max 8/Examples/legacy-examples/effects/signal-limiter\""
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "modsquad-history",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/legacy-examples/modsquad-history\""
+              ]
+            },
+            {
+              "name": "old-school-fft",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/legacy-examples/old-school-fft\""
+              ]
+            },
+            {
+              "name": "recycler-folder",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/legacy-examples/recycler-folder\""
+              ]
+            },
+            {
+              "name": "repeated notes",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/legacy-examples/repeated notes\""
+              ]
+            },
+            {
+              "name": "synths",
+              "type": "query",
+              "contents": [
+                "path:\"Max 8/Examples/legacy-examples/synths\""
+              ]
+            }
+          ]
+        },
+        {
+          "name": "max-tricks",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/max-tricks\""
+          ]
+        },
+        {
+          "name": "mc",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/mc\""
+          ]
+        },
+        {
+          "name": "pitch and time",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/pitch and time\""
+          ]
+        },
+        {
+          "name": "sampling",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/sampling\""
+          ]
+        },
+        {
+          "name": "sequencing-looping",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/sequencing-looping\""
+          ]
+        },
+        {
+          "name": "spatialization",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/spatialization\""
+          ]
+        },
+        {
+          "name": "synths",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/synths\""
+          ]
+        },
+        {
+          "name": "utilities",
+          "type": "query",
+          "contents": [
+            "path:\"Max 8/Examples/utilities\""
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tutorials",
+      "type": "container",
+      "contents": [
+        {
+          "name": "Max Tutorials",
+          "type": "query",
+          "contents": [
+            "package:max AND kind:tutorial"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        },
+        {
+          "name": "MSP Tutorials",
+          "type": "query",
+          "contents": [
+            "package:msp AND kind:tutorial"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        },
+        {
+          "name": "Jitter Tutorials",
+          "type": "query",
+          "contents": [
+            "package:jitter AND kind:tutorial"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Media Files",
+      "type": "container",
+      "contents": [
+        {
+          "name": "Audio Files",
+          "type": "query",
+          "contents": [
+            "kind:audiofile AND path:\"C74:\""
+          ],
+          "columns": [
+            "name",
+            "description",
+            "tags"
+          ]
+        },
+        {
+          "name": "Image Files",
+          "type": "query",
+          "contents": [
+            "kind:imagefile AND path:\"C74:\""
+          ],
+          "columns": [
+            "name",
+            "description",
+            "tags"
+          ]
+        },
+        {
+          "name": "Video Files",
+          "type": "query",
+          "contents": [
+            "kind:video AND path:\"C74:\""
+          ],
+          "columns": [
+            "name",
+            "description",
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jitter",
+      "type": "container",
+      "contents": [
+        {
+          "name": "Jitter Materials",
+          "type": "query",
+          "contents": [
+            "package:jitter",
+            "kind:material"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        },
+        {
+          "name": "Models",
+          "type": "query",
+          "contents": [
+            "package:jitter",
+            "kind:model"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        },
+        {
+          "name": "Passes",
+          "type": "query",
+          "contents": [
+            "package:jitter",
+            "kind:pass"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        },
+        {
+          "name": "Shaders",
+          "type": "query",
+          "contents": [
+            "package:jitter",
+            "kind:shader"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gen",
+      "type": "container",
+      "contents": [
+        {
+          "name": "Gen DSP",
+          "type": "query",
+          "contents": [
+            "tag:(c74example gen dsp) AND kind:gen"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        },
+        {
+          "name": "Gen Jitter",
+          "type": "query",
+          "contents": [
+            "tag:(c74example gen jitter) AND kind:gen"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Javascript",
+      "type": "container",
+      "contents": [
+        {
+          "name": "js Operators",
+          "type": "query",
+          "contents": [
+            "package:(Max OR Jitter) kind:javascript NOT location:jsui"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        },
+        {
+          "name": "jsui Interfaces",
+          "type": "query",
+          "contents": [
+            "package:(Max OR Jitter) kind:javascript AND location:jsui"
+          ],
+          "columns": [
+            "name",
+            "tags"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Java Resources",
+      "type": "query",
+      "contents": [
+        "location:C74:/java"
+      ],
+      "columns": [
+        "name",
+        "description",
+        "tags"
+      ]
+    }
+  ]
+}

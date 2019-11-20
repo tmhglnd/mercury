@@ -1,0 +1,10 @@
+{
+	"default" : 	{
+		"elementcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+		"fontsize" : [ 12.059008 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "newobjYellow",
+	"multi" : 0
+}

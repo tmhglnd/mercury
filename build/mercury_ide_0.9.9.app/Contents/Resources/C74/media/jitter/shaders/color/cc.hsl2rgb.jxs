@@ -1,0 +1,81 @@
+<jittershader name="contrast-interp">
+	<description>Shader for for modifying image contrast by interpolation and extrapolation</description>
+	<param name="tex0" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="tex0" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec2 texcoord0;
+
+void main() {
+    gl_Position = ftransform();
+    texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec2 texcoord0;
+uniform sampler2DRect tex0;
+
+float rgbhue(float v1, float v2, float h) {
+	if(h < 0.) {
+		h += 1.;
+	}
+	else if(h > 1.) {
+		h -= 1.;
+	}
+	if((6.*h) < 1.) {
+		return v1+(v2-v1)*6.*h;
+	}
+	else if((2.*h) < 1.) {
+		return v2;
+	}
+	else if((3.*h) < 2.) {
+		return v1+(v2-v1)*(0.6666666666667-h)*6.;
+	}
+	return v1;
+}
+
+vec3 hsl2rgb(vec3 hsl) {
+	vec3 vrgb;
+	if(hsl.y == 0.) {
+		vrgb.x = hsl.z;
+		vrgb.y = hsl.z;
+		vrgb.z = hsl.z;
+	}
+	else {
+		float v2;
+		if(hsl.z < 0.5 ) {
+			v2 = hsl.z*(1.+hsl.y);
+		}
+		else {
+			v2 = (hsl.z+hsl.y) - (hsl.y*hsl.z);
+		}
+
+		float v1 = 2.*hsl.z-v2;
+
+		vrgb.x = rgbhue(v1, v2, hsl.x+0.3333333333333);
+		vrgb.y = rgbhue(v1, v2, hsl.x);
+		vrgb.z = rgbhue(v1, v2, hsl.x-0.3333333333333);
+	}
+	return vrgb;
+}
+
+vec4 hsl2rgb(vec4 hsla) {
+	vec4 vrgba;
+	vrgba.rgb = hsl2rgb(hsla.rgb);
+	vrgba.a = hsla.a;
+	return vrgba;
+}
+
+void main() {
+	vec4 hsla = texture2DRect(tex0, texcoord0);
+	gl_FragColor = hsl2rgb(hsla);
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

@@ -1,0 +1,79 @@
+<jittershader name="phong-glsl">
+	<description>Shader Phong per-pixel lighting in GLSL</description>
+	<param name="Ia" type="vec4" default="0. 0. 0. 1.0" />
+	<param name="Ii" type="vec4" default="1. 1. 1. 1.0" />
+	<param name="eyePosition" type="vec3" default="0. 0. 4."/>
+	<param name="Ke" type="vec4" default="0.0 0.0 0.0 0.0" />
+	<param name="Ka" type="vec4" default="1.0 1.0 1.0 1.0" />
+	<param name="Kd" type="vec4" default="0.3 0.3 0.3 1.0" />
+	<param name="Ks" type="vec4" default="1.0 1.0 1.0 1.0" />
+	<param name="Ns" type="float" default="10." />
+	<language name="glsl" version="1.0">
+		<bind param="Ia" program="fp" />
+		<bind param="Ii" program="fp" />
+		<bind param="eyePosition" program="fp" />
+		<bind param="Ka" program="fp" />
+		<bind param="Kd" program="fp" />
+		<bind param="Ks" program="fp" />
+		<bind param="Ns" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec3 N;
+varying vec3 P;
+
+void main (void)
+
+{
+	//get the vertices into eye space
+	P = (gl_ModelViewMatrix*gl_Vertex).xyz;
+
+	//get the normals into eye space
+	N = normalize(gl_Normal);
+	N = mat3(	gl_ModelViewMatrixInverseTranspose[0].xyz, 
+				gl_ModelViewMatrixInverseTranspose[1].xyz,
+				gl_ModelViewMatrixInverseTranspose[2].xyz)*N;
+	
+	gl_Position = ftransform();
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+uniform vec4 Ia;
+uniform vec4 Ii;
+uniform vec3 eyePosition;
+uniform vec4 Ke;
+uniform vec4 Ka;
+uniform vec4 Kd;
+uniform vec4 Ks;
+uniform float Ns;
+
+varying vec3 N;
+varying vec3 P;
+
+void main (void)
+{
+	vec3 Nn = normalize(N);
+	
+	//ambient contribution
+	vec4 ambient = Ia*Ka;
+	
+	vec3 lightPosition = vec3(gl_LightSource[0].position);
+	
+	//diffuse contribution
+	vec3 L = normalize(lightPosition - P);
+	vec4 diffuse = Kd*Ii*max(dot(Nn, L), 0.);
+	
+	//calculate specular contribution
+	vec3 V = normalize(eyePosition - P);
+	vec3 H = normalize(L + V); //average of lighting and view vector)  not true reflection vector
+	vec4 specular = Ks*Ii * pow(max(dot(Nn,H), 0.), Ns);
+	
+	gl_FragColor = Ke + ambient + diffuse + specular;
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

@@ -1,0 +1,9 @@
+{ "categories" : [
+	{ "name" : "Buttons",
+	"color" : [0.718, 0.827, 0.878, 1.0],
+	"say_objects" : 0,
+	"primary_classes" : ["button", "toggle", "textbutton", "tab", "ubutton", "gswitch", "gswitch2", "incdec", "led", "matrixctrl", "playbar", "pictctrl", "radiogroup"],
+	"secondary_classes" : []
+	}
+	]
+}

@@ -1,0 +1,33 @@
+<jittershader name="hdr.tonemap.jxs">
+	<param name="tex_color" type="int" default="0" />
+	<param name="tex_bloom" type="int" default="1" />
+	<param name="bloom_amt" type="float" default="1.0" />	
+	<language name="glsl" version="1.2">
+		<bind param="tex_color" program="fp" />
+		<bind param="tex_bloom" program="fp" />
+		<bind param="bloom_amt" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+#version 120
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+uniform sampler2DRect tex_color;
+uniform sampler2DRect tex_bloom;
+uniform float bloom_amt;
+
+void main()
+{
+	vec4 texcolor = texture2DRect(tex_color, texcoord0);
+	vec3 bloomcolor = texture2DRect(tex_bloom, texcoord1).rgb;
+	vec3 color = texcolor.rgb;
+
+	color += (bloomcolor*bloom_amt);
+	gl_FragColor = vec4(color, texcolor.a);
+}
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

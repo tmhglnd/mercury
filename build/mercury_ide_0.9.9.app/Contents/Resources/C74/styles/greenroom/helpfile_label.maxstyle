@@ -1,0 +1,8 @@
+{
+	"default" : 	{
+		"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+	}
+,
+	"name" : "helpfile_label",
+	"multi" : 0
+}

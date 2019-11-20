@@ -1,0 +1,86 @@
+<jittershader name="uyvy2rgba.lite">
+	<description>
+	converts packed uyvy data as rgba data to full chroma rgba data
+	</description>
+	<language name="glsl" version="1.0">
+		<program name="vp" type="vertex" source="sh.passthru.xform.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// texcoords
+varying vec2 texcoord0;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// entry point
+void main()
+{   
+	// round to nearest pixel centered coordinates 
+	// (reason for adding 0.5 to account for GL_LINEAR)
+	vec2 coord_left = vec2(floor(texcoord0.x)+0.5,texcoord0.y);
+	vec2 coord_frak = (texcoord0 - coord_left);
+	
+	// sample uyvy data points (are actually yvyu since to argb => rgba)
+	vec4 yvyu_left = texture2DRect(tex0, coord_left);
+
+	vec3 yuv_val;
+	float y0,y1;
+	vec4 rgba_val;	
+
+	// uninterpolated luminance from left (y0) and right (y1) 
+	// luminance samples within the single macro pixel 
+	y0 = yvyu_left.x;
+	y1 = yvyu_left.z;
+
+	// pick appropriate luminance sample for our pixel coord	
+	yuv_val.x = mix(y0,y1,float(coord_frak.x>=0.));
+
+	// grab chroma sample (no smoothing)
+	yuv_val.zy = yvyu_left.yw;
+
+/*
+	CCIR 601/ITU-R. more info on http://www.fourcc.org
+	Y: 0. - 1. normalized to the range (16-235)
+	U/V(Cb/Cr): -0.5 - 0.5 to the range (0-255), 
+	though UV looks like it's not using full range 
+	here in QT, so we're doing some extra scaling (16-242)
+
+	Y  = 0.299R + 0.587G + 0.114B
+	Cb = (B-Y)*0.565
+	Cr = (R-Y)*0.713
+
+	with reciprocal versions:
+	R = Y + 1.403Cr
+	G = Y - 0.344Cb - 0.714Cr
+	B = Y + 1.770Cb	
+
+*/		
+
+	// normalize YUV data to appropriate range
+	// Y: 0. to 1. normalized to the range (16-235)	
+	// U: -0.5 to 0.5 normalized to the range (16-242)
+	// V: -0.5 to 0.5 normalized to the range (16-242)
+	yuv_val = yuv_val * vec3(1.164,1.128,1.128)-vec3(0.0628,0.5628,0.5628); 
+
+	// YUV to RGB colorspace conversion
+	rgba_val.r = dot(yuv_val,vec3(1.,0.,1.403));
+	rgba_val.g = dot(yuv_val,vec3(1.,-0.344,-0.714));
+	rgba_val.b = dot(yuv_val,vec3(1.,1.770,0.));
+	
+	// set alpha to one
+	rgba_val.a = 1.;
+	
+	gl_FragColor = rgba_val;
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+newmtl default
+	Ns 32
+	d 1
+	illum 2
+	Kd 0.4 0.4 0.4
+	Ks 0.7 0.7 0.7
+	Ka 0.3 0.3 0.3
+
+newmtl gris_poubelle
+	Ns 25
+	d 1
+	illum 2
+	Kd 0.401961 0.401961 0.401961
+	Ks 0.9 0.9 0.9
+	Ka 0.121569 0.121569 0.121569
+	map_Kd rustbin.jpg
+

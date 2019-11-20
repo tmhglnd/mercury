@@ -1,0 +1,52 @@
+<jittershader name="laplace">
+	<description>
+	A simple laplace filter
+	</description>
+	
+	<param name="width" type="float" default="2.">
+		<description>Width of filter</description>
+	</param>	
+	<param name="offset" type="vec4" default="0.5 0.5 0.5 0.5">
+		<description>Offset</description>
+	</param>
+
+	<language name="glsl" version="1.0">
+		<bind param="offset" program="vp" />
+		<bind param="width" program="vp" />
+		<program name="vp" type="vertex" source="cf.cross5.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a simple laplace filter.
+ *
+ */
+
+uniform sampler2DRect image;
+uniform vec4 offset;
+
+varying vec2 texcoord01;
+varying vec2 texcoord10;
+varying vec2 texcoord11;
+varying vec2 texcoord12;
+varying vec2 texcoord21;
+
+void main()
+{
+	vec4 f01 = texture2DRect(image, texcoord01);
+	vec4 f10 = texture2DRect(image, texcoord10);
+	vec4 f11 = texture2DRect(image, texcoord11);
+	vec4 f12 = texture2DRect(image, texcoord12);
+	vec4 f21 = texture2DRect(image, texcoord21);
+
+	vec4 laplace = 4.0 * f11 - f01 - f10 - f12 - f21;
+
+	gl_FragColor = laplace + offset;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

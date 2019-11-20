@@ -1,0 +1,15 @@
+Aneurism Volume Dataset
+
+COURTESY
+
+www.volvis.org - Philips Research, Hamburg, Germany.
+
+DESCRIPTION
+
+Rotational b-plane x-ray scan of the arteries of the 
+right half of a human head. A contrast agent was 
+injected into the blood and an aneurism is present.
+
+ALTERATIONS
+
+Downsampled to 64x64x64 by Cycling 74.

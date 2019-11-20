@@ -1,0 +1,9 @@
+{
+	"default" : 	{
+		"color" : [ 1.0, 0.741176, 0.196078, 1.0 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "multisliderGold",
+	"multi" : 0
+}

@@ -1,0 +1,98 @@
+<jittershader name="sinefold">
+	<description>
+	Ripple-like spatial displacement
+	</description>
+	<param name="amp" type="float" default="0.1">
+		<description>Amplitude of ripple</description>
+	</param>
+	<param name="center" type="vec2" default="0.5 0.5">
+		<description>Center point of ripple (x,y)</description>
+	</param>
+	<param name="freq" type="vec2" default="100. 100.">	
+		<description>Frequency of ripple (x,y)</description>
+	</param>
+	<param name="phase" type="float" default="0.0">
+		<description>Phase of ripple</description>
+	</param>
+	<param name="damp" type="float" default="0.0">
+		<description>Damping of ripple</description>
+	</param>
+	<param name="texdim" type="vec2" state="TEXDIM0" />
+	<param name="image" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="amp" program="fp" />
+		<bind param="center" program="fp" />
+		<bind param="freq" program="fp" />
+		<bind param="phase" program="fp" />
+		<bind param="damp" program="fp" />
+		<bind param="texdim" program="fp" />
+		<bind param="image" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+varying vec2 texcoord;
+varying vec2 norm;
+
+void main (void)
+{
+    gl_Position = ftransform();
+    texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+    norm  = vec2(gl_MultiTexCoord0.xy);
+}
+]]>
+		</program>
+		<program name="fp" type="fragment"> 
+<![CDATA[
+
+//sinewave spatial distortion shader 
+varying vec2 texcoord;
+varying vec2 norm;
+
+uniform float amp;
+uniform vec2 center;
+uniform vec2 freq;
+uniform float phase;
+uniform float damp;
+uniform vec2 texdim;
+uniform sampler2DRect image;
+
+void main (void) 
+{
+
+	//calculate distance from the center, 
+	//scaling distance based on frequency(x and y component)
+	vec2 dist = norm - center;
+	vec2 scaleddist = dist * freq;
+	float d1 = dot(scaleddist, scaleddist);
+    d1 = inversesqrt(d1);
+    d1 = 1./d1;
+
+    // true distance
+   	float d2 = dot(dist, dist);
+	d2 = inversesqrt(d2);
+
+	// divide difference by mag to maintain direction. 
+	// also interesting if left out or if distance scaled 
+	// by square of magnitude or some other math
+	dist *= d2;
+	d2 = 1./d2;
+
+	// set sine phase based on mag distance plus a phase offset
+	d1 += phase;
+	d1 = sin(d1);
+	
+	// multiply sine by amplitude and distance from the center
+	d2 *= damp;
+	d2 = clamp(1. - d2, 0.0, 1.0);
+	d1 *= d2;
+	d1 *= amp;
+	dist *= d1;
+	
+	//add to the input texture position
+	dist *= texdim;
+	dist += texcoord;
+	gl_FragColor = texture2DRect(image, dist);
+}
+]]>		
+		</program>
+	</language>
+</jittershader>

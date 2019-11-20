@@ -1,0 +1,66 @@
+<jittershader name="lens">
+	<description>
+	A simple lens filter
+	</description>
+	
+	<param name="position" type="vec2" default="0.5 0.5">
+		<description>Position of center of lens</description>
+	</param>	
+
+	<language name="glsl" version="1.0">
+		<bind param="position" program="vp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL vertex program for a simple lens filter.
+ *
+ */
+ 
+uniform vec2 position;
+
+varying vec2 texcoord;
+varying vec3 middle;
+
+void main()
+{
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+    
+	// transform texcoord	
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+
+	// compute middle coordinate
+	middle = vec3(1.5 * (2.0 * (texcoord.xy - 0.5) + position), 0.4);
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a simple lens filter.
+ *
+ */
+ 
+uniform sampler2DRect image;
+
+varying vec2 texcoord;
+varying vec3 middle;
+
+void main()
+{
+	float offset = 0.1 * exp(-dot(middle.xy, middle.xy));
+
+	gl_FragColor = texture2DRect(image, texcoord - offset * normalize(middle).xy);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

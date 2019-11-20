@@ -1,0 +1,58 @@
+<jittershader name="viz.tangents.jxs">
+	<description>Visualize The Tangents in Model Space</description>
+	<language name="glsl" version="1.2">
+		<program name="vp" type="vertex">
+<![CDATA[
+
+#version 120
+
+void main(void)
+{
+	//just send the things as they are
+	gl_Position = gl_Vertex;
+}
+
+]]>		
+		</program>
+		<program name="gp" vertices_out="2" input_type="lines_adjacency" output_type="line_strip" type="geometry">
+<![CDATA[
+
+#version 120
+#extension GL_EXT_geometry_shader4 : enable
+
+varying out vec3 T;
+
+void main(void)
+{
+	T = gl_PositionIn[2].xyz - gl_PositionIn[1].xyz;
+	gl_Position = gl_ModelViewProjectionMatrix*gl_PositionIn[1];
+	EmitVertex();
+	
+	T = gl_PositionIn[3].xyz - gl_PositionIn[2].xyz;
+	gl_Position = gl_ModelViewProjectionMatrix*gl_PositionIn[2];
+	EmitVertex();
+	
+	EndPrimitive();
+}
+
+
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+#version 120
+
+
+varying vec3 T;
+
+void main (void)
+{
+	gl_FragColor = vec4(normalize(T), 1.);
+}
+
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

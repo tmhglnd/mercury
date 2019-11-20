@@ -1,0 +1,86 @@
+<jittershader name="sh-tex-spiral">
+	<description>
+	Generates a spiral pattern in screen space per pixel.
+	</description>
+	<param name="exp" type="float" default="0.2">
+		<description>Exponent</description>
+	</param>
+	<param name="freq" type="float" default="0.8">
+		<description>Frequency of Rings</description>
+	</param>
+	<param name="phase" type="float" default="1.0">
+		<description>Phase of Spiral</description>
+	</param>
+	<param name="rings" type="float" default="7.0">
+		<description>Number of Rings</description>
+	</param>
+
+	<language name="glsl" version="1.0">
+		<bind param="exp" program="fp" />
+		<bind param="freq" program="fp" />
+		<bind param="phase" program="fp" />
+		<bind param="rings" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL vertex program for a generating a spiral pattern in screen space.
+ *
+ */
+
+varying vec2 texcoord;	// texture coordinates
+
+void main(void)
+{
+   // get unsigned vertex position
+   vec2 pos = sign(gl_Vertex.xy);
+   gl_Position = vec4(pos.xy, 0.0, 1.0);
+   texcoord = pos.xy;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a generating a spiral pattern in screen space.
+ *
+ */
+
+uniform float exp;      // exponent for falloff
+uniform float freq;     // frequency of rings
+uniform float phase;	// phase of spiral
+uniform float rings;	// number of rings
+
+varying vec2 texcoord;	// texture coordinates
+
+void main(void)
+{
+	// compute angle based on st coords
+	float angle = atan(texcoord.y / texcoord.x);
+	
+	// compute radius based on exponential falloff
+	float radius = pow(dot(texcoord, texcoord), exp);
+
+	// compute the value at this location
+	vec4 value = vec4( 0.5 * (1.0 + sin(angle + rings * radius + freq * phase))  );
+
+	// take absolute value if s is negative
+	if( texcoord.x < 0.0 ) 
+	{   
+		value = 1.0 - value;
+	}
+
+	// set outgoing color
+	gl_FragColor = value;
+}
+]]>
+		</program>
+    	</language>	
+</jittershader>

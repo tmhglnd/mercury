@@ -1,0 +1,99 @@
+<jittershader name="chromakey">
+	<description>
+	Chromatic distance based keying
+	</description>
+	<param name="tol" type="float" default="0.3">
+		<description>Tolerance</description>
+	</param>
+	<param name="fade" type="float" default="0.">
+		<description>Fade amount</description>
+	</param>	
+	<param name="color" type="vec4" default="0.0 0.0 0.0 0.0">
+		<description>Color target (RGB)</description>
+	</param>
+	<param name="invert" type="float" default="0.0">
+		<description>Invert mask</description>
+	</param>
+	<param name="mode" type="float" default="0.0">
+		<description>Mask mode (if 1, result mask only)</description>
+	</param>
+	<param name="binary" type="float" default="0.0">
+		<description>Mix with second source (if 0, just gen alpha channel)</description>
+	</param>
+
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />	
+	<language name="glsl" version="1.0">
+		<bind param="color" program="fp" />
+		<bind param="tol" program="fp" />
+		<bind param="fade" program="fp" />
+		<bind param="invert" program="fp" />
+		<bind param="mode" program="fp" />
+		<bind param="binary" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthru.xform.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// texcoords
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+// samplers
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+// blend amount
+uniform vec4 color;
+uniform float tol;
+uniform float fade;
+uniform float invert;
+uniform float mode;
+uniform float binary;
+
+// entry point
+void main()
+{   
+	vec4 one_third = vec4(0.333333);
+
+	vec4 a = texture2DRect(tex0, texcoord0);
+	vec4 b = texture2DRect(tex1, texcoord1);
+	vec4 source = a;
+	vec4 target = color;
+
+	// zero our alphas
+	source.a = 0.;
+	target.a = 0.;	
+
+	// measure distance from target
+	vec4 vdelta = abs(source-target);
+	
+	// sum vector distance, scaling by a third
+	float delta = dot(vdelta,one_third); 
+	
+	// determine scaling coefficient witin our fade range
+	float scale = smoothstep(abs(tol),abs(tol)+abs(fade),delta);
+
+	// invert if necessary
+	float mixamount = mix(scale,1.-scale,invert);
+
+	// blend between sources based on mixamount	
+	vec4 result = mix(b,a,vec4(mixamount));
+
+	// if not binary just set alpha value
+	a.a = mixamount;	
+	result = mix(a,result,vec4(binary));
+	
+	// result either blend or mask based on mode
+	gl_FragColor = mix(result,vec4(mixamount),vec4(mode));
+	
+	// setting the fragment color is a useful means of debugging
+	// vdelta.a = 1.;
+	//gl_FragColor = vec4(vdelta);
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>

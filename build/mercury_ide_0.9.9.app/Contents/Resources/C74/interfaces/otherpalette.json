@@ -1,0 +1,38 @@
+{
+	"categories" : [
+		{ "name" : "Basic",
+		  "color" : [ 0.749, 0.749, 0.749, 1.0],
+		  "say_objects" : 1,
+		  "primary_classes" : ["bpatcher", "inlet", "outlet", "preset"]
+		 },
+		{ "name" : "Audio",
+			"color" : [0.698, 0.929, 1.0, 1.0],
+		    "say_objects" : 1,
+			"primary_classes" : ["ezadc~", "ezdac~", "gain~", "meter~", "playlist~", "waveform~"],
+			"secondary_classes" : ["filtergraph~", "function", "levelmeter~", "number~", "scope~", "spectroscope~", "zplane~"]
+		},
+		{ "name" : "Data",
+			"color" : [ 0.647, 0.753, 0.674, 1.0],
+		    "say_objects" : 1,
+			"primary_classes" : ["function", "itable"],
+			"secondary_classes" : ["attrui", "dict.view", "jit.cellblock", "nodes", "plot~"]
+		},
+		{ "name" : "Images",
+			"color" : [0.768, 0.827, 0.620, 1.0],
+		    "say_objects" : 1,
+			"primary_classes" : ["fpic", "imovie", "lcd", "playbar"]
+		},
+		{ "name" : "Interface",
+			"color" : [0.898, 0.733, 0.752, 1.0],
+		    "say_objects" : 1,
+			"primary_classes" : ["jsui", "jweb", "panel", "umenu"],
+			"secondary_classes" : ["dropfile", "hint", "pictctrl", "radiogroup", "suckah", "swatch", "textedit"]
+		},
+		{ "name" : "Jitter",
+			"color" : [0.847, 0.855, 1.0, 1.0],
+		    "say_objects" : 1,
+			"primary_classes" : ["jit.pwindow", "jit.playlist"],
+			"secondary_classes" : ["jit.fpsgui", "jit.scope"]
+		}
+	]
+}

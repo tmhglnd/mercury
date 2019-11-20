@@ -1,0 +1,9212 @@
+{
+  "newobj": {
+    "category": [
+      "U/I"
+    ],
+    "module": "max",
+    "digest": "A new Max object",
+    "private": 1,
+    "palette": {
+      "action": "newobj",
+      "pic": "newobj.svg",
+      "caption": "object",
+      "order": 1,
+      "category": [
+        "Basic"
+      ]
+    }
+  },
+  "abs": {
+    "digest": "Calculate an absolute value",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "accum": {
+    "digest": "Store, add to, and multiply a number",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "active": {
+    "digest": "Send 1 when patcher window is active, 0 when inactive",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "bag": {
+    "digest": "Store a collection of numbers",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "bangbang": {
+    "digest": "Output a bang from many outlets",
+    "module": "max",
+    "category": [
+      "Right-to-Left"
+    ]
+  },
+  "b": {
+    "digest": "Output a bang from many outlets",
+    "module": "max",
+    "category": [
+      "Right-to-Left"
+    ],
+    "alias": "bangbang"
+  },
+  "bendin": {
+    "digest": "Output MIDI pitch bend values",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "bendout": {
+    "digest": "Send MIDI pitch bend messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "&": {
+    "digest": "Bitwise intersection of two numbers",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "|": {
+    "digest": "Bitwise union of two numbers",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "bpatcher": {
+    "digest": "Embed a subpatch with a visible UI",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "bpatcher",
+      "category": [
+        "Basic"
+      ],
+      "order": "11",
+      "pic": "bpatcher.svg"
+    }
+  },
+  "change": {
+    "digest": "Filter out repetitions of a number",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "chooser": {
+    "digest": "Display a scrolling list of selectable items",
+    "module": "Max",
+    "category": [
+      "U/I"
+    ]
+  },
+  "closebang": {
+    "digest": "Send a bang on close",
+    "module": "max",
+    "category": [
+      "Patching"
+    ]
+  },
+  "ctlin": {
+    "digest": "Output received MIDI control values",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "ctlout": {
+    "digest": "Transmit MIDI controller messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "dict": {
+    "digest": "Create and access dictionaries",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.view": {
+    "digest": "View the contents of a dictionary",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "dict.view",
+      "category": [
+        "Data"
+      ],
+      "pic": "dict.view.svg"
+    }
+  },
+  "/": {
+    "digest": "Divide two numbers",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "dsp": {
+    "digest": "DSP",
+    "module": "max",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "==": {
+    "digest": "Compare numbers for equal-to condition",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "error": {
+    "digest": "Report Max errors",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "expr": {
+    "digest": "Evaluate a mathematical expression",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "float": {
+    "digest": "Store a decimal number",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "f": {
+    "digest": "Store a decimal number",
+    "module": "max",
+    "category": [
+      "Data"
+    ],
+    "alias": "float"
+  },
+  "follow": {
+    "digest": "Compare a live performance to a recorded performance",
+    "module": "max",
+    "category": [
+      "Sequencing"
+    ]
+  },
+  "freebang": {
+    "digest": "Send a bang when a patcher is freed",
+    "module": "max",
+    "category": [
+      "Patching"
+    ]
+  },
+  "swap": {
+    "digest": "Swap position of two numbers",
+    "module": "max",
+    "category": [
+      "Right-to-Left"
+    ]
+  },
+  "gate": {
+    "digest": "Pass input to an outlet",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "grab": {
+    "digest": "Intercept the output of another object",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  ">": {
+    "digest": "Compare numbers for greater than condition",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  ">=": {
+    "digest": "Compare numbers for greater than or equal to condition",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "if": {
+    "digest": "Conditional statement in if/then/else form",
+    "module": "max",
+    "category": [
+      "Control",
+      "Math"
+    ]
+  },
+  "inlet": {
+    "digest": "Receive messages from outside a patcher",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Basic"
+      ],
+      "action": "inlet",
+      "order": "8",
+      "pic": "inlet.svg"
+    }
+  },
+  "int": {
+    "digest": "Store an integer value",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "i": {
+    "digest": "Store an integer value",
+    "module": "max",
+    "category": [
+      "Data"
+    ],
+    "alias": "int"
+  },
+  "jbox": {
+    "digest": "Common Box Attributes",
+    "module": "max",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "jit_kernel": {
+    "digest": "Jitter",
+    "module": "max",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "jstrigger": {
+    "digest": "Execute Javascript instructions sequentially",
+    "module": "max",
+    "category": [
+      "Languages"
+    ]
+  },
+  "jweb": {
+    "digest": "Web browser",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface"
+      ],
+      "action": "jweb",
+      "pic": "jweb.svg"
+    }
+  },
+  "key": {
+    "digest": "Report keyboard presses",
+    "module": "max",
+    "category": [
+      "Interaction"
+    ]
+  },
+  "keyup": {
+    "digest": "Report key information on release",
+    "module": "max",
+    "category": [
+      "Interaction"
+    ]
+  },
+  "<": {
+    "digest": "Compare numbers for less than condition",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "<=": {
+    "digest": "Compare numbers as less than or equal to",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "loadbang": {
+    "digest": "Send a bang when a patcher is loaded",
+    "module": "max",
+    "category": [
+      "Patching"
+    ]
+  },
+  "&&": {
+    "digest": "Perform a logical AND",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "||": {
+    "digest": "Perform a logical OR",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "mappings": {
+    "digest": "Utility object for Mappings",
+    "module": "max",
+    "category": [
+      "MissingCategory"
+    ]
+  },
+  "max": {
+    "digest": "Max",
+    "module": "max",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "menubar": {
+    "digest": "Put up a custom menu bar",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "midiformat": {
+    "digest": "Prepare data in the form of a MIDI message",
+    "module": "max",
+    "category": [
+      "Notes"
+    ]
+  },
+  "midiin": {
+    "digest": "Output raw MIDI data",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "midiout": {
+    "digest": "Transmit raw MIDI data",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "midiparse": {
+    "digest": "Interpret raw MIDI data",
+    "module": "max",
+    "category": [
+      "Notes"
+    ]
+  },
+  "-": {
+    "digest": "Subtract two numbers, output the result",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "%": {
+    "digest": "Divide two numbers, output the remainder",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "notein": {
+    "digest": "Receive MIDI note messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "noteout": {
+    "digest": "Transmit MIDI note messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "!=": {
+    "digest": "Compare numbers for not-equal-to condition",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "onecopy": {
+    "digest": "Prevent multiple copies of the same patcher from being opened",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "outlet": {
+    "digest": "Send messages out of a patcher",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Basic"
+      ],
+      "action": "outlet",
+      "order": "9",
+      "pic": "outlet.svg"
+    }
+  },
+  "pack": {
+    "digest": "Create a list",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "patcher": {
+    "digest": "Create a subpatch within a patch",
+    "module": "max",
+    "category": [
+      "Control",
+      "Patching"
+    ]
+  },
+  "p": {
+    "digest": "Create a subpatch within a patch",
+    "module": "max",
+    "category": [
+      "Control",
+      "Patching"
+    ],
+    "alias": "patcher"
+  },
+  "pcontrol": {
+    "digest": "Open and close subwindows",
+    "module": "max",
+    "category": [
+      "Patching"
+    ]
+  },
+  "pgmin": {
+    "digest": "Receive MIDI program changes",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "pgmout": {
+    "digest": "Send MIDI program changes",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "+": {
+    "digest": "Add two numbers, output the result",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "polyin": {
+    "digest": "Received MIDI poly pressure",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "polyout": {
+    "digest": "Send MIDI poly pressure",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "preset": {
+    "digest": "Store and recall settings",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "preset",
+      "category": [
+        "Basic"
+      ],
+      "order": "10",
+      "pic": "preset.svg"
+    }
+  },
+  "print": {
+    "digest": "Print any message in the Max Console",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "project": {
+    "digest": "TEXT_HERE",
+    "module": "MissingModule",
+    "category": [
+      "MissingCategory"
+    ]
+  },
+  "pvar": {
+    "digest": "Connect to a named object in a patcher",
+    "module": "max",
+    "category": [
+      "Control",
+      "Data"
+    ]
+  },
+  "random": {
+    "digest": "Generate a random number",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "receive": {
+    "digest": "Receive messages without patch cords",
+    "module": "max",
+    "category": [
+      "Messages"
+    ]
+  },
+  "r": {
+    "digest": "Receive messages without patch cords",
+    "module": "max",
+    "category": [
+      "Messages"
+    ],
+    "alias": "receive"
+  },
+  "route": {
+    "digest": "Select outlet based on input matching",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "routepass": {
+    "digest": "Route a complete incoming message based on input matching",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "rtin": {
+    "digest": "Receive MIDI real time messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "savebang": {
+    "digest": "Send a bang on save",
+    "module": "max",
+    "category": [
+      "Patching"
+    ]
+  },
+  "select": {
+    "digest": "Output bangs based on input matching",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "sel": {
+    "digest": "Output bangs based on input matching",
+    "module": "max",
+    "category": [
+      "Control"
+    ],
+    "alias": "select"
+  },
+  "send": {
+    "digest": "Send messages without patch cords",
+    "module": "max",
+    "category": [
+      "Messages"
+    ]
+  },
+  "s": {
+    "digest": "Send messages without patch cords",
+    "module": "max",
+    "category": [
+      "Messages"
+    ],
+    "alias": "send"
+  },
+  "seq": {
+    "digest": "Sequencer for recording and playing MIDI data",
+    "module": "max",
+    "category": [
+      "Sequencing"
+    ]
+  },
+  "setclock": {
+    "digest": "Create and control an alternative clock",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "<<": {
+    "digest": "Bit shift to the left",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  ">>": {
+    "digest": "Bit shift to the right",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "stripnote": {
+    "digest": "Filter out note-off messages",
+    "module": "max",
+    "category": [
+      "Notes"
+    ]
+  },
+  "switch": {
+    "digest": "Accept messages from a specific inlet",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "sysexin": {
+    "digest": "Receive MIDI system exclusive messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "themecolor": {
+    "digest": "Change and/or listen for changes in interface colors",
+    "module": "max",
+    "category": [
+      "U/I"
+    ]
+  },
+  "thispatcher": {
+    "digest": "Send messages to a patcher",
+    "module": "max",
+    "category": [
+      "Control",
+      "Patching"
+    ]
+  },
+  "*": {
+    "digest": "Multiply two numbers",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "touchin": {
+    "digest": "Receive MIDI aftertouch values",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "touchout": {
+    "digest": "Transmit MIDI aftertouch messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "trigger": {
+    "digest": "Send input to many places",
+    "module": "max",
+    "category": [
+      "Control",
+      "Right-to-Left"
+    ]
+  },
+  "t": {
+    "digest": "Send input to many places",
+    "module": "max",
+    "category": [
+      "Control",
+      "Right-to-Left"
+    ],
+    "alias": "trigger"
+  },
+  "unpack": {
+    "digest": "Break a list into individual messages",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "value": {
+    "digest": "Share data between other value objects",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "v": {
+    "digest": "Share data between other value objects",
+    "module": "max",
+    "category": [
+      "Data"
+    ],
+    "alias": "value"
+  },
+  "absolutepath": {
+    "digest": "Convert a file name to an absolute path",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "acos": {
+    "digest": "Arc-cosine function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "acosh": {
+    "digest": "Hyperbolic arc-cosine function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "anal": {
+    "digest": "Make a histogram of number pairs",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "append": {
+    "digest": "Append arguments to the end of a message",
+    "module": "max",
+    "category": [
+      "Messages"
+    ]
+  },
+  "asin": {
+    "digest": "Arc-sine function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "asinh": {
+    "digest": "Hyperbolic arc-sine function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "atan": {
+    "digest": "Arc-tangent function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "atan2": {
+    "digest": "Two-variable arc-tangent function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "atanh": {
+    "digest": "Hyperbolic arc-tangent function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "atodb": {
+    "digest": "Convert linear amplitude to decibels",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "atoi": {
+    "digest": "Convert ASCII characters to integers",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "attrui": {
+    "digest": "Inspect attributes",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "U/I"
+      ],
+      "action": "attrui",
+      "pic": "attrui.svg"
+    }
+  },
+  "autopattr": {
+    "digest": "Expose multiple objects to the pattr system",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "bgcolor": {
+    "digest": "Set background color",
+    "module": "max",
+    "category": [
+      "Patching"
+    ]
+  },
+  "bline": {
+    "digest": "Generate ramps using bang",
+    "module": "max",
+    "category": [
+      "Data",
+      "Timing"
+    ]
+  },
+  "bondo": {
+    "digest": "Synchronize a group of messages",
+    "module": "max",
+    "category": [
+      "Right-to-Left"
+    ]
+  },
+  "borax": {
+    "digest": "Report note-on and note-off information",
+    "module": "max",
+    "category": [
+      "Data",
+      "Timing"
+    ]
+  },
+  "bucket": {
+    "digest": "Pass numbers from outlet to outlet",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "buddy": {
+    "digest": "Synchronize arriving data",
+    "module": "max",
+    "category": [
+      "Right-to-Left"
+    ]
+  },
+  "button": {
+    "digest": "Blink and send a bang",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Basic",
+        "Buttons"
+      ],
+      "action": "button",
+      "order": "4",
+      "pic": "button.svg"
+    }
+  },
+  "capture": {
+    "digest": "Store values to view or edit",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "cartopol": {
+    "digest": "Convert cartesian to polar coordinates",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "clip": {
+    "digest": "Limit numbers to a certain range",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "clocker": {
+    "digest": "Report elapsed time, at regular intervals",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "coll": {
+    "digest": "Store and edit a collection of data",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "colorpicker": {
+    "digest": "Select and output a color",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "combine": {
+    "digest": "Combine multiple items into a single symbol",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "comment": {
+    "digest": "Explanatory note or label",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Basic"
+      ],
+      "action": "comment",
+      "order": "3",
+      "pic": "comment.svg"
+    }
+  },
+  "conformpath": {
+    "digest": "Convert file paths styles",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "console": {
+    "digest": "Console Output in Patcher",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "cos": {
+    "digest": "Cosine function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "cosh": {
+    "digest": "Hyperbolic cosine function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "counter": {
+    "digest": "Keep count based on bang messages",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "cpuclock": {
+    "digest": "Retrieve the CPU time",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "cycle": {
+    "digest": "Round-robin messages to outlets",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "date": {
+    "digest": "Report current date and time",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "dbtoa": {
+    "digest": "Convert decibels to a linear amplitude",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "decide": {
+    "digest": "Choose randomly between 1 and 0",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "decode": {
+    "digest": "Send 1 or 0 out a specific outlet",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "defer": {
+    "digest": "Defer execution of a message",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "deferlow": {
+    "digest": "Defer the execution of a message (always)",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "delay": {
+    "digest": "Delay a bang",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "del": {
+    "digest": "Delay a bang",
+    "module": "max",
+    "category": [
+      "Timing"
+    ],
+    "alias": "delay"
+  },
+  "detonate": {
+    "digest": "Play a score of note events",
+    "module": "max",
+    "category": [
+      "Sequencing"
+    ]
+  },
+  "dial": {
+    "digest": "Output numbers using an onscreen dial",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Sliders"
+      ],
+      "action": "dial",
+      "pic": "dial.svg"
+    }
+  },
+  "dialog": {
+    "digest": "Open a dialog box for text entry",
+    "module": "max",
+    "category": [
+      "Interaction"
+    ]
+  },
+  "dict.deserialize": {
+    "digest": "Create a dictionary from text",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.group": {
+    "digest": "Build a dictionary iteratively",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.iter": {
+    "digest": "Stream the content of a dictionary",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.join": {
+    "digest": "Merge the content of two dictionaries",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.pack": {
+    "digest": "Create a dictionary and set its values",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.print": {
+    "digest": "Post a dictionary to the Max Console",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.route": {
+    "digest": "Compare dictionaries",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.serialize": {
+    "digest": "Convert a dictionary's content to text",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.slice": {
+    "digest": "Split a dictionary into two dictionaries",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.strip": {
+    "digest": "Remove keys from a dictionary",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dict.unpack": {
+    "digest": "Extract values from a dictionary",
+    "module": "max",
+    "category": [
+      "Dictionary"
+    ]
+  },
+  "dropfile": {
+    "digest": "Drag and drop files",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface"
+      ],
+      "action": "dropfile",
+      "pic": "dropfile.svg"
+    }
+  },
+  "drunk": {
+    "digest": "Output random numbers within a step range",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "filedate": {
+    "digest": "Report the modification date of a file",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "filein": {
+    "digest": "Read and access a file of binary data",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "filepath": {
+    "digest": "Manage and report on the Max search path",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "filewatch": {
+    "digest": "Watch a file for changes",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "flonum": {
+    "digest": "Display and output a number",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Basic"
+      ],
+      "action": "flonum",
+      "order": "7",
+      "pic": "flonum.svg"
+    }
+  },
+  "flush": {
+    "digest": "Output MIDI note-offs for held notes",
+    "module": "max",
+    "category": [
+      "Notes"
+    ]
+  },
+  "folder": {
+    "digest": "List the files in a folder",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "fontlist": {
+    "digest": "List system fonts",
+    "module": "max",
+    "category": [
+      "Files",
+      "System"
+    ]
+  },
+  "forward": {
+    "digest": "Send messages to specified receive objects",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "fpic": {
+    "digest": "Display an image",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Images",
+        "Interface"
+      ],
+      "action": "fpic",
+      "pic": "fpic.svg"
+    }
+  },
+  "fromsymbol": {
+    "digest": "Convert a symbol into numbers/messages",
+    "module": "max",
+    "category": [
+      "Messages"
+    ]
+  },
+  "ftom": {
+    "digest": "Convert frequency to a MIDI note number",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "funbuff": {
+    "digest": "Store pairs of numbers",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "function": {
+    "digest": "Breakpoint function editor",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Data",
+        "Audio"
+      ],
+      "action": "function",
+      "pic": "function.svg"
+    }
+  },
+  "funnel": {
+    "digest": "Tag data with its inlet number",
+    "module": "max",
+    "category": [
+      "Data",
+      "Lists"
+    ]
+  },
+  "gestalt": {
+    "digest": "Retrieve system information",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "getattr": {
+    "digest": "Query object attributes",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "gswitch": {
+    "digest": "Select output from two inlets",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Buttons"
+      ],
+      "action": "gswitch",
+      "pic": "gswitch.svg"
+    }
+  },
+  "ggate": {
+    "digest": "Send input to one of two outlets",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Buttons"
+      ],
+      "action": "gswitch2",
+      "pic": "gswitch2.svg"
+    }
+  },
+  "hi": {
+    "digest": "Human Interface (gaming) device input",
+    "module": "max",
+    "category": [
+      "Devices"
+    ]
+  },
+  "hint": {
+    "digest": "Display hint text",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface"
+      ],
+      "action": "hint",
+      "pic": "hint.svg"
+    }
+  },
+  "histo": {
+    "digest": "Create a histogram of numbers received",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "hover": {
+    "digest": "Report object scripting names",
+    "module": "max",
+    "category": [
+      "U/I"
+    ]
+  },
+  "imovie": {
+    "digest": "Play video",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "imovie",
+      "category": [
+        "Images"
+      ],
+      "pic": "imovie.svg"
+    }
+  },
+  "incdec": {
+    "digest": "Increment and decrement a value",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Buttons"
+      ],
+      "action": "incdec",
+      "pic": "incdec.svg"
+    }
+  },
+  "itable": {
+    "digest": "Data table editor",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Data"
+      ],
+      "action": "itable",
+      "pic": "itable.svg"
+    }
+  },
+  "iter": {
+    "digest": "Break a list into individual messages",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "itoa": {
+    "digest": "Convert integers to UTF-8 (Unicode) characters",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "jit.cellblock": {
+    "digest": "Edit rows and columns of data",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface"
+      ],
+      "action": "jit.cellblock",
+      "pic": "jit.cellblock.svg"
+    }
+  },
+  "join": {
+    "digest": "Combine items into a list",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "js": {
+    "digest": "Execute Javascript",
+    "module": "max",
+    "category": [
+      "Languages"
+    ]
+  },
+  "jsui": {
+    "digest": "Javascript user interfaces and graphics",
+    "module": "max",
+    "category": [
+      "U/I",
+      "Languages"
+    ],
+    "palette": {
+      "category": [
+        "Images",
+        "Interface"
+      ],
+      "action": "jsui",
+      "pic": "jsui.svg"
+    }
+  },
+  "kslider": {
+    "digest": "Output numbers from an onscreen keyboard",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Sliders"
+      ],
+      "action": "kslider",
+      "pic": "kslider.svg"
+    }
+  },
+  "lcd": {
+    "digest": "Display graphics (deprecated)",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "lcd",
+      "category": [
+        "Images",
+        "Interface"
+      ],
+      "pic": "lcd.svg"
+    }
+  },
+  "led": {
+    "digest": "Color on/off button",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Buttons"
+      ],
+      "action": "led",
+      "pic": "led.svg"
+    }
+  },
+  "line": {
+    "digest": "Generate timed ramp",
+    "module": "max",
+    "category": [
+      "Data",
+      "Timing"
+    ]
+  },
+  "linedrive": {
+    "digest": "Scale numbers exponentially",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "listfunnel": {
+    "digest": "Index and output list elements",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "loadmess": {
+    "digest": "Send a message when a patch is loaded",
+    "module": "max",
+    "category": [
+      "Messages",
+      "Patching"
+    ]
+  },
+  "makenote": {
+    "digest": "Generate a note-on/note-off pair",
+    "module": "max",
+    "category": [
+      "Notes"
+    ]
+  },
+  "match": {
+    "digest": "Watch for a message match, then output the message",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "matrixctrl": {
+    "digest": "Matrix switch control",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Buttons"
+      ],
+      "action": "matrixctrl",
+      "pic": "matrixctrl.svg"
+    }
+  },
+  "maximum": {
+    "digest": "Output the highest value",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "maxurl": {
+    "digest": "Make HTTP requests",
+    "module": "max",
+    "category": [
+      "Devices"
+    ]
+  },
+  "mc.function": {
+    "digest": "Breakpoint function editor",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Data",
+        "Audio"
+      ],
+      "action": "function",
+      "pic": "function.svg"
+    }
+  },
+  "mc.getattr": {
+    "digest": "Query object attributes (multichannel)",
+    "module": "max",
+    "category": [
+      "Control",
+      "Multichannel"
+    ]
+  },
+  "mc.line": {
+    "digest": "Generate timed ramp (multichannel)",
+    "module": "max",
+    "category": [
+      "Data",
+      "Timing",
+      "Multichannel"
+    ]
+  },
+  "mean": {
+    "digest": "Calculate a running average",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "message": {
+    "digest": "Send any message",
+    "module": "max",
+    "category": [
+      "Basic"
+    ],
+    "palette": {
+      "category": [
+        "Basic"
+      ],
+      "action": "message",
+      "order": "2",
+      "pic": "message.svg"
+    }
+  },
+  "metro": {
+    "digest": "Output a bang message at regular intervals",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "midiflush": {
+    "digest": "Send MIDI note-offs for hanging note-ons",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "midiinfo": {
+    "digest": "Fill a pop-up menu with MIDI device names",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "minimum": {
+    "digest": "Output the smallest value",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "modifiers": {
+    "digest": "Report modifier key presses",
+    "module": "max",
+    "category": [
+      "Interaction"
+    ]
+  },
+  "mousefilter": {
+    "digest": "Gate messages with the mouse",
+    "module": "max",
+    "category": [
+      "Interaction"
+    ]
+  },
+  "mousestate": {
+    "digest": "Report the mouse information",
+    "module": "max",
+    "category": [
+      "Interaction"
+    ]
+  },
+  "movie": {
+    "digest": "Play a movie in a window",
+    "module": "max",
+    "category": [
+      "U/I"
+    ]
+  },
+  "mpeconfig": {
+    "digest": "Configure a MIDI device that supports Multidimensional Polyphonic Expression (MPE) messages",
+    "module": "Max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "mpeformat": {
+    "digest": "Prepare data in the form of a Multidimensional Polyphonic Expression (MPE) MIDI message",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "mpeparse": {
+    "digest": "Interpret raw MPE MIDI data",
+    "module": "Max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "mtof": {
+    "digest": "Convert a MIDI note number to frequency",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "mtr": {
+    "digest": "Record and sequence messages",
+    "module": "max",
+    "category": [
+      "Sequencing"
+    ]
+  },
+  "multirange": {
+    "digest": "Graphical function breakpoint editor",
+    "module": "MSP",
+    "category": [
+      "MC"
+    ]
+  },
+  "multislider": {
+    "digest": "Display data as sliders or a scrolling display",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Sliders"
+      ],
+      "action": "multislider",
+      "pic": "multislider.svg"
+    }
+  },
+  "mxj": {
+    "digest": "Execute Java in Max",
+    "module": "max",
+    "category": [
+      "Languages"
+    ]
+  },
+  "next": {
+    "digest": "Detect separation of messages",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "nodes": {
+    "digest": "Interpolate data graphically",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface",
+        "Data",
+        "Sliders"
+      ],
+      "action": "nodes",
+      "pic": "nodes.svg"
+    }
+  },
+  "nrpnin": {
+    "digest": "Output received NRPN values",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "nrpnout": {
+    "digest": "Format 14-bit MIDI NRPN messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "nslider": {
+    "digest": "Output numbers from a notation display",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Sliders"
+      ],
+      "action": "nslider",
+      "pic": "nslider.svg"
+    }
+  },
+  "number": {
+    "digest": "Display and output a number",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Basic"
+      ],
+      "action": "number",
+      "order": "6",
+      "pic": "number.svg"
+    }
+  },
+  "numkey": {
+    "digest": "Interpret numbers typed on the keyboard",
+    "module": "max",
+    "category": [
+      "Interaction"
+    ]
+  },
+  "offer": {
+    "digest": "Store one-time number pairs",
+    "module": "max",
+    "category": [
+      "Notes"
+    ]
+  },
+  "onebang": {
+    "digest": "Gate bangs using a bang",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "opendialog": {
+    "digest": "Open a dialog to ask for a file or folder",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "pak": {
+    "digest": "Output a list when any element changes",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "panel": {
+    "digest": "Colored background area",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface"
+      ],
+      "action": "panel",
+      "pic": "panel.svg"
+    }
+  },
+  "past": {
+    "digest": "Notify when a threshold is passed",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "patcherargs": {
+    "digest": "Retrieve patcher arguments",
+    "module": "max",
+    "category": [
+      "Patching"
+    ]
+  },
+  "pattr": {
+    "digest": "Provide an alias with a named data wrapper",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "pattrforward": {
+    "digest": "Send any message to a named object",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "pattrhub": {
+    "digest": "Access all pattr objects in a patcher",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "pattrmarker": {
+    "digest": "Provide pattr communication between patchers",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "pattrstorage": {
+    "digest": "Save and recall pattr presets",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "peak": {
+    "digest": "Output larger numbers",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "pictctrl": {
+    "digest": "Picture-based control",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Buttons",
+        "Interface"
+      ],
+      "action": "pictctrl",
+      "pic": "pictctrl.svg"
+    }
+  },
+  "pictslider": {
+    "digest": "Picture-based slider control",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Sliders"
+      ],
+      "action": "pictslider",
+      "pic": "pictslider.svg"
+    }
+  },
+  "pipe": {
+    "digest": "Delay numbers, lists or symbols",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "playbar": {
+    "digest": "Control video or audio file playback",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Buttons",
+        "Interface",
+        "Images"
+      ],
+      "action": "playbar",
+      "pic": "playbar.svg"
+    }
+  },
+  "poltocar": {
+    "digest": "Convert polar to cartesian coordinates",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "poly": {
+    "digest": "Allocate notes to different voices",
+    "module": "max",
+    "category": [
+      "Notes"
+    ]
+  },
+  "polymidiin": {
+    "digest": "Output Multidimensional Polyphonic Expression (MPE) MIDI data",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "pong": {
+    "digest": "Range limiting",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "pow": {
+    "digest": "Computes input to the nth power",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "prepend": {
+    "digest": "Add a message in front of input",
+    "module": "max",
+    "category": [
+      "Messages"
+    ]
+  },
+  "prob": {
+    "digest": "Create a weighted transition table",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "pv": {
+    "digest": "Share data within a patch hierarchy",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "qlim": {
+    "digest": "Queue-based message limiter",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "qlist": {
+    "digest": "Store a collection of messages",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "qmetro": {
+    "digest": "Queue-based metronome",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "quickthresh": {
+    "digest": "Fast chord detection",
+    "module": "max",
+    "category": [
+      "Lists",
+      "Timing"
+    ]
+  },
+  "radiogroup": {
+    "digest": "Radio button or check box",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface",
+        "Buttons"
+      ],
+      "action": "radiogroup",
+      "pic": "radiogroup.svg"
+    }
+  },
+  "!/": {
+    "digest": "Divide input from a number",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "regexp": {
+    "digest": "Use regular expressions to process input",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "relativepath": {
+    "digest": "Convert an absolute to a relative path",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "!-": {
+    "digest": "Subtraction object (inlets reversed)",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "round": {
+    "digest": "Round to a value",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "router": {
+    "digest": "Route messages to multiple locations",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "rpnin": {
+    "digest": "Output received RPN values",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "rpnout": {
+    "digest": "Format 14-bit MIDI RPN messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "rslider": {
+    "digest": "Display or change a range of numbers",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Sliders"
+      ],
+      "action": "rslider",
+      "pic": "rslider.svg"
+    }
+  },
+  "savedialog": {
+    "digest": "Open a dialog asking for a filename",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "scale": {
+    "digest": "Map values to an output range",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "screensize": {
+    "digest": "Output the monitor size",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "serial": {
+    "digest": "Send and receive from a serial port",
+    "module": "max",
+    "category": [
+      "Devices"
+    ]
+  },
+  "sin": {
+    "digest": "Sine function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "sinh": {
+    "digest": "Hyperbolic sine function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "slide": {
+    "digest": "Smooth values logarithmically",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "slider": {
+    "digest": "Move a slider to output values",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Sliders"
+      ],
+      "action": "slider",
+      "pic": "slider.svg"
+    }
+  },
+  "speedlim": {
+    "digest": "Limit the speed of message throughput",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "spell": {
+    "digest": "Convert input to UTF-8 (Unicode) codes",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "split": {
+    "digest": "Look for a range of numbers",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "spray": {
+    "digest": "Distribute a value to a numbered outlet",
+    "module": "max",
+    "category": [
+      "Data",
+      "Lists"
+    ]
+  },
+  "sprintf": {
+    "digest": "Format a message of words and numbers",
+    "module": "max",
+    "category": [
+      "Messages"
+    ]
+  },
+  "sqrt": {
+    "digest": "Square root function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "standalone": {
+    "digest": "Configure parameters for standalone applications",
+    "module": "max",
+    "category": [
+      "Patching"
+    ]
+  },
+  "strippath": {
+    "digest": "Separate filename from a full pathname",
+    "module": "max",
+    "category": [
+      "Files"
+    ]
+  },
+  "substitute": {
+    "digest": "Substitute symbols within a message",
+    "module": "max",
+    "category": [
+      "Messages"
+    ]
+  },
+  "suckah": {
+    "digest": "Get a pixel from the display",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface"
+      ],
+      "action": "suckah",
+      "pic": "suckah.svg"
+    }
+  },
+  "suspend": {
+    "digest": "Reports when application is suspended or resumed",
+    "module": "max",
+    "category": [
+      "System"
+    ]
+  },
+  "sustain": {
+    "digest": "Hold note-off messages for release",
+    "module": "max",
+    "category": [
+      "Notes"
+    ]
+  },
+  "swatch": {
+    "digest": "Choose a color",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Interface"
+      ],
+      "action": "swatch",
+      "pic": "swatch.svg"
+    }
+  },
+  "sxformat": {
+    "digest": "Prepare MIDI system exclusive messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "tab": {
+    "digest": "Tab control",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "tab",
+      "category": [
+        "Buttons"
+      ],
+      "pic": "tab.svg"
+    }
+  },
+  "table": {
+    "digest": "Store and edit an array of numbers",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "tan": {
+    "digest": "Tangent function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "tanh": {
+    "digest": "Hyperbolic tangent function",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "tempo": {
+    "digest": "Output numbers at a metronomic tempo",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "text": {
+    "digest": "Format messages as a text file",
+    "module": "max",
+    "category": [
+      "Data"
+    ]
+  },
+  "textbutton": {
+    "digest": "Button with text",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "textbutton",
+      "category": [
+        "Buttons"
+      ],
+      "pic": "textbutton.svg"
+    }
+  },
+  "textedit": {
+    "digest": "Enter text",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "textedit",
+      "category": [
+        "Interface"
+      ],
+      "pic": "textedit.svg"
+    }
+  },
+  "thresh": {
+    "digest": "Combine numbers and lists when received close together",
+    "module": "max",
+    "category": [
+      "Lists",
+      "Timing"
+    ]
+  },
+  "timepoint": {
+    "digest": "Bang at a specific time",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "timer": {
+    "digest": "Report elapsed time between two events",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "togedge": {
+    "digest": "Report zero/non-zero transitions",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "toggle": {
+    "digest": "Switch between off and on (0/1)",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Basic",
+        "Buttons"
+      ],
+      "action": "toggle",
+      "order": "5",
+      "pic": "toggle.svg"
+    }
+  },
+  "tosymbol": {
+    "digest": "Convert messages, numbers, or lists to a single symbol",
+    "module": "max",
+    "category": [
+      "Messages"
+    ]
+  },
+  "translate": {
+    "digest": "Convert between different units of time.",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "transport": {
+    "digest": "Control a master clock",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "trough": {
+    "digest": "Output a number if it is less than previous numbers",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "ubutton": {
+    "digest": "Transparent button",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "ubutton",
+      "category": [
+        "Buttons"
+      ],
+      "pic": "ubutton.svg"
+    }
+  },
+  "udpreceive": {
+    "digest": "Receive messages over a network",
+    "module": "max",
+    "category": [
+      "Devices"
+    ]
+  },
+  "udpsend": {
+    "digest": "Send messages over a network",
+    "module": "max",
+    "category": [
+      "Devices"
+    ]
+  },
+  "umenu": {
+    "digest": "Pop-up menu",
+    "module": "max",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "action": "umenu",
+      "category": [
+        "Interface"
+      ],
+      "pic": "umenu.svg"
+    }
+  },
+  "universal": {
+    "digest": "Send messages to all objects of the same type",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "unjoin": {
+    "digest": "Break a list into messages",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "urn": {
+    "digest": "Generate random numbers without duplicates",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "uzi": {
+    "digest": "Send many bang messages",
+    "module": "max",
+    "category": [
+      "Control"
+    ]
+  },
+  "vdp": {
+    "digest": "Control a videodisk player through a serial port",
+    "module": "max",
+    "category": [
+      "Devices"
+    ]
+  },
+  "vexpr": {
+    "digest": "Evaluate a math expression for a list",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "vstscan": {
+    "digest": "Audio Plugin Scanner",
+    "module": "Max",
+    "category": [
+      "Plug-ins"
+    ]
+  },
+  "when": {
+    "digest": "Report the current transport time",
+    "module": "max",
+    "category": [
+      "Timing"
+    ]
+  },
+  "xbendin": {
+    "digest": "Interpret extra precision MIDI pitch bend values",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "xbendin2": {
+    "digest": "Interpret extra precision MIDI pitch bend values",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ],
+    "alias": "xbendin"
+  },
+  "xbendout": {
+    "digest": "Format extra precision MIDI pitch bend messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "xbendout2": {
+    "digest": "Format extra precision MIDI pitch bend messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ],
+    "alias": "xbendout"
+  },
+  "xctlin": {
+    "digest": "Output received 14-bit MIDI control values",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "xctlout": {
+    "digest": "Format 14-bit MIDI controller messages",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "xnotein": {
+    "digest": "Interpret MIDI note messages with release velocity",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "xnoteout": {
+    "digest": "Format MIDI note messages with release velocity",
+    "module": "max",
+    "category": [
+      "MIDI"
+    ]
+  },
+  "zl": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ]
+  },
+  "zl.group": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.join": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.iter": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.len": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.reg": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.rev": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.rot": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.scramble": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.sect": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.slice": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.ecils": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.sub": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.nth": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.mth": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.lookup": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.queue": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.stack": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.union": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.sort": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.sum": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.median": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.stream": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.unique": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.lace": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.delace": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.change": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.compare": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.thin": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.filter": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.swap": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zl.indexmap": {
+    "digest": "Process lists in many ways",
+    "module": "max",
+    "category": [
+      "Lists"
+    ],
+    "alias": "zl"
+  },
+  "zmap": {
+    "digest": "Maps input range of values to output range",
+    "module": "max",
+    "category": [
+      "Math"
+    ]
+  },
+  "2d.wave~": {
+    "digest": "Two-dimensional wavetable",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "abs~": {
+    "digest": "Absolute value of a signal",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "acosh~": {
+    "digest": "Signal hyperbolic arc-cosine function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "acos~": {
+    "digest": "Signal arc-cosine function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "adc~": {
+    "digest": "Audio input and on/off",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "adoutput~": {
+    "digest": "Access audio driver output channel",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "adsr~": {
+    "digest": "ADSR envelope generator",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "adstatus": {
+    "digest": "Report and control audio driver settings",
+    "module": "msp",
+    "category": [
+      "MSP System"
+    ]
+  },
+  "allpass~": {
+    "digest": "Apply an allpass filter effect",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "amxd~": {
+    "digest": "Host Max for Live devices",
+    "module": "Max",
+    "category": [
+      "Max for Live devices"
+    ]
+  },
+  "asinh~": {
+    "digest": "Signal hyperbolic arc-sine function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "asin~": {
+    "digest": "Signal arc-sine function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "atan2~": {
+    "digest": "Signal arc-tangent function (two variables)",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "atanh~": {
+    "digest": "Signal hyperbolic arc-tangent function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "atan~": {
+    "digest": "Signal arc-tangent function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "atodb~": {
+    "digest": "Convert linear amplitude to a signal-rate deciBel value",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "average~": {
+    "digest": "Multi-mode signal average",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "MSP Analysis"
+    ]
+  },
+  "avg~": {
+    "digest": "Signal average",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "MSP Analysis"
+    ]
+  },
+  "begin~": {
+    "digest": "Define a switchable part of a signal network",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "biquad~": {
+    "digest": "Two-pole, two-zero filter",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "bitand~": {
+    "digest": "Bitwise and-operation of floating point signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "bitnot~": {
+    "digest": "Bitwise inversion of a floating point signal",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "bitor~": {
+    "digest": "Bitwise or-operation of floating point signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "bitsafe~": {
+    "digest": "Replace NaN and infinite signal values with 0",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "bitshift~": {
+    "digest": "Bit shifting for floating point signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "bitxor~": {
+    "digest": "Bitwise exclusive-or-operation of floating point signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "buffer~": {
+    "digest": "Store audio samples",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "buffir~": {
+    "digest": "buffer-based FIR filter",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "capture~": {
+    "digest": "Store a signal to view as text",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ]
+  },
+  "mc.capture~": {
+    "digest": "Store a signal to view as text",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ],
+    "alias": "capture~"
+  },
+  "cartopol~": {
+    "digest": "Signal Cartesian to Polar coordinate conversion",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "cascade~": {
+    "digest": "Cascaded series of biquad filters",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "change~": {
+    "digest": "Report signal direction",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ]
+  },
+  "click~": {
+    "digest": "Create an impulse",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "clip~": {
+    "digest": "Limit signal amplitude",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "comb~": {
+    "digest": "Apply a comb filter effect",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "cosh~": {
+    "digest": "Signal hyperbolic cosine function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "cosx~": {
+    "digest": "Signal cosine function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "cos~": {
+    "digest": "Signal cosine function (0-1 range)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "MSP Synthesis"
+    ]
+  },
+  "count~": {
+    "digest": "Count samples elapsed",
+    "module": "msp",
+    "category": [
+      "MSP Analysis",
+      "MSP Functions"
+    ]
+  },
+  "cross~": {
+    "digest": "Third-order crossover filter",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "curve~": {
+    "digest": "Exponential ramp generator",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "cycle~": {
+    "digest": "Sinusoidal oscillator",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "dac~": {
+    "digest": "Audio output and on/off",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "dbtoa~": {
+    "digest": "Convert a deciBel value to linear amplitude at signal rate",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "degrade~": {
+    "digest": "Signal quality reducer",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "delay~": {
+    "digest": "Delay a signal",
+    "module": "msp",
+    "category": [
+      "MSP Delays"
+    ]
+  },
+  "deltaclip~": {
+    "digest": "Limit changes in signal amplitude",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "delta~": {
+    "digest": "Signal of sample differences",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "/~": {
+    "digest": "Divide one signal by another",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "downsamp~": {
+    "digest": "Downsample a signal",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "dspstate~": {
+    "digest": "Report current DSP settings",
+    "module": "msp",
+    "category": [
+      "MSP System"
+    ]
+  },
+  "dsptime~": {
+    "digest": "Report milliseconds of audio processed",
+    "module": "msp",
+    "category": [
+      "MSP System"
+    ]
+  },
+  "edge~": {
+    "digest": "Detect logical signal transitions",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ]
+  },
+  "==~": {
+    "digest": "Is equal to, comparison of two signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "ezadc~": {
+    "digest": "Audio input and on/off button",
+    "module": "msp",
+    "category": [
+      "MSP I/O",
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "ezadc~",
+      "pic": "ezadc~.svg"
+    }
+  },
+  "ezdac~": {
+    "digest": "Audio output and on/off button",
+    "module": "msp",
+    "category": [
+      "MSP I/O",
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "ezdac~",
+      "pic": "ezdac~.svg"
+    }
+  },
+  "fbinshift~": {
+    "digest": "Frequency domain frequency shifter for pfft~",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "fffb~": {
+    "digest": "Fast fixed filter bank",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "fftinfo~": {
+    "digest": "Report information about a patcher loaded by pfft~",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "fftin~": {
+    "digest": "Input for a patcher loaded by pfft~",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "fftout~": {
+    "digest": "Output for a patcher loaded by pfft~",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "fft~": {
+    "digest": "Fast Fourier transform",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "filtercoeff~": {
+    "digest": "Signal-rate filter coefficient generator",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "filterdesign": {
+    "digest": "Create a filter specification",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "filterdetail": {
+    "digest": "Detail the characteristics of a filter",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "filtergraph~": {
+    "digest": "Filter editor",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "action": "filtergraph~",
+      "category": [
+        "Audio"
+      ],
+      "pic": "filtergraph~.svg"
+    }
+  },
+  "frameaccum~": {
+    "digest": "Compute &quot;running phase&quot; of successive phase deviation frames",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "frameaverage~": {
+    "digest": "Perform a piece-wise running averaging of consecutive frames of audio.",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "framedelta~": {
+    "digest": "Compute phase deviation between successive FFT frames",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "framesmooth~": {
+    "digest": "Perform averaging of consecutive samples, grouped into frames, without blurring across the frames.",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "framesnap~": {
+    "digest": "Output an FFT frame or signal vector as a list",
+    "module": "msp",
+    "category": [
+      "MissingCategory"
+    ]
+  },
+  "frame~": {
+    "digest": "Output a list as an FFT frame or a signal vector",
+    "module": "msp",
+    "category": [
+      "FFT"
+    ]
+  },
+  "freqshift~": {
+    "digest": "Time-domain frequency shifter",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "ftom~": {
+    "digest": "Convert frequency to MIDI note numbers at signal-rate",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "fzero~": {
+    "digest": "Fundamental frequency and pitch estimator",
+    "module": "msp",
+    "category": [
+      "MSP Analysis",
+      "MSP Functions"
+    ]
+  },
+  "gain~": {
+    "digest": "Gain control",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "action": "gain~",
+      "category": [
+        "Sliders",
+        "Audio"
+      ],
+      "pic": "gain~.svg"
+    }
+  },
+  "mc.multigain~": {
+    "digest": "Gain control",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "action": "gain~",
+      "category": [
+        "Sliders",
+        "Audio"
+      ],
+      "pic": "gain~.svg"
+    },
+    "alias": "gain~"
+  },
+  "gate~": {
+    "digest": "Route a signal to one of several outlets",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "gen": {
+    "digest": "Generate native audio event processing routines",
+    "module": "msp",
+    "category": [
+      "Max Code Generation"
+    ]
+  },
+  "gen~": {
+    "digest": "Generate native audio signal processing routines",
+    "module": "msp",
+    "category": [
+      "MSP Code Generation"
+    ]
+  },
+  "gizmo~": {
+    "digest": "Frequency-domain pitch shifter for pfft~",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  ">=~": {
+    "digest": "Is greater than or equal to, comparison of two signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  ">~": {
+    "digest": "Is greater than, comparison of two signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "gridmeter~": {
+    "digest": "Display signal levels as brightness",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "groove~": {
+    "digest": "Variable-rate looping sample playback",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "hilbert~": {
+    "digest": "Phase quadrature filter",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "hostcontrol~": {
+    "digest": "Control a ReWire host's transport",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "hostphasor~": {
+    "digest": "ReWire host synchronization source",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "hostsync~": {
+    "digest": "Get transport control info from a ReWire host",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "ifft~": {
+    "digest": "Inverse fast Fourier transform",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "in": {
+    "digest": "Message input for a patcher loaded by poly~ or pfft~",
+    "module": "msp",
+    "category": [
+      "MSP Polyphony"
+    ]
+  },
+  "index~": {
+    "digest": "Read from a buffer~ with no interpolation",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "info~": {
+    "digest": "Report information about a sample",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "in~": {
+    "digest": "Signal input for a patcher loaded by poly~",
+    "module": "msp",
+    "category": [
+      "MSP Polyphony"
+    ]
+  },
+  "ioscbank~": {
+    "digest": "Interpolating oscillator bank",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "kink~": {
+    "digest": "Distort a sawtooth waveform",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "<=~": {
+    "digest": "Is less than or equal to, comparison of two signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "<~": {
+    "digest": "Is less than, comparison of two signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "levelmeter~": {
+    "digest": "RMS level meter",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "levelmeter~",
+      "pic": "levelmeter~.svg"
+    }
+  },
+  "mc.levelmeter~": {
+    "digest": "RMS level meter",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "levelmeter~",
+      "pic": "levelmeter~.svg"
+    },
+    "alias": "levelmeter~"
+  },
+  "mcs.limi~": {
+    "digest": "Lookahead limiter",
+    "module": "MissingModule",
+    "category": [
+      "audio",
+      " effects",
+      " limiter",
+      " compressor",
+      " dynamics"
+    ]
+  },
+  "line~": {
+    "digest": "Linear ramp generator",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "log~": {
+    "digest": "Logarithm of a signal",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "lookup~": {
+    "digest": "Transfer function lookup table",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "lores~": {
+    "digest": "Resonant lowpass filter",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "matrix~": {
+    "digest": "Signal routing and mixing matrix",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "maximum~": {
+    "digest": "Compare two signals, output the maximum",
+    "module": "msp",
+    "category": [
+      "MSP Analysis",
+      "MSP Modifiers"
+    ]
+  },
+  "mc.2d.wave~": {
+    "digest": "Two-dimensional wavetable (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Sampling",
+      "Multichannel"
+    ]
+  },
+  "mc.abs~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.acosh~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.acos~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.adc~": {
+    "digest": "Multichannel audio input and on/off",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "mc.adsr~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.allpass~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.amxd~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.asinh~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.asin~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.atanh~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.atan~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.atodb~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.average~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.avg~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.biquad~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.bitand~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.bitnot~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.bitor~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.bitsafe~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.bitxor~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.buffir~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.cartopol~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.cascade~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.cell": {
+    "digest": "Format messages from a jit.cellblock for use with MC objects",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.change~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.channelcount~": {
+    "digest": "Report channel count",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.click~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.clip~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.combine~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.comb~": {
+    "digest": "Apply a comb filter effect (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Filters",
+      "Multichannel"
+    ]
+  },
+  "mc.cosh~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.cosx~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.cos~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.count~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.cross~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.curve~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.cycle~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.dac~": {
+    "digest": "Multichannel audio output and on/off",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "mc.dbtoa~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.degrade~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.deinterleave~": {
+    "digest": "Deinterleave a multichannel audio signal",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.delay~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.deltaclip~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.delta~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc./~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.downsamp~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.dup~": {
+    "digest": "Create a multichannel signal that duplicates a single-channel input",
+    "module": "msp",
+    "category": [
+      "mc",
+      "msp",
+      "msp system"
+    ]
+  },
+  "mc.edge~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.==~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.evolve~": {
+    "digest": "Generate a periodic multichannel function from breakpoint ranges",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.ezadc~": {
+    "digest": "Audio input and on/off button",
+    "module": "msp",
+    "category": [
+      "MSP I/O",
+      "MSP U/I"
+    ]
+  },
+  "mc.ezdac~": {
+    "digest": "Audio output and on/off button",
+    "module": "msp",
+    "category": [
+      "MSP I/O",
+      "MSP U/I"
+    ]
+  },
+  "mc.fffb~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.fft~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.filtercoeff~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.frameaccum~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.frameaverage~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.framedelta~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.framesmooth~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.freqshift~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.ftom~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.fzero~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.gain~": {
+    "digest": "Multichannel gain control",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ]
+  },
+  "mc.gate~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.gen": {
+    "digest": "Generate native audio event processing routines (multichannel)",
+    "module": "msp",
+    "category": [
+      "Max Code Generation",
+      "Multichannel"
+    ]
+  },
+  "mc.gen~": {
+    "digest": "Generate native audio signal processing routines (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Code Generation",
+      "Multichannel"
+    ]
+  },
+  "mc.gradient~": {
+    "digest": "Generate a time-varying function over the space of a multichannel signal",
+    "module": "MSP",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.>=~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.>~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.groove~": {
+    "digest": "Variable-rate looping sample playback (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Sampling",
+      "Multichannel"
+    ]
+  },
+  "mc.hilbert~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.ifft~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.index~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.interleave~": {
+    "digest": "Interleave two or more multichannel signals",
+    "module": "msp",
+    "category": [
+      "mc",
+      "msp",
+      "msp system"
+    ]
+  },
+  "mc.kink~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.<=~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.<~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.line~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.list~": {
+    "digest": "Create a multichannel signal from a list of values",
+    "module": "msp",
+    "category": [
+      "mc",
+      "msp",
+      "msp system"
+    ]
+  },
+  "mc.log~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.lookup~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.lores~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.makelist": {
+    "digest": "Create a list from non-signal output of MC objects",
+    "module": "MSP",
+    "category": [
+      "mc"
+    ]
+  },
+  "mc.matrix~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.maximum~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.minimum~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.minmax~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.-~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.mixdown~": {
+    "digest": "Mix and pan a multichannel signal",
+    "module": "msp",
+    "category": [
+      "mc",
+      "msp",
+      "msp system"
+    ]
+  },
+  "mc.%~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.mstosamps~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.mtof~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.noise~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.normalize~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.noteallocator~": {
+    "digest": "Manage voice numbers for MIDI note events",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.!=~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.number~": {
+    "digest": "Multichannel signal monitor and constant generator",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "number~",
+      "pic": "number~.svg"
+    }
+  },
+  "mc.omx.4band~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.omx.5band~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.omx.comp~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.omx.peaklim~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.onepole~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.op~": {
+    "digest": "Apply arithmetic operators to a multichannel signal",
+    "module": "MSP",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.overdrive~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.pack~": {
+    "digest": "Combine single inputs into a multichannel signal",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.peakamp~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.peek~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.pfft~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.phaseshift~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.phasewrap~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.phasor~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.pink~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.pitchshift~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.playlist~": {
+    "digest": "Play sound files with multichannel output",
+    "module": "msp",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Data",
+        "Audio"
+      ],
+      "action": "plot~",
+      "pic": "plot~.svg"
+    }
+  },
+  "mc.play~": {
+    "digest": "Position-based sample playback (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Sampling",
+      "Multichannel"
+    ]
+  },
+  "mc.+=~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.+~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.atan2~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.div~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.equals~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.greaterthan~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.greaterthaneq~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.jit.peek~": {
+    "digest": "Read matrix data as an audio signal (multichannel)",
+    "module": "jit",
+    "category": [
+      "Jitter Audio",
+      "Multichannel"
+    ]
+  },
+  "mc.lessthan~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.lessthaneq~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.minus~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.modulo~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.notequals~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.plus~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.plusequals~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.poltocar~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.pong~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.pow~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.rampsmooth~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.rand~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.rate~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.!/~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.rdiv~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.rect~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.reson~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.retune~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.!-~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.rminus~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.round~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.sah~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.sampstoms~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.saw~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.scale~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.selector~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.seq~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.sig~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.sinh~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.sinx~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.slide~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.snapshot~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.spike~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.sqrt~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.stutter~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.sum~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.svf~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.sync~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.tanh~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.tanx~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.teeth~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.thresh~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.*~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ]
+  },
+  "mc.times~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.train~": {
+    "digest": "Pulse train generator (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis",
+      "Multichannel"
+    ]
+  },
+  "mc.trapezoid~": {
+    "digest": "Trapezoidal wavetable (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Functions",
+      "Multichannel"
+    ]
+  },
+  "mc.triangle~": {
+    "digest": "Triangle/ramp wavetable (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Functions",
+      "Multichannel"
+    ]
+  },
+  "mc.tri~": {
+    "digest": "Antialiased triangular oscillator (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis",
+      "Multichannel"
+    ]
+  },
+  "mc.trunc~": {
+    "digest": "Truncate fractional signal values (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers",
+      "Multichannel"
+    ]
+  },
+  "mc.vectral~": {
+    "digest": "Vector-based envelope follower (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP FFT",
+      "Multichannel"
+    ]
+  },
+  "mc.vst~": {
+    "digest": "Host VST, VST3 and Audio Unit plug-ins (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins",
+      "Multichannel"
+    ]
+  },
+  "mc.wave~": {
+    "digest": "Variable size wavetable (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Sampling",
+      "Multichannel"
+    ]
+  },
+  "mc.zerox~": {
+    "digest": "Detect zero crossings (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Analysis",
+      "Multichannel"
+    ]
+  },
+  "mc.zigzag~": {
+    "digest": "Linked list function editor (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Functions",
+      "Multichannel"
+    ]
+  },
+  "mcp.sfplay~": {
+    "digest": "Multiply two signals (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP Operators",
+      "Multichannel"
+    ],
+    "alias": "mc.*~"
+  },
+  "mc.range~": {
+    "digest": "Generate a multichannel signal with a range of constant values",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.receive~": {
+    "digest": "Signals can be received from any loaded patcher, without patch cords",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "mc.record~": {
+    "digest": "Record sound into a buffer",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "mc.resize~": {
+    "digest": "Resize a multichannel signal",
+    "module": "msp",
+    "category": [
+      "mc",
+      "msp",
+      "msp system"
+    ]
+  },
+  "mc.route": {
+    "digest": "Direct output of messages based on an index received",
+    "module": "Max",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.send~": {
+    "digest": "Send signals without patch cords",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "mc.separate~": {
+    "digest": "Split a multichannel signal",
+    "module": "msp",
+    "category": [
+      "mc",
+      "msp",
+      "msp system"
+    ]
+  },
+  "mc.sfplay~": {
+    "digest": "Play audio file from disk (multichannel)",
+    "module": "msp",
+    "category": [
+      "MSP I/O",
+      "Multichannel"
+    ]
+  },
+  "mc.stereo~": {
+    "digest": "TEXT_HERE",
+    "module": "MissingModule",
+    "category": [
+      "MissingCategory"
+    ]
+  },
+  "mc.target": {
+    "digest": "Format messages to control MC objects",
+    "module": "MSP",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.input": {
+    "digest": "Format messages to control MC objects",
+    "module": "MSP",
+    "category": [
+      "MC"
+    ],
+    "alias": "mc.target"
+  },
+  "mc.targetlist": {
+    "digest": "Format messages based on inlet number for controlling MC objects",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.transpose~": {
+    "digest": "Reorganize multichannel signals",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.unpack~": {
+    "digest": "Split a multichannel signal into single-channel signals",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mc.voiceallocator~": {
+    "digest": "Manage voice numbers for events",
+    "module": "msp",
+    "category": [
+      "MC"
+    ]
+  },
+  "mcs.2d.wave~": {
+    "digest": "Two-dimensional wavetable (multichannel I/O)",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "mcs.fffb~": {
+    "digest": "Fast fixed filter bank (multichannel I/O)",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "mcs.matrix~": {
+    "digest": "Signal routing and mixing matrix (multichannel I/O)",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "mcs.play~": {
+    "digest": "Position-based sample playback (multichannel I/O)",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "mcs.vst~": {
+    "digest": "Host VST, VST3 and Audio Unit plug-ins (multichannel I/O)",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "mcs.wave~": {
+    "digest": "Variable size wavetable (multichannel I/O)",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "MC Wrapper Features": {
+    "digest": "Messages and attributes common to MC wrapper objects",
+    "module": "msp",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "meter~": {
+    "digest": "Visual peak level indicator",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "meter~",
+      "pic": "meter~.svg"
+    }
+  },
+  "mc.meter~": {
+    "digest": "Visual peak level indicator",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "meter~",
+      "pic": "meter~.svg"
+    },
+    "alias": "meter~"
+  },
+  "minimum~": {
+    "digest": "Compare two signals, output the minimum",
+    "module": "msp",
+    "category": [
+      "MSP Analysis",
+      "MSP Modifiers"
+    ]
+  },
+  "minmax~": {
+    "digest": "Compute minimum/maximum signal values",
+    "module": "msp",
+    "category": [
+      "MSP Analysis",
+      "MSP Modifiers"
+    ]
+  },
+  "-~": {
+    "digest": "Signal subtraction",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "%~": {
+    "digest": "Divide two signals, output the remainder",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "mstosamps~": {
+    "digest": "Convert milliseconds to samples",
+    "module": "msp",
+    "category": [
+      "MSP System"
+    ]
+  },
+  "mtof~": {
+    "digest": "Convert a MIDI note number to frequency at signal rate",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "mute~": {
+    "digest": "Disable signal processing in a subpatch",
+    "module": "msp",
+    "category": [
+      "MSP System"
+    ]
+  },
+  "mxj~": {
+    "digest": "Java in MSP",
+    "module": "msp",
+    "category": [
+      "Languages"
+    ]
+  },
+  "noise~": {
+    "digest": "Generate white noise",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "normalize~": {
+    "digest": "Scale on the basis of maximum amplitude",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "!=~": {
+    "digest": "Not equal to, comparison of two signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "number~": {
+    "digest": "Signal monitor and constant generator",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "number~",
+      "pic": "number~.svg"
+    }
+  },
+  "omx.4band~": {
+    "digest": "OctiMax 4-band Compressor",
+    "module": "msp",
+    "category": [
+      "MSP Dynamics"
+    ]
+  },
+  "omx.5band~": {
+    "digest": "OctiMax 5-band Compressor",
+    "module": "msp",
+    "category": [
+      "MSP Dynamics"
+    ]
+  },
+  "omx.comp~": {
+    "digest": "OctiMax Compressor",
+    "module": "msp",
+    "category": [
+      "MSP Dynamics"
+    ]
+  },
+  "omx.peaklim~": {
+    "digest": "OctiMax Peak Limiter",
+    "module": "msp",
+    "category": [
+      "MSP Dynamics"
+    ]
+  },
+  "onepole~": {
+    "digest": "Single-pole lowpass filter",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "oscbank~": {
+    "digest": "Non-interpolating oscillator bank",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "out": {
+    "digest": "Message output for a patcher loaded by poly~ or pfft~",
+    "module": "msp",
+    "category": [
+      "MSP Polyphony"
+    ]
+  },
+  "out~": {
+    "digest": "Signal output for a patcher loaded by poly~",
+    "module": "msp",
+    "category": [
+      "MSP Polyphony"
+    ]
+  },
+  "overdrive~": {
+    "digest": "Soft-clipping signal distortion",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "pass~": {
+    "digest": "Eliminate noise in a muted subpatcher",
+    "module": "msp",
+    "category": [
+      "MSP System"
+    ]
+  },
+  "peakamp~": {
+    "digest": "Report the maximum amplitude of a signal",
+    "module": "msp",
+    "category": [
+      "MSP Analysis",
+      "MSP Modifiers"
+    ]
+  },
+  "peek~": {
+    "digest": "Read and write sample values",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "pfft~": {
+    "digest": "Spectral processing manager for patchers",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "phaseshift~": {
+    "digest": "Distort the phase of a signal",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "phasewrap~": {
+    "digest": "Wrap a signal between π and -π",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "phasor~": {
+    "digest": "Generate sawtooth signals",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "pink~": {
+    "digest": "Pink noise generator",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "pitchshift~": {
+    "digest": "Ztx-based real-time pitchshifting",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "playlist~": {
+    "digest": "Play sound files",
+    "module": "msp",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Data",
+        "Audio"
+      ],
+      "action": "plot~",
+      "pic": "plot~.svg"
+    }
+  },
+  "play~": {
+    "digest": "Position-based sample playback",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "plot~": {
+    "digest": "Visualize two-dimensional data",
+    "module": "msp",
+    "category": [
+      "U/I"
+    ],
+    "palette": {
+      "category": [
+        "Data",
+        "Audio"
+      ],
+      "action": "plot~",
+      "pic": "plot~.svg"
+    }
+  },
+  "plugin~": {
+    "digest": "Define a Max for Live device's audio inputs",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "mc.plugin~": {
+    "digest": "Define a Max for Live device's audio inputs",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ],
+    "alias": "plugin~"
+  },
+  "plugout~": {
+    "digest": "Define a Max for Live Device's audio outputs",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "mc.plugout~": {
+    "digest": "Define a Max for Live Device's audio outputs",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ],
+    "alias": "plugout~"
+  },
+  "plugphasor~": {
+    "digest": "Host-synchronized sawtooth wave",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "mc.plugphasor~": {
+    "digest": "Host-synchronized sawtooth wave",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ],
+    "alias": "plugphasor~"
+  },
+  "plugreceive~": {
+    "digest": "Receive audio from another plug-in",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "plugsend~": {
+    "digest": "Send audio to another plug-in",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "plugsync~": {
+    "digest": "Report host synchronization information",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "+=~": {
+    "digest": "Signal accumulator",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "+~": {
+    "digest": "Add signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "poke~": {
+    "digest": "Write sample values to a buffer by index",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "poltocar~": {
+    "digest": "Signal Polar to Cartesian coordinate conversion",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "polybuffer~": {
+    "digest": "Manage multiple buffer~ objects",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "poly~": {
+    "digest": "Manage polyphony/DSP for patchers",
+    "module": "msp",
+    "category": [
+      "MSP Polyphony"
+    ]
+  },
+  "mc.poly~": {
+    "digest": "Manage polyphony/DSP for patchers",
+    "module": "msp",
+    "category": [
+      "MSP Polyphony"
+    ],
+    "alias": "poly~"
+  },
+  "pong~": {
+    "digest": "Variable range signal folding",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "pow~": {
+    "digest": "Signal power function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "rampsmooth~": {
+    "digest": "Smooth an incoming signal",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "rand~": {
+    "digest": "Band-limited random signal",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "rate~": {
+    "digest": "Time-scale the output of a phasor~",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "!/~": {
+    "digest": "Signal division (inlets reversed)",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "receive~": {
+    "digest": "Signals can be received from any loaded patcher, without patch cords",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "record~": {
+    "digest": "Record sound into a buffer",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "rect~": {
+    "digest": "Antialiased rectangular (pulse) oscillator",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "reson~": {
+    "digest": "Resonant bandpass filter",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "retune~": {
+    "digest": "Ztx-based pitch detection and pitchshift",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "rewire~": {
+    "digest": "Host ReWire devices",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "!-~": {
+    "digest": "Signal subtraction (inlets reversed)",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "round~": {
+    "digest": "Round an input signal value",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "sah~": {
+    "digest": "Sample and hold a signal according to a trigger",
+    "module": "msp",
+    "category": [
+      "MSP Generators"
+    ]
+  },
+  "sampstoms~": {
+    "digest": "Convert time from samples to milliseconds",
+    "module": "msp",
+    "category": [
+      "MSP System"
+    ]
+  },
+  "saw~": {
+    "digest": "Antialiased sawtooth oscillator",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "scale~": {
+    "digest": "Map an input range of signal values to an output range",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "scope~": {
+    "digest": "Visualize an audio signal",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "scope~",
+      "pic": "scope~.svg"
+    }
+  },
+  "mc.scope~": {
+    "digest": "Visualize an audio signal",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "scope~",
+      "pic": "scope~.svg"
+    },
+    "alias": "scope~"
+  },
+  "selector~": {
+    "digest": "Assign one of several inputs to an outlet",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "send~": {
+    "digest": "Send signals without patch cords",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "seq~": {
+    "digest": "Signal-driven event sequencer",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "sfinfo~": {
+    "digest": "Report audio file information",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "sflist~": {
+    "digest": "Store audio file cues",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "sfplay~": {
+    "digest": "Play audio file from disk",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "sfrecord~": {
+    "digest": "Record to audio file on disk",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ]
+  },
+  "mc.sfrecord~": {
+    "digest": "Record to audio file on disk",
+    "module": "msp",
+    "category": [
+      "MSP I/O"
+    ],
+    "alias": "sfrecord~"
+  },
+  "sig~": {
+    "digest": "Convert numbers into audio signals",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "sinh~": {
+    "digest": "Signal hyperbolic sine function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "sinx~": {
+    "digest": "Signal sine function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "slide~": {
+    "digest": "Filter a signal logarithmically",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "Snapshot Messages": {
+    "digest": "Messages and attributes common to the Snapshot group",
+    "module": "msp",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "snapshot~": {
+    "digest": "Convert signal values to numbers",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ]
+  },
+  "spectroscope~": {
+    "digest": "Signal spectrogram or sonogram",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "spectroscope~",
+      "pic": "spectroscope~.svg"
+    }
+  },
+  "mc.spectroscope~": {
+    "digest": "Signal spectrogram or sonogram",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "spectroscope~",
+      "pic": "spectroscope~.svg"
+    },
+    "alias": "spectroscope~"
+  },
+  "spike~": {
+    "digest": "Report intervals of zero to non-zero transitions",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ]
+  },
+  "sqrt~": {
+    "digest": "Square root of a signal",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "stretch~": {
+    "digest": "Ztx-based pitch/time modification of an audio buffer",
+    "module": "MSP",
+    "category": [
+      "Audio"
+    ]
+  },
+  "stutter~": {
+    "digest": "Signal capture buffer for granular playback",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "svf~": {
+    "digest": "State-variable filter with simultaneous outputs",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "sync~": {
+    "digest": "Synchronize MSP with an external source",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ]
+  },
+  "tanh~": {
+    "digest": "Signal hyperbolic tangent function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "tanx~": {
+    "digest": "Signal tangent function",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "tapin~": {
+    "digest": "Input to a delay line",
+    "module": "msp",
+    "category": [
+      "MSP Delays"
+    ]
+  },
+  "mc.tapin~": {
+    "digest": "Input to a delay line",
+    "module": "msp",
+    "category": [
+      "MSP Delays"
+    ],
+    "alias": "tapin~"
+  },
+  "tapout~": {
+    "digest": "Output from a delay line",
+    "module": "msp",
+    "category": [
+      "MSP Delays"
+    ]
+  },
+  "mc.tapout~": {
+    "digest": "Output from a delay line",
+    "module": "msp",
+    "category": [
+      "MSP Delays"
+    ],
+    "alias": "tapout~"
+  },
+  "techno~": {
+    "digest": "Signal-driven step sequencer",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "teeth~": {
+    "digest": "Comb filter with feedforward and feedback delay control",
+    "module": "msp",
+    "category": [
+      "MSP Filters"
+    ]
+  },
+  "thispoly~": {
+    "digest": "Control poly~ voice allocation and muting",
+    "module": "msp",
+    "category": [
+      "MSP Polyphony"
+    ]
+  },
+  "thresh~": {
+    "digest": "Detect signal above a set level",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ]
+  },
+  "*~": {
+    "digest": "Multiply two signals",
+    "module": "msp",
+    "category": [
+      "MSP Operators"
+    ]
+  },
+  "train~": {
+    "digest": "Pulse train generator",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "trapezoid~": {
+    "digest": "Trapezoidal wavetable",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "triangle~": {
+    "digest": "Triangle/ramp wavetable",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "tri~": {
+    "digest": "Antialiased triangular oscillator",
+    "module": "msp",
+    "category": [
+      "MSP Synthesis"
+    ]
+  },
+  "trunc~": {
+    "digest": "Truncate fractional signal values",
+    "module": "msp",
+    "category": [
+      "MSP Modifiers"
+    ]
+  },
+  "typeroute~": {
+    "digest": "Route input based on the type of data received",
+    "module": "msp",
+    "category": [
+      "MSP Routing"
+    ]
+  },
+  "vectral~": {
+    "digest": "Vector-based envelope follower",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "vst~": {
+    "digest": "Host VST, VST3 and Audio Unit plug-ins",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ]
+  },
+  "audiounit~": {
+    "digest": "Host VST, VST3 and Audio Unit plug-ins",
+    "module": "msp",
+    "category": [
+      "MSP Plug-ins"
+    ],
+    "alias": "vst~"
+  },
+  "waveform~": {
+    "digest": "buffer~ viewer and editor",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "waveform~",
+      "pic": "waveform~.svg"
+    }
+  },
+  "wave~": {
+    "digest": "Variable size wavetable",
+    "module": "msp",
+    "category": [
+      "MSP Sampling"
+    ]
+  },
+  "windowed-fft~": {
+    "digest": "Windowed/Overlapped Fast Fourier Transform",
+    "module": "msp",
+    "category": [
+      "MSP FFT"
+    ]
+  },
+  "zerox~": {
+    "digest": "Detect zero crossings",
+    "module": "msp",
+    "category": [
+      "MSP Analysis"
+    ]
+  },
+  "zigzag~": {
+    "digest": "Linked list function editor",
+    "module": "msp",
+    "category": [
+      "MSP Functions"
+    ]
+  },
+  "zplane~": {
+    "digest": "Graph filter poles and zeros on the Z-plane",
+    "module": "msp",
+    "category": [
+      "MSP U/I"
+    ],
+    "palette": {
+      "category": [
+        "Audio"
+      ],
+      "action": "zplane~",
+      "pic": "zplane~.svg"
+    }
+  },
+  "jit.3m": {
+    "digest": "Report min/mean/max values",
+    "module": "jit",
+    "category": [
+      "Jitter Analysis"
+    ]
+  },
+  "jit.alphablend": {
+    "digest": "Blend two images with an alpha channel image",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing"
+    ]
+  },
+  "jit.altern": {
+    "digest": "Color screen with threshold",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.ameba": {
+    "digest": "Downsample/upsample with non-obvious results",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.anim.drive": {
+    "digest": "Animate a 3D transform",
+    "module": "jit",
+    "category": [
+      "Jitter Animation"
+    ]
+  },
+  "jit.anim.node": {
+    "digest": "Perform hierarchical transformation",
+    "module": "jit",
+    "category": [
+      "Jitter Animation"
+    ]
+  },
+  "jit.anim.path": {
+    "digest": "Evaluate a path of 3D transform points",
+    "module": "jit",
+    "category": [
+      "Jitter Animation"
+    ]
+  },
+  "jit.argb2ayuv": {
+    "digest": "Convert ARGB to AYUV",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.argb2grgb": {
+    "digest": "Convert ARGB to GRGB",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.argb2uyvy": {
+    "digest": "Convert ARGB to UYVY",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.avc": {
+    "digest": "Control a FireWire VTR",
+    "module": "jit",
+    "category": [
+      "Jitter Devices"
+    ]
+  },
+  "jit.avg4": {
+    "digest": "Average four points",
+    "module": "jit",
+    "category": [
+      "Jitter Blur/Sharpen"
+    ]
+  },
+  "jit.axis2quat": {
+    "digest": "Convert angle-axis to quaternion",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.ayuv2argb": {
+    "digest": "Convert AYUV to ARGB",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.ayuv2luma": {
+    "digest": "Convert AYUV to monochrome (luminance)",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.ayuv2uyvy": {
+    "digest": "Convert AYUV to UYVY",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.bfg": {
+    "digest": "Evaluate a procedural basis function graph",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.brass": {
+    "digest": "Emboss image",
+    "module": "jit",
+    "category": [
+      "Jitter Blur/Sharpen"
+    ]
+  },
+  "jit.brcosa": {
+    "digest": "Adjust image brightness/contrast/saturation",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace",
+      "Jitter Special FX"
+    ]
+  },
+  "jit.broadcast": {
+    "digest": "Broadcast video using RTSP",
+    "module": "jit",
+    "category": [
+      "Jitter Networking"
+    ]
+  },
+  "jit.bsort": {
+    "digest": "Bubble sort",
+    "module": "jit",
+    "category": [
+      "Jitter Analysis"
+    ]
+  },
+  "jit.buffer~": {
+    "digest": "Access an MSP buffer~ in matrix form",
+    "module": "jit",
+    "category": [
+      "Jitter Audio"
+    ]
+  },
+  "jit.catch~": {
+    "digest": "Transform signal data into matrices",
+    "module": "jit",
+    "category": [
+      "Jitter Audio"
+    ]
+  },
+  "jit.change": {
+    "digest": "Only pass different frames",
+    "module": "jit",
+    "category": [
+      "Jitter Analysis"
+    ]
+  },
+  "jit.charmap": {
+    "digest": "Map 256-point input to output",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.chromakey": {
+    "digest": "Key images based on chromatic distance",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing"
+    ]
+  },
+  "jit.clip": {
+    "digest": "Limit data to a range",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.coerce": {
+    "digest": "Coerce a matrix into different types/planecount",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.colorspace": {
+    "digest": "Convert between colorspaces",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.concat": {
+    "digest": "Concatenate two matrices",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.convolve": {
+    "digest": "Convolve two matrices",
+    "module": "jit",
+    "category": [
+      "Jitter Blur/Sharpen"
+    ]
+  },
+  "jit.conway": {
+    "digest": "Play Conway's game of life",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.cycle": {
+    "digest": "Cycle messages through outputs",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.demultiplex": {
+    "digest": "Demultiplex (deinterleave) one matrix into two",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.desktop": {
+    "digest": "Copy the display into a matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Devices",
+      "Jitter Generators"
+    ]
+  },
+  "jit.dimmap": {
+    "digest": "Remap and/or invert matrix dimensions",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.dimop": {
+    "digest": "Downsample using operators across dimensions",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.displays": {
+    "digest": "Set and query monitor attributes",
+    "module": "jit",
+    "category": [
+      "Jitter Devices"
+    ]
+  },
+  "jit.dx.grab": {
+    "digest": "Digitize video using DirectX (Windows)",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.dx.videoout": {
+    "digest": "Output video to DirectX (Windows)",
+    "module": "jit",
+    "category": [
+      "Jitter Devices"
+    ]
+  },
+  "jit.eclipse": {
+    "digest": "Create images from images",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.euler2quat": {
+    "digest": "Convert Euler angles to quaternion",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.expr": {
+    "digest": "Evaluate an expression to fill a matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.fastblur": {
+    "digest": "Blur/sharpen using optimized algorithm",
+    "module": "jit",
+    "category": [
+      "Jitter Blur/Sharpen"
+    ]
+  },
+  "jit.fft": {
+    "digest": "Perform a matrix-based FFT",
+    "module": "jit",
+    "category": [
+      "Jitter Analysis"
+    ]
+  },
+  "jit.fill": {
+    "digest": "Fill a matrix with a list",
+    "module": "jit",
+    "category": [
+      "Jitter Lists"
+    ]
+  },
+  "jit.findbounds": {
+    "digest": "Locate bounding dimensions for a value range",
+    "module": "jit",
+    "category": [
+      "Jitter Analysis"
+    ]
+  },
+  "jit.fluoride": {
+    "digest": "Add a neon glow",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.fprint": {
+    "digest": "Read/write a matrix as a text file",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.fpsgui": {
+    "digest": "FPS meter",
+    "module": "jit",
+    "category": [
+      "Jitter UI"
+    ],
+    "palette": {
+      "action": "jit.fpsgui",
+      "category": [
+        "Jitter"
+      ],
+      "pic": "jit.fpsgui.svg"
+    }
+  },
+  "jit.freeframe": {
+    "digest": "Utilize FreeFrame effects",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.gen": {
+    "digest": "Generate new Jitter MOP objects",
+    "module": "jit",
+    "category": [
+      "Jitter Code Generation"
+    ]
+  },
+  "jit.gencoord": {
+    "digest": "Evaluate a procedural basis function graph",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.gl.asyncread": {
+    "digest": "Read back from an OpenGL framebuffer",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.bfg": {
+    "digest": "Procedural basis function texture generator",
+    "module": "MissingModule",
+    "category": [
+      "MissingCategory"
+    ]
+  },
+  "jit.gl.camera": {
+    "digest": "Set a rendering view",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.cornerpin": {
+    "digest": "Map textures in a window",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.cubemap": {
+    "digest": "Manage a cubemap texture target",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.graph": {
+    "digest": "Graph floats into 3D space",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.gridshape": {
+    "digest": "Generate simple geometric shapes as a grid",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.handle": {
+    "digest": "Use mouse movement to control position/rotation",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.imageunit": {
+    "digest": "Use Apple Image Units",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.isosurf": {
+    "digest": "Generate a GL based surface extraction",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.light": {
+    "digest": "Place a light source in a 3D scene",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.lua": {
+    "digest": "Script OpenGL and Jitter with Lua.",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.material": {
+    "digest": "Generate materials for 3D objects",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.mesh": {
+    "digest": "Generate GL geometry from matrices",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.model": {
+    "digest": "Read and draw various 3D model formats",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.multiple": {
+    "digest": "Create multiple object instances",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.node": {
+    "digest": "Create hierarchical rendering groups",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.nurbs": {
+    "digest": "Generate NURBS surface",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.pass": {
+    "digest": "Render scene passes with shader processing",
+    "module": "jit",
+    "category": [
+      "Jitter Code Generation"
+    ]
+  },
+  "jit.gl.path": {
+    "digest": "Generate and render a path in OpenGL",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.physdraw": {
+    "digest": "A physics opengl debug drawer",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.picker": {
+    "digest": "Mouse picking in an opengl context",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.pix": {
+    "digest": "Generates pixel processing shaders from a gen patcher",
+    "module": "jit",
+    "category": [
+      "Jitter Code Generation"
+    ]
+  },
+  "jit.gl.plato": {
+    "digest": "Generate platonic solids",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.render": {
+    "digest": "Render Jitter OpenGL objects",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.shader": {
+    "digest": "Manage a GL shader",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.sketch": {
+    "digest": "Use drawing commands with OpenGL",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.skybox": {
+    "digest": "Render a skybox in OpenGL",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.slab": {
+    "digest": "Process texture data",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.text": {
+    "digest": "Render text in a GL context",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.text2d": {
+    "digest": "Render bitmap text",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.text3d": {
+    "digest": "Render vector text",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.texture": {
+    "digest": "Create OpenGL textures",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.videoplane": {
+    "digest": "Display video in OpenGL",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.gl.layer": {
+    "digest": "Display video in OpenGL",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ],
+    "alias": "jit.gl.videoplane"
+  },
+  "jit.gl.volume": {
+    "digest": "Create a volume visualization",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.glop": {
+    "digest": "Produce feedback with gain staging",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.glue": {
+    "digest": "Glue many matrices into one",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.grab": {
+    "digest": "Digitize video from an external source",
+    "module": "jit",
+    "category": [
+      "Jitter Generators",
+      "Jitter QuickTime"
+    ]
+  },
+  "jit.qt.grab": {
+    "digest": "Digitize video from an external source",
+    "module": "jit",
+    "category": [
+      "Jitter Generators",
+      "Jitter QuickTime"
+    ]
+  },
+  "jit.gradient": {
+    "digest": "Generate Chebyshev gradients",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.graph": {
+    "digest": "Perform floating-point data visualization",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.grgb2argb": {
+    "digest": "Convert GRGB to ARGB",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "Jitter GL Object (OB3D) Messages": {
+    "digest": "Messages and attributes common to the GL group",
+    "module": "jit",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "Jitter Matrix Operators": {
+    "digest": "Messages and attributes common to Jitter matrix operators",
+    "module": "jit",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "jit.hatch": {
+    "digest": "Perform crosshatch filtering",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.hello": {
+    "digest": "Show an example of Jitter attributes",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.histogram": {
+    "digest": "Calculate matrix histogram",
+    "module": "jit",
+    "category": [
+      "Jitter Analysis"
+    ]
+  },
+  "jit.hsl2rgb": {
+    "digest": "Convert HSL to RGB",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.hue": {
+    "digest": "Rotate hue",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.iter": {
+    "digest": "Iterate a matrix as lists or values",
+    "module": "jit",
+    "category": [
+      "Jitter Lists"
+    ]
+  },
+  "jit.keyscreen": {
+    "digest": "Choke chromakey from 3 sources",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing"
+    ]
+  },
+  "jit.la.determinant": {
+    "digest": "Calculate the determinant of a matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.la.diagproduct": {
+    "digest": "Calculate the product across the main diagonal",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.la.inverse": {
+    "digest": "Calculate the inverse of a matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.la.mult": {
+    "digest": "True matrix multiplication",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.la.trace": {
+    "digest": "Calculate the sum across the main diagonal",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.la.uppertri": {
+    "digest": "Convert a matrix into an upper triangular matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.lcd": {
+    "digest": "QuickDraw wrapper",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.linden": {
+    "digest": "Lindenmayer string expansion (L-systems)",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.luma2ayuv": {
+    "digest": "Converts monochrome (luminance) to AYUV",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.luma2uyvy": {
+    "digest": "Converts monochrome (luminance) to UYVY",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.lumakey": {
+    "digest": "Key based on distance from a luminance value",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing"
+    ]
+  },
+  "jit.map": {
+    "digest": "Map input range to output range",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.matrix": {
+    "digest": "The Jitter Matrix!",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.matrixinfo": {
+    "digest": "Report matrix planecount, type, dimensions",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.matrixset": {
+    "digest": "A set of matrices for storage/resequencing",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.mgraphics": {
+    "digest": "2D Vector Graphics",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.movie": {
+    "digest": "Play a movie",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.qt.movie": {
+    "digest": "Play or edit a movie",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.multiplex": {
+    "digest": "Multiplex (interleave) two matrices into one matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.mxform2d": {
+    "digest": "Spatial transform using 3x3 matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.net.recv": {
+    "digest": "Receive matrices from a jit.net.send object via TCP/IP",
+    "module": "jit",
+    "category": [
+      "Jitter Networking"
+    ]
+  },
+  "jit.net.send": {
+    "digest": "Send matrices to a jit.net.recv object via TCP/IP",
+    "module": "jit",
+    "category": [
+      "Jitter Networking"
+    ]
+  },
+  "jit.noise": {
+    "digest": "Generate white noise",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.normalize": {
+    "digest": "Normalizes a matrix.",
+    "module": "jit",
+    "category": [
+      "Jitter Analysis"
+    ]
+  },
+  "jit.obref": {
+    "digest": "Launch html object reference",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.op": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ]
+  },
+  "jit.pass": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.mult": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.*": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.div": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit./": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.add": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.+": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.addmod": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.+m": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.sub": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.-": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.submod": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.-m": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.mod": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.%": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.min": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.max": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.avg": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.abs": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.absdiff": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.flippass": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.!pass": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.flipdiv": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.!/": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.flipsub": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.!-": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.flipmod": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.!%": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.fold": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.wrap": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.bitand": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.&": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.bitor": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.|": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.bitxor": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.^": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.bitnot": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.~": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.rshift": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.>>": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.lshift": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.<<": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.and": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.&&": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.or": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.||": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.not": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.!": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.gt": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.>": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.lt": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.<": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.gte": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.>=": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.lte": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.<=": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.eq": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.==": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.neq": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.!=": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.gtp": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.>p": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.ltp": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.<p": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.gtep": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.>=p": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.ltep": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.<=p": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.eqp": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.==p": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.neqp": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.!=p": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.sin": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.cos": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.tan": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.asin": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.acos": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.atan": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.atan2": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.sinh": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.cosh": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.tanh": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.asinh": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.acosh": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.atanh": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.exp": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.exp2": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.ln": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.log": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.log2": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.log10": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.hypot": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.pow": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.sqrt": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.ceil": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.floor": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.round": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.trunc": {
+    "digest": "Apply binary or unary operators",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing",
+      "Jitter Math"
+    ],
+    "alias": "jit.op"
+  },
+  "jit.openexr": {
+    "digest": "Read or write an OpenEXR image.",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.p.bounds": {
+    "digest": "Limit particles to a region of space",
+    "module": "jit",
+    "category": [
+      "Jitter Particles"
+    ]
+  },
+  "jit.p.shiva": {
+    "digest": "Generate/eliminate particles",
+    "module": "jit",
+    "category": [
+      "Jitter Particles"
+    ]
+  },
+  "jit.p.vishnu": {
+    "digest": "Apply single force to particles",
+    "module": "jit",
+    "category": [
+      "Jitter Particles"
+    ]
+  },
+  "jit.pack": {
+    "digest": "Make a multiplane matrix out of single plane matrices",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.path": {
+    "digest": "Evaluates a series of N-dim points as a path",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.peek~": {
+    "digest": "Read matrix data as an audio signal",
+    "module": "jit",
+    "category": [
+      "Jitter Audio"
+    ]
+  },
+  "jit.phys.6dof": {
+    "digest": "A six degrees of freedom constraint in a physics world",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.barslide": {
+    "digest": "A bar constraint in a physics world",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.body": {
+    "digest": "A rigid body and collision shape",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.conetwist": {
+    "digest": "A conetwist constraint in a physics world",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.ghost": {
+    "digest": "A collision sensor and forcefield",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.hinge": {
+    "digest": "A hinge constraint in a physics world",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.multiple": {
+    "digest": "Uses matrices to simulate multiple rigid bodies",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.picker": {
+    "digest": "Constraint picking in a physics world",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.point2point": {
+    "digest": "A point to point constraint in a physics world",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.phys.world": {
+    "digest": "Collision detection and rigid body dynamics",
+    "module": "jit",
+    "category": [
+      "Jitter Physics"
+    ]
+  },
+  "jit.pix": {
+    "digest": "Generates Jitter mop pixel processing objects from a patcher.",
+    "module": "jit",
+    "category": [
+      "Jitter Code Generation"
+    ]
+  },
+  "jit.planeop": {
+    "digest": "Operator across planes",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.playlist": {
+    "digest": "Play video files",
+    "module": "jit",
+    "category": [
+      "Jitter"
+    ],
+    "palette": {
+      "category": [
+        "Data",
+        "Audio"
+      ],
+      "action": "plot~",
+      "pic": "plot~.svg"
+    }
+  },
+  "jit.plot": {
+    "digest": "(x,y) plotting of a two-plane matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.plume": {
+    "digest": "Displace points based on luminance",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.plur": {
+    "digest": "Peace Love Unity Rave",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.poke~": {
+    "digest": "Write an audio signal into a matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Audio"
+    ]
+  },
+  "jit.print": {
+    "digest": "Print a matrix in the Max Console",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.proxy": {
+    "digest": "Proxy a Jitter object.",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.pwindow": {
+    "digest": "Display Jitter data and images",
+    "module": "jit",
+    "category": [
+      "Jitter UI"
+    ],
+    "palette": {
+      "category": [
+        "Jitter"
+      ],
+      "action": "jit.pwindow",
+      "pic": "jit.pwindow.svg"
+    }
+  },
+  "jit.qball": {
+    "digest": "Convert messages at scheduler time to low priority",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.qfaker": {
+    "digest": "Fake queue status",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.qt.broadcast": {
+    "digest": "Broadcast video using RTSP (Macintosh only)",
+    "module": "jit",
+    "category": [
+      "Jitter Networking",
+      "Jitter QuickTime"
+    ]
+  },
+  "jit.qt.effect": {
+    "digest": "QuickTime Effects for Jitter matrices",
+    "module": "jit",
+    "category": [
+      "Jitter QuickTime",
+      "Jitter Special FX"
+    ]
+  },
+  "jit.qt.record": {
+    "digest": "Record a movie",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ],
+    "alias": "jit.record"
+  },
+  "jit.qt.videoout": {
+    "digest": "Output video to QuickTime video output component",
+    "module": "jit",
+    "category": [
+      "Jitter Devices",
+      "Jitter QuickTime"
+    ]
+  },
+  "jit.quat": {
+    "digest": "Quaternion multiplication",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.quat2axis": {
+    "digest": "Quaternion to angle-axis conversion",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.quat2euler": {
+    "digest": "Quaternion to Euler conversion",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.record": {
+    "digest": "Record a movie",
+    "module": "jit",
+    "category": [
+      "Jitter Generators"
+    ]
+  },
+  "jit.release~": {
+    "digest": "Transforms matrix data into signals",
+    "module": "jit",
+    "category": [
+      "Jitter Audio"
+    ]
+  },
+  "jit.repos": {
+    "digest": "Reposition spatially",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.resamp": {
+    "digest": "Resample spatially",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.reverse": {
+    "digest": "Reverse output with respect to input",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.rgb2hsl": {
+    "digest": "Convert RGB to HSL",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.rgb2luma": {
+    "digest": "Converts RGB to monochrome (luminance)",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.robcross": {
+    "digest": "Robert's Cross edge detection",
+    "module": "jit",
+    "category": [
+      "Jitter Blur/Sharpen"
+    ]
+  },
+  "jit.rota": {
+    "digest": "Scale/rotate in 2D",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.roy": {
+    "digest": "Convert image to halftone image",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.rubix": {
+    "digest": "Reorder grid of rectangles",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.scalebias": {
+    "digest": "Multiply and add",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.scanoffset": {
+    "digest": "Uses a 1-dimensional matrix to offset scanlines",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.scanslide": {
+    "digest": "Cellwise spatial envelope follower",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.scanwrap": {
+    "digest": "Resample by scanline wrapping",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.scissors": {
+    "digest": "Cut up a matrix into evenly spaced sub matrices",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.scope": {
+    "digest": "Visual matrix analysis tools",
+    "module": "jit",
+    "category": [
+      "Jitter UI"
+    ],
+    "palette": {
+      "category": [
+        "Jitter"
+      ],
+      "action": "jit.scope",
+      "pic": "jit.scope.svg"
+    }
+  },
+  "jit.shade": {
+    "digest": "Map-based crossfader",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing"
+    ]
+  },
+  "jit.slide": {
+    "digest": "Cellwise temporal envelope follower",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.sobel": {
+    "digest": "Sobel and Prewitt gradient edge detector",
+    "module": "jit",
+    "category": [
+      "Jitter Blur/Sharpen"
+    ]
+  },
+  "jit.spill": {
+    "digest": "Unroll a matrix into a list",
+    "module": "jit",
+    "category": [
+      "Jitter Lists"
+    ]
+  },
+  "jit.split": {
+    "digest": "Split a matrix into two matrices",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.sprinkle": {
+    "digest": "Introduce spatial noise",
+    "module": "jit",
+    "category": [
+      "Jitter Spatial"
+    ]
+  },
+  "jit.str.fromsymbol": {
+    "digest": "Convert Max symbol to Jitter string matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Strings"
+    ]
+  },
+  "jit.str.op": {
+    "digest": "Apply common string operations",
+    "module": "jit",
+    "category": [
+      "Jitter Strings"
+    ]
+  },
+  "jit.str.regexp": {
+    "digest": "Use PERL-compatible regular expressions on Jitter matrices",
+    "module": "jit",
+    "category": [
+      "Jitter Strings"
+    ]
+  },
+  "jit.str.tosymbol": {
+    "digest": "Convert Jitter string matrix to Max symbol",
+    "module": "jit",
+    "category": [
+      "Jitter Strings"
+    ]
+  },
+  "jit.streak": {
+    "digest": "Probability lines",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.submatrix": {
+    "digest": "Reference a sub-region of a matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.textfile": {
+    "digest": "Read and write a matrix as an ASCII text file",
+    "module": "jit",
+    "category": [
+      "Jitter Strings"
+    ]
+  },
+  "jit.thin": {
+    "digest": "Remove redundant dimensions of size 1",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.tiffany": {
+    "digest": "Arbitrary rectangular resampling",
+    "module": "jit",
+    "category": [
+      "Jitter Special FX"
+    ]
+  },
+  "jit.traffic": {
+    "digest": "Multiply the planar vector by a matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.transpose": {
+    "digest": "Calculate the transpose of a matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Math"
+    ]
+  },
+  "jit.turtle": {
+    "digest": "2-d turtle graphics interpreter",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.uldl": {
+    "digest": "Internet upload/download",
+    "module": "jit",
+    "category": [
+      "Jitter Utilities"
+    ]
+  },
+  "jit.unpack": {
+    "digest": "Make multiple single plane matrices out of a multiplane matrix",
+    "module": "jit",
+    "category": [
+      "Jitter Data"
+    ]
+  },
+  "jit.uyvy2argb": {
+    "digest": "Converts UYVY to ARGB",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.uyvy2ayuv": {
+    "digest": "Converts UYVY to AYUV",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.uyvy2luma": {
+    "digest": "Converts UYVY to monochrome (luminance)",
+    "module": "jit",
+    "category": [
+      "Jitter Colorspace"
+    ]
+  },
+  "jit.vcr": {
+    "digest": "Record a movie with MSP audio",
+    "module": "jit",
+    "category": [
+      "Jitter"
+    ]
+  },
+  "jit.wake": {
+    "digest": "Feedback with convolution stage",
+    "module": "jit",
+    "category": [
+      "Jitter Blur/Sharpen",
+      "Jitter Special FX"
+    ]
+  },
+  "jit.window": {
+    "digest": "Display data in a window",
+    "module": "jit",
+    "category": [
+      "Jitter UI"
+    ]
+  },
+  "jit.world": {
+    "digest": "The Jitter world context",
+    "module": "jit",
+    "category": [
+      "Jitter OpenGL"
+    ]
+  },
+  "jit.xfade": {
+    "digest": "Crossfade between 2 matrices",
+    "module": "jit",
+    "category": [
+      "Jitter Compositing"
+    ]
+  },
+  "spigot~": {
+    "digest": "Route QuickTime audio into MSP",
+    "module": "jit",
+    "category": [
+      "Jitter Audio"
+    ]
+  },
+  "chucker~": {
+    "digest": "Segment audio and reorder it on looped playback",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "cverb~": {
+    "digest": "A simple monaural reverberator",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "ddg.mono": {
+    "digest": "Monophonic Synth Controller for Virtual Synths",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.arrows": {
+    "digest": "Vectorized arrow(s) user interface object",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.arrows",
+      "pic": "live.arrows.svg"
+    }
+  },
+  "live.banks": {
+    "digest": "Manage Max for Live Device banks for Push controllers.",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.button": {
+    "digest": "Flash on any message, send a bang",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.button",
+      "pic": "live.button.svg"
+    }
+  },
+  "live.colors": {
+    "digest": "Get the colors of the Live Skin",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.dial": {
+    "digest": "Output numbers by moving a dial onscreen",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.dial",
+      "pic": "live.dial.svg"
+    }
+  },
+  "live.drop": {
+    "digest": "Define a region for dragging and dropping a file",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.drop",
+      "pic": "live.drop.svg"
+    }
+  },
+  "live.gain~": {
+    "digest": "Decibel volume slider and monitor",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.gain~",
+      "pic": "live.gain~.svg"
+    }
+  },
+  "live.grid": {
+    "digest": "A UI grid of steps, with constraints and directions",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.grid",
+      "pic": "live.grid.svg"
+    }
+  },
+  "live.line": {
+    "digest": "Straight line",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.line",
+      "pic": "live.line.svg"
+    }
+  },
+  "live.menu": {
+    "digest": "Pop-up menu",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.menu",
+      "pic": "live.menu.svg"
+    }
+  },
+  "live.meter~": {
+    "digest": "Live-style visual peak level indicator",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.meter~",
+      "pic": "live.meter~.svg"
+    }
+  },
+  "live.numbox": {
+    "digest": "Display and output a number",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.numbox",
+      "pic": "live.numbox.svg"
+    }
+  },
+  "live.object": {
+    "digest": "Perform operations on Live objects",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.observer": {
+    "digest": "Monitor changes in Live objects",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.param~": {
+    "digest": "Generate an MSP signal from a parameter value.",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.path": {
+    "digest": "Navigate to objects in the Live application",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.remote~": {
+    "digest": "Realtime control of device parameters",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.slider": {
+    "digest": "Output numbers by moving a slider onscreen",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "action": "live.slider",
+      "category": [
+        "Live"
+      ],
+      "pic": "live.slider.svg"
+    }
+  },
+  "live.step": {
+    "digest": "Step Sequencer UI object",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.step",
+      "pic": "live.step.svg"
+    }
+  },
+  "live.tab": {
+    "digest": "A user interface tab/multiple button object",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.tab",
+      "pic": "live.tab.svg"
+    }
+  },
+  "live.text": {
+    "digest": "A user interface button/toggle",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "action": "live.text",
+      "category": [
+        "Live"
+      ],
+      "pic": "live.text.svg"
+    }
+  },
+  "live.thisdevice": {
+    "digest": "Send a bang automatically when a Max Device is loaded, report device state",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "live.toggle": {
+    "digest": "Switch between off and on (0/1)",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ]
+  },
+  "mc.live.gain~": {
+    "digest": "Decibel volume slider and monitor",
+    "module": "m4l",
+    "category": [
+      "M4L U/I"
+    ],
+    "palette": {
+      "category": [
+        "Live"
+      ],
+      "action": "live.gain~",
+      "pic": "live.gain~.svg"
+    }
+  },
+  "midiselect": {
+    "digest": "Select and interpret raw MIDI data",
+    "module": "m4l",
+    "category": [
+      "M4L"
+    ]
+  },
+  "Parameter Properties": {
+    "digest": "Properties common to parameter-aware objects.",
+    "module": "m4l",
+    "category": [
+      "Unlisted"
+    ],
+    "private": 1
+  },
+  "paraminspector": {
+    "digest": "TEXT_HERE",
+    "module": "m4l",
+    "category": [
+      "Unlisted"
+    ]
+  }
+}

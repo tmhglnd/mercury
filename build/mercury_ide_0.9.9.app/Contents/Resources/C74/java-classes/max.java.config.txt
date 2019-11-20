@@ -1,0 +1,63 @@
+; Copyright (c) 2012 Cycling '74                                                                                          ;
+;                                                                                                                         ;
+; Permission is hereby granted, free of charge, to any person obtaining a copy of this software                           ;
+; and associated documentation files (the "Software"), to deal in the Software without restriction,                       ;
+; including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,                   ;
+; and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,                   ;
+; subject to the following conditions:                                                                                    ;
+;                                                                                                                         ;
+; The above copyright notice and this permission notice shall be included in all copies                                   ;
+; or substantial portions of the Software.                                                                                ;
+;                                                                                                                         ;
+; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,                                     ;
+; INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.   ;
+; IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,                 ;
+; WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE            ;
+; OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                                                                           ;
+
+
+; This is the config used by Max when instantiating the JVM ;
+; Comments are enclosed within 2 semicolons ;
+
+; The file format is relatively fragile so pay attention ;
+; when editing this file !! ;
+ 
+; some example options one may use ;
+
+; add all jars in /Users/topher/java/lib to the system classpath i.e. immutable classpath ;
+; max.system.jar.dir /Users/topher/java/lib;
+
+; add /Users/topher/foo to the system classpath i.e. immutable classpath ;
+; max.system.class.dir /Users/topher/foo      ;
+
+; these next 2 are typically what you would want to use if you want additional directories ;
+; added to your classpath for max ;
+
+; add /Users/topher/myclasses to the dynamic classpath of MXJClassLoader ;
+; max.dynamic.class.dir /Users/topher/myclasses ;
+
+; add all jars in /Users/topher/myjars to the dynamic classpath of MXJClassLoader ;
+;max.dynamic.jar.dir /Users/topher/myjars     ;
+
+
+; specify some jvm options ;
+max.jvm.option -Xincgc
+max.jvm.option -Xms64m
+max.jvm.option -Xmx256m
+
+; uncomment these options(i.e. remove surrounding semi colons ;
+; to cause the JVM to be created ;
+; in debug mode and listening for remote debugger connections ;
+; on port 8074. This would enable you to interactively debug ;
+; your mxj code using JDB or some other debugger which supports ;
+; the JDI wire protocol ;
+
+; max.jvm.option -Xdebug  ;
+; max.jvm.option -Xnoagent ;
+; max.jvm.option -Xrunjdwp:transport=dt_socket\,address=8074\,server=y\,suspend=n ; 
+; max.jvm.option -XX:-UseSharedSpaces ;
+
+; 1 = compatible mode (default in 64bit) ;
+; 2 = hi performance mode (default in 32bit) ;
+; hi performance mode for 64 bit is only supported with a JavaVM > 6u33 (where -XX:+UseCompressedOops is default) ;
+; mxj.msp.mode 2 ;

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="146" height="146" viewBox="0, 0, 146, 146">
+  <g id="Layer 1" display="none">
+    <g>
+      <path d="M21,1 L125,1 C136.046,1 145,9.954 145,21 L145,125 C145,136.046 136.046,145 125,145 L21,145 C9.954,145 1,136.046 1,125 L1,21 C1,9.954 9.954,1 21,1 z" fill="#3B3B3B"/>
+      <path d="M79.5,30 L106.449,57 L79.5,57 z" fill="#B4B4B4"/>
+      <path d="M37.75,29 L81,29 L81,61.974 L37.75,61.974 z" fill="#FFFFFF"/>
+      <path d="M37.75,57.048 L108.25,57.048 L108.25,116.131 L37.75,116.131 z" fill="#FFFFFF"/>
+      <path d="M53,72 L93.32,72 L93.32,82 L53,82 z" fill="#3B3B3B"/>
+      <path d="M53,90.5 L93.32,90.5 L93.32,100.5 L53,100.5 z" fill="#3B3B3B"/>
+    </g>
+  </g>
+  <g id="Layer 2">
+    <path d="M37.75,29 L37.75,116.131" fill-opacity="0" stroke="#000000" stroke-width="8" stroke-linecap="square"/>
+    <path d="M37.75,29 L81,29" fill-opacity="0" stroke="#000000" stroke-width="8" stroke-linecap="square"/>
+    <path d="M81,29 L81,56.333" fill-opacity="0" stroke="#000000" stroke-width="8" stroke-linecap="square"/>
+    <path d="M81,56.333 L108.333,56.333" fill-opacity="0" stroke="#000000" stroke-width="8" stroke-linecap="square"/>
+    <path d="M108.25,57.048 L108.25,116.131" fill-opacity="0" stroke="#000000" stroke-width="8" stroke-linecap="square"/>
+    <path d="M108.25,116.131 L37.75,116.131" fill-opacity="0" stroke="#000000" stroke-width="8"/>
+    <path d="M81,32.048 L104,56.333" fill-opacity="0" stroke="#000000" stroke-width="8"/>
+    <path d="M68.35,89.723 L68.35,104.048 L77.65,104.048 L77.65,89.723 L91.975,89.723 L91.975,80.423 L77.65,80.423 L77.65,66.098 L68.35,66.098 L68.35,80.423 L54.025,80.423 L54.025,89.723 z" fill="#000000"/>
+  </g>
+  <defs/>
+</svg>

@@ -1,0 +1,18 @@
+{
+	"default" : 	{
+		"bgfillcolor" : 		{
+			"type" : "color",
+			"color" : [ 0.011765, 0.396078, 0.752941, 1.0 ],
+			"color1" : [ 0.086275, 0.309804, 0.52549, 1.0 ],
+			"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+			"angle" : 270.0,
+			"proportion" : 0.39,
+			"autogradient" : 0
+		}
+
+	}
+,
+	"parentstyle" : "",
+	"name" : "panelBlueOpaque",
+	"multi" : 0
+}

@@ -1,0 +1,54 @@
+<jittershader name="mirror">
+	<description>
+	right-angle reflection tiling effect
+	</description>
+	<param name="offset" type="vec2" default="0. 0." />
+	
+	<param name="origin" type="vec2" default="0. 0." />
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="offset" program="fp" />
+		<bind param="size" program="fp" />
+		
+		<bind param="origin" program="fp" />
+		<bind param="tex0" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec2 texcoord0;
+varying vec2 texdim0;
+uniform sampler2DRect tex0;
+
+uniform vec2 offset;
+uniform vec2 size;
+uniform vec2 origin;
+
+
+void main()
+{
+	//make size always positive
+	vec2 sizea = texdim0;
+
+	//where is the point
+	vec2 point = mod(texcoord0/sizea+origin,1.);
+	
+	//sets division point at center of frame
+	vec2 div = vec2(0.5);
+	
+	
+	
+	//define texture coordinates in relation to division
+	vec2 seta = mod(abs(div-point)+offset,1.);
+
+	
+	//output texture
+
+	vec4 a = texture2DRect(tex0,seta*texdim0);
+	gl_FragColor = a;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

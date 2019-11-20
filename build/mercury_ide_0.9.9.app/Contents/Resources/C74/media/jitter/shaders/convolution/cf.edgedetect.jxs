@@ -1,0 +1,140 @@
+<jittershader name="edgedetect">
+	<description>
+	A 3x3 edge detection filter
+	</description>
+	<param name="width" type="float" default="1" />
+	<param name="height" type="float" default="1" />
+	<param name="threshold" type="float" default="0.25" />
+	<language name="glsl" version="1.0">
+		<bind param="width" program="edgedetect" />
+		<bind param="height" program="edgedetect" />
+		<bind param="threshold" program="edgedetect" />
+		<program name="basic" type="vertex">
+<![CDATA[
+varying vec2 texcoord0;
+
+void main( void )
+{
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+
+]]>
+</program>
+		<program name="edgedetect" type="fragment">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2003, ATI Technologies, Inc., All rights reserved.
+//
+// Permission to use, copy, modify, and distribute this software and its 
+// documentation for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appear in all copies and derivative
+// works and that both the copyright notice and this permission notice appear in
+// support documentation, and that the name of ATI Technologies, Inc. not be used
+// in advertising or publicity pertaining to distribution of the software without
+// specific, written prior permission.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+// vertex to fragment shader io
+varying vec2 texcoord0;
+
+// globals
+uniform float width;
+uniform float height;
+uniform float threshold;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// getGrey function
+float 
+getGrey(vec4 c)
+{
+    vec4 onethird;
+    vec4 cc;
+    float sum;
+    onethird = vec4 (0.333333,0.333333,0.333333,0);
+    cc = c;
+    sum = dot(onethird, cc);
+    return sum;
+}
+
+// entry point
+void 
+main()
+{
+    float K00 = -1.0;
+    float K01 = -2.0;
+    float K02 = -1.0;
+    float K10 = 0.0;
+    float K11 = 0.0;
+    float K12 = 0.0;
+    float K20 = 1.0;
+    float K21 = 2.0;
+    float K22 = 1.0;
+
+    vec2 ox = vec2 (0.0,0.0);
+    ox[0] = width;
+    vec2 oy = vec2 (0.0,0.0);
+    oy[1] = height;
+
+    float g00, g01, g02;
+    float g10, g11, g12;
+    float g20, g21, g22;
+    vec4 CC;
+
+    vec2 PP = texcoord0 - oy;
+    CC = texture2DRect(tex0, vec2(PP-ox));
+    g00 = getGrey(CC);
+    CC = texture2DRect(tex0, vec2(PP));
+    g01 = getGrey(CC);
+    CC = texture2DRect(tex0, vec2(PP+ox));
+    g02 = getGrey(CC);
+
+
+    PP = texcoord0;
+    CC = texture2DRect(tex0, vec2(PP-ox));
+    g10 = getGrey(CC);
+    CC = texture2DRect(tex0, vec2(PP));
+    g11 = getGrey(CC);
+    CC = texture2DRect(tex0, vec2(PP+ox));
+    g12 = getGrey(CC);
+
+    PP = texcoord0 + oy;
+    CC = texture2DRect(tex0, vec2(PP-ox));
+    g20 = getGrey(CC);
+    CC = texture2DRect(tex0, vec2(PP));
+    g21 = getGrey(CC);
+    CC = texture2DRect(tex0, vec2(PP+ox));
+    g22 = getGrey(CC);
+
+    float sx = 0.0, sy = 0.0;
+    sx = sx + g00 * K00;
+    sx = sx + g01 * K01;
+    sx = sx + g02 * K02;
+    sx = sx + g10 * K10;
+    sx = sx + g11 * K11;
+    sx = sx + g12 * K12;
+    sx = sx + g20 * K20;
+    sx = sx + g21 * K21;
+    sx = sx + g22 * K22;
+    sy = sy + g00 * K00;
+    sy = sy + g01 * K10;
+    sy = sy + g02 * K20;
+    sy = sy + g10 * K01;
+    sy = sy + g11 * K11;
+    sy = sy + g12 * K21;
+    sy = sy + g20 * K02;
+    sy = sy + g21 * K12;
+    sy = sy + g22 * K22;
+    
+    float dist = sqrt(sx * sx + sy * sy);
+
+    gl_FragColor = dist > threshold ? vec4 (0,0,0,1) : vec4 (1,1,1,1);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

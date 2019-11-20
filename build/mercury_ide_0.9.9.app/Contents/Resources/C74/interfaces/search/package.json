@@ -1,0 +1,16 @@
+{
+  "author": "Cycling '74",
+  "contributors": [
+    {
+      "name": "Florian Demmer",
+      "email": "florian@cycling74.com"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "description": "NodeJS API Server for unified Search in Max",
+  "main": "c74search.server.js",
+  "name": "@c74-search/api-server",
+  "private": true,
+  "version": "1.0.2"
+}

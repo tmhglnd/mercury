@@ -1,0 +1,41 @@
+<jittershader name="cartopol">
+	<description>
+	cartesian to polar coordinate distortion
+	</description>
+	<param name="origin" type="vec2" default="0. 0." />
+	<param name="scale" type="vec2" default="1. 1." />
+	<param name="tex0" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="origin" program="fp" />
+		<bind param="scale" program="fp" />
+		<bind param="tex0" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+//setup for 2 texture
+varying vec2 texcoord0;
+varying vec2 texdim0;
+uniform vec2 origin;
+uniform vec2 scale;
+uniform sampler2DRect tex0;
+const float pi=3.1415926;
+
+
+void main()
+{
+	vec2 point = abs(mod((texcoord0/texdim0)*scale+origin,1.));//normalize coordinates
+
+	// cartesian to polar conversion
+	vec2 dt = 2.*(point-0.5);
+	float radius = sqrt(dot(dt,dt)); //hypot
+	float theta = atan(dt.y,dt.x)+pi;
+	vec2 topol = vec2(radius,theta/(2.*pi))*texdim0;	
+	vec4 a = texture2DRect(tex0,topol);
+	// output texture
+	gl_FragColor = a;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

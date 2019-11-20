@@ -1,0 +1,44 @@
+<jittershader name="xray">
+	<param name="edgefalloff" type="float" default="1" program="xray" />
+	<language name="glsl" version="1.0">
+		<bind param="edgefalloff" program="xray" />
+		<program name="basic" type="vertex" source="sh.basic.vp.glsl" />
+		<program name="xray" type="fragment">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2003, ATI Technologies, Inc., All rights reserved.
+//
+// Permission to use, copy, modify, and distribute this software and its 
+// documentation for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appear in all copies and derivative
+// works and that both the copyright notice and this permission notice appear in
+// support documentation, and that the name of ATI Technologies, Inc. not be used
+// in advertising or publicity pertaining to distribution of the software without
+// specific, written prior permission.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+// vertex to fragment shader io
+varying vec3 N;
+varying vec3 I;
+varying vec4 Cs;
+
+// globals
+uniform float edgefalloff;
+
+// entry point
+void 
+main()
+{
+    float opac = dot(normalize(N), normalize(-I));
+    opac = abs(opac);
+    opac = 1.0 - pow(opac, edgefalloff);
+    
+    gl_FragColor =  opac * Cs;
+    gl_FragColor.a = opac;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

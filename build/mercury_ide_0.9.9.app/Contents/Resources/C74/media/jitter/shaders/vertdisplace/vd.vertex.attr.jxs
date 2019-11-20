@@ -1,0 +1,53 @@
+<jittershader name="vd.vertex.attr">
+	<param name="Background" type="vec4" default="0.0 0.0 0.0 0.0" />
+	<param name="Time" type="float" default="0.0" />
+	<param name="Pvel" type="vec4" state="VERTEX_ATTR" />
+
+	<language name="glsl" version="1.0">
+		<bind param="Background" program="vp" />
+		<bind param="Time" program="vp" />
+		<bind param="Pvel" program="vp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+attribute vec4 Pvel;
+
+uniform float Time;           // updated each frame by the application
+uniform vec4 Background;      // constant color equal to background
+
+varying vec4 Color;
+
+void main()
+{
+    vec4 vert;
+    float t = Time - Pvel.w;
+
+    if (t >= 0.0)
+    {
+        vert = gl_Vertex + vec4(Pvel.xyz * t, 0.0);
+        Color = gl_Color;
+    }
+    else
+    {
+        vert = gl_Vertex;     // Initial position
+        Color = Background;   // "pre-birth" color
+    }
+
+    gl_Position = gl_ModelViewProjectionMatrix * vert;
+}
+]]>
+		</program>	
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec4 Color;
+
+void main()
+{
+    gl_FragColor = Color;
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>

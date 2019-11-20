@@ -1,0 +1,230 @@
+<jittershader name="gm.test.jxs">
+	<description>Simple geometry shader test</description>
+	<param name="div" type="float" default="8." />
+	<param name="radius" type="float" default="0.5" />
+	<param name="height" type="float" default="0.5" />
+	<param name="Ia" type="vec4" default="0. 0.03 0. 1.0" />
+	<param name="Ii" type="vec4" default="1. 1. 1. 1.0" />
+	<param name="eyePosition" type="vec3" default="0. 0. 4."/>
+	<param name="Ke" type="vec4" default="0.0 0.0 0.0 0.0" />
+	<param name="Ka" type="vec4" default="1.0 1.0 1.0 1.0" />
+	<param name="Kd" type="vec4" default="0.2 0.05 0.05 1.0" />
+	<param name="Ks" type="vec4" default="0.0 0.05 0.1 1.0" />
+	<param name="Ns" type="float" default="10." />
+	<language name="glsl" version="1.2">
+		<bind param="div" program="gp" />
+		<bind param="radius" program="gp" />
+		<bind param="height" program="gp" />
+		<bind param="Ia" program="fp" />
+		<bind param="Ii" program="fp" />
+		<bind param="eyePosition" program="fp" />
+		<bind param="Ka" program="fp" />
+		<bind param="Kd" program="fp" />
+		<bind param="Ks" program="fp" />
+		<bind param="Ns" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+#version 120
+
+varying vec3 P;
+
+void main(void)
+{
+	//get the vertices into eye space
+	P = (gl_ModelViewMatrix*gl_Vertex).xyz;
+	
+	//just send the things as they are
+	gl_Position = gl_Vertex;
+	gl_FrontColor = gl_Color;
+}
+
+]]>		
+		</program>
+		<program name="gp" vertices_out="24" input_type="points" output_type="triangle_strip" type="geometry">
+<![CDATA[
+
+#version 120
+#extension GL_EXT_geometry_shader4 : enable
+
+uniform float div;
+uniform float radius;
+uniform float height;
+
+varying in vec3 P[1];
+varying out vec3 Norm;
+varying out vec3 Po;
+
+void main(void)
+{
+	float angle = 6.28/(div);
+	vec4 point = gl_PositionIn[0];
+	point.z += height;
+
+///----------------------------------------------------------------
+///-------- First Section
+	vec3 currentOffset = vec3(cos(angle), sin(angle), -height);
+	vec3 lastOffset = vec3(cos(0.), sin(0.), -height);
+	
+	
+	vec4 currentPoint = vec4(currentOffset, 1.);
+	currentPoint.xyz *= radius;
+	currentPoint += point;
+	
+	vec4 lastPoint = vec4(lastOffset, 1.);
+	lastPoint.xyz *= radius;
+	lastPoint += point;
+	
+	vec3 v1 = currentPoint.xyz - point.xyz;
+	vec3 v2 = lastPoint.xyz - currentPoint.xyz;
+	vec3 v3 = point.xyz - lastPoint.xyz;
+	
+	gl_FrontColor = gl_FrontColorIn[0];
+	Norm = gl_NormalMatrix*vec3(0, 0, 1.);
+	Po = P[0];
+	gl_Position = gl_ModelViewProjectionMatrix*point;
+	EmitVertex();
+	
+	gl_FrontColor = gl_FrontColorIn[0];
+	Norm = gl_NormalMatrix*normalize( cross(v2, v1) );
+	Po = P[0] + currentOffset;
+	gl_Position = gl_ModelViewProjectionMatrix*currentPoint;
+	EmitVertex();
+
+	gl_FrontColor = gl_FrontColorIn[0];
+	Norm = gl_NormalMatrix*normalize( cross(v3, v2) );
+	Po = P[0] + lastOffset;
+	gl_Position = gl_ModelViewProjectionMatrix*lastPoint;
+	EmitVertex();
+	
+	EndPrimitive();
+
+///----------------------------------------------------------------
+
+
+///----------------------------------------------------------------
+///-------- Intermediate Sections
+
+	for(int i=1; i < div-1; i++)
+	{
+		lastOffset = currentOffset;
+		currentOffset = vec3(cos(angle*float(i+1)), sin(angle*float(i+1)), -height);
+		
+		lastPoint = currentPoint;
+		currentPoint = vec4(currentOffset, 1.);
+		currentPoint.xyz *= radius;
+		currentPoint += point;
+		
+		v1 = currentPoint.xyz - point.xyz;
+		v2 = lastPoint.xyz - currentPoint.xyz;
+		v3 = point.xyz - lastPoint.xyz;
+		
+		gl_FrontColor = gl_FrontColorIn[0];
+		Norm = gl_NormalMatrix*vec3(0, 0, 1.);
+		Po = P[0];
+		gl_Position = gl_ModelViewProjectionMatrix*point;
+		EmitVertex();
+		
+		gl_FrontColor = gl_FrontColorIn[0];
+		Norm = gl_NormalMatrix*normalize( cross(v2, v1) );
+		Po = P[0] + currentOffset;
+		gl_Position = gl_ModelViewProjectionMatrix*currentPoint;
+		EmitVertex();
+	
+		gl_FrontColor = gl_FrontColorIn[0];
+		Norm = gl_NormalMatrix*normalize( cross(v3, v2) );
+		Po = P[0] + lastOffset;
+		gl_Position = gl_ModelViewProjectionMatrix*lastPoint;
+		EmitVertex();
+		
+		EndPrimitive();
+
+	}
+///----------------------------------------------------------------
+
+
+///----------------------------------------------------------------
+///-------- Last Section
+	lastOffset = vec3(cos(angle*(div-1.)), sin(angle*(div-1.)), -height);
+	currentOffset = vec3(cos(0.), sin(0.), -height);
+
+	currentPoint = vec4(currentOffset, 1.);
+	currentPoint.xyz *= radius;
+	currentPoint += point;
+	
+	lastPoint = vec4(lastOffset, 1.);
+	lastPoint.xyz *= radius;
+	lastPoint += point;
+	
+	v1 = currentPoint.xyz - point.xyz;
+	v2 = lastPoint.xyz - currentPoint.xyz;
+	v3 = point.xyz - lastPoint.xyz;
+	
+	gl_FrontColor = gl_FrontColorIn[0];
+	Norm = gl_NormalMatrix*vec3(0, 0, 1.);
+	Po = P[0];
+	gl_Position = gl_ModelViewProjectionMatrix*point;
+	EmitVertex();
+	
+	gl_FrontColor = gl_FrontColorIn[0];
+	Norm = gl_NormalMatrix*normalize( cross(v2, v1) );
+	Po = P[0] + currentOffset;
+	gl_Position = gl_ModelViewProjectionMatrix*currentPoint;
+	EmitVertex();
+
+	gl_FrontColor = gl_FrontColorIn[0];
+	Norm = gl_NormalMatrix*normalize( cross(v3, v2) );
+	Po = P[0] + lastOffset;
+	gl_Position = gl_ModelViewProjectionMatrix*lastPoint;
+	EmitVertex();
+	
+	EndPrimitive();
+///----------------------------------------------------------------
+}
+
+
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+#version 120
+
+uniform vec4 Ia;
+uniform vec4 Ii;
+uniform vec3 eyePosition;
+uniform vec4 Ke;
+uniform vec4 Ka;
+uniform vec4 Kd;
+uniform vec4 Ks;
+uniform float Ns;
+
+varying vec3 Po;
+varying vec3 Norm;
+
+void main (void)
+{
+	vec3 Nn = normalize(Norm);
+	
+	//ambient contribution
+	vec4 ambient = Ia*Ka;
+	
+	vec3 lightPosition = vec3(gl_LightSource[0].position);
+	
+	//diffuse contribution
+	vec3 L = normalize(lightPosition - Po);
+	vec4 diffuse = Kd*Ii*max(dot(Nn, L), 0.);
+	
+	//calculate specular contribution
+	vec3 V = normalize(eyePosition - Po);
+	vec3 H = normalize(L + V); //average of lighting and view vector)  not true reflection vector
+	vec4 specular = Ks*Ii * pow(max(dot(Nn,H), 0.), Ns);
+	
+	gl_FragColor = Ke + ambient + diffuse + specular;
+}
+
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

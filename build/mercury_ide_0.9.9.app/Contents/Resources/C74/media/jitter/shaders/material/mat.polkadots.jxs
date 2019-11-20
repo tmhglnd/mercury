@@ -1,0 +1,127 @@
+<jittershader name="polkadots">
+	<param name="basecolor" type="vec4" default=".75 0.2 0.1 1.0" />
+	<param name="dotcolor" type="vec4" default="1.0 1.0 1.0 1.0" />
+	<param name="spacing" type="vec3" default="0.3 0.3 0.25" />
+	<param name="lightpos" type="vec3" state="LIGHT0_POSITION" />
+	<param name="specular" type="float" state="LIGHT0_SPECULAR" />
+	<param name="dotsize" type="float" default="0.13" />
+	<language name="glsl" version="1.0">
+		<bind param="basecolor" program="fp" />
+		<bind param="dotcolor" program="fp" />		
+		<bind param="spacing" program="fp" />
+		<bind param="specular" program="vp" />		
+		<bind param="dotsize" program="vp" />		
+		<program name="vp" type="vertex">
+<![CDATA[
+/////////////////////////////////////////////////////////////////////
+//
+// This is the Vertex Shader for three dimensional polka dots.
+//
+// author(s):  Joshua Doss
+//
+// Copyright (C) 2002-2005  3Dlabs Inc. Ltd.
+//
+/////////////////////////////////////////////////////////////////////
+
+uniform float specular;
+uniform vec3 lightpos;
+
+varying vec3 pos;
+varying float intensity;
+
+void main(void)
+{
+	float diffuse = 1.0 - specular;
+
+	// compute the vertex position in eye coordinates
+	vec3  eyepos = vec3(gl_ModelViewMatrix * gl_Vertex);
+
+	// compute the transformed normal
+	vec3  tnorm = normalize(gl_NormalMatrix * gl_Normal);
+
+	// compute a vector from the model to the light position
+	vec3  lightdir = normalize(lightpos - eyepos);
+
+	// compute the reflection vector
+	vec3  reflectdir = reflect(-lightdir, tnorm);
+
+	// compute a unit vector in direction of viewing position
+	vec3  viewdir = normalize(-eyepos);
+
+	// calculate amount of kd light based on normal and light angle
+	float kd = max(dot(lightdir, tnorm), 0.0);
+	float ks = 0.0;
+
+	// if there is kd lighting, calculate specular
+	if(kd > 0.0)
+	{
+		ks = max(dot(reflectdir, viewdir), 0.0);
+		ks = pow(ks, 16.0);
+	}
+
+	// add up the light sources, since this is a varying (global) it will pass to frag shader     
+	intensity = diffuse * kd * 1.5 + specular * ks;
+
+	// the varying variable pos will be used by the fragment shader to determine where
+	//    in model space the current pixel is                      
+	pos = vec3 (gl_Vertex);
+
+	// send vertex information
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+/////////////////////////////////////////////////////////////////////
+//
+// Fragment shader for 3 dimensional polka dot shader.
+//
+// Author:  Joshua Doss
+//   
+// Copyright (C) 2002-2005  3Dlabs Inc. Ltd.
+//
+// See 3Dlabs-License.txt for license information
+//
+/////////////////////////////////////////////////////////////////////
+
+varying float intensity;
+varying vec3 pos;
+
+//Create uniform variables so dots can be spaced and scaled by user
+uniform vec3 spacing;
+uniform float dotsize;
+
+//Create colors as uniform variables so they can be easily changed
+uniform vec4 basecolor;
+uniform vec4 dotcolor;
+
+void main(void)
+{
+   float insidesphere, sphereradius, scaledpointlength;
+   vec3 scaledpoint;
+   vec4 finalcolor;
+
+   // Scale the coordinate system
+   // The following line of code is not yet implemented in current drivers:
+   // mcpos = mod(spacing, MCposition);
+   // We will use a workaround found below for now
+   scaledpoint = pos - (spacing * floor(pos/spacing));
+
+   // Bring the scaledpoint vector into the center of the scaled coordinate system
+   scaledpoint = scaledpoint - spacing/2.0;
+
+   // Find the length of the scaledpoint vector and compare it to the dotsize
+   scaledpointlength = length(scaledpoint);
+   insidesphere = step(scaledpointlength,dotsize);
+   
+   // Determine final output color before lighting
+   finalcolor = vec4(mix(basecolor, dotcolor, insidesphere));
+
+   // Output final color and factor in lighting
+   gl_FragColor = vec4(finalcolor.rgb * intensity, finalcolor.a);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

@@ -1,0 +1,27 @@
+<jitterpass>
+	<pass name="motionblur">
+		<subpass file="mrt.motion.blur.jxs" output="COLOR">
+			<input source="COLOR" />
+			<input source="VELOCITY" />
+		</subpass>
+	</pass>
+	<pass name="motion-gauss-blur">
+		<bind name="blur_width" param="width" default="0.1" />
+		<subpass file="cf.gaussian.2p.jxs" dimscale="0.5 0.5">
+			<input source="VELOCITY" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>	
+		<subpass file="cf.gaussian.2p.jxs">
+			<input source="PREVIOUS" />
+		</subpass>
+		<subpass file="cf.gaussian.2p.jxs" dimscale="2 2">
+			<input source="PREVIOUS" />
+		</subpass>		
+		<subpass file="mrt.motion.blur.jxs" output="COLOR">
+			<input source="COLOR" />
+			<input source="PREVIOUS" />
+		</subpass>
+	</pass>
+</jitterpass>	

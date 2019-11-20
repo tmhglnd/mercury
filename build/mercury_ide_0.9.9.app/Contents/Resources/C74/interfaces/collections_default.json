@@ -1,0 +1,14 @@
+{
+	"collections" : [
+		{
+			"name" : "Sample Collection",
+			"type" : "filelist",
+			"contents" : [ "gen~.moogladder.maxpat", "forbidden-planet.maxpat", "stockhausen-studie-II.maxpat", "vibes-a1.aif", "td.lumadisplace.jxs", "docintro.maxvig.xml" ]
+		},
+		{
+			"name" : "Plug-ins",
+			"type" : "query",
+			"contents" : [ "kind:audioplugin" ]
+		}
+	]
+}

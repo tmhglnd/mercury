@@ -1,0 +1,60 @@
+<jittershader name="neq">
+	<param name="inscale" type="vec4" default="1. 1. 1. 1.">
+		<description>Input 1 scale</description>
+	</param>
+	<param name="inoffset" type="vec4" default="0. 0. 0. 0.">
+		<description>Input 1 offset</description>
+	</param>
+	<param name="in2scale" type="vec4" default="1. 1. 1. 1.">
+		<description>Input 2 scale</description>
+	</param>
+	<param name="in2offset" type="vec4" default="0. 0. 0. 0.">
+		<description>Input 2 offset</description>
+	</param>
+	<param name="outscale" type="vec4" default="1. 1. 1. 1.">
+		<description>Output scale</description>
+	</param>
+	<param name="outoffset" type="vec4" default="0. 0. 0. 0.">
+		<description>Output offset</description>
+	</param>
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="inscale" program="fp" />
+		<bind param="inoffset" program="fp" />
+		<bind param="in2scale" program="fp" />
+		<bind param="in2offset" program="fp" />
+		<bind param="outoffset" program="fp" />
+		<bind param="outscale" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<program name="vp" type="vertex" source="op.binary.vp.glsl" />
+		<program name="fp" type="fragment"> 
+<![CDATA[
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+uniform vec4 inscale;
+uniform vec4 inoffset;
+uniform vec4 in2scale;
+uniform vec4 in2offset;
+uniform vec4 outscale;
+uniform vec4 outoffset;
+
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+void main( void )
+{
+	vec4 v0 = texture2DRect(tex0, texcoord0);
+	vec4 v1 = texture2DRect(tex1, texcoord1);
+	
+	v0 = (v0*inscale)+inoffset;	
+	v1 = (v1*in2scale)+in2offset;	
+	vec4 result = vec4(v0 != v1);
+	gl_FragColor = (result*outscale)+outoffset;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

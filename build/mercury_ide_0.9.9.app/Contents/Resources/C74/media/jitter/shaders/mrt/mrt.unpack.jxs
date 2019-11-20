@@ -1,0 +1,35 @@
+<jittershader name="mrt.unpack">
+	<description>	
+		simple demonstration of using mrt to unpack the planes of a texture
+	</description>
+	<param name="tex" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="tex" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[		
+varying vec2 texcoord0;
+void main()
+{
+	gl_Position = ftransform();
+	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}		
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+uniform sampler2DRect tex;
+varying vec2 texcoord0;
+
+void main()
+{
+	vec4 image = texture2DRect(tex, texcoord0);
+	gl_FragData[0] = vec4(image.r);
+	gl_FragData[1] = vec4(image.g);
+	gl_FragData[2] = vec4(image.b);	
+	gl_FragData[3] = vec4(image.a);	
+}
+]]>
+		</program>
+	</language>
+</jittershader>

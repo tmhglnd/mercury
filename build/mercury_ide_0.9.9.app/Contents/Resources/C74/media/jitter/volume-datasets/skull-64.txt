@@ -1,0 +1,13 @@
+Skull Volume Dataset
+
+COURTESY
+
+www.volvis.org - Philips Research, Hamburg, Germany.
+
+DESCRIPTION
+
+Rotational b-plane x-ray scan of phantom of a human skull.
+
+ALTERATIONS
+
+Downsampled to 64x64x64 by Cycling 74.

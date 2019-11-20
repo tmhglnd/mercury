@@ -1,0 +1,84 @@
+{
+	"max": {
+		"winners": [
+			"!=", "&&", "||", ">", ">=", "==", "<", "<=", "-", "+", "+~", "*", "*~", "/",
+			"abs", "adc~", "adsr~", "amxd~", "append", "atodb", "attrui", "autopattr", "acos",
+                    
+			"biquad~", "bpatcher", "buffer~", "button",
+                    
+			"change", "clip", "clip~", "coll", "cos", "counter", "cpuclock", "ctlin", "cltout",
+                    
+			"dac~", "dbtoa", "delay", "delay~", "dial", "dict", "drunk",
+                    
+			"expr", "ezadc~", "ezdac~",
+                    
+			"fftin~", "fftout~", "filtergraph~", "ftom", "function", "funnel", "filterdesign", "flonum", "fzero~",
+                    
+			"gain~", "gate", "gate~", "gen~", "getattr", "groove~",
+                    
+			"histo",
+                    
+			"inlet", "in~",
+                    
+			"join", "js", "jsui",
+                    
+			"key", "keyup", "kslider",
+                    
+			"line", "line~", "listfunnel", "loadbang", "loadmess",
+                    
+			"makenote", "matrixctrl", "matrix~", "maximum", "message", "meter~", "metro",
+			"midiflush", "midiformat", "midiin", "midiout", "midiparse", "minimum",
+			"mousestate", "mtof", "multislider",
+                    
+			"nodes", "noise~", "notein", "noteout", "number", "number~",
+                    
+			"omx.comp~", "opendialog", "outlet", "out~",
+                    
+			"pack", "pak", "panel", "patcher", "pictctrl", "pictslider", "pipe",
+			"play~", "plugin~", "plugout~", "poly", "poly~", "prepend", "preset", "print",
+                    
+			"qmetro", "quickthresh",
+                    
+			"radiogroup", "random", "record~", "receive", "retune~", "route", "rslider",
+                    
+			"saw~", "scale", "scope~", "select", "sfplay~", "sfrecord~", "send", "sig~", "sin", "slider", "snapshot~", "spray", "sqrt", "stripnote",
+			"swatch", "switch",
+                    
+			"table", "tan", "tapin~", "tapout~", "textbutton", "timer", "togedge", "toggle", "transport", "trough",
+                    
+			"ubutton", "umenu", "unpack", "urn", "uzi",
+                    
+			"vexpr", "vst~",
+                    
+			"waveform~", "when",
+                    
+			"zigzag~", "zl"
+		],
+		"losers": [
+			"&", "|", "<<", ">>",
+			"active", "atoi", "acosh", "anal",
+			"borax",
+			"capture", "cartopol", "colorpicker", "combine", "conformpath", "cosh",
+			"cycle",
+			"date", "defer", "deferlow", "detonate", "dialog", "dropfile",
+			"error",
+			"filedate", "filewatch", "fontlist", "freebang", "fswap",
+			"gestalt",
+			"hover",
+			"if", "imovie", "itoa",
+			"jstrigger",
+			"lcd",
+			"next", "nslider", "numkey",
+			"offer",
+			"patcherargs", "pattrmarker", "pcontrol", "poltocar", "prob", "pv", "pvar",
+			"qlim", "qlist",
+			"router",
+			"setclock", "sinh", "slide", "spell", "standalone", "substitute", "suspend",
+			"sustain", "swap",
+			"tab", "tanh", "tempo", "textedit", "translate",
+			"universal",
+			"vdp",
+			"zmap"
+		]
+	}
+}

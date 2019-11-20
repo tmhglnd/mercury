@@ -1,0 +1,54 @@
+<jittershader name="edgeblend">
+	<description>
+	generates gradient alpha for edge-blending
+	</description>
+
+	<param name="fade" type="vec4" default="0.0 0.0 0.0 0.0">
+		<description>xy fade</description>
+	</param>
+	<param name="invert" type="float" default="0." />
+	<param name="tex0" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="fade" program="fp" />
+		<bind param="invert" program="fp" />
+		<bind param="tex0" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// Andrew Benson - andrewb@cycling74.com
+//Copyright 2006 - Cycling '74
+
+//fragment shader for generating alpha-gradient
+
+//setup for 2 texture
+varying vec2 texcoord0;
+varying vec2 texdim0;
+uniform sampler2DRect tex0;
+
+//wipe state
+uniform vec4 fade;
+uniform float invert;
+
+void main()
+{   
+	vec4 a = texture2DRect(tex0, texcoord0);
+	vec2 zero = vec2(0.);
+	vec4 fad = abs(fade)+0.0001;
+	// calculate position
+	vec2 nc = texcoord0/texdim0;//normalized coordinates
+	vec2 fada = smoothstep(zero,fad.xy,nc);
+	vec2 fadb = smoothstep(zero,fad.zw,1.-nc);
+	vec2 famt = fada*fadb;
+	float alph = famt.x*famt.y;
+	
+	vec4 wiped = vec4(a.rgb,mix(alph,1.-alph,invert));
+	
+
+	// output texture
+	gl_FragColor = vec4 (wiped);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

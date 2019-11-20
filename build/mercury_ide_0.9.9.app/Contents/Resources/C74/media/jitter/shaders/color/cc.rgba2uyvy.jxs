@@ -1,0 +1,94 @@
+<jittershader name="rgba2uyvy">
+	<description>
+	converts full chroma rgba data to uyvy data packed as rgba data
+	</description>
+	<param name="chromasmooth" type="float" default="1." />
+	<language name="glsl" version="1.0">
+		<bind param="chromasmooth" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthru.xform.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// texcoords
+varying vec2 texcoord0;
+
+// parameters
+uniform float chromasmooth;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// entry point
+void main()
+{   
+	// round to nearest pixel centered coordinates 
+	// (reason for adding 0.5 to account for GL_LINEAR)
+	vec2 coord_left = vec2(floor(texcoord0.x)+0.5,texcoord0.y);
+	vec2 coord_right = vec2(floor(texcoord0.x+1.)+0.5,texcoord0.y);
+	
+	// sample rgba data points
+	vec4 rgba_left = texture2DRect(tex0, coord_left);
+	vec4 rgba_right = texture2DRect(tex0, coord_right);
+
+	vec3 yuv_left;
+	vec3 yuv_right;
+	vec4 yvyu_val;
+
+/*
+	CCIR 601/ITU-R. more info on http://www.fourcc.org
+	Y: 0. - 1. normalized to the range (16-235)
+	U/V(Cb/Cr): -0.5 - 0.5 to the range (0-255), 
+	though UV looks like it's not using full range 
+	here in QT, so we're doing some extra scaling (16-242)
+
+	Y  = 0.299R + 0.587G + 0.114B
+	Cb = (B-Y)*0.565
+	Cr = (R-Y)*0.713
+
+	with reciprocal versions:
+	R = Y + 1.403Cr
+	G = Y - 0.344Cb - 0.714Cr
+	B = Y + 1.770Cb	
+
+	the following could be made more efficient
+	by concatenating some mathematical operations, 
+	but left as is for illustration/simplicity.
+
+
+*/		
+
+	// YUV to RGB colorspace conversion
+	yuv_left.x = dot(rgba_left,vec4(0.299,0.587,0.114,0.));
+	yuv_left.y = (rgba_left.b-yuv_left.x)*0.565+0.5; 
+	yuv_left.z = (rgba_left.r-yuv_left.x)*0.713+0.5; 
+
+	yuv_right.x = dot(rgba_right,vec4(0.299,0.587,0.114,0.));
+	yuv_right.y = (rgba_right.b-yuv_right.x)*0.565+0.5; 
+	yuv_right.z = (rgba_right.r-yuv_right.x)*0.713+0.5; 
+
+	// normalize YUV data to appropriate range
+	// Y: 0. - 1. normalized to the range (16-235)	
+	// U: normalized to the range (16-242)	
+	// V:  normalized to the range (16-242)	
+	yuv_left = yuv_left*vec3(0.8591,0.8865,0.8865)+vec3(0.0628);
+	yuv_right = yuv_right*vec3(0.8591,0.8865,0.8865)+vec3(0.0628);
+
+	yvyu_val.x = yuv_left.x;
+	yvyu_val.z = yuv_right.x;
+	// averaging chroma downsample if chromasmooth is on
+	yvyu_val.yw = mix(yuv_left.zy,(yuv_left.zy+yuv_right.zy)*vec2(0.5),vec2(chromasmooth>0.5)); 
+	
+	gl_FragColor = yvyu_val;
+}
+
+]]>
+		</program>
+	</language>
+</jittershader>
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<jittershader name="median">
+	<description>
+	A simple 2-pass median filter
+	</description>
+
+	<param name="width" type="vec2" default="1 0">
+		<description>Width of image</description>
+	</param>	
+
+	<language name="glsl" version="1.0">
+		<bind param="width" program="vp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+uniform vec2 width;
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+varying vec2 texcoord2;
+
+void main()
+{
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+
+	// transform texcoord	
+	vec2 texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+
+	// get sample positions
+	texcoord0 = texcoord;
+	texcoord1 = texcoord - width;
+	texcoord2 = texcoord + width;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+uniform sampler2DRect image;
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+varying vec2 texcoord2;
+
+void main()
+{
+    vec4 sample0 = texture2DRect(image, texcoord0);
+    vec4 sample1 = texture2DRect(image, texcoord1);
+    vec4 sample2 = texture2DRect(image, texcoord2);
+
+    vec4 max0 = max(sample0, sample1);
+    vec4 max1 = max(sample1, sample2);
+    vec4 max2 = max(sample2, sample0);
+
+    vec4 median = min(min(max0, max1), max2);
+
+    gl_FragColor = median;
+} 
+]]>
+		</program>
+	</language>
+</jittershader>

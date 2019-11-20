@@ -1,0 +1,34 @@
+<jittershader name="mrt.hdr.mipsamp.jxs">
+	<param name="tex_color" type="int" default="0" />
+	<param name="bias" type="float" default="100" />
+	<language name="glsl" version="1.2">
+		<bind param="tex_color" program="fp" />
+		<bind param="bias" program="fp" />		
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec2 uv;
+
+void main()
+{
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+	uv = gl_MultiTexCoord0.st;
+}
+
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+#version 120
+varying vec2 uv;
+uniform sampler2D tex_color;
+uniform float bias;
+
+void main()
+{
+	gl_FragColor = texture2D(tex_color, uv, bias);
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

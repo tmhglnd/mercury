@@ -1,0 +1,69 @@
+<jittershader name="gaussian">
+	<description>
+	A simple 2-pass gaussian filter
+	</description>
+	
+	<param name="width" type="vec2" default="2 0">
+		<description>Width of filter</description>
+	</param>	
+
+	<language name="glsl" version="1.0">
+		<bind param="width" program="vp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+uniform vec2 width;
+
+varying vec2 texcoordM;
+varying vec2 texcoordB0;
+varying vec2 texcoordF0;
+varying vec2 texcoordB1;
+varying vec2 texcoordF1;
+varying vec2 texcoordB2;
+varying vec2 texcoordF2;
+
+void main()
+{
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+
+	// transform texcoord	
+	vec2 texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	
+	// get sample positions
+    texcoordM = texcoord;
+    texcoordB0 = texcoord - width;
+    texcoordF0 = texcoord + width;
+    texcoordB1 = texcoord - width * 2.0;
+    texcoordF1 = texcoord + width * 2.0;
+    texcoordB2 = texcoord - width * 3.0;
+    texcoordF2 = texcoord + width * 3.0;
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">		
+<![CDATA[
+uniform sampler2DRect image;
+
+varying vec2 texcoordM;
+varying vec2 texcoordB0;
+varying vec2 texcoordF0;
+varying vec2 texcoordB1;
+varying vec2 texcoordF1;
+varying vec2 texcoordB2;
+varying vec2 texcoordF2;
+
+void main(){
+    vec4 sampleM  = texture2DRect(image, texcoordM);
+    vec4 sampleB0 = texture2DRect(image, texcoordB0);
+    vec4 sampleF0 = texture2DRect(image, texcoordF0);
+    vec4 sampleB1 = texture2DRect(image, texcoordB1);
+    vec4 sampleF1 = texture2DRect(image, texcoordF1);
+    vec4 sampleB2 = texture2DRect(image, texcoordB2);
+    vec4 sampleF2 = texture2DRect(image, texcoordF2);
+
+    gl_FragColor = 0.1752 * sampleM + 0.1658 * (sampleB0 + sampleF0) + 0.1403 * (sampleB1 + sampleF1) + 0.1063 * (sampleB2 + sampleF2);
+} 
+]]>
+		</program>
+	</language>
+</jittershader>

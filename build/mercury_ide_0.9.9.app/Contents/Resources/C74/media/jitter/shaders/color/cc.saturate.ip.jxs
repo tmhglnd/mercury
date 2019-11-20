@@ -1,0 +1,58 @@
+<jittershader name="saturation-interp">
+	<description>Shader for for modifying image saturation by interpolation and extrapolation</description>
+	<param name="alpha" type="float" default="1.0" />
+	<language name="glsl" version="1.0">
+		<bind param="alpha" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+//
+// Vertex shader for modifying image saturation by
+// interpolation and extrapolation
+//
+// Author: Randi Rost
+//
+// Copyright (c) 2003-2005: 3Dlabs, Inc.
+//
+// See 3Dlabs-License.txt for license information
+//
+
+varying vec2 texcoord;
+
+void main (void)
+
+{
+    gl_Position = ftransform();
+    texcoord    = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+//
+// Fragment shader for modifying image saturation by
+// interpolation and extrapolation
+//
+// Author: Randi Rost
+//
+// Copyright (c) 2003-2005: 3Dlabs, Inc.
+//
+// See 3Dlabs-License.txt for license information
+//
+
+const vec3 LumCoeff = vec3 (0.2125, 0.7154, 0.0721);
+
+varying vec2      texcoord;
+uniform float     alpha;
+uniform sampler2DRect image;
+
+void main (void)
+{
+    vec3 texColor  = texture2DRect(image, texcoord).rgb;
+    vec3 intensity = vec3 (dot(texColor, LumCoeff));
+    vec3 color     = mix(intensity, texColor, alpha);
+    gl_FragColor   = vec4 (color, 1.0);
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

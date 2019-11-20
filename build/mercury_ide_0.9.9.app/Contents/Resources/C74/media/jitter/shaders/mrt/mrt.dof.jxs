@@ -1,0 +1,42 @@
+<jittershader name="mrt.simple.render.jxs">
+	<param name="tex_color" type="int" default="0" />
+	<param name="tex_normals" type="int" default="1" />
+	<param name="tex_blur" type="int" default="2" />
+	<param name="focal_distance" type="float" default="5.0" />
+	<param name="focal_range" type="float" default="10.0" />
+	<param name="far_clip" type="float" state="FAR_CLIP" />
+	<language name="glsl" version="1.2">
+		<bind param="tex_color" program="fp" />
+		<bind param="tex_normals" program="fp" />		
+		<bind param="tex_blur" program="fp" />				
+		<bind param="focal_distance" program="fp" />
+		<bind param="focal_range" program="fp" />
+		<bind param="far_clip" program="fp" />		
+		<program name="vp" type="vertex" source="sh.passthru.xform.vp.glsl" />		
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+varying vec2 texcoord2;
+
+uniform sampler2DRect tex_color; 
+uniform sampler2DRect tex_normals;
+uniform sampler2DRect tex_blur;
+uniform float focal_distance;
+uniform float focal_range;
+uniform float far_clip;
+
+void main()
+{
+	vec4 image = texture2DRect(tex_color, texcoord0);
+	vec4 normal = texture2DRect(tex_normals, texcoord1);
+	vec4 blur = texture2DRect(tex_blur, texcoord2);
+	float dof = clamp(abs(focal_distance - (normal.w*far_clip)) / focal_range, 0.0, 1.0);
+	gl_FragColor = mix(image, blur, dof);
+}
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

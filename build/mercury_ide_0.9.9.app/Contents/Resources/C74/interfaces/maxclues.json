@@ -1,0 +1,1590 @@
+{ "clues" : 
+	[
+	{
+		"class" : "jpatcher",
+		"elements" : [
+		{
+			"id" : "growbox",
+			"head" : "Size Object",
+			"text" : "Drag this box to change an object's size"
+		},
+		{
+			"id" : "inspectorbutton",
+			"head" : "Object Action Menu",
+			"text" : "Click this button to show the action menu for an object"
+		},
+		{
+			"id" : "objectlistbutton",
+			"head" : "Object List Button",
+			"text" : "Click this button to see a list of objects by category"
+		},
+		{
+			"id" : "allowmodwarning",
+			"head" : "",
+			"text" : "Warning: Saving this file will replace any #1-#9 arguments with their current values. This can be prevented by saving the file before modifying."
+		}
+		]
+	},
+	{
+		"class" : "commands",
+		"elements" : [
+		{
+			"id" : "newproj",
+			"head" : "New Project",
+			"text" : "Create a new Project"
+		},
+		{
+			"id" : "template",
+			"head" : "New Template",
+			"text" : "Create a new patcher window from a Template file"
+		},
+		{
+			"id" : "openrecent",
+			"head" : "Open Recent",
+			"text" : "Open a recent patcher"
+		},
+		{
+			"id" : "windsaveasproject",
+			"head" : "Save As Project",
+			"text" : "Save the current patcher as a Project file"
+		},
+		{
+			"id" : "exportimage",
+			"head" : "Export Image",
+			"text" : "Export a PNG image file of the current patcher window"
+		},
+		{
+			"id" : "copycompressed",
+			"head" : "Copy Compressed",
+			"text" : "Copy the selection to the clipboard in compressed text format"
+		},
+		{
+			"id" : "showparameters",
+			"head" : "Parameters",
+			"text" : "Show the Parameters window"
+		},
+		{
+			"id" : "dependencies",
+			"head" : "Dependencies",
+			"text" : "Show the Dependencies Window for the current patcher"
+		},
+		{
+			"id" : "patcherdrawer",
+			"head" : "Sidebar",
+			"text" : "Show or hide patcher Sidebar which contains the Max window, Inspector, Reference, and Object Explorer"
+		},
+		{
+			"id" : "showstatusbar",
+			"head" : "Status Bar",
+			"text" : "Show or hide the Status Bar"
+		},
+		{
+			"id" : "showtoolbar",
+			"head" : "Toolbar",
+			"text" : "Show or hide the patcher Toolbar"
+		},
+		{
+			"id" : "showfg",
+			"head" : "Foreground",
+			"text" : "Show or hide the foreground layer of objects in the patcher" 
+		},
+		{
+			"id" : "showcpuusage",
+			"head" : "CPU Usage",
+			"text" : "Show the CPU usage for signal processing in the patcher, green (low) to red (high)"
+		},
+		{
+			"id" : "defineinitialposition",
+			"head" : "Define Fixed Initial Window Location",
+			"text" : "Sets the patcher's initial window location"
+		},
+		{
+			"id" : "setdefaults",
+			"head" : "Set to Default Values",
+			"text" : "Set object colors to default values"
+		},
+		{
+			"id" : "prototype",
+			"head" : "Prototype",
+			"text" : "Create a prototype of the selected object"
+		},
+		{
+			"id" : "align_auto",
+			"head" : "Auto Align",
+			"text" : "Align multiple objects to the left/topmost object's top or left edges"
+		},
+		{
+			"id" : "align_left",
+			"head" : "Left",
+			"text" : "Align the selected objects to the left/topmost object's left edge"
+		},
+		{
+			"id" : "align_center",
+			"head" : "Center",
+			"text" : "Align the selected objects to the left/topmost object's center"
+		},
+		{
+			"id" : "align_right",
+			"head" : "Right",
+			"text" : "Align the selected objects to the left/topmost object's right edge"
+		},
+		{
+			"id" : "align_top",
+			"head" : "Top",
+			"text" : "Align the selected objects to the left/topmost object's top edge"
+		},
+		{
+			"id" : "align_middle",
+			"head" : "Middle",
+			"text" : "Align the selected objects to the middle of each object"
+		},
+		{
+			"id" : "align_bottom",
+			"head" : "Bottom",
+			"text" : "Align the selected objects to the lowest object's bottom edge"
+		},
+		{
+			"id" : "distribute_horizontally",
+			"head" : "Horizontally",
+			"text" : "Distribute the selected objects horizontally"
+		},
+		{
+			"id" : "distribute_vertically",
+			"head" : "Vertically",
+			"text" : "Distribute the selected objects vertically"
+		},
+		{
+			"id" : "alignmenu",
+			"head" : "Align",
+			"text" : "Choose alignment options"
+		},
+		{
+			"id" : "distributemenu",
+			"head" : "Distribute",
+			"text" : "Choose distribution options"
+		},
+		{
+			"id" : "snaptoobjects",
+			"head" : "Snap to Objects",
+			"text" : "Constrain the movement of objects so they fall onto near object's patcher placement"
+		},
+		{
+			"id" : "route",
+			"head" : "Route Patch Cords",
+			"text" : "Route the placement of patch cords so that they avoid other objects"
+		},
+		{
+			"id" : "lineupconnections",
+			"head" : "Align Connections",
+			"text" : "Align objects to snap to the inlet/outlet it is connected to"
+		},
+		{
+			"id" : "removesegments",
+			"head" : "Remove All Segments",
+			"text" : "Remove all segments from a segmented patch cord"
+		},
+		{
+			"id" : "segpatchcords",
+			"head" : "Segmented Patch Cords",
+			"text" : "Draw segmented patch cords — connections that have joints"
+		},
+		{
+			"id" : "glstatus",
+			"head" : "OpenGL Status",
+			"text" : "Open the OpenGL Status window to see properties of the graphics card on this computer"
+		},
+{
+			"id" : "linedisable",
+			"head" : "Disable Patch Cord",
+			"text" : "Disable the currently selected patch cord(s)"
+		},
+		{
+			"id" : "lineenable",
+			"head" : "Enable Patch Cord",
+			"text" : "Enable the currently selected patch cord(s)"
+		},
+		{
+			"id" : "showwelcomescreen",
+			"head" : "Welcome to Max",
+			"text" : "Show the Max Welcome Screen"
+		},
+		{
+			"id" : "doclive",
+			"head" : "Max for Live",
+			"text" : "Show the Max For Live Documentation in the Reference Browser window"
+		},
+		{
+			"id" : "dialog",
+			"head" : "",
+			"text" : "Show the inspector for the selected objects"
+		},
+		{
+			"id" : "newjpatcher",
+			"head" : "New Patcher",
+			"text" : "Create a new patcher window"
+		},
+		{
+			"id" : "newtext",
+			"head" : "New Text",
+			"text" : "Create a new text editor window"
+		},
+		{
+			"id" : "newtable",
+			"head" : "New Table",
+			"text" : "Create a new table editor window"
+		},
+		{
+			"id" : "template",
+			"head" : "New Patcher From Template",
+			"text" : "Create a new patcher using the chosen template file as a starting point"
+		},
+		{
+			"id" : "newfromclipboard",
+			"head" : "",
+			"text" : "Paste the contents of the clipboard into a new patcher window"
+		},
+		{
+			"id" : "newfilebrowser",
+			"head" : "",
+			"text" : "Open a new file browser window"
+		},
+		{
+			"id" : "jopen",
+			"head" : "",
+			"text" : "Open an existing patcher, text file, or collective file"
+		},
+		{
+			"id" : "openastext",
+			"head" : "",
+			"text" : "Open the source for a patcher in a text window"
+		},
+		{
+			"id" : "openrecent",
+			"head" : "Open Recent",
+			"text" : "Open a recently used file"
+		},
+		{
+			"id" : "close",
+			"head" : "",
+			"text" : "Close the current window"
+		},
+		{
+			"id" : "allowmod",
+			"head" : "",
+			"text" : "Permit a patcher loaded as an abstraction to be edited. If disabled, the current patcher window was not loaded as an abstraction."
+		},
+		{
+			"id" : "windsave",
+			"head" : "",
+			"text" : "Save the current window"
+		},
+		{
+			"id" : "windsaveas",
+			"head" : "",
+			"text" : "Save the current window with a new name"
+		},
+		{
+			"id" : "savecoll",
+			"head" : "",
+			"text" : "Save the current window as a self-contained file or an application"
+		},
+		{
+			"id" : "savedefault",
+			"head" : "",
+			"text" : "Save the current window as a template to be used when making a new patcher"
+		},
+		{
+			"id" : "midisetup",
+			"head" : "",
+			"text" : "Assign MIDI input and output ports to channel ranges and letter abbreviations"
+		},
+		{
+			"id" : "backtomax",
+			"head" : "",
+			"text" : "Return to the standard menus"
+		},
+		{
+			"id" : "pagesetup",
+			"head" : "",
+			"text" : "Configure document settings for printing"
+		},
+		{
+			"id" : "print",
+			"head" : "",
+			"text" : "Print the current window"
+		},
+		{
+			"id" : "listfiles",
+			"head" : "",
+			"text" : "List of all the patcher files and external objects used by the current patcher in the Max window"
+		},
+		{
+			"id" : "install",
+			"head" : "",
+			"text" : "Load an external object. This is normally done when you create a new instance of an object."
+		},
+		{
+			"id" : "quit",
+			"head" : "",
+			"text" : "Quit the application"
+		},
+		{
+			"id" : "undo",
+			"head" : "",
+			"text" : "Undo the previous editing operation"
+		},
+		{
+			"id" : "redo",
+			"head" : "",
+			"text" : "Redo the previous editing operation"
+		},
+		{
+			"id" : "cut",
+			"head" : "",
+			"text" : "Delete the selection and copy it to the clipboard"
+		},
+		{
+			"id" : "copy",
+			"head" : "",
+			"text" : "Copy the selection to the clipboard"
+		},
+		{
+			"id" : "paste",
+			"head" : "",
+			"text" : "Paste the contents of the clipboard into the current window"
+		},
+		{
+			"id" : "contextualpaste",
+			"head" : "",
+			"text" : "Paste the contents of the clipboard into the current window at the location where you clicked"
+		},
+		{
+			"id" : "clr",
+			"head" : "",
+			"text" : "Delete the selection"
+		},
+		{
+			"id" : "dup",
+			"head" : "",
+			"text" : "Duplicate the selection"
+		},
+		{
+			"id" : "selectall",
+			"head" : "",
+			"text" : "Select everything in the current window"
+		},
+		{
+			"id" : "pastepic",
+			"head" : "",
+			"text" : "Create an fpic object in the patcher with the image currently on the clipboard"
+		},
+		{
+			"id" : "pastereplace",
+			"head" : "",
+			"text" : "Replace the currently selected objects with the object on the clipboard"
+		},
+		{
+			"id" : "encapsulate",
+			"head" : "",
+			"text" : "Transform the currently selected objects into a subpatcher"
+		},
+		{
+			"id" : "deencapsulate",
+			"head" : "",
+			"text" : "Transform the currently selected subpatcher into objects in the current patcher"
+		},
+		{
+			"id" : "find",
+			"head" : "",
+			"text" : "Show the Find bar in the current window"
+		},
+		{
+			"id" : "findprev",
+			"head" : "",
+			"text" : "Select the previous item that matches the current Find criteria"
+		},
+		{
+			"id" : "findnext",
+			"head" : "",
+			"text" : "Select the next item that matches the current Find criteria"
+		},
+		{
+			"id" : "resume",
+			"head" : "",
+			"text" : "After the scheduler has been stopped, restart it. This item is only enabled after a stack overflow has occurred."
+		},
+		{
+			"id" : "newview",
+			"head" : "",
+			"text" : "Open another view of a patcher"
+		},
+		{
+			"id" : "edit",
+			"head" : "Lock / Unlock",
+			"text" : "Lock or unlock the patcher window. If this is disabled, it means this patcher cannot be edited."
+		},
+		{
+			"id" : "objectpalette",
+			"head" : "",
+			"text" : "Open the Object Explorer allowing you to choose a new object that will be created in the center of the patcher window"
+		},
+		{
+			"id" : "showbg",
+			"head" : "",
+			"text" : "Change the visiblity of the background layer of objects in the patcher"
+		},
+		{
+			"id" : "lockbg",
+			"head" : "",
+			"text" : "Prevent the editing of the background layer of objects in the patcher, permitting you to place objects on top of the background layer"
+		},
+		{
+			"id" : "navigate",
+			"head" : "",
+			"text" : "Open a resizable window in the bottom right corner of the patcher window allowing to zoom in and out and scroll the visible area of the patcher"
+		},
+		{
+			"id" : "showconnections",
+			"head" : "",
+			"text" : "Make patch cords visible when the patcher is unlocked"
+		},
+		{
+			"id" : "hideconnections",
+			"head" : "",
+			"text" : "Make patch cords invisible when the patcher is unlocked"
+		},
+		{
+			"id" : "presentation",
+			"head" : "",
+			"text" : "Switch between presentation and patching modes. Presentation mode is an easier way to create a user interface for your patcher"
+		},
+		{
+			"id" : "forward",
+			"head" : "",
+			"text" : "Move the selected objects' front-to-back ordering one step toward the front. If objects are selected and this is disabled, it means the objects are already at the front."
+		},
+		{
+			"id" : "backward",
+			"head" : "",
+			"text" : "Move the selected objects' front-to-back order one step toward the back. If objects are selected and this is disabled, it means the objects are already in the back."
+		},
+		{
+			"id" : "savequery",
+			"head" : "Save File Browser Search",
+			"text" : "Save the current search criteria as a search in your file listings."
+		},
+		{
+			"id" : "deletequery",
+			"head" : "Remove File Browser Search",
+			"text" : "Remove the currently selected search from your file listings.  You can only remove custom searches that have been added, built-in searches are not removable."
+		},
+		{
+			"id" : "showpreview",
+			"head" : "Hide/Show Preview",
+			"text" : "Change whether or not the preview pane is visible in the lower portion of the FileBrowser window."
+		},
+		{
+			"id" : "editmetadata",
+			"head" : "Edit Metadata for Selected Object",
+			"text" : "Open the Metadata Editor window for the selected object."
+		},
+		{
+			"id" : "revealinfinder",
+			"head" : "Reveal Selected Object",
+			"text" : "Show the selected file in your file system using the Finder or Windows Explorer."
+		},
+		{
+			"id" : "addmetadata",
+			"head" : "Add Metadata",
+			"text" : "Create a new metadata entry for this file.  You can then edit the metadata type (tag, author, or an arbitrary type of your choosing) and value."
+		},
+		{
+			"id" : "deletemetadata",
+			"head" : "Remove Selected Metadata",
+			"text" : "Remove the currently selected metadata for the object"
+		},
+		{
+			"id" : "preferences",
+			"head" : "",
+			"text" : "Edit user interface and real-time performance settings"
+		},
+		{
+			"id" : "patcherinspector",
+			"head" : "",
+			"text" : "Open an inspector window to edit settings that apply to an entire patcher"
+		},
+		{
+			"id" : "grid",
+			"head" : "",
+			"text" : "Show or hide the patcher's grid lines when the patcher is unlocked"
+		},
+		{
+			"id" : "snaptogrid",
+			"head" : "",
+			"text" : "Constrain the movement of objects so they fall onto grid lines"
+		},
+		{
+			"id" : "navigate",
+			"head" : "",
+			"text" : "Open a small window in the corner of a patcher allowing you to change the visible area of the patcher by dragging or changing the size of the blue outlined box"
+		},
+		{
+			"id" : "fixwidth",
+			"head" : "",
+			"text" : "Match the width of a text object to the width of its current text. For non-text objects, Fix Width will return the object to its default size"
+		},
+		{
+			"id" : "lineup",
+			"head" : "",
+			"text" : "When objects are selected, Align matches their closest sides. When a patch cord is selected, Align straightens it, routing it around boxes if necessary."
+		},
+		{
+			"id" : "dialog",
+			"head" : "",
+			"text" : "Open the inspector window for the selected objects, where you can edit attributes"
+		},
+		{
+			"id" : "colorpopup",
+			"head" : "",
+			"text" : "Open a color palette for changing the basic color of the selected objects or patch cords"
+		},
+		{
+			"id" : "wobjectname",
+			"head" : "",
+			"text" : "Edit an object's name for use with pattr objects or patcher scripting"
+		},
+		{
+			"id" : "defaults",
+			"head" : "",
+			"text" : "Configure the default colors of patcher objects"
+		},
+		{
+			"id" : "hide",
+			"head" : "",
+			"text" : "Make the selected objects disappear when the patcher is locked"
+		},
+		{
+			"id" : "show",
+			"head" : "",
+			"text" : "Make the selected objects visible when the patcher is locked"
+		},
+		{
+			"id" : "bfront",
+			"head" : "",
+			"text" : "Move the selected objects ahead of all other objects. If this command is disabled, it means the selected objects are already at the front."
+		},
+		{
+			"id" : "back",
+			"head" : "",
+			"text" : "Move the selected objects behind all other objects. If this command is disabled, it means the selected objects are already at the back."
+		},
+		{
+			"id" : "ignoreclick",
+			"head" : "",
+			"text" : "Set the selected objects to ignore mouse clicks"
+		},
+		{
+			"id" : "respondtoclick",
+			"head" : "",
+			"text" : "Set the selected objects to respond to mouse clicks"
+		},
+		{
+			"id" : "includebg",
+			"head" : "",
+			"text" : "Move the selected objects from the foreground (default) layer to the background layer"
+		},
+		{
+			"id" : "excludebg",
+			"head" : "",
+			"text" : "Move the selected objects from the background layer to the foreground layer"
+		},
+		{
+			"id" : "addtopresentation",
+			"head" : "",
+			"text" : "Add the selected objects to the presentation, where their size and position can be changed independently"
+		},
+		{
+			"id" : "removefrompresentation",
+			"head" : "",
+			"text" : "Remove the selected objects from the presentation"
+		},
+		{
+			"id" : "saveprototype",
+			"head" : "",
+			"text" : "Save the selected object's settings so you can create a copy from the circular menu or by applying to another object using the Prototype menu"
+		},
+		{
+			"id" : "prototype",
+			"head" : "",
+			"text" : "Apply stored settings to the selected object"
+		},
+		{
+			"id" : "showfontpanel",
+			"head" : "",
+			"text" : "Show or hide the font panel to change font settings on the selected object or topmost window"
+		},
+		{
+			"id" : "sendmessage",
+			"head" : "",
+			"text" : "Open a dialog where you can type in a message to send to the selected objects"
+		},
+		{
+			"id" : "overdrive",
+			"head" : "",
+			"text" : "Overdrive is a scheduler mode that runs timing objects in a high-priority thread, resulting in more accuracy and less interference from other computer tasks"
+		},
+		{
+			"id" : "allwindowsactive",
+			"head" : "",
+			"text" : "When enabled, clicks in an inactive window operate the window without bringing it to the front."
+		},
+		{
+			"id" : "autofixwidth",
+			"head" : "",
+			"text" : "Auto Fix Width changes the width of text object boxes as you type"
+		},
+		{
+			"id" : "floatdisplaycorrection",
+			"head" : "",
+			"text" : "When enabled, floating-point numbers are rounded when displayed if they are close to an integer value" 
+		},
+		{
+			"id" : "helpinlockedpatchers",
+			"head" : "",
+			"text" : "When enabled, option-clicking on an object in a locked patcher brings up its help file. When disabled, this only happens in an unlocked patcher." 
+		},
+		{
+			"id" : "assistance",
+			"head" : "",
+			"text" : "When enabled, bubbles appear to describe objects' inlets and outlets when you move the cursor over them. When disabled, the descriptions appear in the clue window." 
+		},
+		{
+			"id" : "dspstatus",
+			"head" : "",
+			"text" : "Open the Audio Status window where you can change audio driver and performance settings." 
+		},
+		{
+			"id" : "iomap",
+			"head" : "",
+			"text" : "Edit the mapping between dac~ and adc~ channels and device channels" 
+		},
+		{
+			"id" : "driversetup",
+			"head" : "",
+			"text" : "Open the setup window for the currently selected audio driver" 
+		},
+		{
+			"id" : "filepreferences",
+			"head" : "",
+			"text" : "Open the File Preferences window where you can add folders to the Max search path." 
+		},
+		{
+			"id" : "traceenable",
+			"head" : "",
+			"text" : "When debugging is enabled, execution of a patch will stop at any active breakpoints." 
+		},
+		{
+			"id" : "showdebugger",
+			"head" : "",
+			"text" : "Open the Debug window, which shows the current program state when stopped at a Break Watchpoint." 
+		},
+		{
+			"id" : "showwiretaps",
+			"head" : "",
+			"text" : "Open the Watchpoints window listing all currently active Break and Monitor Watchpoints." 
+		},
+		{
+			"id" : "tracestep",
+			"head" : "",
+			"text" : "When program execution is stopped, Step sends the next pending message out an outlet, then suspends execution again." 
+		},
+		{
+			"id" : "tracecontinue",
+			"head" : "",
+			"text" : "When program execution is stopped, Continue resumes normal execution. Execution may stop again if another Break Watchpoint is encountered." 
+		},
+		{
+			"id" : "traceabort",
+			"head" : "",
+			"text" : "When program execution is stopped, Abort cancels any further execution." 
+		},
+		{
+			"id" : "traceautostep",
+			"head" : "",
+			"text" : "When program execution is stopped, Auto Step begins executing by triggering the next pending message every two seconds, permitting you to watch your patch in slow motion." 
+		},
+		{
+			"id" : "tracepause",
+			"head" : "",
+			"text" : "If a patch is executing, Pause stops it and shows where execution is suspended in the Debug Window." 
+		},
+		{
+			"id" : "addbreakpoint",
+			"head" : "",
+			"text" : "Add a break watchpoint (which will suspend execution when debugging is enabled) to the selected patch cord." 
+		},
+		{
+			"id" : "addwiretap",
+			"head" : "",
+			"text" : "Add a monitor watchpoint to the selected patch cord to record messages passing through it that you can observe in the Watchpoints window." 
+		},
+		{
+			"id" : "removewiretap",
+			"head" : "",
+			"text" : "Remove the watchpoint from the selected patch cord" 
+		},
+		{
+			"id" : "disablewiretap",
+			"head" : "",
+			"text" : "Disable the selected watchpoint" 
+		},
+		{
+			"id" : "removeallwiretaps",
+			"head" : "",
+			"text" : "Remove all watchpoints from all patchers" 
+		},
+		{
+			"id" : "debugpanel",
+			"head" : "",
+			"text" : "Show the internal Max debugging control panel." 
+		},
+		{
+			"id" : "probeenable",
+			"head" : "",
+			"text" : "When Probing is enabled, Max displays signal or matrix data from the patch cord under the cursor in a locked patcher." 
+		},
+		{
+			"id" : "showmatrixprobe",
+			"head" : "",
+			"text" : "Show the Matrix Probe window that displays current matrix data transmitted through the patch cord under the cursor in a locked patcher." 
+		},
+		{
+			"id" : "extra",
+			"head" : "",
+			"text" : "Extras are helpful utilities. You can add your own by placing them in the extras folder inside the patches folder." 
+		},
+
+		{
+			"id" : "closeall",
+			"head" : "",
+			"text" : "Close all open windows" 
+		},
+		{
+			"id" : "nextwindow",
+			"head" : "",
+			"text" : "Bring the window ahead of the topmost window in the window list to the front" 
+		},
+		{
+			"id" : "previouswindow",
+			"head" : "",
+			"text" : "Bring the window behind the topmost window in the window list to the front" 
+		},
+		{
+			"id" : "cascade",
+			"head" : "",
+			"text" : "Arrange windows in a cascade pattern" 
+		},
+		{
+			"id" : "tilehorizontally",
+			"head" : "",
+			"text" : "Arrange windows in a horizontal tile pattern" 
+		},
+		{
+			"id" : "tilevertically",
+			"head" : "",
+			"text" : "Arrange windows in a vertical tile pattern" 
+		},
+		{
+			"id" : "hidesubs",
+			"head" : "",
+			"text" : "Close any open subpatcher windows of the topmost patcher window" 
+		},
+		{
+			"id" : "sendwindowtoback",
+			"head" : "",
+			"text" : "Move the window behind all other open windows" 
+		},
+		{
+			"id" : "minimize",
+			"head" : "",
+			"text" : "Reduce the window to the bottom of the screen" 
+		},
+		{
+			"id" : "zoomwindow",
+			"head" : "",
+			"text" : "Toggle between full-screen and a window's normal size" 
+		},
+		{
+			"id" : "minimizeall",
+			"head" : "",
+			"text" : "Reduce all windows to the bottom of the screen" 
+		},
+		{
+			"id" : "restoreall",
+			"head" : "",
+			"text" : "Re-open all minimized windows" 
+		},
+		{
+			"id" : "bringalltofront",
+			"head" : "",
+			"text" : "Move all windows in front of the windows of other applications" 
+		},
+		{
+			"id" : "showclue",
+			"head" : "",
+			"text" : "Show the floating clue window, which must already be visible if you are reading this text" 
+		},
+		{
+			"id" : "maxwindow",
+			"head" : "",
+			"text" : "Show the Max window, which lists error messages and the output of the print object" 
+		},
+		{
+			"id" : "window",
+			"head" : "",
+			"text" : "Choose a window by name to bring it to the front" 
+		},
+		{
+			"id" : "help",
+			"head" : "",
+			"text" : "Open the help file for the selected object" 
+		},
+		{
+			"id" : "reference",
+			"head" : "",
+			"text" : "Open the reference manual page for the selected object" 
+		},
+		{
+			"id" : "queryselected",
+			"head" : "",
+			"text" : "Display a query performed on the selected object's name in a file browser window" 
+		},
+		{
+			"id" : "zoomin",
+			"head" : "",
+			"text" : "Magnify the topmost patcher window by about 10 percent" 
+		},
+		{
+			"id" : "zoomout",
+			"head" : "",
+			"text" : "Zoom out the topmost patcher window by about 10 percent" 
+		},
+		{
+			"id" : "showat100percent",
+			"head" : "",
+			"text" : "Restore the zoom level of the topmost patcher window to 100%. If this item is disabled, it means the window is currently shown at 100%." 
+		},
+		{
+			"id" : "pastefrom",
+			"head" : "",
+			"text" : "Paste the contents of the selected file at the location where you clicked to show this contetual menu" 
+		},
+		{
+			"id" : "penciltool",
+			"head" : "Pencil Tool",
+			"text" : "Draw values into a table" 
+		},
+		{
+			"id" : "selecttool",
+			"head" : "Select Tool",
+			"text" : "Select a range of table values for copy and paste" 
+		},
+		{
+			"id" : "linetool",
+			"head" : "Line Tool",
+			"text" : "Make a smooth linear ramp of table values" 
+		},
+		{
+			"id" : "handtool",
+			"head" : "Move Tool",
+			"text" : "Scroll the displayed area of a table" 
+		},
+		{
+			"id" : "sortbytime",
+			"head" : "Order by Time",
+			"text" : "Sort messages in the Max window by the order in which they were originally displayed" 
+		},
+		{
+			"id" : "maxclearall",
+			"head" : "Clear All",
+			"text" : "Clear the entire contents of the Max window" 
+		},
+		{
+			"id" : "addattr",
+			"head" : "",
+			"text" : "Store arbtirary named data with an object" 
+		},
+		{
+			"id" : "addpath",
+			"head" : "",
+			"text" : "Add a new folder to the search path. Use the Choose button that appears to pick the folder." 
+		},
+		{
+			"id" : "removeattr",
+			"head" : "",
+			"text" : "Delete the previously added instance attribute that is currently selected" 
+		},
+		{
+			"id" : "removepath",
+			"head" : "",
+			"text" : "If the selected path is the last one in the list, Remove Path will delete it. Otherwise, Remove Path will clear its value but leave the path listed. In both cases, the path is removed from the search path." 
+		},
+		{
+			"id" : "reveal",
+			"head" : "",
+			"text" : "Point out the object responsible for the selected message" 
+		},
+		{
+			"id" : "attr_reveal",
+			"head" : "",
+			"text" : "Point out the object(s) being inspected" 
+		},
+		{
+			"id" : "clientcontext",
+			"head" : "",
+			"text" : "Menu items specific to the selected object" 
+		},
+		{
+			"id" : "freeze",
+			"head" : "",
+			"text" : "Store the current value as the saved value of the attribute, immune from any changes to the attribute's value" 
+		},
+		{
+			"id" : "unfreeze",
+			"head" : "",
+			"text" : "Remove a special saved value for the attribute" 
+		},
+		{
+			"id" : "dialog_sender",
+			"head" : "",
+			"text" : "Open the inspector on the object that sent the currently selected message" 
+		},
+		{
+			"id" : "dialog_receiver",
+			"head" : "",
+			"text" : "Open the inspector on the object that received the currently selected message" 
+		},
+		{
+			"id" : "reveal_sender",
+			"head" : "",
+			"text" : "Point out the object that sent the currently selected message" 
+		},
+		{
+			"id" : "browser_fwd",
+			"head" : "",
+			"text" : "Show the next page" 
+		},
+		{
+			"id" : "browser_back",
+			"head" : "",
+			"text" : "Show the previous page" 
+		},
+		{
+			"id" : "loadskin",
+			"head" : "",
+			"text" : "Load a collection of object default settings" 
+		},
+		{
+			"id" : "saveskin",
+			"head" : "",
+			"text" : "Save the current object default settings in a file" 
+		},
+		{
+			"id" : "listpaths",
+			"head" : "",
+			"text" : "Print all of the current search paths in the Max window" 
+		},
+		{
+			"id" : "docintro",
+			"head" : "",
+			"text" : "Open the main start page for the Max documentation" 
+		},
+		{
+			"id" : "docnew",
+			"head" : "",
+			"text" : "Information about new features in Max 5" 
+		},
+		{
+			"id" : "doctesting",
+			"head" : "",
+			"text" : "Information about bug fixes and new features in the current version" 
+		},
+		{
+			"id" : "maxindex",
+			"head" : "",
+			"text" : "Main page for the Max tutorials" 
+		},
+		{
+			"id" : "mspindex",
+			"head" : "",
+			"text" : "Main page for the MSP tutorials" 
+		},
+		{
+			"id" : "jitindex",
+			"head" : "",
+			"text" : "Main page for the Jitter tutorials" 
+		},
+		{
+			"id" : "shortcuts",
+			"head" : "",
+			"text" : "Lists editing shortcuts in the patcher" 
+		},
+		{
+			"id" : "listkeycommands",
+			"head" : "",
+			"text" : "Displays a menu of patcher keyboard commands" 
+		},
+		{
+			"id" : "keycommands",
+			"head" : "",
+			"text" : "Describes keyboard commands for making new objects in a patcher" 
+		},
+		{
+			"id" : "showattrs",
+			"head" : "",
+			"text" : "Show an additional column in the inspector that displays the programmatic name of an object's attributes" 
+		},
+		{
+			"id" : "revert",
+			"head" : "",
+			"text" : "Sets the selected attribute to its value when the inspector was first opened on the object" 
+		},
+		{
+			"id" : "scale",
+			"head" : "",
+			"text" : "Places a sizing box around the selected objects permitting you to resize them as a group" 
+		},
+		{
+			"id" : "scalespace",
+			"head" : "",
+			"text" : "Places a sizing box around the selected objects permitting you to adjust the spacing between them" 
+		},
+		{
+			"id" : "minimixer",
+			"head" : "",
+			"text" : "Shows or hides the mini-mixer in patchers with audio objects"
+		},
+		{
+			"id" : "patchernavmenu",
+			"head" : "",
+			"text" : "Display a menu to access parent patchers or create a new view of a patcher"
+		},
+		{
+			"id" : "viewbyicon",
+			"head" : "",
+			"text" : "View objects in the explorer as categories of icons"
+		},
+		{
+			"id" : "viewbyname",
+			"head" : "",
+			"text" : "View objects in the explorer by names and descriptions"
+		},
+		{	
+			"id" : "showdetails",
+			"head" : "",
+			"text" : "Show or hide panel providing additional information about the selected object"
+		},
+		{
+			"id" : "makeone",
+			"head" : "",
+			"text" : "Place an instance of the selected object in the topmost patcher"
+		},
+		{
+			"id" : "explorer_option_createobjectbox",
+			"head" : "",
+			"text" : "Create an object box when showing the object explorer"
+		},
+		{
+			"id" : "explorer_option_hideaftercreate",
+			"head" : "",
+			"text" : "Hide the explorer after using it to create an object"
+		},
+		{
+			"id" : "explorer_option_movebelowtarget",
+			"head" : "",
+			"text" : "Reposition the explorer near the location where you double-clicked to create an object"
+		},
+		{
+			"id" : "explorer_option_listexamples",
+			"head" : "",
+			"text" : "Show patchers located in examples and docs folders in the object explorer"
+		},
+		{
+			"id" : "iconzoomin",
+			"head" : "",
+			"text" : "Increase the size of objects in icon view"
+		},
+		{
+			"id" : "iconzoomout",
+			"head" : "",
+			"text" : "Decrease the size of objects in icon view"
+		},
+		{
+			"id" : "explorer_gearmenu",
+			"head" : "",
+			"text" : "Display a menu of object explorer preferences"
+		},
+		{
+			"id" : "inspector_gearmenu",
+			"head" : "",
+			"text" : "Display a menu with commands for modifying the selected attribute"
+		},
+		{
+			"id" : "makeselectedattr",
+			"head" : "",
+			"text" : "Create an attrui object that displays the selected attribute"
+		},
+		{
+			"id" : "refbar_ref",
+			"head" : "",
+			"text" : "Display a complete reference page for the selected object"
+		},
+		{
+			"id" : "refbar_help",
+			"head" : "",
+			"text" : "Open a help file for the selected object"
+		},
+		{
+			"id" : "compile",
+			"head" : "",
+			"text" : "Generate code for this patcher window, disabled if compilation is up-to-date"
+		},
+		{
+			"id" : "build_autocompile",
+			"head" : "",
+			"text" : "Enable or disable recompilation of this patcher whenever changes are made"
+		},
+		{
+			"id" : "build_reset",
+			"head" : "",
+			"text" : "Re-initialize all parameter values to their default values"
+		},			
+		{
+			"id" : "refbar_fwd",
+			"head" : "",
+			"text" : "Show reference information for the next displayed object"
+		},		
+		{
+			"id" : "refbar_back",
+			"head" : "",
+			"text" : "Show reference information for the previously displayed object"
+		},		
+		{
+			"id" : "attr_ref",
+			"head" : "",
+			"text" : "Open the reference page for the object"
+		}			
+		]
+	},
+	{
+		"class" : "maxwindow",
+		"elements" : [
+		{
+			"id" : "object",
+			"head" : "Object Column Heading",
+			"text" : "Click to sort the window by object name"
+		},
+		{
+			"id" : "order",
+			"head" : "Order Column Heading",
+			"text" : "Click to sort the window by the order the message was posted"
+		},
+		{
+			"id" : "message",
+			"head" : "Message Column Heading",
+			"text" : "Click to sort the window by message text"
+		},
+		{
+			"id" : "ordercell",
+			"head" : "Message Order",
+			"text" : "Shows the order in which the message was posted"
+		}
+		]
+	},
+	{
+		"class" : "filepreferenceswindow",
+		"elements" : [
+		{
+			"id" : "slot",
+			"head" : "Slot Number",
+			"text" : "An index number for the searchpath slot"
+		},
+		{
+			"id" : "name",
+			"head" : "Slot Name",
+			"text" : "Provides a label for the path that is added to Max's searchpath"
+		},
+		{
+			"id" : "path",
+			"head" : "Folder Path",
+			"text" : "Defines the actual path that is added to Max's searchpath"
+		},
+		{
+			"id" : "recursive",
+			"head" : "Recursive Path",
+			"text" : "If toggled to on, every sub-folder of the given path will be added. This can be very dangerous when adding an excessively large folder hierarchy, such the root of a hard drive or your Desktop."
+		}
+		]
+	},
+	{
+		"class" : "jdataview",
+		"elements" : [
+		{
+			"id" : "columnheader",
+			"head" : "Column Heading",
+			"text" : "Click to sort by this column or drag the column to rearrange it"
+		}
+		]
+	},
+	{
+		"class" : "debugwindow",
+		"elements" : [
+		{
+			"id" : "_index",
+			"head" : "Index Column Heading",
+			"text" : "Shows the order of messages up to the point where execution is stopped"
+		},
+		{
+			"id" : "patchersym",
+			"head" : "Patcher Column Heading",
+			"text" : "Shows the name of the patcher in which each message is executed"
+		},
+		{
+			"id" : "senderclasssym",
+			"head" : "Sender Column Heading",
+			"text" : "Shows the name of the object that is sending the message"
+		},
+		{
+			"id" : "classsym",
+			"head" : "Receiver Column Heading",
+			"text" : "Shows the name of the object that is receiving and executing the message"
+		},
+		{
+			"id" : "messagesym",
+			"head" : "Message Column Heading",
+			"text" : "Shows the name of message being executed"
+		},
+		{
+			"id" : "arguments",
+			"head" : "Arguments Column Heading",
+			"text" : "Shows the arguments to the message being executed"
+		}
+		]
+	},
+	{
+		"class" : "patchline_badge",
+		"elements" : [
+		{
+			"id" : "monitor",
+			"head" : "Monitor Watchpoint",
+			"text" : "This watchpoint will print any messages travelling through the patch cord in the Watchpoints window"
+		},
+		{
+			"id" : "break_disabled",
+			"head" : "Break Watchpoint",
+			"text" : "This watchpoint (currently disabled) will suspend execution of your patch and show the current execution state in the Debugger window. In order for it to work you need to enable debugging in the Debug menu."
+		},
+		{
+			"id" : "break_enabled",
+			"head" : "Break Watchpoint",
+			"text" : "This watchpoint (currently enabled) will suspend execution of your patch and show the current execution state in the Debugger window."
+		},
+		{
+			"id" : "disabled",
+			"head" : "Disabled Watchpoint",
+			"text" : "This watchpoint is currently disabled"
+		},
+		{
+			"id" : "monitor_break",
+			"head" : "Monitor/Break Watchpoint",
+			"text" : "This watchpoint will print any messages travelling through the patch cord in the Watchpoints window and suspend execution of your patch and show the current execution state in the Debugger window."
+		}
+		]
+	},
+	{
+		"class" : "explorer",
+		"elements" : [
+		{
+			"id" : "default",
+			"head" : "Welcome to the Object Explorer",
+			"text" : "Double-click or drag into a patcher to create an object. Option-click to open a help file."
+		}
+		]
+	},
+	{
+		"class" : "tapwindow",
+		"elements" : [
+		{
+			"id" : "number",
+			"head" : "Number Column Heading",
+			"text" : "This column shows the watchpoint number"
+		},
+		{
+			"id" : "action",
+			"head" : "Action Column Heading",
+			"text" : "This column shows the type of watchpoint: break, monitor, or break/monitor"
+		},
+		{
+			"id" : "classname",
+			"head" : "Sender Column Heading",
+			"text" : "This column shows the name of the object that sent the message being watched"
+		},
+		{
+			"id" : "patchername",
+			"head" : "Patcher Column Heading",
+			"text" : "This column shows the name of the patcher containing the watchpoint"
+		},
+		{
+			"id" : "value",
+			"head" : "Value Column Heading",
+			"text" : "This column shows the last value observed for this watchpoint"
+		},
+		{
+			"id" : "count",
+			"head" : "Count Column Heading",
+			"text" : "This column shows the number of messages sent through this watchpoint"
+		},
+		{
+			"id" : "history",
+			"head" : "History Column Heading",
+			"text" : "This column shows the recent history of message values sent through this watchpoint"
+		}
+		]
+	},
+	{
+		"class" : "inspector",
+		"elements" : [
+		{
+			"id" : "genericcell",
+			"head" : "Inspector Cell",
+			"text" : "There are so many things you can do while trapped in a cell"
+		},
+		{
+			"id" : "toolheader",
+			"head" : "Attribute Menu Column Heading",
+			"text" : "Click to sort by Natural attribute order" 
+		},
+		{
+			"id" : "toolcell",
+			"head" : "Attribute Menu",
+			"text" : "Click to get a menu of attribute editing commands" 
+		},
+		{
+			"id" : "attrnameheader",
+			"head" : "Attribute Column Heading",
+			"text" : "Click to sort by attribute name or drag to rearrange this column" 
+		},
+		{
+			"id" : "attrnamecell",
+			"head" : "Attribute",
+			"text" : "Click to select this attribute -- you can also drag it into a patcher" 
+		},
+		{
+			"id" : "nameheader",
+			"head" : "Attribute Description Column Heading",
+			"text" : "Click to sort by attribute description or drag to rearrange this column" 
+		},
+		{
+			"id" : "namecell",
+			"head" : "Attribute Description",
+			"text" : "Click to select this attribute -- you can also drag it into a patcher" 
+		},
+		{
+			"id" : "valueheader",
+			"head" : "Attribute Value Column Heading",
+			"text" : "Click to sort by attribute description or drag to rearrange this column" 
+		},
+		{
+			"id" : "valuecell",
+			"head" : "Attribute Value",
+			"text" : "Click to edit this attribute" 
+		}
+		]
+	},
+	{
+	"class" : "max",
+	"elements" : [
+		{
+			"id" : "browserwindow_rect",
+			"head" : "Browser Window Location",
+			"text" : "Sets the default location of the File Browser window. You can change this setting simply by moving or resizing the file browser." 
+		},
+		{
+			"id" : "filebrowser_color_stripe1",
+			"head" : "File Browser Color: Stripes for odd rows",
+			"text" : "Sets the color for the background of odd rows in the File Browser window." 
+		},
+		{
+			"id" : "filebrowser_color_stripe2",
+			"head" : "File Browser Color: Stripes for even rows",
+			"text" : "Sets the color for the background of even rows in the File Browser window." 
+		},
+		{
+			"id" : "maxwindow_rect",
+			"head" : "Max Window Location",
+			"text" : "Sets the location of the Max (Status) Window when launching Max. You can change this setting simply by moving or resizing the window." 
+		},
+		{
+			"id" : "maxatstartup",
+			"head" : "Max Window at Startup",
+			"text" : "When enabled, the Max (Status) Window appears when Max starts up." 
+		},
+		{
+			"id" : "assistance_bgcolor",
+			"head" : "Assistance Background Color",
+			"text" : "Sets the background color (and transparency) used for Assistance and Layout Bubbles." 
+		},
+		{
+			"id" : "assistance_textcolor",
+			"head" : "Assistance Text Color",
+			"text" : "Sets the text color used for Assistance and Layout Bubbles." 
+		},
+		{
+			"id" : "cluewindow_anncolor",
+			"head" : "Clue Window Annotation Color",
+			"text" : "Sets the background color displayed in the Clue Window the the mouse is positioned over an Annotation." 
+		},
+		{
+			"id" : "cluewindow_bgcolor",
+			"head" : "Clue Window Background Color",
+			"text" : "Sets the background color of the Clue Window." 
+		},
+		{
+			"id" : "cluewindow_textcolor",
+			"head" : "Clue Window Text Color",
+			"text" : "Sets the text color used in the Clue Window." 
+		},
+		{
+			"id" : "patcher_boxfadetime",
+			"head" : "Box Fade Time (ms)",
+			"text" : "Sets the amount of time it takes for an object to fade from view when removed from a patcher window." 
+		},
+		{
+			"id" : "objectpalette_bgcolor",
+			"head" : "Object Explorer Background Color",
+			"text" : "Sets the background color (and transparency) used for the Object Explorer." 
+		},
+		{
+			"id" : "patcher_scrollanimatetime",
+			"head" : "Scroll Animation Time (ms)",
+			"text" : "Sets the amount of time required for scroll animation events" 
+		},
+		{
+			"id" : "box_activeselectioncolor",
+			"head" : "Box Select-Highlight Color (Active)",
+			"text" : "Sets the color applied to selected objects in an active window" 
+		},
+		{
+			"id" : "box_inactiveselectioncolor",
+			"head" : "Box Select-Highlight Color",
+			"text" : "Sets the color applied to selected objects in an inactive window" 
+		},
+		{
+			"id" : "translation",
+			"head" : "Language",
+			"text" : "Selects the current language; changes require a restart" 
+		},
+		{
+			"id" : "patchline_curved",
+			"head" : "Curved Patch Cords",
+			"text" : "Sets curved drawing style for patch cords" 
+		}
+		]
+	},
+	{
+	"class" : "paramswindow",
+	"elements" : [
+		{
+			"id" : "parameter_order",
+			"head" : "Recall Order",
+			"text" : "Sets the order of recall of this parameter. Lower numbers are recalled first. The order of recall of parameters with the same order number is undefined." 
+		},
+		{
+			"id" : "parameter_path",
+			"head" : "Path To Parameter",
+			"text" : "This feature is debug-build only, so you will never see this message. If you insist, this is the moniker path to the parameter object from the top-level of the patcher hierarchy." 
+		},
+		{
+			"id" : "parameter_linknames",
+			"head" : "Link Parameter Name to Scripting Name",
+			"text" : "If enabled, the parameter's long name will be linked with the object's scripting name." 
+		},
+		{
+			"id" : "parameter_longname",
+			"head" : "Long Name",
+			"text" : "The long name of the parameter. This name must be unique per patcher hierarchy."
+		},
+		{
+			"id" : "parameter_shortname",
+			"head" : "Short Name",
+			"text" : "The short name of the parameter. This name is used for display in the user interface."
+		},
+		{
+			"id" : "parameter_scriptname",
+			"head" : "Scripting Name",
+			"text" : "The scripting name of the object. This name must be unique per patcher."
+		},
+		{
+			"id" : "parameter_type",
+			"head" : "Type",
+			"text" : "The type of the parameter. In general, this will be Int (0-255), Float (32-bit float), Enum (enumerated list of values) or Blob (list). Some parameters do not support certain parameter types, in which case those types will be unavailable in the drop-down menu."
+		},
+		{
+			"id" : "parameter_range",
+			"head" : "Range",
+			"text" : "The range of the parameter (for Int and Float types), or the members of the enumerated list (for Enum types). Range in unsupported for Blob parameters."
+		},
+		{
+			"id" : "parameter_modmode",
+			"head" : "Modulation Mode",
+			"text" : "The modulation mode of the parameter. Available modes depend on the parameter's type. Modulation is unsupported for Enum and Blob parameter types."
+		},
+		{
+			"id" : "parameter_modrange",
+			"head" : "Long Name",
+			"text" : "The modulation range of the parameter, if modulation is enabled."
+		},
+		{
+			"id" : "parameter_initial_enable",
+			"head" : "Initial Value Enabled",
+			"text" : "If enabled, the parameter will be set to an initial value (as specified in the Initial Value column) when the patcher or device is loaded. Turn this on (or off, and then on again) to store the current value of the parameter as the initial value."
+		},
+		{
+			"id" : "parameter_initial",
+			"head" : "Initial Value",
+			"text" : "The parameter's initial value, if the Initial Value Enabled checkbox is enabled."
+		},
+		{
+			"id" : "parameter_units",
+			"head" : "Custom Units",
+			"text" : "The string to use when displaying the parameter's value, if Unit Style is set to Custom. Simple symbols or sprintf-style strings may be used."
+		},
+		{
+			"id" : "parameter_unitstyle",
+			"head" : "Unit Style",
+			"text" : "Parameters have a number of built-in display styles for their data. Choose between them from the drop-down menu."
+		},
+		{
+			"id" : "parameter_exponent",
+			"head" : "Exponential Scaling",
+			"text" : "When set to a value other than 1., the parameter's input and output values will be exponentially scaled according to the factor entered in this column."
+		},
+		{
+			"id" : "parameter_steps",
+			"head" : "Steps",
+			"text" : "The number of steps available between the minimum and maximum values of a parameter. For instance, if the parameter has a range from 0.-64., with Steps set to 4, the user can only set the parameter to 0, 21.33, 42.66 and 64."
+		},
+		{
+			"id" : "parameter_lval",
+			"head" : "Linear Value",
+			"text" : "For Int, Float and Enum types, the linear value (without exponential scaling) of the parameter."
+		},
+		{
+			"id" : "parameter_mval",
+			"head" : "Value",
+			"text" : "The parameter's value."
+		}
+		]
+	}
+]
+}

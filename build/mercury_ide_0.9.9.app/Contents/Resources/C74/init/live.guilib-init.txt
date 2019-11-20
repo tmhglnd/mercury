@@ -1,0 +1,12 @@
+max startmaxserver;
+max objectfile live.arrows live.guilib live.arrows;
+max objectfile live.button live.guilib live.button;
+max objectfile live.dial live.guilib live.dial;
+max objectfile live.drop live.guilib live.drop;
+max objectfile live.line live.guilib live.line;
+max objectfile live.menu live.guilib live.menu;
+max objectfile live.numbox live.guilib live.numbox;
+max objectfile live.slider live.guilib live.slider;
+max objectfile live.tab live.guilib live.tab;
+max objectfile live.text live.guilib live.text;
+max objectfile live.toggle live.guilib live.toggle;

@@ -1,0 +1,1187 @@
+{
+	"colors" : [ 		{
+			"id" : "alignmentguide",
+			"oncolor" : [ 0.737255, 0.466667, 0.219608, 1.0 ],
+			"category" : "Patching",
+			"label" : "Alignment Guide"
+		}
+, 		{
+			"id" : "assistance_background",
+			"oncolor" : [ 0.843137, 0.835294, 0.796078, 0.94 ],
+			"category" : "Patching",
+			"label" : "Assistance Background"
+		}
+, 		{
+			"id" : "assistance_text",
+			"oncolor" : [ 0.168627, 0.168627, 0.168627, 1.0 ],
+			"category" : "Patching",
+			"label" : "Assistance Text"
+		}
+, 		{
+			"id" : "audiocolor",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Audio Power (Global)"
+		}
+, 		{
+			"id" : "basic",
+			"oncolor" : [ 0.392157, 0.615686, 0.756863, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Basic Objects Palette"
+		}
+, 		{
+			"id" : "box_selection_background",
+			"oncolor" : [ 0.827451, 0.827451, 0.827451, 0.5 ],
+			"category" : "Patching",
+			"label" : "Drag Selection Background"
+		}
+, 		{
+			"id" : "browser_background",
+			"oncolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+			"category" : "Browser",
+			"label" : "Window Background"
+		}
+, 		{
+			"id" : "buttoned_up",
+			"oncolor" : [ 0.392157, 0.615686, 0.756863, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Buttons Palette"
+		}
+, 		{
+			"id" : "calendar_activity",
+			"oncolor" : [ 0.4, 0.4, 0.4, 1.0 ],
+			"category" : "Calendar",
+			"label" : "Activity"
+		}
+, 		{
+			"id" : "calendar_menu_header",
+			"oncolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
+			"category" : "Calendar",
+			"label" : "Menu Header"
+		}
+, 		{
+			"id" : "calendar_stripe2",
+			"oncolor" : [ 0.243137, 0.243137, 0.243137, 1.0 ],
+			"category" : "Calendar",
+			"label" : "Stream Row Stripe Background"
+		}
+, 		{
+			"id" : "calendar_success",
+			"oncolor" : [ 0.678431, 0.760784, 0.341176, 1.0 ],
+			"category" : "Calendar",
+			"label" : "Completed Lesson"
+		}
+, 		{
+			"id" : "caption_background",
+			"oncolor" : [ 0.419608, 0.443137, 0.482353, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "clue_system_background",
+			"oncolor" : [ 0.980392, 1.0, 0.807843, 1.0 ],
+			"category" : "Clues",
+			"label" : "Background"
+		}
+, 		{
+			"id" : "clue_text",
+			"oncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+			"category" : "Clues",
+			"label" : "Text"
+		}
+, 		{
+			"id" : "clue_user_background",
+			"oncolor" : [ 1.0, 0.890196, 0.654902, 1.0 ],
+			"category" : "Clues",
+			"label" : "Annotation Background"
+		}
+, 		{
+			"id" : "colorpopup_bright_background",
+			"oncolor" : [ 0.54902, 0.54902, 0.54902, 1.0 ],
+			"category" : "Color Popup",
+			"label" : "Background (Inspector)"
+		}
+, 		{
+			"id" : "colorpopup_bright_selected",
+			"oncolor" : [ 0.862745, 0.862745, 0.862745, 1.0 ],
+			"category" : "Color Popup",
+			"label" : "Selected (Inspector)"
+		}
+, 		{
+			"id" : "colortab1",
+			"oncolor" : [ 0.67451, 0.698039, 0.290196, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab10",
+			"oncolor" : [ 0.015686, 0.588235, 0.952941, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab2",
+			"oncolor" : [ 0.886275, 0.482353, 0.878431, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab3",
+			"oncolor" : [ 0.078431, 0.741176, 0.666667, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab4",
+			"oncolor" : [ 0.333333, 0.670588, 0.85098, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab5",
+			"oncolor" : [ 0.890196, 0.341176, 0.321569, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab6",
+			"oncolor" : [ 0.494118, 0.658824, 0.65098, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab7",
+			"oncolor" : [ 0.588235, 0.803922, 0.290196, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab8",
+			"oncolor" : [ 0.929412, 0.423529, 0.184314, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "colortab9",
+			"oncolor" : [ 0.709804, 0.4, 0.862745, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "comment_outline",
+			"oncolor" : [ 0.501961, 0.501961, 0.501961, 0.5 ],
+			"category" : "Patching",
+			"label" : "Comment Box Outline"
+		}
+, 		{
+			"id" : "darkweb",
+			"oncolor" : [ 0.69, 0.702, 0.474, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "dirtygreen",
+			"oncolor" : [ 0.411765, 0.541176, 0.623529, 1.0 ],
+			"category" : "Format Palette",
+			"label" : "Changed Style Name"
+		}
+, 		{
+			"id" : "electricblue",
+			"oncolor" : [ 0.866667, 0.980392, 0.101961, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "favicolor",
+			"oncolor" : [ 0.92549, 0.815686, 0.101961, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Save Snippet"
+		}
+, 		{
+			"id" : "formatpalette_background",
+			"oncolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+			"offcolor" : [ 0.392157, 0.4, 0.411765, 1.0 ],
+			"category" : "Format Palette",
+			"label" : "Window Background"
+		}
+, 		{
+			"id" : "formatpalette_disabledtext",
+			"oncolor" : [ 0.513725, 0.529412, 0.545098, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "formatpalette_inherited",
+			"oncolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
+			"category" : "Format Palette",
+			"label" : "Inherited Attribute Indicator"
+		}
+, 		{
+			"id" : "formatpalette_inherited_background",
+			"oncolor" : [ 0.27451, 0.27451, 0.27451, 1.0 ],
+			"category" : "Format Palette",
+			"label" : "Inherited Attribute Background"
+		}
+, 		{
+			"id" : "formatpalette_inherited_on",
+			"oncolor" : [ 0.45098, 0.45098, 0.45098, 1.0 ],
+			"category" : "Format Palette",
+			"label" : "Inherited Attribute Indicator"
+		}
+, 		{
+			"id" : "formatpalette_renamer_background",
+			"oncolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+			"category" : "Format Palette",
+			"label" : "Rename Style Background"
+		}
+, 		{
+			"id" : "iceice",
+			"oncolor" : [ 0.564, 0.86, 1.0, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Freeze Attribute"
+		}
+, 		{
+			"id" : "inspector_background",
+			"oncolor" : [ 0.27451, 0.27451, 0.27451, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Window Background"
+		}
+, 		{
+			"id" : "inspector_disabled_text",
+			"oncolor" : [ 0.443137, 0.443137, 0.443137, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Disabled Text"
+		}
+, 		{
+			"id" : "inspector_header_background",
+			"oncolor" : [ 0.203922, 0.203922, 0.203922, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Header Background"
+		}
+, 		{
+			"id" : "inspector_headerline",
+			"oncolor" : [ 0.278431, 0.278431, 0.278431, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Header Line"
+		}
+, 		{
+			"id" : "inspector_menuheader",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Menu Header"
+		}
+, 		{
+			"id" : "inspector_selectedrow",
+			"oncolor" : [ 0.337255, 0.678431, 0.890196, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Selected Row Background"
+		}
+, 		{
+			"id" : "inspector_selection",
+			"oncolor" : [ 0.372549, 0.647059, 0.819608, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Text Editor Highlighted Background"
+		}
+, 		{
+			"id" : "inspector_tab",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Tab Background"
+		}
+, 		{
+			"id" : "inspector_texteditor_background",
+			"oncolor" : [ 0.898039, 0.898039, 0.898039, 1.0 ],
+			"category" : "Inspector",
+			"label" : "Text Editor Background"
+		}
+, 		{
+			"id" : "jed_background",
+			"oncolor" : [ 0.160784, 0.160784, 0.160784, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Background"
+		}
+, 		{
+			"id" : "jed_cpp_preprocessor",
+			"oncolor" : [ 0.968627, 0.0, 0.368627, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "C++ Preprocessor"
+		}
+, 		{
+			"id" : "jed_defaulttext",
+			"oncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Text"
+		}
+, 		{
+			"id" : "jed_expr_bracket",
+			"oncolor" : [ 0.964706, 0.968627, 0.933333, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Bracket"
+		}
+, 		{
+			"id" : "jed_expr_comment",
+			"oncolor" : [ 0.384314, 0.372549, 0.294118, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Comment"
+		}
+, 		{
+			"id" : "jed_expr_corefunction",
+			"oncolor" : [ 0.584313725490196, 0.996078431372549, 0.03921568627451, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Core Function"
+		}
+, 		{
+			"id" : "jed_expr_error",
+			"oncolor" : [ 0.8, 0.0, 0.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Error"
+		}
+, 		{
+			"id" : "jed_expr_float",
+			"oncolor" : [ 0.615686, 0.376471, 1.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Float"
+		}
+, 		{
+			"id" : "jed_expr_identifier",
+			"oncolor" : [ 0.964706, 0.968627, 0.933333, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Identifier"
+		}
+, 		{
+			"id" : "jed_expr_integer",
+			"oncolor" : [ 0.615686, 0.376471, 1.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Integer"
+		}
+, 		{
+			"id" : "jed_expr_keyword",
+			"oncolor" : [ 0.32549, 0.819608, 0.929412, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Keyword"
+		}
+, 		{
+			"id" : "jed_expr_namedconstant",
+			"oncolor" : [ 0.0, 0.819608, 1.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Named Constant"
+		}
+, 		{
+			"id" : "jed_expr_operator",
+			"oncolor" : [ 0.968627, 0.0, 0.368627, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Operator"
+		}
+, 		{
+			"id" : "jed_expr_preprocessor",
+			"oncolor" : [ 0.968627, 0.0, 0.368627, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "C++ Preprocessor"
+		}
+, 		{
+			"id" : "jed_expr_punctuation",
+			"oncolor" : [ 0.964706, 0.968627, 0.933333, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr Punctuation"
+		}
+, 		{
+			"id" : "jed_expr_string",
+			"oncolor" : [ 0.878431, 0.843137, 0.352941, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr String"
+		}
+, 		{
+			"id" : "jed_expr_userfunction",
+			"oncolor" : [ 0.992157, 0.521569, 0.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Expr User Function"
+		}
+, 		{
+			"id" : "jed_hilite",
+			"oncolor" : [ 0.388235294117647, 0.388235294117647, 0.341176470588235, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Highlight"
+		}
+, 		{
+			"id" : "jed_js_bracket",
+			"oncolor" : [ 0.964706, 0.968627, 0.933333, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Bracket"
+		}
+, 		{
+			"id" : "jed_js_comment",
+			"oncolor" : [ 0.384314, 0.372549, 0.294118, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Comment"
+		}
+, 		{
+			"id" : "jed_js_corefunction",
+			"oncolor" : [ 0.588235, 0.890196, 0.043137, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Core Function"
+		}
+, 		{
+			"id" : "jed_js_error",
+			"oncolor" : [ 0.8, 0.0, 0.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Error"
+		}
+, 		{
+			"id" : "jed_js_float",
+			"oncolor" : [ 0.615686, 0.376471, 1.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Float"
+		}
+, 		{
+			"id" : "jed_js_identifier",
+			"oncolor" : [ 0.964706, 0.968627, 0.933333, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Identifier"
+		}
+, 		{
+			"id" : "jed_js_integer",
+			"oncolor" : [ 0.615686, 0.376471, 1.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Integer"
+		}
+, 		{
+			"id" : "jed_js_keyword",
+			"oncolor" : [ 0.32549, 0.819608, 0.929412, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Keyword"
+		}
+, 		{
+			"id" : "jed_js_maxfunction",
+			"oncolor" : [ 0.992157, 0.521569, 0.0, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Max Function"
+		}
+, 		{
+			"id" : "jed_js_operator",
+			"oncolor" : [ 0.968627, 0.0, 0.368627, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Operator"
+		}
+, 		{
+			"id" : "jed_js_punctuation",
+			"oncolor" : [ 0.964706, 0.968627, 0.933333, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS Punctuation"
+		}
+, 		{
+			"id" : "jed_js_string",
+			"oncolor" : [ 0.878431, 0.843137, 0.352941, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "JS String"
+		}
+, 		{
+			"id" : "jed_linenumber_text",
+			"oncolor" : [ 0.666667, 0.666667, 0.666667, 1.0 ],
+			"category" : "Text Editor",
+			"label" : "Line Numbers"
+		}
+, 		{
+			"id" : "lesson_button_background",
+			"oncolor" : [ 0.45098, 0.45098, 0.45098, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Button Background"
+		}
+, 		{
+			"id" : "lesson_downloading",
+			"oncolor" : [ 0.670588, 0.552941, 0.74902, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Downloading"
+		}
+, 		{
+			"id" : "lesson_inprogress",
+			"oncolor" : [ 0.305882, 0.796078, 0.945098, 1.0 ],
+			"category" : "Lessons",
+			"label" : "In Progress"
+		}
+, 		{
+			"id" : "lesson_play",
+			"oncolor" : [ 0.623529, 0.894118, 0.180392, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Play Button"
+		}
+, 		{
+			"id" : "lesson_range",
+			"oncolor" : [ 0.8, 0.984314, 0.447059, 0.68 ],
+			"category" : "Lessons",
+			"label" : "Range Indicator"
+		}
+, 		{
+			"id" : "lesson_remote",
+			"oncolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Downloadable"
+		}
+, 		{
+			"id" : "lesson_started",
+			"oncolor" : [ 0.376471, 0.713725, 0.815686, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Started"
+		}
+, 		{
+			"id" : "lesson_step_border",
+			"oncolor" : [ 0.780392, 0.780392, 0.780392, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Step Border"
+		}
+, 		{
+			"id" : "lesson_step_bottomgradient",
+			"oncolor" : [ 0.101961, 0.101961, 0.101961, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Step Gradient Bottom"
+		}
+, 		{
+			"id" : "lesson_step_circle",
+			"oncolor" : [ 0.92549, 0.815686, 0.101961, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Step Circle"
+		}
+, 		{
+			"id" : "lesson_step_titlebar",
+			"oncolor" : [ 0.25098, 0.25098, 0.25098, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Step Titlebar"
+		}
+, 		{
+			"id" : "lesson_step_topgradient",
+			"oncolor" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Step Gradient Top"
+		}
+, 		{
+			"id" : "lesson_text_hilite",
+			"oncolor" : [ 0.372549, 0.647059, 0.819608, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Highlighted Text"
+		}
+, 		{
+			"id" : "lesson_todo",
+			"oncolor" : [ 0.678431, 0.678431, 0.678431, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Not Started"
+		}
+, 		{
+			"id" : "lessonbrowser_row1_background",
+			"oncolor" : [ 0.27451, 0.27451, 0.27451, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Browser List Background Dark"
+		}
+, 		{
+			"id" : "lessonbrowser_row2_background",
+			"oncolor" : [ 0.243137, 0.243137, 0.243137, 1.0 ],
+			"category" : "Lessons",
+			"label" : "Browser List Background Light"
+		}
+, 		{
+			"id" : "live_key_assignment",
+			"oncolor" : [ 1.0, 0.607843, 0.352941, 1.0 ]
+		}
+, 		{
+			"id" : "live_midi_assignment",
+			"oncolor" : [ 0.603922, 0.584314, 0.937255, 1.0 ]
+		}
+, 		{
+			"id" : "lively",
+			"oncolor" : [ 0.392157, 0.615686, 0.756863, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Live Objects Palette"
+		}
+, 		{
+			"id" : "local_audiocolor",
+			"oncolor" : [ 1.0, 0.662745, 0.403922, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Audio Power (Local)"
+		}
+, 		{
+			"id" : "maxwindow_bugtext",
+			"oncolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Bug Text"
+		}
+, 		{
+			"id" : "maxwindow_errorbackground",
+			"oncolor" : [ 0.560784, 0.172549, 0.086275, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Error Background"
+		}
+, 		{
+			"id" : "maxwindow_errorbackground2",
+			"oncolor" : [ 0.509804, 0.227451, 0.164706, 1.0 ]
+		}
+, 		{
+			"id" : "maxwindow_errortext",
+			"oncolor" : [ 0.882353, 0.882353, 0.882353, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Error Text"
+		}
+, 		{
+			"id" : "maxwindow_postobject",
+			"oncolor" : [ 0.898039, 0.898039, 0.898039, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Print Object Name Text"
+		}
+, 		{
+			"id" : "maxwindow_postobject_hilite",
+			"oncolor" : [ 0.894118, 0.913725, 0.47451, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Highlighted Print Object Name Text"
+		}
+, 		{
+			"id" : "maxwindow_posttext",
+			"oncolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Print Text"
+		}
+, 		{
+			"id" : "maxwindow_selection_background",
+			"oncolor" : [ 0.337255, 0.678431, 0.890196, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Selected Row Background"
+		}
+, 		{
+			"id" : "maxwindow_successtext",
+			"oncolor" : [ 0.49803921568, 0.67450980392, 0.38823529411, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Success Text"
+		}
+, 		{
+			"id" : "maxwindow_warningbackground1",
+			"oncolor" : [ 0.274509803921569, 0.274509803921569, 0.274509803921569, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Warning Background 1"
+		}
+, 		{
+			"id" : "maxwindow_warningbackground2",
+			"oncolor" : [ 0.243137254901961, 0.243137254901961, 0.243137254901961, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Warning Background 2"
+		}
+, 		{
+			"id" : "maxwindow_warningtext",
+			"oncolor" : [ 0.772549, 0.901961, 0.270588, 1.0 ],
+			"category" : "Max Window",
+			"label" : "Warning Text"
+		}
+, 		{
+			"id" : "menu_background",
+			"oncolor" : [ 0.223529, 0.223529, 0.223529, 1.0 ],
+			"category" : "Menus",
+			"label" : "Background"
+		}
+, 		{
+			"id" : "menu_disabled_text",
+			"oncolor" : [ 0.368627, 0.368627, 0.368627, 1.0 ],
+			"category" : "Menus",
+			"label" : "Disabled Item Text"
+		}
+, 		{
+			"id" : "menu_headertext",
+			"oncolor" : [ 0.368627, 0.368627, 0.368627, 1.0 ],
+			"category" : "Menus",
+			"label" : "Header Text"
+		}
+, 		{
+			"id" : "menu_highlighted_background",
+			"oncolor" : [ 0.298039, 0.298039, 0.298039, 1.0 ],
+			"category" : "Menus",
+			"label" : "Highlighted Item Background"
+		}
+, 		{
+			"id" : "menu_highlighted_text",
+			"oncolor" : [ 0.882353, 0.882353, 0.882353, 1.0 ],
+			"category" : "Menus",
+			"label" : "Highlighted Item Text"
+		}
+, 		{
+			"id" : "menu_text",
+			"oncolor" : [ 0.882353, 0.882353, 0.882353, 1.0 ],
+			"category" : "Menus",
+			"label" : "Text"
+		}
+, 		{
+			"id" : "mute_on",
+			"oncolor" : [ 0.231373, 0.560784, 1.0, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Audio Mute"
+		}
+, 		{
+			"id" : "number_one",
+			"oncolor" : [ 0.392157, 0.615686, 0.756863, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Number Boxes Palette"
+		}
+, 		{
+			"id" : "object_bogus_color",
+			"oncolor" : [ 0.607843, 0.490196, 0.419608, 1.0 ],
+			"offcolor" : [ 0.737255, 0.611765, 0.466667, 1.0 ],
+			"category" : "Patching",
+			"label" : "Bogus Object Color"
+		}
+, 		{
+			"id" : "objectfiles_header",
+			"oncolor" : [ 1.0, 0.572549, 0.180392, 1.0 ],
+			"category" : "Box Menu",
+			"label" : "Files Menu Header"
+		}
+, 		{
+			"id" : "objectified",
+			"oncolor" : [ 0.647059, 0.745098, 0.0, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Recent Object Menu Title"
+		}
+, 		{
+			"id" : "objectprototypes_header",
+			"oncolor" : [ 0.415686, 0.819608, 1.0, 1.0 ],
+			"category" : "Box Menu",
+			"label" : "Prototypes Menu Header"
+		}
+, 		{
+			"id" : "parchment",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Left Toolbar Items"
+		}
+, 		{
+			"id" : "parchment_dull",
+			"oncolor" : [ 0.72549, 0.701961, 0.631373, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "parchmentbright",
+			"oncolor" : [ 1.0, 0.894118, 0.580392, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "patcher_active_tab",
+			"oncolor" : [ 0.290196, 0.290196, 0.290196, 1.0 ],
+			"offcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+			"category" : "Patcher Tabs",
+			"label" : "Active Background"
+		}
+, 		{
+			"id" : "patcher_box_selection",
+			"oncolor" : [ 0.301961, 0.623529, 0.901961, 1.0 ],
+			"offcolor" : [ 0.203922, 0.47451, 0.780392, 1.0 ],
+			"category" : "Patching",
+			"label" : "Selected Box Frame"
+		}
+, 		{
+			"id" : "patcher_circle_fill",
+			"oncolor" : [ 0.815686, 0.835294, 0.329412, 1.0 ],
+			"category" : "Box Menu",
+			"label" : "Mouseover Button Fill"
+		}
+, 		{
+			"id" : "patcher_circle_outline",
+			"oncolor" : [ 0.341176, 0.341176, 0.298039, 1.0 ],
+			"category" : "Box Menu",
+			"label" : "Mouseover Button Outline"
+		}
+, 		{
+			"id" : "patcher_cool_inlet",
+			"oncolor" : [ 0.639216, 0.898039, 0.941176, 1.0 ],
+			"offcolor" : [ 0.411765, 0.862745, 0.941176, 1.0 ],
+			"category" : "Inlets + Outlets",
+			"label" : "Cool Inlet Circle Color"
+		}
+, 		{
+			"id" : "patcher_hot_inlet",
+			"oncolor" : [ 1.0, 0.717647, 0.658824, 1.0 ],
+			"offcolor" : [ 1.0, 0.576471, 0.498039, 1.0 ],
+			"category" : "Inlets + Outlets",
+			"label" : "Hot Inlet Circle Color"
+		}
+, 		{
+			"id" : "patcher_inactive_tab",
+			"oncolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+			"offcolor" : [ 0.415686, 0.439216, 0.47451, 1.0 ],
+			"category" : "Patcher Tabs",
+			"label" : "Inactive Background"
+		}
+, 		{
+			"id" : "patcher_io_connected_inside",
+			"oncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+			"category" : "Inlets + Outlets",
+			"label" : "Connected (Center)"
+		}
+, 		{
+			"id" : "patcher_io_connected_outside",
+			"oncolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+			"category" : "Inlets + Outlets",
+			"label" : "Connected (Circle)"
+		}
+, 		{
+			"id" : "patcher_io_unconnected",
+			"oncolor" : [ 0.752941, 0.760784, 0.768627, 1.0 ],
+			"category" : "Inlets + Outlets",
+			"label" : "Unconnected"
+		}
+, 		{
+			"id" : "patcher_outlet",
+			"oncolor" : [ 0.839216, 0.866667, 0.423529, 1.0 ],
+			"offcolor" : [ 0.886275, 0.937255, 0.019608, 1.0 ],
+			"category" : "Inlets + Outlets",
+			"label" : "Outlet Circle Color"
+		}
+, 		{
+			"id" : "patcher_tab_bottom_line",
+			"oncolor" : [ 0.290196, 0.290196, 0.290196, 1.0 ],
+			"category" : "Patcher Tabs",
+			"label" : "Bottom Line Color"
+		}
+, 		{
+			"id" : "patcher_tab_text_active",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Patcher Tabs",
+			"label" : "Active Text Color"
+		}
+, 		{
+			"id" : "patcher_tab_text_inactive",
+			"oncolor" : [ 0.768627, 0.768627, 0.768627, 1.0 ],
+			"category" : "Patcher Tabs",
+			"label" : "Active Text Color"
+		}
+, 		{
+			"id" : "patcher_tab_top_line",
+			"oncolor" : [ 0.32549, 0.32549, 0.32549, 1.0 ],
+			"category" : "Patcher Tabs",
+			"label" : "Top Line Color"
+		}
+, 		{
+			"id" : "patcher_tinge_hilite",
+			"oncolor" : [ 0.717647, 0.992157, 0.992157, 1.0 ],
+			"category" : "Patching",
+			"label" : "Tinge Highlight"
+		}
+, 		{
+			"id" : "patcher_tinge_object",
+			"oncolor" : [ 0.894118, 0.913725, 0.47451, 1.0 ],
+			"category" : "Patching",
+			"label" : "Tinge Object"
+		}
+, 		{
+			"id" : "patcherbrowser_results_background",
+			"oncolor" : [ 0.415686, 0.423529, 0.443137, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "patcherbrowser_results_darkrowbg",
+			"oncolor" : [ 0.243137, 0.243137, 0.243137, 1.0 ],
+			"category" : "Browser",
+			"label" : "Results Background Dark"
+		}
+, 		{
+			"id" : "patcherbrowser_results_lightrowbg",
+			"oncolor" : [ 0.27451, 0.27451, 0.27451, 1.0 ],
+			"category" : "Browser",
+			"label" : "Results Background Light"
+		}
+, 		{
+			"id" : "patcherbrowser_results_selected",
+			"oncolor" : [ 0.337255, 0.678431, 0.890196, 1.0 ],
+			"offcolor" : [ 0.203922, 0.47451, 0.780392, 1.0 ],
+			"category" : "Browser",
+			"label" : "Selected Results Background"
+		}
+, 		{
+			"id" : "patcherbrowser_results_textcolor",
+			"oncolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ],
+			"category" : "Browser",
+			"label" : "Results Text"
+		}
+, 		{
+			"id" : "patchline_badge_break",
+			"oncolor" : [ 0.866666666666667, 0.274509803921569, 0.32156862745098, 1.0 ],
+			"category" : "Patching",
+			"label" : "Break Watchpoint"
+		}
+, 		{
+			"id" : "patchline_badge_disabled",
+			"oncolor" : [ 0.8, 0.8, 0.8, 1.0 ],
+			"category" : "Patching",
+			"label" : "Disabled Watchpoint"
+		}
+, 		{
+			"id" : "patchline_badge_monitor",
+			"oncolor" : [ 0.917647058823529, 0.631372549019608, 0.345098039215686, 1.0 ],
+			"category" : "Patching",
+			"label" : "Monitor Watchpoint"
+		}
+, 		{
+			"id" : "patchline_badge_post",
+			"oncolor" : [ 0.372549019607843, 0.67843137254902, 0.823529411764706, 1.0 ],
+			"category" : "Patching",
+			"label" : "Print Watchpoint"
+		}
+, 		{
+			"id" : "pattrstorage_active",
+			"oncolor" : [ 0.584314, 0.682353, 0.172549, 1.0 ],
+			"category" : "Pattrstorage",
+			"label" : "Current Preset"
+		}
+, 		{
+			"id" : "plugintoolbar_background",
+			"oncolor" : [ 0.443137, 0.447059, 0.47451, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "plugintoolbar_header_background",
+			"oncolor" : [ 0.4, 0.396078, 0.415686, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "presentation_frame",
+			"oncolor" : [ 0.505882, 0.247059, 0.356863, 0.24 ],
+			"category" : "Patching",
+			"label" : "Box Presentation Mode Frame"
+		}
+, 		{
+			"id" : "projectwindow_background",
+			"oncolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+			"category" : "Project Window",
+			"label" : "Window Background"
+		}
+, 		{
+			"id" : "projectwindow_divider",
+			"oncolor" : [ 0.27451, 0.27451, 0.27451, 1.0 ],
+			"category" : "Project Window",
+			"label" : "Divider"
+		}
+, 		{
+			"id" : "quickref_attribute_header",
+			"oncolor" : [ 0.847059, 0.729412, 0.388235, 1.0 ],
+			"category" : "Box Menu",
+			"label" : "Attributes Menu Header"
+		}
+, 		{
+			"id" : "quickref_message_header",
+			"oncolor" : [ 0.423529, 0.733333, 0.690196, 1.0 ],
+			"category" : "Box Menu",
+			"label" : "Messages Menu Header"
+		}
+, 		{
+			"id" : "refbar_details_background",
+			"oncolor" : [ 0.243137, 0.243137, 0.243137, 1.0 ],
+			"category" : "Reference Sidebar",
+			"label" : "Item Details Background"
+		}
+, 		{
+			"id" : "refbar_details_linkcolor",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Reference Sidebar",
+			"label" : "Link Text"
+		}
+, 		{
+			"id" : "refbar_stripe2",
+			"oncolor" : [ 0.243137, 0.243137, 0.243137, 1.0 ],
+			"category" : "Reference Sidebar",
+			"label" : "Background Stripe"
+		}
+, 		{
+			"id" : "scrollbar_fading_mouseover",
+			"oncolor" : [ 0.450980392156863, 0.450980392156863, 0.450980392156863, 0.67 ],
+			"category" : "Scrollbar",
+			"label" : "Fading Mouseover"
+		}
+, 		{
+			"id" : "scrollbar_fading_nonmouseover",
+			"oncolor" : [ 0.450980392156863, 0.450980392156863, 0.450980392156863, 0.6 ],
+			"category" : "Scrollbar",
+			"label" : "Fading Non-Mouseover"
+		}
+, 		{
+			"id" : "scrollbar_nonfading_mouseover",
+			"oncolor" : [ 0.490196078431373, 0.490196078431373, 0.490196078431373, 1.0 ],
+			"category" : "Scrollbar",
+			"label" : "Non-Fading Mouseover"
+		}
+, 		{
+			"id" : "scrollbar_nonfading_nonmouseover",
+			"oncolor" : [ 0.756862745098039, 0.756862745098039, 0.756862745098039, 1.0 ],
+			"category" : "Scrollbar",
+			"label" : "Non-Fading Non-Mouseover"
+		}
+, 		{
+			"id" : "sidebarblues",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Sidebar Commands Enabled"
+		}
+, 		{
+			"id" : "sliderweb",
+			"oncolor" : [ 0.392157, 0.615686, 0.756863, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Sliders Palette"
+		}
+, 		{
+			"id" : "solo_on",
+			"oncolor" : [ 1.0, 0.290196, 0.411765, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Audio Solo"
+		}
+, 		{
+			"id" : "standardappletexthilite",
+			"oncolor" : [ 0.713725, 0.839216, 0.992157, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Text Editor Highlight"
+		}
+, 		{
+			"id" : "text_editingcolor",
+			"oncolor" : [ 0.705882, 0.827451, 0.968627, 1.0 ],
+			"category" : "Patching",
+			"label" : "Dark Text Editor Highlight"
+		}
+, 		{
+			"id" : "toolbar_active_unique",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Selected Choice"
+		}
+, 		{
+			"id" : "toolbar_background_active",
+			"oncolor" : [ 0.2, 0.2, 0.2, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Active Toolbar Background"
+		}
+, 		{
+			"id" : "toolbar_background_inactive",
+			"oncolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Inactive Toolbar Background"
+		}
+, 		{
+			"id" : "toolbar_background_inactive_old",
+			"oncolor" : [ 0.529412, 0.54902, 0.572549, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "toolbar_badge",
+			"oncolor" : [ 0.866666666666667, 0.274509803921569, 0.32156862745098, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Badge Color"
+		}
+, 		{
+			"id" : "toolbar_disabled_active",
+			"oncolor" : [ 0.368627, 0.368627, 0.368627, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Disabled Item in Active Toolbar"
+		}
+, 		{
+			"id" : "toolbar_disabled_inactive",
+			"oncolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Disabled Item in Inctive Toolbar"
+		}
+, 		{
+			"id" : "toolbar_disabled_inactive_old",
+			"oncolor" : [ 0.611765, 0.631373, 0.670588, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "toolbar_divider_active",
+			"oncolor" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Active Toolbar Divider"
+		}
+, 		{
+			"id" : "toolbar_divider_inactive",
+			"oncolor" : [ 0.419608, 0.419608, 0.419608, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Inactive Toolbar Divider"
+		}
+, 		{
+			"id" : "toolbar_enabled_modified",
+			"oncolor" : [ 0.682353, 0.682353, 0.682353, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Modified Value"
+		}
+, 		{
+			"id" : "toolbar_enabled_off",
+			"oncolor" : [ 0.898039, 0.898039, 0.898039, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Enabled Item (Off State)"
+		}
+, 		{
+			"id" : "toolbar_enabled_on",
+			"oncolor" : [ 0.92549, 0.815686, 0.101961, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Enabled Item (On State)"
+		}
+, 		{
+			"id" : "toolbar_overlay_background",
+			"oncolor" : [ 0.25098, 0.25098, 0.25098, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Overlay Background"
+		}
+, 		{
+			"id" : "toolbar_searchbar_background",
+			"oncolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Search Bar Background"
+		}
+, 		{
+			"id" : "toolbar_searchbar_emptytext",
+			"oncolor" : [ 0.65098, 0.65098, 0.65098, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Search Bar Empty Text"
+		}
+, 		{
+			"id" : "toolbar_searchbar_hilite",
+			"oncolor" : [ 0.301961, 0.698039, 0.94902, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Search Bar Hilite"
+		}
+, 		{
+			"id" : "toolbar_searchbar_text",
+			"oncolor" : [ 0.898039, 0.898039, 0.898039, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Search Bar Text"
+		}
+, 		{
+			"id" : "transform_header",
+			"oncolor" : [ 0.415686, 0.819608, 1.0, 1.0 ],
+			"category" : "Box Menu",
+			"label" : "Transform Menu Header"
+		}
+, 		{
+			"id" : "transport_green",
+			"oncolor" : [ 0.623529, 0.737255, 0.482353, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Transport Play Button"
+		}
+, 		{
+			"id" : "urgentmessage",
+			"oncolor" : [ 0.463, 0.733, 0.663, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Recent Messages Menu Title"
+		}
+, 		{
+			"id" : "verylively",
+			"oncolor" : [ 0.525, 0.839, 0.286, 1.0 ],
+			"category" : "Unused"
+		}
+, 		{
+			"id" : "wolfsburg",
+			"oncolor" : [ 0.933333, 0.686275, 0.647059, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Error / Conflict"
+		}
+, 		{
+			"id" : "yellowpin",
+			"oncolor" : [ 0.92549, 0.815686, 0.101961, 1.0 ],
+			"category" : "Toolbar",
+			"label" : "Pin Gadget"
+		}
+ ],
+	"styledefaults" : 	{
+		"bgcolor" : [ 0.2, 0.2, 0.2, 1 ],
+		"color" : [ 0.807843, 0.898039, 0.909804, 1 ],
+		"elementcolor" : [ 0.34902, 0.34902, 0.34902, 1 ],
+		"accentcolor" : [ 0.501961, 0.501961, 0.501961, 1 ],
+		"selectioncolor" : [ 0.929412, 0.929412, 0.352941, 1 ],
+		"textcolor" : [ 0.129412, 0.129412, 0.129412, 1 ],
+		"textcolor_inverse" : [ 0.968627, 0.968627, 0.968627, 1 ],
+		"patchlinecolor" : [ 0.701961, 0.701961, 0.701961, 1 ],
+		"clearcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+		"locked_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+		"editing_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+		"stripecolor" : [ 0.243137, 0.243137, 0.243137, 1.0 ],
+		"darkcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+		"lightcolor" : [ 0.92156862745098, 0.917647058823529, 0.933333333333333, 1.0 ],
+		"bgfillcolor_type" : "gradient",
+		"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
+		"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
+		"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ]
+	}
+
+}

@@ -1,0 +1,188 @@
+<jittershader name="sinebump">
+	<param name="lightdir" type="vec3" state="LIGHT0_DIRECTION" />
+	<param name="intensity" type="float" default="1" />
+	<param name="ambientcolor" type="vec4" state="AMBIENT" />
+	<param name="Ka" type="float" default="0.2" />
+	<param name="Kd" type="float" default="0.8" />
+	<param name="Ks" type="float" default="1.0" />
+	<param name="roughness" type="float" default="0.01" />
+	<param name="pFreq" type="float" default="18.85" />
+	<param name="pAmp" type="float" default="0.1" />
+	<param name="pPow" type="float" default="1.5" />
+	<language name="glsl" version="1.0">
+		<bind param="lightdir" program="fp" />
+		<bind param="intensity" program="fp" />
+		<bind param="ambientcolor" program="fp" />
+		<bind param="Ka" program="fp" />
+		<bind param="Kd" program="fp" />
+		<bind param="Ks" program="fp" />
+		<bind param="roughness" program="fp" />
+		<bind param="pFreq" program="vp" />
+		<bind param="pAmp" program="vp" />
+		<bind param="pPow" program="vp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2003, ATI Technologies, Inc., All rights reserved.
+//
+// Permission to use, copy, modify, and distribute this software and its 
+// documentation for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appear in all copies and derivative
+// works and that both the copyright notice and this permission notice appear in 
+// support documentation, and that the name of ATI Technologies, Inc. not be used
+// in advertising or publicity pertaining to distribution of the software without
+// specific, written prior permission.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+#define PI 3.1415
+
+uniform float pAmp;
+uniform float pFreq;
+uniform float pPow;
+
+varying vec2 texcoord;
+varying vec3 myNormal;
+varying vec4 myPosition;
+varying vec4 myIncident;
+
+#define DELTA_U 0.001
+#define DELTA_V 0.001
+
+float sine(float a)
+{
+	float x = mod(a, 2.0 * PI);
+	return -sin(x - PI);
+}
+
+float cosine(float a)
+{
+	float x = mod(a, 2.0 * PI);
+	return -cos(x - PI);
+}
+
+float func(float u, float v)
+{
+// here are some other procedural functions you could use instead
+//float r = pow(u*u + v*v, 0.5);
+//return pAmp * sine(pFreq * r);
+
+//float uu = u * pFreq;
+//float vv = v * pFreq;
+//return pAmp * (sine(2*PI*sine(uu)));
+
+//return pAmp*sine(pow(u*u+v*v,0.5)*pFreq);
+//return pAmp*sine(u*v*pFreq);
+//return pAmp*pow(sine(pFreq*u)*sine(pFreq*v), pPow);
+//return pAmp*sine(pFreq*u)*sine(pFreq*v);
+//return pAmp*sine(pFreq*(u+v));
+//return pAmp*pow(sine(pFreq*(u+v)), pPow);
+return pAmp*pow(sine(pFreq*u)*sine(pFreq*v), pPow);
+}
+
+void 
+main()
+{
+	// position in eye space
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	float u = texcoord[0];
+	float v = texcoord[1];
+
+	vec4 iPosition = gl_Vertex;
+	vec3 iNormal =	 gl_Normal.xyz;
+	vec3 iTangentU = gl_MultiTexCoord1.xyz;
+
+	// Function evaluation.
+	float f = func(u, v); 
+	float dfdu = (func(u+DELTA_U, v)-f)/DELTA_U;
+	float dfdv = (func(u, v+DELTA_V)-f)/DELTA_V;
+
+	// Normal map.
+	float nx = -dfdu;
+	float ny = -dfdv;
+	float nz = 1.0;
+
+	// New Position after Displacement.
+	vec4 positionNew = vec4(0,0,0,1);
+	positionNew = iPosition + f * vec4(iNormal,0);
+
+	// TangentV from TangentU and Normal.
+	vec3 tangentV = cross(iNormal, iTangentU);
+
+	// New normal & normalize.
+	vec4 normalNew = vec4(0,0,0,0);
+	normalNew = vec4(nx * iTangentU + ny * tangentV + nz * iNormal, 0);
+	normalNew = normalize(normalNew);
+
+	// Output Position
+	gl_Position = gl_ModelViewProjectionMatrix * positionNew;
+
+	// Outputs.
+	myNormal = gl_NormalMatrix * normalNew.xyz;
+	myPosition = gl_ModelViewMatrix * positionNew;
+	myIncident = myPosition - gl_ModelViewMatrix[3];
+}
+
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2003, ATI Technologies, Inc., All rights reserved.
+//
+// Permission to use, copy, modify, and distribute this software and its 
+// documentation for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appear in all copies and derivative
+// works and that both the copyright notice and this permission notice appear in
+// support documentation, and that the name of ATI Technologies, Inc. not be used
+// in advertising or publicity pertaining to distribution of the software without
+// specific, written prior permission.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+varying vec2 texcoord;
+varying vec3 myNormal;
+varying vec4 myIncident;
+
+uniform vec3 lightdir;
+uniform float intensity;
+uniform vec4 ambientcolor;
+uniform float Ka;
+uniform float Kd;
+uniform float Ks;
+uniform float roughness;
+
+uniform sampler2DRect texname;
+
+// diffuse Function
+vec4 diffuse(vec3 normal)
+{
+    vec4 C = vec4(intensity * max(0.0, dot(normal, normalize(lightdir))));
+    return C;
+}
+
+// specular Function
+vec4 specular(vec3 normal, vec3 V, float roughness)
+{
+    vec3 H = normalize(normalize(lightdir) + V);
+    vec4 C = vec4(intensity * pow(max(0.0, dot(normal, H)), 1.0 / roughness));
+    return C;
+}
+
+// entry point
+void 
+main()
+{
+	vec4 texcolor = texture2DRect(texname, texcoord);
+	vec3 normal = normalize(myNormal);
+	vec4 diff = diffuse(normal);
+	vec4 V = -normalize(myIncident);
+	vec4 spec = specular(normal, V.xyz, roughness);
+	gl_FragColor = texcolor * (Kd*diff + Ka*ambientcolor) + Ks*spec;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

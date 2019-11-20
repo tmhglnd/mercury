@@ -1,0 +1,56 @@
+<jittershader name="texcoords">
+	<description>
+	Maps texture coordinates to colors for debugging.
+	</description>
+	<language name="glsl" version="1.0">
+		<program name="vp" type="vertex">
+<![CDATA[
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL vertex program for a coloring based on the surface
+ * texture coordinates of a model.
+ *
+ */
+
+varying vec2 texcoord;	// surface normal
+
+void main(void)
+{
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+
+	// texture coordinate	
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[		
+/*
+ *
+ * Derek Gerstmann - derek@cycling74.com
+ * Copyright 2005 - Cycling '74
+ *
+ * GLSL fragment program for a coloring based on the surface
+ * texture coordinates of a model.
+ *
+ */
+
+varying vec2 texcoord;	
+
+void main(void)
+{
+	// get unsigned color from normal direction
+	vec3 color = vec3(normalize(texcoord), texcoord.s * texcoord.t);
+	
+	// set outgoing fragment color
+	gl_FragColor = vec4( color, 1.0 );
+}
+]]>
+		</program>
+	</language>	
+</jittershader>
+

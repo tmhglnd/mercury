@@ -1,0 +1,54 @@
+<jittershader name="jit.gen.jxs">
+	<description>
+		code generated JXS file
+	</description>
+
+<param name="tex0" type="int" default="0" />
+<language name="glsl" version="1.0">
+	<bind param="width" program="fp" />
+	<bind param="power" program="fp" />
+	<program name="vp" type="vertex">
+		<![CDATA[
+
+		
+varying vec2 texdim;
+varying vec2 texcoord0;
+void main() {
+	texdim = vec2(abs(gl_TextureMatrix[0][0][0]),abs(gl_TextureMatrix[0][1][1]));
+	texcoord0 = vec2(gl_TextureMatrix[0]*gl_MultiTexCoord0);
+	gl_Position = ftransform();
+}
+]]>
+
+	</program>
+	<program name="fp" type="fragment">
+	<![CDATA[
+
+uniform sampler2DRect tex0;
+varying vec2 texdim;
+varying vec2 texcoord0;
+
+void main() {
+	float c00 = texture2DRect(tex0, texcoord0+vec2(-1., -1.)).r;
+	float c10 = texture2DRect(tex0, texcoord0+vec2(0., -1.)).r;
+	float c20 = texture2DRect(tex0, texcoord0+vec2(1., -1.)).r;
+	float c01 = texture2DRect(tex0, texcoord0+vec2(-1., 0.)).r;
+	float c11 = texture2DRect(tex0, texcoord0).r;
+	float c21 = texture2DRect(tex0, texcoord0+vec2(1., 0.)).r;
+	float c02 = texture2DRect(tex0, texcoord0+vec2(-1., 1.)).r;
+	float c12 = texture2DRect(tex0, texcoord0+vec2(0., 1.)).r;
+	float c22 = texture2DRect(tex0, texcoord0+vec2(1., 1.)).r;
+	
+	float x = (c20+c21+c22) - (c00+c01+c02);
+	float y = (c20+c21+c22) - (c00+c01+c02);
+	float z = c11;
+	vec3 v = vec3(x, y, z);
+	float mag = sqrt(dot(v, v));
+	gl_FragColor.rgb = v/mag*0.5+0.5;
+	gl_FragColor.a = 1.;
+}
+]]>
+
+	</program>
+</language>
+</jittershader>

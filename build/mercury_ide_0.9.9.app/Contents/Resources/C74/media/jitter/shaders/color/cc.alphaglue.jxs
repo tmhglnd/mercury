@@ -1,0 +1,70 @@
+<jittershader name="alphaglue">
+	<description>
+	use second texture for alpha channel
+	</description>
+	<param name="plane" type="int" default="0">
+		<description>select plane to use as alpha</description>
+	</param>
+	<param name="lum2alpha" type="float" default="0.">
+		<description>use luminence of second texture</description>
+	</param>
+	<param name="thresh" type="float" default="0.">
+		<description>brightness threshold</description>
+	</param>
+	<param name="fade" type="float" default="1.0">
+		<description>fade amount for threshold</description>
+	</param>
+	<param name="lumcoeff" type="vec4" default="0.299 .587 0.114 0.">
+		<description>Luminance coefficients (RGBA)</description>
+	</param>
+
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="plane" program="fp" />
+		<bind param="lum2alpha" program="fp" />
+		<bind param="thresh" program="fp" />
+		<bind param="fade" program="fp" />
+		<bind param="lumcoeff" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// Andrew Benson - andrewb@cycling74.com
+//Copyright 2006 - Cycling '74
+
+//fragment shader for applying alpha channel from second texture
+
+//setup for 2 texture
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+//wipe state
+uniform int plane;
+uniform float fade;
+uniform float lum2alpha;
+uniform float thresh;
+uniform vec4 lumcoeff;
+
+void main()
+{   
+	vec4 at = texture2DRect(tex0, texcoord0);
+	vec4 bt = texture2DRect(tex1, texcoord1);
+
+	// decide which plane to use
+	float al = bt[plane];
+	float lumi = dot(bt,lumcoeff);//calc the luminance
+	al = mix(al,lumi,lum2alpha);//pick plane or luma
+	al = smoothstep(thresh,thresh+fade,al);//apply treshold
+
+	// output texture
+	gl_FragColor = vec4 (at.rgb,al);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

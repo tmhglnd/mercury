@@ -1,0 +1,9 @@
+{ "categories" : [
+	{ "name" : "Live",
+	"color" : [0.592, 0.776, 0.474, 1.0],
+	"say_objects" : 1,
+	"primary_classes" : ["live.button", "live.dial", "live.grid", "live.numbox", "live.gain~", "live.meter~", "live.slider", "live.tab", "live.text", "live.arrows", "live.line", "live.step"],
+	"secondary_classes" : []
+	}
+	]
+}

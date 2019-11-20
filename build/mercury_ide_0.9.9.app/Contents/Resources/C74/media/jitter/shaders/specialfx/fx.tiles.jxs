@@ -1,0 +1,74 @@
+<jittershader name="tiles">
+	<param name="numtiles" type="float" default="25" />
+	<param name="threshold" type="float" default="0.2" />
+	<param name="offsetcolor" type="vec4" default="0.3 0.3 0.3 1.0" />
+	<language name="glsl" version="1.0">
+		<bind param="numtiles" program="tiles" />
+		<bind param="threshold" program="tiles" />
+		<bind param="offsetcolor" program="tiles" />
+		<program name="basic" type="vertex" source="sh.basic.vp.glsl" />
+		<program name="tiles" type="fragment">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////////
+//
+// Copyright 2003, ATI Technologies, Inc., All rights reserved.
+//
+// Permission to use, copy, modify, and distribute this software and its 
+// documentation for any purpose and without fee is hereby granted,
+// provided that the above copyright notice appear in all copies and derivative
+// works and that both the copyright notice and this permission notice appear in
+// support documentation, and that the name of ATI Technologies, Inc. not be used
+// in advertising or publicity pertaining to distribution of the software without
+// specific, written prior permission.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+// vertex to fragment shader io
+varying vec4 Pdev;
+
+// globals
+uniform float numtiles;
+uniform vec4 offsetcolor;
+uniform float threshold;
+
+// samplers
+uniform sampler2DRect tex0;
+
+// entry point
+void 
+main()
+{
+    float P0 = Pdev[0];
+    float P1 = Pdev[1];
+    float size = 1.0 / numtiles;
+    float P0base = P0 - mod(P0, size);
+    float P1base = P1 - mod(P1, size);
+    float P0center = P0base + size / 2.0;
+    float P1center = P1base + size / 2.0;
+
+    float ss = (P0 - P0base) / size;
+    float tt = (P1 - P1base) / size;
+
+    float thresholdA = threshold;
+    float thresholdB = 1.0 - threshold;
+
+    vec4 c1, c2, cTop, cBottom;
+    c1 = ss > tt ? offsetcolor : vec4 (0.0,0.0,0.0,1.0);
+    c2 = ss > thresholdB ? c1 : vec4 (0.0,0.0,0.0,1.0);
+    c2 = tt < thresholdA ? c1 : c2;
+    cBottom = c2;
+
+    c1 = ss < tt ? offsetcolor : vec4 (0.0,0.0,0.0,1.0);
+    c2 = ss < thresholdA ? c1 : vec4 (0.0,0.0,0.0,1.0);
+    c2 = tt > thresholdB ? c1 : c2;
+    cTop = c2;
+
+    vec4 newP = vec4 (P0center,P1center,0.0,1.0);
+    vec4 tilecolor = texture2DRect(tex0, vec2(newP));
+
+    gl_FragColor = tilecolor + cTop - cBottom;
+}
+]]>		
+		</program>
+	</language>
+</jittershader>

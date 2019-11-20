@@ -1,0 +1,54 @@
+<jittershader name="mrt.simple.render.jxs">
+	<param name="tex_color" type="int" default="0" />
+	<param name="tex_position" type="int" default="1" />
+	<param name="tex_normals" type="int" default="2" />
+	<param name="erase_color" type="vec4" default="0.2 0.2 0.2 1.0" />	
+	<language name="glsl" version="1.2">
+		<bind param="tex_color" program="fp" />
+		<bind param="tex_position" program="fp" />
+		<bind param="tex_normals" program="fp" />		
+		<bind param="erase_color" program="fp" />		
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec2 texcoord;
+
+void main()
+{
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	gl_FrontColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec2 texcoord;
+uniform sampler2DRect tex_color; 
+uniform sampler2DRect tex_position;
+uniform sampler2DRect tex_normals;
+uniform vec4 erase_color;
+
+void main()
+{
+	vec4 image = texture2DRect( tex_color, texcoord);
+	vec4 position = texture2DRect( tex_position, texcoord);
+	vec4 normal = texture2DRect( tex_normals, texcoord);
+	
+	vec4 light = gl_LightSource[0].position;
+	vec4 lightDir = light - position;
+	
+	normal = normalize(normal);
+	lightDir = normalize(lightDir);
+	vec4 vHalfVector = gl_LightSource[0].halfVector;
+	
+	gl_FragColor = max(dot(normal,lightDir),0.0) * image + pow(max(dot(normal,vHalfVector),0.0), 100.0) * 1.5;
+	gl_FragColor = mix(gl_FragColor,erase_color,image.a);
+}
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

@@ -1,0 +1,7 @@
+<jitterpass>
+	<pass name="tonemap">
+		<subpass file="hdr.tonemap.jxs" output="COLOR">
+			<input source="COLOR" />
+		</subpass>
+	</pass>
+</jitterpass>

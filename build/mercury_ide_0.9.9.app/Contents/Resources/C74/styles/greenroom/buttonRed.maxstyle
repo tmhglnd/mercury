@@ -1,0 +1,9 @@
+{
+	"default" : 	{
+		"bgcolor" : [ 0.720698, 0.16723, 0.080014, 0.79 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "buttonRed",
+	"multi" : 0
+}

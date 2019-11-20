@@ -1,0 +1,153 @@
+<jittershader name="exrdisplay">
+	<description>
+	OpenEXR display pipeline.
+	</description>	
+	<param name="defog" type="vec3" default="100" />
+	<param name="exposure" type="float" default="1.0" />
+	<param name="graytarget" type="float" default="0.332" />
+	<param name="kneelow" type="float" default="1" />
+	<param name="kneefactor" type="float" default="1" />
+	<param name="gamma" type="float" default="0.4545" />
+	<language name="glsl" version="1.0">
+		<bind param="defog" program="exrdisplay" />
+		<bind param="exposure" program="exrdisplay" />
+		<bind param="graytarget" program="exrdisplay" />
+		<bind param="kneelow" program="exrdisplay" />
+		<bind param="kneefactor" program="exrdisplay" />
+		<bind param="gamma" program="exrdisplay" />
+		<program name="basic" type="vertex" source="sh.basic.vp.glsl" />
+		<program name="exrdisplay" type="fragment">
+<![CDATA[
+///////////////////////////////////////////////////////////////////////////
+//
+// Derek Gerstmann - derek@cycling74.com
+// Copyright 2005 - Cycling '74
+//
+// GLSL fragment program for the exrdisplay pipeline.  Converted from
+// ILM's Cg to GLSL.
+//
+///////////////////////////////////////////////////////////////////////////
+//
+// Copyright (c) 2002, Industrial Light & Magic, a division of Lucas
+// Digital Ltd. LLC
+// 
+// All rights reserved.
+// 
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are
+// met:
+// *       Redistributions of source code must retain the above copyright
+// notice, this list of conditions and the following disclaimer.
+// *       Redistributions in binary form must reproduce the above
+// copyright notice, this list of conditions and the following disclaimer
+// in the documentation and/or other materials provided with the
+// distribution.
+// *       Neither the name of Industrial Light & Magic nor the names of
+// its contributors may be used to endorse or promote products derived
+// from this software without specific prior written permission. 
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+///////////////////////////////////////////////////////////////////////////
+//
+// exrdisplay pipeline
+//
+// Simon Green <SGreen@nvidia.com>
+// Drew Hess <dhess@ilm.com>
+//
+///////////////////////////////////////////////////////////////////////////
+//
+// Conversion from raw pixel data to data for the OpenGL frame buffer:
+//
+//  1) Compensate for fogging by subtracting defog
+//     from the raw pixel values.
+//
+//  2) Multiply the defogged pixel values by
+//     2^(exposure + 2.47393).
+//
+//  3) Values, which are now 1.0, are called "middle gray".
+//     If defog and exposure are both set to 0.0, then
+//     middle gray corresponds to a raw pixel value of 0.18.
+//     In step 6, middle gray values will be mapped to an
+//     intensity 3.5 f-stops below the display's maximum
+//     intensity.
+//
+//  4) Apply a knee function.  The knee function has two
+//     parameters, kneeLow and kneeHigh.  Pixel values
+//     below 2^kneeLow are not changed by the knee
+//     function.  Pixel values above kneeLow are lowered
+//     according to a logarithmic curve, such that the
+//     value 2^kneeHigh is mapped to 2^3.5 (in step 6,
+//     this value will be mapped to the the display's
+//     maximum intensity).
+//
+//  5) Gamma-correct the pixel values, assuming that the
+//     screen's gamma is 2.2 (or 1 / 0.4545).
+//
+//  6) Scale the values such that pixels middle gray
+//     pixels are mapped to 84.66 (or 3.5 f-stops below
+//     the display's maximum intensity).
+//
+///////////////////////////////////////////////////////////////////////////
+
+varying vec2 texcoord;
+
+uniform vec3 defog;
+uniform float exposure;
+uniform float graytarget;
+uniform float kneelow;
+uniform float kneefactor;
+uniform float gamma; // default: 1.0/2.2,
+
+// samplers
+uniform sampler2DRect image;
+
+// knee adjustment
+vec3 knee (vec3 x, float f)
+{
+    return log (x * f + 1) / f;
+}
+
+void main()
+{
+	// zero vector
+	vec3 zero = vec3(0,0,0);
+	
+	// adjusted knee low
+	float kl = pow (2, kneelow);
+		
+	// sample texture for base color
+	vec3 c = texture2DRect(image, In.TEX0.xy);
+
+	// apply defog
+	c = max(zero, c - defog);
+
+	// multiply in exposure
+	c *= pow(2, exposure + 2.47393);
+	
+	// knee
+	c = (c > kl) ? kl + knee (c - kl, kneefactor) : c;
+
+	// gamma correction (could use texture lookups for this)
+	c = pow(c, gamma);
+
+	// scale middle gray to the target framebuffer value
+	c *= graytarget;
+
+	// set output fragment color
+	gl_FragColor = c;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

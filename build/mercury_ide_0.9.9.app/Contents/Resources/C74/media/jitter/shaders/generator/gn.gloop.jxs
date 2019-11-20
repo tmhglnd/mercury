@@ -1,0 +1,56 @@
+<jittershader name="gloop">
+	<description>
+	plasma generator for animated textures
+	</description>
+	<param name="origin" type="vec2" default="0.5 0.5" />
+	<param name="freq" type="vec4" default="3.3 10.4 5.34 1.1" />
+	<param name="phase" type="vec4" default="0.3 0.2 0.4 0.7" />
+	<param name="thresh" type="vec4" default="0.5 0.8 0.6 0.12" />
+	<param name="fade" type="vec4" default="0.8 0.8 0.4 0.08" />
+	<language name="glsl" version="1.0">
+		<bind param="origin" program="fp" />
+		<bind param="freq" program="fp" />
+		<bind param="phase" program="fp" />
+		<bind param="thresh" program="fp" />
+		<bind param="fade" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// Andrew Benson - andrewb@cycling74.com
+//Copyright 2006 - Cycling '74
+
+//generates plasma-style textures using complex sine-cosine functions
+
+//setup 
+varying vec2 texcoord0;
+varying vec2 texdim0;
+
+//plasma settings
+
+uniform vec2 origin;
+uniform vec4 freq;
+uniform vec4 phase;
+uniform vec4 thresh;
+uniform vec4 fade;
+
+void main()
+{   
+	vec2 pp = texcoord0/texdim0;
+	float po = distance(origin,pp);
+	
+	vec2 PI = vec2(3.14);
+
+	float pa = sin(po*(phase.x+freq.x*cos(pp.y*freq.y+phase.y)))*cos(po*(phase.y+freq.y*sin(pp.x*freq.z+phase.z)))*sin(pp.x*(phase.w+freq.w*sin(pp.y*po+pp.x)));
+
+	vec4 papa =vec4 (abs(pa));
+	papa = smoothstep(thresh-fade,thresh,papa);
+
+
+	// output texture
+	gl_FragColor = papa;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

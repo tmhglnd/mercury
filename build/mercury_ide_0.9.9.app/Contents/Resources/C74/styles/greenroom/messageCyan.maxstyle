@@ -1,0 +1,18 @@
+{
+	"default" : 	{
+		"bgfillcolor" : 		{
+			"type" : "gradient",
+			"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+			"color1" : [ 0.048276, 0.887976, 0.873974, 1.0 ],
+			"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+			"angle" : 270.0,
+			"proportion" : 0.39,
+			"autogradient" : 0
+		}
+
+	}
+,
+	"parentstyle" : "",
+	"name" : "messageCyan",
+	"multi" : 0
+}

@@ -1,0 +1,73 @@
+<jittershader name="gridwipe">
+	<description>
+	vertical and horizontal grid wipe
+	</description>
+	<param name="wipe" type="vec2" default="0. 0.">
+		<description>wipe factor</description>
+	</param>
+	<param name="scale" type="vec2" default="1. 1.">
+		<description>grid scale</description>
+	</param>
+	<param name="fade" type="vec2" default="0.0 0.0">
+		<description>xy fade</description>
+	</param>
+	<param name="origin" type="vec2" default="0.0 0.0">
+		<description>xy origin offset</description>
+	</param>
+	<param name="invert" type="float" default="0." />
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="wipe" program="fp" />
+		<bind param="fade" program="fp" />
+		<bind param="origin" program="fp" />
+		<bind param="scale" program="fp" />
+		<bind param="invert" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />	
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+
+// Andrew Benson - andrewb@cycling74.com
+//Copyright 2006 - Cycling '74
+
+//fragment shader for rectangular wipe transition effect
+
+//setup for 2 texture
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+varying vec2 texdim0;
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+//wipe state
+uniform vec2 scale;
+uniform vec2 wipe;
+uniform vec2 fade;
+uniform vec2 origin;
+uniform float invert;
+
+void main()
+{   
+	vec4 a = texture2DRect(tex0, texcoord0);
+	vec4 b = texture2DRect(tex1, texcoord1);
+	vec4 inva = mix(a,b,invert);
+	vec4 invb = mix(b,a,invert);
+
+	// calculate position
+	vec2 nc = texcoord0/texdim0;//normalized coordinates
+	vec2 sc = abs(nc*scale);//scaled coordinates
+	vec2 ch = vec2 (smoothstep(wipe,wipe + fade,mod(sc+origin,1.)));
+	float comp = float(ch.x*ch.y);
+	
+	vec4 wiped = mix(invb,inva,float(ch.x*ch.y));
+	
+
+	// output texture
+	gl_FragColor = vec4 (wiped);
+}
+]]>
+		</program>
+	</language>
+</jittershader>

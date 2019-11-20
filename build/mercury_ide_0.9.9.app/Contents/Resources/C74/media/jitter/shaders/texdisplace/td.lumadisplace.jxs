@@ -1,0 +1,57 @@
+<jittershader name="lumadisplace">
+	<description>
+	Luminance based texture displacement
+	</description>
+	<param name="amp" type="vec2" default="0.1 0.1">
+		<description>Amplitude of displacement (x,y)</description>
+	</param>
+	<param name="offset" type="float" default="-0.1">
+		<description>Offset</description>
+	</param>
+	<param name="texdim" type="vec2" state="TEXDIM0" />
+	<param name="image" type="int" default="0" />
+	<language name="glsl" version="1.0">
+		<bind param="image" program="fp" />
+		<bind param="amp" program="fp" />
+		<bind param="offset" program="fp" />
+		<bind param="texdim" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+varying vec2 texcoord;
+void main (void)
+{
+    gl_Position = ftransform();
+    texcoord    = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec2 texcoord;
+
+uniform vec2 amp;
+uniform float offset;
+uniform vec2 texdim;
+uniform sampler2DRect image;
+
+void main (void) 
+{
+	vec4 texColor = texture2DRect(image, texcoord);
+	
+	//calculate brightness of pixel
+	vec2 luma = vec2(dot(texColor.rgb, vec3(0.299, 0.587, 0.114)));
+	luma += vec2(offset);
+	luma *= amp;
+	luma *= texdim;
+
+	//add to the input texture position
+	luma += texcoord;
+	texColor = texture2DRect(image, luma);
+
+	gl_FragColor = texColor;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

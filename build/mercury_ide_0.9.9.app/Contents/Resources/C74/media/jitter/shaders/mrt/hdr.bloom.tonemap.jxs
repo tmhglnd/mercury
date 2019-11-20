@@ -1,0 +1,66 @@
+<jittershader name="hdr.bloom.tonemap.jxs">
+	<param name="tex_color" type="int" default="0" />
+	<param name="tex_bloom" type="int" default="1" />
+	<param name="exposure_bias" type="float" default="2.0" />
+	<param name="white_point" type="float" default="11.2" />
+	<param name="inv_gamma" type="float" default="0.555555" />	
+	<param name="bloom_amt" type="float" default="1.0" />	
+	<language name="glsl" version="1.2">
+		<bind param="tex_color" program="fp" />
+		<bind param="tex_bloom" program="fp" />
+		<bind param="exposure_bias" program="fp" />
+		<bind param="white_point" program="fp" />
+		<bind param="inv_gamma" program="fp" />
+		<bind param="bloom_amt" program="fp" />
+		<program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+		<program name="fp" type="fragment">
+<![CDATA[
+#version 120
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+uniform sampler2DRect tex_color;
+uniform sampler2DRect tex_bloom;
+//uniform sampler2DRect lumtex;
+uniform float key;
+uniform float exposure_bias;
+uniform float white_point;
+uniform float inv_gamma;	
+uniform float bloom_amt;
+
+const float A = 0.15;
+const float B = 0.50;
+const float C = 0.10;
+const float D = 0.20;
+const float E = 0.02;
+const float F = 0.30;
+
+vec3 Uncharted2Tonemap(vec3 x)
+{
+	return ((x*(A*x+C*B)+D*E)/(x*(A*x+B)+D*F))-E/F;
+}
+
+void main()
+{
+	vec4 texcolor = texture2DRect(tex_color, texcoord0);
+	vec3 bloomcolor = texture2DRect(tex_bloom, texcoord1).rgb;
+	//float log_luma = clamp(texture2DRect(lumtex, uv_rect).r, 0.0001, 1);
+	vec3 color = texcolor.rgb;
+	//color /= -log_luma;
+
+	color += (bloomcolor*bloom_amt);
+	
+	vec3 curr = Uncharted2Tonemap(color*exposure_bias);
+
+	vec3 whiteScale = 1.0/Uncharted2Tonemap(vec3(white_point));
+	color = curr*whiteScale;
+
+	vec3 retColor = pow(color,vec3(inv_gamma));
+	gl_FragColor = vec4(retColor, texcolor.a);
+	//gl_FragColor = texture2DRect(lumtex, uv_rect);
+}
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

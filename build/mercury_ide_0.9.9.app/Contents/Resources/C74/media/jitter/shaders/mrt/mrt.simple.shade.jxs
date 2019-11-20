@@ -1,0 +1,40 @@
+<jittershader name="mrt.simple.shade.jxs">
+	<param name="tex_color" type="int" default="0" />
+	<language name="glsl" version="1.2">
+		<bind param="tex_color" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec3 vnormal;
+varying vec4 position;
+varying vec2 texcoord;
+
+void main()
+{
+	vnormal = gl_NormalMatrix * gl_Normal;
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	position = gl_ModelViewMatrix * gl_Vertex;
+}
+
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec3 vnormal;
+varying vec4 position;
+varying vec2 texcoord;
+uniform sampler2DRect tex_color;
+
+void main()
+{
+	gl_FragData[0]		= vec4(texture2DRect(tex_color,texcoord).rgb * gl_FrontMaterial.diffuse.rgb, gl_FrontMaterial.shininess);
+	gl_FragData[1]		= vec4(normalize(vnormal),0);
+	gl_FragData[2]		= vec4(position.xyz,0);
+}
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

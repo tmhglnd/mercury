@@ -1,0 +1,16 @@
+{
+	"maxdb" : {
+		"internals" : [ "live.arrows",
+						"live.button",
+						"live.dial",
+						"live.drop",
+						"live.line",
+						"live.menu",
+						"live.numbox",
+						"live.slider",
+						"live.tab",
+						"live.text",
+						"live.toggle"
+		]
+	}
+}

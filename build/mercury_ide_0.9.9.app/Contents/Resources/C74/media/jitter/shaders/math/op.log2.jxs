@@ -1,0 +1,42 @@
+<jittershader name="log2">
+	<param name="inscale" type="vec4" default="1. 1. 1. 1.">
+		<description>Input scale</description>
+	</param>
+	<param name="inoffset" type="vec4" default="0. 0. 0. 0.">
+		<description>Input offset</description>
+	</param>
+	<param name="outscale" type="vec4" default="1. 1. 1. 1.">
+		<description>Output scale</description>
+	</param>
+	<param name="outoffset" type="vec4" default="0. 0. 0. 0.">
+		<description>Output offset</description>
+	</param>
+	<language name="glsl" version="1.0">
+		<bind param="inscale" program="fp" />
+		<bind param="inoffset" program="fp" />
+		<bind param="outoffset" program="fp" />
+		<bind param="outscale" program="fp" />
+		<program name="vp" type="vertex" source="op.unary.vp.glsl" />
+		<program name="fp" type="fragment"> 
+<![CDATA[
+varying vec2 texcoord0;
+
+uniform vec4 inscale;
+uniform vec4 inoffset;
+uniform vec4 outscale;
+uniform vec4 outoffset;
+
+uniform sampler2DRect tex0;
+
+void main( void )
+{
+	vec4 v0 = texture2DRect(tex0, texcoord0);
+	
+	v0 = (v0*inscale)+inoffset;	
+	vec4 result = log2(v0);
+	gl_FragColor = (result*outscale)+outoffset;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

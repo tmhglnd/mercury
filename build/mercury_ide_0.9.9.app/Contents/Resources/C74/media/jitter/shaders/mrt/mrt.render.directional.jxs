@@ -1,0 +1,69 @@
+<jittershader name="mrt">
+	<param name="tex_color" type="int" default="0" />
+	<param name="tex_normals" type="int" default="1" />		
+	<param name="tex_position" type="int" default="2" />		
+	<param name="lightdir" type="vec3" default="-1 -1 -1" />	
+	<param name="itvmat" type="mat4" state="VIEW_MATRIX" transform="INVERSE_TRANSPOSE" />	
+	<language name="glsl" version="1.2">
+		<bind param="tex_color" program="fp" />
+		<bind param="tex_normals" program="fp" />		
+		<bind param="tex_position" program="fp" />		
+		<bind param="lightdir" program="fp" />		
+		<bind param="itvmat" program="fp" />		
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec2 texcoord;
+
+void main()
+{
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+#version 120
+#define jit_LightModel gl_LightModel
+varying vec2 texcoord;
+uniform sampler2DRect tex_color; 
+uniform sampler2DRect tex_normals;
+uniform sampler2DRect tex_position;
+
+uniform vec3 lightdir;
+uniform mat4 itvmat;
+
+void main()
+{
+	float nDotVP;
+	float nDotHV;         
+	float pf;    
+	
+	vec4 color = vec4(0,0,0,0);	
+	vec4 image = texture2DRect( tex_color, texcoord);
+	vec4 position = texture2DRect( tex_position, texcoord);
+	vec3 normal = texture2DRect( tex_normals, texcoord).xyz;         
+
+	mat3 itvmat3 = mat3(itvmat);
+	vec3 ldir_v = (itvmat3 * lightdir);
+	
+	nDotVP = max(0.0, dot(normal, -ldir_v));
+	nDotHV = max(0.0, dot(normal, normalize(-ldir_v + normalize(-position.xyz))));
+
+	if (nDotVP == 0.0) pf = 0.0;
+	else pf = pow(nDotHV, image.a);
+
+  color += gl_LightSource[0].diffuse * nDotVP * image;
+  color += gl_LightSource[0].specular * pf;
+	
+	//gl_FragColor = vec4(color.rgb, 1);
+	gl_FragColor = mix(color,vec4(0,0,0,1),position.a);
+	//gl_FragColor = vec4(image.rgb,1);
+}
+
+]]>		
+		</program>		
+	</language>
+</jittershader>

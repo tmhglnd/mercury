@@ -1,0 +1,56 @@
+<jittershader name="repos">
+    <description>
+    distortion based on position map in second inlet
+    </description>
+    <param name="amt" type="vec2" default="1. 1." />
+    <param name="mode" type="vec2" default="0. 0." />
+    <param name="boundmode" type="vec2" default="0. 0." />
+    <param name="tex0" type="int" default="0" />
+    <param name="tex1" type="int" default="1" />
+    <language name="glsl" version="1.0">
+        <bind param="amt" program="fp" />
+        <bind param="boundmode" program="fp" />
+        <bind param="mode" program="fp" />
+        <bind param="tex0" program="fp" />
+        <bind param="tex1" program="fp" />
+        <program name="vp" type="vertex" source="sh.passthrudim.vp.glsl" />
+        <program name="fp" type="fragment">
+<![CDATA[
+
+// Andrew Benson - andrewb@cycling74.com
+//Copyright 2006 - Cycling '74
+
+//spatial repositioning based on 2D LUT
+
+//setup for 2 texture
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+varying vec2 texdim0;
+uniform vec2 amt;
+uniform vec2 mode;
+uniform vec2 boundmode;
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+
+void main()
+{
+
+    vec4 look = texture2DRect(tex1,texcoord1);//sample repos texture
+    vec2 rela = ((look.ra-0.5)*texdim0*amt*2.)+texcoord0;//relative coordinates
+    vec2 abso = look.ra*texdim0*amt;//absolute coordinates
+    vec2 coord = mix(abso,rela,clamp(mode, 0., 1.));
+
+    vec2 wrap = mod(coord,texdim0);
+    vec2 fold = mix(wrap,texdim0-wrap,floor(mod(coord, texdim0*2.)/texdim0));
+    
+    coord = mix(wrap,fold,clamp(boundmode, 0., 1.)); //use boundmode
+    vec4 repos = texture2DRect(tex0, coord);
+    
+    // output texture
+    gl_FragColor = repos;
+}
+]]>
+        </program>
+    </language>
+</jittershader> 

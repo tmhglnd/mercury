@@ -1,0 +1,10 @@
+{
+	"default" : 	{
+		"bgcolor" : [ 0.01582, 0.24455, 0.026863, 1.0 ],
+		"color" : [ 0.439216, 0.74902, 0.254902, 1.0 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "multisliderG",
+	"multi" : 0
+}

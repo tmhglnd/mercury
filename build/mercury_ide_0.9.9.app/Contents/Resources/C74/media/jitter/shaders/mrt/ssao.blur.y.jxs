@@ -1,0 +1,71 @@
+<jittershader name="mrt.simple.render.jxs">
+	<param name="tex_ssao" type="int" default="0" />
+	<param name="tex_normals" type="int" default="1" />
+	<param name="tex_color" type="int" default="2" />
+	<param name="invTexSize" type="vec2" state="INVERSE_VIEWPORT" />	
+	<language name="glsl" version="1.2">
+		<bind param="tex_ssao" program="fp" />
+		<bind param="tex_normals" program="fp" />
+		<bind param="tex_color" program="fp" />
+		<bind param="invTexSize" program="fp" />			
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec2 uv;
+varying vec2 uv_rect;
+
+void main()
+{
+	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+	uv = gl_MultiTexCoord0.st;
+	uv_rect = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+
+]]>		
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+#version 120
+varying vec2 uv;
+varying vec2 uv_rect;
+uniform sampler2DRect tex_ssao; 
+uniform sampler2DRect tex_normals;
+uniform sampler2DRect tex_color;
+uniform vec2 invTexSize;
+
+
+#define NUM_BLUR_SAMPLES 8
+
+void main()
+{
+    vec2 o = vec2(0., invTexSize.y);
+    vec4 sum = texture2DRect(tex_ssao, uv_rect) * (NUM_BLUR_SAMPLES + 1);
+    float denom = NUM_BLUR_SAMPLES + 1;
+    vec3 norm = texture2DRect(tex_normals, uv_rect).xyz;
+    
+    for (int i = 1; i <= NUM_BLUR_SAMPLES; ++i) {
+        vec2 nuv = uv + o * i;
+        vec2 nuv_rect = vec2(gl_TextureMatrix[0] * vec4(nuv, 1,1)).st;
+        vec3 norm2 = texture2DRect(tex_normals, nuv_rect).xyz;
+        float coef = (NUM_BLUR_SAMPLES + 1 - i) * int(dot(norm, norm2) > 0.9);
+        sum += texture2DRect(tex_ssao, nuv_rect) * coef;
+        denom += coef;
+    }
+    for (int i = 1; i <= 4; ++i) {
+        vec2 nuv = uv + o * -i;
+        vec2 nuv_rect = vec2(gl_TextureMatrix[0] * vec4(nuv, 1,1)).st;
+        vec3 norm2 = texture2DRect(tex_normals, nuv_rect).xyz;
+        float coef = (NUM_BLUR_SAMPLES + 1 - i) * int(dot(norm, norm2) > 0.9);
+        sum += texture2DRect(tex_ssao, nuv_rect) * coef;
+        denom += coef;
+    }
+    
+    vec4 ssao = sum / denom;
+    vec4 image = texture2DRect(tex_color, uv_rect);
+    
+   	gl_FragColor = vec4((image*ssao).rgb ,0);
+}
+]]>		
+		</program>		
+	</language>
+</jittershader>

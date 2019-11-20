@@ -1,0 +1,44 @@
+<jittershader name="cartopol">
+	<description>
+	cartesian to polar coordinate distortion
+	</description>
+	<param name="offset" type="float" default="0/" />
+	<param name="tex0" type="int" default="0" />
+	<param name="tex1" type="int" default="1" />
+	<language name="glsl" version="1.0">
+		<bind param="offset" program="fp" />
+		<bind param="tex0" program="fp" />
+		<bind param="tex1" program="fp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+
+varying vec2 TC;
+
+
+void main()
+{
+	gl_Position = ftransform();
+	TC = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+
+varying vec2 TC;
+uniform sampler3D tex0;
+uniform sampler2D tex1;
+
+uniform float offset;
+
+void main()
+{
+	float x = offset;
+	float map_val = texture2D(tex1, TC).r;
+	vec4 color = texture3D( tex0, vec3(TC, mod(map_val+offset, 1.)));
+	gl_FragColor = color;
+}
+]]>
+		</program>
+	</language>
+</jittershader>

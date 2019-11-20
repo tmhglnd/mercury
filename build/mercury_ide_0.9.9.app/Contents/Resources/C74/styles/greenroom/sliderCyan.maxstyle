@@ -1,0 +1,9 @@
+{
+	"default" : 	{
+		"bgcolor" : [ 0.254749, 0.632064, 0.682652, 1.0 ]
+	}
+,
+	"parentstyle" : "",
+	"name" : "sliderCyan",
+	"multi" : 0
+}
