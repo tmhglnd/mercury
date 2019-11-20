@@ -23,6 +23,33 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 2. $ open mercury_ide_v.x.x.maxproj
 ```
 
+## System Requirements
+
+These system requirements are the requirements to install and run Max8 on your computer. A dedicated GPU is recommended to run the visual side of Mercury smoothly.
+
+```
+Mac
+OSX 10.11.6 or later
+Intel® Core™2 Duo processor (Intel® Core™ i5 processor or faster recommended) 
+4 GB RAM (8 GB or more recommended)
+```
+
+```
+Windows 
+Windows 7, 8 or 10
+64-bit Intel® or AMD multi-core processor. (Intel® Core™ i5 processor or faster recommended)
+4 GB RAM (8 GB or more recommended).
+```
+
+### Tested working on
+
+```
+Mac OSX 10.12.6
+2.2 GHz Intel Core i7
+16 GB RAM
+Intel Iris Pro 1536 MB
+```
+
 ## Modify Code
 
 `Patchers` - Requires the Max8 Coding environment to edit/modify the patchers of this project.
@@ -33,7 +60,7 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 
 ## Build Application
 
-The Cycling'74 Coding environment is needed to build the application from the `mercury_ide_v.x.x.maxproj` file.
+The Cycling'74 Coding environment is needed to build the application from the `mercury_ide_v.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window.
 
 <!-- ## Bundled Dependencies -->
 
