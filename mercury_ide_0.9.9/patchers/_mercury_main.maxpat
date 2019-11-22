@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 203.0, 234.0, 401.0, 416.0 ],
+		"rect" : [ 216.0, 191.0, 401.0, 416.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,38 +39,13 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-179",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 319.5, 1027.0, 22.0, 22.0 ],
-					"text" : "t 2"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-177",
+					"id" : "obj-135",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 319.5, 990.0, 48.0, 22.0 ],
-					"text" : "r initVis"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-173",
-					"items" : [ "IBMPlexMono-SemiBold", ",", "RobotoMono-Medium", ",", "SourceCodePro-Semibold", ",", "SpaceMono-Regular", ",", "UbuntuMono-Regular", ",", "VT323-Regular" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 319.5, 1057.0, 100.0, 22.0 ]
+					"patching_rect" : [ 312.0, 1062.0, 66.0, 22.0 ],
+					"text" : "r mainFont"
 				}
 
 			}
@@ -81,7 +56,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 360.0, 1092.0, 96.0, 22.0 ],
+					"patching_rect" : [ 312.0, 1092.0, 96.0, 22.0 ],
 					"text" : "prepend setFont"
 				}
 
@@ -452,7 +427,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 798.895827999999938, 1092.0, 120.0, 33.0 ],
+					"patching_rect" : [ 798.945876999999882, 1095.0, 120.0, 33.0 ],
 					"text" : "< argument binding to synth/samplers"
 				}
 
@@ -7765,7 +7740,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 543.895827999999938, 1185.0, 33.0, 22.0 ],
+					"patching_rect" : [ 543.895827999999938, 1192.0, 33.0, 22.0 ],
 					"text" : "read"
 				}
 
@@ -8030,7 +8005,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 660.845778999999993, 1215.0, 150.0, 20.0 ],
+					"patching_rect" : [ 660.845778999999993, 1222.0, 150.0, 20.0 ],
 					"text" : "< initials for synths"
 				}
 
@@ -8042,7 +8017,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 543.895827999999938, 1215.0, 114.0, 22.0 ],
+					"patching_rect" : [ 543.895827999999938, 1222.0, 114.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -8217,7 +8192,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 136.0, 188.0, 652.0, 559.0 ],
+						"rect" : [ 422.0, 202.0, 652.0, 559.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -8422,7 +8397,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 45.0, 195.0, 121.0, 22.0 ],
-									"text" : "140 154 541 570"
+									"text" : "62 91 463 507"
 								}
 
 							}
@@ -10120,7 +10095,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 580.895827999999938, 1062.0, 81.0, 22.0 ],
+					"patching_rect" : [ 580.945876999999882, 1065.0, 81.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -10139,7 +10114,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 580.895827999999938, 1092.0, 209.0, 22.0 ],
+					"patching_rect" : [ 580.945876999999882, 1095.0, 209.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -27882,13 +27857,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
@@ -28320,6 +28295,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-123", 0 ],
+					"source" : [ "obj-135", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-66", 0 ],
 					"source" : [ "obj-136", 0 ]
 				}
@@ -28498,13 +28480,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-123", 0 ],
-					"source" : [ "obj-173", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-178", 0 ],
 					"source" : [ "obj-174", 0 ]
 				}
@@ -28514,13 +28489,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-181", 0 ],
 					"source" : [ "obj-176", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-179", 0 ],
-					"source" : [ "obj-177", 0 ]
 				}
 
 			}
@@ -28549,13 +28517,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-285", 0 ],
 					"source" : [ "obj-178", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-173", 0 ],
-					"source" : [ "obj-179", 0 ]
 				}
 
 			}
@@ -30229,42 +30190,42 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "soundObject.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "consoleLog.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "parser.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "argListLookup.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "getVariables.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "envelopeGen.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -30272,34 +30233,34 @@
 , 			{
 				"name" : ">=p.maxpat",
 				"bootpath" : "~/Documents/Max 7/Library/abstractions/pass-comparators/patchers",
-				"patcherrelativepath" : "../../../../../../../../Documents/Max 7/Library/abstractions/pass-comparators/patchers",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/pass-comparators/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "calcExpr.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "probList.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "argBindings.txt",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/data",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/data",
 				"patcherrelativepath" : "../data",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "syncToScale.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -30313,111 +30274,111 @@
 , 			{
 				"name" : "th.yafr~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Library/abstractions/reverb-yafr-mods/patchers",
-				"patcherrelativepath" : "../../../../../../../../Documents/Max 7/Library/abstractions/reverb-yafr-mods/patchers",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/reverb-yafr-mods/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "synthPoly.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "listLib.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "arr2dTo1d.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "phasorRate.gendsp",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
 				"patcherrelativepath" : "../code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "scales.txt",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/data",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/data",
 				"patcherrelativepath" : "../data",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "tonics.txt",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/data",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/data",
 				"patcherrelativepath" : "../data",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "recursiveFolder.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "probTrig.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fftCatch~.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "editorGL.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "lexer.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "keyPressed.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "textScale.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "modulatorObject~.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "newInstance.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -30425,13 +30386,13 @@
 , 			{
 				"name" : "cputimer.maxpat",
 				"bootpath" : "~/Documents/Max 7/Library/abstractions/misc-max-abstractions/patchers",
-				"patcherrelativepath" : "../../../../../../../../Documents/Max 7/Library/abstractions/misc-max-abstractions/patchers",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/misc-max-abstractions/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "setupVisuals.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -30439,13 +30400,13 @@
 , 			{
 				"name" : "hidecursor.maxpat",
 				"bootpath" : "~/Documents/Max 7/Library/abstractions/misc-max-abstractions/patchers",
-				"patcherrelativepath" : "../../../../../../../../Documents/Max 7/Library/abstractions/misc-max-abstractions/patchers",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/misc-max-abstractions/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "setupAudio.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
