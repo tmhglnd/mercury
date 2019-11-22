@@ -2,7 +2,7 @@
 	"name" : "mercury_ide_0.9.9",
 	"version" : 1,
 	"creationdate" : 3615958543,
-	"modificationdate" : 3657271246,
+	"modificationdate" : 3657271703,
 	"viewrect" : [ 30.0, 65.0, 342.0, 733.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 0,
@@ -105,16 +105,6 @@
 				"local" : 1
 			}
 ,
-			"instrumentBindings.txt" : 			{
-				"kind" : "textfile",
-				"local" : 1
-			}
-,
-			"initials.txt" : 			{
-				"kind" : "textfile",
-				"local" : 1
-			}
-,
 			"samples.json" : 			{
 				"kind" : "json",
 				"local" : 1
@@ -122,11 +112,6 @@
 ,
 			"binding-instruments.json" : 			{
 				"kind" : "json",
-				"local" : 1
-			}
-,
-			"instruments.txt" : 			{
-				"kind" : "textfile",
 				"local" : 1
 			}
 ,
