@@ -11,7 +11,7 @@ var system = "macintosh";
 
 function setSystem(s){
 	system = s;
-	post("system:", system, "\n");
+	// post("system:", system, "\n");
 }//setSystem()
 
 function setPath(path){

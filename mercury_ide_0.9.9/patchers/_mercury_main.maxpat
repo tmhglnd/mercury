@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-34",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 324.000000000000057, 960.0, 42.0, 22.0 ],
+					"text" : "r RUN"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-144",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -1154,6 +1166,30 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-30",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 253.0, 250.0, 44.0, 22.0 ],
+									"text" : "s RUN"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"linecount" : 4,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1108.0, 134.0, 213.0, 62.0 ],
+									"text" : ";\rmax launchbrowser https://github.com/tmhglnd/mercury/tree/master/mercury_ide_0.9.9/media"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-4",
 									"linecount" : 4,
 									"maxclass" : "message",
@@ -1205,11 +1241,11 @@
 								"box" : 								{
 									"id" : "obj-26",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 234.0, 223.0, 41.0, 22.0 ],
-									"text" : "sel 50"
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "bang", "" ],
+									"patching_rect" : [ 234.0, 223.0, 57.0, 22.0 ],
+									"text" : "sel 50 60"
 								}
 
 							}
@@ -1535,11 +1571,11 @@
 								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
-									"numinlets" : 4,
-									"numoutlets" : 4,
-									"outlettype" : [ "bang", "bang", "bang", "" ],
-									"patching_rect" : [ 791.5, 90.0, 54.0, 22.0 ],
-									"text" : "sel 1 2 3"
+									"numinlets" : 5,
+									"numoutlets" : 5,
+									"outlettype" : [ "bang", "bang", "bang", "bang", "" ],
+									"patching_rect" : [ 791.5, 90.0, 356.0, 22.0 ],
+									"text" : "sel 1 2 3 4"
 								}
 
 							}
@@ -1551,7 +1587,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 926.0, 50.0, 167.0, 62.0 ],
+									"patching_rect" : [ 1044.25, 207.0, 167.0, 62.0 ],
 									"text" : ";\rmax launchbrowser http://iclc.livecodenetwork.org/2019/papers/paper67.pdf"
 								}
 
@@ -3419,15 +3455,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-13", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
-									"source" : [ "obj-13", 2 ]
+									"source" : [ "obj-13", 3 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-13", 1 ]
+									"source" : [ "obj-13", 2 ]
 								}
 
 							}
@@ -3538,6 +3581,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
 									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-30", 0 ],
+									"source" : [ "obj-26", 1 ]
 								}
 
 							}
@@ -3884,7 +3934,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 791.683309333333341, 199.0, 83.0, 22.0 ],
+					"patching_rect" : [ 791.0, 199.0, 83.0, 22.0 ],
 					"text" : "macintosh"
 				}
 
@@ -3896,7 +3946,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 855.683309333333341, 80.0, 65.0, 22.0 ],
+					"patching_rect" : [ 855.0, 80.0, 65.0, 22.0 ],
 					"text" : "r SYSTEM"
 				}
 
@@ -3973,12 +4023,12 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-5",
-									"linecount" : 15,
+									"linecount" : 17,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 30.0, 269.0, 221.0 ],
-									"text" : "#X about About Mercury;\r#X open 10;\r#X newitem 20;\r#X saveas 30;\r#X closeitem;\r#X file 50 Load Sample Library;\r#X file 40 External Editor File;\r#X menutitle 5 Settings;\r#X item 5 1 Audio Setup;\r#X item 5 2 Visual Setup;\r#X menutitle 6 Documentation;\r#X item 6 1 Reference;\r#X item 6 2 Github Repository;\r#X item 6 3 Extended Paper;\r#X end;\r"
+									"patching_rect" : [ 30.0, 30.0, 269.0, 248.0 ],
+									"text" : "#X about About Mercury;\r#X open 10;\r#X newitem 20;\r#X saveas 30;\r#X closeitem;\r#X file 60 Execute Code;\r#X file 50 Load Sample Library;\r#X file 40 External Editor File;\r#X menutitle 5 Settings;\r#X item 5 1 Audio Setup;\r#X item 5 2 Visual Setup;\r#X menutitle 6 Documentation;\r#X item 6 1 Reference;\r#X item 6 2 Audio File Names;\r#X item 6 3 Github Repository;\r#X item 6 4 Extended Paper;\r#X end;\r"
 								}
 
 							}
@@ -4021,7 +4071,7 @@
 					"numoutlets" : 6,
 					"outlettype" : [ "int", "int", "int", "int", "int", "int" ],
 					"patching_rect" : [ 285.0, 140.0, 269.5, 22.0 ],
-					"save" : [ "#N", "menubar", 6, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 50, "Load", "Sample", "Library", ";", "#X", "file", 40, "External", "Editor", "File", ";", "#X", "menutitle", 5, "Settings", ";", "#X", "item", 5, 1, "Audio", "Setup", ";", "#X", "item", 5, 2, "Visual", "Setup", ";", "#X", "menutitle", 6, "Documentation", ";", "#X", "item", 6, 1, "Reference", ";", "#X", "item", 6, 2, "Github", "Repository", ";", "#X", "item", 6, 3, "Extended", "Paper", ";", "#X", "end", ";" ],
+					"save" : [ "#N", "menubar", 6, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 60, "Execute", "Code", ";", "#X", "file", 50, "Load", "Sample", "Library", ";", "#X", "file", 40, "External", "Editor", "File", ";", "#X", "menutitle", 5, "Settings", ";", "#X", "item", 5, 1, "Audio", "Setup", ";", "#X", "item", 5, 2, "Visual", "Setup", ";", "#X", "menutitle", 6, "Documentation", ";", "#X", "item", 6, 1, "Reference", ";", "#X", "item", 6, 2, "Audio", "File", "Names", ";", "#X", "item", 6, 3, "Github", "Repository", ";", "#X", "item", 6, 4, "Extended", "Paper", ";", "#X", "end", ";" ],
 					"text" : "menubar 6"
 				}
 
@@ -12441,7 +12491,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 45.0, 45.0, 30.0, 30.0 ]
 												}
 
@@ -12768,13 +12818,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-101", 0 ],
-									"source" : [ "obj-45", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-338", 0 ],
 									"source" : [ "obj-45", 1 ]
 								}
@@ -12842,13 +12885,25 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-3",
+									"linecount" : 10,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 240.0, 105.0, 150.0, 141.0 ],
+									"text" : "Run shortkeys:\n\nmac: \ncmd+r (370)\nalt+return (2044)\nalt+r (2162)\n\nwindows:\nalt+return\nalt+r"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-274",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 71.0, 204.5, 49.0, 22.0 ],
-									"text" : "sel 370"
+									"numinlets" : 4,
+									"numoutlets" : 4,
+									"outlettype" : [ "bang", "bang", "bang", "" ],
+									"patching_rect" : [ 71.0, 225.0, 107.0, 22.0 ],
+									"text" : "sel 370 2044 2162"
 								}
 
 							}
@@ -12896,7 +12951,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 71.0, 286.5, 30.0, 30.0 ]
+									"patching_rect" : [ 71.0, 300.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -12926,6 +12981,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-274", 0 ],
 									"source" : [ "obj-267", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-277", 0 ],
+									"source" : [ "obj-274", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-277", 0 ],
+									"source" : [ "obj-274", 1 ]
 								}
 
 							}
@@ -27898,13 +27967,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
 							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ]
+							"parameter_initial" : [ 0.0 ],
+							"parameter_shortname" : "volume"
 						}
 
 					}
@@ -29276,6 +29345,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-76", 0 ],
 					"source" : [ "obj-318", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 1 ],
+					"source" : [ "obj-34", 0 ]
 				}
 
 			}
