@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 216.0, 191.0, 401.0, 416.0 ],
+		"rect" : [ 34.0, 79.0, 652.0, 783.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,30 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-144",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 692.0, 1020.0, 65.0, 22.0 ],
+					"text" : "r SYSTEM"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-140",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 692.0, 1050.0, 112.0, 22.0 ],
+					"text" : "prepend setSystem"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-135",
 					"maxclass" : "newobj",
@@ -104,7 +128,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1048.833333333333485, 109.0, 92.0, 22.0 ],
+					"patching_rect" : [ 1048.833333333333485, 110.0, 92.0, 22.0 ],
 					"text" : "appicon_win $1"
 				}
 
@@ -116,7 +140,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1020.0, 79.0, 97.0, 22.0 ],
+					"patching_rect" : [ 1020.0, 80.0, 97.0, 22.0 ],
 					"text" : "appicon_mac $1"
 				}
 
@@ -394,17 +418,6 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 628.666666666666629, 140.0, 50.0, 22.0 ],
 					"text" : "s initVis"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-77",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 910.34997599999997, 140.0, 67.0, 22.0 ],
-					"text" : "s SYSTEM"
 				}
 
 			}
@@ -1139,6 +1152,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-65",
@@ -3831,7 +3845,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 822.400024999999914, 140.0, 83.0, 22.0 ],
+					"patching_rect" : [ 791.683309333333341, 199.0, 83.0, 22.0 ],
 					"text" : "macintosh"
 				}
 
@@ -3843,8 +3857,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 910.34997599999997, 79.0, 34.0, 22.0 ],
-					"text" : "r sys"
+					"patching_rect" : [ 855.683309333333341, 80.0, 65.0, 22.0 ],
+					"text" : "r SYSTEM"
 				}
 
 			}
@@ -3856,8 +3870,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 686.0, 140.0, 111.0, 35.0 ],
-					"text" : ";\rmax getsystem sys"
+					"patching_rect" : [ 686.0, 140.0, 142.0, 35.0 ],
+					"text" : ";\rmax getsystem SYSTEM"
 				}
 
 			}
@@ -16406,18 +16420,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-34",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 657.333333333333371, 684.0, 169.0, 22.0 ],
-					"text" : "jit.gl.syphonserver @enable 0"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-265",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -28323,6 +28325,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-162", 0 ],
+					"source" : [ "obj-140", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-245", 0 ],
 					"source" : [ "obj-141", 0 ]
 				}
@@ -28339,6 +28348,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
 					"source" : [ "obj-143", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-140", 0 ],
+					"source" : [ "obj-144", 0 ]
 				}
 
 			}
@@ -28600,15 +28616,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-226", 1 ],
-					"order" : 1,
-					"source" : [ "obj-200", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-77", 0 ],
-					"order" : 0,
 					"source" : [ "obj-200", 0 ]
 				}
 
@@ -29394,13 +29401,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-455", 0 ],
 					"source" : [ "obj-375", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-34", 0 ],
-					"source" : [ "obj-376", 0 ]
 				}
 
 			}
@@ -30410,10 +30410,6 @@
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "jit.gl.syphonserver.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "createfolder.mxo",

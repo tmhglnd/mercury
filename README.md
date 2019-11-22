@@ -21,22 +21,21 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 	- [reverb-yafr-mods](https://github.com/tmhglnd/reverb-yafr-mods)
 	- JASCH Package via File > Package Manager
 
-3. Download mercury .zip and unpack / or `git clone http://github.com/tmhglnd/mercury`
-
-4. Open `mercury_ide_v.x.x.maxproj`
-
-5. Link Sample Library through `File > Load Sample Library` and select `samples` folder under /media
-
-6. No license required to start and run Mercury!
+3. Download/Clone Mercury and open `mercury_ide_x.x.x.maxproj`
 
 ```
-1. Download zip and Unpack
+1. Download zip and unpack in ~/Documents/Max 8/Projects
 2. Open mercury_ide_v.x.x.maxproj
 ```
 ```
-1. $ git clone http://github.com/tmhglnd/mercury
-2. $ open mercury_ide_v.x.x.maxproj
+1. $ cd ~/Documents/Max 8/Projects
+2. $ git clone http://github.com/tmhglnd/mercury
+3. $ open mercury_ide_v.x.x.maxproj
 ```
+
+4. Link Sample Library via `File > Load Sample Library` and select `samples` folder under `mercury/mercury_ide_x.x.x/media`
+
+5. No license is required to start and run Mercury!
 
 ## System Requirements
 
