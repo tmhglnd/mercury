@@ -39,7 +39,7 @@
 	- random 
 	- randomFloat
 	- euclid 
-- Ring Methods Transformational
+- Ring Methods Transformational (ring)
 	- join
 	- thin
 	- palin
@@ -295,7 +295,9 @@ set <name> fx(drive <drive-amount >= 0>)
 set <name> fx(chip <degrade-samplerate-0-1>)
 ```
 
-## Ring Methods Generative (ring)
+## Ring Methods Generative
+
+*incomplete*
 
 ```
 spread()
@@ -308,6 +310,8 @@ euclid()
 ```
 
 ## Ring Methods Transformational
+
+*incomplete*
 
 ```
 join()

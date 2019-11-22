@@ -10,10 +10,11 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 
 ## Install / Run
 
-```
-1. Download and install Max8 [here](https://cycling74.com/downloads)
+1. Download and install Max8.0.8
+	- [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
+	- [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
 2. No license required to start and run Mercury!
-```
+
 ```
 1. Download zip and Unpack
 2. Open mercury_ide_v.x.x.maxproj
