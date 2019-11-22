@@ -9,7 +9,7 @@
 	- ring
 	- set
 	- killAll
-- Global Settings
+- Global Settings (set)
 	- tempo
 	- scale
 	- tonic
@@ -17,6 +17,35 @@
 	- volume
 	- hipass 
 	- lopass 
+- Synth/Sample Functions (new)
+	- time
+	- note
+	- beat
+	- shape
+	- fx
+- FX
+	- reverb 
+	- delay 
+	- filter 
+	- lfo 
+	- double 
+	- drive 
+	- chip 
+- Ring Methods Generative (ring)
+	- spread
+	- spreadinclusive 
+	- spreadFloat
+	- spreadinclusiveFloat
+	- random 
+	- randomFloat
+	- euclid 
+- Ring Methods Transformational
+	- join
+	- thin
+	- palin
+	- clone
+	- spray
+	- every 
 
 ## General Syntax
 
@@ -71,7 +100,7 @@ Disable all sounds evaluated before this line
 killAll
 ```
 
-## Global Settings
+## Global Settings (set)
 
 ### tempo
 
@@ -143,3 +172,126 @@ set lopass <cutoff-in-Hz> <ramptime-in-ms>
 
 set lopass 900 5000
 ```
+
+## Synth/Sample Functions
+
+### time 
+
+Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing.
+
+```
+set <name> time(<division> <offset>)
+
+new sample kick_909 name(kick)
+	set kick time(1/4)
+
+new synth saw name(hat)
+	set hat time(1/2 3/16)
+```
+
+### beat 
+
+```
+set <name> beat(<ring-with-rhythm> <reset-after-n-bars>)
+```
+
+### shape 
+
+```
+set <name> shape(<attack-time-in-ms> <release-time-in-ms>)
+```
+
+### gain 
+
+```
+set <name> gain(<amplitude-in-float>)
+```
+
+### fx
+
+```
+set <name> fx(<fxname> <arg1> <arg2> ... <arg-n>)
+```
+
+## Synth Only
+
+### note 
+
+```
+set <name> note(<semi-tone> <octave>)
+```
+
+### wave2
+
+```
+set <name> wave2(<saw/sine/square/triangle> <frequency-ratio>)
+```
+
+## Sample Only
+
+### speed
+
+```
+set <name> speed(<sample-playback-speed-ratio>)
+```
+
+### stretch
+
+```
+set <name> stretch(<0-1>)
+```
+
+## fx
+
+### reverb
+
+```
+set <name> fx(reverb <amplitude> <reverb-length-0-19>)
+```
+
+### delay
+
+```
+set <name> fx(delay <time-division1> <time-division2> <feedback-0-1> <cutoff-0-1>)
+```
+
+### filter
+
+static filter:
+
+```
+set <name> fx(filter <low/band/high> <cutoff-frequency> <resonance-0-1>)
+```
+
+modulated filter:
+
+```
+set <name> fx(filter <low/band/high> <time-division> <cutoff-high> <cutoff-low> <resonance-0-1> <shape-tilt-0-1> <exponential-curve-0-1>)
+```
+
+### lfo
+
+```
+set <name> fx(lfo <time-division>)
+```
+
+### double
+
+```
+set <name> fx(double)
+```
+
+### drive
+
+```
+set <name> fx(drive <drive-amount >= 0>)
+```
+
+### chip
+
+*work-in-progress*
+
+```
+set <name> fx(chip <degrade-samplerate-0-1>)
+```
+
