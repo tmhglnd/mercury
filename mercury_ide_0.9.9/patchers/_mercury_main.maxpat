@@ -30270,7 +30270,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : ">=p.maxpat",
+				"name" : "gtep.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",

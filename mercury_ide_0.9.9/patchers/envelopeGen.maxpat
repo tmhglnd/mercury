@@ -336,7 +336,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 342.5, 371.0, 45.0, 22.0 ],
-					"text" : ">=p 0."
+					"text" : "gtep 0."
 				}
 
 			}
@@ -348,7 +348,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 289.5, 371.0, 45.0, 22.0 ],
-					"text" : ">=p 0."
+					"text" : "gtep 0."
 				}
 
 			}
@@ -480,7 +480,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 236.5, 371.0, 45.0, 22.0 ],
-					"text" : ">=p 0."
+					"text" : "gtep 0."
 				}
 
 			}
@@ -492,7 +492,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 183.5, 371.0, 45.0, 22.0 ],
-					"text" : ">=p 0."
+					"text" : "gtep 0."
 				}
 
 			}
