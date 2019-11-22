@@ -260,13 +260,13 @@ set <name> fx(delay <time-division1> <time-division2> <feedback-0-1> <cutoff-0-1
 static filter:
 
 ```
-set <name> fx(filter <low/band/high> <cutoff-frequency> <resonance-0-1>)
+set <name> fx(filter <type=low/band/high> <cutoff-frequency> <resonance-0-1>)
 ```
 
 modulated filter:
 
 ```
-set <name> fx(filter <low/band/high> <time-division> <cutoff-high> <cutoff-low> <resonance-0-1> <shape-tilt-0-1> <exponential-curve-0-1>)
+set <name> fx(filter <type> <time-division> <cutoff-hi> <cutoff-lo> <res-0-1> <shape-tilt-0-1> <exponential-curve-0-1>)
 ```
 
 ### lfo
@@ -295,3 +295,25 @@ set <name> fx(drive <drive-amount >= 0>)
 set <name> fx(chip <degrade-samplerate-0-1>)
 ```
 
+## Ring Methods Generative (ring)
+
+```
+spread()
+spreadinclusive()
+spreadFloat()
+spreadinclusiveFloat()
+random()
+randomFloat()
+euclid()
+```
+
+## Ring Methods Transformational
+
+```
+join()
+thin()
+palin()
+clone()
+spray()
+every()
+```
