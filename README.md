@@ -17,7 +17,7 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 
 2. Add the following dependencies to the Max 8/Packages folder:
 	- [misc-max-abstractions](https://github.com/tmhglnd/misc-max-abstractions)
-	- [pass-comparators](https://github.com/tmhglnd/pass-comparators)
+	<!-- - [pass-comparators](https://github.com/tmhglnd/pass-comparators) -->
 	- [reverb-yafr-mods](https://github.com/tmhglnd/reverb-yafr-mods)
 	- JASCH Package via File > Package Manager
 
@@ -44,15 +44,16 @@ These system requirements are the requirements to install and run Max8 on your c
 ```
 Mac
 OSX 10.11.6 or later
-Intel® Core™2 Duo processor (Intel® Core™ i5 processor or faster recommended) 
+Intel® Core™2 Duo processor (Intel® Core™ i7 recommended) 
 4 GB RAM (8 GB or more recommended)
+(Dedicated Graphics Card recommended)
 ```
 
 ```
-Windows 
 Windows 7, 8 or 10
-64-bit Intel® or AMD multi-core processor. (Intel® Core™ i5 processor or faster recommended)
-4 GB RAM (8 GB or more recommended).
+64-bit Intel® or AMD multi-core processor. (Intel® Core™ i7 processor or recommended)
+4 GB RAM (8 GB or more recommended)
+(Dedicated Graphics Card recommended)
 ```
 
 ### Tested working on
@@ -62,6 +63,15 @@ Mac OSX 10.12.6
 2.2 GHz Intel Core i7
 16 GB RAM
 Intel Iris Pro 1536 MB
+SSD Storage
+```
+
+```
+Microsoft Windows 10 Home
+1.7 GHz Inter Core i5
+4 GB RAM
+Intel HD Graphics 4000
+HDD Storage
 ```
 
 ## Modify Code
