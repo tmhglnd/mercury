@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 652.0, 783.0 ],
+		"rect" : [ 62.0, 91.0, 401.0, 416.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1125,7 +1125,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 98.0, 157.0, 851.0, 635.0 ],
+						"rect" : [ 34.0, 79.0, 1372.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1152,8 +1152,33 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"linecount" : 4,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 791.5, 134.0, 156.0, 62.0 ],
+									"text" : ";\rmax launchbrowser https://github.com/tmhglnd/mercury/tree/master/docs"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"linecount" : 4,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 960.0, 134.0, 133.0, 62.0 ],
+									"text" : ";\rmax launchbrowser https://github.com/tmhglnd/mercury"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-65",
 									"maxclass" : "newobj",
@@ -1510,11 +1535,11 @@
 								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 791.5, 100.0, 34.0, 22.0 ],
-									"text" : "sel 1"
+									"numinlets" : 4,
+									"numoutlets" : 4,
+									"outlettype" : [ "bang", "bang", "bang", "" ],
+									"patching_rect" : [ 791.5, 90.0, 54.0, 22.0 ],
+									"text" : "sel 1 2 3"
 								}
 
 							}
@@ -1526,7 +1551,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 791.5, 134.0, 167.0, 62.0 ],
+									"patching_rect" : [ 926.0, 50.0, 167.0, 62.0 ],
 									"text" : ";\rmax launchbrowser http://iclc.livecodenetwork.org/2019/papers/paper67.pdf"
 								}
 
@@ -3395,6 +3420,20 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-13", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-13", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-13", 0 ]
 								}
 
@@ -3904,7 +3943,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1052.0, 181.0, 245.0, 269.0 ],
+						"rect" : [ 555.0, 394.0, 351.0, 387.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3934,12 +3973,12 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-5",
-									"linecount" : 16,
+									"linecount" : 15,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 30.0, 150.0, 234.0 ],
-									"text" : "#X about About Mercury;\r#X open 10;\r#X newitem 20;\r#X saveas 30;\r#X closeitem;\r#X file 40 External Editor File;\r#X menutitle 5 Settings;\r#X item 5 1 Audio Setup;\r#X item 5 2 Visual Setup;\r#X item 5 3 External Editor File;\r#X menutitle 6 Documentation;\r#X item 6 1 Open;\r#X end;\r"
+									"patching_rect" : [ 30.0, 30.0, 269.0, 221.0 ],
+									"text" : "#X about About Mercury;\r#X open 10;\r#X newitem 20;\r#X saveas 30;\r#X closeitem;\r#X file 50 Load Sample Library;\r#X file 40 External Editor File;\r#X menutitle 5 Settings;\r#X item 5 1 Audio Setup;\r#X item 5 2 Visual Setup;\r#X menutitle 6 Documentation;\r#X item 6 1 Reference;\r#X item 6 2 Github Repository;\r#X item 6 3 Extended Paper;\r#X end;\r"
 								}
 
 							}
@@ -3982,7 +4021,7 @@
 					"numoutlets" : 6,
 					"outlettype" : [ "int", "int", "int", "int", "int", "int" ],
 					"patching_rect" : [ 285.0, 140.0, 269.5, 22.0 ],
-					"save" : [ "#N", "menubar", 6, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 50, "Load", "Sample", "Library", ";", "#X", "file", 40, "External", "Editor", "File", ";", "#X", "menutitle", 5, "Settings", ";", "#X", "item", 5, 1, "Audio", "Setup", ";", "#X", "item", 5, 2, "Visual", "Setup", ";", "#X", "menutitle", 6, "Documentation", ";", "#X", "item", 6, 1, "Open", ";", "#X", "end", ";" ],
+					"save" : [ "#N", "menubar", 6, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 50, "Load", "Sample", "Library", ";", "#X", "file", 40, "External", "Editor", "File", ";", "#X", "menutitle", 5, "Settings", ";", "#X", "item", 5, 1, "Audio", "Setup", ";", "#X", "item", 5, 2, "Visual", "Setup", ";", "#X", "menutitle", 6, "Documentation", ";", "#X", "item", 6, 1, "Reference", ";", "#X", "item", 6, 2, "Github", "Repository", ";", "#X", "item", 6, 3, "Extended", "Paper", ";", "#X", "end", ";" ],
 					"text" : "menubar 6"
 				}
 
@@ -12025,7 +12064,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 202.0, 65.0, 60.0 ],
+									"patching_rect" : [ 50.0, 202.0, 66.0, 60.0 ],
 									"text" : "auto-store file disabled for now"
 								}
 
@@ -27735,7 +27774,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 230.263885333333349, 1578.0, 67.895859000000002, 35.0 ],
+					"patching_rect" : [ 248.815925833333324, 1532.0, 67.895859000000002, 35.0 ],
 					"text" : "target 0, silence 1"
 				}
 
@@ -30232,8 +30271,8 @@
 			}
 , 			{
 				"name" : ">=p.maxpat",
-				"bootpath" : "~/Documents/Max 7/Library/abstractions/pass-comparators/patchers",
-				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/pass-comparators/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
