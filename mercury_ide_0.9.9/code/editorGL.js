@@ -155,7 +155,9 @@ function keyPress(k){
 
 			// FUNCTION KEYS
 			else if (k == 13){ hst = newLine(); }
-			else if (k == 127){ hst = backSpace(); }
+			// Backspace Win = 8, Mac = 127
+			// Delete Win = 127, Mac = 127
+			else if (k == 127 || k == 8){ hst = backSpace(); }
 			else if (k == 30 || k == 31){ gotoLine(k-30); }
 			else if (k == 28 || k == 29){ gotoCharacter(k-28); }
 			else if (k == 9){ hst = addTab(); }

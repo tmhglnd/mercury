@@ -16,7 +16,7 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 	- If links are not working go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
 
 2. Add the following dependencies to the Max 8/Packages folder:
-	- [misc-max-abstractions](https://github.com/tmhglnd/misc-max-abstractions/tree/master/patchers)
+	- [misc-max-abstractions](https://github.com/tmhglnd/misc-max-abstractions)
 	- [pass-comparators](https://github.com/tmhglnd/pass-comparators)
 	- [reverb-yafr-mods](https://github.com/tmhglnd/reverb-yafr-mods)
 	- JASCH Package via File > Package Manager
