@@ -10,10 +10,24 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 
 ## Install / Run
 
-1. Download and install Max8.0.8
+1. Download and install **Max 8.0.8**
 	- [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
 	- [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
-2. No license required to start and run Mercury!
+	- If links are not working go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
+
+2. Add the following dependencies to the Max 8/Packages folder:
+	- [misc-max-abstractions](https://github.com/tmhglnd/misc-max-abstractions/tree/master/patchers)
+	- [pass-comparators](https://github.com/tmhglnd/pass-comparators)
+	- [reverb-yafr-mods](https://github.com/tmhglnd/reverb-yafr-mods)
+	- JASCH Package via File > Package Manager
+
+3. Download mercury .zip and unpack / or `git clone http://github.com/tmhglnd/mercury`
+
+4. Open `mercury_ide_v.x.x.maxproj`
+
+5. Link Sample Library through `File > Load Sample Library` and select `samples` folder under /media
+
+6. No license required to start and run Mercury!
 
 ```
 1. Download zip and Unpack

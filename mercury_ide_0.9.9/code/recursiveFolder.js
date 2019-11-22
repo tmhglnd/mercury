@@ -7,6 +7,12 @@ setoutletassist(0, "(messages) output to audiofile dictionary");
 setoutletassist(1, "(messages) output to instrument binding dictionary");
 
 var projectDir;
+var system = "macintosh";
+
+function setSystem(s){
+	system = s;
+	post("system:", system, "\n");
+}//setSystem()
 
 function setPath(path){
 	projectDir = path.split("/");
