@@ -12,16 +12,20 @@
 - Global Settings (set)
 	- tempo
 	- scale
-	- tonic
+	- scalar
 	- random_seed
 	- volume
 	- hipass 
 	- lopass 
 - Synth/Sample Functions (new)
+	- name
+	- group
 	- time
 	- note
 	- beat
 	- shape
+	- gain
+	- pan
 	- fx
 - FX
 	- reverb 
@@ -104,10 +108,10 @@ killAll
 
 ### tempo
 
-Change the global tempo in Beats Per Minute (BPM), counted in quarter-notes. Second argument sets a ramptime to gradually change the tempo over the provided amount of time (experimental and may lag!)
+Change the global tempo in Beats Per Minute (BPM), counted in quarter-notes. Second argument sets a ramptime in milliseconds to gradually change the tempo over the provided amount of time (!WARNING: experimental and may lag/glitch!)
 
 ```
-set tempo <bpm> <ramptime-in-ms>
+set tempo <bpm> <ramptime>
 
 set tempo 128
 set tempo 80 5000
@@ -115,72 +119,101 @@ set tempo 80 5000
 
 ### scale
 
-Set the scale all notes are mapped to. 
+Set the scale as string where all notes are mapped to. An optional second argument sets the root for the scale. 
 
 ```
-set scale <scale_name> <tonic>
+set scale <scale_name> <root>
 
 set scale minor Eb
 ```
 
-### tonic
+### scalar
 
-Set the root of the scale without setting the scale.
+Transpose the current scale up or down in semitones integer value.
 
 ```
-set tonic <root-note>
+set scalar <transpose-by>
 
-set tonic A#
+set scalar 2
 ```
 
 ### random_seed
 
-Set the random seed for the psuedorandom number generators used in all functions across the environment. Setting the seed to a fixed integer will help make sure random values keep the same sequence every time you re-evaluate the code.
+Set the random seed as integer for the psuedorandom number generators used in all functions across the environment. Setting the seed to a fixed integer will help make sure random values keep the same sequence every time you re-evaluate the code.
 
 ```
-set random_seed <integer-value>
+set random_seed <integer>
 
 set random_seed 31415
 ```
 
 ### volume
 
-Set the global volume for all instruments across the entire environment. Additional ramptime can be provided to create fade-in/fade-out or smooth transitions to for dynamics.
+Set the global volume in floating-point amplitude for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create fade-in/fade-out or smooth transitions to for dynamics.
 
 ```
-set volume <amplitude-in-float> <ramptime-in-ms>
+set volume <amplitude> <ramptime>
 
 set volume 0.5 5000
 ```
 
 ### hipass
 
-Set the global high-pass filter cutoff for all instruments across the entire environment. Additional ramptime can be provided to create smooth transitions from one value to another.
+Set the global high-pass filter cutoff in Hz for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create smooth transitions from one value to another.
 
 ```
-set hipass <cutoff-in-Hz> <ramptime-in-ms>
+set hipass <cutoff> <ramptime>
 
 set hipass 900 5000
 ```
 
 ### lopass
 
-Set the global low-pass filter cutoff for all instruments across the entire environment. Additional ramptime can be provided to create smooth transitions from one value to another.
+Set the global low-pass filter cutoff in Hz for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create smooth transitions from one value to another.
 
 ```
-set lopass <cutoff-in-Hz> <ramptime-in-ms>
+set lopass <cutoff> <ramptime>
 
 set lopass 900 5000
 ```
 
 ## Synth/Sample Functions
 
+### name
+
+Set the name for this instrument. This can be any string of 2 or more characters. The `name` is used as reference to the instrument when the `set` method is used to call methods for a specific instrument.
+
+```
+new <inst> <type> name(<name>)
+```
+```
+new synth saw name(foo)
+new sample kick_909 name(bar)
+	set foo gain(0.8)
+```
+
+### group
+
+Set the group-name for this instrument. This can be any string of 2 or more characters. The `group` is used as reference to multiple instruments with the same groupname when the `set` method is used.
+
+```
+new <inst> <type> group(<name>)
+```
+```
+new sample kick_909 group(drums)
+new sample snare_909 group(drums)
+	set drums gain(0.8)
+```
+
 ### time 
 
-Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing.
+Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, used as an index to lookup values from other ring's provided as argument in methods for this instrument.
 
 ```
 set <name> time(<division> <offset>)
+```
+```
+set tempo 130
 
 new sample kick_909 name(kick)
 	set kick time(1/4)
@@ -189,29 +222,79 @@ new synth saw name(hat)
 	set hat time(1/2 3/16)
 ```
 
-### beat 
+Alternative function-names: `timing() | t()`
+
+### beat
+
+Provide the beat function with a `ring` consisting of zeroes and ones. For every trigger at the time interval provided in the `time()` method, the next value in the ring will be given. An optional second argument resets the internal instrument index after a certain amount of time in n-bars.
 
 ```
-set <name> beat(<ring-with-rhythm> <reset-after-n-bars>)
+set <name> beat(<ring> <reset>)
+```
+```
+ring aBeat [1 0 0.2 1 0.5]
+
+new sample hat_909 name(ht)
+	set ht time(1/16) beat(aBeat 2)
 ```
 
-### shape 
+Alternative function-names: `rhythm() | b()`
+
+### shape
+
+Set the attack and release time of a sound. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds.
 
 ```
-set <name> shape(<attack-time-in-ms> <release-time-in-ms>)
+set <name> shape(<attack> <release>)
+```
+```
+new synth saw name(lead)
+	set lead shape(5 150) time(3/16)
 ```
 
-### gain 
+Alternative function-names: `envelope() | env() | transient() | e()`
+
+### gain
+
+Set the volume for the instrument in floating-point amplitude. Where `1` is the normalized amplitude, `0.5` is the half softer (-6 dBFS) and `2` is twice as loud (+ 6dBFS).
 
 ```
-set <name> gain(<amplitude-in-float>)
+set <name> gain(<amplitude>)
 ```
+```
+new sample snare_909 name(sn)
+	set sn gain(0.8)
+```
+
+Alternative function-names: `amp() | volume() | g() | a() | v()`
+
+### pan
+
+Set the panning position in floating-point for the sound over the stereo-image. `-1` is 100% left, `0` is center, `1` is 100% right. Higher or lower values wrap between -1 and 1. Provide pan with `random` to get a new random panning value every count of the `time()`.
+
+```
+set <name> pan(<position>)
+```
+```
+new sample clap_909 name(hand)
+	set hand pan(random)
+```
+
+Alternative function-names: `panning() | p()`
 
 ### fx
+
+Apply an effect to the sound of the instrument. The first argument is always the fx-name as a string. The arguments depend on the chosen effect. All effects are listed under FX.
 
 ```
 set <name> fx(<fxname> <arg1> <arg2> ... <arg-n>)
 ```
+```
+new synth square name(bass)
+	set bass fx(double)
+```
+
+Alternative function-names: `effect() | with_fx() | add_fx()`
 
 ## Synth Only
 
@@ -239,6 +322,12 @@ set <name> speed(<sample-playback-speed-ratio>)
 
 ```
 set <name> stretch(<0-1>)
+```
+
+### offset
+
+```
+set <name> offset(<position-in-sample-0-1>)
 ```
 
 ## fx
@@ -289,35 +378,97 @@ set <name> fx(drive <drive-amount >= 0>)
 
 ### chip
 
-*work-in-progress*
-
 ```
 set <name> fx(chip <degrade-samplerate-0-1>)
 ```
 
 ## Ring Methods Generative
 
-*incomplete*
+### spread
 
 ```
-spread()
-spreadinclusive()
-spreadFloat()
-spreadinclusiveFloat()
-random()
-randomFloat()
-euclid()
+ring myRing spread(<listlength> <low-bound> <high-bound>)
 ```
+
+### spreadinclusive
+
+```
+ring myRing spreadinclusive(<listlength> <low-bound> <high-bound>)
+```
+
+### spreadFloat
+
+```
+ring myRing spreadFloat(<listlength> <low-bound> <high-bound>)
+```
+
+### spreadinclusiveFloat
+
+```
+ring myRing spreadinclusiveFloat(<listlength> <low-bound> <high-bound>)
+```
+
+### random
+
+```
+ring myRing random(<listlength> <low-bound> <high-bound>)
+```
+
+### randomFloat
+
+```
+ring myRing randomFloat(<listlength> <low-bound> <high-bound>)
+```
+
+### euclid
+
+```
+ring myRing euclid(<listlength> <amount-of-hits> <rotate>)
+```
+
+
 
 ## Ring Methods Transformational
 
-*incomplete*
+### join
 
 ```
-join()
-thin()
-palin()
-clone()
-spray()
-every()
+ring joined join(<ring1> <ring2> ... <ring-n>)
 ```
+
+### thin
+
+```
+ring thined thin(<ring>)
+```
+
+### palin
+
+```
+ring palinated palin(<ring>)
+```
+
+### duplicate
+
+```
+ring duped duplicate(<ring> <amount>)
+```
+
+### clone
+
+```
+ring cloned clone(<ring> <dup-offset1> <dup-offset2> ... <dup-offset-n>) 
+```
+
+### spray
+
+```
+ring sprayed spray(<ring-beat> <ring-melody>)
+```
+
+### every
+
+```
+ring sometimes every(<ring> <when> <beat-division>)
+```
+
