@@ -9,9 +9,10 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [About](#about)
 - [Vision & Goals](#vision--goals)
 - [Install](#install)
+	- [Getting Started](/docs/README.md#getting-started)
 	- [System Requirements](#system-requirements)
 	- [Build Application](#build-application)
-	- [Documentation](/docs/README.md)
+	- [Documentation](/docs/README.md#table-of-content-for-syntax)
 - [Modify Code](#modify-code)
 - [Further Reading](#further-reading-and-listening)
 - [Thanks](#thanks)
@@ -67,7 +68,9 @@ Read the [system requirements](#system-requirements) first before getting starte
 3. $ open mercury_ide_v.x.x.maxproj
 ```
 
-4. [Getting Started](/docs/README.md)
+### Getting Started
+
+[Open the Getting Started Guide](/docs/README.md)
 
 ### System Requirements
 
