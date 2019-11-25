@@ -24,8 +24,8 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 4. Turn the audio engine `on` in the main window. You will see the cpu-usage meter showing a percentage.
 	- In the event of no audio, laggy audio and/or clicky audio change the audio settings:
 		- `Settings > Audio Setup`
-		- `Driver > Asio4All` (Windows)
-		- `Driver > CoreAudio` (MacOS)
+		- `Driver`: `Asio4All` (Windows)
+		- `Driver`: `CoreAudio` (MacOS)
 		- `IO Vectorsize`: `512/1024`
 		- `Signal Vectorsize`: `256/512`
 		- `Overdrive`: `On`
