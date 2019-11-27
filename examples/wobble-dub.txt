@@ -1,0 +1,30 @@
+set random_seed 58129
+set scale minor_harmonic D
+// set hipass 10 1000
+set tempo 140
+
+ring hats [hat_909 hat_909 hat_909_open]
+
+new sample hats time(1/16) gain(0.7) group(drm)
+new sample kick_house time(1/2) group(drm)
+new sample snare_dub time(1 1/2) fx(reverb 1.2 12) gain(2) group(drm)
+
+// set drm fx(filter low 1 10000 500 0.5 0.5 1)
+
+ring offs randomFloat(5 0.2 0.8)
+
+new sample choir name(chr)
+    set chr time(3/16) shape(5 200) gain(0) offset(offs)
+    set chr fx(delay 1/16 3/16 0.9) speed(1.09)
+
+// set all fx(reverb 3 18) fx(lfo 1/16) fx(drive 100) gain(0.4)
+
+// ring bssLine [0 0 12 0 12 24]
+ring bassLine [0 7 5 3]
+ring lfos [1/16 1/12 3/16 1/24]
+
+new synth saw note(bassLine 0) name(bss)
+    set bss shape(-1) gain(1.2) fx(lfo lfos) wave2(saw 0.99912)
+    set bss fx(double) fx(reverb 0 19) time(1)
+    set bss fx(filter low 1/4 3000 100 0.5 0.5 0.4)
+killAll
