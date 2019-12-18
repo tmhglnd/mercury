@@ -1,0 +1,17 @@
+{
+  "name": "mercury-grammar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node parse-test.js",
+    "gen": "nearleyc mercury.ne -o grammar.js",
+    "graph": "nearley-railroad mercury.ne -o grammar.html \n open -a Google\\ Chrome.app grammar.html" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nearley": "^2.19.0"
+  }
+}
