@@ -1,25 +1,25 @@
 # TOKENIZER
 @{%
-const moo = require("moo");
 
+const moo = require("moo");
 const lexer = moo.compile({
 	ws:			/[ \t]+/,
 	comment:	/(?:[\/\/]|[#]|[$]).*?$/,
 	
 	instrument:	{
-					match: [	/synth\ /, /sample\ /, 
-								/poly_synth\ /, /loop\ / ],
+					match: [/synth\ /, /sample\ /, /poly_synth\ /, /loop\ / ],
 					value: x => x.slice(0, x.length-1)
 				},
 
 	ring:		[/ring\ /, /array\ /, /data\ /],
 	newObject:	[/new\ /, /add\ /],
 	setObject:	[/set\ /, /apply\ /, /send\ /],
+	//kill:		/kill[\-|_]?[a|A]ll/,
 
 	number:		/-?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
 	operator:	/[\+\-\*\/]/,
 
-	"(":		'(',
+	lParam:		'(',
 	rParam:		')',
 	lArray:		'[',
 	rArray:		']',
@@ -30,12 +30,6 @@ const lexer = moo.compile({
 				},
 	
 	identifier:	/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
-	
-	// kill:		/kill(?:[A|a])ll/,
-	// newln:		{ match: /\n/, lineBreaks: true },
-	// myError:		moo.error,
-	// error:	 	{match: /[\$?`]/, error: false},
-	// ws:			{match: /\s+/, lineBreaks: true},
 });
 %}
 
@@ -55,10 +49,9 @@ main ->
 objectStatement ->
 	%newObject _ %instrument _ name
 		{% (d) => {
-			// console.log('new', d[2].value, d[4].string);
 			return {
 				"@new" : d[2].value,
-				"@type" : d[4]
+				"@type" : d[4]["@string"]
 			}
 		}%}
 	|
@@ -66,23 +59,42 @@ objectStatement ->
 		{% (d) => {
 			return {
 				"@new" : d[2].value,
-				"@type" : d[4],
+				"@type" : d[4]["@string"],
 				"@args" : d[6]
 			}
 		}%}
 	|
 	%setObject _ name __ objExpression
-		{% (d) => [d[0], d[2], d[4]] %}
+		{% (d) => {
+			return {
+				"@set" : d[4]["@string"],
+				"@args" : d[6]
+			}
+		} %}
 
 ringStatement ->
 	%ring _ %identifier __ ringExpression
-		{% (d) => [d[0], d[2], d[4]] %}
+		{% (d) => {
+			return {
+				"@ring" : d[2].value,
+				"@params" : d[4]
+			}
+		} %}
 
 statement ->
 	%comment
-		{% (d) => d[0] %}
+		{% (d) => { return { "@comment": d[0].value }} %}
+	# |
+	# %identifier
+		# {% (d) => { return { "@key": d[0].value }} %}
+	# |
+	# %kill
+		# {% (d) => { return { "@func": "kill" }} %}
 	|
 	objExpression
+		{% (d) => d[0] %}
+	|
+	paramElement
 		{% (d) => d[0] %}
 
 objExpression ->
@@ -106,10 +118,10 @@ function ->
 		}%}
 
 parameterList ->
-	"(" _ params _ %rParam
+	%lParam _ params _ %rParam
 		{% (d) => d[2] %}
 	|
-	"(" _ %rParam
+	%lParam _ %rParam
 		{% (d) => "empty" %}
 
 array ->

@@ -1,0 +1,103 @@
+{
+	"amp" : [
+		"amp",
+		"gain",
+		"vol",
+		"volume",
+		"amplitude",
+		"a",
+		"g",
+		"v"
+	],
+
+	"beat" : [
+		"beat",
+		"rhythm",
+		"b"
+	],
+
+	"env" : [
+		"envelope",
+		"shape",
+		"transient",
+		"env",
+		"e"
+	],
+
+	"note" : [
+		"note",
+		"pitch",
+		"n"
+	],
+
+	"time" : [
+		"time",
+		"timing",
+		"t"
+	],
+
+	"pan" : [
+		"pan",
+		"panning",
+		"spat",
+		"location",
+		"p"
+	],
+
+	"slide" : [
+		"slide",
+		"glide",
+		"portamento",
+		"porta"
+	],
+
+	"speed" : [
+		"speed",
+		"rate",
+		"playback",
+		"s"
+	],
+
+	"sub" : [
+		"sub",
+		"deep",
+		"low"
+	],
+
+	"add_fx" : [
+		"add_fx",
+		"with_fx",
+		"effect",
+		"fx"
+	],
+
+	"res" : [
+		"resonance",
+		"reson",
+		"res",
+		"length"
+	],
+
+	"stretch" : [
+		"stretch",
+		"beathstretch",
+		"loop"
+	],
+
+	"wave2" : [
+		"wave2",
+		"osc2",
+		"add_osc"
+	],
+
+	"group" : [
+		"group",
+		"aux",
+		"bus"
+	],
+
+	"name" : [
+		"name",
+		"id"
+	]
+}

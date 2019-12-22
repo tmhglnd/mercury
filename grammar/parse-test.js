@@ -11,10 +11,18 @@ function parse(s){
 		parser.feed(s);
 
 		// parser.results is an array of possible parsings.
-		console.log("Parse Succesful: \n", 
-			util.inspect(parser.results, { depth: 10}), 
-			"\n");
-		// console.log("Parse succesful:", parser.results);
+		var results = parser.results.length;
+
+		if (results > 1){
+			console.log(">> Warning, ambiguous grammar!");
+			for (var i=0; i<results; i++){
+				console.log("Result", i+1, "of", results, "\n", 
+				util.inspect(parser.results[i], { depth: 10}), 
+				"\n");
+			}
+		} else {
+			console.log("Parse succesful: \n", util.inspect(parser.results[0], { depth: 10}), "\n");
+		}
 	} catch (e) {
 		console.log("Parse failure: \n", e.message);
 		// console.log("Error at character " + e.parseError.offset);
@@ -28,6 +36,7 @@ function parse(s){
 // parseRing();
 parseInst();
 // parseSet();
+// parseKill();
 
 // Parse numbers
 function parseNumbers(){
@@ -84,16 +93,26 @@ function parseRing(){
 }
 
 function parseInst(){
-	// parse("note(0 2)");
-	parse("new synth saw note (0 0)");
-	parse("new sample kick_dub time(0.25) speed(0.9) ");
-	// parse(" new loop amen-break02");
-	// parse(' new loop "05samp"');
-	// parse(' new loop k');
+	parse("new synth saw note(0 0)");
+	parse("new sample kick_dub time(0.25 0.5) speed(0.9) ");
+	parse("new loop amen-break02 speed(-0.8)");
+	parse("new poly_synth triangle");
 }
 
 function parseSet(){
 	parse("set k amp(0.3)");
 	parse("set bass fx(delay 3 5 0.3) fx(double)");
 	parse(" set a-name ");
+}
+
+function parseKill(){
+	parse("killAll");
+	parse("kill_All");
+	parse("killall");
+	parse("kill_all");
+	parse("kill-all");
+	parse("kill-All");
+	parse("killAll()");
+
+	parse("record(1)");
 }
