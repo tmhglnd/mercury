@@ -34,9 +34,9 @@ function parse(s){
 // parseStrings();
 // parseKeywords();
 // parseRing();
-parseInst();
-// parseSet();
-// parseKill();
+// parseInst();
+parseSet();
+// parseMain();
 
 // Parse numbers
 function parseNumbers(){
@@ -101,18 +101,14 @@ function parseInst(){
 
 function parseSet(){
 	parse("set k amp(0.3)");
-	parse("set bass fx(delay 3 5 0.3) fx(double)");
-	parse(" set a-name ");
+	parse("give bass fx(delay 3 5 0.3) fx(double)");
+	parse("set aname note([0 7 12 3] 2)");
+	parse("set tempo 143");
+	parse("scale(minor_harmonic 23) hi_pass(800)");
+	parse("tempo(143)");
 }
 
-function parseKill(){
-	parse("killAll");
-	parse("kill_All");
-	parse("killall");
-	parse("kill_all");
-	parse("kill-all");
-	parse("kill-All");
+function parseMain(){
 	parse("killAll()");
-
-	parse("record(1)");
+	parse("record(1) killAll()");
 }

@@ -3,7 +3,6 @@
 
 const moo = require("moo");
 const lexer = moo.compile({
-	ws:			/[ \t]+/,
 	comment:	/(?:[\/\/]|[#]|[$]).*?$/,
 	
 	instrument:	{
@@ -13,7 +12,7 @@ const lexer = moo.compile({
 
 	ring:		[/ring\ /, /array\ /, /data\ /],
 	newObject:	[/new\ /, /add\ /],
-	setObject:	[/set\ /, /apply\ /, /send\ /],
+	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
 	number:		/-?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
@@ -30,6 +29,7 @@ const lexer = moo.compile({
 				},
 	
 	identifier:	/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
+	ws:			/[ \t]+/,
 });
 %}
 
@@ -38,13 +38,13 @@ const lexer = moo.compile({
 
 main ->
 	_ statement _
-	{% (d) => d[1] %}
+	{% (d) => { return { "@global" : d[1] }} %}
 	|
 	_ objectStatement _
-	{% (d) => d[1] %}
+	{% (d) => { return { "@object" : d[1] }} %}
 	|
 	_ ringStatement _
-	{% (d) => d[1] %}
+	{% (d) => { return { "@ring" : d[1] }} %}
 
 objectStatement ->
 	%newObject _ %instrument _ name
@@ -65,12 +65,12 @@ objectStatement ->
 		}%}
 	|
 	%setObject _ name __ objExpression
-		{% (d) => {
+		{% (d) => {	
 			return {
-				"@set" : d[4]["@string"],
-				"@args" : d[6]
+				"@set" : d[2]["@string"],
+				"@args" : d[4]
 			}
-		} %}
+		}%}
 
 ringStatement ->
 	%ring _ %identifier __ ringExpression
@@ -93,15 +93,15 @@ statement ->
 	|
 	objExpression
 		{% (d) => d[0] %}
-	|
-	paramElement
-		{% (d) => d[0] %}
+	# |
+	# paramElement
+		# {% (d) => d[0] %}
 
 objExpression ->
-	function
+	paramElement
 		{% (d) => d[0] %}
 	|
-	function __ objExpression
+	paramElement __ objExpression
 		{% (d) => [d[0], d[2]] %}
 
 ringExpression ->
@@ -109,11 +109,11 @@ ringExpression ->
 		{% (d) => d[0] %}
 
 function ->
-	%identifier _ parameterList
+	%identifier parameterList
 		{% (d) => { 
 			return { 
 				"@function": d[0].value,
-				"@params": d[2]
+				"@params": d[1]
 			}
 		}%}
 
@@ -126,7 +126,11 @@ parameterList ->
 
 array ->
 	%lArray _ params _ %rArray
-		{% (d) => d[2] %}
+		{% (d) => {
+			return {
+				"@array" : d[2]
+			}
+		}%}
 
 params ->
 	paramElement

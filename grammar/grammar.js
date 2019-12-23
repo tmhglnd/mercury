@@ -6,7 +6,6 @@ function id(x) { return x[0]; }
 
 const moo = require("moo");
 const lexer = moo.compile({
-	ws:			/[ \t]+/,
 	comment:	/(?:[\/\/]|[#]|[$]).*?$/,
 	
 	instrument:	{
@@ -16,7 +15,7 @@ const lexer = moo.compile({
 
 	ring:		[/ring\ /, /array\ /, /data\ /],
 	newObject:	[/new\ /, /add\ /],
-	setObject:	[/set\ /, /apply\ /, /send\ /],
+	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
 	number:		/-?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
@@ -33,13 +32,14 @@ const lexer = moo.compile({
 				},
 	
 	identifier:	/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
+	ws:			/[ \t]+/,
 });
 var grammar = {
     Lexer: lexer,
     ParserRules: [
-    {"name": "main", "symbols": ["_", "statement", "_"], "postprocess": (d) => d[1]},
-    {"name": "main", "symbols": ["_", "objectStatement", "_"], "postprocess": (d) => d[1]},
-    {"name": "main", "symbols": ["_", "ringStatement", "_"], "postprocess": (d) => d[1]},
+    {"name": "main", "symbols": ["_", "statement", "_"], "postprocess": (d) => { return { "@global" : d[1] }}},
+    {"name": "main", "symbols": ["_", "objectStatement", "_"], "postprocess": (d) => { return { "@object" : d[1] }}},
+    {"name": "main", "symbols": ["_", "ringStatement", "_"], "postprocess": (d) => { return { "@ring" : d[1] }}},
     {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", (lexer.has("instrument") ? {type: "instrument"} : instrument), "_", "name"], "postprocess":  (d) => {
         	return {
         		"@new" : d[2].value,
@@ -53,12 +53,12 @@ var grammar = {
         		"@args" : d[6]
         	}
         }},
-    {"name": "objectStatement", "symbols": [(lexer.has("setObject") ? {type: "setObject"} : setObject), "_", "name", "__", "objExpression"], "postprocess":  (d) => {
+    {"name": "objectStatement", "symbols": [(lexer.has("setObject") ? {type: "setObject"} : setObject), "_", "name", "__", "objExpression"], "postprocess":  (d) => {	
         	return {
-        		"@set" : d[4]["@string"],
-        		"@args" : d[6]
+        		"@set" : d[2]["@string"],
+        		"@args" : d[4]
         	}
-        } },
+        }},
     {"name": "ringStatement", "symbols": [(lexer.has("ring") ? {type: "ring"} : ring), "_", (lexer.has("identifier") ? {type: "identifier"} : identifier), "__", "ringExpression"], "postprocess":  (d) => {
         	return {
         		"@ring" : d[2].value,
@@ -67,19 +67,22 @@ var grammar = {
         } },
     {"name": "statement", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)], "postprocess": (d) => { return { "@comment": d[0].value }}},
     {"name": "statement", "symbols": ["objExpression"], "postprocess": (d) => d[0]},
-    {"name": "statement", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
-    {"name": "objExpression", "symbols": ["function"], "postprocess": (d) => d[0]},
-    {"name": "objExpression", "symbols": ["function", "__", "objExpression"], "postprocess": (d) => [d[0], d[2]]},
+    {"name": "objExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
+    {"name": "objExpression", "symbols": ["paramElement", "__", "objExpression"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "ringExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
-    {"name": "function", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier), "_", "parameterList"], "postprocess":  (d) => { 
+    {"name": "function", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier), "parameterList"], "postprocess":  (d) => { 
         	return { 
         		"@function": d[0].value,
-        		"@params": d[2]
+        		"@params": d[1]
         	}
         }},
     {"name": "parameterList", "symbols": [(lexer.has("lParam") ? {type: "lParam"} : lParam), "_", "params", "_", (lexer.has("rParam") ? {type: "rParam"} : rParam)], "postprocess": (d) => d[2]},
     {"name": "parameterList", "symbols": [(lexer.has("lParam") ? {type: "lParam"} : lParam), "_", (lexer.has("rParam") ? {type: "rParam"} : rParam)], "postprocess": (d) => "empty"},
-    {"name": "array", "symbols": [(lexer.has("lArray") ? {type: "lArray"} : lArray), "_", "params", "_", (lexer.has("rArray") ? {type: "rArray"} : rArray)], "postprocess": (d) => d[2]},
+    {"name": "array", "symbols": [(lexer.has("lArray") ? {type: "lArray"} : lArray), "_", "params", "_", (lexer.has("rArray") ? {type: "rArray"} : rArray)], "postprocess":  (d) => {
+        	return {
+        		"@array" : d[2]
+        	}
+        }},
     {"name": "params", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "params", "symbols": ["paramElement", "_", "params"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "paramElement", "symbols": ["name"], "postprocess": (d) => d[0]},
