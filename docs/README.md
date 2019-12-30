@@ -413,14 +413,14 @@ ring values [3 1 4]
 new emitter osc name(myOSC) time(1/4) 
 	set myOSC someParam(params) anotherParam(values)
 
-// emits =>		/myOSC/someParams 0.25
-				/myOSC/anotherParam 3
-				/myOSC/someParams 0.5
-				/myOSC/anotherParam 1
-				/myOSC/someParams 0.75
-				/myOSC/anotherParam 4
-				/myOSC/someParams 0.25
-				etc...
+// emits =>	/myOSC/someParams 0.25
+            /myOSC/anotherParam 3
+            /myOSC/someParams 0.5
+            /myOSC/anotherParam 1
+            /myOSC/someParams 0.75
+            /myOSC/anotherParam 4
+            /myOSC/someParams 0.25
+            etc...
 ```
 
 ### name
