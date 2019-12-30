@@ -67,7 +67,7 @@
 		"group" : "no_group"
 	}
 ,
-	"ext" : {
+	"emitter" : {
 		"note" : [ 0, 0 ],
 		"beat" : 1,
 		"time" : "1/16",

@@ -43,17 +43,24 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 
 - General Syntax
 	- new
+		- synth
+		- sample
+		- send
 	- ring
 	- set
 	- killAll
 - Global Settings (set)
+	- osc
+		- ip
+		- in
+		- out
 	- tempo
 	- scale
 	- scalar
 	- random_seed
 	- volume
 	- hipass 
-	- lopass 
+	- lopass
 - Synth/Sample Functions (new)
 	- name
 	- group
@@ -64,6 +71,9 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- gain
 	- pan
 	- fx
+- Emitter
+	- OSC
+	- name
 - FX
 	- reverb 
 	- delay 
@@ -92,13 +102,14 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 
 ### new
 
-Create a new instance of an instrument. This can be a sample or a synth followed by the name of the sample or the name of the waveshape to use for the synth. After that functions can set parameters for the instrument
+Create a new instance of an instrument or external output. This can be a sample, a synth or an emitter followed by the name of the sample, the name of the waveshape to use for the synth or the type of output for the emitter (currently only supports osc). After that use functions to set parameters for the object.
 
 ```
-new <synth/sample> <argument> function(arguments)
+new <synth/sample/emitter> <argument> function(arguments)
 
 new synth <saw/sine/triangle/square>
 new sample <sample-filename>
+new emitter osc
 ```
 
 ### ring
@@ -142,6 +153,23 @@ killAll
 ```
 
 ## Global Settings (set)
+
+### osc
+
+Set the ip-address, in-port and out-port number for the network to transmit OSC-messages over using UDP. Default settings are 8000 (in-port), 9000 (out-port), localhost (ip).
+
+```
+set osc (<default> | <in-port> <out-port> <ip-address>)
+```
+```
+set osc default
+
+set osc 8000 9000 127.0.0.1
+
+set osc ip 127.0.0.1
+set osc in 8000
+set osc out 9000
+```
 
 ### tempo
 
@@ -365,6 +393,47 @@ set <name> stretch(<0-1>)
 
 ```
 set <name> offset(<position-in-sample-0-1>)
+```
+
+## emitter
+
+Create an emitter object. Use this object to send messages to other platforms. The emitter objects works similarly to the instruments in the sense that it also has the `time`, `beat`, `name` and `note` functions by default. The `time` determines the time-interval at which messages are send. The `beat` can turn a send moments on or off. See under [Synth/Sample](#synthsample-functions) for further detail.
+
+### osc
+
+Create an emitter object of type `osc`. The `name(<name>)` method is used to set the opening address of the message to `/<name>`. Any arbitrary function name is used to set as second address in the osc-string. If no name is provided it will default to a unique number for every instrument instance.
+
+```
+new emitter osc name(<name>) time(<division><offset>)
+```
+```
+ring params [0.25 0.5 0.75]
+ring values [3 1 4]
+
+new emitter osc name(myOSC) time(1/4) 
+	set myOSC someParam(params) anotherParam(values)
+
+// emits =>		/myOSC/someParams 0.25
+				/myOSC/anotherParam 3
+				/myOSC/someParams 0.5
+				/myOSC/anotherParam 1
+				/myOSC/someParams 0.75
+				/myOSC/anotherParam 4
+				/myOSC/someParams 0.25
+				etc...
+```
+
+### name
+
+Set the name for the OSC emitter. This can be any string of 2 or more characters. The `name` is used as reference to the instrument when the `set` method is used to call methods for a specific object. The `name` is also prepend as first tag in the osc-message of the format `/name/function argument`. 
+
+```
+new <inst> <type> name(<name>)
+```
+```
+new synth saw name(foo)
+new sample kick_909 name(bar)
+	set foo gain(0.8)
 ```
 
 ## fx

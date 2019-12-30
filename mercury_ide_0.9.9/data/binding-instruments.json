@@ -1,6 +1,7 @@
 {
-	"ext" : {
-		"osc" : [ "osc_out", 5 ]
+	"emitter" : {
+		"osc" : [ "osc_out", 5 ],
+		"midi" : [ "midi_out", 6]
 	}
 ,
 	"synth" : 	{

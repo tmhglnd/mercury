@@ -19,9 +19,16 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [Thanks](#thanks)
 - [Licenses](#licenses)
 
-## Newest Features
+## Newest Feature
 
-[x] **new `OSC`-object, output sequences as osc-messages, custom naming of messages in a intuitive way (similar to making instruments).**
+**new `OSC`-object, output sequences as osc-messages, custom naming of messages in a intuitive way (similar to making instruments).**
+
+```
+set osc default
+
+new sender osc name(myOSC) someParam(3.14)
+// result => /myOsc/someParam 3.14
+```
 
 ## About 
 
