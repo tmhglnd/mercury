@@ -41,16 +41,16 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 
 ## Table of Content for Syntax
 
-- General Syntax
-	- new
-		- synth
-		- sample
-		- send
+- [General Syntax](#general-syntax)
+	- [new](#new)
+		- [synth](#synthsample-functions)
+		- [sample](#synthsampl-functions)
+		- [emitter](#emitter)
 	- ring
 	- set
 	- killAll
-- Global Settings (set)
-	- osc
+- [Global Settings (set)](#global-settings-set)
+	- [osc](#osc)
 		- ip
 		- in
 		- out
@@ -61,7 +61,7 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- volume
 	- hipass 
 	- lopass
-- Synth/Sample Functions (new)
+- [Synth/Sample Functions (new)](#synthsample-functions)
 	- name
 	- group
 	- time
@@ -71,10 +71,10 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- gain
 	- pan
 	- fx
-- Emitter
-	- OSC
+- [Emitter](#emitter)
+	- osc
 	- name
-- FX
+- [FX](#fx-1)
 	- reverb 
 	- delay 
 	- filter 
@@ -82,7 +82,7 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- double 
 	- drive 
 	- chip 
-- Ring Methods Generative (ring)
+- [Ring Methods Generative (ring)](#ring-methods-generative)
 	- spread
 	- spreadinclusive 
 	- spreadFloat
@@ -90,7 +90,7 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- random 
 	- randomFloat
 	- euclid 
-- Ring Methods Transformational (ring)
+- [Ring Methods Transformational (ring)](#ring-methods-transformational)
 	- join
 	- thin
 	- palin
@@ -395,7 +395,7 @@ set <name> stretch(<0-1>)
 set <name> offset(<position-in-sample-0-1>)
 ```
 
-## emitter
+## Emitter
 
 Create an emitter object. Use this object to send messages to other platforms. The emitter objects works similarly to the instruments in the sense that it also has the `time`, `beat`, `name` and `note` functions by default. The `time` determines the time-interval at which messages are send. The `beat` can turn a send moments on or off. See under [Synth/Sample](#synthsample-functions) for further detail.
 
@@ -425,16 +425,7 @@ new emitter osc name(myOSC) time(1/4)
 
 ### name
 
-Set the name for the OSC emitter. This can be any string of 2 or more characters. The `name` is used as reference to the instrument when the `set` method is used to call methods for a specific object. The `name` is also prepend as first tag in the osc-message of the format `/name/function argument`. 
-
-```
-new <inst> <type> name(<name>)
-```
-```
-new synth saw name(foo)
-new sample kick_909 name(bar)
-	set foo gain(0.8)
-```
+Set the name for the OSC emitter. This can be any string of 2 or more characters. The `name` is used as reference to the instrument when the `set` method is used to call methods for a specific object. The `name` is also prepended as first address in the osc-message of the format `/<name>/<function> argument`.
 
 ## fx
 
