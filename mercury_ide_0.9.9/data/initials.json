@@ -66,5 +66,12 @@
 		"name" : "no_name",
 		"group" : "no_group"
 	}
-
+,
+	"ext" : {
+		"note" : [ 0, 0 ],
+		"beat" : 1,
+		"time" : "1/16",
+		"name" : "null",
+		"group" : "no_group"
+	}
 }

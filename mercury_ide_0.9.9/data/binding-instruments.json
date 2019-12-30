@@ -1,4 +1,8 @@
 {
+	"ext" : {
+		"osc" : [ "osc_out", 5 ]
+	}
+,
 	"synth" : 	{
 		"saw" : [ "synth_simple", 0 ],
 		"sine" : [ "synth_simple", 0 ],

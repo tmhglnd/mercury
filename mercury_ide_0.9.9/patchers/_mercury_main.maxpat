@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 62.0, 91.0, 401.0, 416.0 ],
+		"rect" : [ 34.0, 79.0, 652.0, 783.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -10642,7 +10642,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 120.0, 221.0, 49.0 ],
-									"text" : "\"Macintosh HD:/Users/timohoogland/Desktop/simple-beat.txt\""
+									"text" : "\"Macintosh HD:/Users/timohoogland/Desktop/dev-code.txt\""
 								}
 
 							}
