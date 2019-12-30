@@ -1,0 +1,33 @@
+
+audio 0
+
+// default settings: 8000 9000 localhost
+set osc default
+
+// specify all: 
+// set osc in-port out-port ip-address
+// set osc 8000 9000 127.0.0.1
+
+// specify specific: 
+// set osc ip 127.0.0.1
+// set osc in 8000
+// set osc out 9000
+
+set tempo 97
+
+set random_seed 8273
+
+ring delay fill(50 8 100 4 200 8 255 2)
+ring fb spread(8 50 200)
+ring fb palin(fb)
+ring lvl [[50 100 100 200]]
+
+// new emitter osc name(<name>) time(<division><offset>) 
+//	set <name> <func>(<arg>)
+
+new emitter osc name(cathedral) time(1/16)
+	set cathedral wet(delay)
+	set cathedral feedback(fb) fxlevel(lvl)
+
+new emitter osc name(canyon) time(1/16 1/8)
+	set canyon feedback(delay)
