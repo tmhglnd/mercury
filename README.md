@@ -6,6 +6,7 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 
 ## Table of Contents
 
+- [Newest Features](#newest-features)
 - [About](#about)
 - [Vision & Goals](#vision--goals)
 - [Install](#install)
@@ -17,6 +18,10 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [Further Reading](#further-reading-and-listening)
 - [Thanks](#thanks)
 - [Licenses](#licenses)
+
+## Newest Features
+
+[x] **new `OSC`-object, output sequences as osc-messages, custom naming of messages in a intuitive way (similar to making instruments).**
 
 ## About 
 
@@ -30,10 +35,11 @@ Mercury is a minimal and human-readable language for the live coding of algorith
 	- algorithmic composition 
 	- sequencing
 	- creative coding and live coding.
-- Providing the artist with an extensive library of algorithmic composition techniques
-	- In the future released as algo-comp.js node package
+- Providing creatives with an extensive library of algorithmic composition techniques
+	- in the future released as algo-comp.js node package
 - Providing creatives with a multi-purpose non-linear-sequencer 
-	- using OSC/MIDI to communicate with other creative-coding platforms
+	- using OSC to communicate with other (creative-coding) platforms
+	- using MIDI to communicate with other environments
 - Providing creatives with easy sampler/synthesis for sounddesign and composing
 	- using external OSC/MIDI to control parameters in the sampler/synthesis
 - Working towards a stand-alone application for MacOS and Windows, making workflow easier

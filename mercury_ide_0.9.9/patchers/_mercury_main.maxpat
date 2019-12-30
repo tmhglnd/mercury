@@ -95,6 +95,18 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 195.0, 90.0, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -243,6 +255,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-209", 0 ],
 									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -8016,12 +8035,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-175",
-					"linecount" : 10,
+					"linecount" : 11,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1570.588852000000088, 1574.0, 150.0, 141.0 ],
-					"text" : "set tempo\nset_tempo\nset random_seed\nset_random_seed\nset scale\nsync_to_scale\nset_scalar\nset scalar\n\nset in"
+					"patching_rect" : [ 1561.673630000000003, 1574.0, 150.0, 154.0 ],
+					"text" : "set tempo\nset_tempo\nset random_seed\nset_random_seed\nset scale\nsync_to_scale\nset_scalar\nset scalar\n\nset_osc ip / in / out\nset osc ip / in / out"
 				}
 
 			}
