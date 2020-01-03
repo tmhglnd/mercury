@@ -5,8 +5,8 @@ const jsonFile = require('jsonfile');
 const Dict = require('./dict.js');
 
 // in/out filenames and relative path
-const file = './function-bindings.json';
-const outFile = './function-bindings-parsed.json';
+const file = './bind-functions.json';
+const outFile = './bind-functions.gen.json';
 
 let binds = new Dict();
 
@@ -20,16 +20,22 @@ jsonFile.readFile(file, (err,obj) => {
 
 		for (var i=0; i<keys.length; i++){
 			for (var k=0; k<obj[keys[i]].length; k++){
-				binds.set(obj[keys[i]][k], keys[i]);
+				var key = obj[keys[i]][k];
+				if (binds.has(key)){
+					console.error('Warning! Duplicate keyword:', key, 
+					"\n at:", binds.get(key), "and:", keys[i], "\n");
+				} else {
+					binds.set(key, keys[i]);
+				}
 			}
 		}
 
-		console.dir(binds.items);
+		console.log(JSON.stringify(binds.items));
 		jsonFile.writeFile(outFile, binds.items, { spaces: 2 }, (err) => {
 			if (err){
 				console.log(err);
 			} else {
-				console.log("conversion completed");
+				console.log("\n conversion completed");
 			}
 		})
 	}

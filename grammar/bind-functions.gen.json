@@ -55,5 +55,8 @@
   "aux": "group",
   "bus": "group",
   "name": "name",
-  "id": "name"
+  "id": "name",
+  "tempo": "tempo",
+  "pace": "tempo",
+  "bpm": "tempo"
 }

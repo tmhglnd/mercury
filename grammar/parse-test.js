@@ -1,7 +1,7 @@
 // parse-test script
+const util = require("util");
 const nearley = require("nearley");
 const grammar = require("./grammar.js");
-const util = require("util");
 
 function parse(s){
 	// create a Parser object from our grammar.
@@ -29,11 +29,16 @@ function parse(s){
 	}
 }
 
+// @global:
 // parseNumbers();
 // parseComments();
 // parseStrings();
 // parseKeywords();
+
+// @ring:
 // parseRing();
+
+// @object:
 // parseInst();
 parseSet();
 // parseMain();
@@ -83,7 +88,7 @@ function parseKeywords(){
 
 function parseRing(){
 	parse("ring myVal  3.14");
-	parse("ring myArr [ 1 2 3.4 56 7.89e10 ]");
+	parse("ring myArr [ 1 2 3.4 56 7.89e1 ]");
 	parse("ring hats [hat_dub hat_dub_open]");
 	parse("ring ring2D [ 1 2 [3 4] 5 [6 [7 8] 9] 10 11 ] ");
 
@@ -100,11 +105,11 @@ function parseInst(){
 }
 
 function parseSet(){
-	parse("set k amp(0.3)");
-	parse("give bass fx(delay 3 5 0.3) fx(double)");
-	parse("set aname note([0 7 12 3] 2)");
-	parse("set tempo 143");
-	parse("scale(minor_harmonic 23) hi_pass(800)");
+	parse("set k gain(0.3)");
+	parse("give bass with_fx(delay 3 5 0.3) fx(double)");
+	parse("set aname pitch([0 7 12 3] 2) shape(1 200) id(newname)");
+	// parse("set tempo 143");
+	// parse("scale(minor_harmonic 23) hi_pass(800)");
 	parse("tempo(143)");
 }
 

@@ -3,8 +3,9 @@
 (function () {
 function id(x) { return x[0]; }
 
+const moo = require('moo');
+const IR = require('./mercuryIR.js');
 
-const moo = require("moo");
 const lexer = moo.compile({
 	comment:	/(?:[\/\/]|[#]|[$]).*?$/,
 	
@@ -61,7 +62,7 @@ var grammar = {
         }},
     {"name": "ringStatement", "symbols": [(lexer.has("ring") ? {type: "ring"} : ring), "_", (lexer.has("identifier") ? {type: "identifier"} : identifier), "__", "ringExpression"], "postprocess":  (d) => {
         	return {
-        		"@ring" : d[2].value,
+        		"@varname" : d[2].value,
         		"@params" : d[4]
         	}
         } },
@@ -70,9 +71,10 @@ var grammar = {
     {"name": "objExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "objExpression", "symbols": ["paramElement", "__", "objExpression"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "ringExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
-    {"name": "function", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier), "parameterList"], "postprocess":  (d) => { 
+    {"name": "function", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier), "parameterList"], "postprocess":  (d) => {
         	return { 
-        		"@function": d[0].value,
+        		"@function": IR.bindFunction(d[0].value),
+        		//"@function": d[0].value,
         		"@params": d[1]
         	}
         }},
@@ -86,7 +88,7 @@ var grammar = {
     {"name": "params", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "params", "symbols": ["paramElement", "_", "params"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "paramElement", "symbols": ["name"], "postprocess": (d) => d[0]},
-    {"name": "paramElement", "symbols": [(lexer.has("number") ? {type: "number"} : number)], "postprocess": (d) => { return { "@number" : Number(d[0].value) }}},
+    {"name": "paramElement", "symbols": [(lexer.has("number") ? {type: "number"} : number)], "postprocess": (d) => { return { "@number" : d[0].value }}},
     {"name": "paramElement", "symbols": ["array"], "postprocess": (d) => d[0]},
     {"name": "paramElement", "symbols": ["function"], "postprocess": (d) => d[0]},
     {"name": "name", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier)], "postprocess": (d) => { return { "@string" : d[0].value }}},

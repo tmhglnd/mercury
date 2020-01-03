@@ -1,5 +1,5 @@
 
-audio 0
+audio 1
 
 // default settings: 8000 9000 localhost
 set osc default

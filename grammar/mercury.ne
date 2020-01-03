@@ -1,7 +1,8 @@
 # TOKENIZER
 @{%
+const moo = require('moo');
+const IR = require('./mercuryIR.js');
 
-const moo = require("moo");
 const lexer = moo.compile({
 	comment:	/(?:[\/\/]|[#]|[$]).*?$/,
 	
@@ -38,13 +39,13 @@ const lexer = moo.compile({
 
 main ->
 	_ statement _
-	{% (d) => { return { "@global" : d[1] }} %}
+		{% (d) => { return { "@global" : d[1] }} %}
 	|
 	_ objectStatement _
-	{% (d) => { return { "@object" : d[1] }} %}
+		{% (d) => { return { "@object" : d[1] }} %}
 	|
 	_ ringStatement _
-	{% (d) => { return { "@ring" : d[1] }} %}
+		{% (d) => { return { "@ring" : d[1] }} %}
 
 objectStatement ->
 	%newObject _ %instrument _ name
@@ -76,7 +77,7 @@ ringStatement ->
 	%ring _ %identifier __ ringExpression
 		{% (d) => {
 			return {
-				"@ring" : d[2].value,
+				"@varname" : d[2].value,
 				"@params" : d[4]
 			}
 		} %}
@@ -110,9 +111,10 @@ ringExpression ->
 
 function ->
 	%identifier parameterList
-		{% (d) => { 
+		{% (d) => {
 			return { 
-				"@function": d[0].value,
+				"@function": IR.bindFunction(d[0].value),
+				//"@function": d[0].value,
 				"@params": d[1]
 			}
 		}%}
@@ -144,7 +146,7 @@ paramElement ->
 		{% (d) => d[0] %}
 	|
 	%number
-		{% (d) => { return { "@number" : Number(d[0].value) }} %}
+		{% (d) => { return { "@number" : d[0].value }} %}
 	|
 	array
 		{% (d) => d[0] %}
