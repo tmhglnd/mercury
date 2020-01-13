@@ -54,6 +54,7 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 		- ip
 		- in
 		- out
+	- [midiclock](#midiclock)
 	- tempo
 	- scale
 	- scalar
@@ -169,6 +170,21 @@ set osc 8000 9000 127.0.0.1
 set osc ip 127.0.0.1
 set osc in 8000
 set osc out 9000
+```
+
+### midiclock
+
+Output midi clock sync message to sync an external device to the tempo of Mercury.
+
+```
+set midiclock getports
+// returns port names in console
+
+set midiclock <port-name>
+// outputs clock-sync to midiport of that name
+
+set midiclock off
+// turn the clock off (default)
 ```
 
 ### tempo
