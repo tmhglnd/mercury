@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1044.0, 783.0 ],
+		"rect" : [ 62.0, 91.0, 401.0, 416.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -156,7 +156,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2", ",", "Volante" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -543,7 +543,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 103.0, 640.0, 480.0 ],
+						"rect" : [ 168.0, 179.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -570,7 +570,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-9",
@@ -28865,8 +28864,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 193.763885333333349, 1414.0, 92.0, 22.0 ],
-					"text" : "route new killAll"
+					"patching_rect" : [ 193.763885333333349, 1414.0, 91.0, 22.0 ],
+					"text" : "route new killall"
 				}
 
 			}
@@ -31348,13 +31347,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "gtep.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "calcExpr.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
 				"patcherrelativepath" : ".",
@@ -31392,6 +31384,13 @@
 				"name" : "th.yafr~.maxpat",
 				"bootpath" : "~/Documents/Max 7/Library/abstractions/reverb-yafr-mods/patchers",
 				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/reverb-yafr-mods/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "gtep.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}

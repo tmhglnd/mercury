@@ -14,7 +14,7 @@ set midiclock 4
 // set osc ip 127.0.0.1
 // set osc in 8000
 // set osc out 9000
-
+audio 1
 set tempo 80
 
 ring updown spread(32 127 255)
@@ -26,8 +26,8 @@ ring line spread(5 0 12)
 ring line palin(line)
 ring line clone(line 0 0 7 5)
 
-new sample kick_dub time(1/4) gain(2) pan(-1)
-new synth saw time(1/16) name(sawy) note(line 0) pan(1) shape(1 280) name(ld)
+// new sample kick_dub time(1/4) gain(2) pan(-1)
+new synth saw time(2) note(0 0) gain(1) shape(1000 1000 1)
 
 // new emitter osc name(canyon)
 	// set canyon time(1/4) delay(updown)
