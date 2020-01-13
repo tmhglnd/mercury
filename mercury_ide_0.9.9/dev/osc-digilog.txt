@@ -1,0 +1,21 @@
+
+audio 1
+set osc default
+
+// specify all: 
+// set osc in-port out-port ip-address
+// set osc 8000 9000 127.0.0.1
+
+// specify specific: 
+// set osc ip 127.0.0.1
+// set osc in 8000
+// set osc out 9000
+
+set tempo 120
+
+ring updown spread(32 127 255)
+ring updown palin(updown)
+
+new emitter osc name(canyon) 
+	set canyon time(1/4) delay(updown)
+
