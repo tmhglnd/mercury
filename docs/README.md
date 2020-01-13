@@ -427,6 +427,29 @@ new emitter osc name(myOSC) time(1/4)
 
 Set the name for the OSC emitter. This can be any string of 2 or more characters. The `name` is used as reference to the instrument when the `set` method is used to call methods for a specific object. The `name` is also prepended as first address in the osc-message of the format `/<name>/<function> argument`.
 
+### address
+
+Alternatively, if you want multiple emitters to send to the same address, you can use the `address()` method. The `address` is prepended as first address in the osc-message in the format: `/<address>/<function> argument`. Useful if you want to send messages to the same address, but with different timing-intervals.
+
+```
+ring params [0.25 0.5 0.75]
+ring values [3 1 4]
+
+new emitter osc name(osc1) address(myOSC) time(1/4) 
+	set osc1 someParam(params)
+
+new emitter osc name(osc2) address(myOSC) time(1/2)
+	set osc2 anotherParam(values)
+
+// emits => /myOSC/someParams 0.25
+            /myOSC/someParams 0.5
+			/myOSC/anotherParam 3
+            /myOSC/someParams 0.75
+            /myOSC/someParams 0.25
+			/myOSC/anotherParam 1
+            etc...
+```
+
 ## fx
 
 ### reverb
