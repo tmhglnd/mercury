@@ -2,6 +2,10 @@
 audio 1
 set osc default
 
+set midiclock getports
+set midiclock 4
+// set midiclock volante
+
 // specify all: 
 // set osc in-port out-port ip-address
 // set osc 8000 9000 127.0.0.1
@@ -11,7 +15,7 @@ set osc default
 // set osc in 8000
 // set osc out 9000
 
-set tempo 120
+set tempo 80
 
 ring updown spread(32 127 255)
 ring updown palin(updown)
@@ -22,10 +26,11 @@ ring line spread(5 0 12)
 ring line palin(line)
 ring line clone(line 0 0 7 5)
 
-new synth saw time(1/16) name(sawy) note(line 0)
+new sample kick_dub time(1/4) gain(2) pan(-1)
+new synth saw time(1/16) name(sawy) note(line 0) pan(1) shape(1 280) name(ld)
 
-new emitter osc name(canyon)
-	set canyon time(1/4) delay(updown)
+// new emitter osc name(canyon)
+	// set canyon time(1/4) delay(updown)
 
 // new emitter osc name(cn2)
 	// set cn2 time(1) feedback(125)
