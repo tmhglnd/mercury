@@ -443,10 +443,10 @@ new emitter osc name(osc2) address(myOSC) time(1/2)
 
 // emits => /myOSC/someParams 0.25
             /myOSC/someParams 0.5
-			/myOSC/anotherParam 3
+            /myOSC/anotherParam 3
             /myOSC/someParams 0.75
             /myOSC/someParams 0.25
-			/myOSC/anotherParam 1
+            /myOSC/anotherParam 1
             etc...
 ```
 
