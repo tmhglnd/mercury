@@ -16,6 +16,14 @@ set tempo 120
 ring updown spread(32 127 255)
 ring updown palin(updown)
 
+set scale minor_harmonic
+
+ring line spread(5 0 12)
+ring line palin(line)
+ring line clone(line 0 0 7 5)
+
+new synth saw time(1/16) name(sawy) note(line 0)
+
 new emitter osc name(canyon)
 	set canyon time(1/4) delay(updown)
 

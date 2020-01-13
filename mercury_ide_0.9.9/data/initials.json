@@ -16,7 +16,8 @@
 		"deep" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
-		"detune" : 0
+		"detune" : 0,
+		"sendOSC" : 0
 	}
 ,
 	"poly_synth" : 	{
@@ -36,7 +37,8 @@
 		"deep" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
-		"detune" : 0
+		"detune" : 0,
+		"sendOSC" : 0
 	}
 ,
 	"sample" : 	{
@@ -50,7 +52,8 @@
 		"pan" : 0,
 		"offset" : 0,
 		"name" : "no_name",
-		"group" : "no_group"
+		"group" : "no_group",
+		"sendOSC" : 0
 	}
 ,
 	"loop" : 	{
@@ -64,7 +67,8 @@
 		"pan" : 0,
 		"offset" : 0,
 		"name" : "no_name",
-		"group" : "no_group"
+		"group" : "no_group",
+		"sendOSC" : 0
 	}
 ,
 	"emitter" : {
@@ -72,6 +76,7 @@
 		"beat" : 1,
 		"time" : "1/16",
 		"name" : "null",
-		"group" : "no_group"
+		"group" : "no_group",
+		"sendOSC" : 1
 	}
 }
