@@ -323,14 +323,20 @@ Alternative function-names: `rhythm() | b()`
 
 ### shape
 
-Set the attack and release time of a sound. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds.
+Set the envelope generator of a sound. Various modes are possible depending on the amount of arguments. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds. The sustain time holds the sound at a static volume for a while.
 
 ```
-set <name> shape(<attack> <release>)
+set <name> shape(<attack> <sustain> <release>)
 ```
 ```
-new synth saw name(lead)
-	set lead shape(5 150) time(3/16)
+new synth saw shape(1500) time(3/16)
+//=> default attack of 2 ms, sustain of 0 ms and a release of 1500 ms
+
+new synth saw shape(1000 250) time(3/16)
+//=> attack of 1000 ms, default sustain of 0 ms and a release of 250 ms
+
+new synth saw shape(10 500 50) time(3/16)
+//=> attack of 10 ms, sustain of 500 ms and a release of 50 ms
 ```
 
 Alternative function-names: `envelope() | env() | transient() | e()`
