@@ -16,6 +16,10 @@ set tempo 120
 ring updown spread(32 127 255)
 ring updown palin(updown)
 
-new emitter osc name(canyon) 
+new emitter osc name(canyon)
 	set canyon time(1/4) delay(updown)
 
+// new emitter osc name(cn2)
+	// set cn2 time(1) feedback(125)
+
+killAll
