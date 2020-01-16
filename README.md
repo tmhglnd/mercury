@@ -73,12 +73,22 @@ Read the [system requirements](#system-requirements) first before getting starte
 
 ```
 1. Download zip and unpack in ~/Documents/Max 8/Projects
+```
+if Projects folder does not exist, make new folder under ~/Documents/Max 8
+```
 2. Open mercury_ide_v.x.x.maxproj
 ```
+**on the commandline:**
 ```
-1. $ cd ~/Documents/Max 8/Projects
-2. $ git clone http://github.com/tmhglnd/mercury
-3. $ open mercury_ide_v.x.x.maxproj
+$ cd ~/Documents/Max 8/Projects
+$ git clone http://github.com/tmhglnd/mercury
+$ open mercury_ide_v.x.x.maxproj
+```
+if Projects folder does not exist:
+```
+$ cd ~/Documents/Max 8/
+$ mkdir Projects
+$ cd ~/Projects
 ```
 
 ### Getting Started
