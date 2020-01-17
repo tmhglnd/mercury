@@ -1,7 +1,7 @@
 {
-	"emitter" : {
+	"emitter" : 	{
 		"osc" : [ "osc_out", 5 ],
-		"midi" : [ "midi_out", 6]
+		"midi" : [ "midi_out", 6 ]
 	}
 ,
 	"synth" : 	{
@@ -14,6 +14,7 @@
 	}
 ,
 	"sample" : 	{
+		"amenbreak" : [ "sampler", 1 ],
 		"clap_909" : [ "sampler", 1 ],
 		"clap_min" : [ "sampler", 1 ],
 		"hat_909" : [ "sampler", 1 ],
@@ -63,6 +64,7 @@
 	}
 ,
 	"loop" : 	{
+		"amenbreak" : [ "sampler", 1 ],
 		"clap_909" : [ "sampler", 1 ],
 		"clap_min" : [ "sampler", 1 ],
 		"hat_909" : [ "sampler", 1 ],
