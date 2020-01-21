@@ -42,7 +42,6 @@
 	}
 ,
 	"sample" : 	{
-		"note" : [ 0, 0 ],
 		"speed" : 1,
 		"amp" : 1,
 		"beat" : 1,
@@ -57,7 +56,6 @@
 	}
 ,
 	"loop" : 	{
-		"note" : [ 0, 0 ],
 		"speed" : 1,
 		"amp" : 0.6,
 		"beat" : 1,
@@ -72,7 +70,6 @@
 	}
 ,
 	"emitter" : {
-		"note" : [ 0, 0 ],
 		"beat" : 1,
 		"time" : "1/16",
 		"name" : "null",

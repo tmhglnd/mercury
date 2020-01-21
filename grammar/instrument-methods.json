@@ -1,0 +1,67 @@
+{
+	"emitter" : [
+		"name",
+		"address",
+		"group",
+		"time",
+		"beat"
+	],
+
+	"synth" : [
+		"amp",
+		"beat",
+		"env",
+		"note",
+		"time",
+		"pan",
+		"slide",
+		"sub",
+		"add_fx",
+		"res",
+		"wave2",
+		"group",
+		"name"
+	],
+
+	"poly_synth" : [
+		"amp",
+		"beat",
+		"env",
+		"note",
+		"time",
+		"pan",
+		"slide",
+		"sub",
+		"add_fx",
+		"res",
+		"wave2",
+		"group",
+		"name"
+	],
+
+	"sample" : [
+		"amp",
+		"beat",
+		"env",
+		"time",
+		"pan",
+		"speed",
+		"add_fx",
+		"stretch",
+		"group",
+		"name"
+	],
+	
+	"loop" : [
+		"amp",
+		"beat",
+		"env",
+		"time",
+		"pan",
+		"speed",
+		"add_fx",
+		"stretch",
+		"group",
+		"name"
+	]
+}

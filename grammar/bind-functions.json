@@ -80,7 +80,7 @@
 
 	"stretch" : [
 		"stretch",
-		"beathstretch",
+		"beatstretch",
 		"loop"
 	],
 
@@ -105,5 +105,11 @@
 		"tempo",
 		"pace",
 		"bpm"
+	],
+
+	"address" : [
+		"address",
+		"tag",
+		"url"
 	]
 }
