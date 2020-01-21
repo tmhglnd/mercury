@@ -72,23 +72,17 @@ Read the [system requirements](#system-requirements) first before getting starte
 3. Download, clone or fork Mercury
 
 ```
-1. Download zip and unpack in ~/Documents/Max 8/Projects
+1. Download zip and unpack in ~/Documents/Max 8/Projects (create Projects folder if necessary)
+2. Open mercury_ide_x.x.x.maxproj
 ```
-if Projects folder does not exist, make new folder under ~/Documents/Max 8
+commandline:
 ```
-2. Open mercury_ide_v.x.x.maxproj
-```
-**on the commandline:**
-```
-$ cd ~/Documents/Max 8/Projects
+$ cd ~/Documents/Max\ 8/Projects
+    if not a directory, first: 
+    $ mkdir ~/Documents/Max\ 8/Projects
+    $ cd ~/Documents/Max\ 8/Projects
+
 $ git clone http://github.com/tmhglnd/mercury
-$ open mercury_ide_v.x.x.maxproj
-```
-if Projects folder does not exist:
-```
-$ cd ~/Documents/Max 8/
-$ mkdir Projects
-$ cd ~/Projects
 ```
 
 ### Getting Started
@@ -125,7 +119,9 @@ Microsoft Windows 10 Home
 
 `Optional`
 
-The Cycling'74 Coding environment is needed to build the application from the `mercury_ide_x.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window. *Building the Application is not necessary in order to run the environment!*
+**Why?** - Building the Application is recommended when using Mercury with other MaxMSP projects. This will allow Mercury to have a seperate thread from the other Max processes, giving it enough RAM and CPU space. Also the application will probably run more stable because the project can not be editted anymore. This, of course, also dependents on your systems specifications.
+
+**How?** - The Cycling'74 Coding environment is needed to build the application from the `mercury_ide_x.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window. *Building the Application is not necessary in order to run the environment!*
 
 ### Documentation
 
@@ -150,6 +146,7 @@ The Cycling'74 Coding environment is needed to build the application from the `m
 - Mercury has been granted funding from [**Creative Industries Fund NL**](https://stimuleringsfonds.nl/en/)
 - Mercury has been granted in-kind funding from [**Creative Coding Utrecht**](https://creativecodingutrecht.nl/)
 - Roald van Dillewijn for working together on osc and midi functionalities combined with his [Digilog modified guitar-pedals](https://roaldvandillewijn.nl/projects/digilog)
+- Guillem Gongora Moral for using Mercury as a composition tool and sharing valuable feedback in the process
 
 ## Licenses
 
