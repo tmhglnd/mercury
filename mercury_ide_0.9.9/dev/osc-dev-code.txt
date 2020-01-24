@@ -32,17 +32,17 @@ new emitter osc name(c) t(1/8)
 // new emitter osc name(canyon) time(1/16 1/8)
 	// set canyon feedback(delay)
 
-// new sample snare_dub name(sn) speed(0.5)
-	// set sn time(1/2) fx(reverb 1 2)
-	// set sn speed(1)
+new sample snare_dub name(sn) speed(0.5)
+	set sn time(1/2) fx(reverb 1 2)
+	set sn speed(1)
 
-// new synth square time(1/16) note(0 0) shape(1 110 1) name(s)
-	// set s fx(filter low 5 1500 200 0.4) fx(double)
+new synth square time(1/16) note(0 0) shape(1 110 1) name(s)
+	set s fx(filter low 5 1500 200 0.4) fx(double)
 
-// new sample kick_dub time(1/4) gain(1) name(k)
-	// set k fx(delay 5/16 2/16 0.9)
+new sample kick_dub time(1/4) gain(1) name(k)
+	set k fx(delay 5/16 2/16 0.9)
 
-// ring ht [1 0 1 0.2 1 0.5 1 0.7]
-// new sample hat_dub time(1/32 1/8) vol(0.8) b(ht 1/16) rate(0.9)
+ring ht [1 0 1 0.2 1 0.5 1 0.7]
+new sample hat_dub time(1/32 1/8) vol(0.8) b(ht 1) rate(0.9)
 
 killall

@@ -19,6 +19,7 @@ const lexer = moo.compile({
 	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
+	seperator:	/[\,\;]/,
 	number:		/-?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
 	operator:	/[\+\-\*\/]/,
 
@@ -67,7 +68,10 @@ var grammar = {
         	}
         } },
     {"name": "statement", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)], "postprocess": (d) => { return { "@comment": d[0].value }}},
-    {"name": "statement", "symbols": ["objExpression"], "postprocess": (d) => d[0]},
+    {"name": "statement$ebnf$1", "symbols": [(lexer.has("seperator") ? {type: "seperator"} : seperator)], "postprocess": id},
+    {"name": "statement$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
+    {"name": "statement", "symbols": ["objExpression", "_", "statement$ebnf$1"], "postprocess": (d) => d[0]},
+    {"name": "statement", "symbols": ["objExpression", "_", (lexer.has("seperator") ? {type: "seperator"} : seperator), "_", "statement"], "postprocess": (d) => [d[0], d[4]]},
     {"name": "objExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "objExpression", "symbols": ["paramElement", "__", "objExpression"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "ringExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},

@@ -30,17 +30,18 @@ function parse(s){
 }
 
 // @global:
-// parseNumbers();
+parseNumbers();
 // parseComments();
 // parseStrings();
 // parseKeywords();
+parseSettings();
 
 // @ring:
 // parseRing();
 
 // @object:
 // parseInst();
-parseSet();
+// parseSet();
 // parseMain();
 
 // Parse numbers
@@ -50,6 +51,7 @@ function parseNumbers(){
 	parse("-56");
 	parse("7.89");
 	parse("1.0111213141E5");
+	parse("12, 34, -56, 7.89;");
 	// parse("1 + 2 / 4");
 }
 
@@ -102,6 +104,14 @@ function parseInst(){
 	parse("new sample kick_dub time(0.25 0.5) speed(0.9) ");
 	parse("new loop amen-break02 speed(-0.8)");
 	parse("new poly_synth triangle");
+}
+
+function parseSettings(){
+	parse("killall");
+	parse("audio 1, record 1, tempo 143 1000");
+	// parse("tempo(143 15000) scale(minor-harmonic dis) random-seed(5372)")
+	// parse("set tempo 143 15000 ");
+	// parse("set tempo(143)");
 }
 
 function parseSet(){

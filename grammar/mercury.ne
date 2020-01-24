@@ -16,6 +16,7 @@ const lexer = moo.compile({
 	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
+	seperator:	/[\,\;]/,
 	number:		/-?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
 	operator:	/[\+\-\*\/]/,
 
@@ -34,7 +35,7 @@ const lexer = moo.compile({
 });
 %}
 
-# # Pass your lexer object using the @lexer option:
+# Pass your lexer object using the @lexer option:
 @lexer lexer
 
 main ->
@@ -85,18 +86,12 @@ ringStatement ->
 statement ->
 	%comment
 		{% (d) => { return { "@comment": d[0].value }} %}
-	# |
-	# %identifier
-		# {% (d) => { return { "@key": d[0].value }} %}
-	# |
-	# %kill
-		# {% (d) => { return { "@func": "kill" }} %}
 	|
-	objExpression
+	objExpression _ %seperator:?
 		{% (d) => d[0] %}
-	# |
-	# paramElement
-		# {% (d) => d[0] %}
+	|
+	objExpression _ %seperator _ statement
+		{% (d) => [d[0], d[4]] %}
 
 objExpression ->
 	paramElement
