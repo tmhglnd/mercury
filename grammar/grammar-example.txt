@@ -8,24 +8,44 @@ killall
 audio on, record on, tempo 143
 audio(1) record(1)
 
-// set function
-set audio bool
-set record bool
-set tempo number number
-set scale string string/number
-set root string/number
-set osc string number number
+// // set function
+// set audio bool
+// set record bool
+// set tempo number number
+// set scale string string/number
+// set root string/number
+// set osc string number number
 
-set audio(bool)
-set record(bool)
-set tempo(number number)
-set scale(string string/number)
-set root(string/number)
-set osc(string number number)
+// set audio(bool)
+// set record(bool)
+// set tempo(number number)
+// set scale(string string/number)
+// set root(string/number)
+// set osc(string number number)
 
 // variables
-ring myVar 0
-ring myVar [0 1 2.3]
-ring myVar [0 1 [2 3] 4 [5 6 7]]
+ring name 0
+ring name [0 1 2.3]
+ring name [0 1 [2 3] 4 [5 6 7]]
+ring name func(args)
+ring name func(funct(args func(args)))
+ring name [0 1 func(args) 2]
 
-give bass note(0 0) fx(reverb 0.9 11)
+ring name [], name [], (...)
+
+// // 
+// give bass note(0 0) fx(reverb 0.9 11)
+
+// // OBJECT / INSTRUMENTS
+// new synth saw
+// new sample kick
+// new emitter osc
+// new emitter midi
+// new osc address
+// new midi channel
+
+// new synth(saw)
+// new sample(kick)
+// new osc(name)
+// new midi(channel)
+

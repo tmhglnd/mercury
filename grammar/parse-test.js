@@ -34,7 +34,7 @@ parseNumbers();
 // parseComments();
 // parseStrings();
 // parseKeywords();
-parseSettings();
+// parseSettings();
 
 // @ring:
 // parseRing();

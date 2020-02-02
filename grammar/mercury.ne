@@ -40,13 +40,17 @@ const lexer = moo.compile({
 
 main ->
 	_ statement _
-		{% (d) => { return { "@global" : d[1] }} %}
+		{% (d) => d[1] %}
+
+statement ->
+	_ globalStatement _
+		{% (d) => d[1] %}
 	|
 	_ objectStatement _
-		{% (d) => { return { "@object" : d[1] }} %}
+		{% (d) => d[1] %}
 	|
 	_ ringStatement _
-		{% (d) => { return { "@ring" : d[1] }} %}
+		{% (d) => d[1] %}
 
 objectStatement ->
 	%newObject _ %instrument _ name
@@ -83,9 +87,12 @@ ringStatement ->
 			}
 		} %}
 
-statement ->
+globalStatement ->
 	%comment
 		{% (d) => { return { "@comment": d[0].value }} %}
+	|
+	objExpression
+		{% (d) => d[0] %}
 	|
 	objExpression _ %seperator:?
 		{% (d) => d[0] %}

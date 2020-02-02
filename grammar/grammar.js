@@ -39,9 +39,10 @@ const lexer = moo.compile({
 var grammar = {
     Lexer: lexer,
     ParserRules: [
-    {"name": "main", "symbols": ["_", "statement", "_"], "postprocess": (d) => { return { "@global" : d[1] }}},
-    {"name": "main", "symbols": ["_", "objectStatement", "_"], "postprocess": (d) => { return { "@object" : d[1] }}},
-    {"name": "main", "symbols": ["_", "ringStatement", "_"], "postprocess": (d) => { return { "@ring" : d[1] }}},
+    {"name": "main", "symbols": ["_", "statement", "_"], "postprocess": (d) => d[1]},
+    {"name": "statement", "symbols": ["_", "globalStatement", "_"], "postprocess": (d) => d[1]},
+    {"name": "statement", "symbols": ["_", "objectStatement", "_"], "postprocess": (d) => d[1]},
+    {"name": "statement", "symbols": ["_", "ringStatement", "_"], "postprocess": (d) => d[1]},
     {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", (lexer.has("instrument") ? {type: "instrument"} : instrument), "_", "name"], "postprocess":  (d) => {
         	return {
         		"@new" : d[2].value,
@@ -67,11 +68,12 @@ var grammar = {
         		"@params" : d[4]
         	}
         } },
-    {"name": "statement", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)], "postprocess": (d) => { return { "@comment": d[0].value }}},
-    {"name": "statement$ebnf$1", "symbols": [(lexer.has("seperator") ? {type: "seperator"} : seperator)], "postprocess": id},
-    {"name": "statement$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
-    {"name": "statement", "symbols": ["objExpression", "_", "statement$ebnf$1"], "postprocess": (d) => d[0]},
-    {"name": "statement", "symbols": ["objExpression", "_", (lexer.has("seperator") ? {type: "seperator"} : seperator), "_", "statement"], "postprocess": (d) => [d[0], d[4]]},
+    {"name": "globalStatement", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)], "postprocess": (d) => { return { "@comment": d[0].value }}},
+    {"name": "globalStatement", "symbols": ["objExpression"], "postprocess": (d) => d[0]},
+    {"name": "globalStatement$ebnf$1", "symbols": [(lexer.has("seperator") ? {type: "seperator"} : seperator)], "postprocess": id},
+    {"name": "globalStatement$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
+    {"name": "globalStatement", "symbols": ["objExpression", "_", "globalStatement$ebnf$1"], "postprocess": (d) => d[0]},
+    {"name": "globalStatement", "symbols": ["objExpression", "_", (lexer.has("seperator") ? {type: "seperator"} : seperator), "_", "statement"], "postprocess": (d) => [d[0], d[4]]},
     {"name": "objExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "objExpression", "symbols": ["paramElement", "__", "objExpression"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "ringExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
