@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 62.0, 91.0, 401.0, 416.0 ],
+		"rect" : [ 34.0, 80.0, 652.0, 783.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -28821,13 +28821,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ],
+							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
-							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ],
-							"parameter_shortname" : "volume"
+							"parameter_longname" : "volume"
 						}
 
 					}
@@ -28845,8 +28845,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 165.263885333333349, 1658.0, 126.999970000000019, 22.0 ],
-					"text" : "poly~ soundObject 10"
+					"patching_rect" : [ 165.263885333333349, 1658.0, 189.0, 22.0 ],
+					"text" : "poly~ soundObject 10 @parallel 1"
 				}
 
 			}
