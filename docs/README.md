@@ -419,18 +419,18 @@ set <name> offset(<position-in-sample-0-1>)
 
 ## Emitter
 
-Create an emitter object. Use this object to send messages to other platforms. The emitter objects works similarly to the instruments in the sense that it also has the `time`, `beat`, `name` and `note` functions by default. The `time` determines the time-interval at which messages are send. The `beat` can turn a send moments on or off. See under [Synth/Sample](#synthsample-functions) for further detail.
+Create an emitter object. Use this object to send messages to other platforms. The emitter objects works similarly to the instruments in the sense that it also has the `time`, `beat` and `name` functions by default. The `time` determines the time-interval at which messages are send. The `beat` can turn send moments on or off. See under [Synth/Sample](#synthsample-functions) for further detail.
 
 ### osc
 
-Create an emitter object of type `osc`. The `name(<name>)` method is used to set the opening address of the message to `/<name>`. Any arbitrary function name is used to set as second address in the osc-string. If no name is provided it will default to a unique number for every instrument instance.
+Create an emitter object of type `osc`. The `name(<name>)` method is used to set the opening address of the message to `/<name>`. Any arbitrary function name is used to set as second address in the osc-string. If no name is provided it will default to a unique number for every instrument instance. By adding other functions with any arbitrary name you can send a message with the address in the form of `/<name>/<function> <arguments>`
 
 ```
 new emitter osc name(<name>) time(<division><offset>)
 ```
 ```
 ring params [0.25 0.5 0.75]
-ring values [3 1 4]
+ring values [3 1]
 
 new emitter osc name(myOSC) time(1/4) 
 	set myOSC someParam(params) anotherParam(values)
@@ -440,8 +440,24 @@ new emitter osc name(myOSC) time(1/4)
             /myOSC/someParams 0.5
             /myOSC/anotherParam 1
             /myOSC/someParams 0.75
-            /myOSC/anotherParam 4
+            /myOSC/anotherParam 3
             /myOSC/someParams 0.25
+            etc...
+```
+
+The messages also support multiple arguments up to a length of 256. Multiple arguments can be provided as rings, symbols, floats or integers.
+
+```
+ring val1 [0.25 0.5 0.75]
+ring val2 [3 1]
+
+new emitter osc name(myOSC) time(1/4)
+	set myOSC aMessage(0.1 val1 val2 100)
+
+// emits => /myOSC/aMessage 0.1 0.25 3 100
+            /myOSC/aMessage 0.1 0.5 1 100
+            /myOSC/aMessage 0.1 0.75 3 100
+            /myOSC/aMessage 0.1 0.25 1 100
             etc...
 ```
 
