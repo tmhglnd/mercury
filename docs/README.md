@@ -115,7 +115,7 @@ new emitter osc
 
 ### ring
 
-Create a circular array, named a ring. This ring can hold integers, floats, symbols and arrays (2D). Use these to change parameters over time for functions. The `ring` must be declared with a name before the line before it can be used as an variable in an instrument function.
+Create a circular array, named a ring. This ring can hold integers, floats, symbols and arrays (2D). Use these to change parameters over time for functions. The `ring` must be declared with a name before the line before it can be used as an variable in an instrument function. 
 
 ```
 ring <name> [v0 v1 v2 ... v-n] 
@@ -124,6 +124,8 @@ ring someInts [0 10 20 30]
 ring someFloats [1.618 3.1415]
 ring twoDimensional [0 1 [2 3] 4 [5 6 7]]
 ```
+
+**Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
 
 ### set
 
@@ -460,6 +462,8 @@ new emitter osc name(myOSC) time(1/4)
             /myOSC/aMessage 0.1 0.25 1 100
             etc...
 ```
+
+**Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
 
 ### name
 
