@@ -35,6 +35,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 Use the set function to change Global Settings or call functions for an instrument-instance `name`, `group` or `all`. The instrument must be declared with a `name()` or `group()` before the `set` is called.
 
+For global settings:
 ```
 set <global_setting> <arguments>
 ```
@@ -46,6 +47,7 @@ set scale pentatonic_major D
 set random_seed 9876
 ```
 
+Or for using with instruments:
 ```
 set <named-instrument> function(arguments)
 ```
