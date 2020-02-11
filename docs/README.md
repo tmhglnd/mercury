@@ -63,16 +63,22 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- [osc](./01-global.md#osc)
 	- [midiClock](./01-global.md#midiclock)
 
-- [Synth/Sample Functions (new)](./02-instrument.md)
-	- name
-	- group
-	- time
-	- note
-	- beat
-	- shape
-	- gain
-	- pan
-	- fx
+- [Synth/Sample Functions](./02-instrument.md)
+	- [name](./02-instrument.md#name)
+	- [group](./02-instrument.md#group)
+	- [time](./02-instrument.md#time)
+	- [beat](./02-instrument.md#beat)
+	- [shape](./02-instrument.md#shape)
+	- [gain](./02-instrument.md#gain)
+	- [pan](./02-instrument.md#pan)
+	- [fx](./02-instrument.md#fx)
+	- Synth only
+		- [note](./02-instrument.md#note)
+		- [wave2](./02-instrument.md#wave2)
+	- Sample only
+		- [speed](./02-instrument.md#speed)
+		- [stretch](./02-instrument.md#stretch)
+		- [offset](./02-instrument.md#offset)
 
 - [Emitter](#emitter)
 	- osc
