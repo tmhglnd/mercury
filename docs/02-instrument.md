@@ -154,7 +154,7 @@ The currently available effects are:
 
 Alternative function-names: `effect() | with_fx() | add_fx()`
 
-# synth / polySynth ONLY
+# synth only
 
 ## note
 
@@ -190,7 +190,7 @@ example
 new synth saw note(0 1) time(1/4) wave2(square 0.998)
 ```
 
-# Sample / Loop ONLY
+# Sample only
 
 ## speed
 
