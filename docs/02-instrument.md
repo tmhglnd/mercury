@@ -58,10 +58,21 @@ set <name> beat(<ring> <reset>)
 ```
 example
 ```
-ring aBeat [1 0 0.2 1 0.5]
+ring aBeat [1 0 0 1 0 1 1 0 0]
 
 new sample hat_909 name(ht)
 	set ht time(1/16) beat(aBeat 2)
+```
+
+Alternatively you can use floating-point values in a ring which result in a probability that the instrument will play. Here 0 means 0% chance, 1=100% and 0.5 is 50%. Inspired by Nick Collins paper on [Algorithmic Composition Methods for Breakbeat Science](https://www.dmu.ac.uk/documents/technology-documents/research/mtirc/nowalls/mww-collins.pdf).
+
+example
+```
+ring aBeat [1 0.5 0.2 0.8 0.5]
+
+new sample hat_909 name(ht)
+	set ht time(1/16) beat(aBeat 2)
+new sample kick_909 time(1/4)
 ```
 
 Alternative function-names: `rhythm() | b()`
@@ -71,8 +82,9 @@ Alternative function-names: `rhythm() | b()`
 Set the envelope generator of a sound. Various modes are possible depending on the amount of arguments. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds. The sustain time holds the sound at a static volume for a while. If the sound is triggered before the end of the envelope, the envelope is canceled, faded to 0 in 1ms and starts over.
 
 ```
-set <name> shape(<attack> <sustain> <release>)
+set <name> shape(<attack, optional (default=2)> <sustain, optional (default=0)> <release>)
 ```
+example
 ```
 new synth saw shape(1500) time(1)
 //=> default attack of 2 ms, sustain of 0 ms and a release of 1500 ms
@@ -93,6 +105,7 @@ Set the volume for the instrument in floating-point amplitude. Where `1` is the 
 ```
 set <name> gain(<amplitude>)
 ```
+example
 ```
 new sample snare_909 name(sn)
 	set sn gain(0.8)
@@ -102,11 +115,12 @@ Alternative function-names: `amp() | volume() | g() | a() | v()`
 
 ## pan
 
-Set the panning position in floating-point for the sound over the stereo-image. `-1` is 100% left, `0` is center, `1` is 100% right. Higher or lower values wrap between -1 and 1. Provide pan with `random` to get a new random panning value every count of the `time()`.
+Set the panning position in floating-point for the sound in the stereo-image. `-1` is 100% left channel, `0` is center (both speakers), `1` is 100% right channel. Higher or lower values wrap between -1 and 1. Provide pan with the `random` argument to get a new random panning value every moment of the `time()` counter.
 
 ```
 set <name> pan(<position>)
 ```
+example
 ```
 new sample clap_909 name(hand)
 	set hand pan(random)
@@ -116,48 +130,94 @@ Alternative function-names: `panning() | p()`
 
 ## fx
 
-Apply an effect to the sound of the instrument. The first argument is always the fx-name as a string. The arguments depend on the chosen effect. All effects are listed under FX.
+Apply an effect to the sound of the instrument. The first argument is always the fx-name. The following arguments depend on the used effect.
 
 ```
 set <name> fx(<fxname> <arg1> <arg2> ... <arg-n>)
 ```
+example
 ```
 new synth square name(bass)
 	set bass fx(double)
 ```
 
+The currently available effects are:
+```
+- chip
+- delay
+- double
+- drive
+- filter
+- lfo
+- reverb
+```
+
 Alternative function-names: `effect() | with_fx() | add_fx()`
 
-# Synth Only
+# synth / polySynth ONLY
 
-## note 
+## note
+
+Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root.
 
 ```
-set <name> note(<semi-tone> <octave>)
+note(<semi-tone> <octave, optional default=0>)
+```
+example
+```
+set scale major D
+new synth sine note(2 2)
+//=> results in midi-note 64 > F4
+```
+
+Also excepts rings to play a melody over time
+```
+set scale minor A
+ring mel [0 5 7 3 2 -2 0]
+new synth sine note(mel 1) time(1/16)
+
 ```
 
 ## wave2
 
+Add a second oscillator to the synths sound. This can either be a sine, triangle, square or saw. The second argument sets a multiplication ratio for the second oscillators frequency.
+
 ```
-set <name> wave2(<saw/sine/square/triangle> <frequency-ratio>)
+wave2(<saw/sine/square/triangle> <frequency-ratio>)
+```
+example
+```
+new synth saw note(0 1) time(1/4) wave2(square 0.998)
 ```
 
-# Sample Only
+# Sample / Loop ONLY
 
 ## speed
 
+Set the playback speed for the sample, where 1 = original speed, 0.5 = half the speed and 2 = twice as fast. Adjusting the playback speed will change the pitch of the sample. 
+
 ```
-set <name> speed(<sample-playback-speed-ratio>)
+speed(<sample-playback-speed-ratio>)
+```
+example
+```
+new sample choir time(5) speed(0.5)
+new sample choir time(5) speed(-0.5)
+set all fx(reverb 2 17)
 ```
 
 ## stretch
 
+Stretch the entire sample to the length of a full bar. Useful for when working with beats that have to be looped.
+
 ```
-set <name> stretch(<0-1>)
+stretch(<0-1>)
 ```
 
 ## offset
 
+Set the offset (the start position of the playback) of the sample. 0 = start at the beginning, 0.5 = start midway in the sample.
+
 ```
-set <name> offset(<position-in-sample-0-1>)
+offset(<position-in-sample-0-1>)
 ```

@@ -83,7 +83,6 @@ function parseStrings(){
 	parse('~my-sig');
 	parse('~my_Sig');
 	parse('"~my Sig"');
-
 }
 
 // Parse keywords

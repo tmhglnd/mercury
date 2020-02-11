@@ -43,9 +43,11 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 
 - [General Syntax](./00-general.md)
 	- [new](./00-general.md#new)
-		- [synth](./00-general.md#synthsample-functions)
-		- [sample](./00-general.md#synthsampl-functions)
-		- [emitter](./00-general.md#emitter)
+		- synth
+		- polySynth
+		- sample
+		- loop
+		- emitter
 	- [ring](./00-general.md#ring)
 	- [set](./00-general.md#set)
 	- [killAll](./00-general.md#killAll)
