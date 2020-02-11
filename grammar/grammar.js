@@ -32,6 +32,8 @@ const lexer = moo.compile({
 					match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
 					value: x => x.slice(1, x.length-1)
 				},
+
+	signal:		/~[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
 	
 	identifier:	/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
 	ws:			/[ \t]+/,
@@ -97,8 +99,9 @@ var grammar = {
     {"name": "paramElement", "symbols": [(lexer.has("number") ? {type: "number"} : number)], "postprocess": (d) => { return { "@number" : d[0].value }}},
     {"name": "paramElement", "symbols": ["array"], "postprocess": (d) => d[0]},
     {"name": "paramElement", "symbols": ["function"], "postprocess": (d) => d[0]},
-    {"name": "name", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier)], "postprocess": (d) => { return { "@string" : d[0].value }}},
+    {"name": "name", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier)], "postprocess": (d) => { return { "@identifier" : d[0].value }}},
     {"name": "name", "symbols": [(lexer.has("string") ? {type: "string"} : string)], "postprocess": (d) => { return { "@string" : d[0].value }}},
+    {"name": "name", "symbols": [(lexer.has("signal") ? {type: "signal"} : signal)], "postprocess": (d) => { return { "@signal" : d[0].value }}},
     {"name": "_$ebnf$1", "symbols": []},
     {"name": "_$ebnf$1", "symbols": ["_$ebnf$1", "wschar"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "_", "symbols": ["_$ebnf$1"], "postprocess": (d) => null},

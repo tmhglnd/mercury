@@ -46,14 +46,14 @@ function spreadFloat(){
 	outlet(0, arr);
 }//spreadFloat()
 
-function spreadinclusive(){
+function spreadInclusive(){
 	var args = arrayfromargs(arguments);
 	var arr = _spreadinclusive(args);
 	arr = arr.map(function(e){ return Math.round(e); });
 	outlet(0, arr);
 }//spreadinclusive()
 
-function spreadinclusiveFloat(){
+function spreadInclusiveFloat(){
 	var args = arrayfromargs(arguments);
 	var arr = _spreadinclusive(args);
 	outlet(0, arr);

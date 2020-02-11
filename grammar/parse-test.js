@@ -30,9 +30,9 @@ function parse(s){
 }
 
 // @global:
-parseNumbers();
+// parseNumbers();
 // parseComments();
-// parseStrings();
+parseStrings();
 // parseKeywords();
 // parseSettings();
 
@@ -75,6 +75,15 @@ function parseStrings(){
 	parse('kick_dub');
 	parse('_dub');
 	parse('foley-02');
+	parse('5Foley');
+	parse('hat.909');
+	parse('5.what');
+
+	parse('~mySig');
+	parse('~my-sig');
+	parse('~my_Sig');
+	parse('"~my Sig"');
+
 }
 
 // Parse keywords

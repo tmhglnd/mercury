@@ -29,8 +29,10 @@ const lexer = moo.compile({
 					match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
 					value: x => x.slice(1, x.length-1)
 				},
+
+	signal:		/~[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
 	
-	identifier:	/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
+	identifier:	/[a-zA-Z0-9\_][a-zA-Z0-9\_\-]*/,
 	ws:			/[ \t]+/,
 });
 %}
@@ -158,10 +160,13 @@ paramElement ->
 
 name ->
 	%identifier
-		{% (d) => { return { "@string" : d[0].value }} %}
+		{% (d) => { return { "@identifier" : d[0].value }} %}
 	|
 	%string
 		{% (d) => { return { "@string" : d[0].value }} %}
+	|
+	%signal
+		{% (d) => { return { "@signal" : d[0].value }} %}
 
 # optional whitespace
 _  -> 		wschar:* 	{% (d) => null %}

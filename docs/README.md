@@ -39,29 +39,30 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 		- `File > Excecute Code` (when none of above work)
 	- In the event of poor performance follow settings steps above.
 
-## Table of Content for Syntax
+## Table of Content
 
-- [General Syntax](#general-syntax)
-	- [new](#new)
-		- [synth](#synthsample-functions)
-		- [sample](#synthsampl-functions)
-		- [emitter](#emitter)
-	- ring
-	- set
-	- killAll
-- [Global Settings (set)](#global-settings-set)
-	- [osc](#osc)
+- [General Syntax](./00-general.md)
+	- [new](./00-general.md#new)
+		- [synth](./00-general.md#synthsample-functions)
+		- [sample](./00-general.md#synthsampl-functions)
+		- [emitter](./00-general.md#emitter)
+	- [ring](./00-general.md#ring)
+	- [set](./00-general.md#set)
+	- [killAll](./00-general.md#killAll)
+
+- [Global Settings (set)](./01-global)
+	- [osc](./01-global#osc)
 		- ip
 		- in
 		- out
-	- [midiclock](#midiclock)
-	- tempo
-	- scale
-	- scalar
-	- random_seed
-	- volume
-	- hipass 
-	- lopass
+	- [midiClock](./01-global#midiclock)
+	- [tempo](./01-global#tempo)
+	- [scale](./01-global#scale)
+	- [scalar](./01-global#scalar)
+	- [randomSeed](./01-global#randomseed)
+	- [volume](./01-global#volume)
+	- [highPass](./01-global#highpass) 
+	- [lowPass](./01-global#lowpass)
 - [Synth/Sample Functions (new)](#synthsample-functions)
 	- name
 	- group
@@ -85,9 +86,9 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- chip 
 - [Ring Methods Generative (ring)](#ring-methods-generative)
 	- spread
-	- spreadinclusive 
+	- spreadInclusive 
 	- spreadFloat
-	- spreadinclusiveFloat
+	- spreadInclusiveFloat
 	- random 
 	- randomFloat
 	- euclid 
@@ -98,167 +99,6 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- clone
 	- spray
 	- every 
-
-## General Syntax
-
-### new
-
-Create a new instance of an instrument or external output. This can be a sample, a synth or an emitter followed by the name of the sample, the name of the waveshape to use for the synth or the type of output for the emitter (currently only supports osc). After that use functions to set parameters for the object.
-
-```
-new <synth/sample/emitter> <argument> function(arguments)
-
-new synth <saw/sine/triangle/square>
-new sample <sample-filename>
-new emitter osc
-```
-
-### ring
-
-Create a circular array, named a ring. This ring can hold integers, floats, symbols and arrays (2D). Use these to change parameters over time for functions. The `ring` must be declared with a name before the line before it can be used as an variable in an instrument function. 
-
-```
-ring <name> [v0 v1 v2 ... v-n] 
-
-ring someInts [0 10 20 30]
-ring someFloats [1.618 3.1415]
-ring twoDimensional [0 1 [2 3] 4 [5 6 7]]
-```
-
-**Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
-
-### set
-
-Use the set function to change Global Settings or call functions for a named instrument-instance, group or all. The instrument must be declared with a `name()` before the `set` is called.
-
-```
-set <global_setting> <arguments>
-
-set tempo 125
-set volume 0.8
-set scale pentatonic_major D
-set random_seed 9876
-```
-```
-set <named-instrument> function(arguments)
-
-set bass gain(0.5)
-set drums fx(drive 10)
-set all fx(reverb 0.8 10)
-```
-
-### killAll
-
-Disable all sounds evaluated before this line
-
-```
-killAll
-```
-
-## Global Settings (set)
-
-### osc
-
-Set the ip-address, in-port and out-port number for the network to transmit OSC-messages over using UDP. Default settings are 8000 (in-port), 9000 (out-port), localhost (ip).
-
-```
-set osc (<default> | <in-port> <out-port> <ip-address>)
-```
-```
-set osc default
-
-set osc 8000 9000 127.0.0.1
-
-set osc ip 127.0.0.1
-set osc in 8000
-set osc out 9000
-```
-
-### midiclock
-
-Output midi clock sync message to sync an external device to the tempo of Mercury.
-
-```
-set midiclock getports
-// returns port names in console
-
-set midiclock <port-name>
-// outputs clock-sync to midiport of that name
-
-set midiclock off
-// turn the clock off (default)
-```
-
-### tempo
-
-Change the global tempo in Beats Per Minute (BPM), counted in quarter-notes. Second argument sets a ramptime in milliseconds to gradually change the tempo over the provided amount of time (!WARNING: experimental and may lag/glitch!)
-
-```
-set tempo <bpm> <ramptime>
-
-set tempo 128
-set tempo 80 5000
-```
-
-### scale
-
-Set the scale as string where all notes are mapped to. An optional second argument sets the root for the scale. 
-
-```
-set scale <scale_name> <root>
-
-set scale minor Eb
-```
-
-### scalar
-
-Transpose the current scale up or down in semitones integer value.
-
-```
-set scalar <transpose-by>
-
-set scalar 2
-```
-
-### random_seed
-
-Set the random seed as integer for the psuedorandom number generators used in all functions across the environment. Setting the seed to a fixed integer will help make sure random values keep the same sequence every time you re-evaluate the code.
-
-```
-set random_seed <integer>
-
-set random_seed 31415
-```
-
-### volume
-
-Set the global volume in floating-point amplitude for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create fade-in/fade-out or smooth transitions to for dynamics.
-
-```
-set volume <amplitude> <ramptime>
-
-set volume 0.5 5000
-```
-
-### hipass
-
-Set the global high-pass filter cutoff in Hz for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create smooth transitions from one value to another.
-
-```
-set hipass <cutoff> <ramptime>
-
-set hipass 900 5000
-```
-
-### lopass
-
-Set the global low-pass filter cutoff in Hz for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create smooth transitions from one value to another.
-
-```
-set lopass <cutoff> <ramptime>
-
-set lopass 900 5000
-```
 
 ## Synth/Sample Functions
 
