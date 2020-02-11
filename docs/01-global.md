@@ -1,44 +1,5 @@
 # Global Settings (set)
 
-## osc
-
-Set the ip-address, in-port and out-port number for the network to transmit OSC-messages over using UDP. Default settings are 8000 (in-port), 9000 (out-port), localhost (ip).
-
-```
-set osc (<default> | <in-port> <out-port> <ip-address>)
-```
-
-example
-```
-set osc default
-
-set osc 8000 9000 127.0.0.1
-
-set osc ip 127.0.0.1
-set osc in 8000
-set osc out 9000
-```
-
-## midiClock
-
-Output midi clock sync message to sync an external device to the tempo of Mercury.
-
-```
-set midiclock (<getports> | <port-name> | off)
-```
-
-example
-```
-set midiclock getports
-// returns port names in console
-
-set midiclock <port-name>
-// outputs clock-sync to midiport of that name
-
-set midiclock off
-// turn the clock off (default)
-```
-
 ## tempo
 
 Change the global tempo in Beats Per Minute (BPM), counted in quarter-notes. Second argument sets a ramptime in milliseconds to gradually change the tempo over the provided amount of time (!WARNING: experimental and may lag/glitch!)
@@ -170,4 +131,43 @@ set lopass <cutoff> <ramptime, optional (default=0)>
 example
 ```
 set lopass 900 5000
+```
+
+## osc
+
+Set the ip-address, in-port and out-port number for the network to transmit OSC-messages over using UDP. Default settings are 8000 (in-port), 9000 (out-port), localhost (ip).
+
+```
+set osc (<default> | <in-port> <out-port> <ip-address>)
+```
+
+example
+```
+set osc default
+
+set osc 8000 9000 127.0.0.1
+
+set osc ip 127.0.0.1
+set osc in 8000
+set osc out 9000
+```
+
+## midiClock
+
+Output midi clock sync message to sync an external device to the tempo of Mercury.
+
+```
+set midiclock (<getports> | <port-name> | off)
+```
+
+example
+```
+set midiclock getports
+// returns port names in console
+
+set midiclock <port-name>
+// outputs clock-sync to midiport of that name
+
+set midiclock off
+// turn the clock off (default)
 ```
