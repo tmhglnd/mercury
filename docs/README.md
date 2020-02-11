@@ -50,19 +50,19 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- [set](./00-general.md#set)
 	- [killAll](./00-general.md#killAll)
 
-- [Global Settings (set)](./01-global)
-	- [osc](./01-global#osc)
+- [Global Settings (set)](./01-global.md)
+	- [osc](./01-global.md#osc)
 		- ip
 		- in
 		- out
-	- [midiClock](./01-global#midiclock)
-	- [tempo](./01-global#tempo)
-	- [scale](./01-global#scale)
-	- [scalar](./01-global#scalar)
-	- [randomSeed](./01-global#randomseed)
-	- [volume](./01-global#volume)
-	- [highPass](./01-global#highpass) 
-	- [lowPass](./01-global#lowpass)
+	- [midiClock](./01-global.md#midiclock)
+	- [tempo](./01-global.md#tempo)
+	- [scale](./01-global.md#scale)
+	- [scalar](./01-global.md#scalar)
+	- [randomSeed](./01-global.md#randomseed)
+	- [volume](./01-global.md#volume)
+	- [highPass](./01-global.md#highpass) 
+	- [lowPass](./01-global.md#lowpass)
 - [Synth/Sample Functions (new)](#synthsample-functions)
 	- name
 	- group
