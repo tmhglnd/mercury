@@ -2,44 +2,9 @@
 
 *Disclaimer: This documentation is most certainly not finished and will subject to changes. If you find errors, feel free to report them*
 
-## Getting Started
-
-If you haven't installed Mercury yet, follow the instructions [here](../README.md#install)
-
-1. Open `mercury_ide_x.x.x.maxproj`
-
-2. Link the included sample library 
-	- `File > Load Sample Library` in menubar of main window
-	- select `samples` folder under `mercury/mercury_ide_x.x.x/media`
-	- `open` when folder is selected
-	- `Show Audiofiles` in the main window to see if the filepaths are correct.
-
-3. Turn the rendering engine `on` in the main window. You will see the text-editor appear and the cursor starts blinking.
-	- In the event of a laggy editor, slow cursor and/or low FPS change the visual settings:
-		- `Settings > Visual Setup`
-		- `Resolution`: `540`
-		- `Sync to Refreshrate`: `Off`
-		- `FPS`: `30`
-
-4. Turn the audio engine `on` in the main window. You will see the cpu-usage meter showing a percentage.
-	- In the event of no audio, laggy audio and/or clicky audio change the audio settings:
-		- `Settings > Audio Setup`
-		- `Driver`: `Asio4All` (Windows)
-		- `Driver`: `CoreAudio` (MacOS)
-		- `IO Vectorsize`: `512/1024`
-		- `Signal Vectorsize`: `256/512`
-		- `Overdrive`: `On`
-		- `Audio Interrupt`: `On`
-
-5. Type the following code in the code editor (focus on the window):
-	- `new sample kick_909 time(1/4) gain(1)`. 
-	- **run** the code by pressing:
-		- `CMD + R` or `ALT + Enter` (MacOS)
-		- `ALT + R` or `ALT + Enter` (Windows)
-		- `File > Excecute Code` (when none of above work)
-	- In the event of poor performance follow settings steps above.
-
 ## Table of Content
+
+- [Getting Started](./getting-started.md)
 
 - [General Syntax](./00-general.md)
 	- [new](./00-general.md#new)
@@ -63,7 +28,7 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- [osc](./01-global.md#osc)
 	- [midiClock](./01-global.md#midiclock)
 
-- [Synth/Sample Functions](./02-instrument.md)
+- [Synth/Sample Functions (new)](./02-instrument.md)
 	- Shared methods
 		- [name](./02-instrument.md#name)
 		- [group](./02-instrument.md#group)
@@ -95,7 +60,7 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- [lfo](./04-fx.md#lfo)
 	- [reverb](./04-fx.md#reverb)
 
-- [Ring Methods Generative (ring)](#ring-methods-generative)
+- [Ring Methods Generative (ring)](./05-ring.md)
 	- spread
 	- spreadInclusive 
 	- spreadFloat
@@ -104,101 +69,10 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- randomFloat
 	- euclid
 
-- [Ring Methods Transformational (ring)](#ring-methods-transformational)
+- [Ring Methods Transformational (ring)](./05-ring.md))
 	- join
 	- thin
 	- palin
 	- clone
 	- spray
-	- every 
-
-## Ring Methods Generative
-
-### spread
-
-```
-ring myRing spread(<listlength> <low-bound> <high-bound>)
-```
-
-### spreadinclusive
-
-```
-ring myRing spreadinclusive(<listlength> <low-bound> <high-bound>)
-```
-
-### spreadFloat
-
-```
-ring myRing spreadFloat(<listlength> <low-bound> <high-bound>)
-```
-
-### spreadinclusiveFloat
-
-```
-ring myRing spreadinclusiveFloat(<listlength> <low-bound> <high-bound>)
-```
-
-### random
-
-```
-ring myRing random(<listlength> <low-bound> <high-bound>)
-```
-
-### randomFloat
-
-```
-ring myRing randomFloat(<listlength> <low-bound> <high-bound>)
-```
-
-### euclid
-
-```
-ring myRing euclid(<listlength> <amount-of-hits> <rotate>)
-```
-
-
-
-## Ring Methods Transformational
-
-### join
-
-```
-ring joined join(<ring1> <ring2> ... <ring-n>)
-```
-
-### thin
-
-```
-ring thined thin(<ring>)
-```
-
-### palin
-
-```
-ring palinated palin(<ring>)
-```
-
-### duplicate
-
-```
-ring duped duplicate(<ring> <amount>)
-```
-
-### clone
-
-```
-ring cloned clone(<ring> <dup-offset1> <dup-offset2> ... <dup-offset-n>) 
-```
-
-### spray
-
-```
-ring sprayed spray(<ring-beat> <ring-melody>)
-```
-
-### every
-
-```
-ring sometimes every(<ring> <when> <beat-division>)
-```
-
+	- every

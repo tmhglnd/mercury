@@ -91,7 +91,7 @@ $ git clone http://github.com/tmhglnd/mercury
 
 ### Getting Started
 
-[Open the Getting Started Guide](/docs/README.md)
+[Open the Getting Started Guide](/docs/getting-started.md)
 
 ### System Requirements
 
