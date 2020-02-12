@@ -46,6 +46,9 @@ You can find the packs online at:
 - https://freesound.org/people/RutgerMuller/packs/3273/
 - https://freesound.org/people/juskiddink/packs/5069/
 - https://freesound.org/people/RutgerMuller/packs/6618/
+- https://freesound.org/people/RutgerMuller/packs/3254/
+- https://freesound.org/people/RutgerMuller/packs/3283/
+- https://freesound.org/people/RutgerMuller/packs/3268/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
@@ -314,14 +317,31 @@ You can find the packs online at:
 * url: https://freesound.org/s/103996/
 * license: Creative Commons 0
 
-#### wood_scrape
+#### scrape
 * 104007__rutgermuller__Wood_Scraping_6_www.rutgermuller.nl_.aiff
 * url: https://freesound.org/s/104007/
 * license: Creative Commons 0
 
-#### wood_scrape_01
+#### scrape_01
 * 104010__rutgermuller__Wood_Scraping_Close_3_www.rutgermuller.nl_.aiff
 * url: https://freesound.org/s/104010/
+* license: Creative Commons 0
+
+#### door
+* 104103__rutgermuller__Door_Squeaks_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104103/
+* license: Creative Commons 0
+
+## Ambient
+
+#### drone_cymbal
+* 104092__rutgermuller__Cymbal_Close_3_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104092/
+* license: Creative Commons 0
+
+#### drone_cymbal_01
+* 104090__rutgermuller__Cymbal_Close_1_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104090/
 * license: Creative Commons 0
 
 ## Noise
@@ -350,6 +370,16 @@ You can find the packs online at:
 #### wood_l_01
 * 104009__rutgermuller__Wood_Scraping_Close_2_www.rutgermuller.nl_.aiff
 * url: https://freesound.org/s/104009/
+* license: Creative Commons 0
+
+#### wiper
+* 50768__rutgermuller__Windshield_Wiper_In_Car_www.rutgermuller.nl_.mp3
+* url: https://freesound.org/s/50768/
+* license: Creative Commons 0
+
+#### wiper_out
+* 50770__rutgermuller__Windshield_Wiper_Outside_2_www.rutgermuller.nl_.mp3
+* url: https://freesound.org/s/50770/
 * license: Creative Commons 0
 
 ## Noise
