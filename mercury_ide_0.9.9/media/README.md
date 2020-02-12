@@ -13,6 +13,7 @@ This pack of sounds contains sounds by the following users:
 - dobroide ( https://freesound.org/people/dobroide/ )
 - klankbeeld ( https://freesound.org/people/klankbeeld/ )
 - RutgerMuller ( https://freesound.org/people/RutgerMuller/ )
+- juskiddink ( https://freesound.org/people/juskiddink/ )
 
 You can find the packs online at: 
 - https://freesound.org/people/NoiseCollector/packs/219/
@@ -28,8 +29,9 @@ You can find the packs online at:
 - https://freesound.org/people/dobroide/packs/7573/
 - https://freesound.org/people/klankbeeld/packs/10770/
 - https://freesound.org/people/RutgerMuller/packs/3273/
+- https://freesound.org/people/juskiddink/packs/5069/
 
-*Note: Audiofiles may have been slightly editted to fit the Mercury Live Coding environment better*
+*Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
 ## CATEGORIES
 
@@ -223,6 +225,51 @@ You can find the packs online at:
 * url: https://freesound.org/s/130523/
 * license: Creative Commons 0
 
+#### bowl_hi
+* 122650__juskiddink__Singing_bowl.wav
+* url: https://freesound.org/s/122650/
+* license: Attribution
+
+#### bowl_lo
+* 59534__juskiddink__Bell1.wav
+* url: https://freesound.org/s/59534/
+* license: Attribution
+
+#### bowl_mid
+* 122647__juskiddink__Singing_bowl_2.wav
+* url: https://freesound.org/s/122647/
+* license: Attribution
+
+#### chimes_chord
+* 131977__juskiddink__three-chord-chimes.wav
+* url: https://freesound.org/s/131977/
+* license: Attribution
+
+#### chimes_chord_01
+* 131977__juskiddink__three-chord-chimes.wav
+* url: https://freesound.org/s/131977/
+* license: Attribution
+
+#### chimes_chord_02
+* 131977__juskiddink__three-chord-chimes.wav
+* url: https://freesound.org/s/131977/
+* license: Attribution
+
+#### chimes
+* 86277__juskiddink__Chimes.wav
+* url: https://freesound.org/s/86277/
+* license: Attribution
+
+#### gong_hi
+* 86773__juskiddink__Gong.wav
+* url: https://freesound.org/s/86773/
+* license: Attribution
+
+#### gong_lo
+* 122681__juskiddink__Gong_3.wav
+* url: https://freesound.org/s/122681/
+* license: Attribution
+
 ## Vocal
 
 #### choir_o
@@ -253,6 +300,13 @@ You can find the packs online at:
 * license: Creative Commons 0
 
 # Loops
+
+## Idiophonic
+
+#### chimes_l
+* 131979__juskiddink__chimes.wav
+* url: https://freesound.org/s/131979/
+* license: Attribution
 
 ## Noise
 
