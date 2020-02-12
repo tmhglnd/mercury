@@ -10,10 +10,11 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [About](#about)
 - [Vision & Goals](#vision--goals)
 - [Install](#install)
-	- [Getting Started](/docs/README.md#getting-started)
+	- [Getting Started](/docs/getting-started.md)
 	- [System Requirements](#system-requirements)
 	- [Build Application](#build-application)
 	- [Documentation](/docs/README.md#table-of-content-for-syntax)
+	- [Sounds in Mercury](././mercury_ide_0.9.9/media/README.md)
 - [Modify Code](#modify-code)
 - [Further Reading](#further-reading-and-listening)
 - [Thanks](#thanks)
@@ -130,6 +131,12 @@ Microsoft Windows 10 Home
 ### Documentation
 
 [Open the documentation](/docs/README.md)
+
+### Sounds
+
+All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. A list of all the available sounds and the original sample can be found here:
+
+[List of sounds and credits](././mercury_ide_0.9.9/media/README.md)
 
 ## Modify Code
 
