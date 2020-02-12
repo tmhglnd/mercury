@@ -3,6 +3,7 @@
 - [Credits](#credits)
 - [One-shots](#one-shots)
 	- [Drums](#drums)
+	- [Strings](#strings)
 	- [Idiophonic](#idiophonic)
 	- [Vocal](#vocal)
 	- [Foley](#foley)
@@ -29,6 +30,8 @@ This pack of sounds contains sounds by the following users:
 - klankbeeld ( https://freesound.org/people/klankbeeld/ )
 - RutgerMuller ( https://freesound.org/people/RutgerMuller/ )
 - juskiddink ( https://freesound.org/people/juskiddink/ )
+- unfa ( https://freesound.org/people/unfa/ )
+- Cunningar0807 ( https://freesound.org/people/Cunningar0807/ )
 
 You can find the packs online at: 
 - https://freesound.org/people/NoiseCollector/packs/219/
@@ -49,6 +52,8 @@ You can find the packs online at:
 - https://freesound.org/people/RutgerMuller/packs/3254/
 - https://freesound.org/people/RutgerMuller/packs/3283/
 - https://freesound.org/people/RutgerMuller/packs/3268/
+- https://freesound.org/people/unfa/packs/14014/
+- https://freesound.org/people/Cunningar0807/packs/24779/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
@@ -211,6 +216,18 @@ You can find the packs online at:
 * url: https://freesound.org/s/493026/
 * license: Creative Commons 0
 
+## Strings
+
+#### harp_down
+* 436129__cunningar0807__harp-glissando-down.aiff
+* url: https://freesound.org/s/436129/
+* license: Creative Commons 0
+
+#### harp_up
+* 436128__cunningar0807__harp-glissando-up.aiff
+* url: https://freesound.org/s/436128/
+* license: Creative Commons 0
+
 ## Idiophonic
 
 #### bamboo_g
@@ -331,6 +348,11 @@ You can find the packs online at:
 * 104103__rutgermuller__Door_Squeaks_www.rutgermuller.nl_.aiff
 * url: https://freesound.org/s/104103/
 * license: Creative Commons 0
+
+#### shatter
+* 221528__unfa__glass-break.flac
+* url: https://freesound.org/s/221528/
+* license: Attribution
 
 ## Ambient
 
