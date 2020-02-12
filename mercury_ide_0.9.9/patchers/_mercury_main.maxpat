@@ -10960,8 +10960,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1325.673630000000003, 1414.0, 40.0, 22.0 ],
-					"text" : "r EOF"
+					"patching_rect" : [ 1353.138901000000033, 1414.0, 58.0, 22.0 ],
+					"text" : "r EOFpre"
 				}
 
 			}
@@ -13738,7 +13738,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 120.0, 97.0, 76.0 ],
-									"text" : "\"Macintosh HD:/Users/timohoogland/Desktop/roald-debug.txt\""
+									"text" : "\"Macintosh HD:/Users/timohoogland/Desktop/roald-debug-2.txt\""
 								}
 
 							}
