@@ -1,4 +1,18 @@
-# Sound Files Credits 
+# Sounds in Mercury
+
+- [Credits](#credits)
+- [One-shots](#one-shots)
+	- [Drums](#drums)
+	- [Idiophonic](#idiophonic)
+	- [Vocal](#vocal)
+	- [Noise](#noise)
+	<!-- - [Foley] -->
+- [Loops](#loops)
+	- [Idiophonic](#idiophonic-1)
+	- [Noise](#noise-1)
+<!-- 4. Ambient -->
+
+# Credits
 
 This pack of sounds contains sounds by the following users:
 - NoiseCollector ( https://freesound.org/people/NoiseCollector/ )
@@ -32,17 +46,6 @@ You can find the packs online at:
 - https://freesound.org/people/juskiddink/packs/5069/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
-
-## CATEGORIES
-
-1. Samples
-	- [Drums](#drums)
-	- [Idiophonic](#idophonic)
-	- [Vocal](#vocal)
-	- [Noise](#noise)
-2. Loops
-	- [Noise](#noise-2)
-<!-- 4. Ambient -->
 
 # One-shots
 
