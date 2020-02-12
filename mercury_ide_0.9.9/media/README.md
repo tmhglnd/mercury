@@ -12,7 +12,7 @@ This pack of sounds contains sounds by the following users:
 - uair01 ( https://freesound.org/people/uair01/ )
 - dobroide ( https://freesound.org/people/dobroide/ )
 - klankbeeld ( https://freesound.org/people/klankbeeld/ )
-
+- RutgerMuller ( https://freesound.org/people/RutgerMuller/ )
 
 You can find the packs online at: 
 - https://freesound.org/people/NoiseCollector/packs/219/
@@ -27,15 +27,22 @@ You can find the packs online at:
 - https://freesound.org/people/uair01/packs/4311/
 - https://freesound.org/people/dobroide/packs/7573/
 - https://freesound.org/people/klankbeeld/packs/10770/
+- https://freesound.org/people/RutgerMuller/packs/3273/
 
 *Note: Audiofiles may have been slightly editted to fit the Mercury Live Coding environment better*
 
 ## CATEGORIES
 
-1. Drums
-2. Idiophonic
-<!-- 3. Loops -->
+1. Samples
+	- [Drums](#drums)
+	- [Idiophonic](#idophonic)
+	- [Vocal](#vocal)
+	- [Noise](#noise)
+2. Loops
+	- [Noise](#noise-2)
 <!-- 4. Ambient -->
+
+# One-shots
 
 ## Drums
 
@@ -194,7 +201,7 @@ You can find the packs online at:
 * url: https://freesound.org/s/493026/
 * license: Creative Commons 0
 
-# Idiophonic
+## Idiophonic
 
 #### bamboo_g
 * 130533__stomachache__g2.wav
@@ -216,24 +223,65 @@ You can find the packs online at:
 * url: https://freesound.org/s/130523/
 * license: Creative Commons 0
 
-# Vocal
-
-#### choir
-* 69311__uair01__LS100422_choir_rehearsal_Utrecht_01.wav
-* url: https://freesound.org/s/69311/
-* license: Attribution
+## Vocal
 
 #### choir_o
 * 65195__uair01__chamber_choir_chord_o.wav
 * url: https://freesound.org/s/65195/
 * license: Attribution
 
-#### choir01
+#### choir_01
 * 117891__dobroide__20110409.choir.01.wav
 * url: https://freesound.org/s/117891/
 * license: Attribution
 
-#### choir02
+#### choir_02
 * 192691__klankbeeld__choir-nec-invenit-requiem-130525-14.wav
 * url: https://freesound.org/s/192691/
 * license: Attribution
+
+#### choir_03
+* 69311__uair01__LS100422_choir_rehearsal_Utrecht_01.wav
+* url: https://freesound.org/s/69311/
+* license: Attribution
+
+## Noise
+
+#### noise_a
+* 50695__rutgermuller__Analogue_Glitches_www.rutgermuller.nl_.wav
+* url: https://freesound.org/s/50695/
+* license: Creative Commons 0
+
+# Loops
+
+## Noise
+
+#### noise_c
+* 411461__rutgermuller__cablenoise.wav
+* url: https://freesound.org/s/411461/
+* license: Creative Commons 0
+
+#### noise_e
+* 104080__rutgermuller__Electrical_Noises_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104080/
+* license: Creative Commons 0
+
+#### noise_e_2
+* 50909__rutgermuller__electric_noise_www.rutgermuller.nl_.wav
+* url: https://freesound.org/s/50909/
+* license: Creative Commons 0
+
+#### noise_mw
+* 50749__rutgermuller__Microwave_www.rutgermuller.nl_.wav
+* url: https://freesound.org/s/50749/
+* license: Creative Commons 0
+
+#### noise_p
+* 50726__rutgermuller__Harsh_Noise_www.rutgermuller.nl_.wav
+* url: https://freesound.org/s/50726/
+* license: Creative Commons 0
+
+#### noise_r
+* 50750__rutgermuller__Radio_Noise_www.rutgermuller.nl_.wav
+* url: https://freesound.org/s/50750/
+* license: Creative Commons 0

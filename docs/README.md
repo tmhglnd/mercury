@@ -69,7 +69,7 @@
 	- randomFloat
 	- euclid
 
-- [Ring Methods Transformational (ring)](./05-ring.md))
+- [Ring Methods Transformational (ring)](./05-ring.md)
 	- join
 	- thin
 	- palin
