@@ -5,10 +5,11 @@
 	- [Drums](#drums)
 	- [Idiophonic](#idiophonic)
 	- [Vocal](#vocal)
+	- [Foley](#foley)
 	- [Noise](#noise)
-	<!-- - [Foley] -->
 - [Loops](#loops)
 	- [Idiophonic](#idiophonic-1)
+	- [Foley](#foley-1)
 	- [Noise](#noise-1)
 <!-- 4. Ambient -->
 
@@ -44,6 +45,7 @@ You can find the packs online at:
 - https://freesound.org/people/klankbeeld/packs/10770/
 - https://freesound.org/people/RutgerMuller/packs/3273/
 - https://freesound.org/people/juskiddink/packs/5069/
+- https://freesound.org/people/RutgerMuller/packs/6618/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
@@ -295,6 +297,33 @@ You can find the packs online at:
 * url: https://freesound.org/s/69311/
 * license: Attribution
 
+## Foley
+
+#### wood_hit
+* 103997__rutgermuller__Wood_Hit_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/103997/
+* license: Creative Commons 0
+
+#### wood_metal 
+* 104003__rutgermuller__Wood_Metal_Chain_Smash_Hall_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104003/
+* license: Creative Commons 0
+
+#### wood_plate
+* 103996__rutgermuller__Jumping_On_Wooden_Plate_Hall_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/103996/
+* license: Creative Commons 0
+
+#### wood_scrape
+* 104007__rutgermuller__Wood_Scraping_6_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104007/
+* license: Creative Commons 0
+
+#### wood_scrape_01
+* 104010__rutgermuller__Wood_Scraping_Close_3_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104010/
+* license: Creative Commons 0
+
 ## Noise
 
 #### noise_a
@@ -311,6 +340,18 @@ You can find the packs online at:
 * url: https://freesound.org/s/131979/
 * license: Attribution
 
+## Foley
+
+#### wood_l
+* 104011__rutgermuller__Wood_Scraping_Hall_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104011/
+* license: Creative Commons 0
+
+#### wood_l_01
+* 104009__rutgermuller__Wood_Scraping_Close_2_www.rutgermuller.nl_.aiff
+* url: https://freesound.org/s/104009/
+* license: Creative Commons 0
+
 ## Noise
 
 #### noise_c
@@ -323,7 +364,7 @@ You can find the packs online at:
 * url: https://freesound.org/s/104080/
 * license: Creative Commons 0
 
-#### noise_e_2
+#### noise_e_01
 * 50909__rutgermuller__electric_noise_www.rutgermuller.nl_.wav
 * url: https://freesound.org/s/50909/
 * license: Creative Commons 0
