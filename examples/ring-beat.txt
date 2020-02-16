@@ -1,0 +1,13 @@
+// beat with rings for rhythm
+set tempo 109
+
+// make a circular-array with onsets
+// and apply onsets to beat() method of instrument
+ring kickBeat [1 0 0 1 0 0 1 1 0 0 1 0 0 1 0 0]
+new sample kick_909 time(1/16) beat(kickBeat 1)
+
+new sample snare_dub time(1/2 1/4)
+
+// ring 
+ring hatBeat [1 0 0 1 0]
+new sample hat_click time(1/16) beat(hatBeat 2)

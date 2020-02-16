@@ -2,8 +2,8 @@
 	"name" : "mercury_ide_0.9.9",
 	"version" : 1,
 	"creationdate" : 3615958543,
-	"modificationdate" : 3662447693,
-	"viewrect" : [ 27.0, 72.0, 356.0, 590.0 ],
+	"modificationdate" : 3664616446,
+	"viewrect" : [ 19.0, 133.0, 356.0, 590.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -90,11 +90,6 @@
 		}
 ,
 		"data" : 		{
-			"bind-functions.gen.json" : 			{
-				"kind" : "json",
-				"local" : 1
-			}
-,
 			"argBindings.txt" : 			{
 				"kind" : "textfile",
 				"local" : 1
@@ -107,6 +102,11 @@
 ,
 			"tonics.txt" : 			{
 				"kind" : "textfile",
+				"local" : 1
+			}
+,
+			"bind-functions.gen.json" : 			{
+				"kind" : "json",
 				"local" : 1
 			}
 ,

@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>80/88</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.47% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>26/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>66/66</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * [![npm version](https://img.shields.io/npm/v/tonal-key.svg?style=flat-square)](https://www.npmjs.com/package/tonal-key)
+ * [![tonal](https://img.shields.io/badge/tonal-key-yellow.svg?style=flat-square)](https://www.npmjs.com/browse/keyword/tonal)
+ *
+ * `tonal-key` is a collection of functions to query about tonal keys.
+ *
+ * This is part of [tonal](https://www.npmjs.com/package/tonal) music theory library.
+ *
+ * @example
+ * // es6
+ * import * as Key from "tonal-key"
+ * // es5
+ * const Key = require("tonal-key")
+ *
+ * @example
+ * Key.scale("E mixolydian") // =&gt; [ "E", "F#", "G#", "A", "B", "C#", "D" ]
+ * Key.relative("minor", "C major") // =&gt; "A minor"
+ *
+ * @module Key
+ */
+import { rotate, range } from "tonal-array";
+import { tokenize as split, altToAcc } from "tonal-note";
+import { trFifths, fifths, interval, transpose } from "tonal-distance";
+import { fromDegree, decimal } from "tonal-roman-numeral";
+&nbsp;
+const MODES = "major dorian phrygian lydian mixolydian minor locrian ionian aeolian".split(
+  " "
+);
+const NUMS = [0, 1, 2, 3, 4, 5, 6, 0, 5];
+const NOTES = "C D E F G A B".split(" ");
+&nbsp;
+const TRIADS = ["", "m", "m", "", "", "m", "dim"];
+const SEVENTHS = "Maj7 m7 m7 Maj7 7 m7 m7b5".split(" ");
+const FIFTHS = [0, 2, 4, -1, 1, 3, 5, 0, 3];
+&nbsp;
+const modenum = mode =&gt; NUMS[MODES.indexOf(mode)];
+&nbsp;
+/**
+ * Get a list of valid mode names. The list of modes will be always in
+ * increasing order (ionian to locrian)
+ *
+ * @function
+ * @param {Boolean} alias - true to get aliases names
+ * @return {Array} an array of strings
+ * @example
+ * Key.modes() // =&gt; [ "ionian", "dorian", "phrygian", "lydian",
+ * // "mixolydian", "aeolian", "locrian" ]
+ * Key.modes(true) // =&gt; [ "ionian", "dorian", "phrygian", "lydian",
+ * // "mixolydian", "aeolian", "locrian", "major", "minor" ]
+ */
+export const modeNames = aliases =&gt;
+  aliases === true ? MODES.slice() : MODES.slice(0, 7);
+&nbsp;
+/**
+ * Create a major key from alterations
+ *
+ * @function
+ * @param {Integer} alt - the alteration number (positive sharps, negative flats)
+ * @return {Key} the key object
+ * @example
+ * Key.fromAlter(2) // =&gt; "D major"
+ */
+export const fromAlter = i =&gt; trFifths("C", i) + " major";
+&nbsp;
+export const names = (alt = 4) =&gt; {
+  alt = Math.abs(alt);
+  const result = [];
+  for (let i = -alt; i &lt;= alt; i++) result.push(fromAlter(i));
+  return result;
+};
+&nbsp;
+const NO_KEY = Object.freeze({
+  name: null,
+  tonic: null,
+  mode: null,
+  modenum: null,
+  intervals: [],
+  scale: [],
+  alt: null,
+  acc: null
+});
+&nbsp;
+const properties = name =&gt; {
+  const p = tokenize(name);
+  if (p[0] === null) return NO_KEY;
+  const k = { tonic: p[0], mode: p[1] };
+  k.name = k.tonic + " " + k.mode;
+  k.modenum = modenum(k.mode);
+  const cs = rotate(k.modenum, NOTES);
+  k.alt = fifths("C", k.tonic) - FIFTHS[MODES.indexOf(k.mode)];
+  k.acc = altToAcc(k.alt);
+  k.intervals = cs.map(interval(cs[0]));
+  k.scale = k.intervals.map(transpose(k.tonic));
+  return Object.freeze(k);
+};
+&nbsp;
+const memo = (fn, cache = {}) =&gt; str =&gt; cache[str] || (cache[str] = fn(str));
+&nbsp;
+/**
+ * Return the a key properties object with the following information:
+ *
+ * - name {string}: name
+ * - tonic {string}: key tonic
+ * - mode {string}: key mode
+ * - modenum {Number}: mode number (0 major, 1 dorian, ...)
+ * - intervals {Array}: the scale intervals
+ * - scale {Array}: the scale notes
+ * - acc {string}: accidentals of the key signature
+ * - alt {Number}: alteration number (a numeric representation of accidentals)
+ *
+ * @function
+ * @param {string} name - the key name
+ * @return {Object} the key properties object or null if not a valid key
+ *
+ * @example
+ * Key.props("C3 dorian") // =&gt; { tonic: "C", mode: "dorian", ... }
+ */
+export const props = memo(properties);
+&nbsp;
+/**
+ * Get scale of a key
+ *
+ * @function
+ * @param {string|Object} key
+ * @return {Array} the key scale
+ *
+ * @example
+ * Key.scale("A major") // =&gt; [ "A", "B", "C#", "D", "E", "F#", "G#" ]
+ * Key.scale("Bb minor") // =&gt; [ "Bb", "C", "Db", "Eb", "F", "Gb", "Ab" ]
+ * Key.scale("C dorian") // =&gt; [ "C", "D", "Eb", "F", "G", "A", "Bb" ]
+ * Key.scale("E mixolydian") // =&gt; [ "E", "F#", "G#", "A", "B", "C#", "D" ]
+ */
+export const scale = str =&gt; props(str).scale;
+&nbsp;
+/**
+ * Get a list of key scale degrees in roman numerals
+ * @param {string} keyName
+ * @return {Array}
+ * @example
+ * Key.degrees("C major") =&gt; ["I", "ii", "iii", "IV", "V", "vi", "vii"]
+ */
+export const degrees = str =&gt; {
+  const p = props(str);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (p.name === null) <span class="cstat-no" title="statement not covered" >return [];</span>
+  const chords = rotate(p.modenum, SEVENTHS);
+  return chords.map((chord, i) =&gt; {
+    return fromDegree(i + 1, chord[0] !== "m");
+  });
+};
+&nbsp;
+/**
+ * Get a list of the altered notes of a given Key. The notes will be in
+ * the same order than in the key signature.
+ *
+ * @function
+ * @param {string} key - the key name
+ * @return {Array}
+ *
+ * @example
+ * Key.alteredNotes("Eb major") // =&gt; [ "Bb", "Eb", "Ab" ]
+ */
+export const alteredNotes = name =&gt; {
+  const alt = props(name).alt;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (alt === null) <span class="cstat-no" title="statement not covered" >return null;</span>
+  return alt === 0
+    ? <span class="branch-0 cbranch-no" title="branch not covered" >[]</span>
+    : alt &gt; 0
+      ? range(1, alt).map(trFifths("B"))
+      : range(-1, alt).map(trFifths("F"));
+};
+&nbsp;
+/**
+ * Get a lead-sheet symbols for a given key name
+ *
+ * This function is currified (so can be partially applied)
+ *
+ * From http://openmusictheory.com/triads.html
+ *
+ * A lead-sheet symbol begins with a capital letter (and, if necessary,
+ * an accidental) denoting the root of the chord.
+ * That letter is followed by information about a chord’s quality:
+ *
+ * - major triad: no quality symbol is added
+ * - minor triad: lower-case “m”
+ * - diminished triad: lower-case “dim” or a degree sign “°”
+ * - augmented triad: lower-case “aug” or a plus sign “+”
+ *
+ * @param {Array&lt;string&gt;} symbols - an array of symbols in major scale order
+ * @param {string} keyName - the name of the key you want the symbols for
+ * @param {Array&lt;string&gt;} [degrees] - the list of degrees. By default from 1 to 7 in ascending order
+ * @return {function}
+ * @see Key.chords
+ * @see Key.triads
+ *
+ * @example
+ * const chords = Key.leadsheetSymbols(["M", "m", "m", "M", "7", "m", "dim"])
+ * chords("D dorian") //=&gt; ["Dm", "Em", "FM", "G7", "Am", "Bdim", "CM"]
+ * chords("D dorian", ['ii', 'V']) //=&gt; [Em", "G7"]
+ */
+export function leadsheetSymbols(symbols, keyName, degrees) {
+  if (arguments.length === 1) return (n, d) =&gt; leadsheetSymbols(symbols, n, d);
+  const p = props(keyName);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!p.name) <span class="cstat-no" title="statement not covered" >return [];</span>
+  const names = rotate(p.modenum, symbols);
+  const chords = p.scale.map((tonic, i) =&gt; tonic + names[i]);
+  if (!degrees) return chords;
+  return degrees.map(decimal).map(n =&gt; chords[n - 1]);
+}
+&nbsp;
+/**
+ * Get key seventh chords
+ *
+ * @function
+ * @param {string} name - the key name
+ * @param {Array&lt;number|string&gt;} [degrees] - can be numbers or roman numerals
+ * @return {Array&lt;string&gt;} seventh chord names
+ *
+ * @example
+ * Key.chords("A major") // =&gt; ["AMaj7", "Bm7", "C#m7", "DMaj7", ..,]
+ * Key.chords("A major", ['I', 'IV', 'V']) // =&gt; ["AMaj7", "DMaj7", "E7"]
+ * Key.chords("A major", [5, 4, 1]) // =&gt; ["E7", "DMaj7", AMaj7"]
+ */
+export const chords = leadsheetSymbols(SEVENTHS);
+&nbsp;
+/**
+ * Get key triads
+ *
+ * @function
+ * @param {string} name - the key name
+ * @param {Array&lt;string|number&gt;} [degrees]
+ * @return {Array&lt;string&gt;} triad names
+ *
+ * @example
+ * Key.triads("A major") // =&gt; ["AM", "Bm", "C#m", "DM", "E7", "F#m", "G#mb5"]
+ * Key.triads("A major", ['I', 'IV', 'V']) // =&gt; ["AMaj7", "DMaj7", "E7"]
+ * Key.triads("A major", [1, 4, 5]) // =&gt; ["AMaj7", "DMaj7", "E7"]
+ */
+export const triads = leadsheetSymbols(TRIADS);
+&nbsp;
+/**
+ * Get secondary dominant key chords
+ *
+ * @function
+ * @param {string} name - the key name
+ * @return {Array}
+ *
+ * @example
+ * Key.secDomChords("A major") // =&gt; ["E7", "F#7", ...]
+ */
+&nbsp;
+export const secDomChords = name =&gt; {
+  const p = props(name);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!p.name) <span class="cstat-no" title="statement not covered" >return [];</span>
+  return p.scale.map(t =&gt; transpose(t, "P5") + "7");
+};
+&nbsp;
+/**
+ * Get relative of a key. Two keys are relative when the have the same
+ * key signature (for example C major and A minor)
+ *
+ * It can be partially applied.
+ *
+ * @function
+ * @param {string} mode - the relative destination
+ * @param {string} key - the key source
+ *
+ * @example
+ * Key.relative("dorian", "B major") // =&gt; "C# dorian"
+ * // partial application
+ * var minor = Key.relative("minor")
+ * minor("C major") // =&gt; "A minor"
+ * minor("E major") // =&gt; "C# minor"
+ */
+export const relative = (mode, key) =&gt; {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (arguments.length === 1) <span class="cstat-no" title="statement not covered" >return <span class="fstat-no" title="function not covered" >ke</span>y =&gt; <span class="cstat-no" title="statement not covered" >relative(mode, key);</span></span>
+  const num = modenum(mode.toLowerCase());
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (num === undefined) <span class="cstat-no" title="statement not covered" >return null;</span>
+  const k = props(key);
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (k.name === null) <span class="cstat-no" title="statement not covered" >return null;</span>
+  return trFifths(k.tonic, FIFTHS[num] - FIFTHS[k.modenum]) + " " + mode;
+};
+&nbsp;
+/**
+ * Split the key name into its components (pitch class tonic and mode name)
+ *
+ * @function
+ * @param {string} name
+ * @return {Array} an array in the form [tonic, key]
+ *
+ * @example
+ * Key.tokenize("C major") // =&gt; ["C", "major"]
+ */
+export const tokenize = name =&gt; {
+  const p = split(name);
+  p[3] = p[3].toLowerCase();
+  if (p[0] === "" || MODES.indexOf(p[3]) === -1) return [null, null];
+  return [p[0] + p[1], p[3]];
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Feb 26 2019 22:00:58 GMT+0100 (CET)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
