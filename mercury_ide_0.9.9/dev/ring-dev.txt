@@ -1,15 +1,43 @@
 set randomSeed 8473
 
-// ring arr [0 12 3.14 4]
-ring spr spreadInclusive(7 0 12)
-// ring spF spreadFloat(5 2 11)
-// ring spI spreadInclusive(5 0 12)
-// ring sIF spreadInclusiveFloat(5 0 12)
-// ring alsoArr (10 20 30)
-// ring noArr [5 15 35)
-// ring var2D [0 [1 2] 3 [4]]
-// ring spr spread(10 0 10)
-// ring rnd random(8)
-// ring euc euclid(7 5)
+ring ar1 [0 12 3.14 56]
+ring ar2 [11 22 33 44 55]
+ring ar3 [hat kick 3.14 123]
+ring ar4 [0 5 7 9]
+ring ar5 [0 12 24 -12]
 
-killall
+
+ring rnd random(20 0 12)
+ring bt1 euclid(8 5 1)
+ring spr spread(5)
+ring smp fill(kick 5 snare 2 hat 6)
+ring smp shuffle(smp)
+
+ring jn join(ar1 ar3 spr ar5)
+
+ring cln clone(ar4 0 12 24 -12)
+ring dup duplicate(0 4)
+ring dp2 duplicate(ar3 4)
+// ring dp2 duplicate(ar3 hat)
+
+ring vry every(bt1 4 8)
+ring vr2 every(bt1 4 8 1)
+
+ring inv invert(ar5)
+ring in2 invert(ar4 0)
+ring in3 invert(ar4 2 5)
+
+ring lce lace(ar1 ar2)
+ring lce lace(in2 in3 ar3)
+
+ring mrg merge(ar4 ar5)
+
+ring pld palindrome(ar4)
+ring rev reverse(ar4)
+ring rv2 reverse(ar3)
+ring rot rotate(ar4 -2)
+ring rt2 rotate(ar3 2)
+
+// ring spr spray
+ring unq unique(rnd)
+ring sm2 unique(smp)

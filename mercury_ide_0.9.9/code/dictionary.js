@@ -11,19 +11,20 @@ class Dictionary {
 	}
 	get(key) {
 		// if key is not-a-number
-		if (isNaN(key)){
-			// if key is in the dictionary
-			if (this.has(key)){
-				// return contents of key
-				return this.items[key];
-			} else {
-				// return array of one zero
-				return [0];
-			}
-		} else {
-			// return the key when number
-			return [key];
-		}
+		// if (isNaN(key)){
+		// 	// if key is in the dictionary
+		// 	if (this.has(key)){
+		// 		// return contents of key
+		// 		return this.items[key];
+		// 	} else {
+		// 		// return array of one zero
+		// 		return [0];
+		// 	}
+		// } else {
+		// 	// return the key when number
+		// 	return [key];
+		// }
+		return this.items[key];
 	}
 	set(key, value) {
 		// set a value for a key

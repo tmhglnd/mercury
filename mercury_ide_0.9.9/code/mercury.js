@@ -17,29 +17,29 @@ const handlers = {
 	'clear' : () => {
 		dict.clear();
 		max.outlet(dict.items);
+		console.log('cleared dictionary');
 	},
-	'ring' : (...args) => {
-		if (args < 1){}
-		var varName = args[0].toString();	
-		var expr = args.slice(1, args.length).join(' ');
-
+	'ring' : (name, ...args) => {
+		if (args < 1){
+			return;
+		}
+		var expr = args.join(' ');
 		var parsed = parseString(expr);
-		console.log('parsed', parsed);
-	
 		var eval = evaluateParse(parsed);
-		console.log('evaluated', eval);
 
-		dict.set(varName, eval);
+		// dict.set(name, { 
+		// 	"@type" : "1d", 
+		// 	"@value" : eval
+		// });
+
+		dict.set(name, eval);
 		max.outlet(dict.items);
 	},
 	'spread' : (...v) => {
 		return Gen.spread(...v);
 	},
 	'spreadFloat' : (...v) => {
-		console.log(...v);
-		var r = Gen.spreadFloat(...v);
-		console.log(r);
-		return r;
+		return Gen.spreadFloat(...v);
 	},
 	'spreadInclusive' : (...v) => {
 		return Gen.spreadInclusive(...v);
@@ -53,28 +53,63 @@ const handlers = {
 	'random' : (...v) => {
 		return Rand.random(...v);
 	},
+	'randomSeed' : (v) => {
+		Rand.seed(v);
+	},
+	'shuffle' : (v) => {
+		return Rand.shuffle(v);
+	},
 	'euclid' : (...v) => {
 		return Algo.euclid(...v);
 	},
-	'seed' : (v) => {
-		Rand.seed(v);
+	'clone' : (...v) => {
+		return Mod.clone(...v);
+	},
+	'join' : (...v) => {
+		return Mod.combine(...v);
+	},
+	'duplicate' : (...v) => {
+		return Mod.duplicate(...v);
+	},
+	'every' : (...v) => {
+		return Mod.every(...v);
+	},
+	'invert' : (...v) => {
+		return Mod.invert(...v);
+	},
+	'lace' : (...v) => {
+		return Mod.lace(...v);
+	},
+	'merge' : (...v) => {
+		return Mod.merge(...v);
+	},
+	'palindrome' : (...v) => {
+		return Mod.palindrome(...v);
+	},
+	'reverse' : (...v) => {
+		return Mod.reverse(...v);
+	},
+	'rotate' : (...v) => {
+		return Mod.rotate(...v);
+	},
+	'spray' : (...v) => {
+		return Mod.spray(...v);
+	},
+	'unique' : (...v) => {
+		return Mod.unique(...v);
 	}
 }
 max.addHandlers(handlers);
 
-function evaluateParse(parse){
-	var f = parse[0];
+function evaluateParse(params){
+	var f = params[0];
 	if (!hasFunc(f)){
-		console.log("function undefined: " + f);
-		return parse;
+		return params.map(x => parseNumber(x));
 	} else {
-		parse.shift();
-
-		for (i in parse){
-			console.log(parse[i], isNaN(parse[i]));
-		}
-		console.log("@func", f, ": @params", ...parse);
-		return mainFunc.call(handlers, f, ...parse);
+		params.shift();
+		params = params.map(x => parseParam(x));
+		console.log("@func", f, ": @params", ...params);
+		return mainFunc.call(handlers, f, ...params);
 	}
 }
 
@@ -83,23 +118,21 @@ function hasFunc(f){
 }
 
 function mainFunc(func){
-	console.log("func")
-    return this[func].apply(this, Array.prototype.slice.call(arguments, 1));
+	return this[func].apply(this, Array.prototype.slice.call(arguments, 1));
 }
 
-function getParam(name){
-	if (isNaN(name)){
-		if (dict.has(name)){
-			maxApi.outlet(dict.get(name));
-		} else {
-			if (!hasfunc(name)){
-				errorPost("no function/array: " + name);
-				maxApi.outlet([0]);
-			} else {
-				maxApi.outlet(mainfunc.call(handlers, name, ...v));
-			}
+function parseNumber(v){
+	return (isNaN(Number(v))) ? v : Number(v);
+}
+
+function parseParam(v){
+	v = parseNumber(v);
+	if (isNaN(v)){
+		if (dict.has(v)){
+			v = dict.get(v);	
 		}
 	}
+	return v;
 }
 
 // parse the input string to an array of values 
