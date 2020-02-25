@@ -1,11 +1,14 @@
 set randomSeed 8473
 
-ring ar1 [0 12 3.14 56]
+ring ar1 [0 12 3.14 56 789]
 ring ar2 [11 22 33 44 55]
 ring ar3 [hat kick 3.14 123]
 ring ar4 [0 5 7 9]
 ring ar5 [0 12 24 -12]
-
+ring arr2d [0[1 2] 3]
+ring ar6 [0 [ 1 2 ] 3 [ 4 5 6] 7]
+ring ar7 [hat [kick snare] 1.23 [4 5 [6 7] ]8 9]
+ring ar8 (0 (1 3)2 5(6 7 8 )  )
 
 ring rnd random(20 0 12)
 ring bt1 euclid(8 5 1)
@@ -13,7 +16,7 @@ ring spr spread(5)
 ring smp fill(kick 5 snare 2 hat 6)
 ring smp shuffle(smp)
 
-ring jn join(ar1 ar3 spr ar5)
+ring jn join(ar1 ar3 spr ar5 ar6)
 
 ring cln clone(ar4 0 12 24 -12)
 ring dup duplicate(0 4)
