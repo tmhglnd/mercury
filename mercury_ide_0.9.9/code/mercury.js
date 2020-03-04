@@ -28,33 +28,50 @@ const Dict = require('./dictionary.js');
 var dict = new Dict();
 
 const handlers = {
-	// input the ring, get the varname
-	// and join the expression to string to be parsed
+	// parse the input strings from code editor
+	// seperate lines are input as a string of characters
+	'parse' : (...v) => {
+		mainParse(...v);
+		// console.log('@parse', v);
+	},
+	// clear the dictionary with variables
 	'clear' : () => {
 		dict.clear();
-		max.outlet(dict.items);
-		console.log('cleared dictionary');
+		// max.outlet(dict.items);
 	},
+	// done processing
+	'done' : () => {
+		max.outlet("done");
+	},
+	// input the ring, get the varname
+	// and join the expression to string to be parsed
 	'ring' : (name, ...args) => {
+		// console.log('ring', '@name', name, '@args', args);
 		if (args < 1){
+			// do nothing if not enough arguments
+			console.error("not enough arguments for method ring");
 			return;
 		}
-		var expr = args.join(' ');
-		var parsed = parseString(expr);
-		var eval = evaluateParse(parsed);
-		// console.log("@eval", eval);
+		let expr = args.join(' ');
+		let parsed = parseString(expr);
+		let eval = evaluateParse(parsed);
 		
-		var arr = [];
+		let arr = [];
 		for (i in eval){
 			arr.push({ 'array' : eval[i] });
 		}
 		dict.set(name, arr);
-		max.outlet(dict.items);
+		// max.outlet(dict.items);
 	},
+	// All the Array transformation/generation methods
+	// From the total-serialism Node package
 	'spread' : (...v) => {
 		return Gen.spread(...v);
 	},
 	'spreadFloat' : (...v) => {
+		return Gen.spreadFloat(...v);
+	},
+	'spreadF' : (...v) => {
 		return Gen.spreadFloat(...v);
 	},
 	'spreadInclusive' : (...v) => {
@@ -63,11 +80,20 @@ const handlers = {
 	'spreadInclusiveFloat' : (...v) => {
 		return Gen.spreadInclusiveFloat(...v);
 	},
+	'spreadInclusiveF' : (...v) => {
+		return Gen.spreadInclusiveFloat(...v);
+	},
 	'fill' : (...v) => {
 		return Gen.fill(...v);
 	},
 	'random' : (...v) => {
 		return Rand.random(...v);
+	},
+	'randomFloat' : (...v) => {
+		return Rand.randomFloat(...v);
+	},
+	'randomF' : (...v) => {
+		return Rand.randomFloat(...v);
 	},
 	'randomSeed' : (v) => {
 		Rand.seed(v);
@@ -75,16 +101,28 @@ const handlers = {
 	'shuffle' : (v) => {
 		return Rand.shuffle(v);
 	},
+	'scramble' : (v) => {
+		return Rand.shuffle(v);
+	},
 	'euclid' : (...v) => {
+		return Algo.euclid(...v);
+	},
+	'euclidean' : (...v) => {
 		return Algo.euclid(...v);
 	},
 	'clone' : (...v) => {
 		return Mod.clone(...v);
 	},
+	'combine' : (...v) => {
+		return Mod.combine(...v);
+	},
 	'join' : (...v) => {
 		return Mod.combine(...v);
 	},
 	'duplicate' : (...v) => {
+		return Mod.duplicate(...v);
+	},
+	'dup' : (...v) => {
 		return Mod.duplicate(...v);
 	},
 	'every' : (...v) => {
@@ -102,10 +140,19 @@ const handlers = {
 	'palindrome' : (...v) => {
 		return Mod.palindrome(...v);
 	},
+	'palin' : (...v) => {
+		return Mod.palindrome(...v);
+	},
 	'reverse' : (...v) => {
 		return Mod.reverse(...v);
 	},
+	'rev' : (...v) => {
+		return Mod.reverse(...v);
+	},
 	'rotate' : (...v) => {
+		return Mod.rotate(...v);
+	},
+	'rot' : (...v) => {
 		return Mod.rotate(...v);
 	},
 	'spray' : (...v) => {
@@ -116,6 +163,36 @@ const handlers = {
 	}
 }
 max.addHandlers(handlers);
+
+function mainParse(){
+	let rings = [];
+	let other = [];
+	// regular expression to match rings
+	let r = /ring\ .+/;
+
+	for (let i in arguments){
+		l = arguments[i]
+		if (r.test(l)){
+			rings.push(l);
+		} else {
+			other.push(l);
+		}
+	}
+	// clear the dictionary
+	mainFunc.call(handlers, 'clear');
+
+	for (let r in rings){
+		let params = rings[r].split(' ');
+		mainFunc.call(handlers, ...params);
+	}
+	max.outlet(dict.items);
+
+	for (let o in other){
+		let expr = other[o].split(' ');
+		max.outlet('parsed', ...expr);
+	}
+	max.outlet('done');
+}
 
 // evaluate the parsed items if it is a function
 // 
@@ -151,7 +228,7 @@ function mainFunc(func){
 // 
 function parseNumber(v){
 	if (typeof v === 'object'){
-		for (i in v){
+		for (let i in v){
 			v[i] = parseNumber(v[i]);
 		}
 	}
@@ -162,16 +239,16 @@ function parseNumber(v){
 // already stored in variable list
 // 
 function parseParam(v){
-	v = parseNumber(v);
-	if (isNaN(v)){
-		if (dict.has(v)){
-			v = dict.get(v).slice();
-			for (i in v){
-				v[i] = v[i].array;
+	let p = parseNumber(v);
+	if (isNaN(p)){
+		if (dict.has(p)){
+			p = dict.get(p).slice();
+			for (i in p){
+				p[i] = p[i].array;
 			}
 		}
 	}
-	return v;
+	return p;
 }
 
 // parse the input string to an array of values and 
@@ -179,15 +256,15 @@ function parseParam(v){
 // arrays of 3 dimension or higher will be stripped down to 2d
 // 
 function parseString(str){
-	var depth = 0;
-	var type = '1d';
-	var items = []; // array for ascii storage
-	var items2D = []; // array for items array
-	var arg = ""; // string of arguments
+	let depth = 0;
+	let type = '1d';
+	let items = []; // array for ascii storage
+	let items2D = []; // array for items array
+	let arg = ""; // string of arguments
 
 	// iterate through all the characters in a codeline
 	// and set items and tokens based on character
-	for (var i in str){
+	for (let i in str){
 		var char = str[i];
 		if (char === "[" || char === "("){
 			if(arg != ""){ 

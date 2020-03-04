@@ -19,7 +19,7 @@ function jit_matrix(mat){
 }
 
 function lexer(code){
-	outlet(0, "SOF", "\n");
+	// outlet(0, "SOF", "\n");
 	for (var y = 0; y < code.dim[1]; y++){
 		var line = "";
 
@@ -51,7 +51,7 @@ function lexer(code){
 
 		lineComment = false;
 	}
-	outlet(0, "EOF", "\n");
+	// outlet(0, "EOF", "\n");
 }//lexer()
 
 //=====================================================================
