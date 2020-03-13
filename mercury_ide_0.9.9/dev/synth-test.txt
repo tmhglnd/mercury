@@ -1,11 +1,7 @@
 set volume 1
 set randomSeed 9123
 set scale pentatonic_minor c
-// set hipass 900 1000
-// set lopass 400 1000
 
-
-// ring notes [0 7 5 3]
 ring bss fill(0 16 -3 16)
 ring notes spread(5 0 12)
 ring nts palin(notes)
@@ -23,18 +19,12 @@ new synth sine name(s2)
 	set s2 gain(0)
 
 new synth sine name(s3)
-	set s3 note(bss 0) time(1/16) shape(-1) beat(1)
-	set s3 fx(reverb 0.8 18) fx(drive 5)
+	set s3 note(bss 0) time(1/16) shape(2 90 4) beat(1)
+	set s3 fx(reverb 0.8 9) 
+	set s3 fx(drive 5)
 	set s3 gain(2) wave2(sine 1 2) fx(lfo 1/4 2 1)
 
-ring kck hexBeat(8)
-new sample kick_dub time(1/16) fx(filter low 800 0.4) beat(kck 1)
-
 set sn fx(reverb 0.9 17)
-// set all fx(lfo 1/4 )
-// set all fx(delay 3/16 7/16 0.6 0.9)
 set sn fx(drive 5)
-
-new sample hat_min time(1/4 1/8) gain(0.4) pan(-1)
 
 killAll

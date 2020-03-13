@@ -14264,7 +14264,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 120.0, 148.0, 89.0 ],
-									"text" : "\"Macintosh HD:/Users/timohoogland/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/dev/synth-test.txt\""
+									"text" : "\"Macintosh HD:/Users/timohoogland/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/dev/sample-test.txt\""
 								}
 
 							}

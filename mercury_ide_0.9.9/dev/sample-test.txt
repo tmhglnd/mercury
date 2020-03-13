@@ -1,0 +1,52 @@
+
+set tempo 152
+// set hipass 0 1000
+
+ring cBt hexBeat(00ffcc92)
+ring cBt hexBeat(f0f0adb5)
+ring offs spreadFloat(32 0.3 0.7)
+ring spds fill(1 3 -1 4)
+ring spds shuffle(spds)
+ring wbs fill(1/4 5 1/16 7 1/8 4 1/6 2 1/12 3 1/24 2)
+ring wbs shuffle(wbs)
+
+new sample choir_01 time(1/4) speed(-1) offset(0.5) name(ch)
+	set ch fx(lfo wbs) fx(drive 5) pan(random)
+	set ch fx(reverb 1 7) gain(1.5)
+
+// new sample kick_dub time(1/4)
+/*
+new sample choir_01 name(ch2)
+	set ch2 time(1/16) speed(0.5) shape(1 110 2) beat(cBt 2)
+	set ch2 fx(double) fx(reverb 0.7 11) offset(offs)
+	set ch2 fx(drive 10)
+
+ring kckBt hexBeat(8)
+new sample kick_909_dist time(1/16) gain(1.1) beat(kckBt 2)
+
+new sample hat_dub time(1/4 1/8) gain(0.3) pan(-0.8)
+
+ring bssLine [0 0 [12 24 36]]
+ring bssBt hexBeat(f4249cbd)
+ring qs spreadFloat(64 0.4 0.7)
+
+new synth saw note(bssLine 0) shape(1 100 2) beat(bssBt 2) name(bs)
+	set bs fx(filter low 8 3000 200 0.5 0 0.2) time(1/16)
+	set bs wave2(square 0.49932) fx(reverb 0.9 15) fx(lfo 1/16)
+
+new synth sine note(0 2) time(1 3/16) fx(drive 5) shape(1 300) name(sn)
+	set sn fx(delay 1/16 4/16 0.8) gain(0)
+
+ring sBt hexBeat(74ad6c)
+// ring sBt hexBeat(f)
+new sample snare_dnb time(1/16) beat(sBt 1) gain(0.1) name(snare)
+	set snare fx(filter low 2 4000 100 0.3) fx(reverb 0.7 8)
+	set snare pan(random)
+
+new sample snare_dub time(1/2 1/4) gain(1) speed(0.8) name(sn2)
+	set sn2 fx(reverb 0.3 11) 
+
+new sample kick_sub time(2) gain(0) speed(1)
+*/
+
+killAll
