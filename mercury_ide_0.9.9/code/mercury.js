@@ -52,6 +52,7 @@ const handlers = {
 			console.error("not enough arguments for method ring");
 			return;
 		}
+		// console.log("ring", "@name", name, "@args", args);
 		let expr = args.join(' ');
 		let parsed = parseString(expr);
 		let eval = evaluateParse(parsed);
@@ -61,104 +62,173 @@ const handlers = {
 			arr.push({ 'array' : eval[i] });
 		}
 		dict.set(name, arr);
-		// max.outlet(dict.items);
 	},
 	// All the Array transformation/generation methods
 	// From the total-serialism Node package
+	// 
+	// generate an array of ints between specified range
 	'spread' : (...v) => {
 		return Gen.spread(...v);
 	},
+	// generate an array of floats between range
 	'spreadFloat' : (...v) => {
 		return Gen.spreadFloat(...v);
 	},
 	'spreadF' : (...v) => {
 		return Gen.spreadFloat(...v);
 	},
+	// generate an array of ints between specified range (inclusive)
 	'spreadInclusive' : (...v) => {
 		return Gen.spreadInclusive(...v);
 	},
+	// generate an array of floats between range (inclusive)
 	'spreadInclusiveFloat' : (...v) => {
 		return Gen.spreadInclusiveFloat(...v);
 	},
 	'spreadInclusiveF' : (...v) => {
 		return Gen.spreadInclusiveFloat(...v);
 	},
+	// fill an array with duplicates of a value
 	'fill' : (...v) => {
 		return Gen.fill(...v);
 	},
+	// generate an array of random integers in range
 	'random' : (...v) => {
 		return Rand.random(...v);
 	},
+	'rand' : (...v) => {
+		return Rand.random(...v);
+	},
+	// generate an array of random floats
 	'randomFloat' : (...v) => {
 		return Rand.randomFloat(...v);
 	},
 	'randomF' : (...v) => {
 		return Rand.randomFloat(...v);
 	},
+	'randF' : (...v) => {
+		return Rand.randomFloat(...v);
+	},
+	// set the random number generator seed
 	'randomSeed' : (v) => {
 		Rand.seed(v);
 	},
+	// shuffle the items in an array, influenced by the random seed
 	'shuffle' : (v) => {
 		return Rand.shuffle(v);
 	},
 	'scramble' : (v) => {
 		return Rand.shuffle(v);
 	},
+	// generate a euclidean rhythm evenly spacing n-beats amongst n-steps
 	'euclid' : (...v) => {
 		return Algo.euclid(...v);
 	},
 	'euclidean' : (...v) => {
 		return Algo.euclid(...v);
 	},
+	// generate a rhythm based on a hexadecimal string (0-f)
+	'hexBeat' : (...v) => {
+		// console.log("@hexBeat", v);
+		return Algo.hexBeat(v[0]);
+	},
+	'hex' : (...v) => {
+		return Algo.hexBeat(v[0]);
+	},
+	// duplicate an array with an offset added to every value
 	'clone' : (...v) => {
 		return Mod.clone(...v);
 	},
+	// combine multiple numbers/arrays into one
 	'combine' : (...v) => {
+		return Mod.combine(...v);
+	},
+	'concat' : (...v) => {
 		return Mod.combine(...v);
 	},
 	'join' : (...v) => {
 		return Mod.combine(...v);
 	},
+	// duplicate an array certain amount of times
 	'duplicate' : (...v) => {
 		return Mod.duplicate(...v);
 	},
 	'dup' : (...v) => {
 		return Mod.duplicate(...v);
 	},
+	'repeat' : (...v) => {
+		return Mod.duplicate(...v);
+	},
+	// add zeroes to a rhythm to make it play once over a certain amount of bars
 	'every' : (...v) => {
 		return Mod.every(...v);
 	},
+	// invert an array around a center point
 	'invert' : (...v) => {
 		return Mod.invert(...v);
 	},
+	'inverse' : (...v) => {
+		return Mod.invert(...v);
+	},
+	'flip' : (...v) => {
+		return Mod.invert(...v);
+	},
+	'inv' : (...v) => {
+		return Mod.invert(...v);
+	},
+	// interleave multiple arrays into one
 	'lace' : (...v) => {
 		return Mod.lace(...v);
 	},
+	'zip' : (...v) => {
+		return Mod.lace(...v);
+	},
+	// merge arrays into a 2D-array
 	'merge' : (...v) => {
 		return Mod.merge(...v);
 	},
+	'mix' : (...v) => {
+		return Mod.merge(...v);
+	},
+	// generate a palindrome of an array
 	'palindrome' : (...v) => {
 		return Mod.palindrome(...v);
 	},
 	'palin' : (...v) => {
 		return Mod.palindrome(...v);
 	},
-	'reverse' : (...v) => {
-		return Mod.reverse(...v);
+	'mirror' : (...v) => {
+		return Mod.palindrome(...v);
 	},
-	'rev' : (...v) => {
-		return Mod.reverse(...v);
-	},
+	// rotate an array in positive or negative direction
 	'rotate' : (...v) => {
 		return Mod.rotate(...v);
 	},
 	'rot' : (...v) => {
 		return Mod.rotate(...v);
 	},
+	'turn' : (...v) => {
+		return Mod.rotate(...v);
+	},
+	// reverse an array
+	'reverse' : (...v) => {
+		return Mod.reverse(...v);
+	},
+	'rev' : (...v) => {
+		return Mod.reverse(...v);
+	},
+	'retrograde' : (...v) => {
+		return Mod.reverse(...v);
+	},
+	// spray values on the non-zero places of another array
 	'spray' : (...v) => {
 		return Mod.spray(...v);
 	},
+	// remove duplicates from an array, leave order intact
 	'unique' : (...v) => {
+		return Mod.unique(...v);
+	},
+	'thin' : (...v) => {
 		return Mod.unique(...v);
 	}
 }
@@ -186,9 +256,9 @@ function mainParse(){
 		mainFunc.call(handlers, ...params);
 	}
 	max.outlet(dict.items);
-
+	
 	for (let o in other){
-		let expr = other[o].split(' ');
+		let expr = other[o].split(' ').map(x => parseNumber(x));
 		max.outlet('parsed', ...expr);
 	}
 	max.outlet('done');

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1041.0, 783.0 ],
+		"rect" : [ 365.0, 79.0, 1041.0, 783.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -322,7 +322,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
 					"patching_rect" : [ 140.0, 384.0, 104.0, 35.0 ],
-					"presentation_linecount" : 2,
 					"text" : "makenote 127 @repeatmode 2"
 				}
 
@@ -419,7 +418,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 63.75, 700.0, 165.0, 22.0 ],
-					"text" : "selector~ 2 1"
+					"text" : "selector~ 2 2"
 				}
 
 			}
@@ -491,7 +490,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 660.0, 313.0, 150.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "duration is:\nattack + decay"
 				}
 
@@ -504,7 +502,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 660.0, 237.0, 165.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "attack, decay, release\n\nmaps to:\nattack, decay, s=1, release"
 				}
 
@@ -517,7 +514,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 660.0, 160.0, 150.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "attack, release\n\nmaps to:\nattack, d=0, s=1, release"
 				}
 
@@ -530,7 +526,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 660.0, 85.0, 150.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "attack = ms\ndecay = ms\nsustain = amp\nrelease = ms"
 				}
 

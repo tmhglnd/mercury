@@ -1,29 +1,40 @@
 set randomSeed 8473
-set scale pentatonic_minor C
+set scale minor_harmonic C
+set tempo 140 10000
 
-ring kck [1 0 0 1 0.3 0.3]
 ring ht [1 0 1 1 0 0.5]
-ring bss euclid(17 13 2)
-ring pan spreadFloat(32 -1 1)
+ring bt hexBeat(92929805);
+// ring bt hexBeat();
 
-ring smps [tom_hi tom_lo tom_mid]
+// ring bt hexBeat(ecabb);
+// ring bss euclid(17 13 2)
+// ring pan spreadFloat(32 -1 1)
 
-new sample smps time(1/16) beat(kck) gain(0.4) pan(random) fx(reverb 0.5 11) fx(delay 3/16 5/16 0.8) shape(1 80 1)
-new sample hat_min time(1/16) beat(ht) pan(pan)
-new sample snare_dub time(1/2 1/4) fx(reverb 0.8 4) gain(2)
+// ring smps [tom_hi tom_lo tom_mid]
 
-new sample kick_dub time(1/4) gain(2) 
-// fx(reverb 2 18) fx(lfo 3/16)
-ring chps randomFloat(10 0.8 0.95)
-ring nts fill(0 9 7 9 -2 9 5 9)
-ring nts clone(nts 0 -5 0 3)
+// new sample smps time(1/16) beat(kck) gain(0.4) pan(random) fx(reverb 0.5 11) fx(delay 3/16 5/16 0.8) shape(1 80 1)
+
+ring hats fill(hat_min 4 hat_min_open 1)
+new sample hats time(1/4 1/8) beat(1 1) pan(random) shape(1 300) name(hat)
+	set hat fx(delay 3/16 5/16 0.9)
+new sample kick_dub time(1/16) gain(2) beat(bt 2)
+new sample snare_dub time(2 1/2) name(sn)
+	set sn fx(reverb 1.1 7) beat(1 1) gain(2)
+	set sn fx(delay 3/8 4/8 0.9)
+
+ring nts [0 0 0 0 [0 19 36]]
 ring len spread(32 20 500)
 ring len palin(len)
 
-new synth saw time(1/16) beat(bss) shape(1 len) name(bass)
-	set bass fx(double) wave2(saw 0.99931) gain(1.1) fx(chip 0.7)
-	set bass fx(delay 2/16 3/16 0.5 0.9) fx(filter low 1100 0.3)
-	set bass note(nts 0)
+new synth saw time(1/16) beat(1) shape(1 len) name(bass)
+	set bass fx(double) wave2(saw 0.99931) gain(1.1)
+	set bass note(nts 0) fx(lfo 1/4 2 1) fx(reverb 1 15)
+	// set bass fx(delay 2/16 3/16 0.5 0.9)
+	set bass fx(filter low 1 4000 200 0.4 1 0.2)
+
+ring clp euclidean(32 5)
+new sample clap_909 time(1/16) gain(4) beat(clp) fx(double) name(c)
+	set c fx(reverb 0.3 4) fx(drive 5)
 
 killAll
 

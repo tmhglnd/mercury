@@ -1,0 +1,29 @@
+set volume 1
+set randomSeed 9123 2
+set scale pentatonic_minor c
+
+ring notes [0 7 5 3]
+ring nts spread(7 0 24)
+ring nts palin(nts)
+ring nts clone(nts 0 0 3 -2)
+ring nts clone(nts 0 7 9 12)
+
+new synth sine name(s)
+	set s note(0 1) time(1/16) shape(1 300) beat(0.2)
+	// set s wave2(sine 2) fx(drive 16)
+
+new synth sine name(s2)
+	set s2 note(nts 2) time(1/16) shape(1 100) beat(0.7)
+	set s2 pan(random)
+
+new synth sine name(s3)
+	set s3 note(0 0) time(2) shape(1 1000 5000) beat(0.7)
+
+ring chps randomFloat(16 0.1 0.8)
+
+set all fx(reverb 0.9 6)
+// set all fx(delay 3/16 7/16 0.6 0.9)
+set all fx(drive 20)
+// set all fx(chip chps)
+
+killAll
