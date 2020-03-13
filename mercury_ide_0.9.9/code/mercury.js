@@ -52,7 +52,7 @@ const handlers = {
 			console.error("not enough arguments for method ring");
 			return;
 		}
-		// console.log("ring", "@name", name, "@args", args);
+		console.log("ring", "@name", name, "@args", ...args);
 		let expr = args.join(' ');
 		let parsed = parseString(expr);
 		let eval = evaluateParse(parsed);
@@ -92,6 +92,11 @@ const handlers = {
 	'fill' : (...v) => {
 		return Gen.fill(...v);
 	},
+	// set the random number generator seed
+	'randomSeed' : (...v) => {
+		console.log("seed", ...v);
+		Rand.seed(v[0]);
+	},
 	// generate an array of random integers in range
 	'random' : (...v) => {
 		return Rand.random(...v);
@@ -109,9 +114,9 @@ const handlers = {
 	'randF' : (...v) => {
 		return Rand.randomFloat(...v);
 	},
-	// set the random number generator seed
-	'randomSeed' : (v) => {
-		Rand.seed(v);
+	// generate an array of coin tosses
+	'coin' : (...v) => {
+		return Rand.coin(v[0]);
 	},
 	// shuffle the items in an array, influenced by the random seed
 	'shuffle' : (v) => {
@@ -239,11 +244,16 @@ function mainParse(){
 	let other = [];
 	// regular expression to match rings
 	let r = /ring\ .+/;
+	let s = /set\ randomSeed\ .+/;
 
 	for (let i in arguments){
 		l = arguments[i]
 		if (r.test(l)){
 			rings.push(l);
+		} else if (s.test(l)){
+			let expr = l.split(' ');
+			expr.shift();
+			mainFunc.call(handlers, ...expr);	
 		} else {
 			other.push(l);
 		}
