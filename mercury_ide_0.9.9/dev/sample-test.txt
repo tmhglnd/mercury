@@ -10,9 +10,14 @@ ring spds shuffle(spds)
 ring wbs fill(1/4 5 1/16 7 1/8 4 1/6 2 1/12 3 1/24 2)
 ring wbs shuffle(wbs)
 
-new sample choir_01 time(1/4) speed(-1) offset(0.5) name(ch)
-	set ch fx(lfo wbs) fx(drive 5) pan(random)
-	set ch fx(reverb 1 7) gain(1.5)
+ring len spread(32 20 150)
+
+// new sample choir_01 time(1/8) speed(-1) offset(0.5) name(ch)
+	// set ch shape(2 10 len)
+	// set ch fx(lfo wbs) fx(drive 5) pan(random)
+	// set ch fx(reverb 1 7) gain(1.5)
+
+// killAll
 
 // new sample kick_dub time(1/4)
 /*
@@ -49,4 +54,4 @@ new sample snare_dub time(1/2 1/4) gain(1) speed(0.8) name(sn2)
 new sample kick_sub time(2) gain(0) speed(1)
 */
 
-killAll
+// killAll
