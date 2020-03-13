@@ -754,12 +754,14 @@ function logoEnable(v){
 var allTextObj = [glText, glCrsr, glNmbr, glCnsl];
 
 function setFont(f){
+	FONT = f;
 	for (var i = 0; i < allTextObj.length; i++){
 		allTextObj[i].font(f);
 	}
 }//setFont()
 
 function setSize(s){
+	SIZE = s;
 	for (var i = 0; i < allTextObj.length; i++){
 		allTextObj[i].size(s);
 	}
