@@ -1,0 +1,16 @@
+
+// utility test and development for ring methods
+
+ring r [0 3 7]
+ring r2 add(r 12)
+
+ring r7 [0 3 7]
+ring r8 subtract(r7 3.14)
+
+ring r3 [0 1 2 4]
+ring r4 divide(r3 4)
+
+ring r9 mul(r4 4)
+
+ring r5 [0 2 4 8 10]
+ring r6 multiply(r5 0.1)

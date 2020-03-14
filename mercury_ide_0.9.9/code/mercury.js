@@ -235,6 +235,31 @@ const handlers = {
 	},
 	'thin' : (...v) => {
 		return Mod.unique(...v);
+	},
+	// add 1 or more values to an array
+	'add' : (...v) => {
+		return Util.add(...v);
+	},
+	// subtract 1 or more values from an array
+	'subtract' : (...v) => {
+		return Util.subtract(...v);
+	},
+	'sub' : (...v) => {
+		return Util.subtract(...v);
+	},
+	// multiply 1 or more values to an array
+	'multiply' : (...v) => {
+		return Util.multiply(...v);
+	},
+	'mul' : (...v) => {
+		return Util.multiply(...v);
+	},
+	// divide 1 or more values from an array
+	'divide' : (...v) => {
+		return Util.divide(...v);
+	},
+	'div' : (...v) => {
+		return Util.divide(...v);
 	}
 }
 max.addHandlers(handlers);

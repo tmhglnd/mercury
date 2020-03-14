@@ -173,7 +173,8 @@ function keyPress(k){
 
 			else if (k == ALT_B){ hst = backSpace(); }
 
-			else if (k == ALT_Z){ getHistory(); }
+			// TO-DO
+			// else if (k == ALT_Z){ getHistory(); }
 
 		 	else if (k == ALT_A){ gotoCharacter(0); }
 			else if (k == ALT_D){ gotoCharacter(1); }
