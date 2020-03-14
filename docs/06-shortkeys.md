@@ -11,9 +11,9 @@ LEFT  = back one character
 RIGHT = forward one character
 ```
 ```
-Alt + UP    = jump to top of editor (end of the line)
-Alt + DOWN  = jump to end of editor (end of the line)
-Alt + LEFT = jump to beginning of the line
+Alt + UP     = jump to top of editor (end of the line)
+Alt + DOWN   = jump to end of editor (end of the line)
+Alt + LEFT   = jump to beginning of the line
 Alt + RIGHT  = jump to end of the line
 ```
 
@@ -42,6 +42,6 @@ Alt + P = paste replace a line where the cursor is located
 ## Other
 
 ```
-ALT + B = backspace a character
-ALT + / = (un)comment a line of code
+Alt + B = backspace a character
+Alt + / = (un)comment a line of code
 ```
