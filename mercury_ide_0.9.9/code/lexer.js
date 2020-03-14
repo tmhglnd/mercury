@@ -46,7 +46,7 @@ function lexer(code){
 		}
 
 		if (line != ""){
-			outlet(0, line);
+			outlet(0, line.trim());
 		}
 
 		lineComment = false;

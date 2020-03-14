@@ -5224,8 +5224,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 50.0, 100.0, 228.0, 22.0 ],
-													"text" : "dialog \"Dange Zone! Are you Sure? (y/n)\""
+													"patching_rect" : [ 50.0, 100.0, 229.0, 22.0 ],
+													"text" : "dialog \"Danger zone! Are you sure? (y/n)\""
 												}
 
 											}
