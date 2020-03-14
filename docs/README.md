@@ -6,6 +6,8 @@
 
 - [Getting Started](./getting-started.md)
 
+- [Shortkeys](./06-shortkeys.md)
+
 - [General Syntax](./00-general.md)
 	- [new](./00-general.md#new)
 		- synth
