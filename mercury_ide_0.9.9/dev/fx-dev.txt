@@ -1,0 +1,26 @@
+// set hipass 1000 1000
+set randomSeed 9482
+set tempo 115
+
+ring bt hex(fca8b530)
+ring chps spreadFloat(16 0.5 1)
+ring verbs fill(2 8 5 8 16 8 19 8)
+// ring chps shuffle(chps)
+ring bss [0 0 36 0 0 0 19]
+
+new synth sine note(bss 0) time(1/16) name(sw) beat(1 4)
+	set sw wave2(square 0.50032)
+	// set sw fx(drive 10)
+	set sw fx(chip chps) shape(1 100 10) gain(1)
+	set sw fx(reverb 2 verbs) fx(lfo 3/16 square)
+	set sw fx(filter low 1 3500 500 0.5)
+	set sw fx(delay 5/16 3/12 0.2)
+
+ring kckBt hex(8890)
+new sample kick_min time(1/16) gain(1.2) beat(kckBt 1)
+new sample hat_min time(1/16 1/8) gain(0.3)
+
+ring snVrb [5 5 5 18]
+new sample snare_dnb time(2 7/8) gain(1) fx(reverb 2 snVrb)
+
+killAll
