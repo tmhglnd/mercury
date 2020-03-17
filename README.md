@@ -53,7 +53,8 @@ It is named after te planet Mercury. Mercury rules the creation and expression o
 	- sequencing
 	- creative coding and live coding.
 - Providing creatives with an extensive library of algorithmic composition techniques
-	- in the future released as algo-comp.js node package
+	- released as a seperate Node Package titled [Total-Serialism](https://www.npmjs.com/package/total-serialism)
+	- exposed in the Mercury environment through Node4Max
 - Providing creatives with a multi-purpose non-linear-sequencer 
 	- using OSC to communicate with other (creative-coding) platforms
 	- using MIDI to communicate with other environments
