@@ -171,6 +171,8 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 - Mercury has been granted in-kind funding from [**Creative Coding Utrecht**](https://creativecodingutrecht.nl/)
 - Roald van Dillewijn for working together on osc and midi functionalities combined with his [Digilog modified guitar-pedals](https://roaldvandillewijn.nl/projects/digilog)
 - Guillem Gongora Moral for using Mercury as a composition tool and sharing valuable feedback in the process
+- Repo banner image by Annebel Bunt
+- Live performance image by Zuzanna Zgierska
 
 ## Licenses
 
