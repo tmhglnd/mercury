@@ -1,0 +1,19 @@
+set tempo 130
+
+// set osc default
+// set osc ip 127.0.0.1
+set osc ip localhost
+set osc in 4000
+set osc out 8888
+
+ring r0 spread(5)
+ring r1 random(10)
+
+new synth sine name(sin) shape(1 /sine0/decay 2)
+	// set sin fx(lfo /sine0/lfo)
+	set sin fx(reverb 1 /sine0/verb)
+	set sin note(/sine0/note 1)
+	set sin time(1/16)
+	set sin fx(drive /sine0/drive)
+	set sin fx(filter low /sine0/cutoff 0.5)
+	set sin wave2(sine 0.4992)
