@@ -1,19 +1,41 @@
-set tempo 130
-
+set tempo 143
+// set lopass 500 1000
 // set osc default
 // set osc ip 127.0.0.1
 set osc ip localhost
 set osc in 4000
 set osc out 8888
 
+set randomSeed 9482
+
 ring r0 spread(5)
 ring r1 random(10)
+ring bt hex(ff0cfaea)
+// ring bt hex(4949202a)
+// ring bt hex(f)
+ring vrbs fill(2 8 7 8 16 16)
+ring chp randomFloat(30 0.1 0.7)
+ring qs spreadFloat(8 0.3 0.7)
+ring bssLine [0 0 [0 0 19 24 36]]
 
-new synth sine name(sin) shape(1 /sine0/decay 2)
+new synth saw name(sin) shape(1 /sine0/decay 2)
+	set sin beat(bt 2)
 	// set sin fx(lfo /sine0/lfo)
-	set sin fx(reverb 1 /sine0/verb)
-	set sin note(/sine0/note 1)
+	// set sin fx(reverb 1 /sine0/verb)
+	set sin fx(reverb 1 vrbs)
+	set sin note(bssLine 0)
 	set sin time(1/16)
-	set sin fx(drive /sine0/drive)
-	set sin fx(filter low /sine0/cutoff 0.5)
-	set sin wave2(sine 0.4992)
+	set sin fx(chip chp)
+	// set sin fx(filter low /sine0/cutoff 0.5)
+	set sin fx(filter low 1 5000 50 0.4 0.5 0.1)
+	set sin wave2(saw 0.49992)
+	set sin fx(delay 3/16 4/16 0.2)
+	set sin fx(lfo 3/16)
+	set sin gain(0.9)
+
+new sample kick_909_dist time(1/4) gain(1.1)
+new sample hat_min time(1/4 1/8) gain(0.4)
+
+ring ht hex(35ea)
+new sample hat_click time(1/16) gain(0.3) beat(ht 1) pan(random)
+killAll

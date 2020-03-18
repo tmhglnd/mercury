@@ -56,7 +56,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 302.25, 135.0, 29.5, 22.0 ],
+					"patching_rect" : [ 306.75, 135.0, 29.5, 22.0 ],
 					"text" : "t l 0"
 				}
 
@@ -116,8 +116,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 270.0, 90.0, 62.0, 22.0 ],
-					"text" : "regexp /.+"
+					"patching_rect" : [ 270.0, 90.0, 68.0, 22.0 ],
+					"text" : "regexp ^/.+"
 				}
 
 			}
