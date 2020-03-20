@@ -1,8 +1,6 @@
 # Mercury Live Coding Environment
 
-<a href="https://www.patreon.com/bePatron?u=9649817" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
-
-[![GitHub stars](https://img.shields.io/github/stars/tmhglnd/mercury?style=social)](https://github.com/tmhglnd/mercury/stargazers)
+## [Become a Patron!](https://www.patreon.com/bePatron?u=9649817)
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 [![GitHub](https://img.shields.io/github/license/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/blob/master/LICENSE)
