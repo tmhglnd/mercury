@@ -1,13 +1,15 @@
 # Mercury Live Coding Environment
 
-![GitHub stars](https://img.shields.io/github/stars/tmhglnd/mercury?style=social)
+<a href="https://www.patreon.com/bePatron?u=9649817" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)
-![GitHub](https://img.shields.io/github/license/tmhglnd/mercury)
-![GitHub repo size](https://img.shields.io/github/repo-size/tmhglnd/mercury)
+[![GitHub stars](https://img.shields.io/github/stars/tmhglnd/mercury?style=social)](https://github.com/tmhglnd/mercury/stargazers)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/tmhglnd/mercury)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/tmhglnd/mercury)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
+[![GitHub](https://img.shields.io/github/license/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/blob/master/LICENSE)
+[![GitHub repo size](https://img.shields.io/github/repo-size/tmhglnd/mercury)]()
+
+[![GitHub issues](https://img.shields.io/github/issues-raw/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/commits/master)
 
 **A minimal and human-readable language for the live coding of algorithmic electronic audiovisual performances.**
 
