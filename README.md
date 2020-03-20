@@ -1,5 +1,14 @@
 # Mercury Live Coding Environment
 
+![GitHub stars](https://img.shields.io/github/stars/tmhglnd/mercury?style=social)
+
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)
+![GitHub](https://img.shields.io/github/license/tmhglnd/mercury)
+![GitHub repo size](https://img.shields.io/github/repo-size/tmhglnd/mercury)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/tmhglnd/mercury)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/tmhglnd/mercury)
+
 **A minimal and human-readable language for the live coding of algorithmic electronic audiovisual performances.**
 
 Programmed in the Cycling'74 Max8 node-based creative coding environment, as an abstracted layer on the Max/MSP audio engine and with the use of Javascript for parsing, lexing and generative algorithms and Jitter/OpenGL for the visuals and the responsive texteditor.
@@ -25,12 +34,22 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 
 ## Newest Feature
 
-**new `OSC`-object, output sequences as osc-messages, custom naming of messages in a intuitive way (similar to making instruments).**
+**Input OSC addresses as arguments for instrument methods and control the parameters externally**
 
-```
+```java
 set osc default
 
-new sender osc name(myOSC) someParam(3.14)
+new synth sine name(sn)
+	set sn note(/sine/pitch 0) shape(5 /sine/release)
+	set sn fx(reverb 1 /sine/verb)
+```
+
+**new `OSC`-object, output sequences as osc-messages, custom naming of messages in a intuitive way (similar to making instruments).**
+
+```java
+set osc default
+
+new emitter osc name(myOSC) someParam(3.14)
 // result => /myOsc/someParam 3.14
 ```
 
