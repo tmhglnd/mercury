@@ -200,9 +200,8 @@ exports.fibonacci = fibonacci;
 // @param {Int} -> modulus for pisano period
 // @return {Int-Array} -> array of integers
 // 
-function pisano(mod, len=-1){
+function pisano(mod=12, len=-1){
 	mod = (mod < 1)? 1 : mod;
-
 	if (len < 1){
 		return pisanoPeriod(mod);
 	} else {
@@ -211,7 +210,7 @@ function pisano(mod, len=-1){
 }
 exports.pisano = pisano;
 
-function pisanoPeriod(mod, length=64){
+function pisanoPeriod(mod=2, length=64){
 	// console.log('pisano', '@mod', mod, '@length', length);
 	var seq = numBonacci(length, 0, 1, 1).map(x => x.mod(mod).toNumber());
 	var p = [], l = 0;

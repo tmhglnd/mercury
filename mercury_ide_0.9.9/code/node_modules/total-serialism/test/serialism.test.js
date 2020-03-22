@@ -29,10 +29,10 @@ const Util = require("../index").Utility;
 
 // testSerial();
 // testGen();
-// testAlgo();
+testAlgo();
 // testRand();
 // testMod();
-testTranslate();
+// testTranslate();
 // testUtil();
 
 // Global vars for tests
@@ -116,10 +116,12 @@ function testAlgo(){
 	test("Algo.linden(0, 3, complexRules)");
 
 	pagebreak("Fibonacci");
+	test('Algo.fibonacci()');
 	test("Algo.fibonacci(12)");
 	test("Algo.fibonacci(2, 100)");
 	test('Algo.fibonacci(1, 100)[0].split("").map(x => Number(x))');
 	
+	test('Algo.pisano()');
 	test("Algo.pisano(12)");
 	test("Algo.pisano(7)");
 	test("Algo.pisano(4, 10)");

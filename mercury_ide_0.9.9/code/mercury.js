@@ -1,5 +1,11 @@
-// The Mercury Ring methods
+//==============================================================================
+// mercury.js
+// by Timo Hoogland (@t.mo / @tmhglnd), www.timohoogland.com
+// GNU GPL-3.0 License
+// 
+// The Mercury Parser and Ring Methods
 // Using the total-serialism node package
+//==============================================================================
 
 const max  = require('max-api');
 const Gen  = require('total-serialism').Generative;
@@ -9,22 +15,6 @@ const Rand = require('total-serialism').Stochastic;
 const TL   = require('total-serialism').Translate;
 const Util = require('total-serialism').Utility;
 const Dict = require('./dictionary.js');
-
-// const moo = require('moo');
-// let lexer = moo.compile({
-// 	number:	/-?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
-// 	lParen:	'(',
-// 	rParen:	')',
-// 	lArray:	'[',
-// 	rArray:	']',
-// 	seperator:	/[\,\;]/,
-// 	string:	{ 
-// 				match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
-// 				value: x => x.slice(1, x.length-1) 
-// 			},
-// 	identifier:	/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
-// 	ws:		/[ \t]+/,
-// });
 
 var dict = new Dict();
 
@@ -66,6 +56,8 @@ const handlers = {
 	},
 	// All the Array transformation/generation methods
 	// From the total-serialism Node package
+	// 
+	// Generative Methods
 	// 
 	// generate an array of ints between specified range
 	'spread' : (...v) => {
@@ -113,6 +105,48 @@ const handlers = {
 	'cosineF' : (...v) => {
 		return Gen.cosineFloat(...v);
 	},
+	// 
+	// Algorithmic Methods
+	// 
+	// generate a euclidean rhythm evenly spacing n-beats amongst n-steps
+	'euclid' : (...v) => {
+		return Algo.euclid(...v);
+	},
+	'euclidean' : (...v) => {
+		return Algo.euclid(...v);
+	},
+	// generate a rhythm based on a hexadecimal string (0-f)
+	'hexBeat' : (...v) => {
+		// console.log("@hexBeat", v);
+		return Algo.hexBeat(v[0]);
+	},
+	'hex' : (...v) => {
+		return Algo.hexBeat(v[0]);
+	},
+	// generate the numbers in the fibonacci sequence
+	'fibonacci' : (...v) => {
+		return Algo.fibonacci(...v);
+	},
+	// generate the pisano periods from the fibonacci sequence
+	'pisano' : (...v) => {
+		// console.log(Algo.pisano(...v));
+		return Algo.pisano(...v);
+	},
+	// generate the numbers in the fibonacci sequence
+	'pell' : (...v) => {
+		return Algo.pell(...v);
+	},
+	// generate the numbers in the fibonacci sequence
+	'lucas' : (...v) => {
+		return Algo.lucas(...v);
+	},
+	// generate the numbers in the fibonacci sequence
+	'threeFibonacci' : (...v) => {
+		return Algo.threeFibonacci(...v);
+	},
+	// 
+	// Stochastic Methods
+	// 
 	// set the random number generator seed
 	'randomSeed' : (...v) => {
 		console.log("seed", ...v);
@@ -135,9 +169,29 @@ const handlers = {
 	'randF' : (...v) => {
 		return Rand.randomFloat(...v);
 	},
+	// generate random values picked from an urn
+	'urn' : (...v) => {
+		return Rand.urn(...v);
+	},
 	// generate an array of coin tosses
 	'coin' : (...v) => {
 		return Rand.coin(v[0]);
+	},
+	// generate an array of dice rolls
+	'dice' : (...v) => {
+		return Rand.dice(v[0]);
+	},
+	// generate an array of twelveTone notes
+	'twelveTone' : () => {
+		return Rand.twelveTone();
+	},
+	// choose values at random from a ring provided
+	'choose' : (...v) => {
+		return Rand.choose(...v);
+	},
+	// pick values randomly from a ring provided and remove chosen
+	'pick' : (...v) => {
+		return Rand.pick(...v);
 	},
 	// shuffle the items in an array, influenced by the random seed
 	'shuffle' : (v) => {
@@ -146,21 +200,9 @@ const handlers = {
 	'scramble' : (v) => {
 		return Rand.shuffle(v);
 	},
-	// generate a euclidean rhythm evenly spacing n-beats amongst n-steps
-	'euclid' : (...v) => {
-		return Algo.euclid(...v);
-	},
-	'euclidean' : (...v) => {
-		return Algo.euclid(...v);
-	},
-	// generate a rhythm based on a hexadecimal string (0-f)
-	'hexBeat' : (...v) => {
-		// console.log("@hexBeat", v);
-		return Algo.hexBeat(v[0]);
-	},
-	'hex' : (...v) => {
-		return Algo.hexBeat(v[0]);
-	},
+	// 
+	// Transformational Methods
+	// 
 	// duplicate an array with an offset added to every value
 	'clone' : (...v) => {
 		return Mod.clone(...v);
@@ -257,6 +299,9 @@ const handlers = {
 	'thin' : (...v) => {
 		return Mod.unique(...v);
 	},
+	// 
+	// Utility Methods
+	// 
 	// add 1 or more values to an array
 	'add' : (...v) => {
 		return Util.add(...v);

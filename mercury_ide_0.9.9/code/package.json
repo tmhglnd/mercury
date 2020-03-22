@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "moo": "^0.5.1",
-    "total-serialism": "^1.6.2"
+    "total-serialism": "^1.6.3"
   }
 }

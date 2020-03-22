@@ -9,17 +9,16 @@ autowatch = 1;
 inlets = 1;
 outlets = 1;
 
-var lineComment = false;
-var blockComment = false;
-var prevChar;
-
 function jit_matrix(mat){
 	code = new JitterMatrix(mat);
 	lexer(code);
 }
 
 function lexer(code){
-	// outlet(0, "SOF", "\n");
+	var lineComment = false;
+	var blockComment = false;
+	var prevChar;
+	
 	for (var y = 0; y < code.dim[1]; y++){
 		var line = "";
 
@@ -44,15 +43,13 @@ function lexer(code){
 			}
 			prevChar = ascii;
 		}
-
+		
 		if (line != ""){
 			outlet(0, line.trim());
 		}
-
 		lineComment = false;
 	}
-	// outlet(0, "EOF", "\n");
-}//lexer()
+}
 
 //=====================================================================
 // licensed under a
