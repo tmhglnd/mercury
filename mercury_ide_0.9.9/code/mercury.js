@@ -300,6 +300,18 @@ const handlers = {
 		return Mod.unique(...v);
 	},
 	// 
+	// Translate Methods
+	//
+	'tempo' : (...v) => {
+		return TL.setTempo(v[0]);
+	},
+	'scale' : (...v) => {
+		return TL.setScale(...v);
+	},
+	'toScale' : (...v) => {
+		return TL.toScale(...v);
+	},
+	// 
 	// Utility Methods
 	// 
 	// add 1 or more values to an array
@@ -335,13 +347,15 @@ function mainParse(){
 	let other = [];
 	// regular expression to match rings
 	let r = /ring\ .+/;
-	let s = /set\ randomSeed\ .+/;
+	let seed = /set\ randomSeed\ .+/;
+	let scale = /set\ scale\ .+/;
 
 	for (let i in arguments){
 		l = arguments[i]
 		if (r.test(l)){
 			rings.push(l);
-		} else if (s.test(l)){
+		} else if (seed.test(l) || scale.test(l)){
+			other.push(l);			
 			let expr = l.split(' ');
 			expr.shift();
 			mainFunc.call(handlers, ...expr);	
@@ -351,11 +365,12 @@ function mainParse(){
 	}
 	// clear the dictionary
 	mainFunc.call(handlers, 'clear');
-
+	
 	for (let r in rings){
 		let params = rings[r].split(' ');
 		mainFunc.call(handlers, ...params);
 	}
+	// output the new variables dictionary
 	max.outlet(dict.items);
 	
 	for (let o in other){
