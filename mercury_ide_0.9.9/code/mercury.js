@@ -6,6 +6,7 @@ const Gen  = require('total-serialism').Generative;
 const Algo = require('total-serialism').Algorithmic;
 const Mod  = require('total-serialism').Transform;
 const Rand = require('total-serialism').Stochastic;
+const TL   = require('total-serialism').Translate;
 const Util = require('total-serialism').Utility;
 const Dict = require('./dictionary.js');
 
@@ -91,6 +92,26 @@ const handlers = {
 	// fill an array with duplicates of a value
 	'fill' : (...v) => {
 		return Gen.fill(...v);
+	},
+	// generate an array from a sinewave function
+	'sine' : (...v) => {
+		return Gen.sine(...v);
+	},
+	'sineFloat' : (...v) => {
+		return Gen.sineFloat(...v);
+	},
+	'sineF' : (...v) => {
+		return Gen.sineFloat(...v);
+	},
+	// generate an array from a cosine function
+	'cosine' : (...v) => {
+		return Gen.cosine(...v);
+	},
+	'cosineFloat' : (...v) => {
+		return Gen.cosineFloat(...v);
+	},
+	'cosineF' : (...v) => {
+		return Gen.cosineFloat(...v);
 	},
 	// set the random number generator seed
 	'randomSeed' : (...v) => {

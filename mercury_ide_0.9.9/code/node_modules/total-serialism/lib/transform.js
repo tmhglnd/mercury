@@ -16,6 +16,7 @@
 //==============================================================================
 
 // require the Utility methods
+const Rand = require('./gen-stochastic.js');
 const Util = require('./utility.js');
 
 // duplicate an array, but add an offset to every value

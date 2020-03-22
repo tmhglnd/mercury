@@ -40,8 +40,8 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 set osc default
 
 new synth sine name(sn)
-	set sn note(/sine/pitch 0) shape(5 /sine/release)
-	set sn fx(reverb 1 /sine/verb)
+    set sn note(/sine/pitch 0) shape(5 /sine/release)
+    set sn fx(reverb 1 /sine/verb)
 ```
 
 **new `OSC`-object, output sequences as osc-messages, custom naming of messages in a intuitive way (similar to making instruments).**
