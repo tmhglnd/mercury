@@ -75,8 +75,13 @@ exports.duplicate = duplicate;
 // return {Array}
 // 
 function every(a=[0], bars=4, div=16, shift=0){
-	arr = new Array(bars * div - a.length).fill(0);
-	return rotate(a.concat(arr), shift*div);
+	let len = Math.floor(bars * div) - a.length;
+	if (len < 1) { 
+		return a; 
+	} else {
+		arr = new Array(len).fill(0);
+		return rotate(a.concat(arr), Math.floor(shift*div));
+	}
 }
 exports.every = every;
 

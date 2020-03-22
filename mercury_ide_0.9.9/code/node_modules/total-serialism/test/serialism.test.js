@@ -29,9 +29,9 @@ const Util = require("../index").Utility;
 
 // testSerial();
 // testGen();
-testAlgo();
+// testAlgo();
 // testRand();
-// testMod();
+testMod();
 // testTranslate();
 // testUtil();
 
@@ -217,6 +217,8 @@ function testMod(){
 	test("Mod.every([1, 0, 1, 0, 1, 1, 0, 1], 2, 8)");
 	test("Mod.every([1, 0, 1, 1], 1, 16, 0.5)");
 	test("Mod.every([1, 1, 0, 1], 4, 5, -1)");
+	test("Mod.every([1,0,0,1,1], 0.5, 8, 0)");
+	test("Mod.every([1,0,0,1,1], 1.5, 8, 0.5)");
 
 	// var invArr = [0, 2, 5, 10, 13];
 	// console.log(Mod.invert(invArr, 5));
