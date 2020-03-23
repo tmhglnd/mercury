@@ -2,10 +2,10 @@
 	"name" : "mercury_ide_0.9.9",
 	"version" : 1,
 	"creationdate" : 3615958543,
-	"modificationdate" : 3664616446,
+	"modificationdate" : 3667829876,
 	"viewrect" : [ 19.0, 133.0, 356.0, 590.0 ],
 	"autoorganize" : 0,
-	"hideprojectwindow" : 0,
+	"hideprojectwindow" : 1,
 	"showdependencies" : 1,
 	"autolocalize" : 1,
 	"contents" : 	{
@@ -57,17 +57,17 @@
 				"local" : 1
 			}
 ,
-			"listLib.js" : 			{
-				"kind" : "javascript",
-				"local" : 1
-			}
-,
 			"phasorRate.gendsp" : 			{
 				"kind" : "gendsp",
 				"local" : 1
 			}
 ,
 			"recursiveFolder.js" : 			{
+				"kind" : "javascript",
+				"local" : 1
+			}
+,
+			"listLib.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
 			}

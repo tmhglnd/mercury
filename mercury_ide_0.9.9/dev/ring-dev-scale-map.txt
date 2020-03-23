@@ -1,0 +1,56 @@
+
+set tempo 128
+
+// ring fib fibonacci(10)
+// ring pell pell(10)
+// ring lucas lucas(10)
+// ring tF threeFibonacci(10)
+
+// ring ps pisano(8)
+// ring ps2 pisano(5)
+// ring ps3 pisano(4)
+
+// set randomSeed 8929
+// ring cn coin(10)
+// ring dc dice(10)
+// ring tw twelveTone()
+
+// ring urn1 urn(5)
+// ring urn2 urn(10 7)
+// ring urn3 urn(12 -3 3)
+
+// set randomSeed 19523
+// ring samps [hat kick snare]
+// ring chs choose(8 samps)
+
+// ring notes [0 3 7 9 12]
+// ring pick pick(8 notes)
+
+// set scale minor c
+
+// ring notes spread(7)
+// ring notes toScale(notes)
+// ring notes thin(notes)
+
+// ring rtm [1 0 0 1 1 0 1]
+// ring rtm every(rtm)
+
+// ring rtm [1 0 0 1 1]
+// ring barRtm every(rtm 1)
+//=> [1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0]
+// ring barRtm every(rtm 1.5 8 0.5)
+//=> [0 0 0 0 1 0 0 1 1 0 0 0]
+
+/*
+// generate a ring of 32 values with a cosine function
+// by default 1 period, from 0 to 12
+ring melody cosine(32 11 0 24)
+ring bass cosine(64 1 0 12)
+
+new synth sine time(1/8) gain(0.9) note(melody 2)
+new synth sine time(1/8 1/16) gain(0.9) note(bass 1)
+
+set all shape(1 100) fx(reverb 0.8 9)
+set all gain(1)
+killAll
+*/

@@ -57,6 +57,9 @@ var ALT_P = 3008; //copy+paste line
 
 var ALT_B = 10795; //backspace a character
 var ALT_FS = 2295; //(un)comment a line of code
+
+var ALT_J = 10758; //jump 1 word left
+var ALT_L = 2220; //jump 1 word right
 //======================================================================
 
 // include("lexer.js");
@@ -181,6 +184,9 @@ function keyPress(k){
 			else if (k == ALT_S){ gotoLine(1); }
 			else if (k == ALT_W){ gotoLine(0); }
 
+			// else if (k == ALT_J){ gotoWord(0); }
+			// else if (k == ALT_L){ gotoWord(1); }
+
 			else if (k == ALT_Q){ jumpTo(2); }
 			else if (k == ALT_SHFT_Q){ jumpTo(3); }
 
@@ -281,6 +287,21 @@ function gotoCharacter(k){
 		curCharacter = Math.min(lineLengths[curLine], Math.max(0, curCharacter));
 	}
 }//gotoCharacter()
+
+function gotoWord(k){
+	// var cnt = 0;
+	gotoCharacter(k);
+	var char = textMtx.getcell(curCharacter, curLine);
+	
+	post("num", curCharacter);
+	post("lines", totalLines);
+	post("line", curLine);
+	post("char", char, "\n");
+
+	if (char > 32 && curLine > 0){
+		gotoWord(k);
+	}
+}
 
 function gotoLine(k){
 	k = k * 2 - 1;
