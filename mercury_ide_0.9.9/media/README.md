@@ -32,6 +32,7 @@ This pack of sounds contains sounds by the following users:
 - juskiddink ( https://freesound.org/people/juskiddink/ )
 - unfa ( https://freesound.org/people/unfa/ )
 - Cunningar0807 ( https://freesound.org/people/Cunningar0807/ )
+- mmiron ( https://freesound.org/people/mmiron/ )
 
 You can find the packs online at: 
 - https://freesound.org/people/NoiseCollector/packs/219/
@@ -54,6 +55,7 @@ You can find the packs online at:
 - https://freesound.org/people/RutgerMuller/packs/3268/
 - https://freesound.org/people/unfa/packs/14014/
 - https://freesound.org/people/Cunningar0807/packs/24779/
+- https://freesound.org/people/mmiron/packs/8162/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
@@ -214,6 +216,68 @@ You can find the packs online at:
 #### snare_rock
 * 493026__veiler__snarefat.wav
 * url: https://freesound.org/s/493026/
+* license: Creative Commons 0
+
+## Tabla
+
+#### tabla_01
+* 130407__dio-333__dhec.wav
+* url: https://freesound.org/s/130407/
+* license: Creative Commons 0
+
+#### tabla_02
+* 130414__dio-333__ghe-8.wav
+* url: https://freesound.org/s/130414/
+* license: Creative Commons 0
+
+#### tabla_03
+* 130405__dio-333__ghe-2.wav
+* url: https://freesound.org/s/130405/
+* license: Creative Commons 0
+
+#### tabla_hi_long
+* 130422__dio-333__na-open.wav
+* url: https://freesound.org/s/130422/
+* license: Creative Commons 0
+
+#### tabla_hi_short
+* 130428__dio-333__na-sharp.wav
+* url: https://freesound.org/s/130428/
+* license: Creative Commons 0
+
+#### tabla_hi
+* 130421__dio-333__na.wav
+* url: https://freesound.org/s/130421/
+* license: Creative Commons 0
+
+#### tabla_lo_long
+* 130409__dio-333__ghe-6.wav
+* url: https://freesound.org/s/130409/
+* license: Creative Commons 0
+
+#### tabla_lo_short
+* 130413__dio-333__ke.wav
+* url: https://freesound.org/s/130413/
+* license: Creative Commons 0
+
+#### tabla_lo
+* 130411__dio-333__ghe-4.wav
+* url: https://freesound.org/s/130411/
+* license: Creative Commons 0
+
+#### tabla_mid_long
+* 130416__dio-333__tun.wav
+* url: https://freesound.org/s/130416/
+* license: Creative Commons 0
+
+#### tabla_mid_short
+* 130424__dio-333__ke-2.wav
+* url: https://freesound.org/s/130424/
+* license: Creative Commons 0
+
+#### tabla_mid
+* 130417__dio-333__te-ne.wav
+* url: https://freesound.org/s/130417/
 * license: Creative Commons 0
 
 ## Strings
