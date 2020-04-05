@@ -323,7 +323,7 @@ exports.mtos = midiToSemi;
 function divisionToMs(a='1'){
 	// console.log('divisionToMs', a);
 	// var arr = [];
-	// for (i in a){
+	// for (let i in a){
 	// 	// console.log(eval(a[i]));
 	// 	arr.push(eval(a[i]) * notation.measureInMs);
 	// }

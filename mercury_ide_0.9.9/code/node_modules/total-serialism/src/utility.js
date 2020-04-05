@@ -81,7 +81,7 @@ function add(a=[0], v=0){
 		return a + v;
 	}
 	if (Array.isArray(v)){
-		for (i in a){
+		for (let i in a){
 			a[i] = a[i] + v[i % v.length];
 		}
 		return a;
@@ -103,7 +103,7 @@ function subtract(a=[0], v=0){
 		return a - v;
 	}
 	if (Array.isArray(v)){
-		for (i in a){
+		for (let i in a){
 			a[i] = a[i] - v[i % v.length];
 		}
 		return a;
@@ -126,7 +126,7 @@ function multiply(a=[0], v=0){
 		return a * v;
 	}
 	if (Array.isArray(v)){
-		for (i in a){
+		for (let i in a){
 			a[i] = a[i] * v[i % v.length];
 		}
 		return a;
@@ -149,7 +149,7 @@ function divide(a=[0], v=0){
 		return a / v;
 	}
 	if (Array.isArray(v)){
-		for (i in a){
+		for (let i in a){
 			a[i] = a[i] / v[i % v.length];
 		}
 		return a;

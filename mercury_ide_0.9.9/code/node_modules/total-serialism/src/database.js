@@ -29,9 +29,9 @@ function buildNoteSet(){
 	let accidentals = 'bb b # ## x'.split(" ");
 
 	let tones = {};
-	for (n in notes){
+	for (let n in notes){
 		tones[notes[n]] = Note.chroma(notes[n]);
-		for (a in accidentals) {
+		for (let a in accidentals) {
 			let key = notes[n] + accidentals[a];
 			tones[key] = Note.chroma(key);
 		}
