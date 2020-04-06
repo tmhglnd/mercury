@@ -11,7 +11,9 @@
 
 **A minimal and human-readable language for the live coding of algorithmic electronic audiovisual performances.**
 
-Programmed in the Cycling'74 Max8 node-based creative coding environment, as an abstracted layer on the Max/MSP audio engine and with the use of Javascript for parsing, lexing and generative algorithms and Jitter/OpenGL for the visuals and the responsive texteditor.
+Programmed in the Cycling'74 Max8 node-based creative coding environment, as an abstracted layer on the Max/MSP audio engine and with the use of Node4Max for parsing, lexing and generative algorithms and Jitter/OpenGL for the visuals and the responsive texteditor.
+
+>See also the [NodeJS Total-Serialism Package](https://github.com/tmhglnd/total-serialism#total-serialism) for an extensive library of Algorithmic Composition Methods
 
 ![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](media/mercury-live.png)
 
@@ -61,25 +63,29 @@ All elements of the language are designed around making code more accessible and
 
 It is named after te planet Mercury. Mercury rules the creation and expression of our mental processes. The planet implores us to express ourselves. Mercury is about a quick wit, quick thinking. It lets us move from one thing to the next.
 
+Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-serialism#total-serialism) package available on npmjs.com. This package features many algorithmic composition methods.
+
 ![Screenshot of the Mercury environment](media/mercury-screenshot.png)
 
 ## Vision / Goals
 
 - Providing a quick and hands-on coding environment/language for expression, communication and improvisation of livecoded works.
 - Using the language as a teaching environment for:
-	- introduction in music
-	- algorithmic composition 
+	- introduction in (electronic) music
+	- algorithmic composition
 	- sequencing
+	- synthesis (upcoming)
 	- creative coding and live coding.
 - Providing creatives with an extensive library of algorithmic composition techniques
 	- released as a seperate Node Package titled [Total-Serialism](https://www.npmjs.com/package/total-serialism)
 	- exposed in the Mercury environment through Node4Max
 - Providing creatives with a multi-purpose non-linear-sequencer 
 	- using OSC to communicate with other (creative-coding) platforms
-	- using MIDI to communicate with other environments
+	- using MIDI to communicate with other environments (upcoming)
 - Providing creatives with easy sampler/synthesis for sounddesign and composing
-	- using external OSC/MIDI to control parameters in the sampler/synthesis
-- Working towards a stand-alone application for MacOS and Windows, making workflow easier
+	- using external OSC to control parameters in the sampler/synthesis
+	- using external MIDI devices and messages to play the sampler/synthesizers (upcoming)
+- Working towards a stand-alone application for MacOS and Windows, making workflow easier (upcoming)
 - Extending the Mercury users-community and including extensions on the environment in the master-branch
 
 Mercury is a development-in-progress and the language is still very much fluid, with changes made to the language/environment/libraries almost weekly. Feel free the clone/fork this repository, but you might also want to watch and/or star the repo to keep up-to-date with the latest changes whenever they're made.
@@ -96,11 +102,10 @@ Read the [system requirements](#system-requirements) first before getting starte
 2. Add the following dependencies to the `~/Documents/Max 8/Packages` folder:
 	- [misc-max-abstractions](https://github.com/tmhglnd/misc-max-abstractions)
 	- [reverb-yafr-mods](https://github.com/tmhglnd/reverb-yafr-mods)
-	- [~~pass-comparators~~](https://github.com/tmhglnd/pass-comparators) <- now included in the package
-	- ~~jasch package~~ <- temporarily disabled function
+	<!-- - [~~pass-comparators~~](https://github.com/tmhglnd/pass-comparators) <- now included in the package -->
+	<!-- - ~~jasch package~~ <- temporarily disabled function -->
 
-3. Download, clone or fork Mercury
-
+3. Download, clone or fork Mercury to the Projects folder in your Documents:
 ```
 1. Download zip and unpack in ~/Documents/Max 8/Projects (create Projects folder if necessary)
 2. Open mercury_ide_x.x.x.maxproj
@@ -179,10 +184,9 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 
 ## Made with Mercury
 
+- [Livestreamed during Eulerroom Equinox 2020](https://www.youtube.com/watch?v=X0FFcdd1QEE)
 - [Livestreamed during Algo:Ritmi](https://www.facebook.com/timohoogland/videos/3654187371320680/)
-
 - [Live during NLCL Meetup at STEIM](https://www.youtube.com/watch?v=leckC_yUMss)
-
 - *Made something with Mercury? Add it here and send a pull request! ^^*
 
 ## Thanks
