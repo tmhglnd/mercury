@@ -31,6 +31,7 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [Modify Code](#modify-code)
 - [Further Reading](#further-reading-and-listening)
 - [Made with Mercury](#made-with-mercury)
+- [Powered By](#powered-by)
 - [Thanks](#thanks)
 - [Licenses](#licenses)
 
@@ -189,7 +190,7 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 - [Live during NLCL Meetup at STEIM](https://www.youtube.com/watch?v=leckC_yUMss)
 - *Made something with Mercury? Add it here and send a pull request! ^^*
 
-## Powered by
+## Powered By
 
 - Mercury has been granted funding from [**Creative Industries Fund NL**](https://stimuleringsfonds.nl/en/)
 - Mercury has been granted in-kind funding from [**Creative Coding Utrecht**](https://creativecodingutrecht.nl/)
