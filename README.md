@@ -189,10 +189,13 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 - [Live during NLCL Meetup at STEIM](https://www.youtube.com/watch?v=leckC_yUMss)
 - *Made something with Mercury? Add it here and send a pull request! ^^*
 
-## Thanks
+## Powered by
 
 - Mercury has been granted funding from [**Creative Industries Fund NL**](https://stimuleringsfonds.nl/en/)
 - Mercury has been granted in-kind funding from [**Creative Coding Utrecht**](https://creativecodingutrecht.nl/)
+
+## Thanks
+
 - Roald van Dillewijn for working together on osc and midi functionalities combined with his [Digilog modified guitar-pedals](https://roaldvandillewijn.nl/projects/digilog)
 - Guillem Gongora Moral for using Mercury as a composition tool and sharing valuable feedback in the process
 - Repo banner image by Annebel Bunt
