@@ -2,7 +2,7 @@
 	"name" : "mercury_ide_0.9.9",
 	"version" : 1,
 	"creationdate" : 3615958543,
-	"modificationdate" : 3667829876,
+	"modificationdate" : 3669117931,
 	"viewrect" : [ 19.0, 133.0, 356.0, 590.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 1,
@@ -68,6 +68,11 @@
 			}
 ,
 			"listLib.js" : 			{
+				"kind" : "javascript",
+				"local" : 1
+			}
+,
+			"preferences.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
 			}

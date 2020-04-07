@@ -9,6 +9,7 @@
   "author": "Timo Hoogland",
   "license": "ISC",
   "dependencies": {
+    "fs-extra": "^9.0.0",
     "moo": "^0.5.1",
     "total-serialism": "^1.6.8"
   }
