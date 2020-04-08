@@ -18,10 +18,10 @@ let prefs = {
 	"sigvs": 256,
 	"overdrive" : 1,
 	"interrupt" : 1,
-	"a_r" : "16 : 9 (1.78:1 Widescreen)",
-	"res" : "720 (720p)",
 	"v_res" : "720 (720p)",
+	"res" : "720 (720p)",
 	"w_size" : "270",
+	"a_r" : "16 : 9 (1.78:1 Widescreen)",
 	"screens" : 1,
 	"floating" : 1,
 	"visible" : 1,
@@ -45,17 +45,19 @@ let defaultPrefs = { ...prefs };
 // check if path for preference file exists
 // check if file exists, otherwise write the default prefs
 // if file exists, read the preferences
-fs.pathExists(prefFile, (err, exists) => {
-	if (err) console.error(err);
-	if (!exists) {
-		writePrefs(prefFile, prefs);
-	} else {
-		fs.readJson(prefFile, (err, obj) => {
-			if (err) console.error(err);
-			prefs = obj;
-			max.outlet("set", prefs);
-		});
-	}
+max.addHandler('init', () => {
+	fs.pathExists(prefFile, (err, exists) => {
+		if (err) console.error(err);
+		if (!exists) {
+			writePrefs(prefFile, prefs);
+		} else {
+			fs.readJson(prefFile, (err, obj) => {
+				if (err) console.error(err);
+				prefs = obj;
+				max.outlet("set", prefs);
+			});
+		}
+	});
 });
 
 // store a single parameter setting with a value
