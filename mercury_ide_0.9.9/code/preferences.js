@@ -45,19 +45,23 @@ let prefs = {
 	"cursor_c1" : [0, 1, 1, 1],
 	"cursor_c2" : [1, 0, 1, 1],
 	"cursor" : "<==",
-	"auto_log" : 0,
+	"autoLog" : 0,
 	"external_editor" : 0,
 }
 
+// the basefolder for all Mercury local files
+const base = system.user + '/Documents/Mercury';
+
 // variables for the preferences file
-const prefName = '/Documents/Mercury/Preferences/preferences.json';
-const prefFile = system.user + prefName;
+const prefFile = base + '/Preferences/preferences.json';
 const defaults = { ...prefs };
 
 // variables for the sample library file
-const sampleName = '/Documents/Mercury/Data/sample-lib.json';
-const sampleFile = system.user + sampleName;
+const sampleFile = base + '/Data/sample-library.json';
 let samples = {};
+
+// directories for storage of code logs, recordings and sketches
+const userDirs = ['/Code Logs', '/Recordings', '/Sketches'];
 
 // check if path for preference file exists
 // check if file exists, otherwise write the default prefs
@@ -66,6 +70,7 @@ max.addHandler('init', () => {
 	max.post('Load Preference from: ', prefFile);
 	max.post('Load Samples from: ', sampleFile);
 	
+	// create path for preferences file and load if exists
 	if (fs.pathExistsSync(prefFile)){
 		prefs = fs.readJsonSync(prefFile);
 	} else {
@@ -74,10 +79,17 @@ max.addHandler('init', () => {
 	}
 	max.outlet('settings', prefs);
 
+	// create path for sample file and load if exists
 	if (fs.pathExistsSync(sampleFile)){
 		samples = fs.readJsonSync(sampleFile);
 	}
 	max.outlet('samples', samples);
+
+	for (let d in userDirs){
+		let f = base + userDirs[d];
+		fs.ensureDirSync(f);
+		max.outlet('folders', userDirs[d], f);
+	}
 });
 
 // store a single parameter setting with a value
@@ -119,5 +131,5 @@ max.addHandler('load', (fold) => {
 // Sync-write a JSON file to disk
 function writeJson(file, obj){
 	fs.outputJsonSync(file, obj, { spaces: 2 });
-	max.post('File saved: ' + file);
+	// max.post('File saved: ' + file);
 }
