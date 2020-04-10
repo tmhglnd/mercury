@@ -9,8 +9,11 @@
   "author": "Timo Hoogland",
   "license": "ISC",
   "dependencies": {
+    "folder-walker": "^3.2.0",
     "fs-extra": "^9.0.0",
     "moo": "^0.5.1",
+    "path": "^0.12.7",
+    "slash": "^3.0.0",
     "total-serialism": "^1.6.8"
   }
 }

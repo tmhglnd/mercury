@@ -1,12 +1,22 @@
 
-const max = require('max-api');
-const fs = require('fs-extra');
+const max    = require('max-api');
+const os     = require('os');
+const fs     = require('fs-extra');
+const path   = require('path');
+const slash  = require('slash');
+const walker = require('folder-walker');
 
-let cwd = process.cwd();
-let usr = cwd.split('/').slice(0, 3).join('/');
-let name = 'preferences.json';
-let path = '/Documents/Mercury/Preferences/';
-let prefFile = usr + path + name;
+// the system info from the user
+let system = {
+	'user' : os.homedir(),
+	'platform' : os.platform(),
+	'type' : os.type(),
+	'release' : os.release(),
+}
+if (system.type === 'win32'){
+	system.user = slash(system.user);
+}
+max.outlet("system", system);
 
 // the default preferences and object to store prefs
 let prefs = {
@@ -39,25 +49,35 @@ let prefs = {
 	"external_editor" : 0,
 }
 
-// set the default preferences aside
-let defaultPrefs = { ...prefs };
+// variables for the preferences file
+const prefName = '/Documents/Mercury/Preferences/preferences.json';
+const prefFile = system.user + prefName;
+const defaults = { ...prefs };
+
+// variables for the sample library file
+const sampleName = '/Documents/Mercury/Data/sample-lib.json';
+const sampleFile = system.user + sampleName;
+let samples = {};
 
 // check if path for preference file exists
 // check if file exists, otherwise write the default prefs
 // if file exists, read the preferences
 max.addHandler('init', () => {
-	fs.pathExists(prefFile, (err, exists) => {
-		if (err) console.error(err);
-		if (!exists) {
-			writePrefs(prefFile, prefs);
-		} else {
-			fs.readJson(prefFile, (err, obj) => {
-				if (err) console.error(err);
-				prefs = obj;
-				max.outlet("set", prefs);
-			});
-		}
-	});
+	max.post('Load Preference from: ', prefFile);
+	max.post('Load Samples from: ', sampleFile);
+	
+	if (fs.pathExistsSync(prefFile)){
+		prefs = fs.readJsonSync(prefFile);
+	} else {
+		prefs = { ...defaults };
+		writeJson(prefFile, prefs);
+	}
+	max.outlet('settings', prefs);
+
+	if (fs.pathExistsSync(sampleFile)){
+		samples = fs.readJsonSync(sampleFile);
+	}
+	max.outlet('samples', samples);
 });
 
 // store a single parameter setting with a value
@@ -65,21 +85,39 @@ max.addHandler('init', () => {
 max.addHandler('store', (param, value) => {
 	if (prefs[param] !== undefined){
 		prefs[param] = value;
-		max.outlet(prefs);
-		writePrefs(prefFile, prefs);
+		writeJson(prefFile, prefs);
 	}
 });
 
 // restore preferences to default
 // output the preferences to Max
 max.addHandler('default', () => {
-	prefs = { ...defaultPrefs };
-	max.outlet("set", prefs);
-	writePrefs(prefFile, prefs);
+	prefs = { ...defaults };
+	max.outlet("settings", prefs);
+	writeJson(prefFile, prefs);
 });
 
-// sync-write the preferences
-function writePrefs(file, obj){
+
+// load a folder with samples and store names with path in database
+max.addHandler('load', (fold) => {
+	let stream = walker(fold);
+	
+	stream.on('data', (data) => {
+		let file = path.parse(data.filepath);
+		let ext = file.ext;
+		if (ext === '.wav' || ext === '.aif' || ext === '.aiff') {
+			samples[file.name] = data.filepath;
+		}
+	});
+	
+	stream.on('end', () => { 
+		writeJson(sampleFile, samples); 
+		max.outlet('samples', samples);
+	});
+});
+
+// Sync-write a JSON file to disk
+function writeJson(file, obj){
 	fs.outputJsonSync(file, obj, { spaces: 2 });
-	max.post('preferences stored');
+	max.post('File saved: ' + file);
 }
