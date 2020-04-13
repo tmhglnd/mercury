@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 62.0, 91.0, 401.0, 416.0 ],
+		"rect" : [ 61.0, 91.0, 401.0, 416.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -1318,7 +1318,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 133.0, 163.0, 789.0, 639.0 ],
+						"rect" : [ 98.0, 155.0, 789.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1643,8 +1643,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -6647,6 +6645,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -16135,6 +16135,18 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 50.0, 150.0, 38.0, 22.0 ],
+									"text" : "zl.reg"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-9",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -16195,19 +16207,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-2",
-									"linecount" : 3,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 120.0, 356.0, 49.0 ],
-									"text" : "\"Macintosh HD:/Users/timohoogland/Drive/work/code/max/major_projects/mercury_lc/codeklavier-extensions/mercury-trillmap.txt\""
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-94",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -16252,7 +16251,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 252.0, 40.0, 30.0, 30.0 ]
+									"patching_rect" : [ 135.0, 90.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -16271,7 +16270,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
+									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -16292,15 +16291,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-2", 1 ],
+									"destination" : [ "obj-5", 1 ],
 									"source" : [ "obj-164", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -16322,6 +16314,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-118", 0 ],
 									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -26570,13 +26569,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}

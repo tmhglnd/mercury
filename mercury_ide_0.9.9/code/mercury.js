@@ -22,7 +22,7 @@ const handlers = {
 	// parse the input strings from code editor
 	// seperate lines are input as a string of characters
 	'parse' : (...v) => {
-		mainParse(...v);
+		mainParse(v);
 		// console.log('@parse', v);
 	},
 	// clear the dictionary with variables
@@ -342,7 +342,11 @@ const handlers = {
 }
 max.addHandlers(handlers);
 
-function mainParse(){
+function mainParse(lines){
+	// remove double whitespaces
+	lines = lines.slice().map(x => x.replace(/\s{2,}/g, ' '));
+	// max.post("@mainParse", lines);
+
 	let rings = [];
 	let other = [];
 	// regular expression to match rings
@@ -350,8 +354,8 @@ function mainParse(){
 	let seed = /set\ randomSeed\ .+/;
 	let scale = /set\ scale\ .+/;
 
-	for (let i in arguments){
-		l = arguments[i]
+	for (let i in lines){
+		l = lines[i];
 		if (r.test(l)){
 			rings.push(l);
 		} else if (seed.test(l) || scale.test(l)){
