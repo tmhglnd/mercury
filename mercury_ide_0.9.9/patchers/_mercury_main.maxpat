@@ -39,6 +39,52 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-252",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 657.333333333333371, 662.0, 60.0, 33.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 71.0, 278.0, 126.0, 20.0 ],
+					"text" : "Syphon Server",
+					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.600650665749428 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-240",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 626.333333333333371, 705.0, 92.0, 22.0 ],
+					"text" : "prepend enable"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"hint" : "",
+					"id" : "obj-227",
+					"maxclass" : "led",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"offcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.25 ],
+					"oncolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ],
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 626.333333333333371, 660.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 47.0, 277.0, 22.0, 22.0 ],
+					"thickness" : 70.0
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-262",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -1379,7 +1425,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 657.333333333333371, 699.0, 167.0, 22.0 ],
+					"patching_rect" : [ 657.333333333333371, 750.0, 167.0, 22.0 ],
 					"text" : "jit.gl.syphonserver @enable 0"
 				}
 
@@ -1448,7 +1494,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 60.0, 135.0, 47.0 ],
+									"patching_rect" : [ 480.0, 60.0, 139.0, 47.0 ],
 									"text" : "Get code from Troop Collaborative livecoding environment"
 								}
 
@@ -1787,8 +1833,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -6837,6 +6881,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -22339,18 +22385,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-373",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 686.0, 638.0, 151.0, 20.0 ],
-					"text" : "syphon",
-					"textcolor" : [ 0.32156862745098, 0.341176470588235, 0.368627450980392, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-161",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -26763,13 +26797,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
 							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ]
+							"parameter_initial" : [ 0.0 ],
+							"parameter_shortname" : "volume"
 						}
 
 					}
@@ -26941,21 +26975,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1008.945876999999882, 1660.5, 82.0, 22.0 ],
 					"text" : "timesig 16 16"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"attr" : "enable",
-					"bgcolor" : [ 0.07843137254902, 0.07843137254902, 0.07843137254902, 1.0 ],
-					"id" : "obj-376",
-					"lock" : 1,
-					"maxclass" : "attrui",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 686.0, 660.0, 150.0, 22.0 ],
-					"textcolor" : [ 0.930443406105042, 0.936524748802185, 0.936407744884491, 1.0 ]
 				}
 
 			}
@@ -27841,6 +27860,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-240", 0 ],
+					"source" : [ "obj-227", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-224", 0 ],
 					"source" : [ "obj-229", 0 ]
 				}
@@ -27953,6 +27979,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
 					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-49", 0 ],
+					"source" : [ "obj-240", 0 ]
 				}
 
 			}
@@ -28611,13 +28644,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-61", 0 ],
 					"source" : [ "obj-374", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-49", 0 ],
-					"source" : [ "obj-376", 0 ]
 				}
 
 			}
@@ -29570,13 +29596,6 @@
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "dome.maxpat",
-				"bootpath" : "~/Desktop/the-dome-uxr",
-				"patcherrelativepath" : "../../../../../../../../../Desktop/the-dome-uxr",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
