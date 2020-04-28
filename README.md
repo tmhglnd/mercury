@@ -101,8 +101,10 @@ Read the [system requirements](#system-requirements) first before getting starte
 	- If links are not working go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
 
 2. Add the following dependencies to the `~/Documents/Max 8/Packages` folder:
-	- [misc-max-abstractions](https://github.com/tmhglnd/misc-max-abstractions)
-	- [reverb-yafr-mods](https://github.com/tmhglnd/reverb-yafr-mods)
+	- [`misc-max-abstractions`](https://github.com/tmhglnd/misc-max-abstractions)
+	- [`reverb-yafr-mods`](https://github.com/tmhglnd/reverb-yafr-mods)
+	- Optional:
+		- `Syphon` : available as download in the Max Package Manager
 	<!-- - [~~pass-comparators~~](https://github.com/tmhglnd/pass-comparators) <- now included in the package -->
 	<!-- - ~~jasch package~~ <- temporarily disabled function -->
 

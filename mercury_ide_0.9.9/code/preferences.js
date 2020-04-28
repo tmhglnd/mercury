@@ -39,6 +39,7 @@ let prefs = {
 	"fps" : 60,
 	"hidecursor" : 1,
 	"fullscreen" : 0,
+	"syphon" : 0,
 	"def_font" : "Courier New Bold",
 	"font" : "Courier New Bold",
 	"exec_color" : [0.2, 0.2, 0.2, 1],
