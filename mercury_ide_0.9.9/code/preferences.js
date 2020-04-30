@@ -4,14 +4,17 @@ const os     = require('os');
 const fs     = require('fs-extra');
 const path   = require('path');
 const slash  = require('slash');
-const walker = require('folder-walker');
+const fg     = require('fast-glob');
 
 // the system info from the user
 let system = {
 	'user' : os.homedir(),
-	'platform' : os.platform(),
+	'app' : process.cwd(),
+	'tmp' : os.tmpdir(),
 	'type' : os.type(),
 	'release' : os.release(),
+	'platform' : os.platform(),
+	'ip' : os.hostname(),
 }
 if (system.type === 'win32'){
 	system.user = slash(system.user);
@@ -59,6 +62,8 @@ const defaults = { ...prefs };
 
 // variables for the sample library file
 const sampleFile = base + '/Data/sample-library.json';
+const defaultSamplePath = path.join(system.app, "../media/samples")
+const defaultSamples = loadSamples(defaultSamplePath);
 let samples = {};
 
 // directories for storage of code logs, recordings and sketches
@@ -68,21 +73,26 @@ const userDirs = ['/Code Logs', '/Recordings', '/Sketches'];
 // check if file exists, otherwise write the default prefs
 // if file exists, read the preferences
 max.addHandler('init', () => {
-	max.post('Load Preference from: ', prefFile);
-	max.post('Load Samples from: ', sampleFile);
 	
 	// create path for preferences file and load if exists
 	if (fs.pathExistsSync(prefFile)){
+		max.post('Loaded preferences.json: '+prefFile);
 		prefs = fs.readJsonSync(prefFile);
 	} else {
+		max.post('Created preferences.json: '+prefFile);
 		prefs = { ...defaults };
 		writeJson(prefFile, prefs);
 	}
 	max.outlet('settings', prefs);
-
+	
 	// create path for sample file and load if exists
 	if (fs.pathExistsSync(sampleFile)){
+		max.post('Loaded sample-library.json: '+sampleFile);
 		samples = fs.readJsonSync(sampleFile);
+	} else {
+		max.post('Created sample-library.json: '+sampleFile);
+		samples = { ...defaultSamples };
+		writeJson(sampleFile, samples);
 	}
 	max.outlet('samples', samples);
 
@@ -110,23 +120,40 @@ max.addHandler('default', () => {
 	writeJson(prefFile, prefs);
 });
 
-
-// load a folder with samples and store names with path in database
+// load a folder with samples and store 
+// names with path in database file
 max.addHandler('load', (fold) => {
-	let stream = walker(fold);
+	samples = Object.assign({}, loadSamples(fold), samples);
+	writeJson(sampleFile, samples);
+	max.outlet('samples', samples);
+});
+
+
+// replace all samples with the content of a folder 
+// and store names with path in database file
+max.addHandler('replace', (fold) => {
+	samples = loadSamples(fold);
+	writeJson(sampleFile, samples);
+	max.outlet('samples', samples);
+});
+
+function loadSamples(fold){
+	let files =	fg.sync(fold+"/**/*.+(wav|aif|aiff)");
+	let samples = {};
 	
-	stream.on('data', (data) => {
-		let file = path.parse(data.filepath);
-		let ext = file.ext;
-		if (ext === '.wav' || ext === '.aif' || ext === '.aiff') {
-			samples[file.name] = data.filepath;
-		}
-	});
-	
-	stream.on('end', () => { 
-		writeJson(sampleFile, samples); 
-		max.outlet('samples', samples);
-	});
+	for (let f in files){
+		let file = path.parse(files[f]);
+		samples[file.name] = files[f];
+	}
+	return samples;
+}
+
+// restore samplelibrary to default
+// output the lib to Max
+max.addHandler('defaultSamples', () => {
+	samples = { ...defaultSamples };
+	max.outlet("samples", samples);
+	writeJson(sampleFile, samples);
 });
 
 // Sync-write a JSON file to disk
