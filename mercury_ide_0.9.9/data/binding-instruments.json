@@ -13,39 +13,10 @@
 		"fm" : [ "synth_fm", 3 ]
 	}
 ,
-	"sample" : 	{
-		"Clap 01" : [ "sampler", 1 ],
-		"Kick 01" : [ "sampler", 1 ],
-		"Snare 01" : [ "sampler", 1 ],
-		"ahkey" : [ "sampler", 1 ],
-		"bass" : [ "sampler", 1 ],
-		"bd+hh" : [ "sampler", 1 ],
-		"cello-f2" : [ "sampler", 1 ],
-		"cym" : [ "sampler", 1 ],
-		"epno" : [ "sampler", 1 ],
-		"snare" : [ "sampler", 1 ],
-		"vibes-a1" : [ "sampler", 1 ]
-	}
-,
 	"poly_synth" : 	{
 		"saw" : [ "synth_poly", 4 ],
 		"sine" : [ "synth_poly", 4 ],
 		"triangle" : [ "synth_poly", 4 ],
 		"square" : [ "synth_poly", 4 ]
 	}
-,
-	"loop" : 	{
-		"Clap 01" : [ "sampler", 1 ],
-		"Kick 01" : [ "sampler", 1 ],
-		"Snare 01" : [ "sampler", 1 ],
-		"ahkey" : [ "sampler", 1 ],
-		"bass" : [ "sampler", 1 ],
-		"bd+hh" : [ "sampler", 1 ],
-		"cello-f2" : [ "sampler", 1 ],
-		"cym" : [ "sampler", 1 ],
-		"epno" : [ "sampler", 1 ],
-		"snare" : [ "sampler", 1 ],
-		"vibes-a1" : [ "sampler", 1 ]
-	}
-
 }
