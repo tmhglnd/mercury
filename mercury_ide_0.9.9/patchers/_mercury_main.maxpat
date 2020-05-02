@@ -80,8 +80,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 876.0, 690.0, 209.0, 22.0 ],
-					"text" : "loadmess servername \"from Mercury\""
+					"patching_rect" : [ 876.0, 690.0, 197.0, 22.0 ],
+					"text" : "loadmess servername fromMercury"
 				}
 
 			}
@@ -18973,13 +18973,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-293",
-									"linecount" : 9,
+									"linecount" : 10,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 165.0, 121.0, 143.0 ],
-									"text" : ";\rvisuals gridshapes 0;\rvisuals mesh 0;\rvisuals glitch 0;\rvisuals noise 0;\rvisuals pixel 0;\rvisuals focus 0;\rvisuals flicker 0;\rvisuals flicker flip 0;\r"
+									"patching_rect" : [ 50.0, 165.0, 121.0, 156.0 ],
+									"text" : ";\rvisuals gridshapes 0;\rvisuals mesh 0;\rvisuals multiples 0;\rvisuals glitch 0;\rvisuals noise 0;\rvisuals pixel 0;\rvisuals focus 0;\rvisuals flicker 0;\rvisuals flicker flip 0;\r"
 								}
 
 							}
@@ -20103,17 +20103,6 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-25",
-									"maxclass" : "jit.pwindow",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 510.0, 300.0, 80.0, 60.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-24",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -20703,16 +20692,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-25", 0 ],
-									"order" : 0,
-									"source" : [ "obj-9", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"order" : 1,
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -21437,7 +21417,8 @@
 					"linecount" : 4,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 0,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1628.0, 645.0, 126.0, 62.0 ],
 					"text" : "poly~ emptyScene 1 down 2 @args vis 1280 720 @parallel 1 @target 0"
 				}
@@ -23097,8 +23078,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -28353,6 +28332,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -45914,7 +45895,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 360.0, 203.0, 50.0, 22.0 ],
-									"text" : "1."
+									"text" : "0."
 								}
 
 							}
@@ -48315,13 +48296,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_initial" : [ 0.0 ],
+							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ],
-							"parameter_shortname" : "volume"
+							"parameter_mmax" : 6.0
 						}
 
 					}
@@ -51327,6 +51308,13 @@
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "emptyScene.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
