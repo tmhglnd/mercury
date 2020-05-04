@@ -243,7 +243,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2186.0, 759.5, 301.0, 49.0 ],
+					"patching_rect" : [ 2186.0, 759.5, 304.0, 49.0 ],
 					"text" : "gain 2, mid attack 7, mid release 90, side attack 2, side release 110, lpf attack 2, lpf release 40, hpf attack 1, hpf release 150, lpf cutoff 120, hpf cutoff 1600"
 				}
 
@@ -18668,8 +18668,8 @@
 									"numinlets" : 4,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 348.0, 735.0, 432.0, 35.0 ],
-									"text" : "jit.gl.multiple multiples 4 @glparams position rotatexyz scale color @targetname shp"
+									"patching_rect" : [ 348.0, 735.0, 431.999999999999773, 35.0 ],
+									"text" : "jit.gl.multiple multiples 4 @glparams position rotatexyz scale color @targetname shp @enable 0"
 								}
 
 							}
@@ -19203,8 +19203,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-63", 0 ],
-									"hidden" : 1,
-									"midpoints" : [ 75.5, 974.5, 281.0, 974.5 ],
+									"midpoints" : [ 75.5, 970.5, 281.0, 970.5 ],
 									"order" : 2,
 									"source" : [ "obj-6", 0 ]
 								}
@@ -19213,8 +19212,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-64", 0 ],
-									"hidden" : 1,
-									"midpoints" : [ 75.5, 715.0, 357.5, 715.0 ],
+									"midpoints" : [ 75.5, 714.0, 357.5, 714.0 ],
 									"order" : 1,
 									"source" : [ "obj-6", 0 ]
 								}
@@ -19358,7 +19356,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 84.0, 128.0, 640.0, 480.0 ],
+						"rect" : [ 510.0, 205.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -23518,8 +23516,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -28774,6 +28770,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
