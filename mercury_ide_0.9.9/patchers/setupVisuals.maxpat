@@ -3184,7 +3184,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 886.599975000000313, 282.0, 105.0, 22.0 ],
-					"text" : "hidecursor 0 5000"
+					"text" : "hidecursor 0 8000"
 				}
 
 			}
