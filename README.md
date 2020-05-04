@@ -66,7 +66,7 @@ It is named after te planet Mercury. Mercury rules the creation and expression o
 
 Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-serialism#total-serialism) package available on npmjs.com. This package features many algorithmic composition methods.
 
-![Screenshot of the Mercury environment](media/mercury-screenshot.png)
+![Screenshot of the Mercury environment](media/mercury-screenshot2.png)
 
 ## Vision / Goals
 
