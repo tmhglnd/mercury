@@ -15454,7 +15454,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 595.999999666666781, 178.0, 53.0, 22.0 ],
+									"patching_rect" : [ 596.0, 180.0, 53.0, 22.0 ],
 									"text" : "r visuals"
 								}
 
@@ -25756,12 +25756,24 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-9",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 45.0, 75.0, 66.0, 22.0 ],
+													"text" : "route bang"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-19",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 245.0, 165.0, 84.0, 22.0 ],
+													"patching_rect" : [ 245.0, 195.0, 84.0, 22.0 ],
 													"text" : "prepend setall"
 												}
 
@@ -25773,7 +25785,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 90.0, 105.0, 35.0, 22.0 ],
+													"patching_rect" : [ 90.0, 150.0, 35.0, 22.0 ],
 													"text" : "0 0 0"
 												}
 
@@ -25785,7 +25797,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 180.0, 165.0, 29.5, 22.0 ],
+													"patching_rect" : [ 180.0, 195.0, 29.5, 22.0 ],
 													"text" : "t b l"
 												}
 
@@ -25797,7 +25809,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 180.0, 75.0, 84.0, 22.0 ],
+													"patching_rect" : [ 180.0, 120.0, 84.0, 22.0 ],
 													"text" : "routepass dim"
 												}
 
@@ -25809,7 +25821,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "int" ],
-													"patching_rect" : [ 90.0, 165.0, 32.0, 22.0 ],
+													"patching_rect" : [ 90.0, 195.0, 32.0, 22.0 ],
 													"text" : "t b 2"
 												}
 
@@ -25821,7 +25833,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "int" ],
-													"patching_rect" : [ 45.0, 165.0, 32.0, 22.0 ],
+													"patching_rect" : [ 45.0, 195.0, 32.0, 22.0 ],
 													"text" : "t b 1"
 												}
 
@@ -25905,7 +25917,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 81.0, 360.0, 83.0, 22.0 ],
+													"patching_rect" : [ 81.0, 375.0, 83.0, 22.0 ],
 													"text" : "jit.gen @t grid"
 												}
 
@@ -25917,7 +25929,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 58.0, 270.0, 42.0, 22.0 ],
+													"patching_rect" : [ 58.0, 285.0, 42.0, 22.0 ],
 													"text" : "gate 2"
 												}
 
@@ -25929,7 +25941,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "jit_matrix", "" ],
-													"patching_rect" : [ 180.0, 225.0, 133.0, 22.0 ],
+													"patching_rect" : [ 180.0, 255.0, 133.0, 22.0 ],
 													"text" : "jit.matrix 3 float32 4 4 4"
 												}
 
@@ -25941,7 +25953,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 45.0, 75.0, 109.0, 22.0 ],
+													"patching_rect" : [ 45.0, 120.0, 109.0, 22.0 ],
 													"text" : "route random fixed"
 												}
 
@@ -26044,7 +26056,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 58.0, 315.0, 91.0, 22.0 ],
+													"patching_rect" : [ 58.0, 330.0, 91.0, 22.0 ],
 													"text" : "jit.gen @t noise"
 												}
 
@@ -26184,7 +26196,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-22", 0 ],
+													"destination" : [ "obj-9", 0 ],
 													"source" : [ "obj-5", 0 ]
 												}
 
@@ -26214,6 +26226,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-19", 0 ],
 													"source" : [ "obj-8", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-22", 0 ],
+													"source" : [ "obj-9", 1 ]
 												}
 
 											}
@@ -54126,7 +54145,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 627.0, 390.0, 72.0, 22.0 ],
+													"patching_rect" : [ 610.5, 390.0, 72.0, 22.0 ],
 													"text" : "createfolder"
 												}
 
