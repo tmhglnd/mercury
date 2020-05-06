@@ -18,7 +18,9 @@ let system = {
 }
 if (system.type === 'win32'){
 	system.user = slash(system.user);
+	system.app = slash(system.app);
 }
+max.post("system-info", system);
 max.outlet("system", system);
 
 // the default preferences and object to store prefs
