@@ -29,23 +29,25 @@ set scale minor_harmonic Eb
 
 Currently available scales are:
 ```
-- chromatic            0 1 2 3 4 5 6 7 8 9  10 11
-- major                0 0 2 4 4 5 5 7 7 9  9  11 
-- minor                0 0 2 3 3 5 7 7 8 8  10 10
-- minor_harmonic       0 0 2 3 3 5 7 7 8 8  11 11
-- minor_melodic        0 0 2 3 3 5 7 7 9 9  11 11
-- dorian               0 0 2 3 3 5 5 7 7 9  10 10
-- phrygian             0 1 3 3 5 5 7 7 8 8  10 10
-- lydian               0 0 2 4 4 6 6 7 7 9  9  11 
-- mixolydian           0 0 2 4 4 5 5 7 7 9  9  10 
-- locrian              0 1 1 3 3 5 5 6 6 8  8  10 
-- gypsy_spanish        0 1 1 4 4 5 5 7 7 8  8  11 
-- gypsy                0 0 2 3 3 6 6 7 7 8  8  11 
-- hexatonic            0 0 2 2 4 4 6 6 8 8  10 10
-- hexatonic_prometheus 0 0 2 2 4 4 6 6 9 9  10 10
-- hexatonic_blues      0 0 3 3 5 5 6 6 7 7  10 10
-- pentatonic_major     0 0 2 2 4 4 4 7 7 9  9  9
-- pentatonic_minor     0 0 3 3 3 5 5 7 7 10 10 10
+"chromatic" :            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,  10, 11],
+"major" :                [0, 0, 2, 2, 4, 5, 5, 7, 7, 9,  9,  11],
+"minor" :                [0, 0, 2, 3, 3, 5, 7, 7, 8, 8,  10, 10],
+"minor_melodic" :        [0, 0, 2, 3, 3, 5, 7, 7, 9, 9,  11, 11],
+"minor_harmonic" :	     [0, 0, 2, 3, 3, 5, 7, 7, 8, 8,  11, 11],
+"dorian" :               [0, 0, 2, 3, 3, 5, 5, 7, 7, 9,  10, 10],
+"phrygian" :             [0, 1, 1, 3, 3, 5, 7, 7, 8, 8,  10, 10],
+"lydian" :               [0, 0, 2, 4, 4, 6, 6, 7, 7, 9,  11, 11],
+"myxolydian" :           [0, 0, 2, 4, 4, 5, 5, 7, 7, 9,  10, 10],
+"locrian" :              [0, 1, 1, 3, 3, 5, 6, 6, 8, 8,  10, 10],
+"hungarian" :            [0, 0, 2, 3, 3, 6, 6, 7, 8, 8,  11, 11],
+"gypsy" :                [0, 1, 1, 4, 4, 5, 5, 7, 8, 8,  11, 11],
+"major_neapolitan" :     [0, 1, 1, 3, 3, 5, 7, 7, 8, 8,  11, 11],
+"minor_neapolitan" :     [0, 1, 1, 3, 3, 5, 7, 7, 9, 9,  11, 11],
+"hexatonic" :            [0, 0, 2, 2, 4, 4, 6, 6, 8, 8,  10, 10],
+"hexatonic_blues" :      [0, 0, 2, 2, 4, 4, 6, 6, 7, 7,  10, 10],
+"hexatonic_prometheus" : [0, 0, 2, 2, 4, 4, 6, 6, 9, 9,  10, 10],
+"major_pentatonic" :     [0, 0, 2, 2, 4, 4, 7, 7, 7, 9,  9,  9],
+"minor_pentatonic" :     [0, 0, 3, 3, 3, 5, 5, 7, 7, 10, 10, 10]
 ```
 
 The naming convention and offsets for the roots are:
