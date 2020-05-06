@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 158.0, 116.0, 324.0, 594.0 ],
+		"rect" : [ 170.0, 175.0, 328.0, 610.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,62 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-112",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 15.0, 544.0, 100.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 15.0, 541.0, 148.0, 20.0 ],
+					"text" : "Line spacing",
+					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-111",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1275.0, 752.0, 71.0, 22.0 ],
+					"text" : "s leadScale"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-110",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1204.0, 722.0, 107.0, 22.0 ],
+					"text" : "prepend leadscale"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"format" : 6,
+					"htricolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ],
+					"id" : "obj-109",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1204.0, 692.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 165.0, 540.0, 50.0, 22.0 ],
+					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
+					"triangle" : 0
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-106",
 					"maxclass" : "newobj",
@@ -176,7 +232,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 690.0, 747.5, 135.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 555.0, 295.0, 24.0 ],
+					"presentation_rect" : [ 15.0, 570.0, 295.0, 24.0 ],
 					"tabcolor" : [ 0.200000003, 0.200000003, 0.200000003, 0.498130751533742 ],
 					"tabs" : [ "Reset Default" ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
@@ -190,7 +246,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1155.0, 662.0, 94.0, 22.0 ],
+					"patching_rect" : [ 1157.0, 661.0, 94.0, 22.0 ],
 					"text" : "prepend symbol"
 				}
 
@@ -211,11 +267,11 @@
 				"box" : 				{
 					"id" : "obj-93",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 1110.0, 598.5, 106.0, 22.0 ],
-					"text" : "route def_font font"
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 1110.0, 598.5, 160.0, 22.0 ],
+					"text" : "route def_font font leadscale"
 				}
 
 			}
@@ -1001,7 +1057,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 45.0, 237.0, 69.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 158, 116, 482, 710, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 170, 175, 498, 785, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -1698,7 +1754,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 309.305480999999986, 170.172408999999988, 127.0, 23.0 ],
-									"text" : "158 116 482 710"
+									"text" : "170 175 498 785"
 								}
 
 							}
@@ -4370,8 +4426,31 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-110", 0 ],
+					"order" : 1,
+					"source" : [ "obj-109", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-111", 0 ],
+					"order" : 0,
+					"source" : [ "obj-109", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-64", 0 ],
+					"source" : [ "obj-110", 0 ]
 				}
 
 			}
@@ -5235,6 +5314,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-93", 0 ],
 					"source" : [ "obj-92", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-109", 0 ],
+					"source" : [ "obj-93", 2 ]
 				}
 
 			}

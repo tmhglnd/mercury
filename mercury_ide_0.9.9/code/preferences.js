@@ -47,6 +47,7 @@ let prefs = {
 	"syphon" : 0,
 	"def_font" : "Courier New Bold",
 	"font" : "Courier New Bold",
+	"leadscale" : 0.83,
 	"exec_color" : [0.2, 0.2, 0.2, 1],
 	"cursor_c1" : [0, 1, 1, 1],
 	"cursor_c2" : [1, 0, 1, 1],
