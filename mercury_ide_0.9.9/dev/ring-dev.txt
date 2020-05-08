@@ -115,63 +115,70 @@
 // // => [5 4 6 4 4 5 4 2]
 
 // set randomSeed 271828
-
 // ring twv1 twelveTone()
 // // => [10 7 6 3 2 9 8 4 1 5 0 11]
 
 // set randomSeed 62832
-
 // ring samples [hat snare kick]
 // ring sequence choose(10 samples)
 // // => [hat kick hat kick hat snare kick hat hat hat]
-
 // ring notes [0 3 7 5 9 12]
 // ring melody choose(10 notes)
 // // => [0 5 3 9 0 7 3 12 3 7]
 
-set randomSeed 62832
+// set randomSeed 62832
+// ring samples [hat snare kick tom]
+// ring sequence pick(10 samples)
+// // => [hat kick tom snare tom hat snare kick tom hat]
+// ring notes [0 3 7 5 9 12]
+// ring melody pick(10 notes)
+// // => [3 0 7 9 12 5 0 7 12 9]
 
-ring samples [hat snare kick tom]
-ring sequence pick(10 samples)
-// => [hat kick tom snare tom hat snare kick tom hat]
+// set randomSeed 14142
+// ring samples [hat snare kick tom]
+// ring shf1 shuffle(samples)
+// // => [snare tom kick hat]
+// ring notes [0 3 7 5 9 12]
+// ring shf2 scramble(notes)
+// // => [12 0 3 7 5 9]
 
-ring notes [0 3 7 5 9 12]
-ring melody pick(10 notes)
-// => [3 0 7 9 12 5 0 7 12 9]
+ring notes [0 3 7]
+ring melody clone(notes 0 12 7 -7)
+// => [0 3 7 12 15 19 7 10 14 -7 -4 0]
 
-// shuffle()
+ring A [0 3 7]
+ring B [24 19 12]
+ring C [-7 -3 -5]
+ring phrase combine(A B C)
+// => [0 3 7 24 19 12 -7 -5 -3]
+// ring partC [kick hat snare hat]
+// ring partD [hat hat hat snare]
+// ring sequence join(partC partD)
+// // => [kick hat snare hat hat hat hat snare]
+// // concat()
 
-// scramble()
+// ring notes [0 3 7]
+// ring phrase duplicate(notes 4)
+// // => [0 3 7 0 3 7 0 3 7 0 3 7]
+// // repeat()
+// // dup()
 
-// ring rnd random(20 0 12)
-// ring bt1 euclid(8 5 1)
-// ring smp shuffle(smp)
+// ring rhythm [1 0 1 1 0 1 1]
+// ring sequence every(rhythm 2 8)
+// // => [1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0]
 
-// ring jn join(ar1 ar3 spr ar5 ar6)
+// ring melody [12 19 24 27 24]
+// ring phrase every(melody 2 8)
+// // => [12 19 24 27 24 0 0 0 0 0 0 0 0 0 0 0]
 
-// ring cln clone(ar4 0 12 24 -12)
-// ring dup duplicate(0 4)
-// ring dp2 duplicate(ar3 4)
-// // ring dp2 duplicate(ar3 hat)
+// invert()
+// inverse()
+// flip()
+// inv()
 
-// ring vry every(bt1 4 8)
-// ring vr2 every(bt1 4 8 1)
+// lace()
+// zip()
 
-// ring inv invert(ar5)
-// ring in2 invert(ar4 0)
-// ring in3 invert(ar4 2 5)
+// merge()
+// mix()
 
-// ring lce lace(ar1 ar2)
-// ring lce lace(in2 in3 ar3)
-
-// ring mrg merge(ar4 ar5)
-
-// ring pld palindrome(ar4)
-// ring rev reverse(ar4)
-// ring rv2 reverse(ar3)
-// ring rot rotate(ar4 -2)
-// ring rt2 rotate(ar3 2)
-
-// // ring spr spray
-// ring unq unique(rnd)
-// ring sm2 unique(smp)

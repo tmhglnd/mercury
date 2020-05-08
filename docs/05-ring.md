@@ -47,6 +47,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [twelveTone](#twelvetone)
 	- [choose](#choose)
 	- [pick](#pick)
+	- [shuffle](#shuffle)
 - Transformative Methods (w.i.p.)
 - Translate Methods (w.i.p.)
 
@@ -464,15 +465,101 @@ ring melody pick(10 notes)
 // => [3 0 7 9 12 5 0 7 12 9]
 ```
 
-# TO-DO
+## shuffle
 
-# Ring Methods Transformational
+Shuffle a ring, influenced by the random seed. Based on the Fisher-Yates shuffle algorithm by Ronald Fisher and Frank Yates in 1938. The algorithm has run time complexity of O(n)
 
-## join
+**arguments**
+- {Ring} -> Ring to shuffle
 
+```java
+set randomSeed 14142
+
+ring samples [hat snare kick tom]
+ring shf1 shuffle(samples)
+// => [snare tom kick hat]
+
+ring notes [0 3 7 5 9 12]
+ring shf2 scramble(notes)
+// => [12 0 3 7 5 9]
 ```
-ring joined join(<ring1> <ring2> ... <ring-n>)
+
+# Transformative Methods
+
+## clone
+
+Duplicate a ring with an offset added to every value
+
+**arguments**
+- {IntRing} -> Ring to clone
+- {Int, Int2, ... Int-n} -> amount of clones with integer offset
+
+```java
+ring notes [0 3 7]
+ring melody clone(notes 0 12 7 -7)
+// => [0 3 7 12 15 19 7 10 14 -7 -4 0]
 ```
+
+## combine
+
+Combine rings into one ring. Multiple rings as arguments is possible.
+
+**arguments**
+- {Ring-0, Ring-1, ..., Ring-n} -> Ring to combine
+
+```java
+ring partA [0 3 7]
+ring partB [24 19 12]
+ring partC [-7 -3 -5]
+ring phrase combine(partA partB partC)
+// => [0 3 7 24 19 12 -7 -5 -3]
+
+ring partD [kick hat snare hat]
+ring partE [hat hat hat snare]
+ring sequence join(partD partE)
+// => [kick hat snare hat hat hat hat snare]
+```
+Alternative: `join()`, `concat()`
+
+## duplicate
+
+Duplicate an array a certain amount of times.
+
+**arguments**
+- {Ring} -> Ring to duplicate
+- {Int+} -> amount of duplicates (optional, default=2)
+
+```java
+ring notes [0 3 7]
+ring phrase duplicate(notes 4)
+// => [0 3 7 0 3 7 0 3 7 0 3 7]
+```
+
+Alternative: `repeat()`, `dup()`
+
+## every
+
+Add zeroes to a ring with a number sequence. The division determines the amount of values per bar. The total length = bars * div. Very useful for rhythms that must occur once in a while, but can also be use for melodic phrases.
+
+**arguments**
+- {IntRing} -> Ring to use every n-bars
+- {Int} -> amount of bars
+- {Int} -> amount of values per bar
+
+```java
+ring rhythm [1 0 1 1 0 1 1]
+ring sequence every(rhythm 2 8)
+// => [1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0]
+```
+
+**arguments**
+```java
+ring melody [12 19 24 27 24]
+ring phrase every(melody 2 8)
+// => [12 19 24 27 24 0 0 0 0 0 0 0 0 0 0 0]
+```
+
+
 
 ## thin
 
@@ -486,27 +573,8 @@ ring thined thin(<ring>)
 ring palinated palin(<ring>)
 ```
 
-## duplicate
-
-```
-ring duped duplicate(<ring> <amount>)
-```
-
-## clone
-
-```
-ring cloned clone(<ring> <dup-offset1> <dup-offset2> ... <dup-offset-n>) 
-```
-
 ## spray
 
 ```
 ring sprayed spray(<ring-beat> <ring-melody>)
 ```
-
-## every
-
-```
-ring sometimes every(<ring> <when> <beat-division>)
-```
-
