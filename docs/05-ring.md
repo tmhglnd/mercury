@@ -48,8 +48,21 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [choose](#choose)
 	- [pick](#pick)
 	- [shuffle](#shuffle)
-- Transformative Methods (w.i.p.)
-- Translate Methods (w.i.p.)
+- [Transformative Methods](#transformative-methods)
+	- [clone](#clone)
+	- [combine / join](#combine)
+	- [duplicate / repeat](#duplicate)
+	- [every](#every)
+	- [invert / flip](#invert)
+	- [lace / zip](#lace)
+	- [merge / mix](#merge)
+	- [palindrome / mirror](#palindrome)
+	- [rotate / turn](#rotate)
+	- [reverse / retrograde](#reverse)
+	- [spray](#spray)
+	- [unique / thin](#unique)
+- [Utility Methods](#utility-methods)
+- [Translate Methods](#translate-methods) (w.i.p.)
 
 # Param Glossary
 
@@ -559,22 +572,32 @@ ring phrase every(melody 2 8)
 // => [12 19 24 27 24 0 0 0 0 0 0 0 0 0 0 0]
 ```
 
+## invert
 
+Alternative: `inverse()`, `flip()`, `inv()`
 
-## thin
+## lace
 
-```
-ring thined thin(<ring>)
-```
+Alternative: `zip`
 
-## palin
+## merge
 
-```
-ring palinated palin(<ring>)
-```
+Alternative: `mix()`
+
+## palindrome
+
+Alternative: `palin()`, `mirror()`
+
+## rotate
+
+Alternative: `turn()`, `rot()`
+
+## reverse
+
+Alternative: `retrograde()`, `rev()`
 
 ## spray
 
-```
-ring sprayed spray(<ring-beat> <ring-melody>)
-```
+## unique
+
+Alternative: `thin()`

@@ -142,15 +142,16 @@
 // ring shf2 scramble(notes)
 // // => [12 0 3 7 5 9]
 
-ring notes [0 3 7]
-ring melody clone(notes 0 12 7 -7)
-// => [0 3 7 12 15 19 7 10 14 -7 -4 0]
+// ring notes [0 3 7]
+// ring melody clone(notes 0 12 7 -7)
+// // => [0 3 7 12 15 19 7 10 14 -7 -4 0]
 
-ring A [0 3 7]
-ring B [24 19 12]
-ring C [-7 -3 -5]
-ring phrase combine(A B C)
-// => [0 3 7 24 19 12 -7 -5 -3]
+// ring partA [0 3 7]
+// ring partB [24 19 12]
+// ring partC [-7 -5 -3]
+// ring phrase combine(partA partB partC)
+// // => [0 3 7 24 19 12 -7 -5 -3]
+
 // ring partC [kick hat snare hat]
 // ring partD [hat hat hat snare]
 // ring sequence join(partC partD)
@@ -171,14 +172,14 @@ ring phrase combine(A B C)
 // ring phrase every(melody 2 8)
 // // => [12 19 24 27 24 0 0 0 0 0 0 0 0 0 0 0]
 
-// invert()
-// inverse()
-// flip()
-// inv()
+// TO DO Documenting
+invert()
+inverse()
+flip()
+inv()
 
-// lace()
-// zip()
+lace()
+zip()
 
-// merge()
-// mix()
-
+merge()
+mix()
