@@ -33,18 +33,23 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 # Param Explanation
 
-- `Int+` -> A positive whole number
-- `Int` -> A whole number, negative or positive, including 0
-- `Float` -> A floating-point number, negativer or positive, including 0
-- `Number` -> Int+, Int or Float
-- `String` -> A combination of letter-characters, may include capital letter, underscores and digits, but may not start with a digit
+**Values**
+
 - `Value` -> Number or String
-- `IntRing+` -> A ring with positive whole numbers
-- `IntRing` -> A ring with whole numbers
-- `FloatRing` -> A ring with floats
-- `NumberRing` -> A ring with numbers
-- `StringRing` -> A ring with strings
-- `Ring` -> A ring with values
+	- `Number` -> Int+, Int or Float
+		- `Int+` -> A positive whole number, bigger than 0
+		- `Int` -> A whole number, negative or positive, including 0
+		- `Float` -> A floating-point number, negative or positive, including 0
+	- `String` -> A combination of letter-characters, may include capital letter, underscores and digits, but may not start with a digit
+
+**Rings**
+
+- `Ring` -> A ring with `Value`'s
+	- `NumberRing` -> A ring with `Number`'s
+		- `IntRing+` -> A ring with `Int+`'s
+		- `IntRing` -> A ring with `Int`'s
+		- `FloatRing` -> A ring with `Float`'s
+	- `StringRing` -> A ring with `String`'s
 
 # Generative Methods
 
@@ -60,8 +65,10 @@ Generate a ring of n-length of evenly spaced values between a starting number up
 ```java
 ring spr1 spread(5 0 12)
 // => [0 2 4 7 9]
+
 ring spr2 spreadFloat(5 -1 1)
 // => [-1 -0.6 -0.2 0.2 0.6]
+
 ring spr3 spreadF(5 0 2)
 // => [0 0.4 0.8 1.2 1.6]
 ```
@@ -78,8 +85,10 @@ Generate a ring of n-length of evenly spaced values between a starting number up
 ```java
 ring spi1 spreadInclusive(5 0 12)
 // => [0 3 6 9 12]
+
 ring spi2 spreadInclusiveFloat(5 -1 1)
 // => [-1 -0.5 0 0.5 1]
+
 ring spi3 spreadInclusiveF(5 0 2)
 // => [0 0.5 1 1.5 2]
 ```
@@ -95,6 +104,7 @@ Fill a ring with values. Arguments are in pairs. Every pair consists of `<value,
 ```java
 ring fll1 fill(10 2 15 3 20 4)
 // => [10 10 15 15 15 20 20 20 20]
+
 ring fll2 fill(kick_min 2 hat_min 3)
 // => [kick_min kick_min hat_min hat_min hat_min]
 ```
@@ -113,15 +123,21 @@ Generate an array with n-periods of a (co)sine function. Optional last arguments
 ```java
 ring sin1 sine(10)
 // => [6 9 11 11 9 6 2 0 0 2]
+
 ring sin2 sine(10 1 -12 12)
 // => [0 7 11 11 7 0 -7 -11 -11 -7]
+
 ring sin3 sine(10 2 0 5)
 // => [2 4 3 1 0 2 4 3 1 0]
+```
 
+```java
 ring cos1 cosine(10)
 // => [12 10 7 4 1 0 1 4 7 10]
+
 ring cos2 cosine(10 1 -12 12)
 // => [12 9 3 -3 -9 -12 -9 -3 3 9]
+
 ring cos3 cosine(10 2 0 5)
 // => [5 3 0 0 3 4 3 0 0 3]
 ```
@@ -140,11 +156,14 @@ Generate an array with n-periods of a (co)sine function. Optional last arguments
 ```java
 ring sin4 sineFloat(8)
 // => [0 0.707 1 0.707 0 -0.707 -1 -0.707]
+
 ring sin5 sineF(12 3 -1 1)
 // => [0 1 0 -1 0 1 0 -1 0 1 0 -1]
-
+```
+```java
 ring cos4 cosineFloat(8)
 // => [1 0.707 0 -0.707 -1 -0.707 0 0.707]
+
 ring cos5 cosineF(12 3 -1 1)
 // => [1 0 -1 0 1 0 -1 0 1 0 -1 0]
 ```
