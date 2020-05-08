@@ -68,8 +68,9 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 **Values**
 
-- `Value` -> Number or Name
+- `Value` -> Any Number or Name
 	- `Number` -> Int+, Int or Float
+		- `Bool` -> 0 or 1 (true or false)
 		- `Int+` -> A positive whole number, bigger than 0
 		- `Int` -> A whole number, negative or positive, including 0
 		- `Float` -> A floating-point number, negative or positive, including 0
@@ -574,30 +575,145 @@ ring phrase every(melody 2 8)
 
 ## invert
 
+Invert a list of values by mapping the lowest value to the highest value and vice versa, flipping everything in between.  Second optional argument sets the center to flip values against. Third optional argument sets a range to flip values against.
+
+**arguments**
+- {IntRing} -> Ring to invert
+- {Int} -> invert center / low range (optional)
+- {Int} -> high range (optional)
+
+```java
+ring notes [0 3 7 12]
+ring inv1 invert(notes)
+// => [12 9 5 0]
+
+ring inv2 invert(notes 5)
+// => [10 7 3 -2]
+
+ring inv3 invert(notes 3 10)
+// => [13 10 6 1]
+```
+
 Alternative: `inverse()`, `flip()`, `inv()`
 
 ## lace
+
+Interleave two or more rings. The output length of the is always the length of the longest input ring.
+
+**arguments**
+- {Ring0, Ring1, ..., Ring-n} -> Rings to interleave
+
+```java
+ring partA [0 3 7 5 0]
+ring partB [12 19 15]
+ring partC [24 22]
+ring melody lace(partA partB)
+// => [0 12 24 3 19 22 7 15 5 0]
+```
 
 Alternative: `zip`
 
 ## merge
 
+Merge all values of two rings on the same index into a 2-dimensional ring. Preserves the length of longest input ring.
+
+**arguments**
+- {Ring0, Ring1, ..., Ring-n} -> Rings to merge
+
+```java
+ring partA [0 3 7 5 0]
+ring partB [12 19 15] 
+ring merged merge(partA partB)
+// => [[0 12] [3 19] [7 15] 5 0]
+// mix()
+```
 Alternative: `mix()`
 
 ## palindrome
 
+Reverse a ring and concatenating to the input, creating a palindrome of the ring. A second argument 1 will remove the duplicates halfway through and at the end.
+
+**arguments**
+- {Ring} -> array to make palindrome of
+- {Bool} -> no-double flag (optional, default=0)
+
+```java
+ring notes [0 3 7 12]
+ring melodyA palindrome(notes)
+// => [0 3 7 12 12 7 3 0]
+
+ring melodyB palindrome(notes 1)
+// => [0 3 7 12 7 3]
+// palin()
+// mirror()
+```
+
 Alternative: `palin()`, `mirror()`
-
-## rotate
-
-Alternative: `turn()`, `rot()`
 
 ## reverse
 
+Reverse the order of items in a ring.
+
+**arguments**
+- {Ring} -> Ring to reverse
+
+```java
+ring melody [0 3 7 5]
+ring rev reverse(melody)
+// => [5 7 3 0]
+// retrograde()
+// rev()
+```
 Alternative: `retrograde()`, `rev()`
+
+## rotate
+
+Rotate the position of items in a ring. positive numbers = direction right, negative numbers = direction left
+
+**arguments**
+- {Ring} -> Ring to rotate
+- {Int} -> Steps to rotate
+
+```java
+ring melody [0 3 7 5 7 9 12]
+ring left rotate(melody -2)
+// => [7 5 7 9 12 0 3]
+
+ring right rotate(melody 2)
+// => [9 12 0 3 7 5 7]
+// rotate()
+// turn()
+// rot()
+```
+
+Alternative: `turn()`, `rot()`
 
 ## spray
 
+"Spray" the values of one ring on the places of values of another ring if that value is greater than 0. Wraps input ring if more places must be set then length of the ring.
+
+**arguments**
+- {Ring} -> Ring to spray
+- {Ring} -> Positions to spray on
+
+```java
+ring notes [12 19 15 17]
+ring places [1 0 0 1 1 0 1 0 1 0]
+ring sprayed spray(notes places)
+// => [12 0 0 19 15 0 17 0 12 0]
+```
+
 ## unique
+
+Filter duplicate items from a ring. does not account for 2-dimensional arrays in the ring.
+
+**arguments**
+- {Ring} -> Ring to filter
+
+```java
+ring notes [0 5 7 3 7 7 0 12 5]
+ring thinned unique(notes)
+// => [0 5 7 3 12]
+```
 
 Alternative: `thin()`

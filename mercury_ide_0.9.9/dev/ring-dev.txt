@@ -172,14 +172,62 @@
 // ring phrase every(melody 2 8)
 // // => [12 19 24 27 24 0 0 0 0 0 0 0 0 0 0 0]
 
-// TO DO Documenting
-invert()
-inverse()
-flip()
-inv()
+// ring notes [0 3 7 12]
+// ring inv1 invert(notes)
+// // => [12 9 5 0]
+// ring inv2 invert(notes 5)
+// // => [10 7 3 -2]
+// ring inv3 invert(notes 3 10)
+// // => [13 10 6 1]
+// // inverse()
+// // flip()
+// // inv()
 
-lace()
-zip()
+// ring partA [0 3 7 5 0]
+// ring partB [12 19 15]
+// ring partC [24 22]
+// ring melody lace(partA partB partC)
+// // => [0 12 24 3 19 22 7 15 5 0]
+// // zip()
 
-merge()
-mix()
+// ring partA [0 3 7 5 0]
+// ring partB [12 19 15] 
+// ring merged merge(partA partB)
+// // => [[0 12] [3 19] [7 15] 5 0]
+// // mix()
+
+// ring notes [0 3 7 12]
+// ring melodyA palindrome(notes)
+// // => [0 3 7 12 12 7 3 0]
+
+// ring melodyB palindrome(notes 1)
+// // => [0 3 7 12 7 3]
+// // palin()
+// // mirror()
+
+// ring melody [0 3 7 5 7 9 12]
+// ring left rotate(melody -2)
+// // => [7 5 7 9 12 0 3]
+
+// ring right rotate(melody 2)
+// // => [9 12 0 3 7 5 7]
+// // rotate()
+// // turn()
+// // rot()
+
+// ring melody [0 3 7 5]
+// ring rev reverse(melody)
+// // => [5 7 3 0]
+// // retrograde()
+// // rev()
+
+ring notes [12 19 15 17]
+ring places [1 0 0 1 1 0 1 0 1 0]
+ring sprayed spray(notes places)
+// => [12 0 0 19 15 0 17 0 12 0]
+
+ring notes [0 5 7 3 7 7 0 12 5]
+ring thinned unique(notes)
+// thin()
+
+
