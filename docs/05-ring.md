@@ -23,12 +23,30 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 - [Param Glossary](#param-glossary)
 - [Generative Methods](#generative-methods)
+	- [spread / spreadFloat](#spread--spreadFloat)
+	- [spreadInclusive / spreadInclusiveFloat](#spreadInclusive--spreadInclusiveFloat)
+	- [fill](#fill)
+	- [sine / cosine](#sine--cosine)
+	- [sineFloat / cosineFloat](#sineFloat--cosineFloat)
 - [Algorithmic Methods](#algorithmic-methods)
-	- Euclidean Rhythm
-	- Hexadecimal Rhythm
-	- Fibonacci, Lucas, Pell Numbers
+	- [Euclidean Rhythm](#euclidean--euclid)
+	- [Hexadecimal Rhythm](#hexbeat--hex)
+	- [Fibonacci numbers](#fibonacci)
+	- [Pisano periods](#pisano)
+	- [Pell numbers](#pell)
+	- [Lucas numbers](#lucas)
+	- [Three-Fibonacci numbers](#threefibonacci)
 	- Lindenmayer System (coming soon)
 - [Stochastic Methods](#stochastic-methods)
+	- [randomSeed](#randomseed)
+	- [random](#random)
+	- [randomFloat](#randomfloat)
+	- [urn](#urn)
+	- [coin](#coin)
+	- [dice](#dice)
+	- [twelveTone](#twelvetone)
+	- [choose](#choose)
+	- [pick](#pick)
 - Transformative Methods (wip)
 - Translate Methods (wip)
 
@@ -364,7 +382,7 @@ ring urn3 urn(8 10 14)
 // => [13 10 12 11 12 10 13 11]
 ```
 
-## coin / dice
+## coin
 
 Generate a list of random integer values 0 or 1 like a coin toss, heads/tails. Or 
 
