@@ -406,7 +406,45 @@ ring notes spread(12)
 ring notes shuffle(notes)
 ```
 
+## choose
 
+Choose random items from an array provided with uniform probability distribution. The default array is an array of 0 and 1.
+
+**arguments**
+- {Int+} -> length of ring output
+- {Ring} -> items to choose from (optional, default=[0 1])
+
+```java
+set randomSeed 62832
+
+ring samples [hat snare kick]
+ring sequence choose(10 samples)
+// => [hat kick hat kick hat snare kick hat hat hat]
+
+ring notes [0 3 7 5 9 12]
+ring melody choose(10 notes)
+// => [0 5 3 9 0 7 3 12 3 7]
+```
+
+## pick
+
+Pick random items from an array provided. An "urn" is filled with values and when one is picked it is removed from the urn. If the outputlist is longer then the range, the urn refills when empty. On refill it is made sure no repeating value can be picked.
+
+**arguments**
+- {Int+} -> length of ring output
+- {Ring} -> items to choose from (optional, default=[0 1])
+
+```java
+set randomSeed 62832
+
+ring samples [hat snare kick tom]
+ring sequence pick(10 samples)
+// => [hat kick tom snare tom hat snare kick tom hat]
+
+ring notes [0 3 7 5 9 12]
+ring melody pick(10 notes)
+// => [3 0 7 9 12 5 0 7 12 9]
+```
 # TO-DO
 
 ## random

@@ -114,10 +114,34 @@
 // ring dice1 dice(8)
 // // => [5 4 6 4 4 5 4 2]
 
-set randomSeed 271828
+// set randomSeed 271828
 
-ring twv1 twelveTone()
+// ring twv1 twelveTone()
+// // => [10 7 6 3 2 9 8 4 1 5 0 11]
 
+// set randomSeed 62832
+
+// ring samples [hat snare kick]
+// ring sequence choose(10 samples)
+// // => [hat kick hat kick hat snare kick hat hat hat]
+
+// ring notes [0 3 7 5 9 12]
+// ring melody choose(10 notes)
+// // => [0 5 3 9 0 7 3 12 3 7]
+
+set randomSeed 62832
+
+ring samples [hat snare kick tom]
+ring sequence pick(10 samples)
+// => [hat kick tom snare tom hat snare kick tom hat]
+
+ring notes [0 3 7 5 9 12]
+ring melody pick(10 notes)
+// => [3 0 7 9 12 5 0 7 12 9]
+
+// shuffle()
+
+// scramble()
 
 // ring rnd random(20 0 12)
 // ring bt1 euclid(8 5 1)
