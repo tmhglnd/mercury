@@ -1,5 +1,7 @@
 # Instruments (synth, sample, polySynth, loop)
 
+The following methods apply to all the different types of instruments: `synth`, `sample`, `polySynth` and `loop`
+
 ## name
 
 Set the name for this instrument. This can be any string of 2 or more characters. The `name` is used as reference to the instrument when the `set` method is used to call methods for a specific instrument.
@@ -130,7 +132,7 @@ Alternative function-names: `panning() | p()`
 
 ## fx
 
-Apply an effect to the sound of the instrument. The first argument is always the fx-name. The following arguments depend on the used effect.
+Apply an effect to the sound of the instrument. The first argument is always the fx-name. The following arguments depend on the used effect. See [FX Documentation](./04-fx.md#fx) for more details on individual effects.
 
 ```
 set <name> fx(<fxname> <arg1> <arg2> ... <arg-n>)
@@ -154,7 +156,7 @@ The currently available effects are:
 
 Alternative function-names: `effect() | with_fx() | add_fx()`
 
-# synth only
+# synth and polySynth only
 
 ## note
 
@@ -190,7 +192,7 @@ example
 new synth saw note(0 1) time(1/4) wave2(square 0.998)
 ```
 
-# Sample only
+# Sample and Loop only
 
 ## speed
 
