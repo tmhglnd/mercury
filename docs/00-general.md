@@ -31,6 +31,8 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 **Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
 
+Read more about all the algorithmic methods available for generating and transforming rings in Mercury under [Ring Methods](./05-ring.md#ring-methods).
+
 ## set
 
 Use the set function to change Global Settings or call functions for an instrument-instance `name`, `group` or `all`. The instrument must be declared with a `name()` or `group()` before the `set` is called.

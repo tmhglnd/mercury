@@ -231,11 +231,11 @@ ring fib2 fibonacci(3 10)
 
 ## pisano
 
-Generate the Pisano period sequence `F(n) = (F(n-1) + F(n-2)) mod a`.
+Generate the Pisano period sequence. The pisano period is a result of applying a modulo operation on the Fibonacci sequence `F[n] = (F[n-1] + F[n-2]) mod a`. The length of the period differs per modulus value, but the sequence will always have a repetition.
 
 **params**
-- {Int+} -> output length of ring
-- {Int+} -> modulus for pisano period
+- {Int+} -> modulus for pisano period (optional, default=12)
+- {Int+} -> output length of ring (optional, defaults to pisano-period length)
 
 ```java
 ring psn1 pisano()
