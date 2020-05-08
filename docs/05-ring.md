@@ -290,6 +290,123 @@ ring tfi1 threeFibonacci(8)
 // => [0 1 3 10 33 109 360 1189]
 ```
 
+# Stochastic Methods
+
+## randomSeed
+
+Set the seed for the Random Number Genrators. A value of `0` sets to unpredictable seeding. The seed can only be set **once** in the code, and the last value will take effect.
+
+```java
+set randomSeed 31415 
+// ^^^^^^^^^^^ will be overwritten by 1618 before random() call
+ring randomValues random(10 0 100)
+// ^^^^^^^^^^^ the random() will use the seed from below
+set randomSeed 1618
+// ^^^^^^^^^^^ 1618 overwrites 31415
+```
+## random
+
+Generate a ring of random integers between a specified range (excluding high value).
+
+**params**
+- {Int+} -> number of values to output
+- {Int} -> minimum range (optional, default=0)
+- {Int} -> maximum range (optional, default=2)
+
+```java
+set randomSeed 31415
+
+ring rnd1 random(5)
+// => [1 0 0 1 1]
+ring rnd2 random(5 12)
+// => [0 10 3 2 2]
+ring rnd3 rand(5 -12 12)
+// => [-2 -5 -8 -11 6]
+```
+
+## randomFloat
+
+Generate a ring of random floating-point values between a specified range (excluding high value).
+
+**params**
+- {Int+} -> number of values to output
+- {Number} -> minimum range (optional, default=0)
+- {Number} -> maximum range (optional, default=1)
+
+```java
+set randomSeed 31415
+
+ring rnf1 randomFloat(5)
+// => [0.81 0.32 0.01 0.85 0.88]
+ring rnf2 randomF(5 0 12)
+// => [0.16 10.72 3.16 262 2.34]
+ring rnf3 randF(5 -12 12)
+// => [-1.19 -4.21 -7.36 -10.31 6.82]
+```
+
+## urn
+
+Generate a list of unique random integer values between a certain specified range (excluding high val). An 'urn' is filled with values and when one is picked it is removed from the urn. If the outputlist is longer then the range, the urn refills when empty. On refill it is made sure no repeating value can be picked.
+
+**params**
+- {Int+} -> number of values to output
+- {Number} -> maximum range (optional, default=12)
+- {Number} -> minimum range (optional, defautl=0)
+
+```java
+set randomSeed 1618
+
+ring urn1 urn(5)
+// => [3 7 10 0 2]
+ring urn2 urn(8 4)
+// => [0 2 1 3 1 3 0 2]
+ring urn3 urn(8 10 14)
+// => [13 10 12 11 12 10 13 11]
+```
+
+## coin / dice
+
+Generate a list of random integer values 0 or 1 like a coin toss, heads/tails. Or 
+
+**params**
+- {Int+} -> number of coin tosses to output as ring
+
+```java
+ring coin1 coin(8)
+// => [1 0 1 0 1 0 1 1]
+```
+
+## dice
+
+Generate a list of random integer values 1 to 6 like the roll of a dice.
+
+**params**
+- {Int+} -> number of dice rolls to output as ring
+
+```java
+ring dice1 dice(8)
+// => [5 4 6 4 4 5 4 2]
+```
+
+## twelveTone
+
+Generate a list of 12 semitones then shuffle the list based on the random seed. 
+
+**params**
+- {None}
+
+```java
+ring twv1 twelveTone()
+// => [10 7 6 3 2 9 8 4 1 5 0 11]
+```
+
+```java
+//Basically a shorthand for: 
+ring notes spread(12)
+ring notes shuffle(notes)
+```
+
+
 # TO-DO
 
 ## random
