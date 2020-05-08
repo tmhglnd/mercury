@@ -58,7 +58,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 Generate a ring of n-length of evenly spaced values between a starting number up untill (but excluding) the 3th argument.
 
-**params**
+**arguments**
 - {Int+} -> Length of ring
 - {Int/Float} -> Low value
 - {Int/Float} -> High value (excluded)
@@ -78,7 +78,7 @@ ring spr3 spreadF(5 0 2)
 
 Generate a ring of n-length of evenly spaced values between a starting number up to (and including) the 3th argument.
 
-**params**
+**arguments**
 - {Int+} -> Length of ring
 - {Number} -> Low value
 - {Number} -> High value (included)
@@ -98,7 +98,7 @@ ring spi3 spreadInclusiveF(5 0 2)
 
 Fill a ring with values. Arguments are in pairs. Every pair consists of `<value, amount>` The value is repeated n-amount of times in the ring.
 
-**params**
+**arguments**
 - {Value} -> value to duplicate
 - {Int+} -> amount of duplicates
 
@@ -114,7 +114,7 @@ ring fll2 fill(kick_min 2 hat_min 3)
 
 Generate an array with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
 
-**params**
+**arguments**
 - {Int+} -> Length of ring
 - {Number} -> Periods of (co)sine-wave (optional, default=1)
 - {Number} -> Low range of values (optional, default=0)
@@ -147,7 +147,7 @@ ring cos3 cosine(10 2 0 5)
 
 Generate an array with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
 
-**params**
+**arguments**
 - {Int+} -> Length of ring
 - {Number} -> Periods of (co)sine-wave (optional, default=1)
 - {Number} -> Low range of values (optional, default=-1)
@@ -175,7 +175,7 @@ ring cos5 cosineF(12 3 -1 1)
 
 Generate a euclidean rhythm evenly spacing n-beats amongst n-steps.Inspired by Godfried Toussaints famous paper "The Euclidean Algorithm Generates Traditional Musical Rhythms".
 
-**params**
+**arguments**
 - {Int+} -> length of ring (optional, default=8)
 - {Int+} -> beats (optional, default=4)
 - {Int} -> rotate (optional, default=0)
@@ -195,7 +195,7 @@ ring euc3 euclid(7 5 2)
 
 Generate hexadecimal rhythms. Hexadecimal beats make use of hexadecimal values (0 - f) that are a base-16 number system. Because one digit in a base-16 number system has 16 possible values (0 - 15) these can be converted to 4 bits that therefore can be seen as groups of 4 16th notes. These hexadecimal values will then represent any permutation of 1's and 0's in a 4 bit number, where 0 = 0 0 0 0, 7 = 0 1 1 1, b = 1 0 1 1, f = 1 1 1 1 and all possible values in between.
 
-**params**
+**arguments**
 - {String} -> hexadecimal characters (0 t/m f) (optional, default=8)
 
 ```java
@@ -217,7 +217,7 @@ Generate the Fibonacci sequence `F(n) = F(n-1) + F(n-2)`. The ratio between cons
 
 `OEIS: A000045` (Online Encyclopedia of Integer Sequences)
 
-**params**
+**arguments**
 - {Int+} -> output length of ring
 - {Int+} -> offset, start the sequence at nth-fibonacci number (optional, default=0)
 
@@ -233,7 +233,7 @@ ring fib2 fibonacci(3 10)
 
 Generate the Pisano period sequence. The pisano period is a result of applying a modulo operation on the Fibonacci sequence `F[n] = (F[n-1] + F[n-2]) mod a`. The length of the period differs per modulus value, but the sequence will always have a repetition.
 
-**params**
+**arguments**
 - {Int+} -> modulus for pisano period (optional, default=12)
 - {Int+} -> output length of ring (optional, defaults to pisano-period length)
 
@@ -254,7 +254,7 @@ Generate the Pell numbers `F(n) = 2 * F(n-1) + F(n-2)`. The ratio between consec
 
 `OEIS: A006190` (Online Encyclopedia of Integer Sequences)
 
-**params**
+**arguments**
 - {Int+} -> output length of ring
 
 ```java
@@ -268,7 +268,7 @@ Generate the Lucas numbers `F(n) = F(n-1) + F(n-2), with F0=2 and F1=1`.
 
 `OEIS: A000032` (Online Encyclopedia of Integer Sequences)
 
-**params**
+**arguments**
 - {Int+} -> output length of ring
 
 ```java
@@ -282,7 +282,7 @@ Generate the Tribonacci numbers `F(n) = 2 * F(n-1) + F(n-2)`. The ratio between 
 
 `OEIS: A000129` (Online Encyclopedia of Integer Sequences)
 
-**params**
+**arguments**
 - {Int+} -> output length of ring
 
 ```java
@@ -308,7 +308,7 @@ set randomSeed 1618
 
 Generate a ring of random integers between a specified range (excluding high value).
 
-**params**
+**arguments**
 - {Int+} -> number of values to output
 - {Int} -> minimum range (optional, default=0)
 - {Int} -> maximum range (optional, default=2)
@@ -328,7 +328,7 @@ ring rnd3 rand(5 -12 12)
 
 Generate a ring of random floating-point values between a specified range (excluding high value).
 
-**params**
+**arguments**
 - {Int+} -> number of values to output
 - {Number} -> minimum range (optional, default=0)
 - {Number} -> maximum range (optional, default=1)
@@ -348,7 +348,7 @@ ring rnf3 randF(5 -12 12)
 
 Generate a list of unique random integer values between a certain specified range (excluding high val). An 'urn' is filled with values and when one is picked it is removed from the urn. If the outputlist is longer then the range, the urn refills when empty. On refill it is made sure no repeating value can be picked.
 
-**params**
+**arguments**
 - {Int+} -> number of values to output
 - {Number} -> maximum range (optional, default=12)
 - {Number} -> minimum range (optional, defautl=0)
@@ -368,7 +368,7 @@ ring urn3 urn(8 10 14)
 
 Generate a list of random integer values 0 or 1 like a coin toss, heads/tails. Or 
 
-**params**
+**arguments**
 - {Int+} -> number of coin tosses to output as ring
 
 ```java
@@ -380,7 +380,7 @@ ring coin1 coin(8)
 
 Generate a list of random integer values 1 to 6 like the roll of a dice.
 
-**params**
+**arguments**
 - {Int+} -> number of dice rolls to output as ring
 
 ```java
@@ -392,7 +392,7 @@ ring dice1 dice(8)
 
 Generate a list of 12 semitones then shuffle the list based on the random seed. 
 
-**params**
+**arguments**
 - {None}
 
 ```java
