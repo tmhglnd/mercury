@@ -36,12 +36,12 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 **Values**
 
-- `Value` -> Number or String
+- `Value` -> Number or Name
 	- `Number` -> Int+, Int or Float
 		- `Int+` -> A positive whole number, bigger than 0
 		- `Int` -> A whole number, negative or positive, including 0
 		- `Float` -> A floating-point number, negative or positive, including 0
-	- `String` -> A combination of letter-characters, may include capital letter, underscores and digits
+	- `Name` -> A combination of letter-characters, may include capital letter, underscores and digits
 
 **Rings**
 
@@ -50,7 +50,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 		- `IntRing+` -> A ring with `Int+`'s
 		- `IntRing` -> A ring with `Int`'s
 		- `FloatRing` -> A ring with `Float`'s
-	- `StringRing` -> A ring with `String`'s
+	- `NameRing` -> A ring with `Name`'s
 
 # Generative Methods
 
@@ -196,7 +196,7 @@ ring euc3 euclid(7 5 2)
 Generate hexadecimal rhythms. Hexadecimal beats make use of hexadecimal values (0 - f) that are a base-16 number system. Because one digit in a base-16 number system has 16 possible values (0 - 15) these can be converted to 4 bits that therefore can be seen as groups of 4 16th notes. These hexadecimal values will then represent any permutation of 1's and 0's in a 4 bit number, where 0 = 0 0 0 0, 7 = 0 1 1 1, b = 1 0 1 1, f = 1 1 1 1 and all possible values in between.
 
 **arguments**
-- {String} -> hexadecimal characters (0 t/m f) (optional, default=8)
+- {Name} -> hexadecimal characters (0 t/m f) (optional, default=8)
 
 ```java
 ring hex1 hexBeat()
@@ -445,25 +445,8 @@ ring notes [0 3 7 5 9 12]
 ring melody pick(10 notes)
 // => [3 0 7 9 12 5 0 7 12 9]
 ```
+
 # TO-DO
-
-## random
-
-```
-ring myRing random(<listlength> <low-bound> <high-bound>)
-```
-
-## randomFloat
-
-```
-ring myRing randomFloat(<listlength> <low-bound> <high-bound>)
-```
-
-## euclid
-
-```
-ring myRing euclid(<listlength> <amount-of-hits> <rotate>)
-```
 
 # Ring Methods Transformational
 
