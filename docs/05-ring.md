@@ -21,6 +21,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 # Table of Content
 
+- [Param Glossary](#param-glossary)
 - [Generative Methods](#generative-methods)
 - [Algorithmic Methods](#algorithmic-methods)
 	- Euclidean Rhythm
@@ -31,7 +32,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 - Transformative Methods (wip)
 - Translate Methods (wip)
 
-# Param Explanation
+# Param Glossary
 
 **Values**
 
@@ -40,7 +41,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 		- `Int+` -> A positive whole number, bigger than 0
 		- `Int` -> A whole number, negative or positive, including 0
 		- `Float` -> A floating-point number, negative or positive, including 0
-	- `String` -> A combination of letter-characters, may include capital letter, underscores and digits, but may not start with a digit
+	- `String` -> A combination of letter-characters, may include capital letter, underscores and digits
 
 **Rings**
 
@@ -168,9 +169,128 @@ ring cos5 cosineF(12 3 -1 1)
 // => [1 0 -1 0 1 0 -1 0 1 0 -1 0]
 ```
 
-## Algorithmic Methods
+# Algorithmic Methods
 
+# euclidean / euclid
 
+Generate a euclidean rhythm evenly spacing n-beats amongst n-steps.Inspired by Godfried Toussaints famous paper "The Euclidean Algorithm Generates Traditional Musical Rhythms".
+
+**params**
+- {Int+} -> length of ring (optional, default=8)
+- {Int+} -> beats (optional, default=4)
+- {Int} -> rotate (optional, default=0)
+
+```java
+ring euc1 euclidean()
+// => [1 0 1 0 1 0 1 0]
+
+ring euc2 euclid(7 5)
+// => [1 1 0 1 1 0 1]
+
+ring euc3 euclid(7 5 2)
+// => [0 1 1 1 0 1 1]
+```
+
+## hexBeat / hex
+
+Generate hexadecimal rhythms. Hexadecimal beats make use of hexadecimal values (0 - f) that are a base-16 number system. Because one digit in a base-16 number system has 16 possible values (0 - 15) these can be converted to 4 bits that therefore can be seen as groups of 4 16th notes. These hexadecimal values will then represent any permutation of 1's and 0's in a 4 bit number, where 0 = 0 0 0 0, 7 = 0 1 1 1, b = 1 0 1 1, f = 1 1 1 1 and all possible values in between.
+
+**params**
+- {String} -> hexadecimal characters (0 t/m f) (optional, default=8)
+
+```java
+ring hex1 hexBeat()
+// => [1 0 0 0]
+
+ring hex2 hex(a)
+// => [1 0 1 0]
+
+ring hex3 hex(f9cb)
+// => [1 1 1 1 1 0 0 1 1 1 0 0 1 0 1 1]
+```
+
+- [Learn hex beats](https://kunstmusik.github.io/learn-hex-beats/)
+
+## fibonacci
+
+Generate the Fibonacci sequence `F(n) = F(n-1) + F(n-2)`. The ratio between consecutive numbers in the fibonacci sequence tends towards the Golden Ratio (1+√5)/2. 
+
+`OEIS: A000045` (Online Encyclopedia of Integer Sequences)
+
+**params**
+- {Int+} -> output length of ring
+- {Int+} -> offset, start the sequence at nth-fibonacci number (optional, default=0)
+
+```java
+ring fib1 fibonacci(10)
+// => [0 1 1 2 3 5 8 13 21 34]
+
+ring fib2 fibonacci(3 10)
+// => [55 89 144]
+```
+
+## pisano
+
+Generate the Pisano period sequence `F(n) = (F(n-1) + F(n-2)) mod a`.
+
+**params**
+- {Int+} -> output length of ring
+- {Int+} -> modulus for pisano period
+
+```java
+ring psn1 pisano()
+// => [0 1 1 2 3 5 8 1 9 10 7 5 0 5 5 10 3 1 4 5 9 2 11 1]
+
+ring psn2 pisano(3)
+// => [0 1 1 2 0 2 2 1]
+
+ring psn3 pisano(11)
+// => [0 1 1 2 3 5 8 2 10 1]
+```
+
+## pell
+
+Generate the Pell numbers `F(n) = 2 * F(n-1) + F(n-2)`. The ratio between consecutive numbers in the pell sequence tends towards the Silver Ratio 1 + √2.
+
+`OEIS: A006190` (Online Encyclopedia of Integer Sequences)
+
+**params**
+- {Int+} -> output length of ring
+
+```java
+ring pll1 pell(8)
+// => [0 1 2 5 12 29 70 169]
+```
+
+## lucas
+
+Generate the Lucas numbers `F(n) = F(n-1) + F(n-2), with F0=2 and F1=1`.
+
+`OEIS: A000032` (Online Encyclopedia of Integer Sequences)
+
+**params**
+- {Int+} -> output length of ring
+
+```java
+ring luc1 lucas(8)
+// => [2 1 3 4 7 11 18 29]
+```
+
+## threeFibonacci
+
+Generate the Tribonacci numbers `F(n) = 2 * F(n-1) + F(n-2)`. The ratio between consecutive numbers in the 3-bonacci sequence tends towards the Bronze Ratio (3 + √13) / 2.
+
+`OEIS: A000129` (Online Encyclopedia of Integer Sequences)
+
+**params**
+- {Int+} -> output length of ring
+
+```java
+ring tfi1 threeFibonacci(8)
+// => [0 1 3 10 33 109 360 1189]
+```
+
+# TO-DO
 
 ## random
 
