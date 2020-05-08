@@ -564,10 +564,7 @@ Add zeroes to a ring with a number sequence. The division determines the amount 
 ring rhythm [1 0 1 1 0 1 1]
 ring sequence every(rhythm 2 8)
 // => [1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0]
-```
 
-**arguments**
-```java
 ring melody [12 19 24 27 24]
 ring phrase every(melody 2 8)
 // => [12 19 24 27 24 0 0 0 0 0 0 0 0 0 0 0]

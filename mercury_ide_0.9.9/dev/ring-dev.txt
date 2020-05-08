@@ -221,13 +221,21 @@
 // // retrograde()
 // // rev()
 
-ring notes [12 19 15 17]
-ring places [1 0 0 1 1 0 1 0 1 0]
-ring sprayed spray(notes places)
-// => [12 0 0 19 15 0 17 0 12 0]
+// ring notes [12 19 15 17]
+// ring places [1 0 0 1 1 0 1 0 1 0]
+// ring sprayed spray(notes places)
+// // => [12 0 0 19 15 0 17 0 12 0]
 
-ring notes [0 5 7 3 7 7 0 12 5]
-ring thinned unique(notes)
-// thin()
+// ring notes [0 5 7 3 7 7 0 12 5]
+// ring thinned unique(notes)
+// // => [0 5 7 3 12]
+// // thin()
 
+add()
+subtract()
+sub()
+multiply()
+mul()
+divide()
+div()
 
