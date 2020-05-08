@@ -28,7 +28,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- Hexadecimal Rhythm
 	- Fibonacci, Lucas, Pell Numbers
 	- Lindenmayer System (coming soon)
-- Stochastic Methods (wip)
+- [Stochastic Methods](#stochastic-methods)
 - Transformative Methods (wip)
 - Translate Methods (wip)
 
