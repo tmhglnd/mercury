@@ -231,11 +231,10 @@
 // // => [0 5 7 3 12]
 // // thin()
 
-add()
-subtract()
-sub()
-multiply()
-mul()
-divide()
-div()
-
+// add()
+// subtract()
+// sub()
+// multiply()
+// mul()
+// divide()
+// div()

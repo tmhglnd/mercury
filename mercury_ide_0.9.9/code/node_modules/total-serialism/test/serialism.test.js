@@ -1,8 +1,8 @@
 
-// const entryPoint = "../index";
+const entryPoint = "../index";
 // const entryPoint = "../build/ts.bundle.js";
 // const entryPoint = "../build/ts.es5.js";
-const entryPoint = "../build/ts.es5.min.js";
+// const entryPoint = "../build/ts.es5.min.js";
 
 const Srl = require(entryPoint);
 const Gen = Srl.Generative;
@@ -23,14 +23,6 @@ const Util = Srl.Utility;
 
 // console.log(TL.scaleName());
 // TL.searchScales(['1P', '2M', '3m', '4P', '6m', '7M']);
-
-// var divs = ['1/4', '1/8', '3/16', '1/4', '1/6', '2'];
-// console.log(TL.divisionToMs(divs));
-// console.log(divs);
-
-// var rts = [0.25, 0.125, 0.1875, 0.25, 0.16667, 2];
-// console.log(TL.divisionToMs(rts));
-// console.log(rts);
 
 testSerial();
 testGen();
@@ -303,7 +295,7 @@ function testTranslate(){
 
 	test("TL.midiToNote(48)");
 	test("TL.midiToNote('c4')");
-	test("TL.mton([60, 67, 70])");
+	test("TL.mton([48, 55, 51, 43])");
 
 	test("TL.noteToMidi('c2')");
 	test("TL.noteToMidi(['c2','d2','f#2'])");
@@ -336,6 +328,14 @@ function testTranslate(){
 	test("TL.toMidi([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);");
 	test("TL.toMidi(Gen.sine(8, 3.5, -7, 24), 4)");
 	test("TL.toMidi([0, 4.1, 6.5, 7.1, 9.25], 'c3')");
+
+	test("TL.setTempo(120)");
+	test("TL.divisionToMs()");
+	test("TL.dtoms(['1/4', '1/8', '3/16', '1/4', '1/6', '2'])");
+	test("TL.dtoms(['1/4', '1/8', '3/16', '1/4', '1/6', '2'], 100)");
+	test("TL.dtoms([0.25, 0.125, 0.1875, 0.25, 0.16667, 2])");
+	
+	test("TL.dtor(['1/4', '1/8', '3/16', '1/4', '1/6', '2'])");
 }
 
 function testUtil(){
