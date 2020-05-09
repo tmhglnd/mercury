@@ -311,6 +311,12 @@ const handlers = {
 	'toScale' : (...v) => {
 		return TL.toScale(...v);
 	},
+	'divisionToMs' : (...v) => {
+		return TL.divisionToMs(...v);
+	},
+	'dtoms' : (...v) => {
+		return TL.divisionToMs(...v);
+	},
 	// 
 	// Utility Methods
 	// 
@@ -353,12 +359,13 @@ function mainParse(lines){
 	let r = /ring\ .+/;
 	let seed = /set\ randomSeed\ .+/;
 	let scale = /set\ scale\ .+/;
+	let tempo = /set\ tempo\ .+/;
 
 	for (let i in lines){
 		l = lines[i];
 		if (r.test(l)){
 			rings.push(l);
-		} else if (seed.test(l) || scale.test(l)){
+		} else if (seed.test(l) || scale.test(l) || tempo.test(l)){
 			other.push(l);			
 			let expr = l.split(' ');
 			expr.shift();

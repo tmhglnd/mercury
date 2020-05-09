@@ -238,3 +238,11 @@
 // mul()
 // divide()
 // div()
+
+set tempo 120
+ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
+ring ms1 dtoms(divs)
+ring ms2 dtoms(divs 100)
+
+ring ratios [0.25 0.125 0.1875 0.25 0.16667 2]
+ring ms3 dtoms(ratios)

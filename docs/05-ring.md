@@ -62,7 +62,9 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [spray](#spray)
 	- [unique / thin](#unique)
 - [Utility Methods](#utility-methods)
-- [Translate Methods](#translate-methods) (w.i.p.)
+- [Translate Methods](#translate-methods)
+	- [tempo](#tempo)
+	- [divisionToMs](#divisiontoms)
 
 # Param Glossary
 
@@ -714,3 +716,43 @@ ring thinned unique(notes)
 ```
 
 Alternative: `thin()`
+
+# Utility Methods
+
+(coming soon...)
+
+# Translate Methods
+
+## tempo
+
+Set the global tempo for the sequencer and used with the conversion methods
+
+**arguments**
+- {Number} -> Set the tempo in Beats Per Minute (BPM)
+
+```java
+set tempo 100
+```
+
+## divisionToMs
+
+Convert beat division strings or beat ratio floats to milliseconds using BPM from the global settings. Optional second argument sets bpm.
+
+**arguments**
+- {Ring} -> beat division or ratio array
+- {Number} -> set the BPM (optional, default = global tempo)
+
+```java
+set tempo 120
+ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
+ring ms1 divisionToMs(divs)
+// => [500 1000 250 375 500 333.33 4000]
+ring ms2 divisionToMs(divs 100)
+// => [600 1200 300 450 600 400 4800]
+
+ring ratios [0.25 0.125 0.1875 0.25 0.16667 2]
+ring ms3 divisionToMs(ratios)
+// => [500 1000 250 375 500 333.33 4000]
+```
+
+Alternative: `dtoms()`
