@@ -39,13 +39,95 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-100",
+					"id" : "obj-158",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "killAll" ],
-					"patching_rect" : [ 68.5, 1560.0, 43.0, 22.0 ],
-					"text" : "t killAll"
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 705.0, 1604.5, 139.0, 22.0 ],
+					"text" : "prepend /mercury/tempo"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-151",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1283.584777999999915, 1845.0, 127.0, 22.0 ],
+					"text" : "prepend /mercury/root"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-150",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1075.084777999999915, 1815.0, 166.0, 22.0 ],
+					"text" : "prepend /mercury/scaleName"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-145",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1252.084777999999915, 1815.0, 159.0, 22.0 ],
+					"text" : "prepend /mercury/rootName"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-141",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1143.084777999999915, 1845.0, 134.0, 22.0 ],
+					"text" : "prepend /mercury/scale"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-102",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1075.084777999999915, 1890.0, 71.0, 22.0 ],
+					"text" : "s globalOsc"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 705.0, 1635.5, 71.0, 22.0 ],
+					"text" : "s globalOsc"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-100",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 68.5, 1560.0, 86.0, 22.0 ],
+					"text" : "/mercury killAll"
 				}
 
 			}
@@ -38437,6 +38519,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -41700,24 +41784,12 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-15",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 600.0, 90.0, 103.0, 22.0 ],
-									"text" : "prepend /mercury"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 600.0, 60.0, 69.0, 22.0 ],
+									"patching_rect" : [ 600.0, 90.0, 69.0, 22.0 ],
 									"text" : "r globalOsc"
 								}
 
@@ -42002,7 +42074,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
+									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -42011,13 +42083,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-13", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
-									"source" : [ "obj-15", 0 ]
 								}
 
 							}
@@ -43837,8 +43902,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -57667,7 +57730,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1252.084777999999915, 1752.5, 79.0, 22.0 ],
+					"patching_rect" : [ 1283.619506999999885, 1752.5, 79.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -57685,7 +57748,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1252.084777999999915, 1782.5, 60.0, 22.0 ],
+					"patching_rect" : [ 1304.619506999999885, 1782.5, 60.0, 22.0 ],
 					"text" : "s theRoot"
 				}
 
@@ -58120,7 +58183,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 823.945876999999882, 1574.5, 29.5, 22.0 ],
+					"patching_rect" : [ 853.945876999999882, 1574.5, 29.5, 22.0 ],
 					"text" : "* 4."
 				}
 
@@ -58202,7 +58265,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1143.084777999999915, 1782.5, 65.0, 22.0 ],
+					"patching_rect" : [ 1166.084777999999915, 1782.5, 65.0, 22.0 ],
 					"text" : "s theScale"
 				}
 
@@ -58215,7 +58278,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 68.5, 1625.0, 50.0, 22.0 ]
+					"patching_rect" : [ 68.5, 1658.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -58226,7 +58289,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 68.5, 1658.0, 52.0, 22.0 ],
+					"patching_rect" : [ 68.5, 1691.0, 52.0, 22.0 ],
 					"text" : "open $1"
 				}
 
@@ -58360,7 +58423,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 823.945876999999882, 1604.5, 65.0, 22.0 ],
+					"patching_rect" : [ 853.945876999999882, 1604.5, 65.0, 22.0 ],
 					"text" : "s tempoInt"
 				}
 
@@ -58593,7 +58656,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 823.945876999999882, 1542.5, 55.0, 22.0 ],
+					"patching_rect" : [ 853.945876999999882, 1542.5, 55.0, 22.0 ],
 					"text" : "!/ 60000."
 				}
 
@@ -58645,6 +58708,29 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 165.0, 374.0, 175.0, 22.0 ],
+									"text" : "prepend /mercury/randomSeed"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-102",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 165.0, 405.0, 71.0, 22.0 ],
+									"text" : "s globalOsc"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
@@ -58687,7 +58773,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 120.0, 375.0, 30.0, 30.0 ]
+									"patching_rect" : [ 120.0, 397.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -58746,8 +58832,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 300.0, 203.0, 43.0, 22.0 ],
-									"text" : "sig~ 1"
+									"patching_rect" : [ 300.0, 203.0, 41.0, 22.0 ],
+									"text" : "sig~ 0"
 								}
 
 							}
@@ -58883,6 +58969,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-102", 0 ],
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
 									"source" : [ "obj-2", 1 ]
 								}
@@ -58911,7 +59004,16 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"order" : 0,
+									"source" : [ "obj-357", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
+									"order" : 1,
 									"source" : [ "obj-357", 0 ]
 								}
 
@@ -58966,6 +59068,78 @@
 									"source" : [ "obj-6", 0 ]
 								}
 
+							}
+ ],
+						"styles" : [ 							{
+								"name" : "AudioStatus_Menu",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "color",
+										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "Audiomix",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "gradient",
+										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
+										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39
+									}
+
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "numberB-1",
+								"default" : 								{
+									"accentcolor" : [ 0.011765, 0.396078, 0.752941, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "numberG-1",
+								"default" : 								{
+									"accentcolor" : [ 0.0, 0.533333, 0.168627, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "numberGold-1",
+								"default" : 								{
+									"accentcolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "numberR-1",
+								"default" : 								{
+									"accentcolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
 							}
  ]
 					}
@@ -59915,6 +60089,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-102", 0 ],
+					"source" : [ "obj-141", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-37", 0 ],
 					"source" : [ "obj-142", 0 ]
 				}
@@ -59924,6 +60105,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
 					"source" : [ "obj-143", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-102", 0 ],
+					"source" : [ "obj-145", 0 ]
 				}
 
 			}
@@ -59947,6 +60135,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-249", 0 ],
 					"source" : [ "obj-149", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-102", 0 ],
+					"source" : [ "obj-150", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-102", 0 ],
+					"source" : [ "obj-151", 0 ]
 				}
 
 			}
@@ -59995,7 +60197,23 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-112", 0 ],
+					"order" : 0,
 					"source" : [ "obj-157", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-141", 0 ],
+					"order" : 1,
+					"source" : [ "obj-157", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-38", 0 ],
+					"source" : [ "obj-158", 0 ]
 				}
 
 			}
@@ -60940,7 +61158,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-151", 0 ],
+					"order" : 1,
+					"source" : [ "obj-294", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-230", 0 ],
+					"order" : 0,
 					"source" : [ "obj-294", 0 ]
 				}
 
@@ -61491,7 +61718,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-145", 0 ],
+					"order" : 1,
+					"source" : [ "obj-403", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-294", 0 ],
+					"order" : 0,
 					"source" : [ "obj-403", 0 ]
 				}
 
@@ -61535,7 +61771,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-150", 0 ],
+					"order" : 1,
+					"source" : [ "obj-413", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-157", 0 ],
+					"order" : 0,
 					"source" : [ "obj-413", 0 ]
 				}
 
@@ -61623,6 +61868,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-6", 1 ],
 					"source" : [ "obj-45", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-158", 0 ],
+					"order" : 2,
+					"source" : [ "obj-455", 0 ]
 				}
 
 			}
@@ -61941,70 +62194,70 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "soundObject.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "consoleLog.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "parser.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "argListLookup.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "getVariables.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "envelopeGen.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "calcExpr.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "probList.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "argBindings.txt",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/data",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/data",
 				"patcherrelativepath" : "../data",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "syncToScale.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -62024,91 +62277,91 @@
 			}
 , 			{
 				"name" : "gtep.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "synthPoly.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "phasorRate.gendsp",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/code",
 				"patcherrelativepath" : "../code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "scales.txt",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/data",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/data",
 				"patcherrelativepath" : "../data",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "tonics.txt",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/data",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/data",
 				"patcherrelativepath" : "../data",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "probTrig.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fftCatch~.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "recursiveFolder.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "editorGL.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "keyPressed.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "textScale.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "modulatorObject~.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "newInstance.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -62122,7 +62375,7 @@
 			}
 , 			{
 				"name" : "setupVisuals.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -62136,42 +62389,42 @@
 			}
 , 			{
 				"name" : "setupAudio.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "preferences.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "lexer.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "mercury.js",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/code",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "emptyScene.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "analyseDisplay.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide_0.9.9/patchers",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1

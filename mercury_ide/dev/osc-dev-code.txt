@@ -15,7 +15,7 @@ set osc default
 
 set tempo 97
 
-set random_seed 8273
+set randomSeed 8273
 
 // ring delay fill(50 8 100 4 200 8 255 2)
 ring time spread(8 50 200)
