@@ -1,0 +1,5 @@
+
+new synth sine shape(1 2000) time(1) note(0.3 2) useDetune(1)
+new synth sine shape(1 2000) time(1) note(0 2) 
+
+killAll

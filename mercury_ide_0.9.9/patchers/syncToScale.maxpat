@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 306.0, 152.0, 512.0, 638.0 ],
+		"rect" : [ 770.0, 177.0, 512.0, 638.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -92,8 +92,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 236.5, 240.0, 76.0, 22.0 ],
-					"text" : "route detune"
+					"patching_rect" : [ 236.5, 240.0, 97.0, 22.0 ],
+					"text" : "route useDetune"
 				}
 
 			}

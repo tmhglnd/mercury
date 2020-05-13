@@ -180,6 +180,18 @@ new synth sine note(mel 1) time(1/16)
 
 ```
 
+## useDetune
+
+Allow detuning to have effect on the played note. The detuning is made by adding a floating-point value to the played note, Where the ratio is the amount of detune between one semitone and the next. For example `7.5` results in `7` semitones (mapped to the scale if `set scale` is used) and then a `0.5` semitone is added (= 50 cents). Detuning is applied after mapping the integer semitone to a scale.
+
+**arguments**
+- {Bool} -> enable or disable detuning (default=0)
+
+```java
+new synth sine shape(1 2000) time(1) note(7.5 2) useDetune(1)
+new synth sine shape(1 2000) time(1) note(7 2) 
+```
+
 ## wave2
 
 Add a second oscillator to the synths sound. This can either be a sine, triangle, square or saw. The second argument sets a multiplication ratio for the second oscillators frequency.

@@ -38414,8 +38414,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -43609,6 +43607,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -59260,13 +59260,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
