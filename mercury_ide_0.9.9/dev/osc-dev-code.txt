@@ -45,4 +45,4 @@ new emitter osc name(c) t(1)
 // ring ht [1 0 1 0.2 1 0.5 1 0.7]
 // new sample hat_dub time(1/32 1/8) vol(0.8) b(ht 1) rate(0.9)
 
-killall
+killAll
