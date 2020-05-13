@@ -1,8 +1,8 @@
 
-const entryPoint = "../index";
+// const entryPoint = "../index";
 // const entryPoint = "../build/ts.bundle.js";
 // const entryPoint = "../build/ts.es5.js";
-// const entryPoint = "../build/ts.es5.min.js";
+const entryPoint = "../build/ts.es5.min.js";
 
 const Srl = require(entryPoint);
 const Gen = Srl.Generative;
@@ -24,14 +24,20 @@ const Util = Srl.Utility;
 // console.log(TL.scaleName());
 // TL.searchScales(['1P', '2M', '3m', '4P', '6m', '7M']);
 
-testSerial();
-testGen();
-testAlgo();
-testRand();
-testMod();
-testTranslate();
-testUtil();
-pagebreak("Test Passed");
+// console.log(Algo.pisano(0));
+
+fullTest();
+
+function fullTest(){
+	testSerial();
+	testGen();
+	testAlgo();
+	testRand();
+	testMod();
+	testTranslate();
+	testUtil();
+	pagebreak("Test Passed");
+}
 
 // Global vars for tests
 var complexRules = {

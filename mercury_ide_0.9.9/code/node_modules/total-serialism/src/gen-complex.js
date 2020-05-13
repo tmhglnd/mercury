@@ -191,7 +191,7 @@ exports.fibonacci = fibonacci;
 
 // Generate the Pisano period sequence as an array of BigNumber objects
 // Returns array of [0] if no period is found within the default length
-// of fibonacci numbers (256). In that case 
+// of fibonacci numbers (256). Mod value is a minimum of 2
 // 
 // F(n) = (F(n-1) + F(n-2)) mod a.
 // 
@@ -200,7 +200,7 @@ exports.fibonacci = fibonacci;
 // @return {Int-Array} -> array of integers
 // 
 function pisano(mod=12, len=-1){
-	mod = (mod < 1)? 1 : mod;
+	if (mod < 2){ return [0]; }
 	if (len < 1){
 		return pisanoPeriod(mod);
 	} else {

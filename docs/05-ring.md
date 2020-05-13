@@ -736,7 +736,7 @@ set tempo 100
 
 ## divisionToMs
 
-Convert beat division strings or beat ratio floats to milliseconds using BPM from the global settings. Optional second argument sets bpm.
+Convert beat division strings or beat ratio floats to milliseconds using BPM from the global settings. Optional second argument sets BPM and ignores global setting.
 
 **arguments**
 - {Ring} -> beat division or ratio array

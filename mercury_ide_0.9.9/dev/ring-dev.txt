@@ -76,6 +76,7 @@
 // // => [0 1 1 2 0 2 2 1]
 // ring psn3 pisano(11)
 // // => [0 1 1 2 3 5 8 2 10 1]
+// ring psn4 pisano(1)
 
 // ring pll1 pell(8)
 // // => [0 1 2 5 12 29 70 169]
@@ -239,10 +240,13 @@
 // divide()
 // div()
 
-set tempo 120
-ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
-ring ms1 dtoms(divs)
-ring ms2 dtoms(divs 100)
+// set tempo 120
+// ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
+// ring ms1 dtoms(divs)
+// // => [500 1000 250 375 500 333.33 4000]
+// ring ms2 dtoms(divs 100)
+// // => [600 1200 300 450 600 400 4800]
 
-ring ratios [0.25 0.125 0.1875 0.25 0.16667 2]
-ring ms3 dtoms(ratios)
+// ring ratios [0.25 0.125 0.1875 0.25 0.16667 2]
+// ring ms3 dtoms(ratios)
+// // => [500 1000 250 375 500 333.33 4000]

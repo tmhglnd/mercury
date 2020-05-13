@@ -8347,7 +8347,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       exports.fibonacci = fibonacci; // Generate the Pisano period sequence as an array of BigNumber objects
       // Returns array of [0] if no period is found within the default length
-      // of fibonacci numbers (256). In that case 
+      // of fibonacci numbers (256). Mod value is a minimum of 2
       // 
       // F(n) = (F(n-1) + F(n-2)) mod a.
       // 
@@ -8359,7 +8359,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       function pisano() {
         var mod = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 12;
         var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : -1;
-        mod = mod < 1 ? 1 : mod;
+
+        if (mod < 2) {
+          return [0];
+        }
 
         if (len < 1) {
           return pisanoPeriod(mod);
