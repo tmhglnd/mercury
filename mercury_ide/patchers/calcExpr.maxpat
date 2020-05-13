@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 1,
+			"minor" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+		"rect" : [ 908.0, 206.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,12 +39,24 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 185.0, 180.0, 60.0, 22.0 ],
+					"text" : "zl.change"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-86",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 174.0, 100.0, 59.0, 22.0 ],
+					"patching_rect" : [ 174.0, 90.0, 59.0, 22.0 ],
 					"text" : "tosymbol"
 				}
 
@@ -56,7 +68,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 174.0, 130.0, 30.0, 22.0 ],
+					"patching_rect" : [ 174.0, 120.0, 30.0, 22.0 ],
 					"text" : "t b l"
 				}
 
@@ -68,7 +80,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 185.0, 285.0, 43.0, 22.0 ],
+					"patching_rect" : [ 185.0, 300.0, 43.0, 22.0 ],
 					"text" : "jit.spill"
 				}
 
@@ -80,7 +92,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 50.0, 190.0, 115.0, 22.0 ],
+					"patching_rect" : [ 60.0, 180.0, 113.0, 22.0 ],
 					"text" : "jit.matrix 1 float64 1"
 				}
 
@@ -92,7 +104,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 185.0, 190.0, 81.0, 22.0 ],
+					"patching_rect" : [ 185.0, 210.0, 81.0, 22.0 ],
 					"text" : "prepend expr"
 				}
 
@@ -104,7 +116,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 185.0, 250.0, 46.0, 22.0 ],
+					"patching_rect" : [ 185.0, 265.0, 46.0, 22.0 ],
 					"text" : "jit.expr"
 				}
 
@@ -137,6 +149,13 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-71", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-78", 0 ],
 					"source" : [ "obj-66", 0 ]
 				}
@@ -165,7 +184,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-71", 0 ],
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-83", 1 ]
 				}
 
