@@ -81,13 +81,16 @@ Alternative function-names: `rhythm() | b()`
 
 ## shape
 
-Set the envelope generator of a sound. Various modes are possible depending on the amount of arguments. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds. The sustain time holds the sound at a static volume for a while. If the sound is triggered before the end of the envelope, the envelope is canceled, faded to 0 in 1ms and starts over.
+Set the envelope generator of a sound. Various modes are possible depending on the amount of arguments. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds. The sustain time holds the sound at a static volume for a while. If the sound is triggered before the end of the envelope, the envelope is canceled, faded to 0 in 1ms and starts over. You can specify the times in absolute values using integer/floating points (in ms) or in relative values using beat divisions.
 
-```
-set <name> shape(<attack, optional (default=2)> <sustain, optional (default=0)> <release>)
-```
+**arguments**
+
+- {Number/Division} -> Attack time in ms or division (optional, default=2)
+- {Number/Division} -> Decay time in ms or division (optional, default=0)
+- {Number/Division} -> Release time in ms or division
+
 example
-```
+```java
 new synth saw shape(1500) time(1)
 //=> default attack of 2 ms, sustain of 0 ms and a release of 1500 ms
 
@@ -96,6 +99,18 @@ new synth saw shape(1000 250) time(1)
 
 new synth saw shape(10 500 50) time(1)
 //=> attack of 10 ms, sustain of 500 ms and a release of 50 ms
+```
+
+example with division
+```java
+set tempo 100
+
+new synth saw shape(1/2) time(1)
+//=> default release of 1/2 (about 250 ms at 120 bpm)
+
+new synth saw shape(1/4 1/32) time(1)
+
+new synth saw shape(1/64 1/8 1/16) time(1)
 ```
 
 Alternative function-names: `envelope() | env() | transient() | e()`
