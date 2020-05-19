@@ -2,7 +2,7 @@
 
 If you haven't installed Mercury yet, follow the instructions [here](../README.md#install)
 
-1. Open `mercury_ide_x.x.x.maxproj`
+1. Open `mercury_ide.maxproj`
 
 2. Link the included sample library 
 	- `File > Load Sample Library` in menubar of main window
@@ -11,12 +11,18 @@ If you haven't installed Mercury yet, follow the instructions [here](../README.m
 	- `Show Audiofiles` in the main window to see if the filepaths are correct.
 
 3. Turn the rendering engine `on` in the main window. You will see the text-editor appear and the cursor starts blinking.
-	- In the event of a laggy editor, slow cursor and/or low FPS change the visual settings:
+	- In the event of a laggy editor, slow cursor and/or low FPS first run Max in low-resolution mode (Mac Retina-display only 10.13 or lower)
+		- Go to `Applications` in the Finder
+		- Right click `Max.app`
+		- Click `Get Info`
+		- Select `Open in Low Resolution`
+		- Restart Max and the Mercury project
+	- Other settings you can change for the visuals:
 		- `Settings > Visual Setup`
 		- `Resolution`: `540`
 		- `Visual Resolution`: `270`
 		- `Sync to Refreshrate`: `Off`
-		- `FPS`: `30`
+		- `FPS`: `30` or `25`
 	- In the event that the cursor is not aligned with the text, change the visual settings:
 		- `Settings > Visual Setup`
 		- `Preselected Fonts`: `Courier New`

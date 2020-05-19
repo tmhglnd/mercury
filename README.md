@@ -99,19 +99,19 @@ Read the [system requirements](#system-requirements) first before getting starte
 	- [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
 	- [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
 	- If links are not working go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
-
+<!--
 2. Add the following dependencies to the `~/Documents/Max 8/Packages` folder:
 	- [`misc-max-abstractions`](https://github.com/tmhglnd/misc-max-abstractions)
 	- [`reverb-yafr-mods`](https://github.com/tmhglnd/reverb-yafr-mods)
 	- Optional:
 		- `Syphon` : available as download in the Max Package Manager
-	<!-- - [~~pass-comparators~~](https://github.com/tmhglnd/pass-comparators) <- now included in the package -->
+	<!-- - [~~pass-comparators~~](https://github.com/tmhglnd/pass-comparators) <- now included in the package
 	<!-- - ~~jasch package~~ <- temporarily disabled function -->
 
-3. Download, clone or fork Mercury to the Projects folder in your Documents:
+2. Download, clone or fork Mercury to the Projects folder in your Documents:
 ```
 1. Download zip and unpack in ~/Documents/Max 8/Projects (create Projects folder if necessary)
-2. Open mercury_ide_x.x.x.maxproj
+2. Open mercury_ide.maxproj
 ```
 commandline:
 ```
