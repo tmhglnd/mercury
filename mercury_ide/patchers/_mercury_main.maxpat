@@ -14539,7 +14539,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 754.0, 79.0, 652.0, 783.0 ],
+						"rect" : [ 34.0, 79.0, 652.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -15824,12 +15824,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-25",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 210.0, 1065.0, 457.0, 22.0 ],
-									"text" : "jit.gl.videoplane vis @transform_reset 2 @depth_enable 0 @blend add @layer 1000"
+									"patching_rect" : [ 210.0, 1065.0, 313.0, 35.0 ],
+									"text" : "jit.gl.videoplane vis @transform_reset 2 @depth_enable 0 @blend add @layer 1000 @blend_enable 1"
 								}
 
 							}
@@ -34393,14 +34394,26 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 105.0, 40.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-33",
-									"linecount" : 9,
+									"linecount" : 8,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 188.5, 165.0, 213.0, 143.0 ],
-									"text" : ";\rvisuals webcam enable 0;\rvisuals webcam device 0;\rvisuals webcam format 3;\rvisuals webcam brightness 2;\rvisuals webcam saturation 0;\rvisuals webcam contrast 1.5;\rvisuals external enable 0;\rvisuals external appname NDISyphon;\r"
+									"patching_rect" : [ 188.5, 165.0, 213.0, 129.0 ],
+									"text" : ";\rvisuals webcam device 0;\rvisuals webcam format 3;\rvisuals webcam brightness 2;\rvisuals webcam saturation 0;\rvisuals webcam contrast 1.5;\rvisuals external enable 0;\rvisuals external appname NDISyphon;\r"
 								}
 
 							}
@@ -34447,6 +34460,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-74", 0 ],
 									"source" : [ "obj-152", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-74", 0 ],
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -35457,7 +35477,7 @@
 										}
 ,
 										"classnamespace" : "jit.gen",
-										"rect" : [ 84.0, 128.0, 600.0, 450.0 ],
+										"rect" : [ 84.0, 128.0, 443.0, 450.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
