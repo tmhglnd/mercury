@@ -16,10 +16,10 @@ let system = {
 	'platform' : os.platform(),
 	'ip' : os.hostname(),
 }
-if (system.type === 'win32'){
+/* if (system.type === 'win32'){
 	system.user = slash(system.user);
 	system.app = slash(system.app);
-}
+}*/
 max.post("system-info", system);
 max.outlet("system", system);
 
@@ -63,33 +63,18 @@ let prefs = {
 	"external_editor" : 0,
 }
 
-/* let editorPrefs = {
-	"def_font" : "Courier New Bold",
-	"font" : "Courier New Bold",
-	"tracking" : 0.95,
-	"leadscale" : 0.95,
-	"scale" : 1,
-	"position" : [0, 0],
-	"text_color": [1, 1, 1, 1],
-	"cursor_color": [1, 0.5, 0, 1],
-	"blink_color": [0, 0.5, 1, 1],
-	"run_color": [0.2, 0.2, 0.2, 1],
-	"blink_enable" : 1,
-	"blink_time" : 300,
-	"cursor" : "<<",
-	"autoLog" : 0,
-	"external_editor" : 0,
-}*/
-
 // the basefolder for all Mercury local files
-const base = system.user + '/Documents/Mercury';
+// const base = system.user + '/Documents/Mercury';
+const base = path.join(system.user, '/Documents/Mercury');
 
 // variables for the preferences file
-const prefFile = base + '/Preferences/preferences.json';
+// const prefFile = base + '/Preferences/preferences.json';
+const prefFile = path.join(base, '/Preferences/preferences.json');
 const defaults = { ...prefs };
 
 // variables for the sample library file
-const sampleFile = base + '/Data/sample-library.json';
+// const sampleFile = base + '/Data/sample-library.json';
+const sampleFile = path.join(base, '/Data/sample-library.json');
 const defaultSamplePath = path.join(system.app, "../media/samples")
 const defaultSamples = loadSamples(defaultSamplePath);
 let samples = {};

@@ -43995,8 +43995,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1145.0, 267.0, 32.0, 22.0 ],
-									"text" : "print"
+									"patching_rect" : [ 1105.0, 266.0, 95.0, 22.0 ],
+									"text" : "print SETTINGS"
 								}
 
 							}
@@ -47037,7 +47037,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 0 ],
-									"order" : 1,
+									"order" : 0,
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -47045,7 +47045,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-52", 0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -60523,7 +60523,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-227", 1 ],
+					"destination" : [ "obj-63", 0 ],
 					"source" : [ "obj-282", 0 ]
 				}
 
