@@ -44,15 +44,20 @@ const handlers = {
 			return;
 		}
 		console.log("ring", "@name", name, "@args", ...args);
-		let expr = args.join(' ');
-		let parsed = parseString(expr);
-		let eval = evaluateParse(parsed);
-		
-		let arr = [];
-		for (i in eval){
-			arr.push({ 'array' : eval[i] });
+		if (isNaN(name)){
+			let expr = args.join(' ');
+			let parsed = parseString(expr);
+			let eval = evaluateParse(parsed);
+			
+			let arr = [];
+			for (i in eval){
+				arr.push({ 'array' : eval[i] });
+			}
+			dict.set(name, arr);
+		} else {
+			// numbers are not allowed as ring name
+			console.error("Ring:", name, "is not a valid name");
 		}
-		dict.set(name, arr);
 	},
 	// All the Array transformation/generation methods
 	// From the total-serialism Node package
