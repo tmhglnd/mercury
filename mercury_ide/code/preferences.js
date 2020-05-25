@@ -55,6 +55,7 @@ let prefs = {
 	"cursor_color": [1, 0.5, 0, 1],
 	"blink_color": [0, 0.5, 1, 1],
 	"run_color": [0.2, 0.2, 0.2, 1],
+	"number_color": [0.3, 0.3, 0.3, 1],
 	"blink_enable" : 1,
 	"blink_time" : 300,
 	"cursor" : "<<",
