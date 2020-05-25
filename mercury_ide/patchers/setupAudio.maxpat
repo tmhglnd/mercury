@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 58.0, 96.0, 324.0, 454.0 ],
+		"rect" : [ 68.0, 228.0, 327.0, 453.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -227,7 +227,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 42.99760400000001, 180.0, 69.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 58, 96, 382, 550, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 68, 228, 395, 681, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -282,7 +282,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 281.0, 176.0, 781.0, 570.0 ],
+						"rect" : [ 523.0, 231.0, 781.0, 570.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -924,7 +924,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 309.305480999999986, 170.172408999999988, 127.0, 23.0 ],
-									"text" : "58 96 382 550"
+									"text" : "68 228 395 681"
 								}
 
 							}
@@ -2553,7 +2553,7 @@
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"hint" : "",
 					"id" : "obj-94",
-					"items" : [ "None", ",", "Built-in Microphone", ",", "BlackHole", ",", "Saffire", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "Max", ",", "Max + Mic" ],
+					"items" : [ "None", ",", "Built-in Microphone", ",", "BlackHole", ",", "Saffire", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "from Max" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3327,7 +3327,7 @@
 					"color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"id" : "obj-58",
-					"items" : [ "None", ",", "Built-in Output", ",", "BlackHole", ",", "Saffire", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "Instant On Sound Effects", ",", "Max", ",", "Max + Mic" ],
+					"items" : [ "None", ",", "Built-in Output", ",", "BlackHole", ",", "Saffire", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,

@@ -143,7 +143,7 @@ params ->
 		{% (d) => d[0] %}
 	|
 	paramElement _ params
-		{% (d) => [d[0], d[2]] %}
+		{% (d) => d[0].join(d[2]) %}
 
 paramElement ->
 	name

@@ -47,14 +47,38 @@ let prefs = {
 	"syphon" : 0,
 	"def_font" : "Courier New Bold",
 	"font" : "Courier New Bold",
-	"leadscale" : 0.83,
-	"exec_color" : [0.2, 0.2, 0.2, 1],
-	"cursor_c1" : [0, 1, 1, 1],
-	"cursor_c2" : [1, 0, 1, 1],
-	"cursor" : "<==",
+	"tracking" : 0.95,
+	"leadscale" : 0.95,
+	"scale" : 1,
+	"position" : [0, 0],
+	"text_color": [1, 1, 1, 1],
+	"cursor_color": [1, 0.5, 0, 1],
+	"blink_color": [0, 0.5, 1, 1],
+	"run_color": [0.2, 0.2, 0.2, 1],
+	"blink_enable" : 1,
+	"blink_time" : 300,
+	"cursor" : "<<",
 	"autoLog" : 0,
 	"external_editor" : 0,
 }
+
+/* let editorPrefs = {
+	"def_font" : "Courier New Bold",
+	"font" : "Courier New Bold",
+	"tracking" : 0.95,
+	"leadscale" : 0.95,
+	"scale" : 1,
+	"position" : [0, 0],
+	"text_color": [1, 1, 1, 1],
+	"cursor_color": [1, 0.5, 0, 1],
+	"blink_color": [0, 0.5, 1, 1],
+	"run_color": [0.2, 0.2, 0.2, 1],
+	"blink_enable" : 1,
+	"blink_time" : 300,
+	"cursor" : "<<",
+	"autoLog" : 0,
+	"external_editor" : 0,
+}*/
 
 // the basefolder for all Mercury local files
 const base = system.user + '/Documents/Mercury';
@@ -108,8 +132,9 @@ max.addHandler('init', () => {
 
 // store a single parameter setting with a value
 // auto-write directly to file
-max.addHandler('store', (param, value) => {
+max.addHandler('store', (param, ...value) => {
 	if (prefs[param] !== undefined){
+		value = (value.length > 1)? value : value[0];
 		prefs[param] = value;
 		writeJson(prefFile, prefs);
 	}
@@ -130,7 +155,6 @@ max.addHandler('load', (fold) => {
 	writeJson(sampleFile, samples);
 	max.outlet('samples', samples);
 });
-
 
 // replace all samples with the content of a folder 
 // and store names with path in database file
