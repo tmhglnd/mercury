@@ -1,0 +1,14 @@
+// make a rhythm with ones and zeroes
+// in a ring. A value between one and zero is
+// a probability (for example 0.5 = 50% chance)
+
+set tempo 83
+
+new sample bamboo_a time(1/4)
+
+// try changing the values in the ring
+// try adding/removing values as well
+ring rhythm [1 0 0 1 0.1 0.5 0.2]
+new sample bamboo_f time(1/16) beat(rhythm)
+
+set all fx(reverb 0.4 3)

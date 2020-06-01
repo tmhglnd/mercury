@@ -1,0 +1,17 @@
+// choose 15 random samples from a ring of
+// predefined samplename. Play those samples 
+// sequentially for every time interval
+
+set tempo 112
+
+// randomseed makes sure every run the 
+// random values are the same
+set randomSeed 1234
+
+ring samples [tabla_lo tabla_hi tabla_mid tabla_hi_short]
+ring selection choose(15 samples)
+
+new sample selection time(1/16)
+new sample kick_house time(1/4)
+
+set all fx(reverb 0.3 3)

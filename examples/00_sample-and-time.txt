@@ -1,0 +1,12 @@
+// play different samples
+// at different time intervals
+
+set tempo 95
+
+new sample bamboo_a time(1)
+new sample bamboo_c time(1/2)
+new sample bamboo_f time(1/3)
+new sample bamboo_g time(1/4)
+
+// add reverb fx to all samples
+set all fx(reverb 0.8 5)

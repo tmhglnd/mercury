@@ -1,0 +1,19 @@
+// make 2 different position rings of 16 values 
+// from a randomFloat() method and combine them
+// into one ring. Fade-in the sample in 1 ms, 
+// Play it for 50 ms and fade-out 2 in ms with shape()
+
+set tempo 131
+
+// randomseed makes sure every run the 
+// random values are the same
+// try some different values to hear the result
+set randomSeed 3141
+
+ring pos1 randomFloat(16 0 0.2)
+ring pos2 randomFloat(16 0.2 0.3)
+ring play join(pos1 pos1 pos1 pos2)
+
+new sample harp_up time(1/16) shape(1 50 2) offset(play) gain(2)
+
+set all fx(reverb 0.5 11)
