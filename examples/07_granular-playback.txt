@@ -1,0 +1,17 @@
+// simple granular timestretching is achieved
+// by quickly playing short grains of a sample
+// and changing the offset of the playback
+
+set tempo 120
+
+// a position ramp up-down over 2000 values
+ring pos sineFloat(1100 1 0 0.5)
+
+// small detuning for every sample playback
+ring detune randomFloat(1000 0.95 1.05)
+
+new sample bowl_mid name(grain)
+    set grain time(1/32) shape(4 50 4) 
+    set grain offset(pos) pan(random)
+    set grain fx(delay 2/32 3/32 0.9)
+    set grain speed(detune)
