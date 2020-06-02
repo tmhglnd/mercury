@@ -1,0 +1,16 @@
+// play a melody from a ring of semitones
+// use different octaves with the second
+// argument in the note() method
+
+set tempo 98
+
+ring jedi [-5 0 2 3 5 3 -5 -5 0 2 3 -5 3 0 7 5]
+
+new synth sine name(luke)
+    set luke note(jedi 2) shape(200) time(1/6)
+
+new synth sine name(leia)
+    set leia note(jedi 3) shape(100) time(1/8)
+
+// apply a pingpong delay to all synths
+set all fx(delay 5/12 3/12 0.4) gain(1.5)

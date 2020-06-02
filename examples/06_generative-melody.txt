@@ -1,0 +1,19 @@
+// generate a small theme from a sine 
+// function and transform it with various 
+// methods like invert(), join() and clone()
+
+set tempo 98
+
+// map all notes to a scale
+set scale major d
+
+ring theme sine(16 5 0 24)
+ring variation invert(theme 0 24)
+ring phrase join(theme variation)
+ring section clone(phrase 0 5 9 7)
+
+new synth sine name(arpy)
+    set arpy time(1/16) shape(1 170) note(section 1)
+
+    // give the synth random panning and some reverb
+    set arpy fx(reverb 0.8 7) pan(random) gain(1.4)

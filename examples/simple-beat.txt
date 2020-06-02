@@ -1,7 +1,0 @@
-// simple 4-on-the-floor beat
-
-set tempo 115
-
-new sample kick_909 time(1/4)
-new sample snare_fat time(1/2 1/4)
-new sample hat_dub time(1/4 1/8)

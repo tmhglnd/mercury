@@ -79,6 +79,10 @@ const defaultSamplePath = path.join(system.app, "../media/samples")
 const defaultSamples = loadSamples(defaultSamplePath);
 let samples = {};
 
+// variables for the example files
+const examplesPath = path.join(system.app, '../../examples');
+const examples = loadExamples(examplesPath);
+
 // directories for storage of code logs, recordings and sketches
 const userDirs = ['/Code Logs', '/Recordings', '/Sketches'];
 
@@ -150,6 +154,20 @@ max.addHandler('replace', (fold) => {
 	max.outlet('samples', samples);
 });
 
+let prevExample;
+max.addHandler('randomExample', () => {
+	let files = Object.keys(examples);
+	let l = files.length;
+	let n = Math.floor(Math.random() * l);
+	if (prevExample == n){
+		n = (n + 1) % l;
+	}
+	let path = examples[files[n]];
+	prevExample = n;
+
+	max.outlet('example', path);
+});
+
 function loadSamples(fold){
 	let files =	fg.sync(fold+"/**/*.+(wav|aif|aiff)");
 	let samples = {};
@@ -159,6 +177,18 @@ function loadSamples(fold){
 		samples[file.name] = files[f];
 	}
 	return samples;
+}
+
+function loadExamples(fold){
+	let files = fg.sync(fold+"/**/*.txt");
+	let examples = {};
+
+	for (let f in files){
+		max.post(files[f]);
+		let file = path.parse(files[f]);
+		examples[file.name] = files[f];
+	}
+	return examples;
 }
 
 // restore samplelibrary to default
