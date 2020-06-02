@@ -39,6 +39,188 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "killAll" ],
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 0,
+							"revision" : 8,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 81.0, 383.0, 640.0, 480.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"linecount" : 6,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 230.0, 46.0, 120.0, 87.0 ],
+									"text" : "Silence shortkeys:\n\nmac: \nalt+. (2094)\nshift+. (574)\nctrl+. (4142)"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-1",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 66.0, 223.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "killAll" ],
+									"patching_rect" : [ 66.0, 165.0, 43.0, 22.0 ],
+									"text" : "t killAll"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 4,
+									"numoutlets" : 4,
+									"outlettype" : [ "bang", "bang", "bang", "" ],
+									"patching_rect" : [ 66.0, 105.0, 107.0, 22.0 ],
+									"text" : "sel 2094 574 4142"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-38",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 66.0, 75.0, 29.5, 22.0 ],
+									"text" : "+"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-37",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "int", "int", "int" ],
+									"patching_rect" : [ 45.0, 45.0, 50.5, 22.0 ],
+									"text" : "key"
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 1 ],
+									"source" : [ "obj-37", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 0 ],
+									"source" : [ "obj-37", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-38", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-9", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-9", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 253.763885333333349, 1365.0, 70.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p stopCode"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-13",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -38833,6 +39015,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -43710,12 +43894,70 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-96",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "randomExample" ],
+									"patching_rect" : [ 1194.0, 495.0, 103.0, 22.0 ],
+									"text" : "t randomExample"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-91",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1230.666666666666515, 100.0, 67.0, 22.0 ],
+									"text" : "r rExample"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-90",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1194.0, 534.0, 69.0, 22.0 ],
+									"text" : "s rExample"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-77",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 366.5, 480.0, 61.0, 22.0 ],
+									"text" : "r example"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-76",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1321.200000000000045, 358.0, 63.0, 22.0 ],
+									"text" : "s example"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-59",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1460.0, 259.0, 54.0, 22.0 ],
+									"patching_rect" : [ 1470.0, 259.0, 54.0, 22.0 ],
 									"text" : "deferlow"
 								}
 
@@ -44027,7 +44269,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 1225.0, 229.0, 50.5, 22.0 ],
+									"patching_rect" : [ 1225.666666666666515, 229.0, 50.5, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -44044,7 +44286,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1306.66666666666697, 229.0, 81.0, 22.0 ],
+									"patching_rect" : [ 1307.0, 229.0, 81.0, 22.0 ],
 									"text" : "s userFolders"
 								}
 
@@ -44055,7 +44297,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1225.0, 259.0, 233.0, 90.0 ]
+									"patching_rect" : [ 1225.666666666666515, 259.0, 233.0, 90.0 ]
 								}
 
 							}
@@ -44066,7 +44308,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "init" ],
-									"patching_rect" : [ 1460.0, 229.0, 31.0, 22.0 ],
+									"patching_rect" : [ 1470.0, 229.0, 31.0, 22.0 ],
 									"text" : "t init"
 								}
 
@@ -44078,7 +44320,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 1460.0, 191.0, 113.0, 22.0 ],
+									"patching_rect" : [ 1470.0, 191.0, 113.0, 22.0 ],
 									"text" : "route restarted start"
 								}
 
@@ -44158,11 +44400,11 @@
 								"box" : 								{
 									"id" : "obj-37",
 									"maxclass" : "newobj",
-									"numinlets" : 5,
-									"numoutlets" : 5,
-									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 1130.0, 191.0, 209.0, 22.0 ],
-									"text" : "route settings samples system folders"
+									"numinlets" : 6,
+									"numoutlets" : 6,
+									"outlettype" : [ "", "", "", "", "", "" ],
+									"patching_rect" : [ 1130.0, 191.0, 258.0, 22.0 ],
+									"text" : "route settings samples system folders example"
 								}
 
 							}
@@ -44213,8 +44455,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -44421,8 +44661,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 857.0, 567.0, 213.0, 62.0 ],
-									"text" : ";\rmax launchbrowser https://github.com/tmhglnd/mercury/tree/master/mercury_ide_0.9.9/media"
+									"patching_rect" : [ 857.0, 567.0, 197.0, 62.0 ],
+									"text" : ";\rmax launchbrowser https://github.com/tmhglnd/mercury/tree/master/mercury_ide/media"
 								}
 
 							}
@@ -44809,11 +45049,11 @@
 								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
-									"numinlets" : 5,
-									"numoutlets" : 5,
-									"outlettype" : [ "bang", "bang", "bang", "bang", "" ],
-									"patching_rect" : [ 857.0, 450.0, 356.0, 22.0 ],
-									"text" : "sel 1 2 3 4"
+									"numinlets" : 6,
+									"numoutlets" : 6,
+									"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "" ],
+									"patching_rect" : [ 857.0, 450.0, 440.25, 22.0 ],
+									"text" : "sel 1 2 3 4 5"
 								}
 
 							}
@@ -46721,6 +46961,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-96", 0 ],
+									"source" : [ "obj-13", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-104", 0 ],
 									"source" : [ "obj-149", 1 ]
 								}
@@ -46966,6 +47213,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-76", 0 ],
+									"source" : [ "obj-37", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
 									"source" : [ "obj-38", 1 ]
 								}
@@ -47116,7 +47370,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
-									"midpoints" : [ 1469.5, 296.0, 1582.0, 296.0, 1582.0, 146.0, 1139.5, 146.0 ],
+									"midpoints" : [ 1479.5, 296.0, 1591.0, 296.0, 1591.0, 146.0, 1139.5, 146.0 ],
 									"source" : [ "obj-59", 0 ]
 								}
 
@@ -47202,6 +47456,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-78", 0 ],
 									"source" : [ "obj-75", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-34", 0 ],
+									"source" : [ "obj-77", 0 ]
 								}
 
 							}
@@ -47328,8 +47589,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-91", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-89", 0 ],
 									"source" : [ "obj-92", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-90", 0 ],
+									"source" : [ "obj-96", 0 ]
 								}
 
 							}
@@ -47564,12 +47839,12 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"linecount" : 23,
+									"linecount" : 24,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 43.0, 30.0, 269.0, 328.0 ],
-									"text" : "#X about About Mercury;\r#X open 10;\r#X newitem 20;\r#X saveas 30;\r#X closeitem;\r#X file 60 Execute Code;\r#X file 70 Clear All Code;\r#X file 40 Load External Editor File;\r#X menutitle 5 Sounds;\r#X item 5 1 Add Sounds;\r#X item 5 2 Replace Sounds;\r#X item 5 3 Default Sounds;\r#X item 5 4 Show Loaded Sounds;\r#X menutitle 6 Settings;\r#X item 6 1 Audio Setup;\r#X item 6 2 Visual Setup;\r#X item 6 3 Editor Setup;\r#X menutitle 7 Documentation;\r#X item 7 1 Reference;\r#X item 7 2 Audio File Names;\r#X item 7 3 Github Repository;\r#X item 7 4 Extended Paper;\r#X end;\r"
+									"patching_rect" : [ 43.0, 30.0, 269.0, 342.0 ],
+									"text" : "#X about About Mercury;\r#X open 10;\r#X newitem 20;\r#X saveas 30;\r#X closeitem;\r#X file 60 Execute Code;\r#X file 70 Clear All Code;\r#X file 40 Load External Editor File;\r#X menutitle 5 Sounds;\r#X item 5 1 Add Sounds;\r#X item 5 2 Replace Sounds;\r#X item 5 3 Default Sounds;\r#X item 5 4 Show Loaded Sounds;\r#X menutitle 6 Settings;\r#X item 6 1 Audio Setup;\r#X item 6 2 Visual Setup;\r#X item 6 3 Editor Setup;\r#X menutitle 7 Explanation;\r#X item 7 5 Random Example;\r#X item 7 1 Reference;\r#X item 7 2 List of Sounds;\r#X item 7 3 Github Repository;\r#X item 7 4 In-Depth Paper;\r#X end;\r"
 								}
 
 							}
@@ -47624,7 +47899,7 @@
 					"numoutlets" : 7,
 					"outlettype" : [ "int", "int", "int", "int", "int", "int", "int" ],
 					"patching_rect" : [ 285.0, 186.0, 270.0, 22.0 ],
-					"save" : [ "#N", "menubar", 7, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 60, "Execute", "Code", ";", "#X", "file", 70, "Clear", "All", "Code", ";", "#X", "file", 40, "Load", "External", "Editor", "File", ";", "#X", "menutitle", 5, "Sounds", ";", "#X", "item", 5, 1, "Add", "Sounds", ";", "#X", "item", 5, 2, "Replace", "Sounds", ";", "#X", "item", 5, 3, "Default", "Sounds", ";", "#X", "item", 5, 4, "Show", "Loaded", "Sounds", ";", "#X", "menutitle", 6, "Settings", ";", "#X", "item", 6, 1, "Audio", "Setup", ";", "#X", "item", 6, 2, "Visual", "Setup", ";", "#X", "item", 6, 3, "Editor", "Setup", ";", "#X", "menutitle", 7, "Documentation", ";", "#X", "item", 7, 1, "Reference", ";", "#X", "item", 7, 2, "Audio", "File", "Names", ";", "#X", "item", 7, 3, "Github", "Repository", ";", "#X", "item", 7, 4, "Extended", "Paper", ";", "#X", "end", ";" ],
+					"save" : [ "#N", "menubar", 7, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 60, "Execute", "Code", ";", "#X", "file", 70, "Clear", "All", "Code", ";", "#X", "file", 40, "Load", "External", "Editor", "File", ";", "#X", "menutitle", 5, "Sounds", ";", "#X", "item", 5, 1, "Add", "Sounds", ";", "#X", "item", 5, 2, "Replace", "Sounds", ";", "#X", "item", 5, 3, "Default", "Sounds", ";", "#X", "item", 5, 4, "Show", "Loaded", "Sounds", ";", "#X", "menutitle", 6, "Settings", ";", "#X", "item", 6, 1, "Audio", "Setup", ";", "#X", "item", 6, 2, "Visual", "Setup", ";", "#X", "item", 6, 3, "Editor", "Setup", ";", "#X", "menutitle", 7, "Explanation", ";", "#X", "item", 7, 5, "Random", "Example", ";", "#X", "item", 7, 1, "Reference", ";", "#X", "item", 7, 2, "List", "of", "Sounds", ";", "#X", "item", 7, 3, "Github", "Repository", ";", "#X", "item", 7, 4, "In-Depth", "Paper", ";", "#X", "end", ";" ],
 					"text" : "menubar 7"
 				}
 
@@ -59171,13 +59446,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
-							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ]
+							"parameter_longname" : "volume"
 						}
 
 					}
@@ -61562,6 +61837,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
 					"source" : [ "obj-59", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-304", 0 ],
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}
