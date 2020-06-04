@@ -853,13 +853,25 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 66.0, 75.0, 120.0, 22.0 ],
+									"text" : "substitute 4352 4096"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"linecount" : 15,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 315.0, 45.0, 120.0, 208.0 ],
-									"text" : "Run shortkeys:\n\nmac: \ncmd+r (370)\nalt+r (2162)\nctrl+r (4210)\n\nalt+return (2044)\ncmd+return (252)\nctrl+return (4092)\nshift+return (508)\n\nwindows:\nalt+return\nalt+r"
+									"text" : "Run shortkeys:\n\nmac: \ncmd+r (370)\nalt+r (2162)\nctrl+r (4210)\n\nalt+return (2044)\ncmd+return (252)\nctrl+return (4092)\nshift+return (508)\n\nwindows:\nalt gr + return (2044)\nshift + return (508)"
 								}
 
 							}
@@ -871,7 +883,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 66.0, 195.0, 30.0, 30.0 ]
+									"patching_rect" : [ 66.0, 240.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -882,7 +894,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "run" ],
-									"patching_rect" : [ 66.0, 165.0, 33.0, 22.0 ],
+									"patching_rect" : [ 66.0, 210.0, 33.0, 22.0 ],
 									"text" : "t run"
 								}
 
@@ -894,7 +906,7 @@
 									"numinlets" : 8,
 									"numoutlets" : 8,
 									"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "bang", "bang", "" ],
-									"patching_rect" : [ 66.0, 105.0, 214.0, 22.0 ],
+									"patching_rect" : [ 66.0, 150.0, 214.0, 22.0 ],
 									"text" : "sel 370 2162 4210 2044 252 4092 508"
 								}
 
@@ -906,7 +918,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 66.0, 75.0, 29.5, 22.0 ],
+									"patching_rect" : [ 66.0, 120.0, 29.5, 22.0 ],
 									"text" : "+"
 								}
 
@@ -933,15 +945,29 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-38", 1 ],
-									"source" : [ "obj-37", 3 ]
+									"destination" : [ "obj-38", 0 ],
+									"source" : [ "obj-18", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
 									"source" : [ "obj-37", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 1 ],
+									"source" : [ "obj-37", 3 ]
 								}
 
 							}
