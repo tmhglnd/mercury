@@ -57,8 +57,8 @@ Turn the audio engine `on` in the main window. You will see the cpu-usage meter 
 Now load a random example:
 - `Explanation > Random Example`
 - **run** the code by pressing:
-	- `CMD + R` or `ALT + Enter` (MacOS)
-	- `ALT + R` or `ALT + Enter` (Windows)
+	- `ALT + Enter` (MacOS)
+	- `ALT-GR + Enter` (Windows)
 	- `File > Excecute Code` (in the menubar when none of above work)
 - In the event of poor performance follow the steps [3](#editor-on) and [4](#audio-on).
 
