@@ -34,7 +34,7 @@ Alt + V = paste insert a line of code where the cursor is located
 Alt + P = paste replace a line where the cursor is located
 ```
 
-## Code Commands
+## Default Code Commands
 
 ```
 Alt + Return = execute code
