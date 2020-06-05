@@ -66,7 +66,9 @@ let prefs = {
 // the default shortkeys for mac
 let shortkeys = {
 	"execute" : [ "alt-return", 2044 ],
+	"silence" : [ "alt-.", 2094 ],
 	"comment" : [ "alt-/", 2095 ],
+	"disable-editor" : [ "alt-,", 2092 ],
 	"delete-line" : [ "alt-x", 2168 ],
 	"copy-line" : [ "alt-c", 2147 ],
 	"paste-line" : [ "alt-v", 2166 ],

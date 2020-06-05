@@ -25,6 +25,10 @@
 // undo/redo history (matrixset?)
 //====================================================================
 
+autowatch = 1;
+inlets = 1;
+outlets = 2;
+
 // GENERAL SETTINGS:
 var CRSR = "<<";
 var CMMT = "//";
@@ -39,37 +43,20 @@ var OUT_MAT = 0;
 
 var POST_FLAG = 1;
 
-// KEY BINDINGS:
-var ALT_UP = 2078;
-var ALT_DN = 2079;
-var ALT_LT = 2076;
-var ALT_RT = 2077;
+// load keybindings from json file
+var sKeys = new Dict(jsarguments[2]);
 
-var ALT_A = 2277; //back one character
-var ALT_S = 2271; //down one line
-var ALT_D = 10754; //forward one character
-var ALT_W = 10769; //up one line
-
-var ALT_Q = 2387; //move to top of page
-var ALT_SHFT_Q = 2386; //move to bottom of page
-
-var ALT_Z = 2985; //undo edit
-var ALT_SHFT_Z = 2267; //redo edit
-
-var ALT_X = 10824; //delete a line of code
-var ALT_C = 2279; //copy a line of code
-var ALT_V = 10778; //paste-insert a line of code
-var ALT_P = 3008; //copy+paste line
-
-var ALT_B = 10795; //backspace a character
-var ALT_FS = 2295; //(un)comment a line of code
-
-var ALT_J = 10758; //jump 1 word left
-var ALT_L = 2220; //jump 1 word right
-
-autowatch = 1;
-inlets = 1;
-outlets = 2;
+// fixed keybindings
+var keys = {
+	"space" : -2,
+	"return" : -4,
+	"tab" : -5,
+	"backspace" : -7,
+	"up" : -9,
+	"down" : -10,
+	"left" : -11,
+	"right" : -12
+}
 
 var key;
 var curLine, curCharacter, totalLines;
@@ -92,6 +79,7 @@ function loadbang(){
 function init(){
 	if (jsarguments.length>1) {
 		drawto(jsarguments[1]);
+
 	}
 	clear();
 	isDisabled = false;
@@ -183,59 +171,68 @@ function draw(){
 	outlet(1, "nLines", (totalLines-1)/(EDITOR_LINES-1));
 }
 
+// load a dictionary of keybindings
+function keybindings(n){
+	sKeys = new Dict(n);
+}
+
 // choose method based on keypress
 function keyPress(k){
 	// post("@char", k, "\n");
-	if (k == 96){
+	if (k == sKeys.get("disable-editor")[1]){
 		disableText();
 	}
 	else if (!isDisabled){
 		// var hst = false;
 		if (k != 27){
 			// CHARACTER KEYS
-			if (k >= 32 && k <= 126){ addChar(k); }
-
+			if (k > 32 && k <= 126){ addChar(k); }
+			else if (k == keys["space"]){ addChar(32); }
+			
 			// FUNCTION KEYS
-			else if (k == 13 || k == -4){ newLine(); }
+			else if (k == keys["return"]){ newLine(); }
 			// Backspace Win = 8, Mac = 127
 			// Delete Win = 127, Mac = 127
-			else if (k == 127 || k == 8 || k == -7){ backSpace(); }
-			// arrow keys ASCII
-			else if (k == 30 || k == 31){ gotoLine(k-30); }
-			else if (k == 28 || k == 29){ gotoCharacter(k-28); }
+			else if (k == keys["backspace"]){ backSpace(); }
 			// arrow keys Platform-independent
-			else if (k == -9 || k == -10){ gotoLine(1-(k+10)); }
-			else if (k == -11 || k == -12){ gotoCharacter(1-(k+12)); }
-
+			else if (k == keys["tab"]){ addTab(); }
+			else if (k == keys["up"] || k == keys["down"]){ 
+				gotoLine(1-(k+10)); 
+			} 
+			else if (k == keys["left"] || k == keys["right"]){
+				gotoCharacter(1-(k+12)); 
+			}
 			
-			else if (k == 9){ addTab(); }
+			// arrow keys ASCII
+			// else if (k == 30 || k == 31){ gotoLine(k-30); }
+			// else if (k == 28 || k == 29){ gotoCharacter(k-28); }
 			
 			// SHORTKEYS
-			else if (k == ALT_FS){ commentLine(); }
+			else if (k == sKeys.get("comment")[1]){ commentLine(); }
 			
-			else if (k == ALT_X){ deleteLine(); }
-			else if (k == ALT_C){ copyLine(); }
-			else if (k == ALT_V){ pasteInsertLine(); }
-			else if (k == ALT_P){ pasteReplaceLine(); }
+			else if (k == sKeys.get("delete-line")[1]){ deleteLine(); }
+			else if (k == sKeys.get("copy-line")[1]){ copyLine(); }
+			else if (k == sKeys.get("paste-line")[1]){ pasteInsertLine(); }
+			else if (k == sKeys.get("paste-replace-line")[1]){ pasteReplaceLine(); }
 			
-			else if (k == ALT_B){ backSpace(); }
+			// else if (k == ALT_B){ backSpace(); }
 			
-			// Navigate the editor with ASDW
-			else if (k == ALT_A){ gotoCharacter(0); }
-			else if (k == ALT_D){ gotoCharacter(1); }
-			else if (k == ALT_S){ gotoLine(1); }
-			else if (k == ALT_W){ gotoLine(0); }
-
 			// Jump Top/Bottom/Start/End with ALT + Arrow Keys
-			else if (k == ALT_UP){ jumpTo(2); }
-			else if (k == ALT_DN){ jumpTo(3); }
-			else if (k == ALT_LT){ jumpTo(0); }
-			else if (k == ALT_RT){ jumpTo(1); }
+			else if (k == sKeys.get("jump-top")[1]){ jumpTo(2); }
+			else if (k == sKeys.get("jump-bottom")[1]){ jumpTo(3); }
+			else if (k == sKeys.get("jump-begin")[1]){ jumpTo(0); }
+			else if (k == sKeys.get("jump-end")[1]){ jumpTo(1); }
+
+			// Navigate the editor with ASDW
+			else if (k == sKeys.get("left")[1]){ gotoCharacter(0); }
+			else if (k == sKeys.get("right")[1]){ gotoCharacter(1); }
+			else if (k == sKeys.get("down")[1]){ gotoLine(1); }
+			else if (k == sKeys.get("up")[1]){ gotoLine(0); }
 
 			// Jumpt to top/bottom
-			else if (k == ALT_Q){ jumpTo(2); }
-			else if (k == ALT_SHFT_Q){ jumpTo(3); }
-
+			// else if (k == ALT_Q){ jumpTo(2); }
+			// else if (k == ALT_SHFT_Q){ jumpTo(3); }
+			
 			// TO-DO
 			// else if (k == ALT_J){ gotoWord(0); }
 			// else if (k == ALT_L){ gotoWord(1); }

@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -87,8 +87,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 204.0, 195.0, 70.0, 22.0 ],
-					"text" : "r deferLoad"
+					"patching_rect" : [ 202.5, 165.0, 67.0, 22.0 ],
+					"text" : "r shortkeys"
 				}
 
 			}
@@ -305,8 +305,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1628,7 +1628,7 @@
 					"bgfillcolor_type" : "color",
 					"color" : [ 0.400000006, 0.8000000119, 1.0, 1.0 ],
 					"id" : "obj-104",
-					"items" : [ "execute", ",", "comment", ",", "delete-line", ",", "copy-line", ",", "paste-line", ",", "paste-replace-line", ",", "jump-top", ",", "jump-bottom", ",", "jump-begin", ",", "jump-end", ",", "up", ",", "down", ",", "left", ",", "right" ],
+					"items" : [ "execute", ",", "comment", ",", "disable-editor", ",", "delete-line", ",", "copy-line", ",", "paste-line", ",", "paste-replace-line", ",", "jump-top", ",", "jump-bottom", ",", "jump-begin", ",", "jump-end", ",", "up", ",", "down", ",", "left", ",", "right" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1787,7 +1787,7 @@
 					"presentation_rect" : [ 15.0, 39.0, 197.0, 20.0 ],
 					"readonly" : 1,
 					"tabmode" : 0,
-					"text" : "cmd-return",
+					"text" : "alt-\\,",
 					"wordwrap" : 0
 				}
 
@@ -1913,14 +1913,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 688.0, 206.0, 640.0, 480.0 ],
+						"rect" : [ 72.0, 143.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2009,7 +2009,8 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 124.0, 175.0, 137.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"embed" : 1
+										"embed" : 1,
+										"precision" : 6
 									}
 ,
 									"text" : "coll spChars @embed 1"
@@ -2047,8 +2048,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 76.5, 355.0, 135.0, 22.0 ],
-									"text" : "regexp \" \" @substitute -"
+									"patching_rect" : [ 76.5, 355.0, 208.0, 22.0 ],
+									"text" : "regexp \" \" @substitute - @tosymbol 1"
 								}
 
 							}

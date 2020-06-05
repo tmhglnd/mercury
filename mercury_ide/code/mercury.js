@@ -365,6 +365,7 @@ function mainParse(lines){
 	let seed = /set\ randomSeed\ .+/;
 	let scale = /set\ scale\ .+/;
 	let tempo = /set\ tempo\ .+/;
+	let mute = /(silence|mute|killAll)/;
 
 	for (let i in lines){
 		l = lines[i];
@@ -375,6 +376,9 @@ function mainParse(lines){
 			let expr = l.split(' ');
 			expr.shift();
 			mainFunc.call(handlers, ...expr);	
+		} else if (mute.test(l)){
+			max.post("silence detected");
+			other.push("silence");
 		} else {
 			other.push(l);
 		}
