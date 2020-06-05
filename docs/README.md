@@ -17,7 +17,7 @@
 		- emitter
 	- [ring](./00-general.md#ring)
 	- [set](./00-general.md#set)
-	- [killAll](./00-general.md#killAll)
+	- [silence](./00-general.md#silence)
 
 - [Global Settings (set)](./01-global.md)
 	- [tempo](./01-global.md#tempo)
