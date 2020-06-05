@@ -63,6 +63,24 @@ let prefs = {
 	"external_editor" : 0,
 }
 
+// the default shortkeys for mac
+let shortkeys = {
+	"execute" : [ "alt-return", 2044 ],
+	"comment" : [ "alt-/", 2095 ],
+	"delete-line" : [ "alt-x", 2168 ],
+	"copy-line" : [ "alt-c", 2147 ],
+	"paste-line" : [ "alt-v", 2166 ],
+	"paste-replace-line" : [ "alt-p", 2160 ],
+	"jump-top" : [ "alt-up", 2039 ],
+	"jump-bottom" : [ "alt-down", 2038 ],
+	"jump-begin" : [ "alt-left", 2037 ],
+	"jump-end" : [ "alt-right", 2036 ],
+	"up" : [ "alt-w", 2167 ],
+	"down" : [ "alt-s", 2163 ],
+	"left" : [ "alt-a", 2145 ],
+	"right" : [ "alt-d", 2148 ]
+}
+
 // the basefolder for all Mercury local files
 // const base = system.user + '/Documents/Mercury';
 const base = path.join(system.user, '/Documents/Mercury');
@@ -71,6 +89,10 @@ const base = path.join(system.user, '/Documents/Mercury');
 // const prefFile = base + '/Preferences/preferences.json';
 const prefFile = path.join(base, '/Preferences/preferences.json');
 const defaults = { ...prefs };
+
+// variables for shortkey preferences file
+const shortkeysFile = path.join(base, '/Preferences/shortkeys.json');
+const defaultShortkeys = { ...shortkeys };
 
 // variables for the sample library file
 // const sampleFile = base + '/Data/sample-library.json';
@@ -101,6 +123,17 @@ max.addHandler('init', () => {
 		writeJson(prefFile, prefs);
 	}
 	max.outlet('settings', prefs);
+
+	// create file for shortkeys and load if exists
+	if (fs.pathExistsSync(shortkeysFile)){
+		max.post('Loaded shortkeys.json: '+shortkeysFile);
+		shortkeys = fs.readJsonSync(shortkeysFile);
+	} else {
+		max.post('Created shortkeys.json: '+shortkeysFile);
+		shortkeys = { ...defaultShortkeys };
+		writeJson(shortkeysFile, shortkeys);
+	}
+	max.outlet('shortkeys', shortkeys);
 	
 	// create path for sample file and load if exists
 	if (fs.pathExistsSync(sampleFile)){
@@ -128,6 +161,20 @@ max.addHandler('store', (param, ...value) => {
 		prefs[param] = value;
 		writeJson(prefFile, prefs);
 	}
+});
+
+// store the keybinding settings when changed
+max.addHandler('storeKeys', (dict) => {
+	shortkeys = { ...dict };
+	writeJson(shortkeysFile, shortkeys);
+});
+
+// restore the keyshortcuts to the default
+// output the preferences to Max
+max.addHandler('defaultKeys', () => {
+	shortkeys = { ...defaultShortkeys };
+	max.outlet('shortkeys', shortkeys);
+	writeJson(shortkeysFile, shortkeys);
 });
 
 // restore preferences to default
@@ -184,7 +231,7 @@ function loadExamples(fold){
 	let examples = {};
 
 	for (let f in files){
-		max.post(files[f]);
+		// max.post(files[f]);
 		let file = path.parse(files[f]);
 		examples[file.name] = files[f];
 	}
