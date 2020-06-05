@@ -64,12 +64,14 @@ set drums fx(drive 10)
 set all fx(reverb 0.8 10)
 ```
 
-## killAll
+## silence
 
-Disable all sounds evaluated **before** this line
+Disable all sounds that are evaluated **before** this line. Alternatively you can hit the `Alt + .` shortkey to disable the instruments. 
+
+*Note* : Silencing the instruments is not the same as disabling the Audio (below). In this case the instruments are deleted, but the signal-chain is still processing in order to be able to quickly start the sound when a new instrument is generated.
 
 ```
-killAll
+silence
 ```
 
 ## audio
