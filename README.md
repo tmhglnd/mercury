@@ -2,10 +2,14 @@
 
 ## [Become a Patron!](https://www.patreon.com/bePatron?u=9649817)
 
+**Latest stable release**
+
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
+
+**Info**
+
 [![GitHub](https://img.shields.io/github/license/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/blob/master/LICENSE)
 [![GitHub repo size](https://img.shields.io/github/repo-size/tmhglnd/mercury)](http://github.com/tmhglnd/mercury)
-
 [![GitHub issues](https://img.shields.io/github/issues-raw/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/commits/master)
 
