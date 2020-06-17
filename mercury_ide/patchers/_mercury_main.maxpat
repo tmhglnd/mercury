@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-86",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 68.5, 1725.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-45",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 68.5, 1755.0, 59.0, 22.0 ],
+					"text" : "voices $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -15456,7 +15480,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2287.0, 954.0, 86.0, 22.0 ],
+					"patching_rect" : [ 2337.0, 960.0, 86.0, 22.0 ],
 					"text" : "send~ audioHi"
 				}
 
@@ -15467,7 +15491,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2218.333333333333485, 918.0, 88.0, 22.0 ],
+					"patching_rect" : [ 2251.666666666666515, 918.0, 88.0, 22.0 ],
 					"text" : "send~ audioLo"
 				}
 
@@ -15478,7 +15502,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2149.66666666666697, 954.0, 98.0, 22.0 ],
+					"patching_rect" : [ 2166.333333333333485, 960.0, 98.0, 22.0 ],
 					"text" : "send~ audioSide"
 				}
 
@@ -15633,8 +15657,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "signal", "signal", "signal", "signal" ],
-					"patching_rect" : [ 2081.0, 866.0, 225.0, 35.0 ],
-					"text" : "poly~ analyseDisplay 1 down 4 @args sum 1280 720 @target 0 @parallel 1"
+					"patching_rect" : [ 2081.0, 866.0, 275.0, 35.0 ],
+					"text" : "poly~ analyseDisplay 1 down 4 @args sum 1280 720 @target 0 @parallel 1 @resampling 0"
 				}
 
 			}
@@ -39178,8 +39202,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -44666,6 +44688,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -59647,7 +59671,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 235.263885333333349, 1605.0, 67.895859000000002, 35.0 ],
+					"patching_rect" : [ 230.263885333333349, 1605.0, 67.895859000000002, 35.0 ],
 					"text" : "target 0, silence 1"
 				}
 
@@ -59711,13 +59735,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_initial" : [ 0.0 ],
+							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ],
-							"parameter_shortname" : "volume"
+							"parameter_mmax" : 6.0
 						}
 
 					}
@@ -61972,6 +61996,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-301", 0 ],
+					"source" : [ "obj-45", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-158", 0 ],
 					"order" : 2,
 					"source" : [ "obj-455", 0 ]
@@ -62254,6 +62285,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"source" : [ "obj-86", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-167", 0 ],
 					"order" : 0,
 					"source" : [ "obj-92", 0 ]
@@ -62348,13 +62386,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "argBindings.txt",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/data",
-				"patcherrelativepath" : "../data",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "syncToScale.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -62362,16 +62393,16 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "th.yafr~.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/external",
-				"patcherrelativepath" : "../external",
-				"type" : "JSON",
+				"name" : "argBindings.txt",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/data",
+				"patcherrelativepath" : "../data",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "gtep.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
-				"patcherrelativepath" : ".",
+				"name" : "th.yafr~.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/external",
+				"patcherrelativepath" : "../external",
 				"type" : "JSON",
 				"implicit" : 1
 			}

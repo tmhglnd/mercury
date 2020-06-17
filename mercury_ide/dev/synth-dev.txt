@@ -1,12 +1,25 @@
 
 set tempo 100
 
-// new synth sine shape(1 2000) time(1) note(0.3 2) useDetune(1)
-// new synth sine shape(1 2000) time(1) note(0 2) 
+ring notes [[0.3 1 5.5 7]]
+
+// new synth sine shape(3 2000) time(1) note(notes 2) useDetune(1)
+// new synth sine shape(3 2000) time(1) note(1 2) 
 
 // killAll
 
-new synth saw note(0 0) time(1/2) shape(1 1/2) 
-new synth saw note(0 2) time(1/2) shape(1/4 1/64) 
+set scale lydian b
+// ring notes cosine(16 1 0 12)
+ring notes [0 0 [0 3 5 24] [0 7 12] [0 3 12]]
+ring speeds [1 1 [1 5] [1 7] [1 3]]
 
-killAll
+new sample hat_min time(1/16) speed(speeds)
+// new synth saw note(notes 2) time(1/16) shape(1 100) resonance(0.95)
+// new synth blip note(notes 2) time(1/16) shape(1 100) resonance(0.95)
+// new poly_synth saw note(notes 1) time(1/4) shape(1 1/4) resonance(0.95)
+// new synth_fm sine 
+// new synth saw note(0 2) time(1/2) shape(1/4 1/64) 
+
+// new synth fm note(notes 1) fm_index(1) fm_depth(2) time(1/4) fm_env(2 450) shape(1000) fx(filter low 1000 0.3)
+
+silence

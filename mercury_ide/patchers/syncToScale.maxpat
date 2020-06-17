@@ -39,12 +39,24 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 93.0, 295.0, 63.0, 22.0 ],
+					"text" : "r theScale"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-20",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.0, 480.0, 159.0, 22.0 ],
+					"patching_rect" : [ 45.0, 435.0, 159.0, 22.0 ],
 					"text" : "expr $i1 / 12 * 12 + $i2 + $i3"
 				}
 
@@ -56,7 +68,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 300.0, 285.0, 180.0, 181.0 ],
+					"patching_rect" : [ 300.0, 390.0, 180.0, 181.0 ],
 					"text" : "note value \n\nadd transposition\n\nderive octave ( / 12 * 12)\nderive semitone (% 12)\n\nmap from scale (lookup)\n\noctave + mapped-note\n+ tonic for scale\n\n+ detuning (microtonality)"
 				}
 
@@ -68,7 +80,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 236.5, 280.0, 29.5, 22.0 ],
+					"patching_rect" : [ 236.5, 295.0, 29.5, 22.0 ],
 					"text" : "t i i"
 				}
 
@@ -80,7 +92,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 236.5, 435.0, 34.0, 22.0 ],
+					"patching_rect" : [ 236.5, 360.0, 34.0, 22.0 ],
 					"text" : "sel 1"
 				}
 
@@ -92,7 +104,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 236.5, 240.0, 97.0, 22.0 ],
+					"patching_rect" : [ 236.5, 210.0, 97.0, 22.0 ],
 					"text" : "route useDetune"
 				}
 
@@ -106,7 +118,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 236.5, 30.0, 30.0, 30.0 ]
+					"patching_rect" : [ 236.5, 45.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -117,7 +129,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 186.5, 345.0, 32.0, 22.0 ],
+					"patching_rect" : [ 195.0, 360.0, 32.0, 22.0 ],
 					"text" : "gate"
 				}
 
@@ -129,7 +141,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 300.0, 30.0, 152.0, 141.0 ],
+					"patching_rect" : [ 300.0, 45.0, 152.0, 141.0 ],
 					"text" : "map a midi note value to the nearest note in a  provided scale lookup database.\n\noffset the note by the tonic of that scale.\n\npreserve microtonality /pitchbend /detune if used"
 				}
 
@@ -141,7 +153,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 241.0, 540.0, 29.5, 22.0 ],
+					"patching_rect" : [ 241.0, 495.0, 29.5, 22.0 ],
 					"text" : "+ 0."
 				}
 
@@ -153,7 +165,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 79.5, 135.0, 29.5, 22.0 ],
+					"patching_rect" : [ 79.5, 150.0, 29.5, 22.0 ],
 					"text" : "!- 0."
 				}
 
@@ -165,7 +177,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "float" ],
-					"patching_rect" : [ 45.0, 85.0, 64.0, 22.0 ],
+					"patching_rect" : [ 45.0, 100.0, 64.0, 22.0 ],
 					"text" : "t i i f"
 				}
 
@@ -177,7 +189,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 141.0, 435.0, 58.0, 22.0 ],
+					"patching_rect" : [ 141.0, 390.0, 58.0, 22.0 ],
 					"text" : "r theRoot"
 				}
 
@@ -189,7 +201,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 75.0, 195.0, 67.0, 22.0 ],
+					"patching_rect" : [ 69.5, 210.0, 67.0, 22.0 ],
 					"text" : "r theScalar"
 				}
 
@@ -201,7 +213,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 45.0, 240.0, 29.5, 22.0 ],
+					"patching_rect" : [ 45.0, 255.0, 29.5, 22.0 ],
 					"text" : "+ 0"
 				}
 
@@ -213,7 +225,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 45.0, 280.0, 29.5, 22.0 ],
+					"patching_rect" : [ 45.0, 295.0, 29.5, 22.0 ],
 					"text" : "t i i"
 				}
 
@@ -225,7 +237,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 115.0, 345.0, 36.0, 22.0 ],
+					"patching_rect" : [ 69.5, 360.0, 36.0, 22.0 ],
 					"text" : "% 12"
 				}
 
@@ -237,7 +249,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 115.0, 390.0, 56.0, 22.0 ],
+					"patching_rect" : [ 69.5, 390.0, 56.0, 22.0 ],
 					"text" : "zl.lookup"
 				}
 
@@ -251,7 +263,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.0, 30.0, 30.0, 30.0 ]
+					"patching_rect" : [ 45.0, 45.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -264,7 +276,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 152.0, 30.0, 30.0, 30.0 ]
+					"patching_rect" : [ 152.0, 45.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -276,7 +288,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 241.0, 585.0, 30.0, 30.0 ]
+					"patching_rect" : [ 241.0, 540.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -381,6 +393,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-9", 1 ],
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-40", 0 ]
 				}
@@ -411,13 +430,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-7", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 1 ],
-					"source" : [ "obj-8", 0 ]
 				}
 
 			}
