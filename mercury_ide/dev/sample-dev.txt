@@ -1,0 +1,11 @@
+
+set tempo 105
+
+ring bt hexBeat(928c)
+new sample kick_min time(1/16) beat(bt 2)
+
+new sample hat_min time(1/4 1/8)
+new sample snare_dub time(1/2 1/4)
+new sample tabla_hi time(1)
+
+silence

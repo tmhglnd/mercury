@@ -49,8 +49,10 @@ var sKeys = new Dict(jsarguments[2]);
 // fixed keybindings
 var keys = {
 	"space" : -2,
+	"escape" : -3,
 	"return" : -4,
 	"tab" : -5,
+	"delete" : -6,
 	"backspace" : -7,
 	"up" : -9,
 	"down" : -10,
@@ -179,65 +181,63 @@ function keybindings(n){
 // choose method based on keypress
 function keyPress(k){
 	// post("@char", k, "\n");
+
 	if (k == sKeys.get("disable-editor")[1]){
 		disableText();
 	}
 	else if (!isDisabled){
-		// var hst = false;
-		if (k != 27){
-			// CHARACTER KEYS
-			if (k > 32 && k <= 126){ addChar(k); }
-			else if (k == keys["space"]){ addChar(32); }
-			
-			// FUNCTION KEYS
-			else if (k == keys["return"]){ newLine(); }
-			// Backspace Win = 8, Mac = 127
-			// Delete Win = 127, Mac = 127
-			else if (k == keys["backspace"]){ backSpace(); }
-			// arrow keys Platform-independent
-			else if (k == keys["tab"]){ addTab(); }
-			else if (k == keys["up"] || k == keys["down"]){ 
-				gotoLine(1-(k+10)); 
-			} 
-			else if (k == keys["left"] || k == keys["right"]){
-				gotoCharacter(1-(k+12)); 
-			}
-			
-			// arrow keys ASCII
-			// else if (k == 30 || k == 31){ gotoLine(k-30); }
-			// else if (k == 28 || k == 29){ gotoCharacter(k-28); }
-			
-			// SHORTKEYS
-			else if (k == sKeys.get("comment")[1]){ commentLine(); }
-			
-			else if (k == sKeys.get("delete-line")[1]){ deleteLine(); }
-			else if (k == sKeys.get("copy-line")[1]){ copyLine(); }
-			else if (k == sKeys.get("paste-line")[1]){ pasteInsertLine(); }
-			else if (k == sKeys.get("paste-replace-line")[1]){ pasteReplaceLine(); }
-			
-			// else if (k == ALT_B){ backSpace(); }
-			
-			// Jump Top/Bottom/Start/End with ALT + Arrow Keys
-			else if (k == sKeys.get("jump-top")[1]){ jumpTo(2); }
-			else if (k == sKeys.get("jump-bottom")[1]){ jumpTo(3); }
-			else if (k == sKeys.get("jump-begin")[1]){ jumpTo(0); }
-			else if (k == sKeys.get("jump-end")[1]){ jumpTo(1); }
-
-			// Navigate the editor with ASDW
-			else if (k == sKeys.get("left")[1]){ gotoCharacter(0); }
-			else if (k == sKeys.get("right")[1]){ gotoCharacter(1); }
-			else if (k == sKeys.get("down")[1]){ gotoLine(1); }
-			else if (k == sKeys.get("up")[1]){ gotoLine(0); }
-
-			// Jumpt to top/bottom
-			// else if (k == ALT_Q){ jumpTo(2); }
-			// else if (k == ALT_SHFT_Q){ jumpTo(3); }
-			
-			// TO-DO
-			// else if (k == ALT_J){ gotoWord(0); }
-			// else if (k == ALT_L){ gotoWord(1); }
-			// else if (k == ALT_Z){ getHistory(); }
+		// CHARACTER KEYS
+		if (k > 32 && k <= 126){ addChar(k); }
+		else if (k == keys["space"]){ addChar(32); }
+		
+		// FUNCTION KEYS
+		else if (k == keys["return"]){ newLine(); }
+		// Backspace Win = 8, Mac = 127
+		// Delete Win = 127, Mac = 127
+		else if (k == keys["backspace"]){ backSpace(); }
+		// arrow keys Platform-independent
+		else if (k == keys["tab"]){ addTab(); }
+		else if (k == keys["up"] || k == keys["down"]){ 
+			gotoLine(1-(k+10)); 
+		} 
+		else if (k == keys["left"] || k == keys["right"]){
+			gotoCharacter(1-(k+12)); 
 		}
+		
+		// arrow keys ASCII
+		// else if (k == 30 || k == 31){ gotoLine(k-30); }
+		// else if (k == 28 || k == 29){ gotoCharacter(k-28); }
+		
+		// SHORTKEYS
+		else if (k == sKeys.get("comment")[1]){ commentLine(); }
+		
+		else if (k == sKeys.get("delete-line")[1]){ deleteLine(); }
+		else if (k == sKeys.get("copy-line")[1]){ copyLine(); }
+		else if (k == sKeys.get("paste-line")[1]){ pasteInsertLine(); }
+		else if (k == sKeys.get("paste-replace-line")[1]){ pasteReplaceLine(); }
+		
+		// else if (k == ALT_B){ backSpace(); }
+		
+		// Jump Top/Bottom/Start/End with ALT + Arrow Keys
+		else if (k == sKeys.get("jump-top")[1]){ jumpTo(2); }
+		else if (k == sKeys.get("jump-bottom")[1]){ jumpTo(3); }
+		else if (k == sKeys.get("jump-begin")[1]){ jumpTo(0); }
+		else if (k == sKeys.get("jump-end")[1]){ jumpTo(1); }
+
+		// Navigate the editor with ASDW
+		else if (k == sKeys.get("left")[1]){ gotoCharacter(0); }
+		else if (k == sKeys.get("right")[1]){ gotoCharacter(1); }
+		else if (k == sKeys.get("down")[1]){ gotoLine(1); }
+		else if (k == sKeys.get("up")[1]){ gotoLine(0); }
+
+		// Jumpt to top/bottom
+		// else if (k == ALT_Q){ jumpTo(2); }
+		// else if (k == ALT_SHFT_Q){ jumpTo(3); }
+		
+		// TO-DO
+		// else if (k == ALT_J){ gotoWord(0); }
+		// else if (k == ALT_L){ gotoWord(1); }
+		// else if (k == ALT_Z){ getHistory(); }
 	}
 	draw();
 }

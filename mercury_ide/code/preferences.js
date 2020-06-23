@@ -66,21 +66,21 @@ let prefs = {
 // the default shortkeys for mac
 let shortkeys = {
 	"execute" : [ "alt-return", 2044 ],
-	"silence" : [ "alt-.", 2094 ],
-	"comment" : [ "alt-/", 2095 ],
-	"disable-editor" : [ "alt-,", 2092 ],
-	"delete-line" : [ "alt-x", 2168 ],
-	"copy-line" : [ "alt-c", 2147 ],
-	"paste-line" : [ "alt-v", 2166 ],
-	"paste-replace-line" : [ "alt-p", 2160 ],
+	"silence" : [ "alt-.", 8805 ],
+	"comment" : [ "alt-/", 247 ],
+	"disable-editor" : [ "alt-,", 8804 ],
+	"delete-line" : [ "alt-x", 8776 ],
+	"copy-line" : [ "alt-c", 231 ],
+	"paste-line" : [ "alt-v", 8730 ],
+	"paste-replace-line" : [ "alt-p", 960 ],
 	"jump-top" : [ "alt-up", 2039 ],
 	"jump-bottom" : [ "alt-down", 2038 ],
 	"jump-begin" : [ "alt-left", 2037 ],
 	"jump-end" : [ "alt-right", 2036 ],
-	"up" : [ "alt-w", 2167 ],
-	"down" : [ "alt-s", 2163 ],
-	"left" : [ "alt-a", 2145 ],
-	"right" : [ "alt-d", 2148 ]
+	"up" : [ "alt-w", 8721 ],
+	"down" : [ "alt-s", 223 ],
+	"left" : [ "alt-a", 229 ],
+	"right" : [ "alt-d", 8706 ]
 }
 
 // the basefolder for all Mercury local files
