@@ -1,11 +1,17 @@
 
 set tempo 105
 
-ring bt hexBeat(928c)
-new sample kick_min time(1/16) beat(bt 2)
+ring trig hexBeat(920a)
+ring bt hexBeat(8)
+new sample harp_up time(1) gain(1) name(gng)
+	set gng fx(freeze 1 50) beat(bt)
+	// set gng fx(lfo 1/16)
 
-new sample hat_min time(1/4 1/8)
-new sample snare_dub time(1/2 1/4)
-new sample tabla_hi time(1)
+// ring bt hexBeat(928c)
+// new sample kick_min time(1/16) beat(bt 2)
+
+// new sample hat_min time(1/4 1/8)
+// new sample snare_dub time(1/2 1/4)
+// new sample tabla_hi time(1)
 
 silence
