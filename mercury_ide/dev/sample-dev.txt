@@ -1,10 +1,11 @@
 
 set tempo 105
 
-ring trig hexBeat(920a)
-ring bt hexBeat(8)
-new sample harp_up time(1) gain(1) name(gng)
-	set gng fx(freeze 1 50) beat(bt)
+ring trig [1 0 0 0 0]
+ring beat [1 0 0 0 0 0 0 0]
+
+new sample harp_up time(1/4) gain(2) name(gng)
+	set gng fx(freeze trig 50 8) beat(beat)
 	// set gng fx(lfo 1/16)
 
 // ring bt hexBeat(928c)
