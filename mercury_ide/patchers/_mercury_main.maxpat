@@ -39202,8 +39202,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -42589,8 +42587,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 437.0, 180.0, 95.0, 22.0 ],
-									"text" : "prepend Port In:"
+									"patching_rect" : [ 437.0, 180.0, 104.0, 22.0 ],
+									"text" : "prepend Port Out:"
 								}
 
 							}
@@ -44690,6 +44688,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -59735,13 +59735,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
 							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ],
-							"parameter_shortname" : "volume"
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
