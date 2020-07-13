@@ -1,0 +1,27 @@
+
+set debug 1
+
+// new sample kick_min time(1) gain(0)
+
+new solarSystem yearToMs(400)
+// new solarSystem
+
+set scale pentatonic_minor A
+
+ring bssLn [0 0 [0 36] 0 12 7 0]
+ring bssBt hex(92fc)
+
+new synth saw note(bssLn 0) name(bs)
+	set bs shape(1 110 2) time(mercury~) gain(1)
+	set bs wave2(square 0.9573) fx(filter low 1/11 2500 100 0.4 0.5 0.1)
+	set bs fx(chip 0.4) fx(reverb 0.9 3) beat(bssBt) fx(lfo 2)
+
+new sample kick_min time(earth~ 1/2) gain(1.2)
+
+new sample hat_min time(earth~) gain(0.4)
+// new sample hat_click time(mars~) gain(0.2)
+
+new synth sine note(0 3) time(jupiter~) fx(delay 5/19 3/16 0.8) name(tn)
+	set tn fx(drive 20) 
+
+silence
