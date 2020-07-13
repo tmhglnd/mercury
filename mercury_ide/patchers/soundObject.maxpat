@@ -43,7 +43,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 973.0, 284.0, 81.0, 22.0 ],
+					"patching_rect" : [ 973.0, 284.0, 87.0, 22.0 ],
 					"text" : "s #0_count"
 				}
 
@@ -4761,7 +4761,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 588.0, 271.0, 640.0, 480.0 ],
+						"rect" : [ 356.0, 265.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4856,7 +4856,7 @@
 										}
 ,
 										"classnamespace" : "dsp.gen",
-										"rect" : [ 498.0, 336.0, 551.0, 453.0 ],
+										"rect" : [ 89.0, 349.0, 551.0, 453.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -4885,7 +4885,7 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
-													"code" : "\r\n// distortion algorithm from: \r\n// Digital Audio Effects (DAFX) book by Udo Zölzer\n// f(x) = sign(x) * (1 - e^-|x|)\r\n\r\ndrive(sig, amt){\r\n\tg = 1 / sqrt(amt); //equal power gain reduction\r\n\ta = sig * amt; //gain\r\n\treturn (1 - exp(-abs(a))) * g * sign(a);\r\n}\r\n\r\nout1 = drive(in1, max(1, in2));\r\n",
+													"code" : "\r\n// distortion algorithm from: \r\n// Digital Audio Effects (DAFX) book by Udo Zölzer\n// f(x) = sign(x) * (1 - e^-|x|)\r\n\r\ndrive(sig, amt){\r\n\tg = 1 / sqrt(amt); //equal power gain reduction\r\n\ta = sig * amt; //gain\r\n\t\r\n\t//tanh(x) algorithm\r\n\treturn tanh(a) * g;\r\n\t\r\n\t//DAFX algorithm\r\n\t//return (1 - exp(-abs(a))) * g * sign(a);\t\r\n}\r\n\r\nout1 = drive(in1, max(1, in2));\r\n",
 													"fontface" : 0,
 													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
@@ -4955,7 +4955,8 @@
 												}
 
 											}
- ]
+ ],
+										"autosave" : 0
 									}
 ,
 									"patching_rect" : [ 45.5, 285.0, 148.0, 22.0 ],
@@ -7945,7 +7946,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "3141_", "" ],
+									"outlettype" : [ "1354_", "" ],
 									"patching_rect" : [ 220.499985000000038, 480.0, 71.0, 22.0 ],
 									"text" : "t #0_ l"
 								}
@@ -22810,7 +22811,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 378.5, 396.0, 31.0, 22.0 ],
+									"patching_rect" : [ 378.5, 435.0, 31.0, 22.0 ],
 									"text" : "sig~"
 								}
 
