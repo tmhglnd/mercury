@@ -5800,7 +5800,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 999.0, 435.0, 101.0, 22.0 ],
+					"patching_rect" : [ 999.0, 430.0, 101.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
