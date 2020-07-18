@@ -1,8 +1,8 @@
 {
-	"name" : "mercury_ide_0.9.9",
+	"name" : "mercury_ide",
 	"version" : 1,
 	"creationdate" : 3615958543,
-	"modificationdate" : 3671186753,
+	"modificationdate" : 3677931101,
 	"viewrect" : [ 47.0, 144.0, 356.0, 590.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 1,
@@ -24,7 +24,12 @@
 				"local" : 1
 			}
 ,
-			"algo-850x850.jpg" : 			{
+			"algo_black.jpg" : 			{
+				"kind" : "imagefile",
+				"local" : 1
+			}
+,
+			"algo_white.jpg" : 			{
 				"kind" : "imagefile",
 				"local" : 1
 			}
@@ -57,17 +62,17 @@
 				"local" : 1
 			}
 ,
+			"preferences.js" : 			{
+				"kind" : "javascript",
+				"local" : 1
+			}
+,
 			"phasorRate.gendsp" : 			{
 				"kind" : "gendsp",
 				"local" : 1
 			}
 ,
 			"recursiveFolder.js" : 			{
-				"kind" : "javascript",
-				"local" : 1
-			}
-,
-			"preferences.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
 			}
