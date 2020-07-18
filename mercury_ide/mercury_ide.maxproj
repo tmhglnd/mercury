@@ -2,7 +2,7 @@
 	"name" : "mercury_ide",
 	"version" : 1,
 	"creationdate" : 3615958543,
-	"modificationdate" : 3677931101,
+	"modificationdate" : 3677933431,
 	"viewrect" : [ 47.0, 144.0, 356.0, 590.0 ],
 	"autoorganize" : 0,
 	"hideprojectwindow" : 1,
@@ -132,6 +132,11 @@
 ,
 			"initials.json" : 			{
 				"kind" : "json",
+				"local" : 1
+			}
+,
+			"planet_colors.jit" : 			{
+				"kind" : "jitterdatafile",
 				"local" : 1
 			}
 
