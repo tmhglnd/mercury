@@ -1,12 +1,12 @@
-# Mercury Live Coding Environment
+# 🌑 Mercury Live Coding Environment 
 
-## [Become a Patron!](https://www.patreon.com/bePatron?u=9649817)
+## [Become a Patron!](https://www.patreon.com/bePatron?u=9649817) 
 
-**Latest stable release**
+**📦 Latest stable release**
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
-**Info**
+**📑 Info**
 
 [![GitHub](https://img.shields.io/github/license/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/blob/master/LICENSE)
 [![GitHub repo size](https://img.shields.io/github/repo-size/tmhglnd/mercury)](http://github.com/tmhglnd/mercury)
@@ -21,11 +21,12 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 
 ![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](media/mercury-live.png)
 
-## Table of Contents
+## 📋 Table of Contents
 
-- [Newest Features](#newest-features)
+- [Newest Features](#--newest-features)
 - [About](#about)
 - [Vision & Goals](#vision--goals)
+- [Tutorial (work in progress...)](#tutorial)
 - [Install](#install)
 	- [Getting Started](/docs/getting-started.md)
 	- [System Requirements](#system-requirements)
@@ -39,7 +40,7 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [Thanks](#thanks)
 - [Licenses](#licenses)
 
-## Newest Feature
+## 🎉 Newest Feature
 
 **Input OSC addresses as arguments for instrument methods and control the parameters externally**
 
@@ -60,7 +61,7 @@ new emitter osc name(myOSC) someParam(3.14)
 // result => /myOsc/someParam 3.14
 ```
 
-## About 
+## 📟 About 
 
 >Mercury is a minimal and human-readable language for the live coding of algorithmic electronic music. 
 
@@ -72,7 +73,7 @@ Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-seria
 
 ![Screenshot of the Mercury environment](media/mercury-screenshot2.png)
 
-## Vision / Goals
+## 🔭 Vision / Goals
 
 - Providing a quick and hands-on coding environment/language for expression, communication and improvisation of livecoded works.
 - Using the language as a teaching environment for:
@@ -95,7 +96,15 @@ Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-seria
 
 Mercury is a development-in-progress and the language is still very much fluid, with changes made to the language/environment/libraries almost weekly. Feel free the clone/fork this repository, but you might also want to watch and/or star the repo to keep up-to-date with the latest changes whenever they're made.
 
-## Install
+## 📖 Tutorial
+
+🚧 (work in progress) 🚧
+
+If this is your first time with either the usage of creative coding software (like Max8), music theory, electronic music making and programming in general I highly recommend following the [tutorial](/docs/tutorial.md)
+
+[Open the Tutorial](/docs/tutorial.md)
+
+## 💻 Install
 
 Read the [system requirements](#system-requirements) first before getting started.
 
@@ -128,11 +137,11 @@ $ cd ~/Documents/Max\ 8/Projects
 $ git clone http://github.com/tmhglnd/mercury
 ```
 
-### Getting Started
+### 🚀 Getting Started
 
 [Open the Getting Started Guide](/docs/getting-started.md)
 
-### System Requirements
+### ⚠ System Requirements
 
 These system requirements are the requirements to install and run Max8 on your computer. A dedicated Graphics Card (GPU) is recommended to run the visual side of Mercury smoothly (the text-editor is part of the visuals since it is programmed in the OpenGL language).
 
@@ -158,7 +167,7 @@ Mac OSX 10.14
 Microsoft Windows 10 Home
 ```
 
-### Build Application
+### 🛠 Build Application
 
 `Optional`
 
@@ -166,17 +175,17 @@ Microsoft Windows 10 Home
 
 **How?** - The Cycling'74 Coding environment is needed to build the application from the `mercury_ide_x.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window. *Building the Application is not necessary in order to run the environment!*
 
-### Documentation
+### 📖 Documentation
 
 [Open the documentation](/docs/README.md)
 
-### Sounds
+### 🎵 Sounds
 
 All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. A list of all the available sounds and the original sample can be found here:
 
 [List of sounds and credits](././mercury_ide_0.9.9/media/README.md)
 
-## Modify Code
+## ✏️ Modify Code
 
 `patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
 
@@ -184,13 +193,13 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 
 `GenExpr Code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the GenExpr code.
 
-## Further reading and listening
+## 🔍 Further reading and listening
 
 1. [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
 2. [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
 3. [Music on bandcamp](http://timohoogland.bandcamp.com)
 
-## Made with Mercury
+## 👾 Made with Mercury
 
 - *Made something with Mercury? Please add a URL here and send a pull request! ^^*
 - [Rafa & Timo - "Hello, off-world!" (Live at NMF)](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s)
@@ -201,12 +210,12 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 - [T.mo - Live at Algo:Ritmi 2020](https://www.facebook.com/timohoogland/videos/3654187371320680/)
 - [T.mo - Live at NLCL Meetup STEIM](https://www.youtube.com/watch?v=leckC_yUMss)
 
-## Powered By
+## 🔋 Powered By
 
 - Mercury has been granted funding from [**Creative Industries Fund NL**](https://stimuleringsfonds.nl/en/)
 - Mercury has been granted in-kind funding from [**Creative Coding Utrecht**](https://creativecodingutrecht.nl/)
 
-## Thanks
+## 🙏 Thanks
 
 - Anne Veinberg for working with Mercury and a Mercury extensions for the [CodeKlavier](https://codeklavier.space/) project
 - Rafaele Maria Andrade for collaboration on [networked performance](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s) between Mercury and Knurl
@@ -215,7 +224,7 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 - Repo banner image by Annebel Bunt
 - Live performance image by Zuzanna Zgierska
 
-## Licenses
+## 📄 Licenses
 
 1. Main Source - [The GNU GPL v.3 License](https://choosealicense.com/licenses/gpl-3.0/) (c) Timo Hoogland 2019
 2. Sound Files - Individually licensed, listed under [media/README.md](/mercury_ide_0.9.9/media/README.md)

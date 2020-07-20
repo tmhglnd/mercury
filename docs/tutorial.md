@@ -9,8 +9,8 @@ After that we will focus on creating a synthesizer that allows us to play differ
 
 # Table of Contents
 
-- [Install Mercury 💻](#install-mercury-💻)
-- [Launch Mercury 🚀](#launch-mercury-🚀)
+- [Install Mercury 💻](#install-mercury-)
+- [Launch Mercury 🚀](#launch-mercury-)
 
 # Install Mercury 💻
 
@@ -65,7 +65,7 @@ The main window is used to quickly access some of the most important functions i
 
 You are now ready to start coding your first sounds! 🎶💻🎶
 
-# Sampler
+# Sampler 💾
 
 A big part of electronic music (but also many other music genres) is the use of samples. The word sample has a few different meanings in a musical context. 
 
