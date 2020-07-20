@@ -4,6 +4,8 @@
 
 ## Table of Content
 
+- [Tutorial (work in progress...)](./tutorial.md)
+
 - [Getting Started](./getting-started.md)
 
 - [Shortkeys](./06-shortkeys.md)
