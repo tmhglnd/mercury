@@ -32,7 +32,7 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 	- [System Requirements](#-system-requirements)
 	- [Build Application](#-build-application)
 	- [Documentation](#-documentation)
-	- [Sounds in Mercury](#-sounds-in-mercury)
+	- [Sounds in Mercury](#-sounds)
 - [Modify Code](#-modify-code)
 - [Further Reading](#-further-reading-and-listening)
 - [Made with Mercury](#-made-with-mercury)
@@ -40,7 +40,7 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [Thanks](#-thanks)
 - [Licenses](#-licenses)
 
-## 🎉 Newest Feature
+## 🎉 Newest Features
 
 **Input OSC addresses as arguments for instrument methods and control the parameters externally**
 
@@ -185,7 +185,7 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 
 [List of sounds and credits](././mercury_ide_0.9.9/media/README.md)
 
-## ✏️ Modify Code
+## 📝 Modify Code
 
 `patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
 
