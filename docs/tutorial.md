@@ -1,6 +1,8 @@
 
 # Mercury Tutorial 🤓
 
+🚧 **work in progress** 🚧
+
 Welcome to the Mercury livecoding environment! This tutorial will help you to get started with coding sound and music. The tutorial will explain the Mercury syntax, the basics in music theory, the concept of serialism in music and algorithmic composition.
 
 First we will kick off with making a sampler to play a basic sound, changing the timing, changing the tempo, play more samples together and make a rhythm. We will also look into shaping the sound to our liking by changing the playback speed or the position where we start playing.
@@ -9,8 +11,9 @@ After that we will focus on creating a synthesizer that allows us to play differ
 
 # Table of Contents
 
-- [Install Mercury 💻](#install-mercury-)
-- [Launch Mercury 🚀](#launch-mercury-)
+- 💻 [Install Mercury](#install-mercury-)
+- 🚀 [Launch Mercury](#launch-mercury-)
+- 💾 [Sampler](#sampler-)
 
 # Install Mercury 💻
 
