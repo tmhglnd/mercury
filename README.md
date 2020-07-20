@@ -23,22 +23,22 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 
 ## 📋 Table of Contents
 
-- [Newest Features](#--newest-features)
-- [About](#about)
-- [Vision & Goals](#vision--goals)
-- [Tutorial (work in progress...)](#tutorial)
-- [Install](#install)
-	- [Getting Started](/docs/getting-started.md)
-	- [System Requirements](#system-requirements)
-	- [Build Application](#build-application)
-	- [Documentation](/docs/README.md#table-of-content-for-syntax)
-	- [Sounds in Mercury](././mercury_ide_0.9.9/media/README.md)
-- [Modify Code](#modify-code)
-- [Further Reading](#further-reading-and-listening)
-- [Made with Mercury](#made-with-mercury)
-- [Powered By](#powered-by)
-- [Thanks](#thanks)
-- [Licenses](#licenses)
+- [Newest Features](#-newest-features)
+- [About](#-about)
+- [Vision & Goals](#-vision--goals)
+- [Tutorial (work in progress...)](#-tutorial)
+- [Install](#-install)
+	- [Getting Started](#-getting-started)
+	- [System Requirements](#-system-requirements)
+	- [Build Application](#-build-application)
+	- [Documentation](#-documentation)
+	- [Sounds in Mercury](#-sounds-in-mercury)
+- [Modify Code](#-modify-code)
+- [Further Reading](#-further-reading-and-listening)
+- [Made with Mercury](#-made-with-mercury)
+- [Powered By](#-powered-by)
+- [Thanks](#-thanks)
+- [Licenses](#-licenses)
 
 ## 🎉 Newest Feature
 
