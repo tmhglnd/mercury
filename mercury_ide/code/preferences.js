@@ -33,6 +33,7 @@ let prefs = {
 	"sigvs": 256,
 	"overdrive" : 1,
 	"interrupt" : 1,
+	"voices" : 10,
 	"v_res" : "720 (720p)",
 	"res" : "720 (720p)",
 	"w_size" : "270",
