@@ -124,7 +124,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
-					"hint" : "",
+					"hint" : "Enable the syphon texture output of the editor/visual window (Mac only). Useful when livestreaming via OBS. Default = off",
 					"id" : "obj-101",
 					"maxclass" : "led",
 					"numinlets" : 1,
@@ -532,7 +532,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
-					"hint" : "",
+					"hint" : "Enable full screen. Alternatively press ESC key to enter/leave fullscreen. Default = off",
 					"id" : "obj-19",
 					"maxclass" : "led",
 					"numinlets" : 1,
@@ -2354,6 +2354,7 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"elementcolor" : [ 0.137254901960784, 0.137254901960784, 0.137254901960784, 1.0 ],
+					"hint" : "Adjust the resolution (in pixel height) for the visuals behind the text only. Default = 720p",
 					"id" : "obj-50",
 					"items" : [ 270, ",", 540, ",", "720 (720p)", ",", "800 (mb 13)", ",", "900 (mb 15)", ",", "1080 (1080p)", ",", "1440 (imac 27)", ",", "1600 (mb 13 ret)", ",", "1800 (mb ret 15)", ",", "2160 (4k)", ",", "2700 (5k)" ],
 					"maxclass" : "umenu",
@@ -2371,7 +2372,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
-					"hint" : "",
+					"hint" : "Hide the cursor after being idle for 5 seconds. Default = on",
 					"id" : "obj-47",
 					"maxclass" : "led",
 					"numinlets" : 1,
@@ -2579,7 +2580,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
-					"hint" : "",
+					"hint" : "Show/Hide the editor/visual-window. Useful when working with an external editor and the window is not necessary. Default = on",
 					"id" : "obj-17",
 					"maxclass" : "led",
 					"numinlets" : 1,
@@ -2598,7 +2599,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
-					"hint" : "",
+					"hint" : "Make sure the editor/visual-window stays on top of all the other Mercury windows. Default = on",
 					"id" : "obj-16",
 					"maxclass" : "led",
 					"numinlets" : 1,
@@ -2617,7 +2618,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
-					"hint" : "",
+					"hint" : "Make sure the FPS is a multiple of the screens refresh rate. Default = on",
 					"id" : "obj-70",
 					"maxclass" : "led",
 					"numinlets" : 1,
@@ -3130,6 +3131,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"hint" : "Change the resolution by changing the screen amount. Default = 1",
 					"id" : "obj-351",
 					"maxclass" : "number",
 					"minimum" : 1,
@@ -3167,6 +3169,7 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"elementcolor" : [ 0.137254901960784, 0.137254901960784, 0.137254901960784, 1.0 ],
+					"hint" : "Adjust the resolution (in pixel height) for the entire rendering of the text and visuals. Default = 720p",
 					"id" : "obj-355",
 					"items" : [ 270, ",", 540, ",", "720 (720p)", ",", "800 (mb 13)", ",", "900 (mb 15)", ",", "1080 (1080p)", ",", "1440 (imac 27)", ",", "1600 (mb 13 ret)", ",", "1800 (mb ret 15)", ",", "2160 (4k)", ",", "2700 (5k)" ],
 					"maxclass" : "umenu",
@@ -4018,6 +4021,7 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"elementcolor" : [ 0.137254901960784, 0.137254901960784, 0.137254901960784, 1.0 ],
+					"hint" : "Adjust the window size (in pixel height) for the editor/visual window. Default = 270p. Press ESC to enter fullscreen",
 					"id" : "obj-365",
 					"items" : [ 270, ",", 540, ",", "720 (720p)", ",", "800 (mb 13)", ",", "900 (mb 15)", ",", "1080 (1080p)", ",", "1440 (imac 27)", ",", "1600 (mb 13 ret)", ",", "1800 (mb ret 15)", ",", "2160 (4k)", ",", "2700 (5k)" ],
 					"maxclass" : "umenu",
@@ -4043,8 +4047,9 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"elementcolor" : [ 0.137254901960784, 0.137254901960784, 0.137254901960784, 1.0 ],
+					"hint" : "Adjust the aspect ratio for the editor and visual screen. Default = 16:9",
 					"id" : "obj-368",
-					"items" : [ "4 : 3 (Television)", ",", "8 : 5 (MB)", ",", "16 : 9 (1.78:1 Widescreen)", ",", "18 : 9 (2:1 Univisium)", ",", "21 : 9 (7:3 Panavision)", ",", "47 : 20 (2.35:1 Cinemascope)", ",", "69 : 25 (2.76:1 Ultra Panavision)", ",", "36 : 10 (3.6:1 IMAX Ultra)", ",", "1024 : 768" ],
+					"items" : [ "4 : 3 (Television)", ",", "8 : 5 (Macbook)", ",", "16 : 9 (1.78:1 Widescreen)", ",", "18 : 9 (2:1 Univisium)", ",", "21 : 9 (7:3 Panavision)", ",", "47 : 20 (2.35:1 Cinemascope)", ",", "69 : 25 (2.76:1 Ultra Panavision)", ",", "36 : 10 (3.6:1 IMAX Ultra)", ",", "1024 : 768" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,

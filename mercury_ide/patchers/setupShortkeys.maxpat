@@ -1627,6 +1627,7 @@
 					"bgfillcolor_proportion" : 0.5,
 					"bgfillcolor_type" : "color",
 					"color" : [ 0.400000006, 0.8000000119, 1.0, 1.0 ],
+					"hint" : "Select a command to create a shortkey for",
 					"id" : "obj-104",
 					"items" : [ "execute", ",", "silence", ",", "comment", ",", "disable-editor", ",", "delete-line", ",", "copy-line", ",", "paste-line", ",", "paste-replace-line", ",", "jump-top", ",", "jump-bottom", ",", "jump-begin", ",", "jump-end", ",", "up", ",", "down", ",", "left", ",", "right" ],
 					"maxclass" : "umenu",
@@ -1709,6 +1710,7 @@
 					"align" : 0,
 					"bgcolor" : [ 0.098039215686275, 0.098039215686275, 0.098039215686275, 0.0 ],
 					"bgoncolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.0 ],
+					"hint" : "Remove the key combination for this command.",
 					"id" : "obj-5",
 					"maxclass" : "textbutton",
 					"numinlets" : 1,
@@ -1775,6 +1777,7 @@
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
 					"bordercolor" : [ 0.200000003, 0.200000003, 0.200000003, 1.0 ],
+					"hint" : "The current keycombination for the command",
 					"id" : "obj-84",
 					"lines" : 1,
 					"maxclass" : "textedit",
@@ -1787,7 +1790,7 @@
 					"presentation_rect" : [ 15.0, 39.0, 197.0, 20.0 ],
 					"readonly" : 1,
 					"tabmode" : 0,
-					"text" : "alt-\\,",
+					"text" : "alt-.",
 					"wordwrap" : 0
 				}
 
@@ -1881,6 +1884,7 @@
 					"align" : 0,
 					"bgcolor" : [ 0.098039215686275, 0.098039215686275, 0.098039215686275, 0.0 ],
 					"bgoncolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.0 ],
+					"hint" : "Click to generate a new shortkey for this command by pressing the desired keys. The combination will be stored on release of all the keys. Click again if you want to exit. Click Empty to remove the shortkey.",
 					"id" : "obj-70",
 					"maxclass" : "textbutton",
 					"mode" : 1,
