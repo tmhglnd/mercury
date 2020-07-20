@@ -1,4 +1,4 @@
-# 🌑 Mercury Live Coding Environment 
+# 🌕 Mercury Live Coding Environment 
 
 ## [Become a Patron!](https://www.patreon.com/bePatron?u=9649817) 
 
@@ -201,7 +201,7 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 
 ## 👾 Made with Mercury
 
-- *Made something with Mercury? Please add a URL here and send a pull request! ^^*
+- *Made something with Mercury? Please add a URL here and send a pull request!* 😎
 - [Rafa & Timo - "Hello, off-world!" (Live at NMF)](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s)
 - [Roald van Dillewijn - Mercury & DigiLog](https://www.youtube.com/watch?v=1v7xicXuSbo&t=346s)
 - [Sasj & Timo - Amalgam (Live at Github Sattelite 2020)](https://www.youtube.com/watch?v=zzmgX4QSBMM)
@@ -217,10 +217,10 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 
 ## 🙏 Thanks
 
-- Anne Veinberg for working with Mercury and a Mercury extensions for the [CodeKlavier](https://codeklavier.space/) project
-- Rafaele Maria Andrade for collaboration on [networked performance](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s) between Mercury and Knurl
 - Roald van Dillewijn for working together on osc and midi functionalities combined with his [Digilog modified guitar-pedals](https://roaldvandillewijn.nl/projects/digilog)
 - Guillem Gongora Moral for using Mercury as a composition tool and sharing valuable feedback in the process
+- Anne Veinberg for working with Mercury and a Mercury extensions for the [CodeKlavier](https://codeklavier.space/) project
+- Rafaele Maria Andrade for collaboration on [networked performance](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s) between Mercury and Knurl
 - Repo banner image by Annebel Bunt
 - Live performance image by Zuzanna Zgierska
 
