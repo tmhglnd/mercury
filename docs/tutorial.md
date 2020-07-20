@@ -1,5 +1,5 @@
 
-# Mercury Tutorial 🤓
+# 🤓 Mercury Tutorial
 
 🚧 **work in progress** 🚧
 
@@ -11,11 +11,11 @@ After that we will focus on creating a synthesizer that allows us to play differ
 
 # Table of Contents
 
-- 💻 [Install Mercury](#install-mercury-)
-- 🚀 [Launch Mercury](#launch-mercury-)
-- 💾 [Sampler](#sampler-)
+- 💻 [Install Mercury](#-install-mercury)
+- 🚀 [Launch Mercury](#-launch-mercury)
+- 💾 [Sampler](#-sampler)
 
-# Install Mercury 💻
+# 💻 Install Mercury
 
 1. Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative coding environment from Cycling'74. You can download Max8 through any of the links below. At the moment Mercury seems to run best in Max8.0.8. **You do not need to buy a license in order to use Mercury!** :sunglasses: 
 
@@ -36,7 +36,7 @@ After that we will focus on creating a synthesizer that allows us to play differ
 	$ git clone http://github.com/tmhglnd/mercury
 	```
 
-# Launch Mercury 🚀
+# 🚀 Launch Mercury
 
 Launch Mercury by double clicking `mercury_ide.maxproj`.
 
@@ -68,7 +68,7 @@ The main window is used to quickly access some of the most important functions i
 
 You are now ready to start coding your first sounds! 🎶💻🎶
 
-# Sampler 💾
+# 💾 Sampler
 
 A big part of electronic music (but also many other music genres) is the use of samples. The word sample has a few different meanings in a musical context. 
 
