@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 53.0, 89.0, 401.0, 416.0 ],
+		"rect" : [ 54.0, 90.0, 401.0, 416.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -3540,7 +3540,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 785.0, 223.0, 640.0, 480.0 ],
+						"rect" : [ 766.0, 223.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3568,6 +3568,18 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 114.0, 226.0, 50.0, 22.0 ],
+									"text" : "r MUTE"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-49",
 									"maxclass" : "newobj",
@@ -4014,6 +4026,13 @@
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-12", 0 ]
@@ -42801,8 +42820,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -47666,7 +47683,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 79.0, 652.0, 783.0 ],
+						"rect" : [ 436.0, 78.0, 652.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -47694,6 +47711,17 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 175.599999999999994, 285.0, 52.0, 22.0 ],
+									"text" : "s MUTE"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-108",
 									"maxclass" : "newobj",
@@ -48637,6 +48665,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -48801,7 +48831,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 193.199999999999989, 301.0, 59.0, 22.0 ],
+									"patching_rect" : [ 158.0, 315.0, 59.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -48819,7 +48849,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 193.199999999999989, 335.0, 99.0, 22.0 ],
+									"patching_rect" : [ 158.0, 345.0, 99.0, 22.0 ],
 									"text" : "s CLEAR_CODE"
 								}
 
@@ -48830,7 +48860,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 193.199999999999989, 270.0, 44.0, 22.0 ],
+									"patching_rect" : [ 232.799999999999983, 285.0, 44.0, 22.0 ],
 									"text" : "s RUN"
 								}
 
@@ -49056,7 +49086,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 315.0, 105.0, 134.0, 22.0 ],
+									"patching_rect" : [ 210.0, 48.0, 134.0, 22.0 ],
 									"text" : "consoleLog \"File Menu\""
 								}
 
@@ -51158,7 +51188,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"order" : 1,
+									"order" : 0,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -51166,7 +51196,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -51197,6 +51227,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
 									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-26", 1 ]
 								}
 
 							}
@@ -52044,7 +52081,7 @@
 					"numoutlets" : 7,
 					"outlettype" : [ "int", "int", "int", "int", "int", "int", "int" ],
 					"patching_rect" : [ 285.0, 186.0, 270.0, 22.0 ],
-					"save" : [ "#N", "menubar", 7, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 60, "Execute", "Code", ";", "#X", "file", 70, "Clear", "All", "Code", ";", "#X", "file", 40, "Load", "External", "Editor", "File", ";", "#X", "menutitle", 5, "Sounds", ";", "#X", "item", 5, 1, "Add", "Sounds", ";", "#X", "item", 5, 2, "Replace", "Sounds", ";", "#X", "item", 5, 3, "Default", "Sounds", ";", "#X", "item", 5, 4, "Show", "Loaded", "Sounds", ";", "#X", "menutitle", 6, "Settings", ";", "#X", "item", 6, 1, "Audio", "Setup", ";", "#X", "item", 6, 2, "Visual", "Setup", ";", "#X", "item", 6, 3, "Editor", "Setup", ";", "#X", "item", 6, 4, "Shortkeys", "Setup", ";", "#X", "menutitle", 7, "Explanation", ";", "#X", "item", 7, 5, "Random", "Example", ";", "#X", "item", 7, 1, "Reference", ";", "#X", "item", 7, 2, "List", "of", "Sounds", ";", "#X", "item", 7, 3, "Github", "Repository", ";", "#X", "item", 7, 4, "In-Depth", "Paper", ";", "#X", "end", ";" ],
+					"save" : [ "#N", "menubar", 7, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 60, "Execute", "Code", ";", "#X", "file", 50, "Silence", "Code", ";", "#X", "file", 70, "Clear", "All", "Code", ";", "#X", "file", 40, "Load", "External", "Editor", "File", ";", "#X", "menutitle", 5, "Sounds", ";", "#X", "item", 5, 1, "Add", "Sounds", ";", "#X", "item", 5, 2, "Replace", "Sounds", ";", "#X", "item", 5, 3, "Default", "Sounds", ";", "#X", "item", 5, 4, "Show", "Loaded", "Sounds", ";", "#X", "menutitle", 6, "Settings", ";", "#X", "item", 6, 1, "Audio", "Setup", ";", "#X", "item", 6, 2, "Visual", "Setup", ";", "#X", "item", 6, 3, "Editor", "Setup", ";", "#X", "item", 6, 4, "Shortkeys", "Setup", ";", "#X", "menutitle", 7, "Explanation", ";", "#X", "item", 7, 5, "Random", "Example", ";", "#X", "item", 7, 1, "Reference", ";", "#X", "item", 7, 2, "List", "of", "Sounds", ";", "#X", "item", 7, 3, "Github", "Repository", ";", "#X", "item", 7, 4, "In-Depth", "Paper", ";", "#X", "end", ";" ],
 					"text" : "menubar 7"
 				}
 
@@ -63459,13 +63496,13 @@
 					"presentation_rect" : [ 210.0, 255.0, 135.0, 36.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
 							"parameter_mmax" : 6.0,
 							"parameter_initial" : [ 0.0 ],
-							"parameter_shortname" : "volume"
+							"parameter_shortname" : "volume",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 4
 						}
 
 					}

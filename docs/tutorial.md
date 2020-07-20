@@ -1,5 +1,5 @@
 
-# 🤓 Mercury Tutorial
+# Mercury Tutorial 🤓
 
 🚧 **work in progress** 🚧
 
@@ -11,13 +11,13 @@ After that we will focus on creating a synthesizer that allows us to play differ
 
 # Table of Contents
 
-- 💻 [Install Mercury](#-install-mercury)
-- 🚀 [Launch Mercury](#-launch-mercury)
-- 💾 [Sampler](#-sampler)
+- [Install Mercury](#-install-mercury)
+- [Launch Mercury](#-launch-mercury)
+- [Sampler](#-sampler)
 
 # 💻 Install Mercury
 
-1. Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative coding environment from Cycling'74. You can download Max8 through any of the links below. At the moment Mercury seems to run best in Max8.0.8. **You do not need to buy a license in order to use Mercury!** :sunglasses: 
+1. Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative coding environment from Cycling'74. You can download Max8 through any of the links below. At the moment Mercury seems to run best in Max8.0.8. **You do not need to buy a license in order to use Mercury!** 😎
 
 - [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
 - [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
@@ -84,7 +84,7 @@ By playing a sample repeatedly we can make a beat. Layering multiple samples wit
 
 Type the following code: 
 
-```c++
+```java
 new sample kick_house
 ```
 
@@ -100,7 +100,7 @@ By default the sample will play its sound once per measure. In most western pop 
 
 Change your code and execute:
 
-```c++
+```java
 new sample kick_house time(1/4)
 ```
 
@@ -111,7 +111,7 @@ Hear how it has changed its speed? It is now 4 times faster then before. But the
 Let's make things a bit more interesting by adding more samples. For example a drumbeat usually consists of a kick (or bassdrum), a snare (or snaredrum) and a hihat. All this sounds can have a different timing they need to be played to create the beat you want. The most basic beat (or groove) has a kick 4 times per measure, a snare 2 times and a hihat 8 times.
 
 Change your code and execute:
-```c++
+```java
 new sample kick_house time(1/4)
 new sample snare_fat time(1/2)
 new sample hat_click time(1/8)
