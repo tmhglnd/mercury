@@ -103,6 +103,7 @@ Read the [system requirements](#system-requirements) first before getting starte
 	- [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
 	- [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
 	- If links are not working go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
+	- *Newer versions of Max can be used as well, but 8.0.8 has proven to be the most stable so far*
 <!--
 2. Add the following dependencies to the `~/Documents/Max 8/Packages` folder:
 	- [`misc-max-abstractions`](https://github.com/tmhglnd/misc-max-abstractions)
@@ -191,10 +192,14 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 
 ## Made with Mercury
 
-- [Livestreamed during Eulerroom Equinox 2020](https://www.youtube.com/watch?v=X0FFcdd1QEE)
-- [Livestreamed during Algo:Ritmi](https://www.facebook.com/timohoogland/videos/3654187371320680/)
-- [Live during NLCL Meetup at STEIM](https://www.youtube.com/watch?v=leckC_yUMss)
-- *Made something with Mercury? Add it here and send a pull request! ^^*
+- *Made something with Mercury? Please add a URL here and send a pull request! ^^*
+- [Rafa & Timo - "Hello, off-world!" (Live at NMF)](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s)
+- [Roald van Dillewijn - Mercury & DigiLog](https://www.youtube.com/watch?v=1v7xicXuSbo&t=346s)
+- [Sasj & Timo - Amalgam (Live at Github Sattelite 2020)](https://www.youtube.com/watch?v=zzmgX4QSBMM)
+- [Timo - Live at NerdLab VR 2020](https://www.youtube.com/watch?v=EW9x68sxhvM)
+- [T.mo - Live at Eulerroom Equinox 2020](https://www.youtube.com/watch?v=X0FFcdd1QEE)
+- [T.mo - Live at Algo:Ritmi 2020](https://www.facebook.com/timohoogland/videos/3654187371320680/)
+- [T.mo - Live at NLCL Meetup STEIM](https://www.youtube.com/watch?v=leckC_yUMss)
 
 ## Powered By
 
@@ -203,6 +208,8 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 
 ## Thanks
 
+- Anne Veinberg for working with Mercury and a Mercury extensions for the [CodeKlavier](https://codeklavier.space/) project
+- Rafaele Maria Andrade for collaboration on [networked performance](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s) between Mercury and Knurl
 - Roald van Dillewijn for working together on osc and midi functionalities combined with his [Digilog modified guitar-pedals](https://roaldvandillewijn.nl/projects/digilog)
 - Guillem Gongora Moral for using Mercury as a composition tool and sharing valuable feedback in the process
 - Repo banner image by Annebel Bunt
