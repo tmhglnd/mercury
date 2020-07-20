@@ -385,7 +385,7 @@ function newLine(){
 	totalLines = textMtx.dim[1] + 1;
 	// copy the matrix
 	var copyMtx = new JitterMatrix(1, "char", LINE_CHARS, textMtx.dim[1]);
-	copyMtx.frommatrix(textMtx);
+	copyMtx.frommatrix(textMtx.name);
 	emptyMatrix(totalLines);
 	// store everything before cursor in text matrix
 	for (var y = 0; y < curLine; y++){
@@ -419,7 +419,7 @@ function removeLine(){
 	totalLines = Math.max(1, textMtx.dim[1] - 1);
 	// copy the matrix
 	var copyMtx = new JitterMatrix(1, "char", LINE_CHARS, textMtx.dim[1]);
-	copyMtx.frommatrix(textMtx);
+	copyMtx.frommatrix(textMtx.name);
 	emptyMatrix(totalLines);
 	// store all lines before cursor in text matrix
 	for (var y = 0; y < curLine; y++){
@@ -454,7 +454,7 @@ function deleteLine(){
 		totalLines = Math.max(1, textMtx.dim[1] - 1);
 		// copy the matrix
 		var copyMtx = new JitterMatrix(1, "char", LINE_CHARS, textMtx.dim[1]);
-		copyMtx.frommatrix(textMtx);
+		copyMtx.frommatrix(textMtx.name);
 		emptyMatrix(totalLines);
 		// store all lines before cursor in text matrix
 		for (var y = 0; y < curLine+1; y++){
