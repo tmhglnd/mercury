@@ -183,7 +183,7 @@ Microsoft Windows 10 Home
 
 All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. A list of all the available sounds and the original sample can be found here:
 
-[List of sounds and credits](././mercury_ide_0.9.9/media/README.md)
+[List of sounds and credits](././mercury_ide/media/README.md)
 
 ## 📝 Modify Code
 
