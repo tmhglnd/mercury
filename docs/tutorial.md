@@ -149,9 +149,7 @@ The tempo is definited in BPM, or Beats Per Minute on a quarter note (`1/4`). Th
 
 ## A `beat()` and `ring`
 
-After a while of playing with these divisions and tempo you will maybe think to yourself: 
-
->"Would it also be possible to play this sample in the same tempo and timing, but maybe not all the time?"
+After a while of playing with these divisions and tempo you will maybe think to yourself: "Would it also be possible to play this sample in the same tempo and timing, but maybe not all the time?"
 
 This is where we will introduce `ring`'s and the `beat()` function.
 
