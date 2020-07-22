@@ -49,7 +49,8 @@
 		"add_fx",
 		"stretch",
 		"group",
-		"name"
+		"name",
+		"offset"
 	],
 	
 	"loop" : [
@@ -62,6 +63,7 @@
 		"add_fx",
 		"stretch",
 		"group",
-		"name"
+		"name",
+		"offset"
 	]
 }

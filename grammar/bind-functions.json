@@ -13,7 +13,8 @@
 	"beat" : [
 		"beat",
 		"rhythm",
-		"b"
+		"b",
+		"play"
 	],
 
 	"env" : [
@@ -21,7 +22,8 @@
 		"shape",
 		"transient",
 		"env",
-		"e"
+		"e",
+		"length"
 	],
 
 	"note" : [
@@ -34,6 +36,15 @@
 		"time",
 		"timing",
 		"t"
+	],
+
+	"offset" : [
+		"onset",
+		"offset",
+		"position",
+		"start",
+		"startAt",
+		"from"
 	],
 
 	"pan" : [
@@ -74,8 +85,7 @@
 	"res" : [
 		"resonance",
 		"reson",
-		"res",
-		"length"
+		"res"
 	],
 
 	"stretch" : [

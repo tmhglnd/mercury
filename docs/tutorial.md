@@ -9,11 +9,24 @@ First we will kick off with making a sampler to play a basic sound, changing the
 
 After that we will focus on creating a synthesizer that allows us to play different pitches. We'll see how we can make a melody with a list of numbers and make sure they stay in tune by applying a scale. With the synthesizer we will also focus on various ways to design the sound to our liking by changing the waveform, adding another waveform and changing the length of the sound. Then we'll look into applying different effects to the sound such as a filter, a echo and a reverb.
 
+While working on this tutorial you might run into some issues where something is not working as expected or as mentioned in the tutorial. This can have many different reasons. The first thing you can do is go to the [**troubleshooting**]() page and see if you can find your problem there. The next thing you can do is try to restart Mercury and see if that solves the issue. If none of that worked you can check the [**issues**](https://github.com/tmhglnd/mercury/issues) to see if your problem was already reported by someone else. If not, you can file the issue yourself. An other possibility for the issue is that this tutorial actually has an typ-o or error of some kind. 
+
+**You are welcome to edit this tutorial and make a pull request.**
+
 # Table of Contents
 
 - [Install Mercury](#-install-mercury)
 - [Launch Mercury](#-launch-mercury)
-- [Sampler](#-sampler)
+- [The Sampler](#-sampler)
+	- [One `sample`]()
+	- [What's the `time()`?]()
+	- [More samples]()
+	- [Changing `tempo`]()
+	- [A `beat()` and `ring`]()
+		- [Musical Notation Systems]()
+		- [The `ring`]()
+		- [The `beat()`]()
+	- []()
 
 # 💻 Install Mercury
 
@@ -68,7 +81,7 @@ The main window is used to quickly access some of the most important functions i
 
 You are now ready to start coding your first sounds! 🎶💻🎶
 
-# 💾 The sampler
+# 💾 The Sampler
 
 A big part of electronic music (but for sure also in many other music genres) is the use of samples. The word sample can have different meanings accross various musical contexts. 
 
@@ -151,7 +164,7 @@ The tempo is definited in BPM, or Beats Per Minute on a quarter note (`1/4`). Th
 
 After a while of playing with these divisions and tempo you will maybe think to yourself: "Would it also be possible to play this sample in the same tempo and timing, but maybe not all the time?"
 
-This is where we will introduce `ring`'s and the `beat()` function.
+This is where we will introduce `ring`'s and the `beat()` function. But before we start making beats, let's first have a quick look at various forms of music notation systems.
 
 ### Musical notation systems
 
@@ -163,9 +176,71 @@ This western notation system is a form of musical representation originating fro
 
 Around 1920 a new form of composition technique, [*Serialism*],(https://en.wikipedia.org/wiki/Serialism) was described by Josef Hauer and used avidly by composer Arnold Schoenberg. Serialism uses series (or sequences) of values to describe various musical parameters. A series could hold for example pitch information (such as note names c e g f), but could also have rhythmical information. In this way all components (pitch, length, dynamics, articulation and more) of a note can be captured in a series and used to compose with. More on this will be discussed in the section [Algorithmic Composition](#algorithmic-composition)
 
-## The `ring`
+### The `ring`
 
-Mercury is heavily based on the concept of *Serialism*. Therefore parameters such as pitch and rhythm can be expressed in a series of values. This series is refered to as a `ring`. It is called a ring because the serie (sequence) is circular. Every instrument has an internal counter. This counter increments for every time it plays based on the time-interval from `time()`. This is also called the sequencer. When a ring is added as argument the instrument uses its count as a lookup-position (index) taking the corresponding value in the serie. As soon as the index is higher then the amount of values in the serie it will return to the beginning and start over, hence a circular array or `ring`. 
+Mercury has its roots in the concept of *Serialism*, where parameters such as pitch and rhythm are expressed in a series of values that adjust the instruments state over time. This series in Mercury is refered to as a `ring`. It is called a ring because the serie (or sequence) is circular. Every instrument has an internal counter. This counter increments for every time an instrument triggers its sound. This is also called the sequencer. When a ring is added as argument the instrument uses its count as a lookup-position (index) taking the corresponding value in the serie. As soon as the index is higher then the amount of values in the serie it will return to the beginning and start over, hence a circular array or `ring`.
+
+In order to create a ring you type the following code:
+```java
+ring myFirstRing [0.25 0.5 0 2 4 8 16 32]
+```
+
+The line starts with the code `ring`, followed by the name of the ring. The name can be any characters you like except for numerical values. All values between the `[` and `]` (square brackets) are part of the ring. Every value separated by a space is considered a new value. In this example the ring has 8 values starting at `0.25` and ending at `32`.
+
+### The `beat()`
+
+In order to create a rhythm for an instrument we can make a ring consisting of zeroes and ones. The `1` represents a `TRUE` value, resulting in the triggering of the sound, the `0` a `FALSE` value that will not play. Now lets put this into practice. In order to keep it simple for now we erase the previous code and work with only one instrument. 
+
+Type the following and execute:
+```java
+set tempo 115
+
+new sample hat_click time(1/16) beat(1)
+```
+
+This will sound similar to what we heard before. This is because the `beat()` function only has a single `1` as argument, which means all notes are played. This is actually the default and was already the case in the code above. Now we create a ring with zeroes and ones and apply the name of the ring as argument in the function.
+
+Change your code and execute:
+```java
+set tempo 115
+
+ring aRhythm [1 0 0 1 0 1 1 0]
+
+new sample hat_909 time(1/16) beat(aRhythm)
+```
+
+Hear how the rhythm is applied to the sample. Every 16th note (`1/16`) the internal counter from that instrument looks up a value from the `ring aRhythm`. When it is a `1` it is played, when it is a `0` it is not. 
+
+Now try some different rhythms of different lengths, for example: `[0 1 0 0 1]`, `[1 1 0 1 1 0 0]`, `[1 1 1 0]`.
+
+## Combining beats
+
+In order to make more complex rhythms we can take a step back to our pop beat from [more samples](#more-samples). Now instead of using different `time()` arguments to make a rhythm, we will use the power of `ring`'s to look up a `1` or `0` to let it play the sound or not. First we make sure that all instruments play in the same time.
+
+Make the following code:
+
+```java
+set tempo 95
+
+new sample kick_house time(1/16)
+new sample snare_fat time(1/16)
+new sample hat_click time(1/16)
+```
+
+Execute this code and you will hear all samples play all 16th notes. Now we create different rings for the different instruments. Notice the rings don't have to be the same length. They will each *loop* individually. This allows you to quickly create quite complex rhythms that change over time with just a few lines of code!
+
+Adjust and execute:
+```java
+set tempo 95
+
+ring kickBeat [1 0 0]
+ring snareBeat [0 0 0 0 1 0 0 0]
+ring hatBeat [1 1 0 1 1 0 1]
+
+new sample kick_house time(1/16)
+new sample snare_fat time(1/16)
+new sample hat_click time(1/16)
+```
 
 ## speed()
 
