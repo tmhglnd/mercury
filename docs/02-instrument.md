@@ -77,7 +77,7 @@ new sample hat_909 name(ht)
 new sample kick_909 time(1/4)
 ```
 
-Alternative function-names: `rhythm() | b()`
+Alternative function-names: `play() | rhythm() | b()`
 
 ## shape
 
@@ -113,7 +113,7 @@ new synth saw shape(1/4 1/32) time(1)
 new synth saw shape(1/64 1/8 1/16) time(1)
 ```
 
-Alternative function-names: `envelope() | env() | transient() | e()`
+Alternative function-names: `length() | envelope() | env() | transient() | e()`
 
 ## gain
 
@@ -250,3 +250,5 @@ Set the offset (the start position of the playback) of the sample. 0 = start at 
 ```
 offset(<position-in-sample-0-1>)
 ```
+
+Alternative function-names: `start() | from() | onset()`

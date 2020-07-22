@@ -25,7 +25,7 @@ While working on this tutorial you might run into some issues where something is
 	- [A `beat()` and `ring`]()
 		- [Musical Notation Systems]()
 		- [The `ring`]()
-		- [The `beat()`]()
+		- [To `play(1)` or to `play(0)`]()
 	- []()
 
 # 💻 Install Mercury
@@ -160,11 +160,11 @@ The tempo is definited in BPM, or Beats Per Minute on a quarter note (`1/4`). Th
 
 >The `set` command is a command that allows you to change parameters of global settings such as the tempo. Later on we'll see how to use it for instruments as well.
 
-## A `beat()` and `ring`
+## `play()` and `ring`
 
 After a while of playing with these divisions and tempo you will maybe think to yourself: "Would it also be possible to play this sample in the same tempo and timing, but maybe not all the time?"
 
-This is where we will introduce `ring`'s and the `beat()` function. But before we start making beats, let's first have a quick look at various forms of music notation systems.
+This is where we will introduce `ring`'s and the `play()` function. But before we start making rhythms, let's first have a quick look at various forms of music notation systems.
 
 ### Musical notation systems
 
@@ -187,7 +187,7 @@ ring myFirstRing [0.25 0.5 0 2 4 8 16 32]
 
 The line starts with the code `ring`, followed by the name of the ring. The name can be any characters you like except for numerical values. All values between the `[` and `]` (square brackets) are part of the ring. Every value separated by a space is considered a new value. In this example the ring has 8 values starting at `0.25` and ending at `32`.
 
-### The `beat()`
+### To `play(1)` or to `play(0)`
 
 In order to create a rhythm for an instrument we can make a ring consisting of zeroes and ones. The `1` represents a `TRUE` value, resulting in the triggering of the sound, the `0` a `FALSE` value that will not play. Now lets put this into practice. In order to keep it simple for now we erase the previous code and work with only one instrument. 
 
@@ -195,10 +195,10 @@ Type the following and execute:
 ```java
 set tempo 115
 
-new sample hat_click time(1/16) beat(1)
+new sample hat_click time(1/16) play(1)
 ```
 
-This will sound similar to what we heard before. This is because the `beat()` function only has a single `1` as argument, which means all notes are played. This is actually the default and was already the case in the code above. Now we create a ring with zeroes and ones and apply the name of the ring as argument in the function.
+This will sound similar to what we heard before. This is because the `play()` function only has a single `1` as argument, which means all notes are played. This is actually the default and was already the case in the code above. Now we create a ring with zeroes and ones and apply the name of the ring as argument in the function.
 
 Change your code and execute:
 ```java
@@ -206,14 +206,16 @@ set tempo 115
 
 ring aRhythm [1 0 0 1 0 1 1 0]
 
-new sample hat_909 time(1/16) beat(aRhythm)
+new sample hat_909 time(1/16) play(aRhythm)
 ```
 
 Hear how the rhythm is applied to the sample. Every 16th note (`1/16`) the internal counter from that instrument looks up a value from the `ring aRhythm`. When it is a `1` it is played, when it is a `0` it is not. 
 
 Now try some different rhythms of different lengths, for example: `[0 1 0 0 1]`, `[1 1 0 1 1 0 0]`, `[1 1 1 0]`.
 
-## Combining beats
+>In Mercury most functions have synonyms, meaning that different words do the same thing. This originated from the fact that people come from different backgrounds and are used to using different words with the same meaning. For example `play()` can also be written as `beat()` and `rhythm()`. This may sound confusing, but eventually this might help you remember and recall functions easier via a word that fits your way of thinking.
+
+## Combining rhythms
 
 In order to make more complex rhythms we can take a step back to our pop beat from [more samples](#more-samples). Now instead of using different `time()` arguments to make a rhythm, we will use the power of `ring`'s to look up a `1` or `0` to let it play the sound or not. First we make sure that all instruments play in the same time.
 
@@ -222,9 +224,9 @@ Make the following code:
 ```java
 set tempo 95
 
-new sample kick_house time(1/16)
-new sample snare_fat time(1/16)
-new sample hat_click time(1/16)
+new sample kick_house time(1/16) play(1)
+new sample snare_fat time(1/16) play(1)
+new sample hat_click time(1/16) play(1)
 ```
 
 Execute this code and you will hear all samples play all 16th notes. Now we create different rings for the different instruments. Notice the rings don't have to be the same length. They will each *loop* individually. This allows you to quickly create quite complex rhythms that change over time with just a few lines of code!
@@ -237,9 +239,9 @@ ring kickBeat [1 0 0]
 ring snareBeat [0 0 0 0 1 0 0 0]
 ring hatBeat [1 1 0 1 1 0 1]
 
-new sample kick_house time(1/16)
-new sample snare_fat time(1/16)
-new sample hat_click time(1/16)
+new sample kick_house time(1/16) play(kickBeat)
+new sample snare_fat time(1/16) play(kickBeat)
+new sample hat_click time(1/16) play(kickBeat)
 ```
 
 ## speed()
