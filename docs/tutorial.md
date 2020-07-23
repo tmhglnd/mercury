@@ -9,7 +9,7 @@ First we will kick off with making a sampler to play a basic sound, changing the
 
 After that we will focus on creating a synthesizer that allows us to play different pitches. We'll see how we can make a melody with a list of numbers and make sure they stay in tune by applying a scale. With the synthesizer we will also focus on various ways to design the sound to our liking by changing the waveform, adding another waveform and changing the length of the sound. Then we'll look into applying different effects to the sound such as a filter, a echo and a reverb.
 
-While working on this tutorial you might run into some issues where something is not working as expected or as mentioned in the tutorial. This can have many different reasons. The first thing you can do is go to the [**troubleshooting**]() page and see if you can find your problem there. The next thing you can do is try to restart Mercury and see if that solves the issue. If none of that worked you can check the [**issues**](https://github.com/tmhglnd/mercury/issues) to see if your problem was already reported by someone else. If not, you can file the issue yourself. An other possibility for the issue is that this tutorial actually has an typ-o or error of some kind. 
+While working on this tutorial you might run into some issues where something is not working as expected or as mentioned in the tutorial. This can have many different reasons. The first thing you can do is go to the [**troubleshooting**]() page and see if you can find your problem there. The next thing you can do is try to restart Mercury and see if that solves the issue. If none of that worked you can check the [**issues**](https://github.com/tmhglnd/mercury/issues) to see if your problem was already reported by someone else. If not, you can file a [new issue](https://github.com/tmhglnd/mercury/issues/new) yourself. An other possibility for the issue is that this tutorial actually has an typ-o or error of some kind. 
 
 **You are welcome to edit this tutorial and make a pull request.**
 
@@ -140,7 +140,7 @@ new sample hat_click time(1/12)
 
 ### Other sounds
 
-You can of course also try other samples that are included in Mercury! A full list of samples is available [here](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md). Try for example: `bamboo_g`, `shatter`, `tabla_mid`
+You can of course also try other samples that are included in Mercury! A full list of samples is available [here](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md). Try for example: `bamboo_g`, `shatter`, `tabla_mid`.
 
 ## Changing `tempo`
 

@@ -26,9 +26,9 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [Newest Features](#-newest-features)
 - [About](#-about)
 - [Vision & Goals](#-vision--goals)
-- [Tutorial (work in progress...)](/docs/tutorial.md)
 - [Install](#-install)
-	- [Getting Started](/docs/getting-started.md)
+	- [Quick Start](/docs/quick-start.md)
+	- [Tutorial](/docs/tutorial.md)
 	- [System Requirements](#-system-requirements)
 	- [Build Application](#-build-application)
 	- [Documentation](/docs/README.md)
@@ -96,84 +96,63 @@ Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-seria
 
 Mercury is a development-in-progress and the language is still very much fluid, with changes made to the language/environment/libraries almost weekly. Feel free the clone/fork this repository, but you might also want to watch and/or star the repo to keep up-to-date with the latest changes whenever they're made.
 
+## 💻 Install
+
+- Follow the [Quick Start](#-quick-start) guide (for experienced computer users)
+- Follow the [Tutorial](#-tutorial).
+- Read the [System Requirements](#system-requirements)
+- Download the latest [Release](https://github.com/tmhglnd/mercury/releases)
+
+```
+$ cd ~/Documents/Max\ 8/Projects
+$ git clone http://github.com/tmhglnd/mercury
+$ cd mercury
+$ open mercury_ide/mercury_ide.maxproj
+```
+
+### 🚀 Quick Start
+
+[**Open the Quick Start Guide**](/docs/quick-start.md)
+
 ## 📖 Tutorial
 
 🚧 (work in progress) 🚧
 
-If this is your first time with either the usage of creative coding software (like Max8), music theory, electronic music making and programming in general I highly recommend following the [tutorial](/docs/tutorial.md)
+If this is your first time with either the usage of creative coding software (like Max8), music theory, electronic music making and programming in general I highly recommend following the tutorial.
 
 [Open the Tutorial](/docs/tutorial.md)
-
-## 💻 Install
-
-Read the [system requirements](#system-requirements) first before getting started.
-
-1. Download and install **Max 8.0.8** (no License required to run Mercury!)
-	- [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
-	- [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
-	- If links are not working go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
-	- *Newer versions of Max can be used as well, but 8.0.8 has proven to be the most stable so far*
-<!--
-2. Add the following dependencies to the `~/Documents/Max 8/Packages` folder:
-	- [`misc-max-abstractions`](https://github.com/tmhglnd/misc-max-abstractions)
-	- [`reverb-yafr-mods`](https://github.com/tmhglnd/reverb-yafr-mods)
-	- Optional:
-		- `Syphon` : available as download in the Max Package Manager
-	<!-- - [~~pass-comparators~~](https://github.com/tmhglnd/pass-comparators) <- now included in the package
-	<!-- - ~~jasch package~~ <- temporarily disabled function -->
-
-2. Download, clone or fork Mercury to the Projects folder in your Documents:
-```
-1. Download zip and unpack in ~/Documents/Max 8/Projects (create Projects folder if necessary)
-2. Open mercury_ide.maxproj
-```
-commandline:
-```
-$ cd ~/Documents/Max\ 8/Projects
-    if not a directory, first: 
-    $ mkdir ~/Documents/Max\ 8/Projects
-    $ cd ~/Documents/Max\ 8/Projects
-
-$ git clone http://github.com/tmhglnd/mercury
-```
-
-### 🚀 Getting Started
-
-[**Open the Getting Started Guide**](/docs/getting-started.md)
 
 ### ⚠ System Requirements
 
 These system requirements are the requirements to install and run Max8 on your computer. A dedicated Graphics Card (GPU) is recommended to run the visual side of Mercury smoothly (the text-editor is part of the visuals since it is programmed in the OpenGL language).
 
-```
-Mac OSX 10.11.6 or later
-Intel® Core™2 Duo processor (Intel® Core™ i5 or higher recommended) 
+#### OS
+
+`Mac` : OSX 10.11.6 or later
+
+`Windows` : 7, 8 or 10
+
+#### CPU
+
+`Mac` : Intel® Core™2 Duo processor 
+
+`Windows` : 64-bit Intel® or AMD multi-core processor
+
+Intel® Core™ i5 or higher recommended
+
+#### RAM / GPU
+
 4 GB RAM (8 GB or more recommended)
-(Dedicated Graphics Card recommended)
-```
 
-```
-Windows 7, 8 or 10
-64-bit Intel® or AMD multi-core processor. (Intel® Core™ i5 or higher processor or recommended)
-4 GB RAM (8 GB or more recommended)
-(Dedicated Graphics Card recommended)
-```
-
-Tested working on a variety of computers and operating systems.
-
-```
-Mac OSX 10.12
-Mac OSX 10.14
-Microsoft Windows 10 Home
-```
+Dedicated Graphics Card recommended
 
 ### 🛠 Build Application
 
 `Optional`
 
-**Why?** - Building the Application is recommended when using Mercury with other MaxMSP projects. This will allow Mercury to have a seperate thread from the other Max processes, giving it enough RAM and CPU space. Also the application will probably run more stable because the project can not be editted anymore. This, of course, also dependents on your systems specifications.
+**Why?** - Building the Application is recommended when using Mercury with other MaxMSP projects. This will allow Mercury to have a seperate thread from the other Max processes, giving it enough RAM and CPU space. Also the application will probably run more stable because the project can not be editted anymore. This, of course, also dependents on your system specifications.
 
-**How?** - The Cycling'74 Coding environment is needed to build the application from the `mercury_ide_x.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window. *Building the Application is not necessary in order to run the environment!*
+**How?** - The Cycling'74 Max8 coding environment is needed to build the application from the `mercury_ide_x.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window. *Building the Application is not necessary in order to run the environment!*
 
 ### 📖 Documentation
 
