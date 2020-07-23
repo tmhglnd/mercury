@@ -244,6 +244,27 @@ new sample snare_fat time(1/16) play(kickBeat)
 new sample hat_click time(1/16) play(kickBeat)
 ```
 
+## Linear beats
+
+Instead of using multiple instruments to create our beat, we can also use one sampler and let it play different sounds. For this we need to declare a ring with the names of the samples in the order we want to play them. The playing of samples without any overlap or playing at the same time is sometimes called a *linear beat*. For example we want to play kick, hat, snare, hat. 
+
+Now our code will look like this:
+```java
+set tempo 110
+
+ring theSounds [kick_house hat_click snare_fat hat_click]
+
+new sample theSounds time(1/8)
+```
+
+Now to make this a bit more interesting we can combine this technique with another ring that holds some zeroes and ones to play rhythm.
+
+Like so:
+```java
+
+
+```
+
 ## speed()
 
 ## shape()
