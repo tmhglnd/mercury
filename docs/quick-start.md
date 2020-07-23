@@ -4,7 +4,7 @@ This quick start guide is meant for people confident in working with the compute
 
 # 💻 Install Mercury
 
-Read the [system requirements](./../README.md#system-requirements) first before getting started.
+Read the [system requirements](./../README.md#-system-requirements) first before getting started.
 
 1. Download and install Max8 via any of the links below. Mercury runs in Max8, but **you do not need to buy a license in order to use Mercury!** 😎
 
@@ -14,7 +14,7 @@ Read the [system requirements](./../README.md#system-requirements) first before 
 
 2. Launch Max8 when the installation is done. A Max8 folder is created in your Documents. Locate the Projects folder under `~/Documents/Max 8/Projects`
 
-3. [Download the latest release](https://github.com/tmhglnd/mercury/releases)
+3. Download the latest [Release](https://github.com/tmhglnd/mercury/releases)
 	```
 	Download zip and unpack in ~/Documents/Max 8/Projects
 	```
@@ -52,17 +52,26 @@ In the `mercury` code editor:
 
 - 🔊 Hit `alt + return` or `Menubar > File > Execute Code`
 
+Adjust settings under `Menubar > Settings` for:
+- Audio
+- Visuals
+- Editor
+- Shortkeys
+
 You are now ready to start coding your first sounds! 🎶💻🎶
 
-## 🎲 Play!
+# 🎲 Play!
 
-Now go ahead and play all you want! See the [Tutorial](/tutorial.md) or [Documentation](./README.md) for further information on the syntax and code.
+Now go ahead and play all you want! For further information on the syntax and code see:
+
+- [Tutorial](/tutorial.md)
+- [Documentation](./README.md) 
 
 # ⚠ Troubleshooting
 
 Run into an issue?
 
 - First check the [Troubleshooting]() page
-- Restart Mercury and see if that solves the issue
 - Check if your problem was already reported in the [Issues](https://github.com/tmhglnd/mercury/issues)
-- Or file a [new issue](https://github.com/tmhglnd/mercury/issues/new)
+- File a [new issue](https://github.com/tmhglnd/mercury/issues/new)
+- Fix it yourself and send a pull request! :pray:
