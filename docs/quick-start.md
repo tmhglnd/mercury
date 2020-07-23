@@ -1,6 +1,6 @@
 # 🏃 Quick Start
 
-This quick start guide is meant for people confident in working with the computer and already have some experience with (creative) coding, music technology and music theory.
+This quick start guide is meant for people who are confident in working with the computer and have some experience with (creative) coding, music technology and music theory.
 
 # 💻 Install Mercury
 
@@ -64,7 +64,7 @@ You are now ready to start coding your first sounds! 🎶💻🎶
 
 Now go ahead and play all you want! For further information on the syntax and code see:
 
-- [Tutorial](/tutorial.md)
+- [Tutorial](./tutorial.md)
 - [Documentation](./README.md) 
 
 # ⚠ Troubleshooting
