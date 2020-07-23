@@ -25,7 +25,8 @@ While working on this tutorial you might run into some issues where something is
 	- [A `beat()` and `ring`]()
 		- [Musical Notation Systems]()
 		- [The `ring`]()
-		- [To `play(1)` or to `play(0)`]()
+		- [To `play(1)` or not to `play(0)`]()
+		- [Linear beats]()
 	- []()
 
 # 💻 Install Mercury
@@ -119,7 +120,7 @@ Hear how it has changed its speed? It is now 4 times faster then before. But the
 
 ## More samples
 
-Let's make things a bit more interesting by adding more samples. For example a drumbeat usually consists of a kick (or bassdrum), a snare (or snaredrum) and a hihat. All this sounds can have a different timing they need to be played to create the beat you want. The most basic beat (or groove) has a kick 4 times per measure, a snare 2 times and a hihat 8 times.
+Let's make things a bit more interesting by adding more samples. For example a drumbeat usually consists of a kick (or bassdrum), a snare (or snaredrum) and a hihat. All these sounds can have a different timing that creates the beat you want. The most basic beat (or groove) has a kick 4 times per measure (called *four-on-the-floor*), a snare 2 times and a hihat 8 times.
 
 Change your code and execute:
 ```java
@@ -187,7 +188,7 @@ ring myFirstRing [0.25 0.5 0 2 4 8 16 32]
 
 The line starts with the code `ring`, followed by the name of the ring. The name can be any characters you like except for numerical values. All values between the `[` and `]` (square brackets) are part of the ring. Every value separated by a space is considered a new value. In this example the ring has 8 values starting at `0.25` and ending at `32`.
 
-### To `play(1)` or to `play(0)`
+### To `play(1)` or not to `play(0)`
 
 In order to create a rhythm for an instrument we can make a ring consisting of zeroes and ones. The `1` represents a `TRUE` value, resulting in the triggering of the sound, the `0` a `FALSE` value that will not play. Now lets put this into practice. In order to keep it simple for now we erase the previous code and work with only one instrument. 
 
@@ -257,19 +258,31 @@ ring theSounds [kick_house hat_click snare_fat hat_click]
 new sample theSounds time(1/8)
 ```
 
-Now to make this a bit more interesting we can combine this technique with another ring that holds some zeroes and ones to play rhythm.
+Now to make this a bit more interesting we can combine this technique with another ring that holds some zeroes and ones to play a rhythm at a time of `1/16`.
 
-Like so:
+For example like so:
 ```java
+set tempo 110
 
+ring theSounds [kick_house hat_click snare_fat hat_click]
+ring rhythm [1 0 1 0 0 1 0 1]
 
+new sample theSounds time(1/16) play(rhythm)
 ```
 
-## speed()
+Give yourself some time to experiment with all the code so far to get yourself comfortable with the different functions, arguments and declaring of rings. Try some different rhythms in various lengths, try some different samples in different orders as well.
 
-## shape()
+<!-- ## speed() -->
 
-## 
+<!-- ## shape() -->
+
+<!-- ## offset() -->
+
+<!-- ## fx() -->
+
+<!-- ## time() 2nd argument -->
+
+<!-- ## beat() resets 2nd argument -->
 
 ### Algorithmic Composition
 
