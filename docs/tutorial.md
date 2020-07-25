@@ -11,13 +11,13 @@ After that we will focus on creating a synthesizer that allows us to play differ
 
 While working on this tutorial you might run into some issues where something is not working as expected or as mentioned in the tutorial. This can have many different reasons. The first thing you can do is go to the [**troubleshooting**]() page and see if you can find your problem there. The next thing you can do is try to restart Mercury and see if that solves the issue. If none of that worked you can check the [**issues**](https://github.com/tmhglnd/mercury/issues) to see if your problem was already reported by someone else. If not, you can file a [new issue](https://github.com/tmhglnd/mercury/issues/new) yourself. An other possibility for the issue is that this tutorial actually has an typ-o or error of some kind. 
 
-**You are welcome to edit this tutorial and make a pull request.**
+**You are welcome to edit this tutorial and make a pull request.** :pray:
 
 # Table of Contents
 
 - [Install Mercury](#-install-mercury)
 - [Launch Mercury](#-launch-mercury)
-- [The Sampler](#-sampler)
+- [The Sampler](#-the-sampler)
 	- [One `sample`]()
 	- [What's the `time()`?]()
 	- [More samples]()
@@ -28,6 +28,10 @@ While working on this tutorial you might run into some issues where something is
 		- [To `play(1)` or not to `play(0)`]()
 		- [Linear beats]()
 	- []()
+- [The Synth](#-the-synth)
+	- []()
+		- []()
+- [Power of Algorithms](#-power-of-algorithms)
 
 # 💻 Install Mercury
 
@@ -83,6 +87,8 @@ The main window is used to quickly access some of the most important functions i
 You are now ready to start coding your first sounds! 🎶💻🎶
 
 # 💾 The Sampler
+
+[skip introduction](#one-sample)
 
 A big part of electronic music (but for sure also in many other music genres) is the use of samples. The word sample can have different meanings accross various musical contexts. 
 
@@ -270,7 +276,9 @@ ring rhythm [1 0 1 0 0 1 0 1]
 new sample theSounds time(1/16) play(rhythm)
 ```
 
-Give yourself some time to experiment with all the code so far to get yourself comfortable with the different functions, arguments and declaring of rings. Try some different rhythms in various lengths, try some different samples in different orders as well.
+Give yourself some time to experiment with all the code so far to get yourself comfortable with the different functions and their arguments and making of rings. Try some different rhythms in various lengths, try some different samples in different orders as well. Have fun!
+
+There is still so much to do with just the sampler, but for now we'll first introduce another instrument in Mercury: the Synthesizer.
 
 <!-- ## speed() -->
 
@@ -283,6 +291,67 @@ Give yourself some time to experiment with all the code so far to get yourself c
 <!-- ## time() 2nd argument -->
 
 <!-- ## beat() resets 2nd argument -->
+
+# 🎹 The Synth
+
+[skip introduction]()
+
+A synthesizer is an electronic musical instrument that generates its sound through analog electrical circuits or in a digital manner through chips and computer code. Generating sounds in these ways is called synthesis. The first instrument that was defined as a synthesizer ([the Moog](https://en.wikipedia.org/wiki/Moog_synthesizer)) was introduced in 1964, but before that there were already other electrical instruments available such as the [Theremin](https://en.wikipedia.org/wiki/Theremin) (1928) and the [Hammond Organ](https://en.wikipedia.org/wiki/Hammond_organ) (1935). 
+
+The basic building blocks needed to do synthesis are one or multiple oscillators (audio signal generators), methods to add or multiply signals and filters to remove parts of a signal. By combining these in different ways you can perform a wide variety of synthesis techniques, such as [additive synthesis](https://en.wikipedia.org/wiki/Additive_synthesis), [subtractive synthesis](https://en.wikipedia.org/wiki/Subtractive_synthesis), [amplitude modulation synthesis](https://en.wikipedia.org/wiki/Amplitude_modulation), [ring modulation synthesis](https://en.wikipedia.org/wiki/Ring_modulation), [frequency modulation synthesis](https://en.wikipedia.org/wiki/Frequency_modulation), [physical modelling synthesis](https://en.wikipedia.org/wiki/Physical_modelling_synthesis), [analyse synthesis](https://en.wikipedia.org/wiki/Vocoder) (or resynthesis), [wavetable synthesis](https://en.wikipedia.org/wiki/Wavetable_synthesis) and [sample-based synthesis](https://en.wikipedia.org/wiki/Sample-based_synthesis). And of course different techniques can also be combined to generate the desired sounds.
+
+An oscillator is a signal generator that produces a periodic wave. The four most common [waveforms](https://en.wikipedia.org/wiki/Waveform) are a sine-, sawtooth-, square- and triangle-wave. The name describes the shape of the wave if you would plot it in a graph of time against amplitude. The sinewave is a pure single tone. The pitch (how high or low does it sound) is called the Frequency and is expressed in Hertz (Hz). The other waveforms have a richer sound because they consist of what are called harmonics. [Harmonics](https://en.wikipedia.org/wiki/Harmonic) can be defined as a range of stacked sinewaves of different frequencies on top of the [*fundamental* frequency](https://en.wikipedia.org/wiki/Fundamental_frequency). The relationship between these frequencies is different between the three waves (saw, square and triangle) and determines the *color* of the sound (also called [*timbre*](https://en.wikipedia.org/wiki/Timbre)) The timbre is that what makes an instrument sound like a flute, violin, guitar or voice, even if they play or sing the same note. 
+
+## Play the `synth`
+
+Now lets create our first synthesizer. For this we type the following code and execute it:
+
+```java
+new synth saw
+```
+
+You now hear the sawtooth waveform play a note. The default `time()` for the synth is `1`, the same as with the `sample`. Now try the other waveforms as well: `square`, `triangle`, `sine`. Notice that the triangle sounds a bit darker, this is because its harmonics aren't as loud as with the square and the saw. Also notice that the sine is almost impossible to hear (depending on your headphones or speakers). This is because the sine is just a single frequency, no harmonics. And the default frequency for the synth is quite low. 
+
+## A `note()`
+
+Now lets stick with the `sine` oscillator for a while and try to make some different pitches. In a moment we will look into how the notes work in Mercury, but first lets just try some different values to get a feeling of what happens to the sound.
+
+Try these following code snippets and hear how the pitch changes, you can also try as many other values as you want of course:
+
+```java
+new synth sine note(0 1)
+```
+```java
+new synth sine note(7 1)
+```
+```java
+new synth sine note(0 2)
+```
+```java
+new synth sine note(7 2)
+```
+
+<!-- ### 12-TET system and scales
+
+## shape()
+
+##  -->
+
+# 🌈 Color the sounds
+
+<!-- ## filter
+
+## envelope filter
+
+## drive
+
+## reverb
+
+## chip
+
+## lfo -->
+
+# 🎲 Power of Algorithms
 
 ### Algorithmic Composition
 
