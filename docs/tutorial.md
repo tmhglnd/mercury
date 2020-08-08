@@ -298,9 +298,9 @@ There is still so much to do with just the sampler, but for now we'll first intr
 
 A synthesizer is an electronic musical instrument that generates its sound through analog electrical circuits or in a digital manner through chips and computer code. Generating sounds in these ways is called synthesis. The first instrument that was defined as a synthesizer ([the Moog](https://en.wikipedia.org/wiki/Moog_synthesizer)) was introduced in 1964, but before that there were already other electrical instruments available such as the [Theremin](https://en.wikipedia.org/wiki/Theremin) (1928) and the [Hammond Organ](https://en.wikipedia.org/wiki/Hammond_organ) (1935). 
 
-The basic building blocks needed to do synthesis are one or multiple oscillators (audio signal generators), methods to add or multiply signals and filters to remove parts of a signal. By combining these in different ways you can perform a wide variety of synthesis techniques, such as [additive synthesis](https://en.wikipedia.org/wiki/Additive_synthesis), [subtractive synthesis](https://en.wikipedia.org/wiki/Subtractive_synthesis), [amplitude modulation synthesis](https://en.wikipedia.org/wiki/Amplitude_modulation), [ring modulation synthesis](https://en.wikipedia.org/wiki/Ring_modulation), [frequency modulation synthesis](https://en.wikipedia.org/wiki/Frequency_modulation), [physical modelling synthesis](https://en.wikipedia.org/wiki/Physical_modelling_synthesis), [analyse synthesis](https://en.wikipedia.org/wiki/Vocoder) (or resynthesis), [wavetable synthesis](https://en.wikipedia.org/wiki/Wavetable_synthesis) and [sample-based synthesis](https://en.wikipedia.org/wiki/Sample-based_synthesis). And of course different techniques can also be combined to generate the desired sounds.
+The basic building blocks needed to do synthesis are one or multiple oscillators (audio signal generators), methods to add or multiply signals and filters to remove parts of a signal. By combining these in different ways you can perform a wide variety of synthesis techniques, such as [additive synthesis](https://en.wikipedia.org/wiki/Additive_synthesis), [subtractive synthesis](https://en.wikipedia.org/wiki/Subtractive_synthesis), [amplitude modulation synthesis](https://en.wikipedia.org/wiki/Amplitude_modulation), [ring modulation synthesis](https://en.wikipedia.org/wiki/Ring_modulation), [frequency modulation synthesis](https://en.wikipedia.org/wiki/Frequency_modulation), [physical modelling synthesis](https://en.wikipedia.org/wiki/Physical_modelling_synthesis), [analyse synthesis](https://en.wikipedia.org/wiki/Vocoder) (or resynthesis), [wavetable synthesis](https://en.wikipedia.org/wiki/Wavetable_synthesis) and [sample-based synthesis](https://en.wikipedia.org/wiki/Sample-based_synthesis). On top of that different techniques can of course be combined to generate even more sounds.
 
-An oscillator is a signal generator that produces a periodic wave. The four most common [waveforms](https://en.wikipedia.org/wiki/Waveform) are a sine-, sawtooth-, square- and triangle-wave. The name describes the shape of the wave if you would plot it in a graph of time against amplitude. The sinewave is a pure single tone. The pitch (how high or low does it sound) is called the Frequency and is expressed in Hertz (Hz). The other waveforms have a richer sound because they consist of what are called harmonics. [Harmonics](https://en.wikipedia.org/wiki/Harmonic) can be defined as a range of stacked sinewaves of different frequencies on top of the [*fundamental* frequency](https://en.wikipedia.org/wiki/Fundamental_frequency). The relationship between these frequencies is different between the three waves (saw, square and triangle) and determines the *color* of the sound (also called [*timbre*](https://en.wikipedia.org/wiki/Timbre)) The timbre is that what makes an instrument sound like a flute, violin, guitar or voice, even if they play or sing the same note. 
+An oscillator is a signal generator that produces a periodic wave. This periodic wave is what drives your speaker (move it back and forth) and produces airpressure differences that you will perceive as sound. The four most common [waveforms](https://en.wikipedia.org/wiki/Waveform) are a sine-, sawtooth-, square- and triangle-wave. The name describes the shape of the wave if you would plot it in a graph of time against amplitude. The sinewave is a pure tone consisting of a single frequency. The pitch (how high or low does it sound) is called the Frequency and is expressed in Hertz (Hz). The other waveforms have a richer sound because they consist of more frequencies called harmonics. [Harmonics](https://en.wikipedia.org/wiki/Harmonic) can be defined as a range of stacked sinewaves of different frequencies on top of the [*fundamental* frequency](https://en.wikipedia.org/wiki/Fundamental_frequency). The relationship between these frequencies is different between the three waves (saw, square and triangle) and determines the *color* of the sound (also called [*timbre*](https://en.wikipedia.org/wiki/Timbre)). The timbre is that what makes an instrument sound like a flute, violin, guitar or voice, even if they play or sing the same note. 
 
 ## Play the `synth`
 
@@ -314,9 +314,9 @@ You now hear the sawtooth waveform play a note. The default `time()` for the syn
 
 ## A `note()`
 
-Now lets stick with the `sine` oscillator for a while and try to make some different pitches. In a moment we will look into how the notes work in Mercury, but first lets just try some different values to get a feeling of what happens to the sound.
+For now lets stick with the `sine` oscillator for a while and try to make some different pitches. In a moment we will look into how the notes work in Mercury, but first lets just try some different values to get a feeling of what happens to the sound.
 
-Try these following code snippets and hear how the pitch changes, you can also try as many other values as you want of course:
+Try these following code snippets and hear how the pitch changes, you can try as many other values as you want of course:
 
 ```java
 new synth sine note(0 1)
@@ -331,9 +331,23 @@ new synth sine note(0 2)
 new synth sine note(7 2)
 ```
 
-<!-- ### 12-TET system and scales
+### 12-TET system
 
-## shape()
+In our western music the most common tuning system is the so called 12-Tone Equal Temperament, or 12-TET. This means that we divide a full octave into 12 equal steps.
+
+You've maybe heard of [Pythagoras](https://en.wikipedia.org/wiki/Pythagoras), a greek philospher and mathematician famous for the pythagorean theorem. He discoverd around 500 BCE that when you take a string (like a guitar) and make another string with half the distance, that string sounds twice as high in pitch. This doubling of pitch is called an Octave. This means that if you have a string with a frequency of 200 Hz, a string that is half that long will have a pitch of 400 Hz. Phytagoras took this idea and expanded it by taking a third of that string, a fourth, a fifth and so on. This let to the discovery of the harmonic series (for example 100 Hz, 200, 300, 400, 500...). 
+
+The distance of an octave is quite big, and we can fit more pitches of different intervals in between two octaves. In the past this was done by building the tuning system based on the harmonic series.
+
+### Scales
+
+
+
+Since the 18th century the [12-Tone Equal Temperament](https://en.wikipedia.org/wiki/Equal_temperament) is used. In this system all the octaves are completely consonant over the entire range of the keyboard, and all the notes in between are at an equal distance from eachother. The intervales smaller than an octave are ever so slightly out of tune because of this method of tuning. There are other tuning systems in the world as well, for example [Slendro](https://en.wikipedia.org/wiki/Slendro) is a 5-TET tuning system from Indonesia. 
+
+From our tuning-system we can make various scales. The scale that has all the notes is called the [*chromatic*](https://en.wikipedia.org/wiki/Chromatic_scale) scale. Other scales usually consist of 7 notes picked from those 12. The 12 tones in the chromatic scale are actually semitones (half steps). Most scales have a combination of tones and semitones (full and half steps). This is what is called a Diatonic scale. The most famous scales are the major and minor scale. 
+
+<!-- ## shape()
 
 ##  -->
 
