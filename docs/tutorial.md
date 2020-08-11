@@ -337,15 +337,64 @@ In our western music the most common tuning system is the so called 12-Tone Equa
 
 You've maybe heard of [Pythagoras](https://en.wikipedia.org/wiki/Pythagoras), a greek philospher and mathematician famous for the pythagorean theorem. He discoverd around 500 BCE that when you take a string (like a guitar) and make another string with half the distance, that string sounds twice as high in pitch. This doubling of pitch is called an Octave. This means that if you have a string with a frequency of 200 Hz, a string that is half that long will have a pitch of 400 Hz. Phytagoras took this idea and expanded it by taking a third of that string, a fourth, a fifth and so on. This let to the discovery of the harmonic series (for example 100 Hz, 200, 300, 400, 500...). 
 
-The distance of an octave is quite big, and we can fit more pitches of different intervals in between two octaves. In the past this was done by building the tuning system based on the harmonic series.
+The distance of an octave is quite big, and we can fit more pitches of different intervals in between two octaves. Pythagoras build its [tuning system](https://en.wikipedia.org/wiki/Pythagorean_tuning) based on stacking perfect fifths (ratio 3:2) and scaling down octaves to fit in one octave. This system had a slight problem that the octaves were slightly out of tune.
 
 ### Scales
 
+Our current note name system - C D E F G A B - started out around the 12th century. At that time there was not really a notation system and scales (a ascending sequence of notes). The different scales were referred to as modes and all ended and started at a different note. These were later on defined as do, re, mi, fa, sol, la, ti and do again. Later on these became A up till G. The do's are both the same note only an octave higher, so they need to have the same name. In the past this was notated as A, a, aa for three octaves. Sometimes when the mode starts on a different letter, some notes are supposed to sound higher or lower. This is where the accidentals came in to play. If a not is made a bit lower, it is called flat (b) and a bit higher it is called sharp (#). This completed the 12 tone system that we know now. C, C#/Db, D D#/Eb, E, F, F#/Gb, G, G#/Ab, A, A#/Bb, B. You will notice that some notes don't have a sharp or flat note in between (E-F and B-C), this is because these notes are already a half-step apart, while all the other notes are actually a whole-step apart.
 
+Since the 18th century the [12-Tone Equal Temperament](https://en.wikipedia.org/wiki/Equal_temperament) is used. In this system all the octaves are completely consonant over the entire range of the keyboard, and all the notes in between are at an equal distance from eachother. Because of this manner of tuning some notes are every so slightly out of tune when compared with the harmonic series ratios, but the system allows for quick switching between scales and tonal centre, and therefore it is still used mostly today. There are other tuning systems in the world as well, for example [Slendro](https://en.wikipedia.org/wiki/Slendro) is a 5-TET tuning system from Indonesia. 
 
-Since the 18th century the [12-Tone Equal Temperament](https://en.wikipedia.org/wiki/Equal_temperament) is used. In this system all the octaves are completely consonant over the entire range of the keyboard, and all the notes in between are at an equal distance from eachother. The intervales smaller than an octave are ever so slightly out of tune because of this method of tuning. There are other tuning systems in the world as well, for example [Slendro](https://en.wikipedia.org/wiki/Slendro) is a 5-TET tuning system from Indonesia. 
+From our tuning-system we can make various scales. The scale that has all the notes is called the [*chromatic*](https://en.wikipedia.org/wiki/Chromatic_scale) scale. Other scales usually consist of 7 notes picked from those 12 (originating from the modes). The distances between the 12 tones in the chromatic scale are called semitones (half steps). Most scales have a combination of tones and semitones (full and half steps). This is what is called a Diatonic scale. The most famous scales are the major and minor scale. The major scale when starting from C has no accidentals (C D E F G A B, with steps W W H W W W H), but when starting this same series from A you get a minor scale (A B C D E F G, with steps W H W W H W).
 
-From our tuning-system we can make various scales. The scale that has all the notes is called the [*chromatic*](https://en.wikipedia.org/wiki/Chromatic_scale) scale. Other scales usually consist of 7 notes picked from those 12. The 12 tones in the chromatic scale are actually semitones (half steps). Most scales have a combination of tones and semitones (full and half steps). This is what is called a Diatonic scale. The most famous scales are the major and minor scale. 
+### Mercury Notation System
+
+Now let's go back to our coding of notes. In Mercury the notes are not written down as letters, but as numbers. These numbers are added as arguments to the `note()` method. The arguments consist of 2 numbers, the first number is the tone-step in the chromatic 12-TET system, the second number is an octave-step. Later on we'll see how we can work with scales and changing the tonal centre as well. 
+
+By default Mercury works with `C` as the tonal centre (or root) and `Chromatic` as the scale used. This means that the `note(0 0)` corresponds to the 1st note (counting starts at 0) in the 12-TET system (which is `C`) and the second `0` is the default octave. Now a `note(0 2)` would also be a `C`, only 2 octaves higher. A `note(7 1)` would be the 8th note in the 12-TET system starting at `C`, one octave higher, resulting in `G`
+
+## A melody
+
+Now that we know which numbers make up which notes we can make a melody. By putting the numbers in a ring and giving the name of the ring as argument to the `note()` function.
+
+```java
+ring myMelody [0 4 7 5 7 9 4 5]
+
+new synth sine note(myMelody 2) time(1/8)
+```
+
+Try different numbers to hear which ones sound nice and which ones don't. You can also try different octaves as well or different waveforms of course. Maybe make a rhythm as well? It's all up to you! 🎶
+
+## Harmony
+
+When two or more melodic instruments play together you hear multiple pitches at the same time. This is called a harmony. We can make two instances of a `synth` and make different notes for them to play, like so:
+
+```java
+ring myMelody [0 4 7 5 7 9 4 5]
+ring melodyTwo [7 7 5 5 4 4 0 0]
+
+new synth sine note(myMelody 3) time(1/8)
+new synth sine note(melodyTwo 2) time(1/8)
+```
+
+Or we can use the same melody from one `ring` but let the instruments play at different `time()` intervals.
+
+```java
+ring myMelody [0 4 7 5 7 9 4 5]
+
+new synth sine note(myMelody 2) time(1/8)
+new synth sine note(myMelody 1) time(1/6)
+```
+
+By adding a rhythm for the synths as well we can make more interesting compositions. The rhythm makes sure that every time a synth is played the next note from the ring is picked and the pitch is changed.
+
+```java
+ring myMelody [0 4 7 5 7 9 4 5]
+ring myRhythm [1 0 0 1 0 0 1 0]
+
+new synth sine note(myMelody 3) time(1/16) play(myRhythm)
+new synth sine note(myMelody 2) time(1/12) play(myRhythm)
+```
 
 <!-- ## shape()
 
