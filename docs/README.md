@@ -80,3 +80,24 @@
 	- clone
 	- spray
 	- every
+
+## Param Glossary
+
+**Values**
+
+- `Value` -> Any Number or Name
+	- `Number` -> Int+, Int or Float
+		- `Bool` -> 0 or 1 (true or false)
+		- `Int+` -> A positive whole number, bigger than 0
+		- `Int` -> A whole number, negative or positive, including 0
+		- `Float` -> A floating-point number, negative or positive, including 0
+	- `Name` -> A combination of letter-characters, may include capital letter, underscores and digits
+
+**Rings**
+
+- `Ring` -> A ring with `Value`'s
+	- `NumberRing` -> A ring with `Number`'s
+		- `IntRing+` -> A ring with `Int+`'s
+		- `IntRing` -> A ring with `Int`'s
+		- `FloatRing` -> A ring with `Float`'s
+	- `NameRing` -> A ring with `Name`'s

@@ -2,28 +2,29 @@
 
 ## tempo
 
-Change the global tempo in Beats Per Minute (BPM), counted in quarter-notes. Second argument sets a ramptime in milliseconds to gradually change the tempo over the provided amount of time (!WARNING: experimental and may lag/glitch!)
+Change the global tempo in Beats Per Minute (BPM), counted in quarter-notes. Second argument sets a ramptime in milliseconds to gradually change the tempo over the provided amount of time (*!WARNING: experimental and may lag/glitch!*)
 
-```
-set tempo <bpm> <ramptime, optional>
-```
-example 
-```
+**arguments**
+- {Number+} -> The BPM as a positive number
+- {Number} -> The ramptime (optional/experimental)
+
+```java
 set tempo 128
+
 set tempo 80 5000
 ```
 
 ## scale
 
-Set the tone scale for which all the played notes will be mapped to. An optional second argument sets the root for the scale. The default scale is `chromatic c`
+Set the scale in a 12-TET system for which all the played notes will be mapped to. An optional second argument sets the tone-center (or root) for the scale. The default scale and root is `chromatic c`
 
-```
-set scale <scale_name> <root, optional (default=C)>
-```
+**arguments**
+- {Name} -> the scale name
+- {Name} -> the root (optional, default=c)
 
-examples 
-```
+```java
 set scale major D#
+
 set scale minor_harmonic Eb
 ```
 
@@ -76,13 +77,12 @@ The naming convention and offsets for the roots are:
 
 ## scalar
 
-Scalar transposition, All the current notes are shifted up or down a certain amount of semitones but preserving the original scale.
+Scalar transposition, All the current notes are shifted up or down a certain amount of semitones but remaps the notes to the set scale. This is different from transposing the scales.
 
-```
-set scalar <scalar-transpose-by>
-```
-examples
-```
+**arguments**
+- {Int} -> scalar to shift notes by
+
+```java
 set scalar 2
 ```
 
@@ -90,24 +90,24 @@ set scalar 2
 
 Set the random seed as integer for the psuedorandom number generators used in all functions across the environment. Setting the seed to a fixed integer will help make sure random values keep the same sequence every time you re-evaluate the code. A second optional argument resets the seed every n-bar, which can be useful for random arguments used outside ring generation, such as `pan(random)` or `beat(0.5)`
 
-```
-set randomSeed <integer> <reset-every-n-bar, optional (default=null)>
-```
-example 
-```
+**arguments**
+- {Int+} -> the seed for the psudeorandom number generators (default=0)
+- {Number} -> reset time in n-bars, or divisions (optional, default=null)
+
+```java
 set randomSeed 31415
-set randomSeed 9324 2
+set randomSeed 1618 2
 ```
 
 ## volume
 
 Set the global volume in floating-point amplitude for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create fade-in/fade-out or smooth transitions to for dynamics.
 
-```
-set volume <amplitude> <ramptime, optional (default=0)>
-```
-example
-```
+**arguments**
+- {Float} -> attenuate the total volume of all instruments (default=1)
+- {Int+} -> ramptime in milliseconds (optional, default=0)
+
+```java
 set volume 0.5 5000
 ```
 
@@ -115,36 +115,36 @@ set volume 0.5 5000
 
 Set the global highPass filter cutoff in Hz for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create smooth transitions from one value to another.
 
-```
-set hipass <cutoff> <ramptime, optional (default=0)>
-```
-example
-```
-set hipass 900 5000
+**arguments**
+- {Float+} -> cutoff frequenzy in Hertz
+- {Int+} -> ramptime in milliseconds (optiona, default=0)
+
+```java
+set highPass 900 5000
 ```
 
 ## lowPass
 
 Set the global low-pass filter cutoff in Hz for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create smooth transitions from one value to another.
 
-```
-set lopass <cutoff> <ramptime, optional (default=0)>
-```
-example
-```
-set lopass 900 5000
+**arguments**
+- {Float+} -> cutoff frequenzy in Hertz
+- {Int+} -> ramptime in milliseconds (optiona, default=0)
+
+```java
+set lowPass 900 5000
 ```
 
 ## osc
 
-Set the ip-address, in-port and out-port number for the network to transmit OSC-messages over using UDP. Default settings are 8000 (in-port), 9000 (out-port), localhost (ip).
+Set the ip-address, in-port and out-port number for the network to transmit OSC-messages over using UDP. Default settings are 8000 (in-port), 9000 (out-port), localhost (127.0.0.1) (ip).
 
-```
-set osc (<default> | <in-port> <out-port> <ip-address>)
-```
+**arguments**
+- {Int+} -> receiving port (default=8000)
+- {Int+} -> sending port (default=9000)
+- {Name} -> ip-address in the form of xxx.xxx.xxx.xxx or localhost (default=localhost)
 
-example
-```
+```java
 set osc default
 
 set osc 8000 9000 127.0.0.1
@@ -158,16 +158,15 @@ set osc out 9000
 
 Output midi clock sync message to sync an external device to the tempo of Mercury.
 
-```
-set midiclock (<getports> | <port-name> | off)
-```
+**arguments**
+- {Name} -> getports, the midi portname or off (default=off)
 
-example
-```
+```java
 set midiclock getports
 // returns port names in console
 
-set midiclock <port-name>
+set midiclock midiPortName
+// turn the clock on and 
 // outputs clock-sync to midiport of that name
 
 set midiclock off
