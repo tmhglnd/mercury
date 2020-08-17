@@ -33,6 +33,7 @@ This pack of sounds contains sounds by the following users:
 - unfa ( https://freesound.org/people/unfa/ )
 - Cunningar0807 ( https://freesound.org/people/Cunningar0807/ )
 - mmiron ( https://freesound.org/people/mmiron/ )
+- ldk1609 ( https://freesound.org/people/ldk1609/ )
 
 You can find the packs online at: 
 - https://freesound.org/people/NoiseCollector/packs/219/
@@ -56,6 +57,8 @@ You can find the packs online at:
 - https://freesound.org/people/unfa/packs/14014/
 - https://freesound.org/people/Cunningar0807/packs/24779/
 - https://freesound.org/people/mmiron/packs/8162/
+- https://freesound.org/people/ldk1609/packs/3578/
+- https://freesound.org/people/ldk1609/packs/3561/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
@@ -291,6 +294,77 @@ You can find the packs online at:
 * 436128__cunningar0807__harp-glissando-up.aiff
 * url: https://freesound.org/s/436128/
 * license: Creative Commons 0
+
+#### violin_g
+* 56225__ldk1609__violin_spiccato_G2.aiff
+* url: https://freesound.org/s/56225/
+* license: Creative Commons 0
+
+#### violin_f
+* 56218__ldk1609__violin_spiccato_F3.aiff
+* url: https://freesound.org/s/56218/
+* license: Creative Commons 0
+
+#### violin_e
+* 56212__ldk1609__violin_spiccato_E3.aiff
+* url: https://freesound.org/s/56212/
+* license: Creative Commons 0
+
+#### violin_d
+* 56209__ldk1609__violin_spiccato_D3.aiff
+* url: https://freesound.org/s/56209/
+* license: Creative Commons 0
+
+#### violin_c
+* 56203__ldk1609__violin_spiccato_C3.aiff
+* url: https://freesound.org/s/56203/
+* license: Creative Commons 0
+
+#### violin_b
+* 56196__ldk1609__violin_spiccato_B2.aiff
+* url: https://freesound.org/s/56196/
+* license: Creative Commons 0
+
+#### violin_a
+* 56192__ldk1609__violin_spiccato_A2.aiff
+* url: https://freesound.org/s/56192/
+* license: Creative Commons 0
+
+#### pluck_g
+* 55992__ldk1609__violin_pizz_non_vib_G2.aiff
+* url: https://freesound.org/s/55992/
+* license: Creative Commons 0
+
+#### pluck_f
+* 55985__ldk1609__violin_pizz_non_vib_F3.aiff
+* url: https://freesound.org/s/55985/
+* license: Creative Commons 0
+
+#### pluck_e
+* 55979__ldk1609__violin_pizz_non_vib_E3.aiff
+* url: https://freesound.org/s/55979/
+* license: Creative Commons 0
+
+#### pluck_d
+* 55976__ldk1609__violin_pizz_non_vib_D3.aiff
+* url: https://freesound.org/s/55976/
+* license: Creative Commons 0
+
+#### pluck_c
+* 55970__ldk1609__violin_pizz_non_vib_C3.aiff
+* url: https://freesound.org/s/55970/
+* license: Creative Commons 0
+
+#### pluck_b
+* 55963__ldk1609__violin_pizz_non_vib_B2.aiff
+* url: https://freesound.org/s/55963/
+* license: Creative Commons 0
+
+#### pluck_a
+* 55959__ldk1609__violin_pizz_non_vib_A2.aiff
+* url: https://freesound.org/s/55959/
+* license: Creative Commons 0
+
 
 ## Idiophonic
 
