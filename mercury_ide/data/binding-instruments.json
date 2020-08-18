@@ -1,4 +1,9 @@
 {
+	"voice" : {
+		"Alex" : [ "speak_out", 7 ],
+		"Samantha" : [ "speak_out", 7 ]
+	}
+,
 	"emitter" : 	{
 		"osc" : [ "osc_out", 5 ],
 		"midi" : [ "midi_out", 6 ]

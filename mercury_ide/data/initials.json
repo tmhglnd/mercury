@@ -77,5 +77,14 @@
 		"group" : "no_group",
 		"sendOSC" : 1
 	}
-
+,
+	"voice" : {
+		"beat" : 1,
+		"time" : "1",
+		"name" : "Samantha",
+		"group" : "no_group",
+		"sendOSC" : 0,
+		"speed" : 1,
+		"gain" : 0.5
+	}
 }
