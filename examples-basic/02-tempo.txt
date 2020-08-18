@@ -1,0 +1,7 @@
+
+// change the total tempo of the environment
+// in beats per minute
+
+set tempo 98
+
+new sample bamboo_a time(1/4)

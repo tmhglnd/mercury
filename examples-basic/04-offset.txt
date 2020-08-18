@@ -1,0 +1,9 @@
+set tempo 105
+
+// many divisions are possible
+// and with offset as 2nd argument
+
+new sample pluck_a time(1/2)
+new sample pluck_c time(1/2 1/4)
+new sample pluck_e time(3/16)
+

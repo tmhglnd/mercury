@@ -1,0 +1,5 @@
+set tempo 113
+
+new synth sine time(1/4) note(0 2)
+new synth sine time(1/5) note(7 2)
+

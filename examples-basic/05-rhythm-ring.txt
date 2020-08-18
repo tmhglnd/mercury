@@ -1,0 +1,10 @@
+set tempo 105
+
+// a list with 1's and 0's to play
+// as a rhythm
+ring myRhythm [1 0 0 1 0 1 0 1]
+
+new sample pluck_a time(1/4)
+new sample pluck_e time(1/16) beat(myRhythm) 
+
+

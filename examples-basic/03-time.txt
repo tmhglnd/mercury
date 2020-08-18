@@ -1,0 +1,7 @@
+set tempo 98
+
+// add another instrument with different 
+// timing division
+
+new sample bamboo_a time(1/5)
+new sample bamboo_c time(1/3)

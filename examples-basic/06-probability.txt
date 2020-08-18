@@ -1,0 +1,12 @@
+set tempo 105
+
+// play the instruments 90%, 40%, 
+// and 20% of the time
+
+// new sample pluck_a time(1/4) beat(0.9)
+// new sample pluck_c time(1/8) beat(0.4)
+// new sample pluck_e time(1/16) beat(0.2) 
+
+ring pl [[pluck_a pluck_c]]
+
+new sample pl time(1/8) shape(1/16)

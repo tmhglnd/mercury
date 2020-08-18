@@ -1,0 +1,6 @@
+set tempo 113
+
+ring myMelody [0 4 5 4 7 5 2 -1]
+
+new synth sine time(1/16) note(myMelody 2)
+

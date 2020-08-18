@@ -1,0 +1,11 @@
+set tempo 97
+
+// hear how numbers are mapped
+// to the scale (resulting in doubles)
+set scale pentatonic_major g
+
+ring myMelody [0 1 2 3 4 5 6 7 8 9 10 11]
+
+new synth sine time(1/16) note(myMelody 2)
+
+

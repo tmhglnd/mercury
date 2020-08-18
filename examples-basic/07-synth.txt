@@ -1,0 +1,3 @@
+set tempo 97
+
+new synth sine time(1/8) note(0 2)

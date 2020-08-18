@@ -1,0 +1,6 @@
+set tempo 83
+
+ring myMelody [0 3 7 -1]
+ring lengths [100 1000 20 20 20]
+
+new synth sine time(1/16) note(myMelody 2) shape(lengths)

@@ -1,0 +1,17 @@
+set tempo 83
+
+ring myMelody [0 3 7 -1]
+
+// use names to have more space 
+// for functions
+
+new synth sine name(one)
+    set one time(1/16) note(myMelody 2) 
+    set one beat(0.8) shape(100)
+    set one fx(drive)
+
+new sample pluck_c name(two)
+    set two time(5/8)
+    set two fx(delay)
+
+set all fx(reverb)

@@ -1,0 +1,5 @@
+
+// make a new instrument named bamboo_a
+// played 4 times per bar 1/4
+
+new sample bamboo_a time(1/4)
