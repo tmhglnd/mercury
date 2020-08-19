@@ -268,3 +268,13 @@ new sample chimes stretch(1 1 general) speed(-1)
 - `general` : balances spectral integrity with transient preservaton
 - `extremestretch` : optimized for stretching (slowing down) material, limited to a stretch factor between 0.5 and 4
 - `effcient` : best option when CPU efficiency is critical
+
+# Text to Speech (mac-only)
+
+An experimental text-to-speech instrument is added. Using the Mac terminal speech capabilities with the help of the `aka.speech` object developed by Masayuki Akamatsu.
+
+```java
+new voice Alex speak("Hello world!") time(2)
+
+new voice Samantha speak("Hi Alex!") time(2 1)
+```
