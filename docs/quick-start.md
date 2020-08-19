@@ -6,7 +6,7 @@ This quick start guide is meant for people who are confident in working with the
 
 Read the [system requirements](./../README.md#-system-requirements) first before getting started.
 
-1. Download and install Max8 via any of the links below. Mercury runs in Max8, but **you do not need to buy a license in order to use Mercury!** 😎
+1. Download and install Max8 via any of the links below. At the moment Mercury seems to run best in Max8.0.8. **You do not need to buy a license in order to use Mercury!** 😎
 
 - [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
 - [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
@@ -34,6 +34,8 @@ $ open mercury_ide/mercury_ide.maxproj
 ```
 
 - ⏳ Give it some time to load.
+
+- ⚠ **Mac 10.14+ Users**: Make sure you give permissions to ease.mxo in the Security Preferences.
 
 In the `_mercury_main` window:
 
