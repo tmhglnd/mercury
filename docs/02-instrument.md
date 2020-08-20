@@ -247,6 +247,19 @@ new sample choir time(1/16) offset(positions)
 
 Alternative function-names: `start() | from() | onset()`
 
+## useNote
+
+Set the `useNote` method to 1 in order to be able to play the sample on different pitches with the use of the `note()` function. The `note(0 0)` will be the original pitch, and `note(0 1)` will be the same as `speed(2)`. The `speed` method is disabled when using `note`.
+
+**arguments**
+- {Int+} -> turn the note usage on/off (default=0)
+
+```java
+ring melody [0 3 7 9 -1]
+
+new sample pluck_c time(1/8) useNote(1) note(melody 0)
+```
+
 ## stretch
 
 Stretch the entire sample to the length of a full bar. Useful for when working with beats that have to be looped. Stretching is the default when working with the `loop` instrument. This is basically a `new sample` with `stretch(1)`. Optionally you can turn timestrechting on with a second argument to preserve the original pitch of the sample. A third optional argument changes the mode of the stretching, choose from: basic, monophonic, rhythmic, general, extremestretch, efficient. The default is set to efficient.
