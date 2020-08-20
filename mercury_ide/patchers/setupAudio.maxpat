@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-41",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 780.0, 675.0, 54.0, 22.0 ],
+					"text" : "deferlow"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 780.0, 645.0, 67.0, 22.0 ],
+					"text" : "mousefilter"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-56",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -67,7 +91,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 780.0, 735.0, 52.0, 22.0 ],
+					"patching_rect" : [ 780.0, 810.0, 52.0, 22.0 ],
 					"text" : "s voices"
 				}
 
@@ -79,7 +103,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 810.0, 663.0, 90.0, 22.0 ],
+					"patching_rect" : [ 808.5, 727.0, 90.0, 22.0 ],
 					"text" : "prepend voices"
 				}
 
@@ -90,7 +114,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 810.0, 705.0, 73.0, 22.0 ],
+					"patching_rect" : [ 808.5, 769.0, 73.0, 22.0 ],
 					"text" : "s storePrefs"
 				}
 
@@ -101,7 +125,8 @@
 					"hint" : "The maximum amount of instruments (synths or samples) that can be used. Every line starting with \"new\" is an instrument.",
 					"id" : "obj-46",
 					"maxclass" : "number",
-					"minimum" : 1,
+					"maximum" : 32,
+					"minimum" : 4,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -2728,7 +2753,7 @@
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"hint" : "",
 					"id" : "obj-94",
-					"items" : [ "None", ",", "Built-in Microphone", ",", "BlackHole", ",", "Saffire", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "from Max", ",", "Aggregate Device" ],
+					"items" : [ "None", ",", "Built-in Microphone", ",", "BlackHole", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "from Max", ",", "Aggregate Device" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3320,7 +3345,6 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
-					"hidden" : 1,
 					"hint" : "Link the timing of events to the signal vectorsize in the audio thread. This greatly improvies timing accuracy when using lower signal vectorsizes.",
 					"id" : "obj-71",
 					"maxclass" : "led",
@@ -3505,7 +3529,7 @@
 					"color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"id" : "obj-58",
-					"items" : [ "None", ",", "Built-in Output", ",", "BlackHole", ",", "Saffire", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)" ],
+					"items" : [ "None", ",", "Built-in Output", ",", "BlackHole", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3573,7 +3597,6 @@
 , 			{
 				"box" : 				{
 					"fontface" : 0,
-					"hidden" : 1,
 					"id" : "obj-48",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -13061,6 +13084,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-54", 0 ],
 					"source" : [ "obj-123", 0 ]
 				}
@@ -13288,7 +13318,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
 					"order" : 0,
-					"source" : [ "obj-46", 0 ]
+					"source" : [ "obj-41", 0 ]
 				}
 
 			}
@@ -13296,6 +13326,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-51", 0 ],
 					"order" : 1,
+					"source" : [ "obj-41", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
 					"source" : [ "obj-46", 0 ]
 				}
 

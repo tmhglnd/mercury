@@ -35,7 +35,7 @@ $ open mercury_ide/mercury_ide.maxproj
 
 - ⏳ Give it some time to load.
 
-- ⚠ **Mac 10.14+ Users**: Make sure you give permissions to ease.mxo in the Security Preferences.
+- ⚠ **Mac 10.14+ Users**: Make sure you give permissions to everything, especially ease.mxo under Security & Privacy Preferences.
 
 In the `_mercury_main` window:
 
