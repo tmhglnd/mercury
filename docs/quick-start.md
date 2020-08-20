@@ -52,7 +52,8 @@ In the `mercury` code editor:
 	new sample kick_house time(1/4)
 	```
 
-- 🔊 Hit `alt + return` or `Menubar > File > Execute Code`
+- 🔊 Hit `alt + return` or `Menubar > File > Execute Code` 
+	- *Mac users: Disable the Alert Volume in `System Preferences > Sounds` to disable the error sound when using shortkeys*
 
 Adjust settings under `Menubar > Settings` for:
 - Audio
