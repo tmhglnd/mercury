@@ -18,7 +18,7 @@
 		"fm" : [ "synth_fm", 3 ]
 	}
 ,
-	"poly_synth" : 	{
+	"polySynth" : 	{
 		"saw" : [ "synth_poly", 4 ],
 		"sine" : [ "synth_poly", 4 ],
 		"triangle" : [ "synth_poly", 4 ],
