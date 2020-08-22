@@ -42,23 +42,25 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 
 ## 🎉 Newest Features
 
-**Input OSC addresses as arguments for instrument methods and control the parameters externally**
+**Sample can now change the pitch with the note method instead of using speed by setting useNote to true**
 
-```c++
+```java
+ring aMelody [0 5 7 3 -1]
+
+new sample pluck_c time(1/4) useNote(1) note(aMelody 0)
+```
+
+**Input OSC addresses as arguments or output osc-messages in a similar way as using instruments**
+
+```java
 set osc default
 
 new synth sine name(sn)
     set sn note(/sine/pitch 0) shape(5 /sine/release)
     set sn fx(reverb 1 /sine/verb)
-```
-
-**new `OSC`-object, output sequences as osc-messages, custom naming of messages in a intuitive way (similar to making instruments).**
-
-```c++
-set osc default
 
 new emitter osc name(myOSC) someParam(3.14)
-// result => /myOsc/someParam 3.14
+    // result => /myOsc/someParam 3.14
 ```
 
 ## 📟 About 
