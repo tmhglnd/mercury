@@ -1,6 +1,6 @@
 {
   "name": "mercury_ide",
-  "version": "0.9.9",
+  "version": "0.12.0",
   "description": "The mercury livecoding environment NodeJS methods",
   "main": "mercury.js",
   "scripts": {
