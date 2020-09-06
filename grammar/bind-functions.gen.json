@@ -69,7 +69,7 @@
     "name": "name",
     "id": "name"
   },
-  "poly_synth": {
+  "polySynth": {
     "amp": "amp",
     "gain": "amp",
     "vol": "amp",

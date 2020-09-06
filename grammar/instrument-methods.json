@@ -23,7 +23,7 @@
 		"name"
 	],
 
-	"poly_synth" : [
+	"polySynth" : [
 		"amp",
 		"beat",
 		"env",

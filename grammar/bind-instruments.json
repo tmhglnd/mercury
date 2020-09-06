@@ -55,7 +55,7 @@
 		"choir_o" : [ "sampler", 1 ]
 	}
 ,
-	"poly_synth" : 	{
+	"polySynth" : 	{
 		"saw" : [ "synth_poly", 4 ],
 		"sine" : [ "synth_poly", 4 ],
 		"triangle" : [ "synth_poly", 4 ],

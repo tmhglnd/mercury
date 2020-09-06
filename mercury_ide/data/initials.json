@@ -20,7 +20,7 @@
 		"sendOSC" : 0
 	}
 ,
-	"poly_synth" : 	{
+	"polySynth" : 	{
 		"amp" : 0.5,
 		"beat" : 1,
 		"time" : 1,
