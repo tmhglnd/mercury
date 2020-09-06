@@ -18,7 +18,7 @@ Read the [system requirements](./../README.md#-system-requirements) first before
 	```
 	Download zip and unpack in ~/Documents/Max 8/Projects
 	```
-	Or clone/fork via commandline
+	Or **clone/fork** the project
 	```
 	$ cd ~/Documents/Max\ 8/Projects
 	$ git clone http://github.com/tmhglnd/mercury
@@ -35,7 +35,7 @@ $ open mercury_ide/mercury_ide.maxproj
 
 - ⏳ Give it some time to load.
 
-- ⚠ **Mac 10.14+ Users**: Make sure you give permissions to everything, especially ease.mxo under Security & Privacy Preferences.
+- ⚠ **Mac 10.14+ Users**: Make sure you give permissions under Security & Privacy Preferences.
 
 In the `_mercury_main` window:
 
