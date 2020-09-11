@@ -66,6 +66,33 @@ set drums fx(drive 10)
 set all fx(reverb 0.8 10)
 ```
 
+## print
+
+Print the output of a ring to the console to see its output.
+
+```java
+console show
+
+ring rnd random(12)
+ring sin sine(10 5.4)
+
+print rnd
+print sin
+
+//=> PRINT: rnd 11 7 21 11 9 8 4 6 3 8 23 10
+//=> PRINT: sin 6 7 2 10 0 11 0 11 1 8 5 5
+```
+
+## console
+
+Show the console to see the printed output or other error messages from the code. Clear the console as well.
+
+```java
+
+console show
+console empty
+```
+
 ## silence
 
 Disable all sounds that are evaluated **before** this line. Alternatively you can hit the `Alt + .` shortkey to disable the instruments. 
