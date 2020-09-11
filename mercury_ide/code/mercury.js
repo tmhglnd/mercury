@@ -174,6 +174,16 @@ const handlers = {
 	'randF' : (...v) => {
 		return Rand.randomFloat(...v);
 	},
+	// generate a random walk (drunk)
+	'drunk' : (...v) => {
+		return Rand.drunk(...v);
+	},
+	'drunkF' : (...v) => {
+		return Rand.drunkFloat(...v);
+	},
+	'drunkFloat' : (...v) => {
+		return Rand.drunkFloat(...v);
+	},
 	// generate random values picked from an urn
 	'urn' : (...v) => {
 		return Rand.urn(...v);

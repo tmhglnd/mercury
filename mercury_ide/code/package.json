@@ -9,10 +9,10 @@
   "author": "Timo Hoogland",
   "license": "ISC",
   "dependencies": {
-    "fast-glob": "^3.2.2",
-    "fs-extra": "^9.0.0",
+    "fast-glob": "^3.2.4",
+    "fs-extra": "^9.0.1",
     "path": "^0.12.7",
     "slash": "^3.0.0",
-    "total-serialism": "^1.6.12"
+    "total-serialism": "^1.8.7"
   }
 }
