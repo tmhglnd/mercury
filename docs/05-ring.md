@@ -41,6 +41,8 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [randomSeed](#randomseed)
 	- [random](#random)
 	- [randomFloat](#randomfloat)
+	- [drunk](#drunk)
+	- [drunkFloat](#drunkFloat)
 	- [urn](#urn)
 	- [coin](#coin)
 	- [dice](#dice)
@@ -377,6 +379,66 @@ ring rnf2 randomF(5 0 12)
 // => [0.16 10.72 3.16 262 2.34]
 ring rnf3 randF(5 -12 12)
 // => [-1.19 -4.21 -7.36 -10.31 6.82]
+```
+
+## drunk
+
+Generate a ring of random values but the next random value is within a limited range of the previous value generating a random "drunk" walk, also referred to as brownian motion.
+
+**arguments**
+
+- {Int+} -> number of values to output
+- {Int} -> step range for next random value
+- {Int} -> minimum range (optional, default=null)
+- {Int} -> maximum range (optional, default=null)
+- {Int} -> starting point (optional, default=(lo+hi)/2)
+- {Bool} -> fold between lo and hi range (optional, default=true)
+
+```java
+Rand.drunk(10, 5, 0, 24);
+//=> [ 13, 10, 14, 13, 14, 13, 15, 10, 8, 4 ] 
+
+// 22.00 ┼       ╭╮ 
+// 17.80 ┼─╮╭─╮  ││ 
+// 13.60 ┤ ││ ╰╮╭╯│ 
+//  9.40 ┤ ││  ╰╯ │ 
+//  5.20 ┤ ╰╯     │ 
+//  1.00 ┤        ╰ 
+
+Rand.drunk(10, 4, 0, 12, 6, false);
+//=> [ 2, -2, 2, 1, -3, -1, -2, -1, 3, 6 ] 
+
+//  2.00 ┤╭╮        
+// -0.20 ┤│╰╮     ╭ 
+// -2.40 ┼╯ ╰╮    │ 
+// -4.60 ┤   │╭╮ ╭╯ 
+// -6.80 ┼   ╰╯│╭╯  
+// -9.00 ┤     ╰╯  
+```
+
+## drunkFloat
+
+Generate a ring of random floating-point values but the next random value is within a limited range of the previous value generating a random "drunk" walk, also referred to as brownian motion.
+
+**arguments**
+
+- {Int+} -> number of values to output
+- {Number} -> step range for next random value
+- {Number} -> minimum range (optional, default=null)
+- {Number} -> maximum range (optional, default=null)
+- {Number} -> starting point (optional, default=(lo+hi)/2)
+- {Bool} -> fold between lo and hi range (optional, default=true)
+
+```java
+ring dr1 drunkFloat(5);
+//=> [ 0.493, 0.459, 0.846, 0.963, 0.400 ] 
+
+//  0.88 ┼╮╭╮  
+//  0.76 ┤╰╯│  
+//  0.63 ┤  │  
+//  0.51 ┤  ╰╮ 
+//  0.39 ┤   │ 
+//  0.26 ┤   ╰ 
 ```
 
 ## urn
