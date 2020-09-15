@@ -130,9 +130,9 @@ These system requirements are the requirements to install and run Max8 on your c
 
 #### OS
 
-`Mac` : OSX 10.11.6 or later
+`Mac` : OSX 10.13 recommended (at least 10.11.6 or later)
 
-`Windows` : 7, 8 or 10
+`Windows` : 10 (7, 8 might also work)
 
 #### CPU
 
