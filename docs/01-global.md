@@ -156,19 +156,19 @@ set osc out 9000
 
 ## midiClock
 
-Output midi clock sync message to sync an external device to the tempo of Mercury.
+Output midiclock sync messages to sync an external device to the tempo of Mercury. The device name can have spaces. Use the `getports` argument to automatically open the console and view the different portnames. Use the `off` message or `silence` or `alt + .` to stop the syncing and send a stop message.
 
 **arguments**
 - {Name} -> getports, the midi portname or off (default=off)
 
 ```java
-set midiclock getports
-// returns port names in console
+set midiClock getports
+// returns the port names in console and automatically opens the console
 
-set midiclock midiPortName
+set midiClock midiPortName
 // turn the clock on and 
 // outputs clock-sync to midiport of that name
 
-set midiclock off
+set midiClock off
 // turn the clock off (default)
 ```
