@@ -41,22 +41,24 @@ While working on this tutorial you might run into some issues where something is
 - [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
 - If links are not working you can go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
 
-2. Once you installed Max8 you can launch it. It will create a Max8 folder in your Documents. In here you can locate the Projects folder. `~/Documents/Max 8/Projects`
+2. Once you installed Max8 you can launch it. It will create a `Max 8` folder in your `Documents`. In there you may create a folder named `Projects`. The full path should now look like this: `<User>/Documents/Max 8/Projects`
 
-3. Now you can [download the latest release](https://github.com/tmhglnd/mercury/releases) or clone/fork Mercury to the Projects folder in your Documents.
+3. Now [download the latest release](https://github.com/tmhglnd/mercury/releases) or clone/fork Mercury to the Projects folder in your Documents.
 
 	```
-	Download zip and unpack in ~/Documents/Max 8/Projects
+	Download latest release and unzip entire folder in ~/Documents/Max 8/Projects
 	```
 	Or via commandline
 	```
 	$ cd ~/Documents/Max\ 8/Projects
 	$ git clone http://github.com/tmhglnd/mercury
 	```
+	
+	Now your filepath should look something like: `<User>/Documents/Max 8/Projects/mercury-v.x.x.x`
 
 # 🚀 Launch Mercury
 
-Launch Mercury by double clicking `mercury_ide.maxproj`.
+Launch Mercury by double clicking `mercury_ide.maxproj` located in the folder `mercury-v.x.x.x/mercury-ide`.
 
 - ⏳ Give it some time to load, this might take a bit depending on your computers processor.
 
