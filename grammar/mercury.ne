@@ -4,10 +4,10 @@ const moo = require('moo');
 const IR = require('./mercuryIR.js');
 
 const lexer = moo.compile({
-	comment:	/(?:[\/\/]|[#]|[$]).*?$/,
+	comment:	/(?:\/\/|\#|\$).*?$/,
 	
 	instrument:	{
-					match: [/synth\ /, /sample\ /, /poly_synth\ /, /loop\ / ],
+					match: [/synth\ /, /sample\ /, /polySynth\ /, /loop\ / ],
 					value: x => x.slice(0, x.length-1)
 				},
 
@@ -17,22 +17,28 @@ const lexer = moo.compile({
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
 	seperator:	/[\,\;]/,
-	number:		/-?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
-	operator:	/[\+\-\*\/]/,
+	
+	number:		/[+-]?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
+	// hex:		/0x[0-9a-f]+/,
+	
+	// operator:	/[\+\-\*\/]/,
 
 	lParam:		'(',
 	rParam:		')',
 	lArray:		'[',
 	rArray:		']',
+	// lFunc:		'{',
+	// rFunc:		'}'
+
+	identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
+	// signal:		/~[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
+	// osc:			/\/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
 
 	string:		{ 
 					match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
 					value: x => x.slice(1, x.length-1)
 				},
-
-	signal:		/~[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
 	
-	identifier:	/[a-zA-Z0-9\_][a-zA-Z0-9\_\-]*/,
 	ws:			/[ \t]+/,
 });
 %}
@@ -41,18 +47,14 @@ const lexer = moo.compile({
 @lexer lexer
 
 main ->
-	_ statement _
-		{% (d) => d[1] %}
-
-statement ->
 	_ globalStatement _
-		{% (d) => d[1] %}
-	|
-	_ objectStatement _
-		{% (d) => d[1] %}
+		{% (d) => { return { "@global" : d[1] }} %}
 	|
 	_ ringStatement _
-		{% (d) => d[1] %}
+		{% (d) => { return { "@ring" : d[1] }} %}
+	# |
+	# _ objectStatement _
+	# 	{% (d) => { return { "@object" : d[1] }} %}
 
 objectStatement ->
 	%newObject _ %instrument _ name
@@ -81,10 +83,10 @@ objectStatement ->
 		}%}
 
 ringStatement ->
-	%ring _ %identifier __ ringExpression
+	%ring _ %identifier _ paramElement:?
 		{% (d) => {
 			return {
-				"@varname" : d[2].value,
+				"@name" : d[2].value,
 				"@params" : d[4]
 			}
 		} %}
@@ -95,12 +97,12 @@ globalStatement ->
 	|
 	objExpression
 		{% (d) => d[0] %}
-	|
-	objExpression _ %seperator:?
-		{% (d) => d[0] %}
-	|
-	objExpression _ %seperator _ statement
-		{% (d) => [d[0], d[4]] %}
+	# |
+	# objExpression _ %seperator:?
+	# 	{% (d) => d[0] %}
+	# |
+	# objExpression _ %seperator _ statement
+	# 	{% (d) => [d[0], d[4]] %}
 
 objExpression ->
 	paramElement
@@ -109,54 +111,51 @@ objExpression ->
 	paramElement __ objExpression
 		{% (d) => [d[0], d[2]] %}
 
-ringExpression ->
-	paramElement
-		{% (d) => d[0] %}
+# ringExpression ->
+# 	paramElement
+# 		{% (d) => d[0] %}
 
 function ->
-	%identifier parameterList
+	%identifier functionArguments
 		{% (d) => {
 			return { 
-				"@function": IR.bindFunction(d[0].value),
-				//"@function": d[0].value,
-				"@params": d[1]
+				//"@function": IR.bindFunction(d[0].value),
+				"@function": d[0].value,
+				"@args": d[1]
 			}
 		}%}
 
-parameterList ->
-	%lParam _ params _ %rParam
+functionArguments ->
+	%lParam _ params:? _ %rParam
 		{% (d) => d[2] %}
-	|
-	%lParam _ %rParam
-		{% (d) => "empty" %}
 
 array ->
-	%lArray _ params _ %rArray
-		{% (d) => {
-			return {
-				"@array" : d[2]
-			}
-		}%}
+	%lArray _ params:? _ %rArray
+		{% (d) => { return { "@array" : d[2] }} %}
 
 params ->
 	paramElement
 		{% (d) => d[0] %}
 	|
 	paramElement _ params
-		{% (d) => d[0].join(d[2]) %}
+		{% (d) => [d[0], d[2]] %}
+		# {% (d) => d[0].join(d[2]) %}
 
 paramElement ->
-	name
-		{% (d) => d[0] %}
-	|
 	%number
 		{% (d) => { return { "@number" : d[0].value }} %}
+	|
+	name
+		{% (d) => d[0] %}
 	|
 	array
 		{% (d) => d[0] %}
 	|
 	function
 		{% (d) => d[0] %}
+	# |
+	# %signal
+	# 	{% (d) => { return { "@signal" : d[0].value }} %}
 
 name ->
 	%identifier
@@ -164,9 +163,6 @@ name ->
 	|
 	%string
 		{% (d) => { return { "@string" : d[0].value }} %}
-	|
-	%signal
-		{% (d) => { return { "@signal" : d[0].value }} %}
 
 # optional whitespace
 _  -> 		wschar:* 	{% (d) => null %}
