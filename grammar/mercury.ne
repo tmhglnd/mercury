@@ -4,10 +4,10 @@ const moo = require('moo');
 const IR = require('./mercuryIR.js');
 
 const lexer = moo.compile({
-	comment:	/(?:\/\/|\#|\$).*?$/,
+	comment:	/(?:\/\/|\$).*?$/,
 	
 	instrument:	{
-					match: [/synth\ /, /sample\ /, /polySynth\ /, /loop\ / ],
+					match: [/synth\ /, /sample\ /, /polySynth\ /, /loop\ /,/emitter\ / ],
 					value: x => x.slice(0, x.length-1)
 				},
 
@@ -16,8 +16,9 @@ const lexer = moo.compile({
 	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
-	seperator:	/[\,\;]/,
+	//seperator:	/[\,\;]/,
 	
+	note:		/[a-gA-G](?:[0-9])?(?:#+|b+|x)?/,
 	number:		/[+-]?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
 	// hex:		/0x[0-9a-f]+/,
 	
@@ -31,8 +32,8 @@ const lexer = moo.compile({
 	// rFunc:		'}'
 
 	identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
-	// signal:		/~[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
-	// osc:			/\/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
+	//signal:		/~(?:\\["\\]|[^\n"\\ \t])+/,
+	//osc:		/\/(?:\\["\\]|[^\n"\\ \t])*/,
 
 	string:		{ 
 					match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
@@ -52,32 +53,32 @@ main ->
 	|
 	_ ringStatement _
 		{% (d) => { return { "@ring" : d[1] }} %}
-	# |
-	# _ objectStatement _
-	# 	{% (d) => { return { "@object" : d[1] }} %}
+	|
+	_ objectStatement _
+		{% (d) => { return { "@object" : d[1] }} %}
 
 objectStatement ->
-	%newObject _ %instrument _ name
+	%newObject _ %instrument _ (name|array)
 		{% (d) => {
 			return {
 				"@new" : d[2].value,
-				"@type" : d[4]["@string"]
+				"@type" : d[4]
 			}
 		}%}
 	|
-	%newObject _ %instrument _ name __ objExpression
+	%newObject _ %instrument _ (name|array) __ objExpression
 		{% (d) => {
 			return {
 				"@new" : d[2].value,
-				"@type" : d[4]["@string"],
-				"@args" : d[6]
+				"@type" : d[4],
+				"@funcs" : d[6]
 			}
 		}%}
 	|
 	%setObject _ name __ objExpression
 		{% (d) => {	
 			return {
-				"@set" : d[2]["@string"],
+				"@set" : d[2],
 				"@args" : d[4]
 			}
 		}%}
@@ -142,8 +143,17 @@ params ->
 		# {% (d) => d[0].join(d[2]) %}
 
 paramElement ->
+	# %signal
+	# 	{% (d) => { return { "@signal" : d[0].value }} %}
+	# |
+	# %osc
+	# 	{% (d) => { return { "@address" : d[0].value }} %}
+	# |
 	%number
 		{% (d) => { return { "@number" : d[0].value }} %}
+	|
+	%note
+		{% (d) => { return { "@note" : d[0].value }} %}
 	|
 	name
 		{% (d) => d[0] %}
@@ -153,9 +163,6 @@ paramElement ->
 	|
 	function
 		{% (d) => d[0] %}
-	# |
-	# %signal
-	# 	{% (d) => { return { "@signal" : d[0].value }} %}
 
 name ->
 	%identifier

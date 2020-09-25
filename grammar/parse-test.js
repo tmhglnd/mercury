@@ -14,31 +14,34 @@ function parse(s){
 		var results = parser.results.length;
 
 		if (results > 1){
-			console.log(">> Warning, ambiguous grammar!");
+			console.log("!!! Warning, ambiguous grammar!");
 			for (var i=0; i<results; i++){
 				console.log("Result", i+1, "of", results, "\n", 
-				util.inspect(parser.results[i], { depth: 10}), 
+				util.inspect(parser.results[i], { depth: 10 }), 
 				"\n");
 			}
 		} else {
 			console.log("Parse succesful: \n", util.inspect(parser.results[0], { depth: 10}), "\n");
 		}
 	} catch (e) {
-		console.log("Parse failed: \n", e.message);
-		// console.log("Error at character " + e.parseError.offset);
+		console.log("!!! Parse failed: \n", e.message);
+		// console.log("Trying: \n", s.substring(0, parser.lexer.index-1));
+		// parse(s.substring(0, parser.lexer.index-1));
 	}
 }
 
 // @global:
-// parseNumbers();
+parseNumbers();
 // parseComments();
 // parseStrings();
 // parseIdentifier();
 // parseKeywords();
 // parseSettings();
+// parseSignal();
+// parseOSC();
 
 // @ring:
-parseRing();
+// parseRing();
 
 // @object:
 // parseInst();
@@ -58,6 +61,11 @@ function parseNumbers(){
 	// parse("1 + 2 / 4");
 	parse("[ 1 2 3.14 5 foo bar 'to_to t1T1' ]");
 	parse("[   ]");
+
+	parse("a A b B c C d D e E f F g G");
+	parse("a# B# C# Dx Gb");
+	parse("a## Bbb C## Dx Gb fbb");
+	parse("a1 A0 b2b B4# c1 C2bb d4## D3 e2 E1 f4# F5 g6 G2");
 }
 
 // Parse comments
@@ -99,12 +107,14 @@ function parseSignal(){
 	parse('~mySig');
 	parse('~my-sig');
 	parse('~my_Sig');
-	parse('"~my Sig"');
+	parse('~23sig');
+	parse('~sig423');
 }
 
 function parseOSC(){
 	// Parsing osc type strings
-	// parse();
+	parse('/oscString/param');
+	parse('tempo(/oscString/temp /anotherOsc/param )');
 }
 
 // Parse keywords
@@ -129,14 +139,32 @@ function parseRing(){
 	// parse("ring grv choose(8 [hat kick snare])")
 	// parse("ring arpMel clone( palin( spread(5 0 12) ) 0 0 7 3 )");
 	// parse("ring bsLine clone( spray( bassBt spread(5 0 17) ) )" );
-	parse("ring bsLine clone( spray( bassBt spread(5 0 17) )" );
+	parse("ring bsLine clone( spray( bassBt spread(5 0 17) ) )" );
 }
 
 function parseInst(){
-	parse("new synth saw note(0 0)");
-	parse("new sample kick_dub time(0.25 0.5) speed(0.9) ");
-	parse("new loop amen-break02 speed(-0.8)");
-	parse("new poly_synth triangle");
+	parse("new synth saw");
+	parse("new sample hat_min");
+	parse("new polySynth triangle");
+	parse("new sample [hat_min kick snare tabla]");
+	parse("new synth [ saw triangle ]");
+
+	parse("new synth saw note([0 5 7 9] 0)");
+	parse("new sample [kick snare] time(0.25 0.5) speed(0.9) ");
+	parse("new loop amen-break02 speed(randomFloat(8 0.5 0.9))");
+
+	parse("new emitter osc name(fred)");
+}
+
+function parseSet(){
+	// parse("set bass gain(0.3) fx(reverb) note(drunk(12))");
+	parse("set tempo 143 1000");
+	parse("set scale major g#");
+	// parse("give bass with_fx(delay 3 5 0.3) fx(double)");
+	// parse("set aname pitch([0 7 12 3] 2) shape(1 200) id(newname)");
+
+	parse("tempo(143 1000)");
+	parse("scale(minor_harmonic 23) hi_pass(800)");
 }
 
 function parseSettings(){
@@ -149,15 +177,6 @@ function parseSettings(){
 	// parse("tempo(143 15000) scale(minor-harmonic dis) random-seed(5372)")
 	// parse("set tempo 143 15000 ");
 	// parse("set tempo(143)");
-}
-
-function parseSet(){
-	parse("set k gain(0.3)");
-	parse("give bass with_fx(delay 3 5 0.3) fx(double)");
-	parse("set aname pitch([0 7 12 3] 2) shape(1 200) id(newname)");
-	// parse("set tempo 143");
-	// parse("scale(minor_harmonic 23) hi_pass(800)");
-	parse("tempo(143)");
 }
 
 function parseMain(){

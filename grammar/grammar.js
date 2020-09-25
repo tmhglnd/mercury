@@ -7,10 +7,10 @@ const moo = require('moo');
 const IR = require('./mercuryIR.js');
 
 const lexer = moo.compile({
-	comment:	/(?:\/\/|\#|\$).*?$/,
+	comment:	/(?:\/\/|\$).*?$/,
 	
 	instrument:	{
-					match: [/synth\ /, /sample\ /, /polySynth\ /, /loop\ / ],
+					match: [/synth\ /, /sample\ /, /polySynth\ /, /loop\ /,/emitter\ / ],
 					value: x => x.slice(0, x.length-1)
 				},
 
@@ -19,8 +19,9 @@ const lexer = moo.compile({
 	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
-	seperator:	/[\,\;]/,
+	//seperator:	/[\,\;]/,
 	
+	note:		/[a-gA-G](?:[0-9])?(?:#+|b+|x)?/,
 	number:		/[+-]?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
 	// hex:		/0x[0-9a-f]+/,
 	
@@ -34,8 +35,8 @@ const lexer = moo.compile({
 	// rFunc:		'}'
 
 	identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
-	// signal:		/~[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
-	// osc:			/\/[a-zA-Z\_][a-zA-Z0-9\_\-]*/,
+	//signal:		/~(?:\\["\\]|[^\n"\\ \t])+/,
+	//osc:		/\/(?:\\["\\]|[^\n"\\ \t])*/,
 
 	string:		{ 
 					match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
@@ -49,22 +50,27 @@ var grammar = {
     ParserRules: [
     {"name": "main", "symbols": ["_", "globalStatement", "_"], "postprocess": (d) => { return { "@global" : d[1] }}},
     {"name": "main", "symbols": ["_", "ringStatement", "_"], "postprocess": (d) => { return { "@ring" : d[1] }}},
-    {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", (lexer.has("instrument") ? {type: "instrument"} : instrument), "_", "name"], "postprocess":  (d) => {
+    {"name": "main", "symbols": ["_", "objectStatement", "_"], "postprocess": (d) => { return { "@object" : d[1] }}},
+    {"name": "objectStatement$subexpression$1", "symbols": ["name"]},
+    {"name": "objectStatement$subexpression$1", "symbols": ["array"]},
+    {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", (lexer.has("instrument") ? {type: "instrument"} : instrument), "_", "objectStatement$subexpression$1"], "postprocess":  (d) => {
         	return {
         		"@new" : d[2].value,
-        		"@type" : d[4]["@string"]
+        		"@type" : d[4]
         	}
         }},
-    {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", (lexer.has("instrument") ? {type: "instrument"} : instrument), "_", "name", "__", "objExpression"], "postprocess":  (d) => {
+    {"name": "objectStatement$subexpression$2", "symbols": ["name"]},
+    {"name": "objectStatement$subexpression$2", "symbols": ["array"]},
+    {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", (lexer.has("instrument") ? {type: "instrument"} : instrument), "_", "objectStatement$subexpression$2", "__", "objExpression"], "postprocess":  (d) => {
         	return {
         		"@new" : d[2].value,
-        		"@type" : d[4]["@string"],
-        		"@args" : d[6]
+        		"@type" : d[4],
+        		"@funcs" : d[6]
         	}
         }},
     {"name": "objectStatement", "symbols": [(lexer.has("setObject") ? {type: "setObject"} : setObject), "_", "name", "__", "objExpression"], "postprocess":  (d) => {	
         	return {
-        		"@set" : d[2]["@string"],
+        		"@set" : d[2],
         		"@args" : d[4]
         	}
         }},
@@ -96,6 +102,7 @@ var grammar = {
     {"name": "params", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "params", "symbols": ["paramElement", "_", "params"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "paramElement", "symbols": [(lexer.has("number") ? {type: "number"} : number)], "postprocess": (d) => { return { "@number" : d[0].value }}},
+    {"name": "paramElement", "symbols": [(lexer.has("note") ? {type: "note"} : note)], "postprocess": (d) => { return { "@note" : d[0].value }}},
     {"name": "paramElement", "symbols": ["name"], "postprocess": (d) => d[0]},
     {"name": "paramElement", "symbols": ["array"], "postprocess": (d) => d[0]},
     {"name": "paramElement", "symbols": ["function"], "postprocess": (d) => d[0]},
