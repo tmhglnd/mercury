@@ -21,11 +21,11 @@ const lexer = moo.compile({
 
 	//seperator:	/[\,\;]/,
 	
-	note:		/[a-gA-G](?:[0-9])?(?:#+|b+|x)?/,
+	//note:		/[a-gA-G](?:[0-9])?(?:#+|b+|x)?/,
 	number:		/[+-]?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
 	// hex:		/0x[0-9a-f]+/,
 	
-	// operator:	/[\+\-\*\/]/,
+	divider:	/[/:]/,
 
 	lParam:		'(',
 	rParam:		')',
@@ -33,16 +33,19 @@ const lexer = moo.compile({
 	rArray:		']',
 	// lFunc:		'{',
 	// rFunc:		'}'
-
-	identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
-	//signal:		/~(?:\\["\\]|[^\n"\\ \t])+/,
-	//osc:		/\/(?:\\["\\]|[^\n"\\ \t])*/,
-
+	
 	string:		{ 
 					match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
 					value: x => x.slice(1, x.length-1)
 				},
 	
+	// identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
+	// identifier:	/[a-zA-Z\_\-][^\s]*/,
+	identifier:	/[^0-9\s][^\s]*/,
+
+	// signal:		/~(?:\\["\\]|[^\n"\\ \t])+/,
+	// osc:		/\/(?:\\["\\]|[^\n"\\ \t])*/,
+
 	ws:			/[ \t]+/,
 });
 var grammar = {
@@ -102,11 +105,14 @@ var grammar = {
     {"name": "params", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "params", "symbols": ["paramElement", "_", "params"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "paramElement", "symbols": [(lexer.has("number") ? {type: "number"} : number)], "postprocess": (d) => { return { "@number" : d[0].value }}},
-    {"name": "paramElement", "symbols": [(lexer.has("note") ? {type: "note"} : note)], "postprocess": (d) => { return { "@note" : d[0].value }}},
-    {"name": "paramElement", "symbols": ["name"], "postprocess": (d) => d[0]},
+    {"name": "paramElement", "symbols": ["name"], "postprocess":  (d) => {
+        	return d[0]
+        } },
     {"name": "paramElement", "symbols": ["array"], "postprocess": (d) => d[0]},
     {"name": "paramElement", "symbols": ["function"], "postprocess": (d) => d[0]},
-    {"name": "name", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier)], "postprocess": (d) => { return { "@identifier" : d[0].value }}},
+    {"name": "paramElement", "symbols": ["division"], "postprocess": (d) => d[0]},
+    {"name": "division", "symbols": [(lexer.has("number") ? {type: "number"} : number), (lexer.has("divider") ? {type: "divider"} : divider), (lexer.has("number") ? {type: "number"} : number)], "postprocess": (d) => { return { "@division" : d[0]+"/"+d[2] }}},
+    {"name": "name", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier)], "postprocess": (d) => { return IR.identifier(d) }},
     {"name": "name", "symbols": [(lexer.has("string") ? {type: "string"} : string)], "postprocess": (d) => { return { "@string" : d[0].value }}},
     {"name": "_$ebnf$1", "symbols": []},
     {"name": "_$ebnf$1", "symbols": ["_$ebnf$1", "wschar"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},

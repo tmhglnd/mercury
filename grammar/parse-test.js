@@ -18,6 +18,7 @@ function parse(s){
 			for (var i=0; i<results; i++){
 				console.log("Result", i+1, "of", results, "\n", 
 				util.inspect(parser.results[i], { depth: 10 }), 
+				// console.log(parser.results[i]), 
 				"\n");
 			}
 		} else {
@@ -25,6 +26,8 @@ function parse(s){
 		}
 	} catch (e) {
 		console.log("!!! Parse failed: \n", e.message);
+		// console.log("Interpret as comment:", { '@comment': parser.lexer.buffer });
+		// console.log(parser.lexer);
 		// console.log("Trying: \n", s.substring(0, parser.lexer.index-1));
 		// parse(s.substring(0, parser.lexer.index-1));
 	}
@@ -32,12 +35,13 @@ function parse(s){
 
 // @global:
 parseNumbers();
-// parseComments();
-// parseStrings();
-// parseIdentifier();
-// parseKeywords();
+parseRhythm();
+parseComments();
+parseStrings();
+parseIdentifier();
+parseKeywords();
 // parseSettings();
-// parseSignal();
+parseSignal();
 // parseOSC();
 
 // @ring:
@@ -60,7 +64,7 @@ function parseNumbers(){
 	parse("12 34 -56 7.89");
 	// parse("1 + 2 / 4");
 	parse("[ 1 2 3.14 5 foo bar 'to_to t1T1' ]");
-	parse("[   ]");
+	// parse("[   ]");
 
 	parse("a A b B c C d D e E f F g G");
 	parse("a# B# C# Dx Gb");
@@ -68,11 +72,18 @@ function parseNumbers(){
 	parse("a1 A0 b2b B4# c1 C2bb d4## D3 e2 E1 f4# F5 g6 G2");
 }
 
+function parseRhythm(){
+	parse("1/4");
+	parse("3/16");
+	parse("7/16 4/5 3/1");
+	parse("7:8 3:2 1:5");
+}
+
 // Parse comments
 function parseComments(){
 	parse("// a comment here");
 	// parse("/ also a comment?");
-	parse("# another comment");
+	parse("# not another comment");
 	parse("$ also a type of comment");
 	// parse("not a type of comment");
 	// parse("// 1.0111213141E5 < commented");
@@ -119,14 +130,14 @@ function parseOSC(){
 
 // Parse keywords
 function parseKeywords(){
-	parse("ring");
-	parse("new");
-	parse("set");
+	parse("ring ");
+	parse("new ");
+	parse("set ");
 
-	parse("array");
-	parse("data");
-	parse("add");
-	parse("apply");
+	parse("array ");
+	parse("data ");
+	parse("add ");
+	parse("apply ");
 }
 
 function parseRing(){

@@ -18,11 +18,11 @@ const lexer = moo.compile({
 
 	//seperator:	/[\,\;]/,
 	
-	note:		/[a-gA-G](?:[0-9])?(?:#+|b+|x)?/,
+	//note:		/[a-gA-G](?:[0-9])?(?:#+|b+|x)?/,
 	number:		/[+-]?(?:[0-9]|[0-9]+)(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?\b/,
 	// hex:		/0x[0-9a-f]+/,
 	
-	// operator:	/[\+\-\*\/]/,
+	divider:	/[/:]/,
 
 	lParam:		'(',
 	rParam:		')',
@@ -30,16 +30,19 @@ const lexer = moo.compile({
 	rArray:		']',
 	// lFunc:		'{',
 	// rFunc:		'}'
-
-	identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
-	//signal:		/~(?:\\["\\]|[^\n"\\ \t])+/,
-	//osc:		/\/(?:\\["\\]|[^\n"\\ \t])*/,
-
+	
 	string:		{ 
 					match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
 					value: x => x.slice(1, x.length-1)
 				},
 	
+	// identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
+	// identifier:	/[a-zA-Z\_\-][^\s]*/,
+	identifier:	/[^0-9\s][^\s]*/,
+
+	// signal:		/~(?:\\["\\]|[^\n"\\ \t])+/,
+	// osc:		/\/(?:\\["\\]|[^\n"\\ \t])*/,
+
 	ws:			/[ \t]+/,
 });
 %}
@@ -152,21 +155,30 @@ paramElement ->
 	%number
 		{% (d) => { return { "@number" : d[0].value }} %}
 	|
-	%note
-		{% (d) => { return { "@note" : d[0].value }} %}
-	|
+	# %note
+	# 	{% (d) => { return { "@note" : d[0].value }} %}
+	# |
 	name
-		{% (d) => d[0] %}
+		{% (d) => {
+			return d[0]
+		} %}
 	|
 	array
 		{% (d) => d[0] %}
 	|
 	function
 		{% (d) => d[0] %}
+	|
+	division
+		{% (d) => d[0] %}
+
+division ->
+	%number %divider %number
+		{% (d) => { return { "@division" : d[0]+"/"+d[2] }} %}
 
 name ->
 	%identifier
-		{% (d) => { return { "@identifier" : d[0].value }} %}
+		{% (d) => { return IR.identifier(d) } %}
 	|
 	%string
 		{% (d) => { return { "@string" : d[0].value }} %}
