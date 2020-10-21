@@ -10,10 +10,6 @@
 	}
 ,
 	"synth" : 	{
-		"saw" : [ "synth_simple", 0 ],
-		"sine" : [ "synth_simple", 0 ],
-		"triangle" : [ "synth_simple", 0 ],
-		"square" : [ "synth_simple", 0 ],
 		"tone" : [ "synth_blip", 2 ],
 		"fm" : [ "synth_fm", 3 ]
 	}

@@ -100,9 +100,15 @@ const defaultShortkeys = { ...shortkeys };
 // variables for the sample library file
 // const sampleFile = base + '/Data/sample-library.json';
 const sampleFile = path.join(base, '/Data/sample-library.json');
-const defaultSamplePath = path.join(system.app, "../media/samples")
+const defaultSamplePath = path.join(system.app, "../media/samples");
 const defaultSamples = loadSamples(defaultSamplePath);
 let samples = {};
+
+// variables for the wavetable library
+const wtFile = path.join(base, '/Data/wavetable-library.json');
+const defaultWTPath = path.join(system.app, '../media/wavetables');
+const defaultWT = loadSamples(defaultWTPath);
+let wavetables = {};
 
 // variables for the example files
 const examplesPath = path.join(system.app, '../../examples');
@@ -118,36 +124,47 @@ max.addHandler('init', () => {
 	
 	// create path for preferences file and load if exists
 	if (fs.pathExistsSync(prefFile)){
-		max.post('Loaded preferences.json: '+prefFile);
 		prefs = fs.readJsonSync(prefFile);
+		max.post('Loaded preferences: '+prefFile);
 	} else {
-		max.post('Created preferences.json: '+prefFile);
 		prefs = { ...defaults };
 		writeJson(prefFile, prefs);
+		max.post('Created preferences: '+prefFile);
 	}
 	max.outlet('settings', prefs);
 
 	// create file for shortkeys and load if exists
 	if (fs.pathExistsSync(shortkeysFile)){
-		max.post('Loaded shortkeys.json: '+shortkeysFile);
 		shortkeys = fs.readJsonSync(shortkeysFile);
+		max.post('Loaded shortkeys: '+shortkeysFile);
 	} else {
-		max.post('Created shortkeys.json: '+shortkeysFile);
 		shortkeys = { ...defaultShortkeys };
 		writeJson(shortkeysFile, shortkeys);
+		max.post('Created shortkeys: '+shortkeysFile);
 	}
 	max.outlet('shortkeys', shortkeys);
 	
 	// create path for sample file and load if exists
 	if (fs.pathExistsSync(sampleFile)){
-		max.post('Loaded sample-library.json: '+sampleFile);
 		samples = fs.readJsonSync(sampleFile);
+		max.post('Loaded sample library: '+sampleFile);
 	} else {
-		max.post('Created sample-library.json: '+sampleFile);
 		samples = { ...defaultSamples };
 		writeJson(sampleFile, samples);
+		max.post('Created sample library: '+sampleFile);
 	}
 	max.outlet('samples', samples);
+
+	// create path for wavetablefile and load if exists
+	if (fs.pathExistsSync(wtFile)){
+		wavetables = fs.readJsonSync(wtFile);
+		max.post('Loaded wavetable library: '+wtFile);
+	} else {
+		wavetables = { ...defaultWT };
+		writeJson(wtFile, wavetables);
+		max.post('Created wavetable library:' +wtFile);
+	}
+	max.outlet('wt', wavetables);
 
 	for (let d in userDirs){
 		let f = base + userDirs[d];
@@ -186,6 +203,22 @@ max.addHandler('default', () => {
 	prefs = { ...defaults };
 	max.outlet("settings", prefs);
 	writeJson(prefFile, prefs);
+});
+
+// restore samplelibrary to default
+// output the lib to Max
+max.addHandler('defaultSamples', () => {
+	samples = { ...defaultSamples };
+	max.outlet("samples", samples);
+	writeJson(sampleFile, samples);
+});
+
+// restore wavetable library to default
+// output the library to Max
+max.addHandler('defaultWT', () => {
+	wavetables = { ...defaultWT };
+	max.outlet('wt', wavetables);
+	writeJson(wtFile, wavetables);
 });
 
 // load a folder with samples and store 
@@ -242,16 +275,7 @@ function loadExamples(fold){
 	return examples;
 }
 
-// restore samplelibrary to default
-// output the lib to Max
-max.addHandler('defaultSamples', () => {
-	samples = { ...defaultSamples };
-	max.outlet("samples", samples);
-	writeJson(sampleFile, samples);
-});
-
-// Sync-write a JSON file to disk
+// Sync-write a JSON file to disk with spaces
 function writeJson(file, obj){
 	fs.outputJsonSync(file, obj, { spaces: 2 });
-	// max.post('File saved: ' + file);
 }
