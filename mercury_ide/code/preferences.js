@@ -101,14 +101,14 @@ const defaultShortkeys = { ...shortkeys };
 // const sampleFile = base + '/Data/sample-library.json';
 const sampleFile = path.join(base, '/Data/sample-library.json');
 const defaultSamplePath = path.join(system.app, "../media/samples");
-const defaultSamples = loadSamples(defaultSamplePath);
+const defaultSamples = loadAudioFiles(defaultSamplePath);
 let samples = {};
 
 // variables for the wavetable library
-const wtFile = path.join(base, '/Data/wavetable-library.json');
-const defaultWTPath = path.join(system.app, '../media/wavetables');
-const defaultWT = loadSamples(defaultWTPath);
-let wavetables = {};
+const wfFile = path.join(base, '/Data/waveform-library.json');
+const defaultWFPath = path.join(system.app, '../media/waveforms');
+const defaultWF = loadAudioFiles(defaultWFPath);
+let waveforms = {};
 
 // variables for the example files
 const examplesPath = path.join(system.app, '../../examples');
@@ -156,15 +156,15 @@ max.addHandler('init', () => {
 	max.outlet('samples', samples);
 
 	// create path for wavetablefile and load if exists
-	if (fs.pathExistsSync(wtFile)){
-		wavetables = fs.readJsonSync(wtFile);
-		max.post('Loaded wavetable library: '+wtFile);
+	if (fs.pathExistsSync(wfFile)){
+		waveforms = fs.readJsonSync(wfFile);
+		max.post('Loaded wavetable library: '+wfFile);
 	} else {
-		wavetables = { ...defaultWT };
-		writeJson(wtFile, wavetables);
-		max.post('Created wavetable library:' +wtFile);
+		waveforms = { ...defaultWF };
+		writeJson(wfFile, waveforms);
+		max.post('Created wavetable library:' +wfFile);
 	}
-	max.outlet('wt', wavetables);
+	max.outlet('wf', waveforms);
 
 	for (let d in userDirs){
 		let f = base + userDirs[d];
@@ -213,18 +213,10 @@ max.addHandler('defaultSamples', () => {
 	writeJson(sampleFile, samples);
 });
 
-// restore wavetable library to default
-// output the library to Max
-max.addHandler('defaultWT', () => {
-	wavetables = { ...defaultWT };
-	max.outlet('wt', wavetables);
-	writeJson(wtFile, wavetables);
-});
-
 // load a folder with samples and store 
 // names with path in database file
 max.addHandler('load', (fold) => {
-	samples = Object.assign({}, loadSamples(fold), samples);
+	samples = Object.assign({}, loadAudioFiles(fold), samples);
 	writeJson(sampleFile, samples);
 	max.outlet('samples', samples);
 });
@@ -232,10 +224,35 @@ max.addHandler('load', (fold) => {
 // replace all samples with the content of a folder 
 // and store names with path in database file
 max.addHandler('replace', (fold) => {
-	samples = loadSamples(fold);
+	samples = loadAudioFiles(fold);
 	writeJson(sampleFile, samples);
 	max.outlet('samples', samples);
 });
+
+const wfHandlers = {
+	// restore wavetable library to default
+	// output the library to Max
+	'defaultWF': () => {
+		waveforms = { ...defaultWF };
+		max.outlet('wf', waveforms);
+		writeJson(wfFile, waveforms);
+	},
+	// load a folder with waveforms and store 
+	// names with path in database file
+	'loadWF': (fold) => {
+		waveforms = Object.assign({}, loadAudioFiles(fold), waveforms);
+		writeJson(wfFile, waveforms);
+		max.outlet('wf', waveforms);
+	},
+	// replace all samples with the content of a folder 
+	// and store names with path in database file
+	'replaceWF': (fold) => {
+		waveforms = loadAudioFiles(fold);
+		writeJson(wfFile, waveforms);
+		max.outlet('wf', waveforms);
+	}
+}
+max.addHandlers(wfHandlers);
 
 let prevExample;
 max.addHandler('randomExample', () => {
@@ -251,7 +268,7 @@ max.addHandler('randomExample', () => {
 	max.outlet('example', path);
 });
 
-function loadSamples(fold){
+function loadAudioFiles(fold){
 	let files =	fg.sync(fold+"/**/*.+(wav|WAV|aif|AIF|aiff|AIFF|mp3|MP3|m4a|M4A|flac|FLAC)", { extglob: true });
 	let samples = {};
 	
