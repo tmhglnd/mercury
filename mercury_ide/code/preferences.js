@@ -121,7 +121,7 @@ const userDirs = ['/Code Logs', '/Recordings', '/Sketches'];
 // check if file exists, otherwise write the default prefs
 // if file exists, read the preferences
 max.addHandler('init', () => {
-	
+
 	// create path for preferences file and load if exists
 	if (fs.pathExistsSync(prefFile)){
 		prefs = fs.readJsonSync(prefFile);
@@ -183,20 +183,6 @@ max.addHandler('store', (param, ...value) => {
 	}
 });
 
-// store the keybinding settings when changed
-max.addHandler('storeKeys', (dict) => {
-	shortkeys = { ...dict };
-	writeJson(shortkeysFile, shortkeys);
-});
-
-// restore the keyshortcuts to the default
-// output the preferences to Max
-max.addHandler('defaultKeys', () => {
-	shortkeys = { ...defaultShortkeys };
-	max.outlet('shortkeys', shortkeys);
-	writeJson(shortkeysFile, shortkeys);
-});
-
 // restore preferences to default
 // output the preferences to Max
 max.addHandler('default', () => {
@@ -205,29 +191,46 @@ max.addHandler('default', () => {
 	writeJson(prefFile, prefs);
 });
 
-// restore samplelibrary to default
-// output the lib to Max
-max.addHandler('defaultSamples', () => {
-	samples = { ...defaultSamples };
-	max.outlet("samples", samples);
-	writeJson(sampleFile, samples);
-});
+const keyHandlers = {
+	// store the keybinding settings when changed
+	'storeKeys': (dict) => {
+		shortkeys = { ...dict };
+		writeJson(shortkeysFile, shortkeys);
+	},
+	// restore the keyshortcuts to the default
+	// output the preferences to Max
+	'defaultKeys': () => {
+		shortkeys = { ...defaultShortkeys };
+		max.outlet('shortkeys', shortkeys);
+		writeJson(shortkeysFile, shortkeys);
+	}
+}
+max.addHandlers(keyHandlers);
 
-// load a folder with samples and store 
-// names with path in database file
-max.addHandler('load', (fold) => {
-	samples = Object.assign({}, loadAudioFiles(fold), samples);
-	writeJson(sampleFile, samples);
-	max.outlet('samples', samples);
-});
-
-// replace all samples with the content of a folder 
-// and store names with path in database file
-max.addHandler('replace', (fold) => {
-	samples = loadAudioFiles(fold);
-	writeJson(sampleFile, samples);
-	max.outlet('samples', samples);
-});
+const sampleHandlers = {
+	// restore samplelibrary to default
+	// output the lib to Max
+	'defaultSmps': () => {
+		samples = { ...defaultSamples };
+		max.outlet("samples", samples);
+		writeJson(sampleFile, samples);
+	},
+	// load a folder with samples and store 
+	// names with path in database file
+	'loadSmps': (fold) => {
+		samples = Object.assign({}, loadAudioFiles(fold), samples);
+		writeJson(sampleFile, samples);
+		max.outlet('samples', samples);
+	},
+	// replace all samples with the content of a folder 
+	// and store names with path in database file
+	'replaceSmps': (fold) => {
+		samples = loadAudioFiles(fold);
+		writeJson(sampleFile, samples);
+		max.outlet('samples', samples);
+	}
+}
+max.addHandlers(sampleHandlers);
 
 const wfHandlers = {
 	// restore wavetable library to default

@@ -5,8 +5,8 @@
 Create a new instance of an instrument or external output. This can be a `sample`, a `synth`, a `loop`, a `polySynth` or an `emitter` followed by the name of the sample, the type of the waveshape to use for the synth or the type of output for the emitter (currently only supports `osc`). After that use functions to set parameters for the object.
 
 **arguments**
-- {Instrument} -> the instrument
-	- {Type} -> selected instruments type or sample
+- {Instrument} -> the instrument type (sample, synth, loop, polySynth, emitter)
+	- {Type} -> selected sample or synth waveform (based on loaded files)
 		- {Functions+} -> instrument methods seperated by spaces (optional)
 
 ```java
@@ -14,6 +14,8 @@ new synth saw
 
 new sample kick_909
 ```
+
+By default Mercury has a small library of samples and single-cycle waveforms included in the environment. A full list of these samples and waveforms can be found here: [Sounds in Mercury](/mercury_ide/media/README.md)
 
 ## ring
 

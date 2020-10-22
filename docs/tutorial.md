@@ -54,7 +54,7 @@ While working on this tutorial you might run into some issues where something is
 	$ git clone http://github.com/tmhglnd/mercury
 	```
 	
-	Now your filepath should look something like: `<User>/Documents/Max 8/Projects/mercury-v.x.x.x`
+	Now your filepath should look something like: `<User>/Documents/Max 8/Projects/mercury-v.0.13.0-alpha`
 
 # 🚀 Launch Mercury
 

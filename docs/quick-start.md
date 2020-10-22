@@ -1,6 +1,6 @@
 # 🏃 Quick Start
 
-This quick start guide is meant for people who are confident in working with the computer and have some experience with (creative) coding, music technology and music theory.
+This quick start guide is meant for people who are confident in working with the computer and have some experience with (creative) coding, music technology and music making.
 
 # 💻 Install Mercury
 
@@ -12,17 +12,20 @@ Read the [system requirements](./../README.md#-system-requirements) first before
 - [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
 - If links are not working you can go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
 
-2. Launch Max8 when the installation is done. A Max8 folder is created in your Documents. Locate the Projects folder under `~/Documents/Max 8/Projects`
+2. Launch Max8 when the installation is done. It will create a `Max 8` folder in your `Documents`. In there you may create a folder named `Projects`. The full path should now look like this: `<User>/Documents/Max 8/Projects`
 
-3. Download the latest [Release](https://github.com/tmhglnd/mercury/releases)
+3. Now [download the latest release](https://github.com/tmhglnd/mercury/releases) or clone/fork Mercury to the Projects folder in your Documents.
+
 	```
-	Download zip and unpack in ~/Documents/Max 8/Projects
+	Download latest release and unzip entire folder in ~/Documents/Max 8/Projects
 	```
-	Or **clone/fork** the project
+	Or via commandline
 	```
 	$ cd ~/Documents/Max\ 8/Projects
 	$ git clone http://github.com/tmhglnd/mercury
 	```
+	
+	Now your filepath should look something like: `<User>/Documents/Max 8/Projects/mercury-v.0.13.0-alpha`
 
 # 🚀 Launch Mercury
 
@@ -74,7 +77,7 @@ Now go ahead and play all you want! For further information on the syntax and co
 
 Run into an issue?
 
-- First check the [Troubleshooting]() page
+<!-- - First check the [Troubleshooting]() page -->
 - Check if your problem was already reported in the [Issues](https://github.com/tmhglnd/mercury/issues)
-- File a [new issue](https://github.com/tmhglnd/mercury/issues/new)
-- Fix it yourself and send a pull request! :pray:
+- If not, please file a [new issue](https://github.com/tmhglnd/mercury/issues/new)
+- Or, fix the bug yourself and send a pull request! :pray:

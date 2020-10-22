@@ -12,6 +12,8 @@
 	- [Idiophonic](#idiophonic-1)
 	- [Foley](#foley-1)
 	- [Noise](#noise-1)
+- [Waveforms](#waveforms)
+
 <!-- 4. Ambient -->
 
 # Credits
@@ -573,3 +575,15 @@ You can find the packs online at:
 * 50750__rutgermuller__Radio_Noise_www.rutgermuller.nl_.wav
 * url: https://freesound.org/s/50750/
 * license: Creative Commons 0
+
+# Waveforms
+
+## Basic
+
+#### sine
+
+#### triangle
+
+#### saw
+
+#### square

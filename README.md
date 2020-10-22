@@ -2,6 +2,8 @@
 
 ## [Become a Patron!](https://www.patreon.com/bePatron?u=9649817) 
 
+## [Join the Discord Community!](https://discord.gg/vt59NYU)
+
 **📦 Latest stable release**
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
