@@ -10,6 +10,8 @@
 
 - [Shortkeys](./06-shortkeys.md)
 
+- [Settings and Sounds](07-environment.md)
+
 - [General Syntax](./00-general.md)
 	- [new](./00-general.md#new)
 		- synth

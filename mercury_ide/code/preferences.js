@@ -37,7 +37,7 @@ let prefs = {
 	"v_res" : "720 (720p)",
 	"res" : "720 (720p)",
 	"w_size" : "270",
-	"a_r" : "16 : 9 (1.78:1 Widescreen)",
+	"a_r" : "16 : 10 (Computer Screen / Macbook)",
 	"screens" : 1,
 	"floating" : 1,
 	"visible" : 1,
