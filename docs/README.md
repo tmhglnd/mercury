@@ -10,7 +10,9 @@
 
 - [Shortkeys](./06-shortkeys.md)
 
-- [Settings and Sounds](07-environment.md)
+- [Settings and Sounds](./07-environment.md)
+	- [Mercury Main Window](./07-environment.md#mercury-main-window)
+	- [Menubar](./07-environment.md#menubar)
 
 - [General Syntax](./00-general.md)
 	- [new](./00-general.md#new)

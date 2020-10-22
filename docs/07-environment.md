@@ -167,7 +167,7 @@ The Visual Setup lets you adjust settings for the visual output in the editor wi
 
 #### Aspect Ratio
 
-Adjust the aspect ratio of the screen. You can choose between a variety of common used aspect ratios such as:
+Adjust the aspect ratio of the screen. You can choose between a variety of common used aspect ratios:
 
 - 1:1 (Instagram)
 - 5:4 (Early Television)
@@ -189,43 +189,84 @@ Adjust the aspect ratio of the screen. You can choose between a variety of commo
 
 #### Resolution
 
+Adjust the main visual resolution. This resolution is the height of the window in pixels and the width is adjust according to the aspect ratio. You can choose between a variety of commonly used resolutions such as 720p, 1080p and 4k.
+
 #### Visual Resolution
+
+The visual resolution allows you to keep a clear and sharp text on the foreground while rendering visuals on a lower resolution. This is useful for machines without a dedicated graphics card that still want to process visuals in the background.
 
 #### Window Size
 
+Adjust the size of the window with this message. For fullscreen you can click the toggle at [fullscreen](#fullscreen) or press `ESC` to go in and out of fullscreen.
+
 #### Screens
+
+The number in this box multiplies your width by this value which allows you to stretch the visuals over multiple screens.
 
 #### Always in front
 
+Enable this option to make sure the editor window is always in front of all the other Mercury windows.
+
 #### Window visible
+
+Disable this option if you don't need to see the editor window. For example when you're working with an external editor.
 
 #### Sync to Refreshrate
 
-#### FPS
+Syncs the rendering framerate to the refreshrate of your computer display. Disable this option if you want to set the FramesPerSecond manually.
+
+##### FPS
+
+Set the FramesPerSecond for the rendering engine manually. Only possible when Sync to Refreshrate is disabled.
 
 #### Auto Hide cursor
 
+Enable this option if you want the mouse to disappear when it's been idle for 5 seconds.
+
 #### Fullscreen
+
+Go into fullscreen. You can leave fullscreen with the `ESC` key.
 
 #### Syphon output
 
+**Mac only**
 
-Turn the rendering engine `on` in the main window. You will see the text-editor appear and the cursor starts blinking.
-- In the event of a laggy editor, slow cursor and/or low FPS first run Max in low-resolution mode (Mac Retina-display only 10.13 or lower)
-	- Go to `Applications` in the Finder
-	- Right click `Max.app`
-	- Click `Get Info`
-	- Select `Open in Low Resolution`
-	- Restart Max and the Mercury project
-- Other settings you can change for the visuals:
-	- `Settings > Visual Setup`
-	- `Resolution`: `540`
-	- `Visual Resolution`: `270`
-	- `Sync to Refreshrate`: `Off`
-	- `FPS`: `30` or `25`
-- In the event that the cursor is not aligned with the text, change the visual settings:
-	- `Settings > Visual Setup`
-	- `Preselected Fonts`: `Courier New`
-- Try some different fonts if Courier New is not working, you can also select a font from the `Font Library`
+Output the visual window as a texture via a syphonserver. This can be used to transfer the visuals to different capture software like OBS for livestream or recording. 
+
+#### Troubleshoot
+
+In case you are experiencing a very laggy editor, slow cursor, low FPS and slow response try the following settings:
+
+- Aspect Ratio: `16:10`
+- Resolution: `540`
+- Visual Resolution: `270`
+- Window Size: `540`
+- Sync to Refreshrate: `off`
+- FPS: `30`
+- Auto Hide Cursor: `off`
+- Syphon Output: `off`
+
+For Mac users with Retina display and Max version 8.1.0 or higher and MacOS 10.13 or older.
+
+- Go to `Applications` in the Finder
+- Right click `Max.app` (`CMD + Click`)
+- Click `Get Info`
+- Select `Open in Low Resolution`
+- Restart Max and the Mercury project
+
+### Editor Setup
+
+Adjust the look of the texteditor. Change the font, color, blinking color, cursor color and characters and adjust scaling and position.
+
+### Shortkeys Setup
+
+Change the shortkeys to your preference or reset to the default key commands. 
+
+1. Select the command to adjust the keybind for in the dropdown menu
+2. Click `change keycommand` and see that it says `waiting for keys...`
+3. Now press and hold all the keys for the keybind and release.
+4. See the result in the display and dictionary.
 
 ## Explanation
+
+Open a random example, the documentation, the list of sounds and waveforms, the github repository and the published paper.
