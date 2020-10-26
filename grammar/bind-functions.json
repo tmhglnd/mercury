@@ -7,7 +7,9 @@
 		"amplitude",
 		"a",
 		"g",
-		"v"
+		"v",
+		"velocity",
+		"vel"
 	],
 
 	"beat" : [
@@ -23,7 +25,9 @@
 		"transient",
 		"env",
 		"e",
-		"length"
+		"length",
+		"duration",
+		"dur"
 	],
 
 	"note" : [
@@ -121,5 +125,12 @@
 		"address",
 		"tag",
 		"url"
+	],
+
+	"out" : [
+		"channel",
+		"output",
+		"outlet",
+		"to"
 	]
 }

@@ -1,13 +1,15 @@
-//==============================================================================
+//====================================================================
 // mercury.js
 // by Timo Hoogland (@t.mo / @tmhglnd), www.timohoogland.com
 // GNU GPL-3.0 License
 // 
 // The Mercury Parser and Ring Methods
 // Using the total-serialism node package
-//==============================================================================
+//====================================================================
 
 const max  = require('max-api');
+// const moo  = require('moo');
+
 const Gen  = require('total-serialism').Generative;
 const Algo = require('total-serialism').Algorithmic;
 const Mod  = require('total-serialism').Transform;
@@ -17,6 +19,11 @@ const Util = require('total-serialism').Utility;
 const Dict = require('./dictionary.js');
 
 var dict = new Dict();
+
+// let lexer = moo.compile({
+// 	string: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/,
+// 	rest: moo.error
+// })
 
 const handlers = {
 	// parse the input strings from code editor
@@ -37,17 +44,18 @@ const handlers = {
 	// input the ring, get the varname
 	// and join the expression to string to be parsed
 	'ring' : (name, ...args) => {
-		// console.log('ring', '@name', name, '@args', args);
 		if (args < 1){
 			// do nothing if not enough arguments
-			console.error("not enough arguments for method ring");
+			max.post("not enough arguments for method ring");
 			return;
 		}
-		console.log("ring", "@name", name, "@args", ...args);
+		// max.post("@ring", "name:", name, "args:", ...args);
 		if (isNaN(name)){
 			let expr = args.join(' ');
 			let parsed = parseString(expr);
+			// max.post('@parseString', parsed);
 			let eval = evaluateParse(parsed);
+			// max.post('@eval', eval);
 			
 			let arr = [];
 			for (i in eval){
@@ -56,7 +64,7 @@ const handlers = {
 			dict.set(name, arr);
 		} else {
 			// numbers are not allowed as ring name
-			console.error("Ring:", name, "is not a valid name");
+			max.post("ring:", name, "is not a valid name");
 		}
 	},
 	// All the Array transformation/generation methods
@@ -366,12 +374,12 @@ max.addHandlers(handlers);
 function mainParse(lines){
 	// remove double whitespaces
 	lines = lines.slice().map(x => x.replace(/\s{2,}/g, ' '));
-	// max.post("@mainParse", lines);
+	max.post("@mainParse", lines);
 
 	let rings = [];
 	let other = [];
 	// regular expression to match rings
-	let r = /ring\ .+/;
+	let ring = /ring\ .+/;
 	let seed = /set\ randomSeed\ .+/;
 	let scale = /set\ scale\ .+/;
 	let tempo = /set\ tempo\ .+/;
@@ -379,7 +387,7 @@ function mainParse(lines){
 
 	for (let i in lines){
 		l = lines[i];
-		if (r.test(l)){
+		if (ring.test(l)){
 			rings.push(l);
 		} else if (seed.test(l) || scale.test(l) || tempo.test(l)){
 			other.push(l);			
@@ -387,7 +395,7 @@ function mainParse(lines){
 			expr.shift();
 			mainFunc.call(handlers, ...expr);	
 		} else if (mute.test(l)){
-			max.post("silence detected");
+			max.post("@silence");
 			other.push("silence");
 		} else {
 			other.push(l);
@@ -397,6 +405,7 @@ function mainParse(lines){
 	mainFunc.call(handlers, 'clear');
 	
 	for (let r in rings){
+		// max.post('@ring', rings[r]);
 		let params = rings[r].split(' ');
 		mainFunc.call(handlers, ...params);
 	}
@@ -404,7 +413,30 @@ function mainParse(lines){
 	max.outlet(dict.items);
 	
 	for (let o in other){
-		let expr = other[o].split(' ').map(x => parseNumber(x));
+		// let string = /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/g;
+		// max.post('@string', string.exec(other[o]));
+		let expr = [];
+		let s = '';
+		let isString = false;
+		for (let char in other[o]){
+			let c = other[o].charAt(char);
+			if (c === '"' || c === "'" || c === "`"){
+				if (isString){
+					expr.push(s);
+				} else {
+					expr = expr.concat(s.split(' ').filter(i => i).map(x => parseNumber(x)));
+				}
+				isString = !isString;
+				s = '';
+			} else {
+				s += c;
+			}
+		}
+		expr = expr.concat(s.split(' ').filter(i => i).map(x => parseNumber(x)));
+		// expr.push(s);
+
+		// expr = other[o].split(' ').map(x => parseNumber(x));
+		max.post('@parsed', expr);
 		max.outlet('parsed', ...expr);
 	}
 	max.outlet('done');
@@ -468,7 +500,7 @@ function parseParam(v){
 }
 
 // parse the input string to an array of values and 
-// possible function name. excepts multi-dimensional arrays
+// possible function name. accepts multi-dimensional arrays
 // arrays of 3 dimension or higher will be stripped down to 2d
 // 
 function parseString(str){

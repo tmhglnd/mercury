@@ -83,7 +83,7 @@
 ,
 	"midi" : {
 		"beat" : 1,
-		"time" : 1,
+		"time" : "1/4",
 		"amp" : 0.8,
 		"note" : [ 0, 0 ],
 		"name" : "no_name",

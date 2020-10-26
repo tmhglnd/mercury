@@ -9,6 +9,10 @@
 		"midi" : [ "midi_out", 6 ]
 	}
 ,
+	"midi" : {
+		
+	}
+,
 	"synth" : 	{
 		"tone" : [ "synth_blip", 2 ],
 		"fm" : [ "synth_fm", 3 ]

@@ -1,4 +1,15 @@
 {
+	"midi" : [
+		"name",
+		"group",
+		"beat",
+		"time",
+		"amp",
+		"note",
+		"env",
+		"out"
+	],
+
 	"emitter" : [
 		"name",
 		"address",
