@@ -81,6 +81,17 @@
 		"sendOSC" : 1
 	}
 ,
+	"midi" : {
+		"beat" : 1,
+		"time" : 1,
+		"amp" : 0.8,
+		"note" : [ 0, 0 ],
+		"name" : "no_name",
+		"group" : "no_group",
+		"detune" : 0,
+		"sendOSC" : 0
+	}
+,
 	"voice" : {
 		"beat" : 1,
 		"time" : "1",

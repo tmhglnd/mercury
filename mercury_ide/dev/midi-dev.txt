@@ -1,0 +1,11 @@
+
+set debug 1
+
+set midiClock getports
+
+set scale minor_harmonic c
+ring nts sine(16 5.423 0 24)
+
+new emitter midi note(nts 0) sendOSC(0) time(1/8) amp(0.9)
+
+silence
