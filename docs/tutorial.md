@@ -148,7 +148,7 @@ new sample hat_click time(1/12)
 
 ### Other sounds
 
-You can of course also try other samples that are included in Mercury! A full list of samples is available [here](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md). Try for example: `bamboo_g`, `shatter`, `tabla_mid`.
+You can of course also try other samples that are included in Mercury! A full list of samples is available [here](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md). Try for example: `bamboo_g`, `shatter`, `tabla_mid`. And if you want to include your own sounds you can read all about that [here](./07-environment#sounds)
 
 ## Changing `tempo`
 

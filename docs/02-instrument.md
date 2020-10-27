@@ -1,6 +1,13 @@
 # Instruments
 
-The following methods apply to all the different types of instruments: `synth`, `sample`, `polySynth` and `loop`
+The following methods apply to all the different types of instruments: `synth`, `sample`, `polySynth`, `loop` and `midi`.
+
+For instrument specific functions see below:
+
+- [Synth / polySynth](#synth-and-polysynth-only)
+- [Sample / Loop](#sample-and-loop-only)
+- [Midi](#midi)
+<!-- - text to speech -->
 
 ## name
 
@@ -109,7 +116,7 @@ new synth saw shape(1/4 1/32) time(1)
 new synth saw shape(1/64 1/8 1/16) time(1)
 ```
 
-Alternative function-names: `length() | envelope() | env() | transient() | e()`
+Alternative function-names: `length() | duration() | envelope() | env() | e()`
 
 ## gain
 
@@ -123,7 +130,9 @@ new sample snare_909 name(sn)
 	set sn gain(0.8)
 ```
 
-Alternative function-names: `amp() | volume() | g() | a() | v()`
+When using the `midi` instrument the gain will be multiplied by `127` to construct a velocity message. A `gain(0.5)` therefore maps to `63` and a `gain(1)` to `127`
+
+Alternative function-names: `amp() | volume() | g() | a() | v() | velocity()`
 
 ## pan
 
@@ -168,6 +177,11 @@ The currently available effects are:
 Alternative function-names: `effect() | with_fx() | add_fx()`
 
 # synth and polySynth only
+
+The synth and polySynth instruments allow you to play synthesized sounds using a single cycle waveform. These waveforms are loaded in RAM and can be accessed by their filename (without the extension). The default waveforms are `sine`, `triangle`, `square` and `saw`.
+
+- [How to load other waveforms into Mercury](./07-environment.md#sounds)
+- [Full list of all the included waveforms](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md)
 
 ## note
 
@@ -218,6 +232,11 @@ new synth saw note(0 1) time(1/4) wave2(square 0.998)
 ```
 
 # Sample and Loop only
+
+The sample and loop instruments allow you to play sound-recordings and loops. These so called "samples" are loaded in RAM and can be accessed by their filename (without the extension). 
+
+- [How to load other sounds into Mercury](./07-environment.md#sounds)
+- [Full list of all the included sounds](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md)
 
 ## speed
 
@@ -282,6 +301,82 @@ new sample chimes stretch(1 1 general) speed(-1)
 - `extremestretch` : optimized for stretching (slowing down) material, limited to a stretch factor between 0.5 and 4
 - `effcient` : best option when CPU efficiency is critical
 
+# Midi
+
+The midi instrument allows you to send midi-note messages to other devices or virtual devices on your computer. To setup a basic midi instrument use:
+
+```java
+
+set midi getPorts
+//=> prints the available devices to the console
+
+new midi "AU DLS Synth 1" time(1/4) note(0 0) length(100) gain(0.8)
+```
+
+## note
+
+Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root.
+
+**arguments**
+- {Value|RingValue} -> positive or negative semitone note value or ring, x-coordinate (default=0)
+- {Value|RingValue} -> positive or negative octave value or ring, y-coordinate (default=0)
+
+```java
+set scale major D
+
+new midi "AU DLS Synth 1" note(2 2)
+//=> results in midi-note 64 > F4
+```
+
+Also excepts rings to play a melody over time:
+
+```java
+set scale minor A
+ring mel [0 5 7 3 2 -2 0]
+
+new midi "AU DLS Synth 1" note(mel 1) time(1/16)
+```
+
+## length
+
+Replaces the `shape()` function for Synth and Sample. Set the duration of the midi note for it to send the note-off message in milliseconds or division. If the instrument is triggered before the end of the duration, the note-off is canceled and a new note-off is send.
+
+**arguments**
+
+- {Number/Division} -> Duration time in ms or division
+
+```java
+new midi "AU DLS Synth 1" length(1500) time(1)
+//=> duration of 1500 ms triggered once per bar
+```
+
+with division:
+
+```java
+set tempo 100
+
+new midi "AU DLS Synth 1" length(1/2) time(1)
+//=> duration of 1/2 (1200 ms at 100 bpm)
+```
+
+Alternative function-names: `duration()`
+
+## out
+
+Replaces the `pan()` method for Synth and Sample. Set the channel output for the midi-note to be send to. 
+
+**arguments**
+
+- {Number} -> Channel to send the midi-note to
+
+```java
+new midi "AU DLS Synth 1" note(7 2) out(1)
+new midi "AU DLS Synth 1" note(0 0) out(2)
+```
+
+Alternative function-names: `channel()`
+
+<!-- 
 # Text to Speech (mac-only)
 
 An experimental text-to-speech instrument is added. Using the Mac terminal speech capabilities with the help of the `aka.speech` object developed by Masayuki Akamatsu.
@@ -290,4 +385,4 @@ An experimental text-to-speech instrument is added. Using the Mac terminal speec
 new voice Alex speak("Hello world!") time(2)
 
 new voice Samantha speak("Hi Alex!") time(2 1)
-```
+``` -->

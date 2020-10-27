@@ -2,7 +2,7 @@
 
 ## new
 
-Create a new instance of an instrument or external output. This can be a `sample`, a `synth`, a `loop`, a `polySynth` or an `emitter` followed by the name of the sample, the type of the waveshape to use for the synth or the type of output for the emitter (currently only supports `osc`). After that use functions to set parameters for the object.
+Create a new instance of an instrument or external output. This can be a `sample`, a `synth`, a `loop`, a `polySynth`, `midi` or an `emitter` for osc followed by the name of the sample, the name of the waveshape to use for the synth, the emitter type (currently only supports `osc`) or the midi device name. After that use functions to set parameters for the object.
 
 **arguments**
 - {Instrument} -> the instrument type (sample, synth, loop, polySynth, emitter)
@@ -13,6 +13,10 @@ Create a new instance of an instrument or external output. This can be a `sample
 new synth saw
 
 new sample kick_909
+
+new emitter osc
+
+new midi "AU DLS Synth 1"
 ```
 
 By default Mercury has a small library of samples and single-cycle waveforms included in the environment. A full list of these samples and waveforms can be found here: [Sounds in Mercury](/mercury_ide/media/README.md)

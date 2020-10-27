@@ -154,15 +154,26 @@ set osc in 8000
 set osc out 9000
 ```
 
-## midiClock
+## midi and midiClock
 
-Output midiclock sync messages to sync an external device to the tempo of Mercury. The device name can have spaces. Use the `getports` argument to automatically open the console and view the different portnames. Use the `off` message or `silence` or `alt + .` to stop the syncing and send a stop message.
-
-**arguments**
-- {Name} -> getports, the midi portname or off (default=off)
+With the midi object you can get the available devices (ports) that you can use to send midi notes to with a `new midi` instrument.
 
 ```java
-set midiClock getports
+set midi getPorts
+// prints the available ports to the console
+
+new midi "AU DLS Synth 1" note(7 0) duration(250) time(1/4) gain(0.8)
+```
+
+>More on the midi instrument under [instruments](./02-instrument.md)
+
+Output midiClock sync messages to sync an external device to the tempo of Mercury. The device name can have spaces. Use the `getports` argument to automatically open the console and view the different portnames. Use the `off` message or `silence` or `alt + .` to stop the syncing and send a stop message.
+
+**arguments**
+- {Name} -> getPorts, the midi portname or off (default=off)
+
+```java
+set midiClock getPorts
 // returns the port names in console and automatically opens the console
 
 set midiClock midiPortName
