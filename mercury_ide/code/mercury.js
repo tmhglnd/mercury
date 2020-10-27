@@ -374,7 +374,7 @@ max.addHandlers(handlers);
 function mainParse(lines){
 	// remove double whitespaces
 	lines = lines.slice().map(x => x.replace(/\s{2,}/g, ' '));
-	max.post("@mainParse", lines);
+	// max.post("@mainParse", lines);
 
 	let rings = [];
 	let other = [];
@@ -395,7 +395,7 @@ function mainParse(lines){
 			expr.shift();
 			mainFunc.call(handlers, ...expr);	
 		} else if (mute.test(l)){
-			max.post("@silence");
+			// max.post("@silence");
 			other.push("silence");
 		} else {
 			other.push(l);
@@ -436,7 +436,7 @@ function mainParse(lines){
 		// expr.push(s);
 
 		// expr = other[o].split(' ').map(x => parseNumber(x));
-		max.post('@parsed', expr);
+		// max.post('@parsed', expr);
 		max.outlet('parsed', ...expr);
 	}
 	max.outlet('done');

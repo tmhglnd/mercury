@@ -44391,17 +44391,6 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 337.5, 450.0, 32.0, 22.0 ],
-									"text" : "print"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-14",
 									"linecount" : 3,
 									"maxclass" : "comment",
@@ -44993,14 +44982,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
-									"order" : 0,
-									"source" : [ "obj-49", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-500", 0 ],
 									"order" : 1,
 									"source" : [ "obj-49", 0 ]
@@ -45010,7 +44991,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"order" : 1,
 									"source" : [ "obj-49", 1 ]
 								}
 
@@ -48777,8 +48757,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 375.0, 285.0, 107.0, 22.0 ],
-									"text" : "print \"osc settings\""
+									"patching_rect" : [ 375.0, 285.0, 133.0, 22.0 ],
+									"text" : "print \"OSC SETTINGS\""
 								}
 
 							}
