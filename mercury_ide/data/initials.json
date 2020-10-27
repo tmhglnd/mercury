@@ -86,6 +86,8 @@
 		"time" : "1/4",
 		"amp" : 0.8,
 		"note" : [ 0, 0 ],
+		"env" : 100,
+		"out" : 1,
 		"name" : "no_name",
 		"group" : "no_group",
 		"detune" : 0,
