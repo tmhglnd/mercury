@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 6,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 754.0, 79.0, 652.0, 783.0 ],
+		"rect" : [ 49.0, 78.0, 652.0, 783.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,6 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-49",
@@ -69,7 +68,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 459.200000000000045, 135.0, 29.5, 22.0 ],
+					"patching_rect" : [ 469.700000000000045, 135.0, 29.5, 22.0 ],
 					"text" : "t 1 l"
 				}
 
@@ -81,7 +80,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 431.700000000000045, 180.0, 32.0, 22.0 ],
+					"patching_rect" : [ 431.700000000000045, 210.0, 32.0, 22.0 ],
 					"text" : "gate"
 				}
 
@@ -105,7 +104,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 431.700000000000045, 210.0, 36.0, 22.0 ],
+					"patching_rect" : [ 431.700000000000045, 240.0, 36.0, 22.0 ],
 					"text" : "route"
 				}
 
@@ -486,7 +485,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-36",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -499,7 +498,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-37",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -748,7 +747,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
+					"destination" : [ "obj-78", 0 ],
 					"source" : [ "obj-42", 0 ]
 				}
 
@@ -842,7 +841,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-46", 0 ],
-					"midpoints" : [ 521.200000000000045, 405.0, 541.200000000000045, 405.0, 541.200000000000045, 169.0, 441.200000000000045, 169.0 ],
+					"midpoints" : [ 521.200000000000045, 405.0, 541.200000000000045, 405.0, 541.200000000000045, 179.0, 441.200000000000045, 179.0 ],
 					"order" : 1,
 					"source" : [ "obj-77", 1 ]
 				}
@@ -871,9 +870,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [  ],
-		"autosave" : 0
+ ]
 	}
 
 }
