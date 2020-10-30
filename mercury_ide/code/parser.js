@@ -5,7 +5,8 @@ outlets = 1;
 var dict = new Dict("variables");
 
 function anything(){
-	var line = arrayfromargs(messagename, arguments);
+	// var line = arrayfromargs(messagename, arguments);
+	var line = arrayfromargs(messagename, arguments).join(' ').split('');
 	var isFunction = false;
 	var arrayDepth = 0;
 
@@ -15,7 +16,8 @@ function anything(){
 
 	// iterate through all the characters in a codeline
 	for (var i=0; i<len; i++){
-		var ascii = String.fromCharCode(line[i]);
+		// var ascii = String.fromCharCode(line[i]);
+		var ascii = line[i];
 
 		if (ascii == "["){
 			if (!arrayDepth){
