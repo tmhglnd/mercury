@@ -1,8 +1,8 @@
 /*
- *      bignumber.js v9.0.0
+ *      bignumber.js v9.0.1
  *      A JavaScript library for arbitrary-precision arithmetic.
  *      https://github.com/MikeMcl/bignumber.js
- *      Copyright (c) 2019 Michael Mclaughlin <M8ch88l@gmail.com>
+ *      Copyright (c) 2020 Michael Mclaughlin <M8ch88l@gmail.com>
  *      MIT Licensed.
  *
  *      BigNumber.prototype methods     |  BigNumber methods
@@ -2394,7 +2394,7 @@ function clone(configObject) {
       e = bitFloor((e + 1) / 2) - (e < 0 || e % 2);
 
       if (s == 1 / 0) {
-        n = '1e' + e;
+        n = '5e' + e;
       } else {
         n = s.toExponential();
         n = n.slice(0, n.indexOf('e') + 1) + e;

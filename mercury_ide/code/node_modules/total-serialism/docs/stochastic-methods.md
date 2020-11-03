@@ -4,6 +4,7 @@ Methods for procedurally generating number sequences based on various types of r
 
 - [seed](#seed)
 - [random](#random)
+- [drunk](#drunk)
 - [coin](#coin)
 - [dice](#dice)
 - [urn](#urn)
@@ -83,6 +84,7 @@ Rand.drunk(10, 5, 0, 24);
 //  9.40 ┤ ││  ╰╯ │ 
 //  5.20 ┤ ╰╯     │ 
 //  1.00 ┤        ╰ 
+
 Rand.drunk(10, 4, 0, 12, 6, false);
 //=> [ 2, -2, 2, 1, -3, -1, -2, -1, 3, 6 ] 
 

@@ -1,0 +1,39 @@
+! meansqunumigpopmo.scl
+!
+Meantone-squares-nusecond-migration-meanpop-mohajira superwakalix
+31
+! Meantone: -3 to 27; squares: -15 to 15; nusecond: -2 to 28
+! Migration: -7 to 23; meanpop: -19 to 11; mohajira: -23 to 7
+! Contains the Cps({1,3,5,7,9,11}, 3) Eikosany
+!
+33/32
+21/20
+77/72
+11/10
+9/8
+231/200
+7/6
+6/5
+99/80
+63/50
+77/60
+21/16
+27/20
+11/8
+7/5
+231/160
+297/200
+3/2
+77/50
+63/40
+77/48
+33/20
+5/3
+693/400
+7/4
+9/5
+11/6
+189/100
+77/40
+99/50
+2/1

@@ -2,22 +2,24 @@
 
 A JavaScript library for arbitrary-precision decimal and non-decimal arithmetic.
 
-[![Build Status](https://travis-ci.org/MikeMcl/bignumber.js.svg)](https://travis-ci.org/MikeMcl/bignumber.js)
+[![npm version](https://img.shields.io/npm/v/bignumber.js.svg)](https://www.npmjs.com/package/bignumber.js)
+[![npm downloads](https://img.shields.io/npm/dw/bignumber.js)](https://www.npmjs.com/package/bignumber.js)
+[![build status](https://travis-ci.org/MikeMcl/bignumber.js.svg)](https://travis-ci.org/MikeMcl/bignumber.js)
 
 <br />
 
 ## Features
 
-  - Integers and decimals
-  - Simple API but full-featured
-  - Faster, smaller, and perhaps easier to use than JavaScript versions of Java's BigDecimal
-  - 8 KB minified and gzipped
-  - Replicates the `toExponential`, `toFixed`, `toPrecision` and `toString` methods of JavaScript's Number type
-  - Includes a `toFraction` and a correctly-rounded `squareRoot` method
-  - Supports cryptographically-secure pseudo-random number generation
-  - No dependencies
-  - Wide platform compatibility: uses JavaScript 1.5 (ECMAScript 3) features only
-  - Comprehensive [documentation](http://mikemcl.github.io/bignumber.js/) and test set
+- Integers and decimals
+- Simple API but full-featured
+- Faster, smaller, and perhaps easier to use than JavaScript versions of Java's BigDecimal
+- 8 KB minified and gzipped
+- Replicates the `toExponential`, `toFixed`, `toPrecision` and `toString` methods of JavaScript's Number type
+- Includes a `toFraction` and a correctly-rounded `squareRoot` method
+- Supports cryptographically-secure pseudo-random number generation
+- No dependencies
+- Wide platform compatibility: uses JavaScript 1.5 (ECMAScript 3) features only
+- Comprehensive [documentation](http://mikemcl.github.io/bignumber.js/) and test set
 
 ![API](https://raw.githubusercontent.com/MikeMcl/bignumber.js/gh-pages/API.png)
 
@@ -29,15 +31,24 @@ See also [decimal.js](https://github.com/MikeMcl/decimal.js/), which among other
 
 ## Load
 
-The library is the single JavaScript file *bignumber.js* (or minified, *bignumber.min.js*).
+The library is the single JavaScript file *bignumber.js* or ES module *bignumber.mjs*.
 
-Browser:
+### Browser:
 
 ```html
 <script src='path/to/bignumber.js'></script>
 ```
 
-[Node.js](http://nodejs.org):
+> ES module
+
+```html
+<script type="module">
+import BigNumber from './path/to/bignumber.mjs';
+...
+</script>
+```
+
+### [Node.js](http://nodejs.org):
 
 ```bash
 $ npm install bignumber.js
@@ -47,18 +58,12 @@ $ npm install bignumber.js
 const BigNumber = require('bignumber.js');
 ```
 
-ES6 module:
+> ES module
 
 ```javascript
-import BigNumber from "./bignumber.mjs"
-```
-
-AMD loader libraries such as [requireJS](http://requirejs.org/):
-
-```javascript
-require(['bignumber'], function(BigNumber) {
-    // Use BigNumber here in local scope. No global BigNumber.
-});
+import BigNumber from "bignumber.js";
+// or
+import { BigNumber } from "bignumber.js";
 ```
 
 ## Use
@@ -112,7 +117,7 @@ b = new BigNumber('zz.9', 36)       // "1295.25"
 c = a.plus(b)                       // "1306.25"
 ```
 
-Performance is better if base 10 is NOT specified for decimal values. Only specify base 10 when it is desired that the number of decimal places of the input value be limited to the current [`DECIMAL_PLACES`](http://mikemcl.github.io/bignumber.js/#decimal-places) setting.
+*Performance is better if base 10 is NOT specified for decimal values. Only specify base 10 when it is desired that the number of decimal places of the input value be limited to the current [`DECIMAL_PLACES`](http://mikemcl.github.io/bignumber.js/#decimal-places) setting.*
 
 A BigNumber is immutable in the sense that it is not changed by its methods.
 
@@ -147,7 +152,9 @@ x.toPrecision(5)                    // "255.50"
 x.toNumber()                        //  255.5
 ```
 
- A base can be specified for [`toString`](http://mikemcl.github.io/bignumber.js/#toS). Performance is better if base 10 is NOT specified, i.e. use `toString()` not `toString(10)`. Only specify base 10 when it is desired that the number of decimal places be limited to the current [`DECIMAL_PLACES`](http://mikemcl.github.io/bignumber.js/#decimal-places) setting.
+ A base can be specified for [`toString`](http://mikemcl.github.io/bignumber.js/#toS).
+
+*Performance is better if base 10 is NOT specified, i.e. use `toString()` not `toString(10)`. Only specify base 10 when it is desired that the number of decimal places be limited to the current [`DECIMAL_PLACES`](http://mikemcl.github.io/bignumber.js/#decimal-places) setting.*
 
  ```javascript
  x.toString(16)                     // "ff.8"
@@ -219,6 +226,12 @@ x.div(3)                            // '0.3333333333'
 y.div(3)                            // '0.33333'
 ```
 
+To avoid having to call `toString` or `valueOf` on a BigNumber to get its value in the Node.js REPL or when using `console.log` use
+
+```javascript
+BigNumber.prototype[require('util').inspect.custom] = BigNumber.prototype.valueOf;
+```
+
 For further information see the [API](http://mikemcl.github.io/bignumber.js/) reference in the *doc* directory.
 
 ## Test
@@ -252,14 +265,6 @@ then
 will create *bignumber.min.js*.
 
 A source map will also be created in the root directory.
-
-## Feedback
-
-Open an issue, or email
-
-Michael
-
-<a href="mailto:M8ch88l@gmail.com">M8ch88l@gmail.com</a>
 
 ## Licence
 

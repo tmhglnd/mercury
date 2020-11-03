@@ -1,0 +1,23 @@
+! tapek-ribbon.scl
+!
+Eq-diff ribbon extension of Superpyth, made of two Tapek sequences
+12
+!
+1777/1656 ! C#
+627/552 ! D
+173/138 ! E
+4273/3312 ! E+
+1465/1104 ! F
+131/92 ! F#
+104/69 ! G
+3673/2208 ! A
+945/552 ! A+
+243/138 ! Bb
+1043/552 ! B
+2/1
+! Tapek -c and triple h.eq-b recurrent sequence 3x^3 = x^2 + 8
+! and Superpyth temperament (generator = 710.25498677616 c.)
+! completed by the arithmetical mean ribbon y = (1 + x)/2,
+! equal-differential frequencies of all [7:6:5:4] tetrads
+! main sequence : 243 1465 69 13 627 945 4273/3 ... (C = 69)
+! major third sequence : 3673 173 1043 393 1777/3...

@@ -1,0 +1,19 @@
+! dudon_12_of_19-ht.scl
+!
+12 of 19-tones harmonic temperament, from 27 to 35
+ 12
+!
+ 187/180
+ 67/60
+ 6/5
+ 56/45
+ 241/180
+ 25/18
+ 269/180
+ 14/9
+ 5/3
+ 161/90
+ 28/15
+ 2/1
+! black keys end up with a hybrid slendro  108 125 140 161 187
+! Dudon 1987

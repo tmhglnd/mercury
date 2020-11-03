@@ -1,0 +1,21 @@
+! dudon_chandrakaus.scl
+!
+Chandrakaus from Bb on black keys plus other version from D on white keys
+12
+!
+ 1/1
+ 19/18
+ 10/9
+ 91/72
+ 91/72
+ 95/72
+ 101/72
+ 113/72
+ 19/12
+ 5/3
+ 5/3
+ 2/1
+! Chandrak -c recurrent sequence  5x - x^2 = 1, Dudon 2003
+! Any minor third of a Chandrak sequence, ex.115/96 in 5:24:115... generates a 
+! -c Chandrakaus pentatonic scale out of 4, x, 8(x-4) -1, 8(x-4), 2(x-1)
+! Dudon 2003

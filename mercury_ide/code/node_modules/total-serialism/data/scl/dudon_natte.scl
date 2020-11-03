@@ -1,0 +1,21 @@
+! dudon_natte.scl
+!
+Sequence of 7 consecutive tones of a Natte series from 28 to 151 
+ 12
+!
+ 86/57
+ 65/57
+ 98/57
+ 74/57
+ 151/114
+ 2/1
+ 86/57
+ 65/57
+ 98/57
+ 74/57
+ 112/57
+ 2/1
+! White keys play the seven tones (with two commas 148:151 and 56:57),
+! Black keys play only plain pentatonic 43 : 49 : 57 : 65 : 74
+! Natte fractal sequence (Dudon), known also as "Meta-Slendro" (Wilson)
+! x^3 = x + 1,   or  x^5 = x^4 + 1,    x = 1.3247179572447

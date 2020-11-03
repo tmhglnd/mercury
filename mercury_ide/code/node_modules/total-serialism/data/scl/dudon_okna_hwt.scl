@@ -1,0 +1,19 @@
+! dudon_okna_hwt.scl
+!
+Harmonic well-temperament for mongolian lute
+ 12
+!
+135/128
+1149/1024
+19/16
+321/256
+171/128
+45/32
+3/2
+405/256
+429/256
+7293/4096
+15/8
+2/1
+! C:G  kept pure (3/2) facilitates the open tuning of the instrument
+! Harmonic temperaments, Synthese Orient-Occident, Dudon 2005

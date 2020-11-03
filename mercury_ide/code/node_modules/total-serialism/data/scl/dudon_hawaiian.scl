@@ -1,0 +1,19 @@
+! dudon_hawaiian.scl
+!
+Equal-beating lapsteel-style Major 6th chords (C:E:G:A:C:E) meantone sequence
+ 12
+!
+ 1418440/1360773
+ 168926/151197
+ 60354/50399
+ 566204/453591
+ 67431/50399
+ 1897784/1360773
+ 75338/50399
+ 2120315/1360773
+ 84172/50399
+ 90219/50399
+ 846376/453591
+ 2/1
+! 16 - 3x^3  = 4x  Ray -c recurrent sequence,  Dudon 2005
+! equal beating  3A - 5C  =  3C - 2G  of all Maj 6th chords and complements

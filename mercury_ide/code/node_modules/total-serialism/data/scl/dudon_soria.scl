@@ -1,0 +1,23 @@
+! dudon_soria.scl
+!
+12 from a 17-notes cycle, equal-beating extended fifths (705.5685 c.) sequence
+ 12
+!
+ 481/445
+ 4011/3560
+ 2067/1780
+ 1133/890
+ 9503/7120
+ 128/89
+ 533/356
+ 723/445
+ 754/445
+ 1233/712
+ 1703/890
+ 2/1
+! Airos recurrent sequence  x^3 = 13 - 8x, Dudon 2008
+! Eq-b of fourths, and septimal minor thirds with harmonic 7ths :
+! 8(4 - 3x)  =  3x^3 - 7  =  (32x^3 - 56x)/13   
+! Airos fourths of 494.4315 c. (approx. 640/481),
+! cycle here starting from the neutral sixth (A-koron = 723/445)
+! -c with the 13th harmonic : (13 * 890) - 9503 = 2067, etc.

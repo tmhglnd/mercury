@@ -14,6 +14,7 @@ const Gen  = require('total-serialism').Generative;
 const Algo = require('total-serialism').Algorithmic;
 const Mod  = require('total-serialism').Transform;
 const Rand = require('total-serialism').Stochastic;
+const Stat = require('total-serialism').Statistic;
 const TL   = require('total-serialism').Translate;
 const Util = require('total-serialism').Utility;
 const Dict = require('./dictionary.js');
@@ -264,6 +265,10 @@ const handlers = {
 	'flip' : (...v) => {
 		return Mod.invert(...v);
 	},
+	'filter' : (...v) => {
+		let args = [...v];
+		return Mod.filter(v[0], v.slice(1, v.length));
+	},
 	'inv' : (...v) => {
 		return Mod.invert(...v);
 	},
@@ -311,6 +316,10 @@ const handlers = {
 	'retrograde' : (...v) => {
 		return Mod.reverse(...v);
 	},
+	// sort an array in ascending or descending order
+	'sort' : (...v) => {
+		return Stat.sort(...v);
+	},
 	// spray values on the non-zero places of another array
 	'spray' : (...v) => {
 		return Mod.spray(...v);
@@ -340,6 +349,16 @@ const handlers = {
 	'dtoms' : (...v) => {
 		return TL.divisionToMs(...v);
 	},
+	// 
+	// Statistic Methods
+	// 
+	// IMPLEMENTATION NEEDED
+	// maximum
+	// minimum
+	// mean
+	// median
+	// mode
+
 	// 
 	// Utility Methods
 	// 

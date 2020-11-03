@@ -1,0 +1,18 @@
+! dudon_3-limit_with429.scl
+!
+cycle of 10 pure fourths (4/3) from D ending in 429/256
+ 12
+!
+ 256/243
+ 9/8
+ 32/27
+ 8192/6561
+ 4/3
+ 1024/729
+ 3/2
+ 128/81
+ 429/256
+ 16/9
+ 4096/2187
+ 2/1
+! 12 out of Dudon24

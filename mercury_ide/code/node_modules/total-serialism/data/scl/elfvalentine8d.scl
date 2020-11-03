@@ -1,0 +1,14 @@
+! elfvalentine8d.scl
+! 
+Valentine tempered [21/20, 6/5, 5/4, 21/16, 8/5, 5/3, 11/6, 2] in 77-tET tuning, 11-limit 8d elf
+! generators -5, -4, -2, 0, 1, 4, 5, 6; characteristic polynomial x^8-21*x^6-40*x^5+10*x^4+48*x^3+3*x^2-12*x 
+8 
+! 
+77.92208 
+311.68831 
+389.61039 
+467.53247 
+810.38961 
+888.31169 
+1044.15584 
+2/1 

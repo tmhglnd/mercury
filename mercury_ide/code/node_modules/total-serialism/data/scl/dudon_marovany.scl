@@ -1,0 +1,22 @@
+! dudon_marovany.scl
+!
+Typical Malagasy scale, neutral diatonic, multiways -c and eq-b
+ 12
+!
+ 783/704
+ 3141/2816
+ 2/1
+ 871/704
+ 59/44
+ 871/352
+ 525/352
+ 1053/704
+ 73/44
+ 10393/5632
+ 5197/2816
+ 2/1
+! fractal series based on -c Vali algorithm 64 - 8x^5 = x^4
+! Meenshku  x^4 = 6x -4
+! Pierdangle   64x^2 = 15(x + 8)
+! and Kazdep eq-b  9x2 - 20 = 3 - 2x
+! Dudon 2009

@@ -1,0 +1,20 @@
+! dudon_sireine_f.scl
+!
+Sequence of 11 Sireine fifths (exactly 691.2348426 c.) from F
+ 12
+!
+ 10503/10304
+ 1431/1288
+ 23157/20608
+ 3179/2576
+ 216/161
+ 63/46
+ 240/161
+ 7807/5152
+ 2133/1288
+ 34191/20608
+ 4737/2576
+ 2/1
+! Sireine recurrent sequence  x^4 = 3x^3 - 5
+! Triple equal-beating on all minor triads : 10 - 3x^3 = 5 - x^4 = 3x^3 - 2x^4
+! Dudon 2006

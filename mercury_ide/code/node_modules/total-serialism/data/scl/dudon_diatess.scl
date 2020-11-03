@@ -1,0 +1,19 @@
+! dudon_diatess.scl
+!
+Sequence of 11 Diatess fifths from Eb (75)
+ 12
+!
+ 16549/15984
+ 1114/999
+ 400/333
+ 4969/3996
+ 446/333
+ 1385/999
+ 1492/999
+ 8237/5328
+ 1109/666
+ 1792/999
+ 1855/999
+ 2/1
+! All relevant minor thirds (9) are differentially-coherent (4x - x^4 = 1) 
+! Diatess recurrent sequence,  x^4 = 4x - 1, Dudon 1992

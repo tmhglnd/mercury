@@ -1,6 +1,6 @@
 # Utility Methods
 
-Basic arithmetic and methods necessary to run functions in the libraries above. But can also be of help in your own algorithmic processes.
+Basic arithmetic and methods necessary to run functions in the libraries above. Can also be of help in your own algorithmic processes. Also includes a `plot()` method which generates an asciichart of the array printed to the console.
 
 ## Include
 
@@ -49,4 +49,33 @@ Util.multiply([1, 2, 3, 4], [1, 2, 3]);
 // Divide two arrays sequentially
 Util.divide([1, 2, 3, 4], [1, 2, 3]);
 //=> [ 1, 1, 1, 4 ] 
+```
+
+## plot
+
+Plot an array of values to the console in the form of an ascii chart and return chart from function. If you just want the chart returned as text and not log to console set { log: false }. Using the asciichart package by x84. 
+
+**arguments**
+- {Number/Array/String} -> values to plot
+- {Object} -> { log: false } don't log to console and only return
+	- -> { data: true } log the original array data
+	- -> { decimals: 2 } adjust the number of decimals
+	- -> { height: 10 } set a fixed chart line-height
+	- -> other preferences for padding, colors, offset. See the asciichart documentation
+
+```js 
+
+Util.plot(Gen.sine(20, 3.1415, 0, 24), { height: 10 });
+//=>     23.00 ┼╭─╮    ╭╮    ╭╮     
+//       20.70 ┤│ │    ││    │╰╮    
+//       18.40 ┤│ │   ╭╯╰╮   │ │    
+//       16.10 ┤│ │   │  │  ╭╯ │    
+//       13.80 ┤│ ╰╮  │  │  │  │    
+//       11.50 ┼╯  │  │  │  │  ╰╮   
+//        9.20 ┤   │  │  │  │   │ ╭ 
+//        6.90 ┤   │ ╭╯  ╰╮ │   │ │ 
+//        4.60 ┤   │ │    │╭╯   │ │ 
+//        2.30 ┤   ╰╮│    ││    │ │ 
+//        0.00 ┤    ╰╯    ╰╯    ╰─╯  
+
 ```

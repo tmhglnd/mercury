@@ -1,0 +1,16 @@
+! dudon_rast-iph63.scl
+!
+Neutral diatonic composed of Rast and Iph tetrachords, based on F and 3F series
+7
+!
+377/336
+26/21
+4/3
+377/252
+104/63
+233/126
+2/1
+! Iph -c recurrent sequence, x^3 = 8x - 8
+! completed by its 3rd harmonic transposition
+! F series  13 : 21 ... 233 : 377
+! 3F series 39 : 63 ... 1131

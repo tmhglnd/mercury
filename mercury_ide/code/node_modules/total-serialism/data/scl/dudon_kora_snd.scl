@@ -1,0 +1,19 @@
+! dudon_kora_snd.scl
+!
+Kora tuning in the Mandinka semi-neutral diatonic style
+ 12
+!
+ 129/104
+ 29/26
+ 35/26
+ 129/104
+ 35/26
+ 43/26
+ 3/2
+ 24/13
+ 345/208
+ 2/1
+ 24/13
+ 2/1
+! quasi -c  scale from C = 13 (white keys) :
+! 26  29  129  35  39  43-345  48  52   (Dudon 1991)

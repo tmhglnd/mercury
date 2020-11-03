@@ -78,7 +78,7 @@ Gen.fill(10, 2, 15, 3, 20, 4);
 
 ## sine / cosine
 
-Generate an array with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
+Generate an array with n-periods of a (co)sine function with integer values. Optional last arguments set lo and hi range and phase offset. Default range is 0 to 12. Wave can be inverted by swapping the arguments
 
 **arguments**
 - {Int+} -> Length of array
@@ -92,28 +92,87 @@ Generate an array with n-periods of a (co)sine function. Optional last arguments
 // between a default range of 0-12
 Gen.sine(10);
 //=> [ 6, 9, 11, 11, 9, 6, 2, 0, 0, 2 ] 
+//       11.00 ┼ ╭─╮      
+//       10.00 ┤ │ │      
+//        9.00 ┤╭╯ ╰╮     
+//        8.00 ┤│   │     
+//        7.00 ┤│   │     
+//        6.00 ┼╯   ╰╮    
+//        5.00 ┤     │    
+//        4.00 ┤     │    
+//        3.00 ┤     │    
+//        2.00 ┤     ╰╮ ╭ 
+//        1.00 ┤      │ │ 
+//        0.00 ┤      ╰─╯  
 
 // generate 10 ints with 4 periods a sine function
 Gen.sine(11, 4, 0, 7);
 //=> [ 3, 6, 0, 5, 4, 0, 6, 2, 1, 6, 0 ]
+//        6.00 ┼╭╮   ╭╮ ╭╮ 
+//        5.00 ┤││╭╮ ││ ││ 
+//        4.00 ┤│││╰╮││ ││ 
+//        3.00 ┼╯││ │││ ││ 
+//        2.00 ┤ ││ ││╰╮││ 
+//        1.00 ┤ ││ ││ ╰╯│ 
+//        0.00 ┤ ╰╯ ╰╯   ╰  
+
 ```
 
 <iframe src="https://editor.p5js.org/tmhglnd/embed/PdywLSgcO" width="100%" height="250px" frameBorder="0" scrolling="no"></iframe>
+
+## sineFloat / cosineFloat
+
+Generate an array with n-periods of a (co)sine function with floating-point values. Optional last arguments set lo and hi range and phase offset. Default range is -1 to 1. Only setting first range argument sets the low-range to 0. Wave can be inverted by swapping the arguments.
+
+**arguments**
+- {Int+} -> Length of array
+- {Number} -> Periods of (co)sine-wave (optional, default=1)
+- {Number} -> Low range of values (optional, default=-1)
+- {Number} -> High range of values (optional, default=1)
+- {Number} -> Phase offset (optional, default=0)
 
 ```js
 // generate 7 ints of 1.5 period a cosine function
 Gen.cosine(7, 1.5);
 //=> [ 12, 7, 0, 2, 9, 11, 4 ] 
+//       12.00 ┼╮      
+//       11.00 ┤│   ╭╮ 
+//       10.00 ┤│   ││ 
+//        9.00 ┤│  ╭╯│ 
+//        8.00 ┤│  │ │ 
+//        7.00 ┤╰╮ │ │ 
+//        6.00 ┤ │ │ │ 
+//        5.00 ┤ │ │ │ 
+//        4.00 ┤ │ │ ╰ 
+//        3.00 ┤ │ │   
+//        2.00 ┤ │╭╯   
+//        1.00 ┤ ││    
+//        0.00 ┤ ╰╯     
 
-// generate 8 floats with 1 period of a cosine function
-Gen.sineFloat(8);
-//=> [ 0.000, -0.707, -1, -0.707, -0.000, 0.707, 1, 0.707 ] 
-// Alternative: Gen.sin();
+// generate 16 floats with 1 period of a sine function
+Gen.sineFloat(16);
+//=> [ 0.00, 0.38, 0.71, 0.92, 1.00, 0.92, 0.71, 0.38, 0.00, -0.38, 
+//     -0.71, -0.92, -1.00, -0.92, -0.71, -0.38 ]
 
-// generate 8 floats with 1 period of a cosine function
+//        1.00 ┤   ╭╮           
+//        0.60 ┤ ╭─╯╰─╮         
+//        0.20 ┼╭╯    ╰╮        
+//       -0.20 ┼╯      ╰╮       
+//       -0.60 ┤        ╰╮    ╭ 
+//       -1.00 ┤         ╰────╯  
+
+// generate 16 floats with 1 period of a cosine function
 Gen.cosineFloat(8);
-//=> [ 1, 0.707, 0.000, -0.707, -1, -0.707, -0.000, 0.707 ] 
-// Alternative: Gen.cos();
+//=> [ 1.00, 0.92, 0.71, 0.38, 0.00, -0.38, -0.71, -0.92, -1.00, 
+//     -0.92, -0.71, -0.38, -0.00, 0.38, 0.71, 0.92 ]
+
+//        1.00 ┼╮               
+//        0.60 ┤╰─╮          ╭─ 
+//        0.20 ┼  ╰╮        ╭╯  
+//       -0.20 ┤   ╰╮      ╭╯   
+//       -0.60 ┤    ╰╮    ╭╯    
+//       -1.00 ┤     ╰────╯      
+
 ```
 
 <iframe src="https://editor.p5js.org/tmhglnd/embed/CFOwE1yhW" width="100%" height="250px" frameBorder="0" scrolling="no"></iframe>
