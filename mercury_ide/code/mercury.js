@@ -162,7 +162,7 @@ const handlers = {
 	// 
 	// set the random number generator seed
 	'randomSeed' : (...v) => {
-		console.log("seed", ...v);
+		// console.log("seed", ...v);
 		Rand.seed(v[0]);
 	},
 	// generate an array of random integers in range
