@@ -2753,7 +2753,7 @@
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"hint" : "",
 					"id" : "obj-94",
-					"items" : [ "None", ",", "Built-in Microphone", ",", "BlackHole", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "from Max", ",", "Aggregate Device" ],
+					"items" : [ "None", ",", "Built-in Microphone", ",", "BlackHole", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "Discord", ",", "to Youtube", ",", "to Discord", ",", "from Max" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3639,7 +3639,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 553.0, 341.0, 288.0, 361.0 ],
+						"rect" : [ 343.0, 244.0, 288.0, 361.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
