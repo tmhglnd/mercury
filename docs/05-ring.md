@@ -62,6 +62,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [rotate / turn](#rotate)
 	- [reverse / retrograde](#reverse)
 	- [spray](#spray)
+	- [stretch / stretchFloat](#stretch)
 	- [unique / thin](#unique)
 - [Utility Methods](#utility-methods)
 - [Translate Methods](#translate-methods)
@@ -762,6 +763,28 @@ ring notes [12 19 15 17]
 ring places [1 0 0 1 1 0 1 0 1 0]
 ring sprayed spray(notes places)
 // => [12 0 0 19 15 0 17 0 12 0]
+```
+
+## stretch
+
+Stretch (or shrink) a ring to a specified length, linearly interpolating between all values within the ring. Minimum output length is 2 (which will be the outmost values from the ring). Third optional argument sets the interpolation mode. Available modes are `none` (or `null`, `false`) and `linear`.
+
+**arguments**
+
+```js
+ring notes [0 12 3 7]
+ring str stretch(notes 15)
+//=> [ 0, 2, 5, 7, 10, 11, 9, 7, 5, 3, 3, 4, 5, 6, 7 ] 
+
+//   12.00 ┼  ╭╮      
+//    9.60 ┤  │╰╮     
+//    7.20 ┤ ╭╯ │   ╭ 
+//    4.80 ┤╭╯  ╰╮╭─╯ 
+//    2.40 ┤│    ╰╯   
+//    0.00 ┼╯ 
+
+// use stretchFloat if you want the result to have more precision
+ring str stretchFloat(notes 15)
 ```
 
 ## unique
