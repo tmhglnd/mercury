@@ -17,7 +17,8 @@
 		"name" : "no_name",
 		"group" : "no_group",
 		"detune" : 0,
-		"sendOSC" : 0
+		"sendOSC" : 0,
+		"clock" : 0
 	}
 ,
 	"polySynth" : 	{
@@ -38,7 +39,8 @@
 		"name" : "no_name",
 		"group" : "no_group",
 		"detune" : 0,
-		"sendOSC" : 0
+		"sendOSC" : 0,
+		"clock" : 0
 	}
 ,
 	"sample" : 	{
@@ -54,7 +56,8 @@
 		"offset" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
-		"sendOSC" : 0
+		"sendOSC" : 0,
+		"clock" : 0
 	}
 ,
 	"loop" : 	{
@@ -70,7 +73,8 @@
 		"offset" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
-		"sendOSC" : 0
+		"sendOSC" : 0,
+		"clock" : 0
 	}
 ,
 	"emitter" : 	{
@@ -78,7 +82,8 @@
 		"time" : "1/16",
 		"name" : "null",
 		"group" : "no_group",
-		"sendOSC" : 1
+		"sendOSC" : 1,
+		"clock" : 0
 	}
 ,
 	"midi" : {
@@ -91,7 +96,8 @@
 		"name" : "no_name",
 		"group" : "no_group",
 		"detune" : 0,
-		"sendOSC" : 0
+		"sendOSC" : 0,
+		"clock" : 0
 	}
 ,
 	"voice" : {
@@ -101,6 +107,7 @@
 		"group" : "no_group",
 		"sendOSC" : 0,
 		"speed" : 1,
-		"gain" : 0.5
+		"gain" : 0.5,
+		"clock" : 0
 	}
 }

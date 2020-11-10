@@ -50,6 +50,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [choose](#choose)
 	- [pick](#pick)
 	- [shuffle](#shuffle)
+	- [expand](#expand)
 - [Transformative Methods](#transformative-methods)
 	- [clone](#clone)
 	- [combine / join](#combine)
@@ -568,8 +569,8 @@ ring shf2 scramble(notes)
 Expand a ring based upon the pattern within a ring. The pattern is derived from the rate in change between values by calculating the differences between every consecutive value. The newly generated values are selected randomly from the list of possible changes, but in such a way that every change occurs once in the sequence of total changes before reshuffling and selecting the next one (see the `pick` method for explanation). The resulting output starts with the input ring.
 
 **arguments**
-- {Int+} -> length of array output
-- {Array} -> Array to expand
+- {Int+} -> length of ring output
+- {Ring} -> Ring to expand
 
 ```java
 set randomSeed 3141

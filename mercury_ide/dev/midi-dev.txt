@@ -1,15 +1,18 @@
 
-set debug 1
+set tempo 100
 
-set midi getPorts
-
+// set debug 1
+// set midi getPorts
 set scale minor_harmonic c
 
 ring nts sine(32 16.774 0 24)
-ring len cosine(128 1 100 10)
+ring len cosine(128 1 500 20)
 
-new midi "MIDI Monitor (Untitled)" name(midi1) 
-	set midi1 note(nts 1) time(1) amp(0.9)
-	set midi1 length(len) channel(1)
+new midi "Volante" name(midi1) 
+	set midi1 note(nts 1) time(1/16) amp(0.9)
+	set midi1 length(len) channel(16)
+	set midi1 clock(on)
 
-silence
+// new midi "Context" sync(on)
+
+// silence

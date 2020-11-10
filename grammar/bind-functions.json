@@ -132,5 +132,13 @@
 		"output",
 		"outlet",
 		"to"
+	],
+
+	"clock" : [
+		"clock",
+		"sync",
+		"clockSync",
+		"midiClock",
+		"midiSync"
 	]
 }

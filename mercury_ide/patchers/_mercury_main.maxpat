@@ -44372,7 +44372,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 60.0, 148.0, 789.0, 639.0 ],
+						"rect" : [ 220.0, 106.0, 789.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -48012,7 +48012,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2", ",", "MIDI Monitor (Untitled)" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2", ",", "MIDI Monitor (Untitled)", ",", "Volante", ",", "Particle", ",", "Context", ",", "Tensor" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,

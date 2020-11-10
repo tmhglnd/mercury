@@ -36,7 +36,12 @@
     "channel": "out",
     "output": "out",
     "outlet": "out",
-    "to": "out"
+    "to": "out",
+    "clock": "clock",
+    "sync": "clock",
+    "clockSync": "clock",
+    "midiClock": "clock",
+    "midiSync": "clock"
   },
   "emitter": {
     "name": "name",
