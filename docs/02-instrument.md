@@ -376,6 +376,19 @@ new midi "AU DLS Synth 1" note(0 0) out(2)
 
 Alternative function-names: `channel()`
 
+## sync
+
+Turn midiclock syncing on/off for an individual instrument and send it to the selected port/device from that instrument.
+
+**arguments**
+
+- {Bool} -> Turn syncing on/off
+
+```java
+new midi "aMidiDevice" sync(on)
+new midi "otherDevice" sync(off)
+```
+
 <!-- 
 # Text to Speech (mac-only)
 
