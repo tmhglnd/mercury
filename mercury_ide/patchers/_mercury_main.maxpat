@@ -48012,7 +48012,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2", ",", "MIDI Monitor (Untitled)", ",", "Volante", ",", "Particle", ",", "Context", ",", "Tensor" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2", ",", "MIDI Monitor (Untitled)" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -48536,7 +48536,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 101.0, 142.0, 829.0, 382.0 ],
+						"rect" : [ 303.0, 219.0, 829.0, 382.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -66619,16 +66619,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-100", 0 ],
-					"order" : 1,
-					"source" : [ "obj-148", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-301", 0 ],
-					"order" : 0,
 					"source" : [ "obj-148", 0 ]
 				}
 
@@ -67863,6 +67854,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-358", 0 ],
 					"source" : [ "obj-302", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-100", 0 ],
+					"order" : 3,
+					"source" : [ "obj-304", 1 ]
 				}
 
 			}
