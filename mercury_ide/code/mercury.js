@@ -324,6 +324,13 @@ const handlers = {
 	'spray' : (...v) => {
 		return Mod.spray(...v);
 	},
+	// stretch an array to a specified length, interpolating values
+	'stretch' : (...v) => {
+		return Util.trunc(Mod.stretch(...v));
+	},
+	'stretchFloat' : (...v) => {
+		return Mod.stretch(...v);
+	},
 	// remove duplicates from an array, leave order intact
 	'unique' : (...v) => {
 		return Mod.unique(...v);

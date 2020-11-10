@@ -143,6 +143,25 @@ Mod.repeat([[10, 20], [30, 40, 50]], [2, 3]);
 //     [ 30, 40, 50 ] ] 
 ```
 
+## stretch
+
+Stretch (or shrink) an array to a specified length, linearly interpolating between all values within the array. Minimum output length is 2 (which will be the outmost values from the array). Third optional argument sets the interpolation mode. Available modes are `none` (or `null`, `false`) and `linear`.
+
+**arguments**
+
+```js
+Mod.stretch([0, 12, 3, 7], 15);
+//=> [ 0, 2.57, 5.14, 7.71, 10.28, 11.35, 9.42 7.5, 
+// 	   5.57, 3.64, 3.57, 4.42, 5.28, 6.14, 7 ] 
+
+//   12.00 ┼  ╭╮      
+//    9.60 ┤  │╰╮     
+//    7.20 ┤ ╭╯ │   ╭ 
+//    4.80 ┤╭╯  ╰╮╭─╯ 
+//    2.40 ┤│    ╰╯   
+//    0.00 ┼╯         
+``
+
 *more documentation needed for following functions*
 
 ```js

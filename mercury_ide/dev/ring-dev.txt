@@ -1,5 +1,5 @@
 
-// possible arrays and datatypes with arbitrary spaces
+// // possible arrays and datatypes with arbitrary spaces
 // ring ar1 [0 12 3.14 56 789]
 // print ar1
 // ring ar2 [11 22 33 44 55]
@@ -86,7 +86,7 @@
 // // => [1 1 0 1 1 0 1]
 // ring euc3 euclid(7 5 2)
 // print euc3
-// => [0 1 1 1 0 1 1]
+// //=> [0 1 1 1 0 1 1]
 
 // ring hex1 hexBeat()
 // print hex1
@@ -328,13 +328,13 @@
 // // => [0 5 7 3 12]
 // // thin()
 
-// add()
-// subtract()
-// sub()
-// multiply()
-// mul()
-// divide()
-// div()
+// // add()
+// // subtract()
+// // sub()
+// // multiply()
+// // mul()
+// // divide()
+// // div()
 
 // set tempo 120
 // ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
@@ -348,3 +348,10 @@
 // ring ms3 dtoms(ratios)
 // print ms3
 // // => [500 1000 250 375 500 333.33 4000]
+
+ring nts [0 12 5 7]
+ring str stretch(nts 50)
+print str
+
+ring strF stretchFloat(nts 50)
+print strF

@@ -8110,6 +8110,8 @@ exports.lucas = lucas;
 // require Generative methods
 const Gen = require('./gen-basic.js');
 const Util = require('./utility.js');
+const Stat = require('./statistic.js');
+
 // require seedrandom package
 var seedrandom = require('seedrandom');
 
@@ -8329,6 +8331,9 @@ exports.choose = choose;
 function pick(len=1, a=[0, 1]){
 	// fill the jar with the input
 	var jar = (!Array.isArray(a))? [a] : a;
+	if (jar.length < 2){
+		return new Array(len).fill(jar[0]);
+	}
 	// shuffle the jar
 	var s = shuffle(jar);
 	// value, previous, output-array
@@ -8350,6 +8355,32 @@ function pick(len=1, a=[0, 1]){
 }
 exports.pick = pick;
 
+// expand an array based upon the pattern within an array
+// the pattern is derived from the rate in change between values
+// the newly generated values are selected randomly from the list
+// of changes.
+// 
+// @param {Array} -> the array to expand
+// @param {Number} -> the resulting array length
+// @return {Array}
+// 
+function expand(l=1, a=[0, 0]){
+	a = (Array.isArray(a))? a : [a];
+	// get the differences and pick the expansion options
+	let p = Stat.change(a);
+	let chg = pick(l-a.length, p);
+	// console.log(chg);
+	// empty output array and axiom for output
+	let arr = a.slice();
+	let acc = arr[arr.length-1];
+	// accumulate the change and store in array
+	for (let c in chg){
+		arr.push(acc += chg[c]);
+	}
+	return arr;
+}
+exports.expand = expand;
+exports.extrapolate = expand;
 
 // Initialize a Markov Chain Model (One of the simpelest forms of ML)
 // A Markov chain is a stochastic model describing a sequence 
@@ -8434,7 +8465,7 @@ class MarkovChain {
 	}
 }
 exports.MarkovChain = MarkovChain;
-},{"./gen-basic.js":37,"./utility.js":43,"seedrandom":29}],40:[function(require,module,exports){
+},{"./gen-basic.js":37,"./statistic.js":40,"./utility.js":43,"seedrandom":29}],40:[function(require,module,exports){
 //=======================================================================
 // statistic.js
 // part of 'total-serialism' Package
@@ -8443,7 +8474,6 @@ exports.MarkovChain = MarkovChain;
 //
 // Statistical related methods and algorithms that can be helpful in
 // analysis of number sequences, melodies, rhythms and more
-// 
 //=======================================================================
 
 const Mod = require('./transform');
@@ -8576,6 +8606,29 @@ function mode(a=[0]){
 }
 exports.mode = mode;
 exports.common = mode;
+
+// Return the difference between every consecutive value in an array
+// With melodic content from a chromatic scale this can be seen as
+// a list of intervals that, when followed from the same note, results
+// in the same melody.
+// 
+// @param {Array} -> array to calculate from
+// @return {Array} -> list of changes
+// 
+function change(a=[0, 0]){
+	if (a.length < 2 || !Array.isArray(a)){
+		return [0];
+	}
+	let len = a.length;
+	let arr = [];
+	for (let i=1; i<len; i++){
+		arr.push(a[i] - a[i-1]);
+	}
+	return arr;
+}
+exports.change = change;
+exports.difference = change;
+
 },{"./transform":41}],41:[function(require,module,exports){
 //=======================================================================
 // transform.js
@@ -8877,6 +8930,35 @@ function spray(values=[0], beats=[0]){
 	return arr;
 }
 exports.spray = spray;
+
+// stretch (or shrink) an array of numbers to a specified length
+// interpolating the values to fill in the gaps. 
+// TO-DO: Interpolations options are: none, linear, cosine, cubic
+// 
+// param {Array} -> array to stretch
+// param {Array} -> outputlength of array
+// param {String/Int} -> interpolation function (optional, default=linear)
+// 
+function stretch(a=[0], len=5, mode='linear'){
+	let arr = [];
+	let l = a.length;
+	for (let i=0; i<len; i++){
+		// construct a lookup interpolation position for new array
+		let val = i / (len - 1) * (l - 1);
+		// lookup nearest neighbour left/right
+		let a0 = a[Math.max(Math.trunc(val), 0)];
+		let a1 = a[Math.min(Math.trunc(val)+1, l-1)];
+
+		if (mode === 'none' || mode === null || mode === false){
+			arr.push(a0);
+		} else {
+			// interpolate between the values according to decimal place
+			arr.push(Util.lerp(a0, a1, val % 1));
+		}
+	}
+	return arr;
+}
+exports.stretch = stretch;
 
 // filter duplicate items from an array
 // does not account for 2-dimensional arrays in the array
@@ -9644,6 +9726,27 @@ function _map(a, inLo=0, inHi=1, outLo=0, outHi=1, exp=1){
 	return a * (outHi - outLo) + outLo;
 }
 
+// Interpolate / mix between 2 values
+// 
+// @param {Number} -> value 1
+// @param {Number} -> value 2
+// @param {Number} -> interpolation factor (0-1, optional, default=0.5)
+// @return {Number}
+// 
+// function mix(arr0, arr1=[0], f=0.5){
+// 	arr1 = (Array.isArray())? arr1 : [arr1];
+// 	// if (!Array.isArray(arr0) && !Array.isArray(arr1)){
+// 	// 	return _mix(arr0, arr1, f);
+// 	// }
+// }
+// exports.mix = mix;
+// exports.interpolate = mix;
+
+function _mix(a0, a1, f=0.5, mode='linear'){
+	return a0 * (1-f) + a1 * f;
+}
+exports.lerp = _mix;
+
 // add 1 or more values to an array, 
 // preserves listlength of first argument
 // arguments are applied sequentially
@@ -9771,6 +9874,21 @@ function mod(a, mod=12){
 	return a.map(x => ((x % mod) + mod) % mod);
 }
 exports.mod = mod;
+
+// Truncate all the values in an array towards 0,
+// sometimes referred to as rounding down
+// 
+// @param {Number/Array} -> input value
+// @return {Int/Array} -> trucated value
+function truncate(a){
+	if (!Array.isArray(a)){
+		return Math.trunc(a);
+	}
+	return a.map(x => Math.trunc(x));
+}
+exports.truncate = truncate;
+exports.trunc = truncate;
+exports.int = truncate;
 
 // Plot an array of values to the console in the form of an
 // ascii chart and return chart from function. If you just want the 

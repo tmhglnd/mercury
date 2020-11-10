@@ -2344,7 +2344,7 @@ function lucas(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[
 // - Gratefully using the seedrandom package by David Bau
 //=======================================================================
 // require Generative methods
-var Gen=require('./gen-basic.js');var Util=require('./utility.js');// require seedrandom package
+var Gen=require('./gen-basic.js');var Util=require('./utility.js');var Stat=require('./statistic.js');// require seedrandom package
 var seedrandom=require('seedrandom');// local pseudorandom number generator
 var rng=seedrandom();// Set the seed for all the Random Number Generators. 
 // 0 sets to unpredictable seeding
@@ -2457,9 +2457,22 @@ a=!Array.isArray(a)?[a]:a;var arr=[];for(var i=0;i<Math.max(1,len);i++){arr.push
 // @return {Array} -> randomly selected items
 // 
 function pick(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var a=arguments.length>1&&arguments[1]!==undefined?arguments[1]:[0,1];// fill the jar with the input
-var jar=!Array.isArray(a)?[a]:a;// shuffle the jar
+var jar=!Array.isArray(a)?[a]:a;if(jar.length<2){return new Array(len).fill(jar[0]);}// shuffle the jar
 var s=shuffle(jar);// value, previous, output-array
-var v,p,arr=[];for(var i=0;i<Math.max(1,len);i++){v=s.pop();if(v===undefined){s=shuffle(jar);v=s.pop();if(v===p){v=s.pop();s.push(p);}}arr[i]=v;p=v;}return arr;}exports.pick=pick;// Initialize a Markov Chain Model (One of the simpelest forms of ML)
+var v,p,arr=[];for(var i=0;i<Math.max(1,len);i++){v=s.pop();if(v===undefined){s=shuffle(jar);v=s.pop();if(v===p){v=s.pop();s.push(p);}}arr[i]=v;p=v;}return arr;}exports.pick=pick;// expand an array based upon the pattern within an array
+// the pattern is derived from the rate in change between values
+// the newly generated values are selected randomly from the list
+// of changes.
+// 
+// @param {Array} -> the array to expand
+// @param {Number} -> the resulting array length
+// @return {Array}
+// 
+function expand(){var l=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var a=arguments.length>1&&arguments[1]!==undefined?arguments[1]:[0,0];a=Array.isArray(a)?a:[a];// get the differences and pick the expansion options
+var p=Stat.change(a);var chg=pick(l-a.length,p);// console.log(chg);
+// empty output array and axiom for output
+var arr=a.slice();var acc=arr[arr.length-1];// accumulate the change and store in array
+for(var c in chg){arr.push(acc+=chg[c]);}return arr;}exports.expand=expand;exports.extrapolate=expand;// Initialize a Markov Chain Model (One of the simpelest forms of ML)
 // A Markov chain is a stochastic model describing a sequence 
 // of possible events in which the probability of each event depends 
 // only on the state of the previous (multiple) events.
@@ -2486,7 +2499,7 @@ if(this._state===undefined||!this._table[this._state]){var states=Object.keys(th
 var probs=this._table[this._state];// select pseudorandomly next value
 this._state=probs[Math.floor(rng()*probs.length)];return this._state;}},{key:"chain",value:function chain(l){// return an array of values generated with next()
 var c=[];for(var i=0;i<l;i++){c.push(this.next());}return c;}},{key:"table",get:function get(){// return copy of object
-return _objectSpread({},this._table);}}]);return MarkovChain;}();exports.MarkovChain=MarkovChain;},{"./gen-basic.js":37,"./utility.js":43,"seedrandom":29}],40:[function(require,module,exports){//=======================================================================
+return _objectSpread({},this._table);}}]);return MarkovChain;}();exports.MarkovChain=MarkovChain;},{"./gen-basic.js":37,"./statistic.js":40,"./utility.js":43,"seedrandom":29}],40:[function(require,module,exports){//=======================================================================
 // statistic.js
 // part of 'total-serialism' Package
 // by Timo Hoogland (@t.mo / @tmhglnd), www.timohoogland.com
@@ -2494,7 +2507,6 @@ return _objectSpread({},this._table);}}]);return MarkovChain;}();exports.MarkovC
 //
 // Statistical related methods and algorithms that can be helpful in
 // analysis of number sequences, melodies, rhythms and more
-// 
 //=======================================================================
 var Mod=require('./transform');// sort an array of numbers or strings. sorts ascending
 // or descending in numerical and alphabetical order
@@ -2535,7 +2547,15 @@ function median(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0
 // @param {NumberArray} -> input array of n-numbers
 // @return {Number/Array} -> the mode or modes
 //
-function mode(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];if(!Array.isArray(a)){return a;}var arr=a.slice().sort(function(a,b){return a-b;});var amount=1;var streak=0;var modes=[];for(var i=1;i<arr.length;i++){if(arr[i-1]!=arr[i]){amount=0;}amount++;if(amount>streak){streak=amount;modes=[arr[i]];}else if(amount==streak){modes.push(arr[i]);}}return modes;}exports.mode=mode;exports.common=mode;},{"./transform":41}],41:[function(require,module,exports){//=======================================================================
+function mode(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];if(!Array.isArray(a)){return a;}var arr=a.slice().sort(function(a,b){return a-b;});var amount=1;var streak=0;var modes=[];for(var i=1;i<arr.length;i++){if(arr[i-1]!=arr[i]){amount=0;}amount++;if(amount>streak){streak=amount;modes=[arr[i]];}else if(amount==streak){modes.push(arr[i]);}}return modes;}exports.mode=mode;exports.common=mode;// Return the difference between every consecutive value in an array
+// With melodic content from a chromatic scale this can be seen as
+// a list of intervals that, when followed from the same note, results
+// in the same melody.
+// 
+// @param {Array} -> array to calculate from
+// @return {Array} -> list of changes
+// 
+function change(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0,0];if(a.length<2||!Array.isArray(a)){return[0];}var len=a.length;var arr=[];for(var i=1;i<len;i++){arr.push(a[i]-a[i-1]);}return arr;}exports.change=change;exports.difference=change;},{"./transform":41}],41:[function(require,module,exports){//=======================================================================
 // transform.js
 // part of 'total-serialism' Package
 // by Timo Hoogland (@t.mo / @tmhglnd), www.timohoogland.com
@@ -2653,7 +2673,18 @@ exports.sort=Stat.sort;// spray the values of one array on the
 // param {Array} -> positions to spread to
 // return {Array}
 // 
-function spray(){var values=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];var beats=arguments.length>1&&arguments[1]!==undefined?arguments[1]:[0];var arr=beats.slice();var c=0;for(var i in beats){if(beats[i]>0){arr[i]=values[c++%values.length];}}return arr;}exports.spray=spray;// filter duplicate items from an array
+function spray(){var values=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];var beats=arguments.length>1&&arguments[1]!==undefined?arguments[1]:[0];var arr=beats.slice();var c=0;for(var i in beats){if(beats[i]>0){arr[i]=values[c++%values.length];}}return arr;}exports.spray=spray;// stretch (or shrink) an array of numbers to a specified length
+// interpolating the values to fill in the gaps. 
+// TO-DO: Interpolations options are: none, linear, cosine, cubic
+// 
+// param {Array} -> array to stretch
+// param {Array} -> outputlength of array
+// param {String/Int} -> interpolation function (optional, default=linear)
+// 
+function stretch(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];var len=arguments.length>1&&arguments[1]!==undefined?arguments[1]:5;var mode=arguments.length>2&&arguments[2]!==undefined?arguments[2]:'linear';var arr=[];var l=a.length;for(var i=0;i<len;i++){// construct a lookup interpolation position for new array
+var val=i/(len-1)*(l-1);// lookup nearest neighbour left/right
+var a0=a[Math.max(Math.trunc(val),0)];var a1=a[Math.min(Math.trunc(val)+1,l-1)];if(mode==='none'||mode===null||mode===false){arr.push(a0);}else{// interpolate between the values according to decimal place
+arr.push(Util.lerp(a0,a1,val%1));}}return arr;}exports.stretch=stretch;// filter duplicate items from an array
 // does not account for 2-dimensional arrays in the array
 // 
 // @param {Array} -> array to filter
@@ -2977,7 +3008,22 @@ if(!Array.isArray(a)){return _fold(a,lo,hi);}return a.map(function(x){return _fo
 // @param {Number} -> exponent (optional, default=1)
 // @return {Number/Array}
 // 
-function map(a){for(var _len5=arguments.length,params=new Array(_len5>1?_len5-1:0),_key5=1;_key5<_len5;_key5++){params[_key5-1]=arguments[_key5];}if(!Array.isArray(a)){return _map.apply(void 0,[a].concat(params));}return a.map(function(x){return _map.apply(void 0,[x].concat(params));});}exports.map=map;exports.scale=map;function _map(a){var inLo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:0;var inHi=arguments.length>2&&arguments[2]!==undefined?arguments[2]:1;var outLo=arguments.length>3&&arguments[3]!==undefined?arguments[3]:0;var outHi=arguments.length>4&&arguments[4]!==undefined?arguments[4]:1;var exp=arguments.length>5&&arguments[5]!==undefined?arguments[5]:1;a=(a-inLo)/(inHi-inLo);if(exp!=1){var sign=a>=0.0?1:-1;a=Math.pow(Math.abs(a),exp)*sign;}return a*(outHi-outLo)+outLo;}// add 1 or more values to an array, 
+function map(a){for(var _len5=arguments.length,params=new Array(_len5>1?_len5-1:0),_key5=1;_key5<_len5;_key5++){params[_key5-1]=arguments[_key5];}if(!Array.isArray(a)){return _map.apply(void 0,[a].concat(params));}return a.map(function(x){return _map.apply(void 0,[x].concat(params));});}exports.map=map;exports.scale=map;function _map(a){var inLo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:0;var inHi=arguments.length>2&&arguments[2]!==undefined?arguments[2]:1;var outLo=arguments.length>3&&arguments[3]!==undefined?arguments[3]:0;var outHi=arguments.length>4&&arguments[4]!==undefined?arguments[4]:1;var exp=arguments.length>5&&arguments[5]!==undefined?arguments[5]:1;a=(a-inLo)/(inHi-inLo);if(exp!=1){var sign=a>=0.0?1:-1;a=Math.pow(Math.abs(a),exp)*sign;}return a*(outHi-outLo)+outLo;}// Interpolate / mix between 2 values
+// 
+// @param {Number} -> value 1
+// @param {Number} -> value 2
+// @param {Number} -> interpolation factor (0-1, optional, default=0.5)
+// @return {Number}
+// 
+// function mix(arr0, arr1=[0], f=0.5){
+// 	arr1 = (Array.isArray())? arr1 : [arr1];
+// 	// if (!Array.isArray(arr0) && !Array.isArray(arr1)){
+// 	// 	return _mix(arr0, arr1, f);
+// 	// }
+// }
+// exports.mix = mix;
+// exports.interpolate = mix;
+function _mix(a0,a1){var f=arguments.length>2&&arguments[2]!==undefined?arguments[2]:0.5;var mode=arguments.length>3&&arguments[3]!==undefined?arguments[3]:'linear';return a0*(1-f)+a1*f;}exports.lerp=_mix;// add 1 or more values to an array, 
 // preserves listlength of first argument
 // arguments are applied sequentially
 // 
@@ -3016,7 +3062,12 @@ function divide(a){var v=arguments.length>1&&arguments[1]!==undefined?arguments[
 // @param {Int/Array} -> divisor (optional, default=12)
 // @return {Int/Array} -> remainder after division
 // 
-function mod(a){var mod=arguments.length>1&&arguments[1]!==undefined?arguments[1]:12;if(Array.isArray(mod)){a=Array.isArray(a)?a:[a];var l1=a.length,l2=mod.length,r=[];var l=Math.max(l1,l2);for(var i=0;i<l;i++){var m=mod[i%l2];r[i]=(a[i%l1]%m+m)%m;}return r;}if(!Array.isArray(a)){return(a%mod+mod)%mod;}return a.map(function(x){return(x%mod+mod)%mod;});}exports.mod=mod;// Plot an array of values to the console in the form of an
+function mod(a){var mod=arguments.length>1&&arguments[1]!==undefined?arguments[1]:12;if(Array.isArray(mod)){a=Array.isArray(a)?a:[a];var l1=a.length,l2=mod.length,r=[];var l=Math.max(l1,l2);for(var i=0;i<l;i++){var m=mod[i%l2];r[i]=(a[i%l1]%m+m)%m;}return r;}if(!Array.isArray(a)){return(a%mod+mod)%mod;}return a.map(function(x){return(x%mod+mod)%mod;});}exports.mod=mod;// Truncate all the values in an array towards 0,
+// sometimes referred to as rounding down
+// 
+// @param {Number/Array} -> input value
+// @return {Int/Array} -> trucated value
+function truncate(a){if(!Array.isArray(a)){return Math.trunc(a);}return a.map(function(x){return Math.trunc(x);});}exports.truncate=truncate;exports.trunc=truncate;exports["int"]=truncate;// Plot an array of values to the console in the form of an
 // ascii chart and return chart from function. If you just want the 
 // chart returned as text and not log to console set { log: false }.
 // Using the asciichart package by x84. 
