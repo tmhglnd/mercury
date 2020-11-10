@@ -41,7 +41,9 @@
     "sync": "clock",
     "clockSync": "clock",
     "midiClock": "clock",
-    "midiSync": "clock"
+    "midiSync": "clock",
+    "chords": "poly",
+    "polyphonic": "poly"
   },
   "emitter": {
     "name": "name",

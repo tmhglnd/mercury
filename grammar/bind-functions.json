@@ -140,5 +140,10 @@
 		"clockSync",
 		"midiClock",
 		"midiSync"
+	],
+
+	"poly" : [
+		"chords",
+		"polyphonic"
 	]
 }

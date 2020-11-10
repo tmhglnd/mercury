@@ -97,7 +97,8 @@
 		"group" : "no_group",
 		"detune" : 0,
 		"sendOSC" : 0,
-		"clock" : 0
+		"clock" : 0,
+		"poly" : 0
 	}
 ,
 	"voice" : {
