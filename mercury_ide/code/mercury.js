@@ -224,6 +224,13 @@ const handlers = {
 	'scramble' : (v) => {
 		return Rand.shuffle(v);
 	},
+	// expand an array based upon the pattern within an array
+	// arbitrarily choosing the next 
+	'expand' : (...v) => {
+		// swap because of implementation in total-serialism
+		let args = [v[1], v[0]];
+		return Rand.expand(...args);
+	},
 	// 
 	// Transformational Methods
 	// 

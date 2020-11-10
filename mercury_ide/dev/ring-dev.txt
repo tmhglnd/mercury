@@ -349,9 +349,18 @@
 // print ms3
 // // => [500 1000 250 375 500 333.33 4000]
 
-ring nts [0 12 5 7]
-ring str stretch(nts 50)
-print str
+// ring nts [0 12 5 7]
+// ring str stretch(nts 50)
+// print str
 
-ring strF stretchFloat(nts 50)
-print strF
+// ring strF stretchFloat(nts 50)
+// print strF
+
+set randomSeed 3141
+ring nts [0 9 7 3 5 0 -1]
+ring exp expand(nts 30)
+print exp
+
+set randomSeed 1618
+ring exp2 expand(nts 30)
+print exp2

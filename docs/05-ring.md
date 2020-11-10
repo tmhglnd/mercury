@@ -563,6 +563,47 @@ ring shf2 scramble(notes)
 // => [12 0 3 7 5 9]
 ```
 
+## expand
+
+Expand a ring based upon the pattern within a ring. The pattern is derived from the rate in change between values by calculating the differences between every consecutive value. The newly generated values are selected randomly from the list of possible changes, but in such a way that every change occurs once in the sequence of total changes before reshuffling and selecting the next one (see the `pick` method for explanation). The resulting output starts with the input ring.
+
+**arguments**
+- {Int+} -> length of array output
+- {Array} -> Array to expand
+
+```java
+set randomSeed 3141
+ring notes [0 9 7 3 5 0 -1]
+ring exp expand(notes 30)
+
+//=>  9.00 ┤╭╮      ╭╮                    
+//    6.80 ┤│╰╮     ││                    
+//    4.60 ┤│ │╭╮   ││                    
+//    2.40 ┤│ ╰╯│   │╰─╮             ╭─╮  
+//    0.20 ┼╯   ╰─╮╭╯  │             │ │╭ 
+//   -2.00 ┤      ╰╯   ╰╮   ╭─╮      │ ╰╯ 
+//   -4.20 ┼            │   │ │    ╭╮│    
+//   -6.40 ┤            ╰╮  │ │    │╰╯    
+//   -8.60 ┤             │╭╮│ ╰─╮  │      
+//  -10.80 ┤             ╰╯╰╯   │╭╮│      
+//  -13.00 ┤                    ╰╯╰╯       
+
+set randomSeed 6181
+ring exp2 expand(notes 30)
+
+//=>  9.00 ┤╭╮                            
+//    6.80 ┤│╰╮                           
+//    4.60 ┤│ │╭╮                         
+//    2.40 ┤│ ╰╯│        ╭╮╭╮             
+//    0.20 ┼╯   ╰─╮╭╮    │╰╯╰╮        ╭── 
+//   -2.00 ┤      ╰╯│  ╭╮│   ╰╮       │   
+//   -4.20 ┼        ╰╮ │││    ╰╮   ╭╮ │   
+//   -6.40 ┤         │ │╰╯     │╭╮ ││ │   
+//   -8.60 ┤         ╰╮│       ╰╯╰╮│╰╮│   
+//  -10.80 ┤          ╰╯          ││ ╰╯   
+//  -13.00 ┤                      ╰╯      
+```
+
 # Transformative Methods
 
 ## clone
