@@ -376,6 +376,20 @@ new midi "AU DLS Synth 1" note(0 0) out(2)
 
 Alternative function-names: `channel()`
 
+## chord
+
+Turn the chord output (polyphonic) on for a midi instrument. This allows you to use 2-dimensional rings where the 2nd dimension is used to generate chords. 
+
+**arguments**
+
+- {Bool} -> Turn chord output on/off
+
+```java
+ring chords [[0 4 7] [2 5 9] [5 9 0]]
+
+new midi "AU DLS Synth 1" note(chords 1) chord(on)
+```
+
 ## sync
 
 Turn midiclock syncing on/off for an individual instrument and send it to the selected port/device from that instrument.
