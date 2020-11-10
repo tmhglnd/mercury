@@ -1,7 +1,8 @@
 // parse-test script
-const util = require("util");
-const nearley = require("nearley");
-const grammar = require("./grammar.js");
+const util = require('util');
+const nearley = require('nearley');
+const grammar = require('./grammar.js');
+const worker = require('./mercuryIR.js');
 
 function parse(s){
 	// create a Parser object from our grammar.
@@ -35,13 +36,13 @@ function parse(s){
 
 // @global:
 parseNumbers();
-parseRhythm();
-parseComments();
-parseStrings();
-parseIdentifier();
-parseKeywords();
+// parseRhythm();
+// parseComments();
+// parseStrings();
+// parseIdentifier();
+// parseKeywords();
 // parseSettings();
-parseSignal();
+// parseSignal();
 // parseOSC();
 
 // @ring:

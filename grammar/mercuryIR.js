@@ -8,6 +8,7 @@
 
 // postprocessing for identifiers
 function identifier(obj){
+	// console.log('identifier():', obj);
 	let v = obj[0].value;
 	// is the identifier a note?
 	if (v.match(/^[a-gA-G](?:[0-9])?(?:#+|b+|x)?$/)){
@@ -27,10 +28,14 @@ function identifier(obj){
 		// console.log("undefined return: ", f);
 	}
 	return b;
-}
+}*/
 
 function num(obj) {
 	return { "@number" : Number(obj[0].value) };
-}*/
+}
 
-module.exports = { identifier };
+// function traverseTree(t, code, level){
+	
+// }
+
+module.exports = { identifier, num, traverseTree };

@@ -154,6 +154,7 @@ paramElement ->
 	# |
 	%number
 		{% (d) => { return { "@number" : d[0].value }} %}
+		# {% (d) => { return IR.num(d) } %}
 	|
 	# %note
 	# 	{% (d) => { return { "@note" : d[0].value }} %}
