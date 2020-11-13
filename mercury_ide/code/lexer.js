@@ -43,7 +43,6 @@ function lexer(code){
 			}
 			prevChar = ascii;
 		}
-		
 		if (line != ""){
 			outlet(0, line.trim());
 		}

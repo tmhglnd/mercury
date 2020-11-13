@@ -21,22 +21,28 @@ const Dict = require('./dictionary.js');
 
 var dict = new Dict();
 
+let DEBUG = true;
+
 // let lexer = moo.compile({
 // 	string: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/,
 // 	rest: moo.error
 // })
 
 const handlers = {
+	'debug' : (v) => {
+		DEBUG = (v > 0);
+	},
 	// parse the input strings from code editor
 	// seperate lines are input as a string of characters
 	'parse' : (...v) => {
+		post('@parse', ...v);
 		mainParse(v);
-		// console.log('@parse', v);
 	},
 	// clear the dictionary with variables
 	'clear' : () => {
+		post('@clear', 'variables cleared');
 		dict.clear();
-		// max.outlet(dict.items);
+		max.outlet(dict.items);
 	},
 	// done processing
 	'done' : () => {
@@ -47,17 +53,16 @@ const handlers = {
 	'ring' : (name, ...args) => {
 		if (args < 1){
 			// do nothing if not enough arguments
-			max.post("not enough arguments for method ring");
+			max.post("ERROR: not enough arguments for method ring");
 			return;
 		}
-		// max.post("@ring", "name:", name, "args:", ...args);
+		post("@ring", "name:", name, "args:", ...args);
 		if (isNaN(name)){
 			let expr = args.join(' ');
 			let parsed = parseString(expr);
-			// max.post('@parseString', parsed);
+			// post('@parseString', parsed);
 			let eval = evaluateParse(parsed);
-			// max.post('@eval', eval);
-			
+			// post('@eval', eval);
 			let arr = [];
 			for (i in eval){
 				arr.push({ 'array' : eval[i] });
@@ -65,7 +70,7 @@ const handlers = {
 			dict.set(name, arr);
 		} else {
 			// numbers are not allowed as ring name
-			max.post("ring:", name, "is not a valid name");
+			max.post("ring: "+name+" is not a valid name");
 		}
 	},
 	// All the Array transformation/generation methods
@@ -407,30 +412,37 @@ max.addHandlers(handlers);
 function mainParse(lines){
 	// remove double whitespaces
 	lines = lines.slice().map(x => x.replace(/\s{2,}/g, ' '));
-	// max.post("@mainParse", lines);
+	post("@mainParse", lines);
 
+	// store rings and rest of code separately
 	let rings = [];
 	let other = [];
+
 	// regular expression to match rings
-	let ring = /ring\ .+/;
+	let ring = /(ring\ |list\ |array\ ).+/;
 	let seed = /set\ randomSeed\ .+/;
 	let scale = /set\ scale\ .+/;
 	let tempo = /set\ tempo\ .+/;
+	// let set = /(set\ |apply\ |give\ ).+/;
+	// let inst = /(new\ |make\ ).+/;
 	let mute = /(silence|mute|killAll)/;
 
 	for (let i in lines){
 		l = lines[i];
 		if (ring.test(l)){
+			// does line start with ring/list/array
 			rings.push(l);
 		} else if (seed.test(l) || scale.test(l) || tempo.test(l)){
+			// does line start with a global setting
 			other.push(l);			
 			let expr = l.split(' ');
 			expr.shift();
 			mainFunc.call(handlers, ...expr);	
 		} else if (mute.test(l)){
-			// max.post("@silence");
+			// does line start with silence/mute/killAll
 			other.push("silence");
 		} else {
+			// rest of the code to parse
 			other.push(l);
 		}
 	}
@@ -438,21 +450,23 @@ function mainParse(lines){
 	mainFunc.call(handlers, 'clear');
 	
 	for (let r in rings){
-		// max.post('@ring', rings[r]);
+		post('@list', rings[r]);	
 		let params = rings[r].split(' ');
+		params[0] = mapFunc(params[0]);
 		mainFunc.call(handlers, ...params);
 	}
 	// output the new variables dictionary
 	max.outlet(dict.items);
 	
 	for (let o in other){
-		// let string = /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/g;
-		// max.post('@string', string.exec(other[o]));
+		let line = other[o];
 		let expr = [];
 		let s = '';
 		let isString = false;
-		for (let char in other[o]){
-			let c = other[o].charAt(char);
+
+		// filter for strings
+		for (let char in line){
+			let c = line.charAt(char);
 			if (c === '"' || c === "'" || c === "`"){
 				if (isString){
 					expr.push(s);
@@ -466,13 +480,58 @@ function mainParse(lines){
 			}
 		}
 		expr = expr.concat(s.split(' ').filter(i => i).map(x => parseNumber(x)));
-		// expr.push(s);
+		// post('@code', expr);
 
-		// expr = other[o].split(' ').map(x => parseNumber(x));
-		// max.post('@parsed', expr);
-		max.outlet('parsed', ...expr);
+		if (expr.length < 2 && expr[0] !== 'silence'){
+			max.post('ERROR: '+expr[0]+' needs at least 1 more argument or function');
+		} else {
+			max.outlet('parsed', ...expr);
+		}
+
+		// WORK IN PROGRESS
+		// UNCOMMENT/COMMENT
+		let tokenizer = /(\w+\([^\(\)]*\)|["'`][^"'`]*["'`]|\w+)/g;
+		if (tokenizer.test(line)){
+			let tokens = line.match(tokenizer);
+			post('@tokens', ...tokens);
+
+			tokens.forEach((t) => {
+				// if ()
+				post('@token', t, mapFunc(t));
+			})
+		}
 	}
 	max.outlet('done');
+}
+
+const maps = {
+	"new" : [
+		"sample",
+		"synth",
+		"polySynth",
+		"midi",
+		"emitter"
+	]
+}
+
+const functionMaps = {
+	'ring' : 'ring',
+	'array' : 'ring',
+	'list' : 'ring',
+	'set' : 'set',
+	'apply' : 'set',
+	'give' : 'set',
+	'new' : 'new',
+	'make' : 'new',
+	'play' : 'new'
+}
+
+// check if the function is part of mapped functions
+// else return original value
+// 
+function mapFunc(f){
+	f = (functionMaps[f])? functionMaps[f] : f;
+	return f;
 }
 
 // evaluate the parsed items if it is a function
@@ -481,7 +540,10 @@ function evaluateParse(parse){
 	var params = parse.value;
 	var f = params[0];
 
+	post('@eval', params, f);
+
 	if (!hasFunc(f)){
+		// if f is no function 
 		return params.map(x => parseNumber(x));
 	} else {
 		params.shift();
@@ -590,5 +652,18 @@ function parseString(str){
 			arg += char;
 		}
 	}
+	if (!items.length){
+		max.post('WARNING: empty array');
+		items.push(0);
+	}
 	return { 'type' : type, 'value' : items };
+}
+
+// Console log replacement that logs to the max window
+// and only when debug flag = true
+// 
+function post(...v){
+	if (DEBUG) {
+		max.post(...v);
+	}
 }
