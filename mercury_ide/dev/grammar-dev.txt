@@ -15,9 +15,8 @@ list nts random(10 0 12)
 // new midi "AU DLS Synth 1" function(1 5 "a string")
 
 // make synth saw
-play synth saw note(0 2) shape(100) name( henk)
+<= synth saw #(0 2) ^(100) @(henk) %(1/4) *(0.5) !(0.8)
 // new sample kick_909 time( 1/2 1/4 )  speed(0.9 ) fx( reverb 0.3 11  )
-
-give henk fx(lfo 1/4 up 0.5)
+=> henk ~(lfo 1/4 up 0.5) ~(reverb 0.9 11)
 
 silence

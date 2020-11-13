@@ -490,16 +490,17 @@ function mainParse(lines){
 
 		// WORK IN PROGRESS
 		// UNCOMMENT/COMMENT
-		let tokenizer = /(\w+\([^\(\)]*\)|["'`][^"'`]*["'`]|\w+)/g;
-		if (tokenizer.test(line)){
-			let tokens = line.match(tokenizer);
-			post('@tokens', ...tokens);
-
-			tokens.forEach((t) => {
-				// if ()
-				post('@token', t, mapFunc(t));
-			})
-		}
+		// let tokenizer = /([^\d\t ]+\([^\(\)]*\)|["'`][^"'`]*["'`]|[^\d\t ]+)/g;
+		// if (tokenizer.test(line)){
+		// 	let tokens = line.match(tokenizer);
+		// 	post('@tokens', ...tokens);
+		// 	tokens.forEach((t) => {
+		// 		let c = t.split(/\(([^\(\)]*)\)/g);
+		// 		// post('@split', c);
+		// 		let m = mapFunc(c[0]);
+		// 		post('@map', c, m);
+		// 	})
+		// }
 	}
 	max.outlet('done');
 }
@@ -523,7 +524,18 @@ const functionMaps = {
 	'give' : 'set',
 	'new' : 'new',
 	'make' : 'new',
-	'play' : 'new'
+	'play' : 'new',
+	'n' : 'note',
+	'e' : 'envelope',
+	'@' : 'name',
+	'%' : 'time',
+	'!' : 'beat',
+	'*' : 'gain',
+	'#' : 'note',
+	'~' : 'effect',
+	'^' : 'envelope',
+	'=>' : 'set',
+	'<=' : 'new'
 }
 
 // check if the function is part of mapped functions
