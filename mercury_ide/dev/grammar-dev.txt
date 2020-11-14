@@ -2,7 +2,9 @@
 // set debug 1
 // set randomSeed 482
 // set randomSeed 123
-list nts random(10 0 12)
+// ring nts random(10 0 12)
+
+// list nts random(10 0 12)
 
 // list nts []
 
@@ -11,12 +13,22 @@ list nts random(10 0 12)
 
 // new 
 // new synth
-// new sample kick_dub
+// new synth saw
+// new sample kick_dub time(1/16) gain(0)
+
+// make synth saw pitch(0 2) shape(1 500)
+
+// sound sample
+// make synth square gain(0.4) withFX(double) panning(-1) id(henk) play(myRhythm )
+// apply henk effect(delay) addFX(envFilter)
+
+// sound sample choir_o startAt(0.3) rate(0.2) loop(1 1)
+
 // new midi "AU DLS Synth 1" function(1 5 "a string")
 
 // make synth saw
-<= synth saw #(0 2) ^(100) @(henk) %(1/4) *(0.5) !(0.8)
-// new sample kick_909 time( 1/2 1/4 )  speed(0.9 ) fx( reverb 0.3 11  )
-=> henk ~(lfo 1/4 up 0.5) ~(reverb 0.9 11)
+// << synth saw #(0 2) ^(100) @(henk) %(1/4) *(0.5) !(0.8)
 
+// new sample kick_909 time( 1/2 1/4 )  speed( 0.9) fx( reverb 0.3 11  )
+// => henk ~(lfo 1/4 up 0.5) ~(reverb 0.9 11)
 silence

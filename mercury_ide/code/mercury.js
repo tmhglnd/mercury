@@ -21,7 +21,7 @@ const Dict = require('./dictionary.js');
 
 var dict = new Dict();
 
-let DEBUG = true;
+let DEBUG = false;
 
 // let lexer = moo.compile({
 // 	string: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/,
@@ -480,70 +480,78 @@ function mainParse(lines){
 			}
 		}
 		expr = expr.concat(s.split(' ').filter(i => i).map(x => parseNumber(x)));
-		// post('@code', expr);
-
+		
 		if (expr.length < 2 && expr[0] !== 'silence'){
 			max.post('ERROR: '+expr[0]+' needs at least 1 more argument or function');
 		} else {
+			post('@code', expr);
 			max.outlet('parsed', ...expr);
 		}
 
-		// WORK IN PROGRESS
-		// UNCOMMENT/COMMENT
-		// let tokenizer = /([^\d\t ]+\([^\(\)]*\)|["'`][^"'`]*["'`]|[^\d\t ]+)/g;
-		// if (tokenizer.test(line)){
-		// 	let tokens = line.match(tokenizer);
-		// 	post('@tokens', ...tokens);
-		// 	tokens.forEach((t) => {
-		// 		let c = t.split(/\(([^\(\)]*)\)/g);
-		// 		// post('@split', c);
-		// 		let m = mapFunc(c[0]);
-		// 		post('@map', c, m);
-		// 	})
-		// }
+		// WORK IN PROGRESS FOR KEYBINDING AND MINILANG
+		/*let tokenizer = /([^\d\t ]+\([^\(\)]*\)|["'`][^"'`]*["'`]|[^\d\t ]+)/g;
+		if (tokenizer.test(line)){
+			let tokens = line.match(tokenizer);
+			post('@tokens', ...tokens);
+
+			// syntaxTree object to store code parse
+			let code = {
+				'action' : 'empty',
+				'object' : 'empty',
+				'type' : 'empty',
+				'functions' : []
+			}
+			let keys = Object.keys(code);
+
+			for (let t in tokens){
+				// is the token a function
+				let isFunc = /[^\d\t ]+\([^\(\)]*\)/g.test(tokens[t]);
+				if (isFunc){
+					// split function name from token
+					let c = tokens[t].split(/\(([^\(\)]*)\)/g);
+					let m = mapFunc(c[0]);
+					code['functions'].push({[m] : c[1].split(' ')});
+				} else {
+					code[keys[t]] = mapFunc(tokens[t]);
+				}
+			}
+			max.post('@ast', code);
+		}*/
 	}
 	max.outlet('done');
 }
 
-const maps = {
-	"new" : [
-		"sample",
-		"synth",
-		"polySynth",
-		"midi",
-		"emitter"
+const instruments = {
+	'action' : [
+		'new',
+		'set',
+		'ring'
+	],
+
+	'new' : [
+		'synth',
+		'sample'
+	],
+
+	'sample' : [
+		'kick_909'
+	],
+
+	'synth' : [
+		'triangle'
 	]
 }
 
-const functionMaps = {
-	'ring' : 'ring',
-	'array' : 'ring',
-	'list' : 'ring',
-	'set' : 'set',
-	'apply' : 'set',
-	'give' : 'set',
-	'new' : 'new',
-	'make' : 'new',
-	'play' : 'new',
-	'n' : 'note',
-	'e' : 'envelope',
-	'@' : 'name',
-	'%' : 'time',
-	'!' : 'beat',
-	'*' : 'gain',
-	'#' : 'note',
-	'~' : 'effect',
-	'^' : 'envelope',
-	'=>' : 'set',
-	'<=' : 'new'
-}
+// const initials = require('../data/initials.json');
+// max.post(initials);
 
 // check if the function is part of mapped functions
 // else return original value
 // 
 function mapFunc(f){
-	f = (functionMaps[f])? functionMaps[f] : f;
-	return f;
+	let m = (keywordBinds[f])? keywordBinds[f] : f;
+	// post('@map', f, m);
+	return m;
 }
 
 // evaluate the parsed items if it is a function
@@ -669,6 +677,39 @@ function parseString(str){
 		items.push(0);
 	}
 	return { 'type' : type, 'value' : items };
+}
+
+// keyword bindings, use custom keywords for functions
+const keywords = require('../data/bind-functions.json');
+// mini language, use single characters for keywords and functions
+const miniLang = require('../data/mini-functions.json');
+
+let keywordBinds = {};
+keywordBinds = keywordBindings(keywords, keywordBinds);
+keywordBinds = keywordBindings(miniLang, keywordBinds);
+
+// Generate a dictionary of keyword and binding pairs based on 
+// input dictionary of categorized keybindings 
+function keywordBindings(dict, obj){
+	max.post('Generating function keyword bindings...');	
+	let binds = { ...obj };
+	Object.keys(dict).forEach((k) => {
+		// store itself first
+		binds[k] = k;
+		dict[k].forEach((b) => {
+			if (binds[b]) {
+				// if already exists ignore and print warning
+				max.post('Warning! Duplicate keyword: [ '+b+' ] \nfor: [ '+binds[b]+' ] and: [ '+k+' ] \n => BIND IGNORED');
+			} else {
+				// store binding name with resulting keyword
+				binds[b] = k;
+			}
+			post('mapped: [ '+b+' ] to: [ '+k+' ]');
+		});
+	});
+	// post(binds);
+	max.post('...keyword bindings generated');
+	return binds;
 }
 
 // Console log replacement that logs to the max window

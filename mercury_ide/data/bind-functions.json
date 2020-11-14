@@ -1,0 +1,137 @@
+{
+	"new" : [
+		"make",
+		"sound"
+	],
+
+	"ring" : [
+		"list",
+		"array",
+		"items"
+	],
+
+	"set" : [
+		"apply",
+		"give"
+	],
+
+	"amp" : [
+		"gain",
+		"vol",
+		"volume",
+		"amplitude",
+		"velocity",
+		"vel"
+	],
+
+	"beat" : [
+		"rhythm",
+		"play"
+	],
+
+	"env" : [
+		"envelope",
+		"shape",
+		"transient",
+		"length",
+		"duration",
+		"dur"
+	],
+
+	"note" : [
+		"pitch"
+	],
+
+	"time" : [
+		"timing"
+	],
+
+	"offset" : [
+		"onset",
+		"position",
+		"start",
+		"startAt",
+		"from"
+	],
+
+	"pan" : [
+		"panning",
+		"spat",
+		"location"
+	],
+
+	"slide" : [
+		"glide",
+		"portamento",
+		"porta"
+	],
+
+	"speed" : [
+		"rate",
+		"playback"
+	],
+
+	"sub" : [
+		"deep",
+		"low"
+	],
+
+	"add_fx" : [
+		"withFX",
+		"addFX",
+		"effect",
+		"fx"
+	],
+
+	"res" : [
+		"resonance",
+		"reson"
+	],
+
+	"stretch" : [
+		"beatstretch",
+		"loop"
+	],
+
+	"wave2" : [
+		"osc2",
+		"add_osc"
+	],
+
+	"group" : [
+		"aux",
+		"bus"
+	],
+
+	"name" : [
+		"id"
+	],
+
+	"tempo" : [
+		"pace",
+		"bpm"
+	],
+
+	"address" : [
+		"tag",
+		"url"
+	],
+
+	"out" : [
+		"channel",
+		"output",
+		"outlet"
+	],
+
+	"clock" : [
+		"sync",
+		"clockSync",
+		"midiClock",
+		"midiSync"
+	],
+
+	"poly" : [
+		"chords",
+		"polyphonic"
+	]
+}
