@@ -8,7 +8,6 @@
 //====================================================================
 
 const max  = require('max-api');
-// const moo  = require('moo');
 
 const Gen  = require('total-serialism').Generative;
 const Algo = require('total-serialism').Algorithmic;
@@ -23,12 +22,8 @@ var dict = new Dict();
 
 let DEBUG = false;
 
-// let lexer = moo.compile({
-// 	string: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/,
-// 	rest: moo.error
-// })
-
 const handlers = {
+	// enable debug logging
 	'debug' : (v) => {
 		DEBUG = (v > 0);
 	},
@@ -410,6 +405,7 @@ const handlers = {
 max.addHandlers(handlers);
 
 function mainParse(lines){
+	let time = Date.now();
 	// remove double whitespaces
 	lines = lines.slice().map(x => x.replace(/\s{2,}/g, ' '));
 	post("@mainParse", lines);
@@ -489,7 +485,7 @@ function mainParse(lines){
 		}
 
 		// WORK IN PROGRESS FOR KEYBINDING AND MINILANG
-		/*let tokenizer = /([^\d\t ]+\([^\(\)]*\)|["'`][^"'`]*["'`]|[^\d\t ]+)/g;
+		/*let tokenizer = /([^\s]+\([^\(\)]*\)|["'`][^"'`]*["'`]|[^\s]+)/g;
 		if (tokenizer.test(line)){
 			let tokens = line.match(tokenizer);
 			post('@tokens', ...tokens);
@@ -499,47 +495,76 @@ function mainParse(lines){
 				'action' : 'empty',
 				'object' : 'empty',
 				'type' : 'empty',
-				'functions' : []
+				'functions' : [],
+				'arguments' : []
 			}
 			let keys = Object.keys(code);
 
 			for (let t in tokens){
 				// is the token a function
-				let isFunc = /[^\d\t ]+\([^\(\)]*\)/g.test(tokens[t]);
-				if (isFunc){
+				let isFunc = /[^\s]+\([^\(\)]*\)/g;
+				let isNum = /^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/g;
+				if (isFunc.test(tokens[t])){
 					// split function name from token
 					let c = tokens[t].split(/\(([^\(\)]*)\)/g);
 					let m = mapFunc(c[0]);
 					code['functions'].push({[m] : c[1].split(' ')});
+				} else if (isNum.test(tokens[t])){
+					code['arguments'].push(tokens[t]);
 				} else {
 					code[keys[t]] = mapFunc(tokens[t]);
 				}
 			}
-			max.post('@ast', code);
+			// traverse the tree and set initials
+			Object.keys(code).forEach((t) => {
+				if (t === 'action'){
+					let objs = actions[code[t]];
+					if (Array.isArray(objs)){
+						// max.post(objs.includes(code['object']));
+						if (objs.includes(code['object'])){
+
+						} else {
+							max.post('ERROR: object: [ '+code['object']+' ] does not exist');
+						}
+					}
+				}
+				else if (t === 'object'){
+
+				}
+				else if (t === 'type'){
+
+				}
+			});
+			post('@ast', code);
 		}*/
 	}
 	max.outlet('done');
+	
+	time = Date.now() - time;
+	post('parsed code within: ' + time + ' ms');
 }
 
-const instruments = {
-	'action' : [
-		'new',
-		'set',
-		'ring'
-	],
-
+const actions = {
+	'ring' : 'empty',
+	'set' : 'empty',
 	'new' : [
 		'synth',
-		'sample'
-	],
-
-	'sample' : [
-		'kick_909'
-	],
-
-	'synth' : [
-		'triangle'
+		'sample',
+		'polySynth',
+		'loop',
+		'midi',
+		'emitter'
 	]
+}
+
+const defaultInstrument = {
+	'synth' : {
+		'type' : 'saw',
+		'functions' : [
+			{ 'note' : [0, 0] },
+			{ 'time' : ['1/4', 0] }
+		]
+	}
 }
 
 // const initials = require('../data/initials.json');
