@@ -1,17 +1,16 @@
-# Mercury Documentation
+# 📖 Mercury Documentation
 
 *Disclaimer: This documentation is most certainly not finished and will subject to changes. If you find errors, feel free to report them*
 
 ## Table of Content
 
-
-- [⚠ Troubleshooting](./08-troubleshooting.md)
+- [🏃 Quick Start](./quick-start.md)
 
 - [🤓 Tutorial (work in progress...)](./tutorial.md)
 
-- [🏃 Quick Start](./quick-start.md)
-
 - [💻 Shortkeys](./06-shortkeys.md)
+
+- [⚠ Troubleshooting](./08-troubleshooting.md)
 
 - [🔊 Settings and Sounds](./07-environment.md)
 	- [Mercury Main Window](./07-environment.md#mercury-main-window)

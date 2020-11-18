@@ -32,10 +32,10 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
 	- [Troubleshooting](/docs/08-troubleshooting.md)
-	- [System Requirements](#-system-requirements)
-	- [Build Application](#-build-application)
 	- [Documentation](/docs/README.md)
+	- [System Requirements](#-system-requirements)
 	- [Sounds in Mercury](/mercury_ide/media/README.md)
+	<!-- - [Build Application](#-build-application) -->
 - [Modify Code](#-modify-code)
 - [Further Reading](#-further-reading-and-listening)
 - [Made with Mercury](#-made-with-mercury)
@@ -117,7 +117,7 @@ $ open mercury_ide/mercury_ide.maxproj
 
 ### 🚀 Quick Start
 
-[**Open the Quick Start Guide**](./docs/quick-start.md)
+[Open the Quick Start Guide](./docs/quick-start.md)
 
 ### 📖 Tutorial
 
@@ -133,7 +133,11 @@ It could be that you are having issues with Mercury, since it's still in develop
 
 [Open the Troubleshooting](./docs/08-troubleshooting.md)
 
-### ⚠ System Requirements
+### 📖 Documentation
+
+[**Open the documentation**](./docs/README.md)
+
+### 💻 System Requirements
 
 These system requirements are the requirements to install and run Max8 on your computer. A dedicated Graphics Card (GPU) is recommended to run the visual side of Mercury smoothly (the text-editor is part of the visuals since it is programmed in the OpenGL language).
 
@@ -157,17 +161,13 @@ Intel® Core™ i5 or higher recommended
 
 Dedicated Graphics Card recommended
 
-### 🛠 Build Application
+<!-- ### 🛠 Build Application
 
 `Optional`
 
 **Why?** - Building the Application is recommended when using Mercury with other MaxMSP projects. This will allow Mercury to have a seperate thread from the other Max processes, giving it enough RAM and CPU space. Also the application will probably run more stable because the project can not be editted anymore. This, of course, also dependents on your system specifications.
 
-**How?** - The Cycling'74 Max8 coding environment is needed to build the application from the `mercury_ide_x.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window. *Building the Application is not necessary in order to run the environment!*
-
-### 📖 Documentation
-
-[**Open the documentation**](./docs/README.md)
+**How?** - The Cycling'74 Max8 coding environment is needed to build the application from the `mercury_ide_x.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window. *Building the Application is not necessary in order to run the environment!* -->
 
 ### 🎵 Sounds
 
@@ -187,7 +187,7 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 
 1. [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
 2. [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
-3. [Music on bandcamp](http://timohoogland.bandcamp.com)
+3. [Total Serialism Library](https://github.com/tmhglnd/total-serialism#total-serialism)
 
 ## 👾 Made with Mercury
 
