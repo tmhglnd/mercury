@@ -1,5 +1,5 @@
 
-# Mercury Tutorial 🤓
+# 🤓 Mercury Tutorial
 
 🚧 **work in progress** 🚧
 
@@ -88,11 +88,14 @@ The main window is used to quickly access some of the most important functions i
 
 You are now ready to start coding your first sounds! 🎶💻🎶
 
+[**🚧 If you experience any issues, please see the Troubleshooting 🚧**](./08-Troubleshooting.md)
+
+<!-- 
 ## 🚧 Sounds issue for some Windows computers 🚧
 
 Lately I've noticed that for some the soundfiles don't load correctly the first time you start Mercury, and therefore you don't hear any sounds playing (for both the `sample` and `synth`).
 
-**Fix**: In the menu go to `Sounds > Replace Sounds`, then select the folder `/mercury_v.0.13.0-alpha/mercury_ide/media/samples`. Do the same for the waveforms: `Sounds > Replace Waveforms`, then select the folder `/mercury_v.0.13.0-alpha/mercury_ide/media/waveforms`
+**Fix**: In the menu go to `Sounds > Replace Sounds`, then select the folder `/mercury_v.0.13.0-alpha/mercury_ide/media/samples`. Do the same for the waveforms: `Sounds > Replace Waveforms`, then select the folder `/mercury_v.0.13.0-alpha/mercury_ide/media/waveforms` -->
 
 # 💾 The Sampler
 

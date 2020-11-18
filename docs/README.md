@@ -4,15 +4,19 @@
 
 ## Table of Content
 
-- [Tutorial (work in progress...)](./tutorial.md)
 
-- [Getting Started](./getting-started.md)
+- [⚠ Troubleshooting](./08-troubleshooting.md)
 
-- [Shortkeys](./06-shortkeys.md)
+- [🤓 Tutorial (work in progress...)](./tutorial.md)
 
-- [Settings and Sounds](./07-environment.md)
+- [🏃 Quick Start](./quick-start.md)
+
+- [💻 Shortkeys](./06-shortkeys.md)
+
+- [🔊 Settings and Sounds](./07-environment.md)
 	- [Mercury Main Window](./07-environment.md#mercury-main-window)
 	- [Menubar](./07-environment.md#menubar)
+## Code Documentation
 
 - [General Syntax](./00-general.md)
 	- [new](./00-general.md#new)

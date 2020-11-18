@@ -1,6 +1,6 @@
 # Environment
 
-- [Mercury Main Window](mercury-main-window)
+- [Mercury Main Window](#mercury-main-window)
 	- [Rendering](#rendering)
 	- [Audio](#audio)
 	- [FPS CPU Meter](#fps-and-cpu-meter)
@@ -47,7 +47,7 @@ Start and stop the recording of the current sound output. The recorded file will
 
 ## Show Variables 
 
-View the current `ring`'s that are created in a dictionary.
+View the current `ring`'s that are created from the code in a dictionary.
 
 ## Show Audiofiles
 
@@ -260,12 +260,9 @@ Adjust the look of the texteditor. Change the font, color, blinking color, curso
 
 ### Shortkeys Setup
 
-Change the shortkeys to your preference or reset to the default key commands. 
+You can customize the shortkeys by opening the `Setup Shortkeys` under `Settings` in the menubar. You can also reset to the default key commands. 
 
-1. Select the command to adjust the keybind for in the dropdown menu
-2. Click `change keycommand` and see that it says `waiting for keys...`
-3. Now press and hold all the keys for the keybind and release.
-4. See the result in the display and dictionary.
+For a full explanation see [Shortkeys](./06-shortkeys.md)
 
 ## Explanation
 

@@ -45,8 +45,9 @@ Alt + , = disable/enable editor
 
 ## Customize Shortkeys
 
-You can customize the shortkeys by opening the `Setup Shortkeys` under `Settings` in the menubar. 
-- Select the key you would like to customize in the dropdown menu on the top
-- Click `change keycommand`, it now displays `waiting for keys...`
-- Hit the key combination you would like to use for this command and release the keys to store
-- Check if stored correctly in the scroll-menu below. Every command displays the shortcut and keycode
+You can customize the shortkeys by opening the `Setup Shortkeys` under `Settings` in the menubar. You can also reset to the default key commands. 
+
+1. Select the key you would like to customize in the dropdown menu on the top.
+2. Click `change keycommand`, it now displays `waiting for keys...`.
+3. Hit the key combination you would like to use for this command and release the keys to store.
+4. Check if stored correctly in the scroll-menu below. Every command displays the shortcut and keycode.

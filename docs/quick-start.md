@@ -58,11 +58,7 @@ In the `mercury` code editor:
 - 🔊 Hit `alt + return` or `Menubar > File > Execute Code` 
 	- *Mac users: Disable the Alert Volume in `System Preferences > Sounds` to disable the error sound when using shortkeys*
 
-Adjust settings under `Menubar > Settings` for:
-- Audio
-- Visuals
-- Editor
-- Shortkeys
+Adjust settings under `Menubar > Settings`. [For detailed explanation go here](./07-environment.md#settings)
 
 You are now ready to start coding your first sounds! 🎶💻🎶
 
@@ -70,14 +66,16 @@ You are now ready to start coding your first sounds! 🎶💻🎶
 
 Now go ahead and play all you want! For further information on the syntax and code see:
 
+- View some of the example code via the menu `Explanation > Random Example`
 - [Tutorial](./tutorial.md)
 - [Documentation](./README.md) 
 
 # ⚠ Troubleshooting
 
-Run into an issue?
-
+It could be that you are having issues with Mercury, since it's still in development and there may occasionally be some bugs. Please follow the steps below:
 <!-- - First check the [Troubleshooting]() page -->
-- Check if your problem was already reported in the [Issues](https://github.com/tmhglnd/mercury/issues)
-- If not, please file a [new issue](https://github.com/tmhglnd/mercury/issues/new)
-- Or, fix the bug yourself and send a pull request! :pray:
+1. First check the [Troubleshooting page](./08-troubleshooting.md)
+2. Check if your problem was already reported in the [Issues](https://github.com/tmhglnd/mercury/issues)
+3. If not, please file a [new issue](https://github.com/tmhglnd/mercury/issues/new)
+4. Ask around in the [Mercury Discord](https://discord.gg/vt59NYU)
+5. Or, fix the bug yourself and send a pull request! :pray:
