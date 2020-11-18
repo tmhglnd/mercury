@@ -31,6 +31,7 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [Install](#-install)
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
+	- [Troubleshooting](/docs/08-troubleshooting.md)
 	- [System Requirements](#-system-requirements)
 	- [Build Application](#-build-application)
 	- [Documentation](/docs/README.md)
@@ -102,8 +103,8 @@ Mercury is a development-in-progress and the language is still very much fluid, 
 
 ## 💻 Install
 
-- Follow the [Quick Start](#-quick-start) guide (for experienced computer users)
-- Follow the [Tutorial](#-tutorial).
+- Follow the [Quick Start](./docs/quick-start.md) guide (for experienced computer users)
+- Follow the [Tutorial](./docs/tutorial.md).
 - Read the [System Requirements](#system-requirements)
 - Download the latest [Release](https://github.com/tmhglnd/mercury/releases)
 
@@ -116,15 +117,21 @@ $ open mercury_ide/mercury_ide.maxproj
 
 ### 🚀 Quick Start
 
-[**Open the Quick Start Guide**](/docs/quick-start.md)
+[**Open the Quick Start Guide**](./docs/quick-start.md)
 
-## 📖 Tutorial
+### 📖 Tutorial
 
 🚧 (work in progress) 🚧
 
 If this is your first time with either the usage of creative coding software (like Max8), music theory, electronic music making and programming in general I highly recommend following the tutorial.
 
-[Open the Tutorial](/docs/tutorial.md)
+[Open the Tutorial](./docs/tutorial.md)
+
+### ⚠ Troubleshooting
+
+It could be that you are having issues with Mercury, since it's still in development and there may occasionally be some bugs. Please follow the steps below:
+
+[Open the Troubleshooting](./docs/08-troubleshooting.md)
 
 ### ⚠ System Requirements
 
@@ -160,7 +167,7 @@ Dedicated Graphics Card recommended
 
 ### 📖 Documentation
 
-[**Open the documentation**](/docs/README.md)
+[**Open the documentation**](./docs/README.md)
 
 ### 🎵 Sounds
 

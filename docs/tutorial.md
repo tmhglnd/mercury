@@ -88,7 +88,7 @@ The main window is used to quickly access some of the most important functions i
 
 You are now ready to start coding your first sounds! 🎶💻🎶
 
-[**🚧 If you experience any issues, please see the Troubleshooting 🚧**](./08-Troubleshooting.md)
+[**🚧 If you experience any issues, please see the Troubleshooting 🚧**](./08-troubleshooting.md)
 
 <!-- 
 ## 🚧 Sounds issue for some Windows computers 🚧

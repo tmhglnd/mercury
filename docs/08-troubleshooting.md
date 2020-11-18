@@ -3,7 +3,7 @@
 
 It could be that you are having issues with Mercury, since it's still in development and there may occasionally be some bugs. Please follow the steps below:
 
-1. First check the [Troubleshooting page](./08-troubleshooting.md)
+1. First check the [Troubleshooting page](#table-of-content)
 2. Check if your problem was already reported in the [Issues](https://github.com/tmhglnd/mercury/issues)
 3. If not, please file a [new issue](https://github.com/tmhglnd/mercury/issues/new)
 4. Ask around in the [Mercury Discord](https://discord.gg/vt59NYU)
@@ -12,9 +12,9 @@ It could be that you are having issues with Mercury, since it's still in develop
 # Table of Content
 
 - [My sounds are not playing](#my-sounds-are-not-playing)
-- [I hear an Alert sound when I execute the code](#i-hear-an-alert-sound-when-i-execut-the-code)
+- [I hear an Alert sound when I execute the code](#i-hear-an-alert-sound-when-i-execute-the-code)
 - [My CPU usage is very high](#my-cpu-usage-is-very-high)
-- [My editor is very laggy (low FPS)](#my-editor-is-very-laggy)
+- [My editor is very laggy (low FPS)](#my-editor-is-very-laggy-low-fps)
 - [Mercury keeps crashing when I execute code](#mercury-keeps-crashing-when-i-execute-code)
 
 ## My sounds are not playing
@@ -27,7 +27,7 @@ Do the same for the waveforms: `Sounds > Replace Waveforms`, then select the fol
 
 ## I hear an Alert sound when I execute the code
 
-Most Mac users will hear an Alert sound when they hit keycommands that the operation system does not recognize. You can disable this the Alert Volume in `System Preferences > Sounds`
+Most Mac users will hear an Alert sound when they hit keycommands that the operation system does not recognize. You can disable the Alert Volume in `System Preferences > Sounds > Sound Effects`.
 
 ## My CPU usage is very high
 
