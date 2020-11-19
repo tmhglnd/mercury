@@ -10,17 +10,18 @@ const fg     = require('fast-glob');
 let system = {
 	'user' : os.homedir(),
 	'app' : process.cwd(),
-	'tmp' : os.tmpdir(),
-	'type' : os.type(),
-	'release' : os.release(),
+	// 'tmp' : os.tmpdir(),
+	// 'type' : os.type(),
+	// 'release' : os.release(),
 	'platform' : os.platform(),
-	'ip' : os.hostname(),
+	// 'ip' : os.hostname(),
 }
-/* if (system.type === 'win32'){
+max.post("system-info", system);
+// convert windows paths to posix
+if (system.platform === 'win32'){
 	system.user = slash(system.user);
 	system.app = slash(system.app);
-}*/
-max.post("system-info", system);
+}
 max.outlet("system", system);
 
 // the default preferences and object to store prefs
@@ -87,6 +88,7 @@ let shortkeys = {
 // the basefolder for all Mercury local files
 // const base = system.user + '/Documents/Mercury';
 const base = path.join(system.user, '/Documents/Mercury');
+max.post('Locate Mercury folder in: ', base);
 
 // variables for the preferences file
 // const prefFile = base + '/Preferences/preferences.json';
@@ -214,6 +216,7 @@ const sampleHandlers = {
 		samples = { ...defaultSamples };
 		max.outlet("samples", samples);
 		writeJson(sampleFile, samples);
+		max.post('Samples are reset to default');
 	},
 	// load a folder with samples and store 
 	// names with path in database file
@@ -221,6 +224,7 @@ const sampleHandlers = {
 		samples = Object.assign({}, loadAudioFiles(fold), samples);
 		writeJson(sampleFile, samples);
 		max.outlet('samples', samples);
+		max.post('Includeded samples from: '+fold);
 	},
 	// replace all samples with the content of a folder 
 	// and store names with path in database file
@@ -228,6 +232,7 @@ const sampleHandlers = {
 		samples = loadAudioFiles(fold);
 		writeJson(sampleFile, samples);
 		max.outlet('samples', samples);
+		max.post('Replaced samples with: '+fold);
 	}
 }
 max.addHandlers(sampleHandlers);
@@ -239,6 +244,7 @@ const wfHandlers = {
 		waveforms = { ...defaultWF };
 		max.outlet('wf', waveforms);
 		writeJson(wfFile, waveforms);
+		max.post('Waveforms are reset to default');
 	},
 	// load a folder with waveforms and store 
 	// names with path in database file
@@ -246,6 +252,7 @@ const wfHandlers = {
 		waveforms = Object.assign({}, loadAudioFiles(fold), waveforms);
 		writeJson(wfFile, waveforms);
 		max.outlet('wf', waveforms);
+		max.post('Includeded waveforms from: '+fold);
 	},
 	// replace all samples with the content of a folder 
 	// and store names with path in database file
@@ -253,6 +260,7 @@ const wfHandlers = {
 		waveforms = loadAudioFiles(fold);
 		writeJson(wfFile, waveforms);
 		max.outlet('wf', waveforms);
+		max.post('Replaced waveforms with: '+fold);
 	}
 }
 max.addHandlers(wfHandlers);
