@@ -43389,13 +43389,13 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"hint" : "",
 					"id" : "obj-311",
 					"maxclass" : "led",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"offcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.25 ],
+					"offcolor" : [ 0.882352941176471, 0.882352941176471, 0.882352941176471, 0.3 ],
 					"oncolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ],
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
@@ -50324,13 +50324,13 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"hint" : "",
 					"id" : "obj-95",
 					"maxclass" : "led",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"offcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.25 ],
+					"offcolor" : [ 0.882352941176471, 0.882352941176471, 0.882352941176471, 0.3 ],
 					"oncolor" : [ 1.0, 0.0, 0.0, 0.750323523773006 ],
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
@@ -50343,13 +50343,13 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"hint" : "",
 					"id" : "obj-92",
 					"maxclass" : "led",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"offcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.25 ],
+					"offcolor" : [ 0.882352941176471, 0.882352941176471, 0.882352941176471, 0.3 ],
 					"oncolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ],
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
@@ -50362,15 +50362,15 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
 					"bgfillcolor_autogradient" : 0.0,
-					"bgfillcolor_color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgfillcolor_color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor_color1" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
-					"elementcolor" : [ 0.137254901960784, 0.137254901960784, 0.137254901960784, 1.0 ],
+					"elementcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"id" : "obj-58",
 					"items" : [ "Off", ",", "On" ],
 					"maxclass" : "umenu",
@@ -64176,7 +64176,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"blinkcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ],
 					"id" : "obj-207",
 					"maxclass" : "button",
@@ -64692,7 +64692,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"blinkcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ],
 					"id" : "obj-143",
 					"maxclass" : "button",
@@ -65854,16 +65854,16 @@
 , 			{
 				"box" : 				{
 					"fontface" : 0,
-					"fontname" : "IBM Plex Mono",
-					"fontsize" : 24.0,
+					"fontname" : "Courier New Bold",
+					"fontsize" : 22.0,
 					"id" : "obj-133",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.0, 97.0, 210.0, 69.0 ],
+					"patching_rect" : [ 45.0, 97.0, 193.0, 56.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 70.0, 375.0, 38.0 ],
+					"presentation_rect" : [ 15.0, 70.0, 357.0, 31.0 ],
 					"text" : "> live coding environment",
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 0.5 ]
 				}
@@ -65872,15 +65872,15 @@
 , 			{
 				"box" : 				{
 					"fontface" : 0,
-					"fontname" : "IBM Plex Mono",
-					"fontsize" : 36.0,
+					"fontname" : "Courier New",
+					"fontsize" : 48.0,
 					"id" : "obj-128",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.0, 44.0, 210.0, 53.0 ],
+					"patching_rect" : [ 45.0, 44.0, 291.0, 61.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 15.0, 195.0, 53.0 ],
+					"presentation_rect" : [ 15.0, 7.0, 265.0, 61.0 ],
 					"text" : "_MERCURY",
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
@@ -65977,7 +65977,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.07843137254902, 0.07843137254902, 0.07843137254902, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"id" : "obj-126",
 					"ignoreclick" : 1,
 					"maxclass" : "number",
@@ -66007,15 +66007,15 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
 					"bgfillcolor_autogradient" : 0.0,
-					"bgfillcolor_color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgfillcolor_color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor_color1" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
-					"elementcolor" : [ 0.137254901960784, 0.137254901960784, 0.137254901960784, 1.0 ],
+					"elementcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"id" : "obj-24",
 					"items" : [ "Off", ",", "On" ],
 					"maxclass" : "umenu",
@@ -66342,7 +66342,7 @@
 
 					}
 ,
-					"textcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "master"
 				}
 
@@ -66445,8 +66445,8 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.07843137254902, 0.07843137254902, 0.07843137254902, 1.0 ],
-					"bgcolor2" : [ 0.098039, 0.098039, 0.098039, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor2" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -66515,7 +66515,7 @@
 				"box" : 				{
 					"angle" : 270.0,
 					"background" : 1,
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"id" : "obj-43",
 					"maxclass" : "panel",
 					"mode" : 0,
