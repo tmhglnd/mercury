@@ -1,8 +1,10 @@
 
-// set debug 1
-set tempo 98 1500
+// ring nts random(12) & ring beat hex()
 
-// set hiPass 800 2000
+// set debug 1
+// set tempo 98 1500
+
+// set hiPass 800 2000 
 // set randomSeed 482
 // set volume 0.7
 
