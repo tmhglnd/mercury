@@ -18,10 +18,10 @@ let system = {
 }
 max.post("system-info", system);
 // convert windows paths to posix
-if (system.platform === 'win32'){
-	system.user = slash(system.user);
-	system.app = slash(system.app);
-}
+// if (system.platform === 'win32'){
+// 	system.user = slash(system.user);
+// 	system.app = slash(system.app);
+// }
 max.outlet("system", system);
 
 // the default preferences and object to store prefs
@@ -103,17 +103,20 @@ const defaultShortkeys = { ...shortkeys };
 // const sampleFile = base + '/Data/sample-library.json';
 const sampleFile = path.join(base, '/Data/sample-library.json');
 const defaultSamplePath = path.join(system.app, "../media/samples");
+max.post('Located default samples in: ' + defaultSamplePath);
 const defaultSamples = loadAudioFiles(defaultSamplePath);
 let samples = {};
 
 // variables for the wavetable library
 const wfFile = path.join(base, '/Data/waveform-library.json');
 const defaultWFPath = path.join(system.app, '../media/waveforms');
+max.post('Located default waveforms in: ' + defaultWFPath);
 const defaultWF = loadAudioFiles(defaultWFPath);
 let waveforms = {};
 
 // variables for the example files
 const examplesPath = path.join(system.app, '../../examples');
+max.post('Located examples in: ' + examplesPath);
 const examples = loadExamples(examplesPath);
 
 // directories for storage of code logs, recordings and sketches

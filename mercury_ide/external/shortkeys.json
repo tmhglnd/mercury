@@ -1,0 +1,17 @@
+{
+	"comment" : [ "alt-/", 2095 ],
+	"execute" : [ "alt-return", 2044 ],
+	"disable-editor" : [ "empty", 8804 ],
+	"delete-line" : [ "alt-x", 8776 ],
+	"copy-line" : [ "alt-c", 231 ],
+	"paste-line" : [ "alt-v", 8730 ],
+	"paste-replace-line" : [ "alt-p", 960 ],
+	"jump-top" : [ "alt-up", 2039 ],
+	"jump-bottom" : [ "alt-down", 2038 ],
+	"jump-begin" : [ "alt-left", 2037 ],
+	"jump-end" : [ "alt-right", 2036 ],
+	"up" : [ "alt-w", 8721 ],
+	"down" : [ "alt-s", 223 ],
+	"left" : [ "alt-a", 229 ],
+	"right" : [ "alt-d", 8706 ]
+}

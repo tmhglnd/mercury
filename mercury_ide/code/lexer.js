@@ -43,7 +43,10 @@ function lexer(code){
 			}
 			prevChar = ascii;
 		}
-		if (line != ""){
+		// line = line.replace(/\s{2,}/g, " ");
+			
+		if (line != "" && line != " "){
+			// post('lexer', line, "\n");
 			outlet(0, line.trim());
 		}
 		lineComment = false;

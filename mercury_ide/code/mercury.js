@@ -20,7 +20,7 @@ const Dict = require('./dictionary.js');
 
 var dict = new Dict();
 
-let DEBUG = false;
+let DEBUG = true;
 
 const handlers = {
 	// enable debug logging
@@ -454,7 +454,9 @@ function mainParse(lines){
 	// output the new variables dictionary
 	max.outlet(dict.items);
 	
+	// max.post('code', other);
 	for (let o in other){
+		// max.post('parsing', other[o])
 		let line = other[o];
 		let expr = [];
 		let s = '';
@@ -475,7 +477,9 @@ function mainParse(lines){
 				s += c;
 			}
 		}
+		// max.post('expr', ...expr);
 		expr = expr.concat(s.split(' ').filter(i => i).map(x => parseNumber(x)));
+		// max.post('expr', expr);
 		
 		if (expr.length < 2 && expr[0] !== 'silence'){
 			max.post('ERROR: '+expr[0]+' needs at least 1 more argument or function');
