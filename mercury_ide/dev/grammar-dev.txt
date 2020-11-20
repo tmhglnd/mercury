@@ -1,11 +1,12 @@
 
 // set debug 1
 set tempo 98 1500
-set hiPass 800 2000
-set randomSeed 482
-set volume 0.7
 
-set global tempo(120)
+// set hiPass 800 2000
+// set randomSeed 482
+// set volume 0.7
+
+// set global tempo(120)
 // set randomSeed 123
 // set randomSeed 123
 // set global randomSeed(1423) scale(minor_harmonic) tempo(100)
@@ -30,8 +31,8 @@ set global tempo(120)
 // make synth square gain(0.4) withFX(double) panning(-1) id(henk) play(myRhythm ) wave2(square 0.9932 ) 
 
 // apply henk effect(delay) addFX(envFilter)
-make sample kick_909 time(1/4)
-make polySynth kick_909 time(1/4)
+// make sample kick_909 time(1/4)
+// make polySynth kick_909 time(1/4)
 // sound sample choir_o startAt(0.3) rate(0.2) loop(1 1)
 
 // new midi "AU DLS Synth 1" function(1 5 "a string")
@@ -42,4 +43,4 @@ make polySynth kick_909 time(1/4)
 // new sample kick_909 time( 1/2 1/4 )  speed( 0.9) fx( reverb 0.3 11  )
 // => henk ~(lfo 1/4 up 0.5) ~(reverb 0.9 11)
 
-silence
+// silence

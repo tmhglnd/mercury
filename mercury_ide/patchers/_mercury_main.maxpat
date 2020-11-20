@@ -5644,7 +5644,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-239", 1 ],
+									"destination" : [ "obj-239", 0 ],
 									"source" : [ "obj-244", 0 ]
 								}
 
@@ -6338,7 +6338,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 124.5, 1335.0, 66.0, 22.0 ],
+					"patching_rect" : [ 131.131942666666674, 1365.0, 66.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -44649,6 +44649,18 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 406.631942666666646, 285.0, 63.0, 22.0 ],
+									"text" : "script stop"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -44726,7 +44738,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 433.333333333333314, 465.0, 22.0, 22.0 ],
+									"patching_rect" : [ 480.0, 465.0, 22.0, 22.0 ],
 									"text" : "t 0"
 								}
 
@@ -44759,11 +44771,11 @@
 								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
-									"numinlets" : 4,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 390.0, 420.0, 149.0, 22.0 ],
-									"text" : "route start stop terminated"
+									"numinlets" : 5,
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "", "", "" ],
+									"patching_rect" : [ 390.0, 420.0, 199.0, 22.0 ],
+									"text" : "route start restarted stop terminated"
 								}
 
 							}
@@ -44989,8 +45001,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 122.631942666666674, 208.0, 51.0, 22.0 ],
-									"text" : "zl group"
+									"patching_rect" : [ 122.631942666666674, 208.0, 81.0, 22.0 ],
+									"text" : "zl 1024 group"
 								}
 
 							}
@@ -45017,6 +45029,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -45074,7 +45088,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 306.0, 204.0, 30.0, 30.0 ]
+									"patching_rect" : [ 306.0, 200.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -45143,6 +45157,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-217", 0 ],
 									"source" : [ "obj-13", 1 ]
 								}
@@ -45202,13 +45223,20 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-3", 2 ]
+									"source" : [ "obj-3", 3 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-3", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-3", 1 ]
 								}
 
@@ -48296,7 +48324,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "PreSonus Studio 26", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -51556,8 +51584,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -58497,8 +58523,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 221.395827999999995, 1335.0, 113.0, 22.0 ],
-					"text" : "consoleLog LEXER"
+					"patching_rect" : [ 131.131942666666674, 1305.0, 104.0, 22.0 ],
+					"text" : "consoleLog TEXT"
 				}
 
 			}
@@ -66305,13 +66331,13 @@
 					"presentation_rect" : [ 210.0, 270.0, 135.0, 47.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0
+							"parameter_mmax" : 6.0,
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
@@ -66468,7 +66494,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "bang", "" ],
-					"patching_rect" : [ 45.0, 457.0, 267.0, 49.0 ],
+					"patching_rect" : [ 45.0, 457.0, 270.0, 49.0 ],
 					"text" : "jit.world mercury @visible 0 @floating 1 @fsaa 1 @fps 60 @fsmenubar 0 @erase_color 0 0 0 1 @windowposition 50 100 @size 480 270"
 				}
 
@@ -66526,7 +66552,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"midpoints" : [ 178.5, 520.0, 54.5, 520.0 ],
+					"midpoints" : [ 180.0, 520.0, 54.5, 520.0 ],
 					"source" : [ "obj-1", 1 ]
 				}
 
@@ -67305,7 +67331,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-304", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-225", 2 ]
 				}
 
@@ -67321,7 +67347,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-381", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-225", 2 ]
 				}
 

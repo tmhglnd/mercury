@@ -1,5 +1,5 @@
 //=====================================================================
-// lexer.js
+// matrixToString.js
 //
 // written by Timo Hoogland © 2019
 // www.timohoogland.com
@@ -11,11 +11,29 @@ outlets = 1;
 
 function jit_matrix(mat){
 	code = new JitterMatrix(mat);
-	lexer(code);
+	matrixToString(code);
 }
 
-function lexer(code){
-	var lineComment = false;
+function matrixToString(code){
+	// for every line in the matrix
+	for (var y = 0; y < code.dim[1]; y++){
+		// empty string to start line with
+		var line = "";
+		
+		for (var x = 0; x < code.dim[0]; x++){
+			// get the character from the cell
+			var ascii = code.getcell(x, y);
+			// append to the string
+			line += String.fromCharCode(ascii);
+		}
+		outlet(0, line);
+	}
+	
+	// REMOVED THE COMMENT CHECKING TO 
+	// mercury.js IN THE node.script
+	// THIS WILL BE DELETED SOON AFTER ENOUGH TESTS
+	
+	/*var lineComment = false;
 	var blockComment = false;
 	var prevChar;
 	
@@ -47,15 +65,8 @@ function lexer(code){
 			
 		if (line != "" && line != " "){
 			// post('lexer', line, "\n");
-			outlet(0, line.trim());
+			// outlet(0, line.trim());
 		}
 		lineComment = false;
-	}
+	}*/
 }
-
-//=====================================================================
-// licensed under a
-// Creative Commons Attribution 4.0 International License
-//
-// www.timohoogland.com
-//=====================================================================

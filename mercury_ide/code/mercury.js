@@ -20,7 +20,7 @@ const Dict = require('./dictionary.js');
 
 var dict = new Dict();
 
-let DEBUG = true;
+let DEBUG = false;
 
 const handlers = {
 	// enable debug logging
@@ -30,7 +30,7 @@ const handlers = {
 	// parse the input strings from code editor
 	// seperate lines are input as a string of characters
 	'parse' : (...v) => {
-		post('@parse', ...v);
+		// post('@parse', ...v);
 		mainParse(v);
 	},
 	// clear the dictionary with variables
@@ -407,28 +407,39 @@ max.addHandlers(handlers);
 function mainParse(lines){
 	let time = Date.now();
 	// remove double whitespaces
-	lines = lines.slice().map(x => x.replace(/\s{2,}/g, ' '));
+	lines = lines.slice().map(x => x.replace(/\s+/g, ' '));
+	// remove leading or trailing whitespaces
+	lines = lines.map(x => x.replace(/^\s+|\s+$/g, ''));
+	// remove comments from code
+	lines = lines.map(x => x.replace(/\/{2,}.+/g, ''));
+
 	post("@mainParse", lines);
 
 	// store rings and rest of code separately
 	let rings = [];
 	let other = [];
 
-	// regular expression to match rings
+	// regular expression to match rings/debug/seed/scale/tempo
 	let ring = /(ring\ |list\ |array\ ).+/;
+	let bugs = /set\ debug\ .+/;
 	let seed = /set\ randomSeed\ .+/;
 	let scale = /set\ scale\ .+/;
 	let tempo = /set\ tempo\ .+/;
+	let mute = /(silence|mute|killAll)/;
+
 	// let set = /(set\ |apply\ |give\ ).+/;
 	// let inst = /(new\ |make\ ).+/;
-	let mute = /(silence|mute|killAll)/;
 
 	for (let i in lines){
 		l = lines[i];
+		// if empty string skip this iteration
+		if (l === ''){ continue; }
+
+		post('@line', l);
 		if (ring.test(l)){
 			// does line start with ring/list/array
 			rings.push(l);
-		} else if (seed.test(l) || scale.test(l) || tempo.test(l)){
+		} else if (seed.test(l) || scale.test(l) || tempo.test(l) || bugs.test(l)){
 			// does line start with a global setting
 			other.push(l);			
 			let expr = l.split(' ');
@@ -481,8 +492,8 @@ function mainParse(lines){
 		expr = expr.concat(s.split(' ').filter(i => i).map(x => parseNumber(x)));
 		// max.post('expr', expr);
 		
-		if (expr.length < 2 && expr[0] !== 'silence'){
-			max.post('ERROR: '+expr[0]+' needs at least 1 more argument or function');
+		if (expr.length < 3 && expr[0] !== 'silence'){
+			max.post('WARNING: '+expr.join(' ')+' needs at least 1 more argument');
 		} else {
 			post('@code', expr);
 			max.outlet('parsed', ...expr);
@@ -545,7 +556,7 @@ function mainParse(lines){
 	max.outlet('done');
 	
 	time = Date.now() - time;
-	post('parsed code within: ' + time + ' ms');
+	max.post('parsed code succesful within: ' + time + ' ms');
 }
 
 const actions = {
