@@ -406,12 +406,22 @@ max.addHandlers(handlers);
 
 function mainParse(lines){
 	let time = Date.now();
+
+	// remove comments from code
+	lines = lines.map(x => x.replace(/\/{2,}.+/g, ''));
+
+	// split double coded lines via '&' symbol
+	let t = [];
+	for (let l in lines){
+		t.push(...lines[l].split('&'));
+	}
+	lines = t;
+
 	// remove double whitespaces
 	lines = lines.slice().map(x => x.replace(/\s+/g, ' '));
 	// remove leading or trailing whitespaces
 	lines = lines.map(x => x.replace(/^\s+|\s+$/g, ''));
-	// remove comments from code
-	lines = lines.map(x => x.replace(/\/{2,}.+/g, ''));
+	
 
 	post("@mainParse", lines);
 
