@@ -283,11 +283,12 @@ max.addHandler('randomExample', () => {
 });
 
 function loadAudioFiles(fold){
-	let files =	fg.sync(fold+"/**/*.+(wav|WAV|aif|AIF|aiff|AIFF|mp3|MP3|m4a|M4A|flac|FLAC)", { extglob: true });
+	let glob = "**/*.+(wav|WAV|aif|AIF|aiff|AIFF|mp3|MP3|m4a|M4A|flac|FLAC)";
+	let files =	fg.sync(fold + glob, { extglob: true });
 	let samples = {};
 	
 	for (let f in files){
-		// max.post(files[f]);
+		max.post(files[f]);
 		let file = path.parse(files[f]);
 		samples[file.name] = files[f];
 	}
