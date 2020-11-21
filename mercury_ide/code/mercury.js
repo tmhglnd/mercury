@@ -8,6 +8,7 @@
 //====================================================================
 
 const max  = require('max-api');
+const copy = require('copy-paste');
 
 const Gen  = require('total-serialism').Generative;
 const Algo = require('total-serialism').Algorithmic;
@@ -32,6 +33,7 @@ const handlers = {
 	'parse' : (...v) => {
 		// post('@parse', ...v);
 		mainParse(v);
+		copy.copy(['//=== MERCURY SNIPPET ==='].concat(v).join('\n'));
 	},
 	// clear the dictionary with variables
 	'clear' : () => {
