@@ -8,7 +8,7 @@
 //====================================================================
 
 const max  = require('max-api');
-const copy = require('copy-paste');
+const copy = require('clipboardy');
 
 const Gen  = require('total-serialism').Generative;
 const Algo = require('total-serialism').Algorithmic;
@@ -33,7 +33,9 @@ const handlers = {
 	'parse' : (...v) => {
 		// post('@parse', ...v);
 		mainParse(v);
-		copy.copy(['//=== MERCURY SNIPPET ==='].concat(v).join('\n'));
+		// for copy pasting to other editors
+		let head = ['//=== MERCURY SKETCH ' + date() + ' ==='];
+		copy.writeSync(head.concat(v).join('\n'));
 	},
 	// clear the dictionary with variables
 	'clear' : () => {
@@ -771,4 +773,18 @@ function post(...v){
 	if (DEBUG) {
 		max.post(...v);
 	}
+}
+
+function date(){
+	let now = new Date();
+
+	let dd = String(now.getDate()).padStart(2, '0');
+	let mm = String(now.getMonth()+1).padStart(2, '0');
+	let yyyy = now.getFullYear();
+	let hh = String(now.getHours()).padStart(2, '0');
+	let mi = String(now.getMinutes()).padStart(2, '0');
+	let ss = String(now.getSeconds()).padStart(2, '0');
+	let time = [yyyy, mm, dd, hh, mi, ss].join('.');
+
+	return time;
 }
