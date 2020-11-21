@@ -85,6 +85,8 @@ let shortkeys = {
 	"right" : [ "alt-d", 8706 ]
 }
 
+// max.post('Media Folder:', path.resolve('../media/samples'));
+
 // the basefolder for all Mercury local files
 // const base = system.user + '/Documents/Mercury';
 const base = path.join(system.user, '/Documents/Mercury');
@@ -102,20 +104,20 @@ const defaultShortkeys = { ...shortkeys };
 // variables for the sample library file
 // const sampleFile = base + '/Data/sample-library.json';
 const sampleFile = path.join(base, '/Data/sample-library.json');
-const defaultSamplePath = path.join(system.app, "../media/samples");
+const defaultSamplePath = path.join(system.app, "../media/samples/");
 max.post('Located default samples in: ' + defaultSamplePath);
 const defaultSamples = loadAudioFiles(defaultSamplePath);
 let samples = {};
 
 // variables for the wavetable library
 const wfFile = path.join(base, '/Data/waveform-library.json');
-const defaultWFPath = path.join(system.app, '../media/waveforms');
+const defaultWFPath = path.join(system.app, '../media/waveforms/');
 max.post('Located default waveforms in: ' + defaultWFPath);
 const defaultWF = loadAudioFiles(defaultWFPath);
 let waveforms = {};
 
 // variables for the example files
-const examplesPath = path.join(system.app, '../../examples');
+const examplesPath = path.join(system.app, '../../examples/');
 max.post('Located examples in: ' + examplesPath);
 const examples = loadExamples(examplesPath);
 
@@ -288,7 +290,7 @@ function loadAudioFiles(fold){
 	let samples = {};
 	
 	for (let f in files){
-		max.post(files[f]);
+		// max.post(files[f]);
 		let file = path.parse(files[f]);
 		samples[file.name] = files[f];
 	}
@@ -296,7 +298,7 @@ function loadAudioFiles(fold){
 }
 
 function loadExamples(fold){
-	let files = fg.sync(fold+"/**/*.txt");
+	let files = fg.sync(fold + "**/*.txt");
 	let examples = {};
 
 	for (let f in files){
