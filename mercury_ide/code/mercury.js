@@ -22,8 +22,13 @@ const Dict = require('./dictionary.js');
 var dict = new Dict();
 
 let DEBUG = false;
+let AUTO_COPY = true;
 
 const handlers = {
+	// enable copy code to clipboard on execute
+	'autoCopy' : (v) => {
+		AUTO_COPY = (v > 0);
+	},
 	// enable debug logging
 	'debug' : (v) => {
 		DEBUG = (v > 0);
@@ -33,9 +38,12 @@ const handlers = {
 	'parse' : (...v) => {
 		// post('@parse', ...v);
 		mainParse(v);
-		// for copy pasting to other editors
-		let head = ['//=== MERCURY SKETCH ' + date() + ' ==='];
-		copy.writeSync(head.concat(v).join('\n'));
+
+		// copy sketch to clipboard for pasting to other editors
+		if (AUTO_COPY){
+			let head = ['//=== MERCURY SKETCH ' + date() + ' ==='];
+			copy.writeSync(head.concat(v).join('\n'));
+		}
 	},
 	// clear the dictionary with variables
 	'clear' : () => {

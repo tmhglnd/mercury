@@ -1,10 +1,11 @@
 # Environment
 
 - [Mercury Main Window](#mercury-main-window)
-	- [Rendering](#rendering)
-	- [Audio](#audio)
+	- [Editor / Visuals](#editor-visuals)
+	- [Sound](#sound)
 	- [FPS CPU Meter](#fps-and-cpu-meter)
-	- [Auto Log Code](#auto-log-code)
+	- [Auto Log Sketch](#auto-log-sketch)
+	- [Auto Copy Sketch](#auto-copy-sketch)
 	- [Record Audio](#record-audio)
 	- [Show Variables](#show-variables)
 	- [Show Audiofiles](#show-audiofiles)
@@ -23,11 +24,11 @@
 
 The Mercury main window gives you access to the most used settings in the Mercury Environment. For more detailed settings you can use the menubar.
 
-## Rendering
+## Editor / Visuals
 
 Start or stop the rendering of the text-editor. This is an OpenGL environment that renders the responsive texteditor in the second window. The rendering is done at a framerate synced to the screen you use (which usually defaults to 60fps). This rendering is also necessary to use when coding visuals displayed behind the text.
 
-## Audio
+## Sound
 
 Start or stop the audio calculations (Digital Signal Processing). Turning this off will disable all processes that are considered audio.
 
@@ -37,9 +38,13 @@ The FPS meter shows the current Frames Per Second that the rendering engine is r
 
 This CPU meter shows the current CPU usage of the audio processes running in Mercury. If you experience a very high cpu-usage (more then 70) you can find some info under [Audio Setup](#audio-setup) to help you adjust settings for your computer.
 
-## Auto Log Code
+## Auto Log Sketch
 
 Enabling the Auto Log Code will store a version of your code to the folder `~/Documents/Mercury/Code Logs` for every time you execute your code. This can be helpful to create a history of your code and allow you to look back at your code after a performance.
+
+## Auto Copy Sketch
+
+When enabling the 'Auto Copy Sketch' Mercury will copy the full sketch to the clipboard everytime you execute your code. The copy will include a timestamp in the header of the snippet. Paste it in a different text-editor, or use it to send your code in a chat message to someone else.
 
 ## Record Audio 
 

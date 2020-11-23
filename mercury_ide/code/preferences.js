@@ -40,7 +40,7 @@ let prefs = {
 	"w_size" : "270",
 	"a_r" : "16 : 10 (Computer Screen / Macbook)",
 	"screens" : 1,
-	"floating" : 1,
+	"floating" : 0,
 	"visible" : 1,
 	"sync" : 1,
 	"fps" : 60,
@@ -61,8 +61,9 @@ let prefs = {
 	"blink_enable" : 1,
 	"blink_time" : 300,
 	"cursor" : "<<",
-	"autoLog" : 0,
-	"external_editor" : 0,
+	"autoLog" : 1,
+	"autoCopy" : 1,
+	"extEditor" : 0,
 }
 
 // the default shortkeys for mac
@@ -102,14 +103,14 @@ const defaultShortkeys = { ...shortkeys };
 // variables for the sample library file
 // const sampleFile = base + '/Data/sample-library.json';
 const sampleFile = path.posix.join(base, '/Data/sample-library.json');
-const defaultSamplePath = path.join(system.app, "../media/samples/");
+const defaultSamplePath = path.posix.join(system.app, "../media/samples/");
 const defaultSamples = loadAudioFiles(defaultSamplePath);
 let samples = {};
 max.post('Located default samples in: ' + defaultSamplePath);
 
 // variables for the wavetable library
 const wfFile = path.posix.join(base, '/Data/waveform-library.json');
-const defaultWFPath = path.join(system.app, '../media/waveforms/');
+const defaultWFPath = path.posix.join(system.app, '../media/waveforms/');
 const defaultWF = loadAudioFiles(defaultWFPath);
 let waveforms = {};
 max.post('Located default waveforms in: ' + defaultWFPath);
@@ -130,6 +131,12 @@ max.addHandler('init', () => {
 	// create path for preferences file and load if exists
 	if (fs.pathExistsSync(prefFile)){
 		prefs = fs.readJsonSync(prefFile);
+		Object.keys(defaults).forEach((p) => {
+			if (prefs[p] === undefined) {
+				prefHandlers.store(p, defaults[p]);
+				max.post('new preferences added: '+p);
+			}	
+		});
 		max.post('Loaded preferences: '+prefFile);
 	} else {
 		prefs = { ...defaults };
@@ -178,23 +185,23 @@ max.addHandler('init', () => {
 	}
 });
 
-// store a single parameter setting with a value
-// auto-write directly to file
-max.addHandler('store', (param, ...value) => {
-	if (prefs[param] !== undefined){
+const prefHandlers = {
+	// store a single parameter setting with a value
+	// auto-write directly to file
+	'store' : (param, ...value) => {
 		value = (value.length > 1)? value : value[0];
 		prefs[param] = value;
 		writeJson(prefFile, prefs);
+	},
+	// restore preferences to default
+	// output the preferences to Max
+	'default' : () => {
+		prefs = { ...defaults };
+		max.outlet("settings", prefs);
+		writeJson(prefFile, prefs);
 	}
-});
-
-// restore preferences to default
-// output the preferences to Max
-max.addHandler('default', () => {
-	prefs = { ...defaults };
-	max.outlet("settings", prefs);
-	writeJson(prefFile, prefs);
-});
+}
+max.addHandlers(prefHandlers);
 
 const keyHandlers = {
 	// store the keybinding settings when changed
