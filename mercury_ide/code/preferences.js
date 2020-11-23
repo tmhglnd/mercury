@@ -10,10 +10,10 @@ const fg     = require('fast-glob');
 let system = {
 	'user' : os.homedir(),
 	'app' : process.cwd(),
+	'platform' : os.platform()
 	// 'tmp' : os.tmpdir(),
 	// 'type' : os.type(),
 	// 'release' : os.release(),
-	'platform' : os.platform(),
 	// 'ip' : os.hostname(),
 }
 max.post("system-info", system);
@@ -44,7 +44,7 @@ let prefs = {
 	"visible" : 1,
 	"sync" : 1,
 	"fps" : 60,
-	"hidecursor" : 1,
+	"hidecursor" : 0,
 	"fullscreen" : 0,
 	"syphon" : 0,
 	"def_font" : "Courier New Bold",
@@ -85,44 +85,42 @@ let shortkeys = {
 	"right" : [ "alt-d", 8706 ]
 }
 
-// max.post('Media Folder:', path.resolve('../media/samples'));
-
 // the basefolder for all Mercury local files
 // const base = system.user + '/Documents/Mercury';
-const base = path.join(system.user, '/Documents/Mercury');
-max.post('Locate Mercury folder in: ', base);
+const base = path.posix.join(system.user, '/Documents/Mercury');
+max.post('Located Mercury folder in: ', base);
 
 // variables for the preferences file
 // const prefFile = base + '/Preferences/preferences.json';
-const prefFile = path.join(base, '/Preferences/preferences.json');
+const prefFile = path.posix.join(base, '/Preferences/preferences.json');
 const defaults = { ...prefs };
 
 // variables for shortkey preferences file
-const shortkeysFile = path.join(base, '/Preferences/shortkeys.json');
+const shortkeysFile = path.posix.join(base, '/Preferences/shortkeys.json');
 const defaultShortkeys = { ...shortkeys };
 
 // variables for the sample library file
 // const sampleFile = base + '/Data/sample-library.json';
-const sampleFile = path.join(base, '/Data/sample-library.json');
+const sampleFile = path.posix.join(base, '/Data/sample-library.json');
 const defaultSamplePath = path.join(system.app, "../media/samples/");
-max.post('Located default samples in: ' + defaultSamplePath);
 const defaultSamples = loadAudioFiles(defaultSamplePath);
 let samples = {};
+max.post('Located default samples in: ' + defaultSamplePath);
 
 // variables for the wavetable library
-const wfFile = path.join(base, '/Data/waveform-library.json');
+const wfFile = path.posix.join(base, '/Data/waveform-library.json');
 const defaultWFPath = path.join(system.app, '../media/waveforms/');
-max.post('Located default waveforms in: ' + defaultWFPath);
 const defaultWF = loadAudioFiles(defaultWFPath);
 let waveforms = {};
+max.post('Located default waveforms in: ' + defaultWFPath);
 
 // variables for the example files
-const examplesPath = path.join(system.app, '../../examples/');
+const examplesPath = path.posix.join(system.app, '../../examples/');
+const examples = loadFiles(examplesPath, '**/*.txt');
 max.post('Located examples in: ' + examplesPath);
-const examples = loadExamples(examplesPath);
 
 // directories for storage of code logs, recordings and sketches
-const userDirs = ['/Code Logs', '/Recordings', '/Sketches'];
+const userDirs = ['/Code Logs', '/Recordings'/*, '/Sketches'*/];
 
 // check if path for preference file exists
 // check if file exists, otherwise write the default prefs
@@ -229,7 +227,7 @@ const sampleHandlers = {
 		samples = Object.assign({}, loadAudioFiles(fold), samples);
 		writeJson(sampleFile, samples);
 		max.outlet('samples', samples);
-		max.post('Includeded samples from: '+fold);
+		max.post('Included samples from: '+fold);
 	},
 	// replace all samples with the content of a folder 
 	// and store names with path in database file
@@ -257,7 +255,7 @@ const wfHandlers = {
 		waveforms = Object.assign({}, loadAudioFiles(fold), waveforms);
 		writeJson(wfFile, waveforms);
 		max.outlet('wf', waveforms);
-		max.post('Includeded waveforms from: '+fold);
+		max.post('Included waveforms from: '+fold);
 	},
 	// replace all samples with the content of a folder 
 	// and store names with path in database file
@@ -270,43 +268,44 @@ const wfHandlers = {
 }
 max.addHandlers(wfHandlers);
 
+let exampleFiles = [];
 let prevExample;
 max.addHandler('randomExample', () => {
-	let files = Object.keys(examples);
-	let l = files.length;
+	let l = exampleFiles.length;
+	if (l < 1){
+		exampleFiles = Object.keys(examples);
+		l = exampleFiles.length;
+	}
 	let n = Math.floor(Math.random() * l);
-	if (prevExample == n){
+	if (prevExample === n){
 		n = (n + 1) % l;
 	}
-	let path = examples[files[n]];
 	prevExample = n;
+	let path = examples[exampleFiles[n]];
+	max.post('Opened example: ' + exampleFiles[n]);
 
+	exampleFiles.splice(n, 1);
 	max.outlet('example', path);
 });
 
 function loadAudioFiles(fold){
+	// Load audio files (.wav, .aif, .mp3)
 	let glob = "**/*.+(wav|WAV|aif|AIF|aiff|AIFF|mp3|MP3|m4a|M4A|flac|FLAC)";
-	let files =	fg.sync(fold + glob, { extglob: true });
-	let samples = {};
-	
-	for (let f in files){
-		// max.post(files[f]);
-		let file = path.parse(files[f]);
-		samples[file.name] = files[f];
-	}
-	return samples;
+	return loadFiles(fold, glob);
 }
 
-function loadExamples(fold){
-	let files = fg.sync(fold + "**/*.txt");
-	let examples = {};
+// Load files into a dictionary based on a 
+// fast-glob search string
+function loadFiles(fold, glob){
+	let files = fg.sync(fold + glob);
+	let dict = {};
 
 	for (let f in files){
 		// max.post(files[f]);
 		let file = path.parse(files[f]);
-		examples[file.name] = files[f];
+		dict[file.name] = files[f];
 	}
-	return examples;
+	return dict;
 }
 
 // Sync-write a JSON file to disk with spaces
