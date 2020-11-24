@@ -232,12 +232,12 @@ Rand.pick(5, ['c', 'e', ['g', 'd']]);
 Expand an array based upon the pattern within an array. The pattern is derived from the rate in change between values by calculating the differences between every consecutive value. The newly generated values are selected randomly from the list of possible changes, but in such a way that every change occurs once in the sequence of total changes before reshuffling and selecting the next one (see the `pick` method for explanation). The resulting output starts with the input array.
 
 **arguments**
-- {Int+} -> length of array output
 - {Array} -> Array to expand
+- {Int+} -> length of array output (including original array)
 
 ```js 
 Rand.seed(3141);
-Rand.expand(30, [0, 9, 7, 3, 5, 0, -1]);
+Rand.expand([0, 9, 7, 3, 5, 0, -1], 30);
 
 //=>  9.00 ┤╭╮      ╭╮                    
 //    6.80 ┤│╰╮     ││                    
@@ -252,7 +252,7 @@ Rand.expand(30, [0, 9, 7, 3, 5, 0, -1]);
 //  -13.00 ┤                    ╰╯╰╯       
 
 Rand.seed(6181);
-Rand.expand(30, [0, 9, 7, 3, 5, 0, -1]);
+Rand.expand([0, 9, 7, 3, 5, 0, -1], 30);
 
 //=>  9.00 ┤╭╮                            
 //    6.80 ┤│╰╮                           

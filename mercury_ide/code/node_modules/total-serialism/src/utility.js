@@ -309,3 +309,59 @@ function plot(a=[0], prefs){
 	return p;
 }
 exports.plot = plot;
+
+// Draw a 2D-array of values to the console in the form of an
+// ascii gray-scaleimage and return chart from function. 
+// If you just want the chart returned as text and not log to console 
+// set { log: false }. If you want to print using a characterset under 
+// ascii-code 256 use { extend: false }. 
+// 
+// @param {Array/2D-Array} -> values to plot
+// @param {Object} -> { log: false } don't log to console and only return
+//                 -> { extend: true } use extended ascii characters
+//                 -> { error: false } use error character for error reporting
+// 
+function draw(a=[0], prefs){
+	// if a is not an array
+	a = (Array.isArray(a)) ? a : [a];
+	// if a is not an 2d-array
+	a = (Array.isArray(a[0])) ? a : [a];
+
+	// empty object if no preferences
+	prefs = (typeof prefs !== 'undefined') ? prefs : {};
+
+	prefs.log = (typeof prefs.log !== 'undefined') ? prefs.log : true;
+	prefs.extend = (typeof prefs.extend !== 'undefined') ? prefs.extend : true;
+	prefs.error = (typeof prefs.error !== 'undefined') ? prefs.error : false;
+
+	// when using extended ascii set
+	let chars = (prefs.extend) ? ' ░▒▓█'.split('') : ' .-=+#'.split('');
+	// when flagging NaN values
+	let err = (prefs.error) ? ((prefs.extend) ? '�' : '?') : ' ';
+
+	// get the lowest and highest value from input and calculate range
+	let min = Infinity, max = -Infinity;
+	for (let i in a){
+		for (let j in a[i]){
+			min = (a[i][j] < min)? a[i][j] : min;
+			max = (a[i][j] > max)? a[i][j] : max;
+		}
+	}
+	let range = max - min;
+
+	// lookup a grayscale ascii value based on normalized array value
+	// use whitespace if value is NaN or 'X' if error flag is true
+	let p = '';
+	for (let i in a){
+		for (let j in a[i]){
+			let grey = Math.trunc((a[i][j] - min) / range * (chars.length-1));
+			let char = (isNaN(grey)) ? err : chars[grey];
+			p += char;
+		}
+		// add linebreak if multiple lines must be printed
+		if (a.length > 1) { p += '\n'; }
+	}
+	if (prefs.log){ console.log(p); }
+	return p;	
+}
+exports.draw = draw;

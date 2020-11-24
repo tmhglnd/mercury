@@ -239,9 +239,10 @@ const handlers = {
 	// expand an array based upon the pattern within an array
 	// arbitrarily choosing the next 
 	'expand' : (...v) => {
-		// swap because of implementation in total-serialism
-		let args = [v[1], v[0]];
-		return Rand.expand(...args);
+		// check if arguments are correct
+		v[0] = (Array.isArray(v[0])) ? v[0] : [v[0]];
+		v[1] = Math.max(2, (Array.isArray(v[1])) ? v[1][0] : v[1]);
+		return Rand.expand(v[0], v[1]);
 	},
 	// 
 	// Transformational Methods
@@ -345,6 +346,9 @@ const handlers = {
 	},
 	// stretch an array to a specified length, interpolating values
 	'stretch' : (...v) => {
+		// swap because of implementation in total-serialism
+		v[0] = (Array.isArray(v[0])) ? v[0] : [v[0]];
+		v[1] = Math.max(2, (Array.isArray(v[1])) ? v[1][0] : v[1]);
 		return Util.trunc(Mod.stretch(...v));
 	},
 	'stretchFloat' : (...v) => {
@@ -514,7 +518,7 @@ function mainParse(lines){
 		expr = expr.concat(s.split(' ').filter(i => i).map(x => parseNumber(x)));
 		// max.post('expr', expr);
 		
-		if (expr.length < 3 && expr[0] !== 'silence'){
+		if (expr.length < 2 && expr[0] !== 'silence'){
 			max.post('WARNING: '+expr.join(' ')+' needs at least 1 more argument');
 		} else {
 			post('@code', expr);

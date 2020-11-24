@@ -79,3 +79,54 @@ Util.plot(Gen.sine(20, 3.1415, 0, 24), { height: 10 });
 //        0.00 ┤    ╰╯    ╰╯    ╰─╯  
 
 ```
+
+## draw
+
+Draw a grayscale ascii character image of the input 2D-array to the console and return drawing as a string. If you just want the graph returned as string and not log to console set `{ log: false }`. If you want to print using a characterset under ascii-code 256 use `{ extend: false }`. For error reporting when values are `NaN` use `{ error: true }`.
+
+**arguments**
+
+- {Array/2D-Array} -> values to draw
+- {Object} -> preferences
+	- -> { log: false } don't log to console and only return
+	- -> { extend: true } use extended ascii characters
+	- -> { error: false } use error character for error reporting
+
+```js 
+
+let drawing = [];
+Rand.seed(628);
+for (let i=0; i<10; i++){
+	drawing.push(Rand.drunk(42, 5));
+}
+Util.draw(drawing);
+
+// ░░▒░▒▒▓██▓▒▓▒▒▒▓▓▓█▓███▓▒▓▓█▓██▓▒▓▓██▓█▓▒▒
+// ░░░░   ░     ░░        ░░▒▒░░░░░▒▓█▒▒▓█▓▒▒
+// ░▒░▒▒▒░░░▒▒█▒▒▒▒▒▒▒▓▒▒▒▒▒▒▒▓▒▒▒▒▒▓██▓▓▓▒▒░
+// ▒░░    ░  ░▒░░░    ░           ░        ░▒
+// ▒▓█▓▓▓█▓▒▒▒▓▓▓██▓▓▓▒▒░░▒░▒░░▒░░  ░▒▒▓▓██▓▓
+// ▒░▒▓▒▓▒░▒░ ░░░░░   ░▒▓▓▓▓▒░▒▒░░░░░░░░░    
+// ░░░░░      ░        ░      ░    ░░░▒▒░░ ░░
+// ░ ░░░   ░░░▒░▒▒░▒▒▓█▒▒▒▒▒▒▒░░▒░░░░░ ░░    
+// ░▒░░░░▒▓█▓▒▒▒░ ░░ ░▒░░░    ░▒▒▒▒▒▒▓█▓▓█▓▒█
+// ░   ░░░░▒▒▒░░  ░▒▒▒▒▒▒▒▒▒░▒▒▓█▓▒▒░░░░░    
+
+let harmonics = [];
+for (let i=0; i<10; i++){
+	harmonics.push(Gen.sine(42, i+1));
+}
+Util.draw(harmonics, { extend: false });
+
+// --==+++########+++==---..              ..-
+// -=++####+=--.       .-=++####+=--.       .
+// -=+##+=-.    .-=+##+=-.    .-=+##+=-.    .
+// -+##+-.   .=+##=-    -+##+-.   .=+##=-    
+// -+#+-   .=##=.   -+#+-   -+##=.  .=##+-   
+// -+#=.  -+#=.  -+#=.  -+#=.  -+#=.  -+#=.  
+// -##-  -##-  -##-  -##-  -##-  -##-  -##-  
+// -#+. .+#-  +#-  =#=  -#+. .+#-  +#-  =#=  
+// -#=  =#- .++. -#=  =#- .++. -#=  =#- .++. 
+// -#- .#=  ++  +#. =#- -#- .#=  ++  +#. =#- 
+
+```

@@ -1,360 +1,362 @@
+// set debug 0
 
-// // possible arrays and datatypes with arbitrary spaces
-// ring ar1 [0 12 3.14 56 789]
-// print ar1
-// ring ar2 [11 22 33 44 55]
-// print ar2
-// ring ar3 [hat kick 3.14 123]
-// print ar3
-// ring ar4 [0 5 7 9]
-// print ar4
-// ring ar5 [0 12 24 -12]
-// print ar5
-// ring arr2d [0[1 2] 3]
-// print arr2d
-// ring ar6 [0 [ 1 2 ] 3 [ 4 5 6] 7]
-// print ar6
-// ring arr2d2 [hat [kick snare] 1.23 [4 5 [6 7] ]8 9]
-// print arr2d2
-// ring ar8 (0 (1 3)2 5(6 7 8 )  )
-// print ar8
+// possible arrays and datatypes with arbitrary spaces
+ring ar1 [0 12 3.14 56 789]
+print ar1
+ring ar2 [11 22 33 44 55]
+print ar2
+ring ar3 [hat kick 3.14 123]
+print ar3
+ring ar4 [0 5 7 9]
+print ar4
+ring ar5 [0 12 24 -12]
+print ar5
+ring arr2d [0[1 2] 3]
+print arr2d
+ring ar6 [0 [ 1 2 ] 3 [ 4 5 6] 7]
+print ar6
+ring arr2d2 [hat [kick snare] 1.23 [4 5 [6 7] ]8 9]
+print arr2d2
+ring ar8 (0 (1 3)2 5(6 7 8 )  )
+print ar8
 
-// ring spr1 spread(5 0 12)
-// print spr1
-// // => [0 2 4 7 9]
-// ring spr2 spreadFloat(5 -1 1)
-// print spr2
-// // => [-1 -0.6 -0.2 0.2 0.6]
-// ring spr3 spreadF(5 0 2)
-// print spr3
-// // => [0 0.4 0.8 1.2 1.6]
+ring spr1 spread(5 0 12)
+print spr1
+// => [0 2 4 7 9]
+ring spr2 spreadFloat(5 -1 1)
+print spr2
+// => [-1 -0.6 -0.2 0.2 0.6]
+ring spr3 spreadF(5 0 2)
+print spr3
+// => [0 0.4 0.8 1.2 1.6]
 
-// ring spi1 spreadInclusive(5 0 12)
-// print spi1
-// // => [0 3 6 9 12]
-// ring spi2 spreadInclusiveFloat(5 -1 1)
-// print spi2
-// // => [-1 -0.5 0 0.5 1]
-// ring spi3 spreadInclusiveF(5 0 2)
-// print spi3
-// // => [0 0.5 1 1.5 2]
+ring spi1 spreadInclusive(5 0 12)
+print spi1
+// => [0 3 6 9 12]
+ring spi2 spreadInclusiveFloat(5 -1 1)
+print spi2
+// => [-1 -0.5 0 0.5 1]
+ring spi3 spreadInclusiveF(5 0 2)
+print spi3
+// => [0 0.5 1 1.5 2]
 
-// ring fll1 fill(10 2 15 3 20 4)
-// print fll1
-// // => [10 10 15 15 15 20 20 20 20]
-// ring fll2 fill(kick_min 2 hat_min 3)
-// print fll2
-// // => [kick_min kick_min hat_min hat_min hat_min]
+ring fll1 fill(10 2 15 3 20 4)
+print fll1
+// => [10 10 15 15 15 20 20 20 20]
+ring fll2 fill(kick_min 2 hat_min 3)
+print fll2
+// => [kick_min kick_min hat_min hat_min hat_min]
 
-// ring sin1 sine(10)
-// print sin1
-// // => [6 9 11 11 9 6 2 0 0 2]
-// ring sin2 sine(10 1 -12 12)
-// print sin2
-// // => [0 7 11 11 7 0 -7 -11 -11 -7]
-// ring sin3 sine(10 2 0 5)
-// print sin3
-// // => [2 4 3 1 0 2 4 3 1 0]
-// ring sin4 sineFloat(8)
-// print sin4
-// // => [0 0.707 1 0.707 0 -0.707 -1 -0.707]
-// ring sin5 sineF(12 3 -1 1)
-// print sin5
-// // => [0 1 0 -1 0 1 0 -1 0 1 0 -1]
+ring sin1 sine(10)
+print sin1
+// => [6 9 11 11 9 6 2 0 0 2]
+ring sin2 sine(10 1 -12 12)
+print sin2
+// => [0 7 11 11 7 0 -7 -11 -11 -7]
+ring sin3 sine(10 2 0 5)
+print sin3
+// => [2 4 3 1 0 2 4 3 1 0]
+ring sin4 sineFloat(8)
+print sin4
+// => [0 0.707 1 0.707 0 -0.707 -1 -0.707]
+ring sin5 sineF(12 3 -1 1)
+print sin5
+// => [0 1 0 -1 0 1 0 -1 0 1 0 -1]
 
-// ring cos1 cosine(10)
-// print cos1
-// // => [12 10 7 4 1 0 1 4 7 10]
-// ring cos2 cosine(10 1 -12 12)
-// print cos2
-// // => [12 9 3 -3 -9 -12 -9 -3 3 9]
-// ring cos3 cosine(10 2 0 5)
-// print cos3
-// // => [5 3 0 0 3 4 3 0 0 3]
-// ring cos4 cosineFloat(8)
-// print cos4
-// // => [1 0.707 0 -0.707 -1 -0.707 0 0.707]
-// ring cos5 cosineF(12 3 -1 1)
-// print cos5
-// // => [1 0 -1 0 1 0 -1 0 1 0 -1 0]
+ring cos1 cosine(10)
+print cos1
+// => [12 10 7 4 1 0 1 4 7 10]
+ring cos2 cosine(10 1 -12 12)
+print cos2
+// => [12 9 3 -3 -9 -12 -9 -3 3 9]
+ring cos3 cosine(10 2 0 5)
+print cos3
+// => [5 3 0 0 3 4 3 0 0 3]
+ring cos4 cosineFloat(8)
+print cos4
+// => [1 0.707 0 -0.707 -1 -0.707 0 0.707]
+ring cos5 cosineF(12 3 -1 1)
+print cos5
+// => [1 0 -1 0 1 0 -1 0 1 0 -1 0]
 
-// ring euc1 euclidean()
-// print euc1
-// // => [1 0 1 0 1 0 1 0]
-// ring euc2 euclid(7 5)
-// print euc2
-// // => [1 1 0 1 1 0 1]
-// ring euc3 euclid(7 5 2)
-// print euc3
-// //=> [0 1 1 1 0 1 1]
+ring euc1 euclidean()
+print euc1
+// => [1 0 1 0 1 0 1 0]
+ring euc2 euclid(7 5)
+print euc2
+// => [1 1 0 1 1 0 1]
+ring euc3 euclid(7 5 2)
+print euc3
+//=> [0 1 1 1 0 1 1]
 
-// ring hex1 hexBeat()
-// print hex1
-// // => [1 0 0 0]
-// ring hex2 hex(a)
-// print hex2
-// // => [1 0 1 0]
-// ring hex3 hex(f9cb)
-// print hex3
-// // => [1 1 1 1 1 0 0 1 1 1 0 0 1 0 1 1]
+ring hex1 hexBeat()
+print hex1
+// => [1 0 0 0]
+ring hex2 hex(a)
+print hex2
+// => [1 0 1 0]
+ring hex3 hex(f9cb)
+print hex3
+// => [1 1 1 1 1 0 0 1 1 1 0 0 1 0 1 1]
 
-// ring fib1 fibonacci(10)
-// print fib1
-// // => [0 1 1 2 3 5 8 13 21 34]
-// ring fib2 fibonacci(3 10)
-// print fib2
-// // => [55 89 144]
+ring fib1 fibonacci(10)
+print fib1
+// => [0 1 1 2 3 5 8 13 21 34]
+ring fib2 fibonacci(3 10)
+print fib2
+// => [55 89 144]
 
-// ring psn1 pisano()
-// print psn1
-// // => [0 1 1 2 3 5 8 1 9 10 7 5 0 5 5 10 3 1 4 5 9 2 11 1]
-// ring psn2 pisano(3)
-// print psn2
-// // => [0 1 1 2 0 2 2 1]
-// ring psn3 pisano(11)
-// print psn3
-// // => [0 1 1 2 3 5 8 2 10 1]
-// ring psn4 pisano(1)
-// print psn4
-// // => [0]
+ring psn1 pisano()
+print psn1
+// => [0 1 1 2 3 5 8 1 9 10 7 5 0 5 5 10 3 1 4 5 9 2 11 1]
+ring psn2 pisano(3)
+print psn2
+// => [0 1 1 2 0 2 2 1]
+ring psn3 pisano(11)
+print psn3
+// => [0 1 1 2 3 5 8 2 10 1]
+ring psn4 pisano(1)
+print psn4
+// => [0]
 
-// ring pll1 pell(8)
-// print pll1
-// // => [0 1 2 5 12 29 70 169]
-// ring luc1 lucas(8)
-// print luc1
-// // => [2 1 3 4 7 11 18 29]
-// ring tfi1 threeFibonacci(8)
-// print tfi1
-// // => [0 1 3 10 33 109 360 1189]
+ring pll1 pell(8)
+print pll1
+// => [0 1 2 5 12 29 70 169]
+ring luc1 lucas(8)
+print luc1
+// => [2 1 3 4 7 11 18 29]
+ring tfi1 threeFibonacci(8)
+print tfi1
+// => [0 1 3 10 33 109 360 1189]
 
-// set randomSeed 31415
-// ring rnd1 random(5)
-// print rnd1
-// // => [1 0 0 1 1]
-// ring rnd2 random(5 12)
-// print rnd2
-// // => [0 10 3 2 2]
-// ring rnd3 rand(5 -12 12)
-// print rnd3
-// // => [-2 -5 -8 -11 6]
+set randomSeed 31415
+ring rnd1 random(5)
+print rnd1
+// => [1 0 0 1 1]
+ring rnd2 random(5 12)
+print rnd2
+// => [0 10 3 2 2]
+ring rnd3 rand(5 -12 12)
+print rnd3
+// => [-2 -5 -8 -11 6]
 
-// set randomSeed 31415
-// ring rnf1 randomFloat(5)
-// print rnf1
-// // => [0.81 0.32 0.01 0.85 0.88]
-// ring rnf2 randomF(5 0 12)
-// print rnf2
-// // => [0.16 10.72 3.16 262 2.34]
-// ring rnf3 randF(5 -12 12)
-// print rnf3
-// // => [-1.19 -4.21 -7.36 -10.31 6.82]
+set randomSeed 31415
+ring rnf1 randomFloat(5)
+print rnf1
+// => [0.81 0.32 0.01 0.85 0.88]
+ring rnf2 randomF(5 0 12)
+print rnf2
+// => [0.16 10.72 3.16 262 2.34]
+ring rnf3 randF(5 -12 12)
+print rnf3
+// => [-1.19 -4.21 -7.36 -10.31 6.82]
 
-// set randomSeed 1618
-// ring urn1 urn(5)
-// print urn1
-// // => [3 7 10 0 2]
-// ring urn2 urn(8 4)
-// print urn2
-// // => [0 2 1 3 1 3 0 2]
-// ring urn3 urn(8 10 14)
-// print urn3
-// // => [13 10 12 11 12 10 13 11]
+set randomSeed 1618
+ring urn1 urn(5)
+print urn1
+// => [3 7 10 0 2]
+ring urn2 urn(8 4)
+print urn2
+// => [0 2 1 3 1 3 0 2]
+ring urn3 urn(8 10 14)
+print urn3
+// => [13 10 12 11 12 10 13 11]
 
-// set randomSeed 271828
-// ring coin1 coin(8)
-// print coin1
-// // => [1 0 1 0 1 0 1 1]
-// ring dice1 dice(8)
-// print dice1
-// // => [5 4 6 4 4 5 4 2]
+set randomSeed 271828
+ring coin1 coin(8)
+print coin1
+// => [1 0 1 0 1 0 1 1]
+ring dice1 dice(8)
+print dice1
+// => [5 4 6 4 4 5 4 2]
 
-// set randomSeed 271828
-// ring twv1 twelveTone()
-// print twv1
-// // => [10 7 6 3 2 9 8 4 1 5 0 11]
+set randomSeed 271828
+ring twv1 twelveTone()
+print twv1
+=> [10 7 6 3 2 9 8 4 1 5 0 11]
 
-// set randomSeed 62832
-// ring samples [hat snare kick]
-// ring sequence choose(10 samples)
-// print sequence
-// // => [hat kick hat kick hat snare kick hat hat hat]
-// ring notes [0 3 7 5 9 12]
-// ring melody choose(10 notes)
-// print melody
-// // => [0 5 3 9 0 7 3 12 3 7]
+set randomSeed 62832
+ring samples [hat snare kick]
+ring sequence choose(10 samples)
+print sequence
+// => [hat kick hat kick hat snare kick hat hat hat]
+ring notes [0 3 7 5 9 12]
+ring melody choose(10 notes)
+print melody
+// => [0 5 3 9 0 7 3 12 3 7]
 
-// set randomSeed 62832
-// ring samples [hat snare kick tom]
-// ring sequence pick(10 samples)
-// print sequence
-// // => [hat kick tom snare tom hat snare kick tom hat]
-// ring notes [0 3 7 5 9 12]
-// ring melody pick(10 notes)
-// print melody
-// // => [3 0 7 9 12 5 0 7 12 9]
+set randomSeed 62832
+ring samples [hat snare kick tom]
+ring sequence pick(10 samples)
+print sequence
+// => [hat kick tom snare tom hat snare kick tom hat]
+ring notes [0 3 7 5 9 12]
+ring melody pick(10 notes)
+print melody
+// => [3 0 7 9 12 5 0 7 12 9]
 
-// set randomSeed 14142
-// ring samples [hat snare kick tom]
-// ring shf1 shuffle(samples)
-// print shf1
-// // => [snare tom kick hat]
-// ring notes [0 3 7 5 9 12]
-// ring shf2 scramble(notes)
-// print shf2
-// // => [12 0 3 7 5 9]
+set randomSeed 14142
+ring samples [hat snare kick tom]
+ring shf1 shuffle(samples)
+print shf1
+// => [snare tom kick hat]
+ring notes [0 3 7 5 9 12]
+ring shf2 scramble(notes)
+print shf2
+// => [12 0 3 7 5 9]
 
-// ring notes [0 3 7]
-// ring melody clone(notes 0 12 7 -7)
-// print melody
-// // => [0 3 7 12 15 19 7 10 14 -7 -4 0]
+ring notes [0 3 7]
+ring melody clone(notes 0 12 7 -7)
+print melody
+// => [0 3 7 12 15 19 7 10 14 -7 -4 0]
 
-// ring partA [0 3 7]
-// ring partB [24 19 12]
-// ring partC [-7 -5 -3]
-// ring phrase combine(partA partB partC)
-// print phrase
-// // => [0 3 7 24 19 12 -7 -5 -3]
+ring partA [0 3 7]
+ring partB [24 19 12]
+ring partC [-7 -5 -3]
+ring phrase combine(partA partB partC)
+print phrase
+// => [0 3 7 24 19 12 -7 -5 -3]
 
-// ring partC [kick hat snare hat]
-// ring partD [hat hat hat snare]
-// ring sequence join(partC partD)
-// print sequence
-// // => [kick hat snare hat hat hat hat snare]
-// // concat()
+ring partC [kick hat snare hat]
+ring partD [hat hat hat snare]
+ring sequence join(partC partD)
+print sequence
+// => [kick hat snare hat hat hat hat snare]
+// concat()
 
-// ring notes [0 3 7]
-// ring phrase duplicate(notes 4)
-// print phrase
-// // => [0 3 7 0 3 7 0 3 7 0 3 7]
-// // repeat()
-// // dup()
+ring notes [0 3 7]
+ring phrase duplicate(notes 4)
+print phrase
+// => [0 3 7 0 3 7 0 3 7 0 3 7]
+// repeat()
+// dup()
 
-// ring rhythm [1 0 1 1 0 1 1]
-// ring sequence every(rhythm 2 8)
-// print sequence
-// // => [1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0]
-// ring melody [5 7 3 9 1]
-// ring phrase every(melody 2 7 12)
-// print phrase
-// // => [5 7 3 9 1 12 12 12 12 12 12 12 12 12]
-// ring rhythm [1 1 0 1 1]
-// ring sequence every(rhythm 2 8 0 1)
-// print sequence
-// // => [0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0]
+ring rhythm [1 0 1 1 0 1 1]
+ring sequence every(rhythm 2 8)
+print sequence
+// => [1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0]
+ring melody [5 7 3 9 1]
+ring phrase every(melody 2 7 12)
+print phrase
+// => [5 7 3 9 1 12 12 12 12 12 12 12 12 12]
+ring rhythm [1 1 0 1 1]
+ring sequence every(rhythm 2 8 0 1)
+print sequence
+// => [0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0]
 
-// ring notes [0 3 7 12]
-// ring inv1 invert(notes)
-// print inv1
-// // => [12 9 5 0]
-// ring inv2 invert(notes 5)
-// print inv2
-// // => [10 7 3 -2]
-// ring inv3 invert(notes 3 10)
-// print inv3
-// // => [13 10 6 1]
-// // inverse()
-// // flip()
-// // inv()
+ring notes [0 3 7 12]
+ring inv1 invert(notes)
+print inv1
+// => [12 9 5 0]
+ring inv2 invert(notes 5)
+print inv2
+// => [10 7 3 -2]
+ring inv3 invert(notes 3 10)
+print inv3
+// => [13 10 6 1]
+// inverse()
+// flip()
+// inv()
 
-// ring notes [0 7 7 5 3 12 0 3 3]
-// ring flt1 filter(notes 3)
-// print flt1
+ring notes [0 7 7 5 3 12 0 3 3]
+ring flt1 filter(notes 3)
+print flt1
 
-// ring flt2 filter(notes 7 5 12)
-// print flt2
+ring flt2 filter(notes 7 5 12)
+print flt2
 
-// ring partA [0 3 7 5 0]
-// ring partB [12 19 15]
-// ring partC [24 22]
-// ring melody lace(partA partB partC)
-// print melody
-// // => [0 12 24 3 19 22 7 15 5 0]
-// // zip()
+ring partA [0 3 7 5 0]
+ring partB [12 19 15]
+ring partC [24 22]
+ring melody lace(partA partB partC)
+print melody
+// => [0 12 24 3 19 22 7 15 5 0]
+// zip()
 
-// ring partA [0 3 7 5 0]
-// ring partB [12 19 15] 
-// ring merged merge(partA partB)
-// print merged
-// // => [[0 12] [3 19] [7 15] 5 0]
-// // mix()
+ring partA [0 3 7 5 0]
+ring partB [12 19 15] 
+ring merged merge(partA partB)
+print merged
+// => [[0 12] [3 19] [7 15] 5 0]
+// mix()
 
-// ring notes [0 3 7 12]
-// ring melodyA palindrome(notes)
-// print melodyA
-// // => [0 3 7 12 12 7 3 0]
-// ring melodyB palindrome(notes 1)
-// print melodyB
-// // => [0 3 7 12 7 3]
-// // palin()
-// // mirror()
+ring notes [0 3 7 12]
+ring melodyA palindrome(notes)
+print melodyA
+// => [0 3 7 12 12 7 3 0]
+ring melodyB palindrome(notes 1)
+print melodyB
+// => [0 3 7 12 7 3]
+// palin()
+// mirror()
 
-// ring melody [0 3 7 5 7 9 12]
-// ring left rotate(melody -2)
-// print left
-// // => [7 5 7 9 12 0 3]
-// ring right rotate(melody 2)
-// print right
-// // => [9 12 0 3 7 5 7]
-// // rotate()
-// // turn()
-// // rot()
 
-// ring melody [0 3 7 5]
-// ring rev reverse(melody)
-// print rev
-// // => [5 7 3 0]
-// // retrograde()
+ring melody [0 3 7 5 7 9 12]
+ring left rotate(melody -2)
+print left
+// => [7 5 7 9 12 0 3]
+ring right rotate(melody 2)
+print right
+// => [9 12 0 3 7 5 7]
+// rotate()
+// turn()
+// rot()
+
+ring melody [0 3 7 5]
+ring rev reverse(melody)
+print rev
+// => [5 7 3 0]
+// retrograde()
 // // rev()
 
-// set randomSeed 4837
-// ring notes random(12 0 12)
-// ring srt1 sort(notes)
-// print srt1
-// // => [2 2 3 3 5 6 6 6 7 9 10 11]
-// ring srt2 sort(notes -1)
-// print srt2
-// // => [11 10 9 7 6 6 6 5 3 3 2 2]
+set randomSeed 4837
+ring notes random(12 0 12)
+ring srt1 sort(notes)
+print srt1
+// => [2 2 3 3 5 6 6 6 7 9 10 11]
+ring srt2 sort(notes -1)
+print srt2
+// => [11 10 9 7 6 6 6 5 3 3 2 2]
 
-// ring notes [12 19 15 17]
-// ring places [1 0 0 1 1 0 1 0 1 0]
-// ring sprayed spray(notes places)
-// print sprayed
-// // => [12 0 0 19 15 0 17 0 12 0]
+ring notes [12 19 15 17]
+ring places [1 0 0 1 1 0 1 0 1 0]
+ring sprayed spray(notes places)
+print sprayed
+// => [12 0 0 19 15 0 17 0 12 0]
 
-// ring notes [0 5 7 3 7 7 0 12 5]
-// ring thinned unique(notes)
-// print thinned
-// // => [0 5 7 3 12]
-// // thin()
+ring notes [0 5 7 3 7 7 0 12 5]
+ring thinned unique(notes)
+print thinned
+// => [0 5 7 3 12]
+// thin()
 
-// // add()
-// // subtract()
-// // sub()
-// // multiply()
-// // mul()
-// // divide()
-// // div()
+// add()
+// subtract()
+// sub()
+// multiply()
+// mul()
+// divide()
+// div()
 
-// set tempo 120
-// ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
-// ring ms1 dtoms(divs)
-// print ms1
-// // => [500 1000 250 375 500 333.33 4000]
-// ring ms2 dtoms(divs 100)
-// print ms2
-// // => [600 1200 300 450 600 400 4800]
-// ring ratios [0.25 0.125 0.1875 0.25 0.16667 2]
-// ring ms3 dtoms(ratios)
-// print ms3
-// // => [500 1000 250 375 500 333.33 4000]
+set tempo 120
+ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
+ring ms1 dtoms(divs)
+print ms1
+// => [500 1000 250 375 500 333.33 4000]
+ring ms2 dtoms(divs 100)
+print ms2
+// => [600 1200 300 450 600 400 4800]
+ring ratios [0.25 0.125 0.1875 0.25 0.16667 2]
+ring ms3 dtoms(ratios)
+print ms3
+// => [500 1000 250 375 500 333.33 4000]
 
-// ring nts [0 12 5 7]
-// ring str stretch(nts 50)
-// print str
+ring nts [0 12 5 7]
+ring str stretch(nts 50)
+print str
 
-// ring strF stretchFloat(nts 50)
-// print strF
+ring strF stretchFloat(nts 50)
+print strF
 
 set randomSeed 3141
 ring nts [0 9 7 3 5 0 -1]

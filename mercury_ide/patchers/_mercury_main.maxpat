@@ -81,7 +81,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 416.333333333333371, 1101.0, 77.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "autoCopy $1"
 				}
 
@@ -44823,7 +44822,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 112.0, 192.0, 789.0, 639.0 ],
+						"rect" : [ 111.0, 192.0, 789.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -44852,6 +44851,29 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 480.0, 510.0, 175.0, 22.0 ],
+									"text" : "syntax error. parse unsuccesful"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 480.0, 540.0, 79.0, 22.0 ],
+									"text" : "print ERROR"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-16",
@@ -45211,8 +45233,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -45332,8 +45352,24 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
+									"destination" : [ "obj-12", 0 ],
+									"order" : 0,
 									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"order" : 1,
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-12", 0 ]
 								}
 
 							}
@@ -48497,7 +48533,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2", ",", "to Max 1", ",", "to Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "Liquid56 MIDI", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -50724,7 +50760,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 555.500000000000114, 144.0, 160.0, 76.0 ],
-													"presentation_linecount" : 6,
 													"text" : ";\rmax launchbrowser https://github.com/tmhglnd/mercury/blob/master/docs/tutorial.md#-mercury-tutorial"
 												}
 
@@ -52011,6 +52046,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -65170,7 +65207,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 74.03472899999997, 2195.0, 63.0, 47.0 ],
+					"patching_rect" : [ 74.03472899999997, 2195.0, 66.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 71.0, 283.5, 126.0, 20.0 ],
 					"text" : "Start Recording Audio",

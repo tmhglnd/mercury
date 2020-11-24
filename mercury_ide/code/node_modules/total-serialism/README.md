@@ -22,6 +22,7 @@
 		- [Euclidean Rhythm](docs/algorithmic-methods.md#euclid)
 		- [Hexadecimal Rhythm](docs/algorithmic-methods.md#hexBeat)
 		- [Lindenmayer System](docs/algorithmic-methods.md#linden)
+		- [Cellular Automaton](docs/algorithmic-methods.md#cellular-automaton)
 		- [Fibonacci Sequence](docs/algorithmic-methods.md#fibonacci)
 		- [Pisano Period](docs/algorithmic-methods.md#pisano)
 	- [Stochastic Methods](docs/stochastic-methods.md)
@@ -96,6 +97,7 @@
 		- [divide](docs/utility-methods.md#divide)
 		- [mod](docs/utility-methods.md#mod)
 		- [plot](docs/utility-methods.md#plot)
+		- [draw](docs/utility-methods.md#draw)
 - [In Action](#in-action)
 - [Inspiration & Further Reading](#inspiration--further-reading)
 - [License](#license)
@@ -162,22 +164,6 @@ Mod.stretch([0, 12, 3, 7], 30);
 //    0.00 ┼╯ 
 
 ```
-<!--
-Generate Lindenmayer system sequences
-
-```js
-// Cantor set as 0's and 1's in an array ruleset
-Algo.linden(1, 3, {1: [1, 0, 1], 0: [0, 0, 0]});
-//=> [ 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1 ]
-```
-
-Generate Pisano periods and Fibonacci sequences
-
-```js 
-Algo.pisano(7);
-//=> [ 0, 1, 1, 2, 3, 5, 1, 6, 0, 6, 6, 5, 4, 2, 6, 1 ]
-```
--->
 
 # Install
 

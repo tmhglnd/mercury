@@ -5,6 +5,7 @@ These are also generative methods, but are in general more complex algorithms, s
 - [euclid](#euclid)
 - [hexBeat](#hexbeat)
 - [linden](#linden)
+- [cellular automaton](#cellular-automaton)
 - [fibonacci](#fibonacci)
 - [pisano](#pisano)
 - [pell](#pell)
@@ -104,6 +105,78 @@ Algo.linden(0, 2, complexRules);
 ```
 
 <iframe src="https://editor.p5js.org/tmhglnd/embed/_X0duWOvn" width="100%" height="250px" frameBorder="0" scrolling="no"></iframe>
+
+## cellular automaton
+
+Generate an Elementary Cellular Automaton class. This is an one dimensional array (collection of cells) with states that are either dead or alive (0/1). By following a set of rules the next generation is calculated for every cell based on its neighbouring cells. Invoke the next() method to iterate the generations. Set the first generation with the feed() method (usually random values work quite well). Change the rule() based on a decimal number or an array of digits.
+
+**methods**
+
+- @constructor {length, rule} -> generate the CA
+- @get state -> return the current generations as array
+- @get table -> return the table of rules
+- @method rule() -> set the rule based on decimal number or array
+- @method feed() -> feed the initial generation with an array
+- @method next() -> generate the next generation and return
+
+```js 
+let ca = new Algo.Automaton();
+// feed with 40 randomly generated values 0-1
+ca.feed(Rand.coin(40));
+// set the rule with a decimal representation
+ca.rule(122);
+// generate the next generation and store in array
+let gen = ca.next();
+
+// create multiple generations in a forloop
+let gens = [];
+for (let i=0; i<10; i++){
+	gens.push(ca.next());
+}
+Util.draw(gens);
+
+//  ███ ██ █   █ ██ █ █████   ██ ████ ██   
+// ██ █████ █ █ ████ ██   ██ █████  █████  
+// ████   ██ █ ██  █████ █████   ████   ███
+//    ██ ████ ██████   ███   ██ ██  ██ ██  
+//   █████  ███    ██ ██ ██ ██████████████ 
+//  ██   ████ ██  ███████████            ██
+// ████ ██  ███████         ██          ███
+//    ███████     ██       ████        ██  
+//   ██     ██   ████     ██  ██      ████ 
+//  ████   ████ ██  ██   ████████    ██  ██
+```
+
+Different rules hold different patterns:
+
+```js 
+ca.rule(120);
+
+//  ██  ████ ████ █  ███ █    █  ██    █ ██
+// ████ █  ███  ██ █ █ ██ █    █ ███    ███
+//    ██ █ █ ██ ███ █ ████ █    ██ ██   █  
+//    ███ █ █████ ██ ██  ██ █   ██████   █ 
+//    █ ██ ██   ████████ ███ █  █    ██   █
+// █   ███████  █      ███ ██ █  █   ███   
+//  █  █     ██  █     █ █████ █  █  █ ██  
+//   █  █    ███  █     ██   ██ █  █  ████ 
+//    █  █   █ ██  █    ███  ███ █  █ █  ██
+// █   █  █   ████  █   █ ██ █ ██ █  █ █ ██
+
+ca.rule(9);
+
+//    █            ████ █  █         █  █  
+// ██   ██████████ █         ███████      █
+//    █ █            ███████ █       ████ █
+//  █     ██████████ █         █████ █     
+//    ███ █            ███████ █       ████
+//  █ █     ██████████ █         █████ █   
+//      ███ █            ███████ █       ██
+//  ███ █     ██████████ █         █████ █ 
+//  █     ███ █            ███████ █       
+//    ███ █     ██████████ █         ██████
+
+```
 
 ## fibonacci
 
