@@ -1,4 +1,4 @@
-# Instruments
+# All Instruments
 
 The following methods apply to all the different types of instruments: `synth`, `sample`, `polySynth`, `loop` and `midi`.
 
@@ -390,6 +390,8 @@ ring chords [[0 4 7] [2 5 9] [5 9 0]]
 new midi "AU DLS Synth 1" note(chords 1) chord(on)
 ```
 
+Alternative function-names: `poly()`
+
 ## sync
 
 Turn midiclock syncing on/off for an individual instrument and send it to the selected port/device from that instrument.
@@ -402,6 +404,8 @@ Turn midiclock syncing on/off for an individual instrument and send it to the se
 new midi "aMidiDevice" sync(on)
 new midi "otherDevice" sync(off)
 ```
+
+Alternative function-names: `clock()`
 
 <!-- 
 # Text to Speech (mac-only)
