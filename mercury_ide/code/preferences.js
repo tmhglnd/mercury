@@ -16,12 +16,12 @@ let system = {
 	// 'release' : os.release(),
 	// 'ip' : os.hostname(),
 }
-max.post("system-info", system);
 // convert windows paths to posix
-// if (system.platform === 'win32'){
-// 	system.user = slash(system.user);
-// 	system.app = slash(system.app);
-// }
+if (system.platform === 'win32'){
+	system.user = slash(system.user);
+	system.app = slash(system.app);
+}
+max.post("system-info", system);
 max.outlet("system", system);
 
 // the default preferences and object to store prefs
