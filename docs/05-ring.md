@@ -54,14 +54,15 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 - [Transformative Methods](#transformative-methods)
 	- [clone](#clone)
 	- [combine / join](#combine)
-	- [duplicate / repeat](#duplicate)
+	- [duplicate](#duplicate)
 	- [every](#every)
 	- [invert / flip](#invert)
 	- [lace / zip](#lace)
 	- [merge / mix](#merge)
 	- [palindrome / mirror](#palindrome)
-	- [rotate / turn](#rotate)
+	- [repeat](#repeat)
 	- [reverse / retrograde](#reverse)
+	- [rotate / turn](#rotate)
 	- [spray](#spray)
 	- [stretch / stretchFloat](#stretch)
 	- [unique / thin](#unique)
@@ -95,7 +96,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 ## spread / spreadFloat
 
-Generate a ring of n-length of evenly spaced values between a starting number up untill (but excluding) the 3th argument.
+Generate a ring of n-length of evenly spaced values between a starting number up untill (but excluding) the 3th argument. Flipping the low and high values results in a descending ring.
 
 **arguments**
 - {Int+} -> Length of ring
@@ -111,11 +112,14 @@ ring spr2 spreadFloat(5 -1 1)
 
 ring spr3 spreadF(5 0 2)
 // => [0 0.4 0.8 1.2 1.6]
+
+ring spr4 spread(5 12 0)
+// => [9 7 4 2 0]
 ```
 
 ## spreadInclusive / spreadInclusiveFloat
 
-Generate a ring of n-length of evenly spaced values between a starting number up to (and including) the 3th argument.
+Generate a ring of n-length of evenly spaced values between a starting number up to (and including) the 3th argument. Flipping the low and high values results in a descending ring.
 
 **arguments**
 - {Int+} -> Length of ring
@@ -131,6 +135,9 @@ ring spi2 spreadInclusiveFloat(5 -1 1)
 
 ring spi3 spreadInclusiveF(5 0 2)
 // => [0 0.5 1 1.5 2]
+
+ring spi4 spreadInclusive(5 12 0)
+// => [12 9 6 3 0]
 ```
 
 ## fill
@@ -656,7 +663,7 @@ ring phrase duplicate(notes 4)
 // => [0 3 7 0 3 7 0 3 7 0 3 7]
 ```
 
-Alternative: `repeat()`, `dup()`
+Alternative: `dup()`
 
 ## every
 
@@ -753,6 +760,29 @@ ring melodyB palindrome(notes 1)
 ```
 
 Alternative: `palin()`, `mirror()`
+
+## repeat
+
+Repeats separate values in a ring a certain amount of times. The repeats argument can be a ring that will be iterated for every value in the to-repeat ring.
+
+**arguments**
+- {Ring} -> Ring to repeat
+- {Int+|IntRing} -> amount of repeats per value
+
+```java
+ring notes [0 3 7]
+ring phrase repeat(notes 4)
+// => [0 0 0 0 3 3 3 3 7 7 7 7]
+
+ring repeats [2 5 3]
+ring phraseB repeat(notes repeats)
+// => [0 0 3 3 3 3 3 7 7 7]
+
+// also works with strings
+ring samples [kick snare hat]
+ring beats repeat(samples repeats)
+// => [kick kick snare snare snare snare hat hat hat]
+```
 
 ## reverse
 

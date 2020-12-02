@@ -239,6 +239,7 @@ function repeat(arr=[0], rep=1){
 	let a = [];
 	for (let i in arr){
 		let r = rep[i % rep.length];
+		r = (isNaN(r) || r < 0)? 0 : r;
 		for (let k=0; k<r; k++){
 			a.push(arr[i]);
 		}

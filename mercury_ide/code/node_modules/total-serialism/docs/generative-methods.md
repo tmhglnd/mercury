@@ -3,8 +3,10 @@
 
 Basic methods that generate arrays of number sequences, such as methods that generate an ascending array of numbers evenly spread between a low and high value.
 
-- [spread](#spread)
-- [spreadInclusive](#spreadinclusive)
+- [spread / spreadFloat](#spread)
+- [spreadInclusive / spreadInclusiveFloat](#spreadinclusive)
+- [spreadExp / spreadExpFloat](#spreadExp)
+- [spreadInclusiveExp / spreadInclusiveExpFloat](spreadInclusiveExp)
 - [fill](#fill)
 - [sine / cosine](#sine--cosine)
 
@@ -16,29 +18,42 @@ const Gen = require('total-serialism').Generative;
 
 ## spread
 
-Generate an array of n-length of evenly spaced values between a starting number up untill (but excluding) the 3th argument.
+Generate an array of n-length of evenly spaced values between a starting number up until (but excluding) the 3th argument. Flipping the low and high range will result in the same values but descending.
 
 **arguments**
 - {Int+} -> Length of array
-- {Number} -> Low value (optional)
-- {Number} -> High value (exclusive, optional)
+- {Number} -> Low value (optional, default=0)
+- {Number} -> High value (exclusive, optional, default=length)
 
 ```js
-// generate an array of 7 ints between range 0-7
-Gen.spread(7); 
-//=> [ 0, 1, 2, 3, 4, 5, 6 ]
+// generate an array of 5 ints between range 0-5
+Gen.spread(5);
+//=> [ 0, 1, 2, 3, 4 ] 
+
+// change the range with a second argument to 0-12
+Gen.spread(5, 12);
+//=> [ 0, 2, 4, 7, 9 ] 
+
+// add a low/high range pair with 3-12
+Gen.spread(5, 3, 12);
+//=> [ 3, 4, 6, 8, 10 ] 
+
+// reverse the range for descending output with 12-3
+Gen.spread(5, 12, 3);
+//=> [ 10, 8, 6, 4, 3 ] 
 
 // generate an array of 5 floats between range 0-1
 Gen.spreadFloat(5); 
 //=> [ 0, 0.2, 0.4, 0.6, 0.8 ]
 // Alternative: Gen.spreadF()
+
 ```
 
 <iframe src="https://editor.p5js.org/tmhglnd/embed/TT6XGijrR" width="100%" height="250px" frameBorder="0" scrolling="no"></iframe>
 
 ## spreadInclusive
 
-Generate an array of n-length of evenly spaced values between a starting number up to (and including) the 3th argument.
+Generate an array of n-length of evenly spaced values between a starting number up to (and including) the 3th argument. Flipping the low and high range will result in the same values but descending.
 
 **arguments**
 - {Int+} -> Length of array
@@ -46,18 +61,50 @@ Generate an array of n-length of evenly spaced values between a starting number 
 - {Number} -> High value (inclusive, optional)
 
 ```js
-// generate an array of 5 ints between range 7-19 (19 inclusive)
-Gen.spreadInclusive(5, 7, 19); 
-//=> [ 7, 10, 13, 16, 19 ] 
+// generate an array of 5 ints between range 0-5 (5 inclusive)
+Gen.spreadInclusive(5);
+//=> [ 0, 1, 2, 3, 5 ] 
 // Alternative: Gen.spreadInc()
+
+// change the range with a second argument to 0-12
+Gen.spreadInclusive(5, 12);
+//=> [ 0, 3, 6, 9, 12 ] 
+
+// add a low/high range pair with 3-12
+Gen.spreadInclusive(5, 3, 12);
+//=> [ 3, 5, 7, 9, 12 ] 
+
+// reverse the range for descending output with 12-3
+Gen.spreadInclusive(5, 12, 3);
+//=> [ 12, 9, 7, 5, 3 ] 
 
 // generate an array of 9 floats between -1 - 1 (inclusive)
 Gen.spreadInclusiveFloat(9, -1, 1); 
 //=> [ -1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1 ]
 // Alternative: Gen.spreadIncF()
+
 ```
 
-<iframe src="https://editor.p5js.org/tmhglnd/embed/WSv9b8sjc" width="100%" height="250px" frameBorder="0" scrolling="no"></iframe>
+## spreadExp
+
+Similar to spread and spreadFloat but with an optional exponent as 4th argument
+
+**arguments**
+- {Int+} -> Length of array
+- {Number} -> Low value (optional, default=0)
+- {Number} -> High value (exclusive, optional, default=length)
+- {Number} -> Exponent (optional, default=1)
+
+## spreadInclusiveExp
+
+Similar to spreadInclusive and spreadInclusiveFloat but with an optional exponent as 4th argument
+
+
+**arguments**
+- {Int+} -> Length of array
+- {Number} -> Low value (optional)
+- {Number} -> High value (inclusive, optional)
+- {Number} -> Exponent (optional, default=1)
 
 ## fill
 

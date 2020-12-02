@@ -29,6 +29,9 @@ print spr2
 ring spr3 spreadF(5 0 2)
 print spr3
 // => [0 0.4 0.8 1.2 1.6]
+ring spr4 spread(5 12 0)
+print spr4
+// => [9 7 4 2 0]
 
 ring spi1 spreadInclusive(5 0 12)
 print spi1
@@ -39,6 +42,9 @@ print spi2
 ring spi3 spreadInclusiveF(5 0 2)
 print spi3
 // => [0 0.5 1 1.5 2]
+ring spi4 spreadInclusive(5 12 0)
+print spi4
+// => [12 9 6 3 0]
 
 ring fll1 fill(10 2 15 3 20 4)
 print fll1
@@ -228,7 +234,6 @@ ring notes [0 3 7]
 ring phrase duplicate(notes 4)
 print phrase
 // => [0 3 7 0 3 7 0 3 7 0 3 7]
-// repeat()
 // dup()
 
 ring rhythm [1 0 1 1 0 1 1]
@@ -309,6 +314,22 @@ print rev
 // retrograde()
 // // rev()
 
+ring notes [0 3 7]
+ring phrase repeat(notes 4)
+// => [0 0 0 0 3 3 3 3 7 7 7 7]
+print phrase
+
+ring repeats [2 5 3]
+ring phraseB repeat(notes repeats)
+// => [0 0 3 3 3 3 3 7 7 7]
+print phraseB
+
+// also works with strings
+ring samples [kick snare hat]
+ring beats repeat(samples repeats)
+// => [kick kick snare snare snare snare hat hat hat]
+print beats
+
 set randomSeed 4837
 ring notes random(12 0 12)
 ring srt1 sort(notes)
@@ -366,3 +387,5 @@ print exp
 set randomSeed 1618
 ring exp2 expand(nts 30)
 print exp2
+
+print DONE!!!

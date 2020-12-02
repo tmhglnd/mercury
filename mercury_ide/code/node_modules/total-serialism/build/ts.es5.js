@@ -2105,20 +2105,25 @@ var Util=require('./utility.js');// Generate a list of n-length starting at one 
 // @params {array-length, low-output, high-output}
 // @return {Array}
 //
-function spreadFloat(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var lo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:len;var hi=arguments.length>2&&arguments[2]!==undefined?arguments[2]:0;return function(lo,hi){// swap if lo > hi
-if(lo>hi){var t=lo,lo=hi,hi=t;}// len is minimum of 1
-len=Math.max(1,len);// generate array
-var arr=[];for(var i=0;i<len;i++){arr[i]=i/len*(hi-lo)+lo;}return arr;}(lo,hi);}exports.spreadFloat=spreadFloat;exports.spreadF=spreadFloat;// Generate a list of n-length starting at one value
+function spreadFloat(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var lo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:len;var hi=arguments.length>2?arguments[2]:undefined;return function(lo,hi){// if hi undefined set lo to 0 and hi=lo
+if(hi===undefined){var t=lo,lo=0,hi=t;}// calculate the range
+var r=hi-lo;// lo is actual lowest value
+lo=Math.min(lo,hi);// len is minimum of 1
+len=Math.max(1,len);// stepsize
+var s=Math.abs(r)/len;// generate array
+var arr=[];for(var i=0;i<len;i++){arr[i]=i*s+lo;}return r<0?arr.reverse():arr;}(lo,hi);}exports.spreadFloat=spreadFloat;exports.spreadF=spreadFloat;// Generate a list of n-length starting at one value
 // up until (but excluding) the 3th argument. 
 // Set an exponential curve in the spacing of the values.
 // 
 // @params {length, low-output, high-output, exponent}
 // @return {Array}
 //
-function spreadFloatExp(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var lo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:len;var hi=arguments.length>2&&arguments[2]!==undefined?arguments[2]:0;var exp=arguments.length>3&&arguments[3]!==undefined?arguments[3]:1;return function(lo,hi){// swap if lo > hi
-if(lo>hi){var t=lo,lo=hi,hi=t;}// len is minimum of 1
+function spreadFloatExp(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var lo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:len;var hi=arguments.length>2?arguments[2]:undefined;var exp=arguments.length>3&&arguments[3]!==undefined?arguments[3]:1;return function(lo,hi){// if hi undefined set lo to 0 and hi=lo
+if(hi===undefined){var t=lo,lo=0,hi=t;}// calculate the range
+var r=hi-lo;// lo is actual lowest value
+lo=Math.min(lo,hi);// len is minimum of 1
 len=Math.max(1,len);// generate array
-var arr=[];for(var i=0;i<len;i++){arr[i]=Math.pow(i/len,exp)*(hi-lo)+lo;}return arr;}(lo,hi);}exports.spreadFloatExp=spreadFloatExp;// Spread function rounded to integers
+var arr=[];for(var i=0;i<len;i++){arr[i]=Math.pow(i/len,exp)*Math.abs(r)+lo;}return r<0?arr.reverse():arr;}(lo,hi);}exports.spreadFloatExp=spreadFloatExp;// Spread function rounded to integers
 // 
 // @params {length, low-output, high-output}
 // @return {Array}
@@ -2135,20 +2140,25 @@ function spreadExp(len,lo,hi,exp){var arr=spreadFloatExp(len,lo,hi,exp);return a
 // @params {length, low-output, high-output}
 // @return {Array}
 //
-function spreadInclusiveFloat(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var lo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:len;var hi=arguments.length>2&&arguments[2]!==undefined?arguments[2]:0;return function(lo,hi){// swap if lo > hi
-if(lo>hi){var t=lo,lo=hi,hi=t;}// len is minimum of 1
-len=Math.max(1,len);// generate array
-var arr=[];for(var i=0;i<len;i++){arr[i]=i/(len-1)*(hi-lo)+lo;}return arr;}(lo,hi);}exports.spreadInclusiveFloat=spreadInclusiveFloat;exports.spreadIncF=spreadInclusiveFloat;// Generate a list of n-length starting at one value
+function spreadInclusiveFloat(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var lo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:len;var hi=arguments.length>2?arguments[2]:undefined;return function(lo,hi){// if hi undefined set lo to 0 and hi=lo
+if(hi===undefined){var t=lo,lo=0,hi=t;}// calculate the range
+var r=hi-lo;// lo is actual lowest value
+lo=Math.min(lo,hi);// len is minimum of 1
+len=Math.max(1,len);// stepsize
+var s=Math.abs(r)/(len-1);// generate array
+var arr=[];for(var i=0;i<len;i++){arr[i]=i*s+lo;}return r<0?arr.reverse():arr;}(lo,hi);}exports.spreadInclusiveFloat=spreadInclusiveFloat;exports.spreadIncF=spreadInclusiveFloat;// Generate a list of n-length starting at one value
 // ending at the 3th argument.
 // Set an exponential curve in the spacing of the values.
 // 
 // @params {length, low-output, high-output, exponent}
 // @return {Array}
 //
-function spreadInclusiveFloatExp(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var lo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:len;var hi=arguments.length>2&&arguments[2]!==undefined?arguments[2]:0;var exp=arguments.length>3&&arguments[3]!==undefined?arguments[3]:1;return function(lo,hi){// swap if lo > hi
-if(lo>hi){var t=lo,lo=hi,hi=t;}// len is minimum of 1
+function spreadInclusiveFloatExp(){var len=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var lo=arguments.length>1&&arguments[1]!==undefined?arguments[1]:len;var hi=arguments.length>2?arguments[2]:undefined;var exp=arguments.length>3&&arguments[3]!==undefined?arguments[3]:1;return function(lo,hi){// if hi undefined set lo to 0 and hi=lo
+if(hi===undefined){var t=lo,lo=0,hi=t;}// calculate the range
+var r=hi-lo;// lo is actual lowest value
+lo=Math.min(lo,hi);// len is minimum of 1
 len=Math.max(1,len);// generate array
-var arr=[];for(var i=0;i<len;i++){arr[i]=Math.pow(i/(len-1),exp)*(hi-lo)+lo;}return arr;}(lo,hi);}exports.spreadInclusiveFloatExp=spreadInclusiveFloatExp;// spreadinclusiveFloat function floored to integers
+var arr=[];for(var i=0;i<len;i++){arr[i]=Math.pow(i/(len-1),exp)*Math.abs(r)+lo;}return r<0?arr.reverse():arr;}(lo,hi);}exports.spreadInclusiveFloatExp=spreadInclusiveFloatExp;// spreadinclusiveFloat function floored to integers
 // 
 // @params {length, low-output, high-output}
 // @return {Array}
@@ -2689,7 +2699,7 @@ function palindrome(){var arr=arguments.length>0&&arguments[0]!==undefined?argum
 // @param {Int/Array} -> array or number of repetitions per value
 // @return {Array}
 // 
-function repeat(){var arr=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];var rep=arguments.length>1&&arguments[1]!==undefined?arguments[1]:1;arr=Array.isArray(arr)?arr:[arr];rep=Array.isArray(rep)?rep:[rep];var a=[];for(var i in arr){var r=rep[i%rep.length];for(var k=0;k<r;k++){a.push(arr[i]);}}return a;}exports.repeat=repeat;// reverse the order of items in an Array
+function repeat(){var arr=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];var rep=arguments.length>1&&arguments[1]!==undefined?arguments[1]:1;arr=Array.isArray(arr)?arr:[arr];rep=Array.isArray(rep)?rep:[rep];var a=[];for(var i in arr){var r=rep[i%rep.length];r=isNaN(r)||r<0?0:r;for(var k=0;k<r;k++){a.push(arr[i]);}}return a;}exports.repeat=repeat;// reverse the order of items in an Array
 // 
 // @param {Array} -> array to reverse
 // @return {Array}

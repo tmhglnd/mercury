@@ -7561,17 +7561,23 @@ const Util = require('./utility.js');
 // @params {array-length, low-output, high-output}
 // @return {Array}
 //
-function spreadFloat(len=1, lo=len, hi=0){
-	// swap if lo > hi
-	if (lo > hi){ var t=lo, lo=hi, hi=t; }
+function spreadFloat(len=1, lo=len, hi){
+	// if hi undefined set lo to 0 and hi=lo
+	if (hi === undefined){ var t=lo, lo=0, hi=t; }
+	// calculate the range
+	let r = hi - lo; 
+	// lo is actual lowest value
+	lo = Math.min(lo, hi);
 	// len is minimum of 1
 	len = Math.max(1, len);
+	// stepsize
+	let s = Math.abs(r) / len;
 	// generate array
 	let arr = [];
 	for (let i=0; i<len; i++){
-		arr[i] = (i / len) * (hi - lo) + lo;
+		arr[i] = i * s + lo;
 	}
-	return arr;
+	return (r < 0)? arr.reverse() : arr;
 }
 exports.spreadFloat = spreadFloat;
 exports.spreadF = spreadFloat;
@@ -7583,17 +7589,21 @@ exports.spreadF = spreadFloat;
 // @params {length, low-output, high-output, exponent}
 // @return {Array}
 //
-function spreadFloatExp(len=1, lo=len, hi=0, exp=1){
-	// swap if lo > hi
-	if (lo > hi){ var t=lo, lo=hi, hi=t; }
+function spreadFloatExp(len=1, lo=len, hi, exp=1){
+	// if hi undefined set lo to 0 and hi=lo
+	if (hi === undefined){ var t=lo, lo=0, hi=t; }
+	// calculate the range
+	let r = hi - lo; 
+	// lo is actual lowest value
+	lo = Math.min(lo, hi);
 	// len is minimum of 1
 	len = Math.max(1, len);
 	// generate array
 	let arr = [];
 	for (let i=0; i<len; i++){
-		arr[i] = Math.pow((i / len), exp) * (hi - lo) + lo;
+		arr[i] = Math.pow((i / len), exp) * Math.abs(r) + lo;
 	}
-	return arr;
+	return (r < 0)? arr.reverse() : arr;
 }
 exports.spreadFloatExp = spreadFloatExp;
 
@@ -7626,17 +7636,23 @@ exports.spreadExp = spreadExp;
 // @params {length, low-output, high-output}
 // @return {Array}
 //
-function spreadInclusiveFloat(len=1, lo=len, hi=0){
-	// swap if lo > hi
-	if (lo > hi){ var t=lo, lo=hi, hi=t; }
+function spreadInclusiveFloat(len=1, lo=len, hi){
+	// if hi undefined set lo to 0 and hi=lo
+	if (hi === undefined){ var t=lo, lo=0, hi=t; }
+	// calculate the range
+	let r = hi - lo; 
+	// lo is actual lowest value
+	lo = Math.min(lo, hi);
 	// len is minimum of 1
 	len = Math.max(1, len);
+	// stepsize
+	let s = Math.abs(r) / (len - 1);
 	// generate array
 	let arr = []
 	for (let i=0; i<len; i++){
-		arr[i] = (i / (len-1)) * (hi - lo) + lo;
+		arr[i] = i * s + lo;
 	}
-	return arr;
+	return (r < 0)? arr.reverse() : arr;
 }
 exports.spreadInclusiveFloat = spreadInclusiveFloat;
 exports.spreadIncF = spreadInclusiveFloat;
@@ -7648,17 +7664,21 @@ exports.spreadIncF = spreadInclusiveFloat;
 // @params {length, low-output, high-output, exponent}
 // @return {Array}
 //
-function spreadInclusiveFloatExp(len=1, lo=len, hi=0, exp=1){
-	// swap if lo > hi
-	if (lo > hi){ var t=lo, lo=hi, hi=t; }
+function spreadInclusiveFloatExp(len=1, lo=len, hi, exp=1){
+	// if hi undefined set lo to 0 and hi=lo
+	if (hi === undefined){ var t=lo, lo=0, hi=t; }
+	// calculate the range
+	let r = hi - lo; 
+	// lo is actual lowest value
+	lo = Math.min(lo, hi);
 	// len is minimum of 1
 	len = Math.max(1, len);
 	// generate array
 	let arr = [];
 	for (let i=0; i<len; i++){
-		arr[i] = Math.pow((i / (len-1)), exp) * (hi - lo) + lo;
+		arr[i] = Math.pow((i / (len-1)), exp) * Math.abs(r) + lo;
 	}
-	return arr;
+	return (r < 0)? arr.reverse() : arr;
 }
 exports.spreadInclusiveFloatExp = spreadInclusiveFloatExp;
 
@@ -8976,6 +8996,7 @@ function repeat(arr=[0], rep=1){
 	let a = [];
 	for (let i in arr){
 		let r = rep[i % rep.length];
+		r = (isNaN(r) || r < 0)? 0 : r;
 		for (let k=0; k<r; k++){
 			a.push(arr[i]);
 		}

@@ -268,8 +268,9 @@ const handlers = {
 	'dup' : (...v) => {
 		return Mod.duplicate(...v);
 	},
+	// repeat the individual values of an array by a certain amount
 	'repeat' : (...v) => {
-		return Mod.duplicate(...v);
+		return Mod.repeat(...v);
 	},
 	// add zeroes to a rhythm to make it play once over a certain amount of bars
 	'every' : (...v) => {

@@ -95,11 +95,18 @@ function testGen(){
 	test("Gen.spread()");
 	test("Gen.spreadFloat(7)");
 
-	test("Gen.spread(5, 7, 19)");
-	test("Gen.spread(4, 10, 2)");
+	test("Gen.spread(5)");
+	test("Gen.spread(5, 12)");
+	test("Gen.spread(5, 3, 12)");
+	test("Gen.spread(5, 12, 3)");
+	
+	test("Gen.spreadInclusive(5)");
+	test("Gen.spreadInclusive(5, 12)");
+	test("Gen.spreadInclusive(5, 3, 12)");
+	test("Gen.spreadInclusive(5, 12, 3)");
 
-	test("Gen.spreadInclusive(5, 7, 19)");
-	test("Gen.spreadInc(4, 10, 2)");
+	// test("Gen.spreadInclusive(5, 7, 19)");
+	// test("Gen.spreadInc(4, 10, 2)");
 	
 	test("Gen.spreadFloat(5, 2, 11)");
 	test("Gen.spreadFloat(4, -1, 1)");
