@@ -1,19 +1,17 @@
 
-// ring nts random(12) & ring beat hex()
+	// ring nts random(  12 ) &  	ring beat 	hex()   
+// set debug 1 & set tempo 98
 
-// set debug 1
 // set tempo 98 1500
 
-// set hiPass 800 2000 
-// set randomSeed 482
+// set highPass 800 2000  &   set randomSeed  482		
 // set volume 0.7
 
 // set global tempo(120)
 // set randomSeed 123
 // set randomSeed 123
 // set global randomSeed(1423) scale(minor_harmonic) tempo(100)
-// ring nts random(10 0 12)
-// print nts
+// ring   nts  random(10    0  12 ) 	& print nts   & ring rnd random( 10 0 24)  & ring rnd palindrome(rnd) 
 
 // list nts random(10 0 12)
 
@@ -23,7 +21,8 @@
 // print rnd
 
 // new 
-// new synth
+new synth time(1/4)
+
 // new synth saw
 // new sample kick_dub time(1/16) gain(0)
 

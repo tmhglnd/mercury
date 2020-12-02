@@ -423,6 +423,29 @@ max.addHandlers(handlers);
 function mainParse(lines){
 	let time = Date.now();
 
+	let cleaned = [];
+	lines.forEach((line) => {
+		// remove comments from code
+		line = line.replace(/\/{2,}.+/g, '');
+		// split double coded lines via '&' symbol
+		line = line.split('&');
+
+		line.forEach((l) => {
+			// remove double whitespaces
+			l = l.replace(/\s+/g, ' ');
+			// remove leading or trailing whitespaces
+			l = l.replace(/^\s+|\s+$/g, '');
+			// add if not empty string
+			if (l !== '') { 
+				cleaned.push(l); 
+			}
+		});
+	});
+	lines = cleaned;
+
+	post("@mainParse", lines);
+/*
+	// DEPRECATED
 	// remove comments from code
 	lines = lines.map(x => x.replace(/\/{2,}.+/g, ''));
 
@@ -437,10 +460,8 @@ function mainParse(lines){
 	lines = lines.slice().map(x => x.replace(/\s+/g, ' '));
 	// remove leading or trailing whitespaces
 	lines = lines.map(x => x.replace(/^\s+|\s+$/g, ''));
+*/
 	
-
-	post("@mainParse", lines);
-
 	// store rings and rest of code separately
 	let rings = [];
 	let other = [];
@@ -525,8 +546,9 @@ function mainParse(lines){
 			max.outlet('parsed', ...expr);
 		}
 
+/*
 		// WORK IN PROGRESS FOR KEYBINDING AND MINILANG
-		/*let tokenizer = /([^\s]+\([^\(\)]*\)|["'`][^"'`]*["'`]|[^\s]+)/g;
+		let tokenizer = /([^\s]+\([^\(\)]*\)|["'`][^"'`]*["'`]|[^\s]+)/g;
 		if (tokenizer.test(line)){
 			let tokens = line.match(tokenizer);
 			post('@tokens', ...tokens);
@@ -556,24 +578,34 @@ function mainParse(lines){
 					code[keys[t]] = mapFunc(tokens[t]);
 				}
 			}
+			let def = {};
 			// traverse the tree and set initials
 			Object.keys(code).forEach((t) => {
 				if (t === 'action'){
 					let objs = actions[code[t]];
 					if (Array.isArray(objs)){
-						// max.post(objs.includes(code['object']));
+						max.post('@action', objs);
 						if (objs.includes(code['object'])){
-
+							def = defaultInstrument[code['object']];
+							// Object.keys(def).forEach((d) => {
+							// 	def[d] = code[d];
+							// });
 						} else {
 							max.post('ERROR: object: [ '+code['object']+' ] does not exist');
 						}
 					}
 				}
-				else if (t === 'object'){
-
-				}
+				// else if (t === 'object'){
+					
+					// max.post('@object', code[t]);
+				// }
 				else if (t === 'type'){
-
+					if (code[t] === 'empty'){
+						code[t] = def[t];
+					}
+				}
+				else {
+					def[t] = code[t]
 				}
 			});
 			post('@ast', code);
@@ -603,7 +635,12 @@ const defaultInstrument = {
 		'type' : 'saw',
 		'functions' : [
 			{ 'note' : [0, 0] },
-			{ 'time' : ['1/4', 0] }
+			{ 'time' : ['1', 0] },
+			{ 'env' : [5, 500] },
+			{ 'beat' : 1 },
+			{ 'amp' : 0.75 },
+			{ 'add_fx' : {} },
+			{ 'wave2' : ['saw', 0] },
 		]
 	}
 }

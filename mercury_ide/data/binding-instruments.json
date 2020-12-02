@@ -15,7 +15,8 @@
 ,
 	"synth" : 	{
 		"tone" : [ "synth_blip", 2 ],
-		"fm" : [ "synth_fm", 3 ]
+		"fm" : [ "synth_fm", 3 ],
+		"kick" : [ "synth_kick", 7 ]
 	}
 ,
 	"polySynth" : 	{

@@ -16,7 +16,7 @@
 		"deep" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
-		"detune" : 0,
+		"useDetune" : 0,
 		"sendOSC" : 0,
 		"clock" : 0
 	}
@@ -38,7 +38,7 @@
 		"deep" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
-		"detune" : 0,
+		"useDetune" : 0,
 		"sendOSC" : 0,
 		"clock" : 0
 	}
@@ -47,6 +47,7 @@
 		"speed" : 1,
 		"useNote" : 0,
 		"note" : [ 0, 0 ],
+		"useDetune" : 0,
 		"amp" : 1,
 		"beat" : 1,
 		"stretch" : [ 0, 0, "efficient" ],
