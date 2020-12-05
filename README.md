@@ -28,6 +28,7 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 - [Newest Features](#-newest-features)
 - [About](#-about)
 - [Vision & Goals](#-vision--goals)
+- [Collaborative Coding](#-collaborative-coding)
 - [Install](#-install)
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
@@ -45,12 +46,13 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 
 ## 🎉 Newest Features
 
-**Sample can now change the pitch with the note method instead of using speed by setting useNote to true**
+**Control external midi devices or send midi to other Applications with the new `midi` instrument**
 
 ```java
-ring aMelody [0 5 7 3 -1]
+set midi getPorts
+//=> prints the available devices to the console
 
-new sample pluck_c time(1/4) useNote(1) note(aMelody 0)
+new midi "Your Awesome Midi Device" time(1/4) note(7 1) length(100) gain(0.8)
 ```
 
 **Input OSC addresses as arguments or output osc-messages in a similar way as using instruments**
@@ -100,6 +102,44 @@ Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-seria
 - Extending the Mercury users-community and including extensions on the environment in the master-branch
 
 Mercury is a development-in-progress and the language is still very much fluid, with changes made to the language/environment/libraries almost weekly. Feel free the clone/fork this repository, but you might also want to watch and/or star the repo to keep up-to-date with the latest changes whenever they're made.
+
+## 👩‍💻👨‍💻 Collaborative Coding
+
+It is now possible to code together in Mercury using the amazing [**Flok**](https://flok.clic.cf/) live coding environment for the browser. 
+
+There are 3 options for how you can use Flok with Mercury:
+1. Use Flok to combine Mercury with Hydra visuals (or other languages like Tidal, Foxdot and SuperCollider) on a localhost
+2. Collaborate together in the same room (only requires 1 computer to run Mercury)
+3. Collaborate remotely over a network (all computers need to run Mercury)
+
+Install NodeJS v.12 [for Mac](https://nodejs.org/dist/latest-v12.x/node-v12.20.0.pkg) or [for Windows](https://nodejs.org/dist/latest-v12.x/node-v12.20.0-x64.msi).
+
+Install the latest version of Mercury via the [quick start quide](https://github.com/tmhglnd/mercury/blob/master/docs/quick-start.md).
+
+Install Flok via the Terminal with `npm install -g flok-web flok-repl`
+
+**Localhost**
+
+1. Run `flok-web` in the terminal
+2. Open Google Chrome and go to `localhost:3000`
+3. Setup Flok with target `mercury` (and optionally other targets like `hydra`) and click **Create session**.
+4. Copy the `flok-repl -H xxx -s xxx -t mercury` command and run in the terminal.
+5. **Join** the Flok with your nickname.
+
+**Collaborate**
+
+Now follow these steps for a succesful setup.
+1. Open Google Chrome and go to [https://flok.clic.cf/](https://flok.clic.cf/)
+1. Setup Flok with target `mercury` and click **Create session**.
+2. Copy the `flok-repl -H xxx -s xxx -t mercury` command and run in the terminal.
+4. **Join** the Flok with your nickname.
+
+Now start typing some code! 🎵
+
+- `Ctrl/Alt + Return` to evaluate
+- `Ctrl/Alt + .` to silence
+
+Flok will send the entire code via OSC messaging to port 4880. Mercury should be listening to this port automatically. Bug reports are very much welcome in the issues!
 
 ## 💻 Install
 

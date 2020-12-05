@@ -426,10 +426,15 @@ function mainParse(lines){
 
 	let cleaned = [];
 	lines.forEach((line) => {
+		// post('@input', line);
 		// remove comments from code
 		line = line.replace(/\/{2,}.+/g, '');
+
+		// remove linebreaks and split into array
 		// split double coded lines via '&' symbol
-		line = line.split('&');
+		line = line.match(/[^&\r\n]+/g);
+		if (!line) { return; }
+		// line = line.split('&');
 
 		line.forEach((l) => {
 			// remove double whitespaces

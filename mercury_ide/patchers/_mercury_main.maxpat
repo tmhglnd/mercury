@@ -44686,7 +44686,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 185.0, 789.0, 639.0 ],
+						"rect" : [ 34.0, 184.0, 789.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -44752,12 +44752,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-14",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 60.0, 139.0, 47.0 ],
-									"text" : "Get code from Troop Collaborative livecoding environment"
+									"patching_rect" : [ 480.0, 60.0, 139.0, 60.0 ],
+									"text" : "Get code from external Collaborative livecoding environment via OSC\nlike Troop or Flok"
 								}
 
 							}
@@ -45095,8 +45095,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -51898,6 +51896,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -66535,13 +66535,13 @@
 					"presentation_rect" : [ 210.0, 259.5, 135.0, 47.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
 							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ]
+							"parameter_initial" : [ 0.0 ],
+							"parameter_shortname" : "volume"
 						}
 
 					}
