@@ -98,6 +98,11 @@
 		"add_osc"
 	],
 
+	"noise" : [
+		"add_noise",
+		"with_noise"
+	],
+
 	"group" : [
 		"aux",
 		"bus"

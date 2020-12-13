@@ -14,6 +14,6 @@
     "fs-extra": "^9.0.1",
     "path": "^0.12.7",
     "slash": "^3.0.0",
-    "total-serialism": "^1.13.0"
+    "total-serialism": "^1.14.0"
   }
 }

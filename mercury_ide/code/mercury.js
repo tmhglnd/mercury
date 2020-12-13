@@ -417,6 +417,13 @@ const handlers = {
 	},
 	'div' : (...v) => {
 		return Util.divide(...v);
+	},
+	// normalize an array to 0-1 range
+	'normalize' : (...v) => {
+		return Util.normalize(...v);
+	},
+	'norm' : (...v) => {
+		return Util.normalize(...v);
 	}
 }
 max.addHandlers(handlers);

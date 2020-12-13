@@ -51,6 +51,43 @@ Util.divide([1, 2, 3, 4], [1, 2, 3]);
 //=> [ 1, 1, 1, 4 ] 
 ```
 
+## minimum
+
+Return the minimum value from an array (Also part of `.Statistic`)
+
+```js
+Util.minimum([-38, -53, -6, 33, 88, 32, -8, 73]);
+//=> -53 
+// Alternative: Util.min()
+```
+
+## maximum
+
+Return the maximum value from an array (Also part of `.Statistic`)
+
+```js
+Util.maximum([-38, -53, -6, 33, 88, 32, -8, 73]);
+//=> 88 
+// Alternative: Util.max()
+```
+
+## normalize
+
+Normalize all the values in an array between 0. and 1.
+The highest value will be 1, the lowest value will be 0.
+
+**arguments**
+- {Number/Array} -> input values
+- {Int/Array} -> normailzed values
+
+```js
+Util.normalize([0, 1, 2, 3, 4]);
+//=> [ 0, 0.25, 0.5, 0.75, 1 ]
+
+Util.normalize([5, 12, 4, 17, 3]);
+//=> [ 0.14285714285714285, 0.6428571428571429, 0.07142857142857142, 1, 0 ] 
+```
+
 ## plot
 
 Plot an array of values to the console in the form of an ascii chart and return chart from function. If you just want the chart returned as text and not log to console set { log: false }. Using the asciichart package by x84. 

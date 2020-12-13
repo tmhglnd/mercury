@@ -530,6 +530,11 @@ function testUtil(){
 	test("Util.div([1, 2, 3, 4], [1, 2, 3])");
 	test("Util.div([1, 2], [1, 2, 3, 4])");
 
+	test("Util.normalize(5)");
+	test("Util.normalize([0, 3, 7])");
+	test("Util.normalize([1, 2, 3, 4])");
+	test("Util.normalize([5, 12, 4, 17, 3])");
+
 	let drawing = [];
 	Rand.seed(628);
 	for (let i=0; i<10; i++){

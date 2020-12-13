@@ -231,6 +231,20 @@ Add a second oscillator to the synths sound. This can either be a sine, triangle
 new synth saw note(0 1) time(1/4) wave2(square 0.998)
 ```
 
+## noise
+
+Add a noise oscillator to the synth sound. The first argument is the amplitude (gain), the second, third and fourth argument control an LFO (low-frequency-oscillator) that modulates the amplitude of the noise. 
+
+**arguments**
+- {Number} -> amplitude of the noise
+- {Number/Division} -> LFO speed in division (optional, default=1)
+- {Number} -> the slope of the LFO shape (0 is down, 0.5 is trangle, 1 is up) (optional, default=0.5)
+- {Number} -> the LFO depth (optional, default depends on other arguments)
+
+```java
+new synth saw note(0 1) time(1/4) noise(0.8 1/8 0.1)
+```
+
 # Sample and Loop only
 
 The sample and loop instruments allow you to play sound-recordings and loops. These so called "samples" are loaded in RAM and can be accessed by their filename (without the extension). 

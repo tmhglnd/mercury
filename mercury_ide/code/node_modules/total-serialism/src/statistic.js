@@ -9,6 +9,7 @@
 //=======================================================================
 
 const Mod = require('./transform');
+const Util = require('./utility');
 
 // sort an array of numbers or strings. sorts ascending
 // or descending in numerical and alphabetical order
@@ -37,32 +38,16 @@ exports.sort = sort;
 // @param {NumberArray} -> input array
 // @return {Number} -> biggest value
 // 
-function maximum(a=[0]){
-	if (!Array.isArray(a)) { return a; }
-	let m = -Infinity;
-	for (let i in a){
-		m = (a[i] > Number(m))? a[i] : m;
-	}
-	return m;
-}
-exports.maximum = maximum;
-exports.max = maximum;
+exports.maximum = Util.maximum;
+exports.max = Util.maximum;
 
 // Return the lowest value from an array
 // 
 // @param {NumberArray} -> input array
 // @return {Number} -> lowest value
 // 
-function minimum(a=[0]){
-	if (!Array.isArray(a)) { return a; }
-	let m = Infinity;
-	for (let i in a){
-		m = (a[i] < Number(m))? a[i] : m;
-	}
-	return m;
-}
-exports.minimum = minimum;
-exports.min = minimum;
+exports.minimum = Util.minimum;
+exports.min = Util.minimum;
 
 // Return the average (artihmetic mean value) from an array
 // The mean is a measure of central tendency

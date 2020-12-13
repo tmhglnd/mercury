@@ -266,7 +266,7 @@ exports.mod = mod;
 // 
 // @param {Number/Array} -> input value
 // @return {Int/Array} -> trucated value
-function truncate(a){
+function truncate(a=[0]){
 	if (!Array.isArray(a)){
 		return Math.trunc(a);
 	}
@@ -275,6 +275,55 @@ function truncate(a){
 exports.truncate = truncate;
 exports.trunc = truncate;
 exports.int = truncate;
+
+// Return the biggest value from an array
+// 
+// @param {NumberArray} -> input array
+// @return {Number} -> biggest value
+// 
+function maximum(a=[0]){
+	if (!Array.isArray(a)) { return a; }
+	let m = -Infinity;
+	for (let i in a){
+		m = (a[i] > Number(m))? a[i] : m;
+	}
+	return m;
+}
+exports.maximum = maximum;
+exports.max = maximum;
+
+// Return the lowest value from an array
+// 
+// @param {NumberArray} -> input array
+// @return {Number} -> lowest value
+// 
+function minimum(a=[0]){
+	if (!Array.isArray(a)) { return a; }
+	let m = Infinity;
+	for (let i in a){
+		m = (a[i] < Number(m))? a[i] : m;
+	}
+	return m;
+}
+exports.minimum = minimum;
+exports.min = minimum;
+
+// Normalize all the values in an array between 0. and 1.
+// The highest value will be 1, the lowest value will be 0.
+// 
+// @param {Number/Array} -> input values
+// @return {Int/Array} -> normailzed values
+function normalize(a=[0]){
+	a = (!Array.isArray(a))? [a] : a;
+	// get minimum and maximum
+	let min = minimum(a);
+	let range = maximum(a) - min;
+	// if range 0 then range = min and min = 0
+	if (!range) { range = min, min = 0; }
+	// normalize and return
+	return a.map(x => (x - min) / range);
+}
+exports.normalize = normalize;
 
 // Plot an array of values to the console in the form of an
 // ascii chart and return chart from function. If you just want the 

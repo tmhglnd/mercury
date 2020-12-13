@@ -2557,7 +2557,7 @@ return _objectSpread({},this._table);}}]);return MarkovChain;}();exports.MarkovC
 // Statistical related methods and algorithms that can be helpful in
 // analysis of number sequences, melodies, rhythms and more
 //=======================================================================
-var Mod=require('./transform');// sort an array of numbers or strings. sorts ascending
+var Mod=require('./transform');var Util=require('./utility');// sort an array of numbers or strings. sorts ascending
 // or descending in numerical and alphabetical order
 // 
 // @param {Array} -> array to sort
@@ -2569,12 +2569,12 @@ function sort(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:
 // @param {NumberArray} -> input array
 // @return {Number} -> biggest value
 // 
-function maximum(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];if(!Array.isArray(a)){return a;}var m=-Infinity;for(var i in a){m=a[i]>Number(m)?a[i]:m;}return m;}exports.maximum=maximum;exports.max=maximum;// Return the lowest value from an array
+exports.maximum=Util.maximum;exports.max=Util.maximum;// Return the lowest value from an array
 // 
 // @param {NumberArray} -> input array
 // @return {Number} -> lowest value
 // 
-function minimum(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];if(!Array.isArray(a)){return a;}var m=Infinity;for(var i in a){m=a[i]<Number(m)?a[i]:m;}return m;}exports.minimum=minimum;exports.min=minimum;// Return the average (artihmetic mean value) from an array
+exports.minimum=Util.minimum;exports.min=Util.minimum;// Return the average (artihmetic mean value) from an array
 // The mean is a measure of central tendency
 // 
 // @param {NumberArray} -> input array of n-numbers
@@ -2604,7 +2604,7 @@ function mode(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:
 // @param {Array} -> array to calculate from
 // @return {Array} -> list of changes
 // 
-function change(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0,0];if(a.length<2||!Array.isArray(a)){return[0];}var len=a.length;var arr=[];for(var i=1;i<len;i++){arr.push(a[i]-a[i-1]);}return arr;}exports.change=change;exports.difference=change;},{"./transform":41}],41:[function(require,module,exports){//=======================================================================
+function change(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0,0];if(a.length<2||!Array.isArray(a)){return[0];}var len=a.length;var arr=[];for(var i=1;i<len;i++){arr.push(a[i]-a[i-1]);}return arr;}exports.change=change;exports.difference=change;},{"./transform":41,"./utility":43}],41:[function(require,module,exports){//=======================================================================
 // transform.js
 // part of 'total-serialism' Package
 // by Timo Hoogland (@t.mo / @tmhglnd), www.timohoogland.com
@@ -3116,7 +3116,25 @@ function mod(a){var mod=arguments.length>1&&arguments[1]!==undefined?arguments[1
 // 
 // @param {Number/Array} -> input value
 // @return {Int/Array} -> trucated value
-function truncate(a){if(!Array.isArray(a)){return Math.trunc(a);}return a.map(function(x){return Math.trunc(x);});}exports.truncate=truncate;exports.trunc=truncate;exports["int"]=truncate;// Plot an array of values to the console in the form of an
+function truncate(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];if(!Array.isArray(a)){return Math.trunc(a);}return a.map(function(x){return Math.trunc(x);});}exports.truncate=truncate;exports.trunc=truncate;exports["int"]=truncate;// Return the biggest value from an array
+// 
+// @param {NumberArray} -> input array
+// @return {Number} -> biggest value
+// 
+function maximum(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];if(!Array.isArray(a)){return a;}var m=-Infinity;for(var i in a){m=a[i]>Number(m)?a[i]:m;}return m;}exports.maximum=maximum;exports.max=maximum;// Return the lowest value from an array
+// 
+// @param {NumberArray} -> input array
+// @return {Number} -> lowest value
+// 
+function minimum(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];if(!Array.isArray(a)){return a;}var m=Infinity;for(var i in a){m=a[i]<Number(m)?a[i]:m;}return m;}exports.minimum=minimum;exports.min=minimum;// Normalize all the values in an array between 0. and 1.
+// The highest value will be 1, the lowest value will be 0.
+// 
+// @param {Number/Array} -> input values
+// @return {Int/Array} -> normailzed values
+function normalize(){var a=arguments.length>0&&arguments[0]!==undefined?arguments[0]:[0];a=!Array.isArray(a)?[a]:a;// get minimum and maximum
+var min=minimum(a);var range=maximum(a)-min;// if range 0 then range = min and min = 0
+if(!range){range=min,min=0;}// normalize and return
+return a.map(function(x){return(x-min)/range;});}exports.normalize=normalize;// Plot an array of values to the console in the form of an
 // ascii chart and return chart from function. If you just want the 
 // chart returned as text and not log to console set { log: false }.
 // Using the asciichart package by x84. 
