@@ -64,6 +64,9 @@ let prefs = {
 	"autoLog" : 1,
 	"autoCopy" : 1,
 	"extEditor" : 0,
+	"osc_ip" : "localhost",
+	"osc_in" : 8000,
+	"osc_out" : 9000
 }
 
 // the default shortkeys for mac

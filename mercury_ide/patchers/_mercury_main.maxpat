@@ -48916,7 +48916,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 500.0, 207.0, 829.0, 382.0 ],
+						"rect" : [ 349.0, 207.0, 919.0, 453.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -48945,12 +48945,84 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-30",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 485.5, 90.0, 67.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "osc_out $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 383.0, 90.0, 60.0, 22.0 ],
+									"text" : "osc_in $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-28",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 585.0, 90.0, 60.0, 22.0 ],
+									"text" : "osc_ip $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-25",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 383.0, 135.0, 73.0, 22.0 ],
+									"text" : "s storePrefs"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "newobj",
+									"numinlets" : 4,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 210.0, 200.0, 157.0, 22.0 ],
+									"text" : "route osc_in osc_out osc_ip"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 210.0, 165.0, 68.0, 22.0 ],
+									"text" : "r fromPrefs"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 232.0, 255.0, 54.0, 22.0 ],
+									"patching_rect" : [ 322.0, 330.0, 54.0, 22.0 ],
 									"text" : "deferlow"
 								}
 
@@ -48961,7 +49033,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 232.0, 285.0, 135.0, 22.0 ],
+									"patching_rect" : [ 322.0, 360.0, 135.0, 22.0 ],
 									"text" : "consoleLog RECEIVED"
 								}
 
@@ -48973,7 +49045,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 600.0, 90.0, 69.0, 22.0 ],
+									"patching_rect" : [ 690.0, 165.0, 69.0, 22.0 ],
 									"text" : "r globalOsc"
 								}
 
@@ -48985,7 +49057,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 709.5, 180.0, 57.0, 22.0 ],
+									"patching_rect" : [ 799.5, 255.0, 57.0, 22.0 ],
 									"text" : "tosymbol"
 								}
 
@@ -48996,7 +49068,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 620.0, 154.0, 138.0, 20.0 ],
+									"patching_rect" : [ 710.0, 229.0, 138.0, 20.0 ],
 									"text" : "set osc port and ip"
 								}
 
@@ -49008,7 +49080,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 709.5, 206.0, 79.0, 22.0 ],
+									"patching_rect" : [ 799.5, 281.0, 79.0, 22.0 ],
 									"text" : "prepend host"
 								}
 
@@ -49020,7 +49092,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 620.0, 180.0, 77.0, 22.0 ],
+									"patching_rect" : [ 710.0, 255.0, 77.0, 22.0 ],
 									"text" : "prepend port"
 								}
 
@@ -49031,7 +49103,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 600.0, 285.0, 135.0, 22.0 ],
+									"patching_rect" : [ 690.0, 360.0, 135.0, 22.0 ],
 									"text" : "udpsend localhost 9000"
 								}
 
@@ -49043,7 +49115,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 300.0, 180.0, 77.0, 22.0 ],
+									"patching_rect" : [ 390.0, 255.0, 77.0, 22.0 ],
 									"text" : "prepend port"
 								}
 
@@ -49054,7 +49126,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 300.0, 255.0, 59.0, 22.0 ],
+									"patching_rect" : [ 390.0, 330.0, 59.0, 22.0 ],
 									"text" : "s osc_rcv"
 								}
 
@@ -49066,7 +49138,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 300.0, 210.0, 67.0, 22.0 ],
+									"patching_rect" : [ 390.0, 285.0, 67.0, 22.0 ],
 									"text" : "udpreceive"
 								}
 
@@ -49078,8 +49150,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 505.0, 210.0, 71.0, 22.0 ],
-									"text" : "prepend IP:"
+									"patching_rect" : [ 630.0, 270.0, 69.0, 22.0 ],
+									"text" : "prepend ip:"
 								}
 
 							}
@@ -49090,8 +49162,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 437.0, 180.0, 104.0, 22.0 ],
-									"text" : "prepend Port Out:"
+									"patching_rect" : [ 527.0, 235.0, 100.0, 22.0 ],
+									"text" : "prepend port out:"
 								}
 
 							}
@@ -49102,8 +49174,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 375.0, 150.0, 95.0, 22.0 ],
-									"text" : "prepend Port In:"
+									"patching_rect" : [ 465.0, 200.0, 93.0, 22.0 ],
+									"text" : "prepend port in:"
 								}
 
 							}
@@ -49114,7 +49186,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 505.0, 90.0, 51.0, 22.0 ],
+									"patching_rect" : [ 630.0, 40.0, 51.0, 22.0 ],
 									"text" : "r osc_ip"
 								}
 
@@ -49126,7 +49198,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 437.0, 90.0, 58.0, 22.0 ],
+									"patching_rect" : [ 527.0, 40.0, 58.0, 22.0 ],
 									"text" : "r osc_out"
 								}
 
@@ -49138,7 +49210,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 375.0, 90.0, 51.0, 22.0 ],
+									"patching_rect" : [ 465.0, 40.0, 51.0, 22.0 ],
 									"text" : "r osc_in"
 								}
 
@@ -49149,8 +49221,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 375.0, 285.0, 133.0, 22.0 ],
-									"text" : "print \"OSC SETTINGS\""
+									"patching_rect" : [ 465.0, 360.0, 108.0, 22.0 ],
+									"text" : "print \"osc network\""
 								}
 
 							}
@@ -49161,7 +49233,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 195.0, 90.0, 58.0, 22.0 ],
+									"patching_rect" : [ 210.0, 40.0, 58.0, 22.0 ],
 									"text" : "loadbang"
 								}
 
@@ -49173,7 +49245,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 195.0, 135.0, 116.0, 22.0 ],
+									"patching_rect" : [ 126.5, 120.0, 116.0, 22.0 ],
 									"text" : "8000 9000 localhost"
 								}
 
@@ -49185,7 +49257,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 152.0, 180.0, 51.0, 22.0 ],
+									"patching_rect" : [ 152.0, 165.0, 51.0, 22.0 ],
 									"text" : "unjoin 3"
 								}
 
@@ -49288,6 +49360,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-202", 0 ],
 									"source" : [ "obj-173", 0 ]
 								}
@@ -49323,8 +49402,37 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-202", 0 ],
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-203", 0 ],
+									"source" : [ "obj-18", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-205", 0 ],
+									"source" : [ "obj-18", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"order" : 1,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"order" : 2,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -49367,6 +49475,28 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-28", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-29", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-30", 0 ],
+									"order" : 2,
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-67", 0 ],
 									"order" : 0,
 									"source" : [ "obj-3", 0 ]
@@ -49383,6 +49513,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-30", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-209", 0 ],
 									"source" : [ "obj-4", 0 ]
 								}
@@ -49390,8 +49527,9 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-5", 0 ]
+									"destination" : [ "obj-28", 0 ],
+									"order" : 2,
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
