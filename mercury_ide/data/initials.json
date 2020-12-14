@@ -84,6 +84,7 @@
 		"beat" : 1,
 		"time" : "1/16",
 		"name" : "null",
+		"emit" : 1,
 		"group" : "no_group",
 		"sendOSC" : 1,
 		"clock" : 0
