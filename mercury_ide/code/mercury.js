@@ -21,7 +21,7 @@ const Dict = require('./dictionary.js');
 
 var dict = new Dict();
 
-let DEBUG = false;
+let DEBUG = true;
 let AUTO_COPY = true;
 
 const handlers = {
@@ -548,6 +548,8 @@ function mainParse(lines){
 				s += c;
 			}
 		}
+
+		// CURRENT CODE PARSING TO MAX
 		// max.post('expr', ...expr);
 		expr = expr.concat(s.split(' ').filter(i => i).map(x => parseNumber(x)));
 		// max.post('expr', expr);
@@ -571,7 +573,7 @@ function mainParse(lines){
 				'action' : 'empty',
 				'object' : 'empty',
 				'type' : 'empty',
-				'functions' : [],
+				'functions' : {},
 				'arguments' : []
 			}
 			let keys = Object.keys(code);
@@ -584,22 +586,34 @@ function mainParse(lines){
 					// split function name from token
 					let c = tokens[t].split(/\(([^\(\)]*)\)/g);
 					let m = mapFunc(c[0]);
-					code['functions'].push({[m] : c[1].split(' ')});
+					// fx can be an array of functions
+					// others are replaces with the new arguments
+					if (m === 'add_fx'){
+						if (!code['functions']['add_fx']){
+							code['functions']['add_fx'] = [];
+						}
+						code['functions'][m].push(c[1].split(' '));
+					} else {
+						code['functions'][m] = c[1].split(' ');
+					}
 				} else if (isNum.test(tokens[t])){
 					code['arguments'].push(tokens[t]);
 				} else {
 					code[keys[t]] = mapFunc(tokens[t]);
 				}
 			}
+			// post('@code', code);
 			let def = {};
 			// traverse the tree and set initials
 			Object.keys(code).forEach((t) => {
+				post('@traverse', t);
+
 				if (t === 'action'){
 					let objs = actions[code[t]];
 					if (Array.isArray(objs)){
-						max.post('@action', objs);
+						// max.post('@action', objs);
 						if (objs.includes(code['object'])){
-							def = defaultInstrument[code['object']];
+							def = JSON.parse(JSON.stringify(defaultInstrument[code['object']]));
 							// Object.keys(def).forEach((d) => {
 							// 	def[d] = code[d];
 							// });
@@ -608,31 +622,37 @@ function mainParse(lines){
 						}
 					}
 				}
-				// else if (t === 'object'){
-					
-					// max.post('@object', code[t]);
-				// }
 				else if (t === 'type'){
-					if (code[t] === 'empty'){
-						code[t] = def[t];
+					if (code[t] !== 'empty'){
+						def[t] = code[t];
 					}
 				}
-				else {
-					def[t] = code[t]
+				else if (t === 'functions'){
+					Object.keys(code[t]).forEach((f) => {
+						if (f === 'add_fx'){
+							def[t][f] = def[t][f].concat(code[t][f]);
+						} else {
+							def[t][f] = code[t][f];
+						}
+					});
 				}
-			});
-			post('@ast', code);
-		}*/
+				else {
+					def[t] = code[t];
+				}
+			});	
+			post('@ast', def);
+		}
 	}
-	max.outlet('done');
+*/
+	// max.outlet('done');
 	
 	time = Date.now() - time;
 	max.post('parsed code succesful within: ' + time + ' ms');
 }
 
 const actions = {
-	'ring' : 'empty',
-	'set' : 'empty',
+	// 'ring' : 'empty',
+	// 'set' : 'empty',
 	'new' : [
 		'synth',
 		'sample',
@@ -646,15 +666,51 @@ const actions = {
 const defaultInstrument = {
 	'synth' : {
 		'type' : 'saw',
-		'functions' : [
-			{ 'note' : [0, 0] },
-			{ 'time' : ['1', 0] },
-			{ 'env' : [5, 500] },
-			{ 'beat' : 1 },
-			{ 'amp' : 0.75 },
-			{ 'add_fx' : {} },
-			{ 'wave2' : ['saw', 0] },
-		]
+		'functions' : {
+			'note' : [ 0, 0 ],
+			'time' : [ '1', 0 ],
+			'env' : [ 5, 500 ],
+			'beat' : 1,
+			'amp' : 0.7,
+			'wave2' : [ 'saw', 0 ],
+			'add_fx' : [],
+		}
+	},
+	'polySynth' : {
+		'type' : 'sine',
+		'functions' : {
+			'note' : [ 0, 1 ],
+			'time' : [ '1', 0 ],
+			'env' : [ 2, 1000 ],
+			'beat' : 1,
+			'amp' : 0.7,
+			'wave2' : [ 'sine', 0 ],
+			'add_fx' : [],
+		}
+	},
+	'sample' : {
+		'type' : 'kick_909',
+		'functions' : {
+			'speed' : 1,
+			'time' : [ '1', 0 ],
+			'env' : [ -1 ],
+			'beat' : 1,
+			'amp' : 0.7,
+			'stretch' : [ 0, 0, 'efficient' ],
+			'add_fx' : [],
+		}
+	},
+	'loop' : {
+		'type' : 'chimes',
+		'functions' : {
+			'speed' : 1,
+			'time' : [ '1', 0 ],
+			'env' : [ -1 ],
+			'beat' : 1,
+			'amp' : 0.7,
+			'stretch' : [ 1, 1, 'efficient' ],
+			'add_fx' : [],
+		}
 	}
 }
 

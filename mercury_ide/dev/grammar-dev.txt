@@ -21,10 +21,11 @@
 // print rnd
 
 // new 
-new synth time(1/4)
-
+new synth time(1/4) play(0.2) note(bassLine 2) fx(reverb) fx(double)
 // new synth saw
 // new sample kick_dub time(1/16) gain(0)
+
+// new sample snare_dub time(1 7/8) fx(delay 5/16 3/16 0.6) fx(reverb)
 
 // make synth saw pitch(0 2) shape(1 500)
 
