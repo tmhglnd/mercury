@@ -1,0 +1,7 @@
+
+// set debug 0
+
+// new visual icosahedron
+// new visual icosahedron
+// new visual icosahedron
+// new visual icosahedron

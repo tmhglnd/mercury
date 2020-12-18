@@ -7414,7 +7414,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1654.0, 526.0, 40.0, 22.0 ],
+					"patching_rect" : [ 1628.0, 526.0, 40.0, 22.0 ],
 					"text" : "r EOF"
 				}
 
@@ -7426,7 +7426,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1721.0, 526.0, 40.0, 22.0 ],
+					"patching_rect" : [ 1695.0, 526.0, 40.0, 22.0 ],
 					"text" : "r SOF"
 				}
 
@@ -7438,7 +7438,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1654.0, 602.0, 86.0, 22.0 ],
+					"patching_rect" : [ 1628.0, 600.0, 86.0, 22.0 ],
 					"text" : "newInstance 4"
 				}
 
@@ -8424,7 +8424,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 999.0, 430.0, 101.0, 22.0 ],
+					"patching_rect" : [ 1313.0, 450.0, 101.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -50693,7 +50693,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 79.0, 1372.0, 783.0 ],
+						"rect" : [ 34.0, 79.0, 652.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -50721,6 +50721,24 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 4,
+									"outlettype" : [ "dictionary", "", "", "" ],
+									"patching_rect" : [ 1303.0, 534.0, 73.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"embed" : 0,
+										"parameter_enable" : 0,
+										"parameter_mappable" : 0
+									}
+,
+									"text" : "dict libPaths"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-64",
 									"maxclass" : "newobj",
@@ -51662,7 +51680,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1343.0, 541.0, 54.0, 22.0 ],
+									"patching_rect" : [ 1395.0, 541.0, 54.0, 22.0 ],
 									"text" : "deferlow"
 								}
 
@@ -51910,7 +51928,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "init" ],
-									"patching_rect" : [ 1343.0, 504.0, 31.0, 22.0 ],
+									"patching_rect" : [ 1395.0, 504.0, 31.0, 22.0 ],
 									"text" : "t init"
 								}
 
@@ -51922,7 +51940,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 1343.0, 466.0, 113.0, 22.0 ],
+									"patching_rect" : [ 1395.0, 466.0, 113.0, 22.0 ],
 									"text" : "route restarted start"
 								}
 
@@ -52002,11 +52020,11 @@
 								"box" : 								{
 									"id" : "obj-37",
 									"maxclass" : "newobj",
-									"numinlets" : 8,
-									"numoutlets" : 8,
-									"outlettype" : [ "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 960.0, 496.0, 362.0, 22.0 ],
-									"text" : "route settings shortkeys samples system folders example wf"
+									"numinlets" : 9,
+									"numoutlets" : 9,
+									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 960.0, 496.0, 411.0, 22.0 ],
+									"text" : "route settings shortkeys samples system folders example wf lib"
 								}
 
 							}
@@ -54700,6 +54718,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-37", 7 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
 									"source" : [ "obj-37", 6 ]
 								}
@@ -54899,7 +54924,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
-									"midpoints" : [ 1352.5, 573.0, 1332.0, 573.0, 1332.0, 455.0, 969.5, 455.0 ],
+									"midpoints" : [ 1404.5, 573.0, 1382.0, 573.0, 1382.0, 455.0, 969.5, 455.0 ],
 									"source" : [ "obj-59", 0 ]
 								}
 
@@ -66474,7 +66499,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 1628.0, 315.0, 112.0, 22.0 ],
+					"patching_rect" : [ 1665.0, 315.0, 112.0, 22.0 ],
 					"text" : "receive~ audioSum"
 				}
 
@@ -69050,16 +69075,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-224", 0 ],
-					"order" : 1,
-					"source" : [ "obj-398", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-405", 0 ],
-					"order" : 0,
 					"source" : [ "obj-398", 0 ]
 				}
 
