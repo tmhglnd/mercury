@@ -21,7 +21,7 @@ const Dict = require('./dictionary.js');
 
 var dict = new Dict();
 
-let DEBUG = true;
+let DEBUG = false;
 let AUTO_COPY = true;
 
 const handlers = {
@@ -641,10 +641,10 @@ function mainParse(lines){
 				}
 			});	
 			post('@ast', def);
-		}
+		}*/
 	}
-*/
-	// max.outlet('done');
+
+	max.outlet('done');
 	
 	time = Date.now() - time;
 	max.post('parsed code succesful within: ' + time + ' ms');

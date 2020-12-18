@@ -39,6 +39,30 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-380",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "clear" ],
+					"patching_rect" : [ 2162.333333333333485, 195.0, 41.0, 22.0 ],
+					"text" : "t clear"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-319",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"patching_rect" : [ 2162.333333333333485, 226.0, 50.0, 22.0 ],
+					"text" : "console"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-415",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -43529,7 +43553,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2117.333333333333485, 135.0, 36.0, 22.0 ],
+					"patching_rect" : [ 2123.33333333333394, 135.0, 36.0, 22.0 ],
 					"text" : "defer"
 				}
 
@@ -43541,7 +43565,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2074.0, 135.0, 36.0, 22.0 ],
+					"patching_rect" : [ 2084.333333333333485, 135.0, 36.0, 22.0 ],
 					"text" : "defer"
 				}
 
@@ -43552,7 +43576,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2162.333333333333485, 135.0, 86.0, 22.0 ],
+					"patching_rect" : [ 2186.0, 135.0, 86.0, 22.0 ],
 					"text" : "s priorityLoad"
 				}
 
@@ -43610,7 +43634,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2074.0, 195.0, 69.0, 22.0 ],
+					"patching_rect" : [ 2084.333333333333485, 195.0, 69.0, 22.0 ],
 					"text" : "s afterLoad"
 				}
 
@@ -43622,7 +43646,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "bang", "bang", "bang", "bang" ],
-					"patching_rect" : [ 2045.333333333333485, 105.0, 106.0, 22.0 ],
+					"patching_rect" : [ 2045.333333333333485, 105.0, 136.000000000000455, 22.0 ],
 					"text" : "t b b b b"
 				}
 
@@ -43669,7 +43693,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2117.333333333333485, 166.0, 71.0, 22.0 ],
+					"patching_rect" : [ 2123.33333333333394, 166.0, 71.0, 22.0 ],
 					"text" : "s mainLoad"
 				}
 
@@ -45095,8 +45119,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -48951,7 +48973,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 485.5, 90.0, 67.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "osc_out $1"
 								}
 
@@ -52036,6 +52057,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -66673,13 +66696,13 @@
 					"presentation_rect" : [ 210.0, 259.5, 135.0, 47.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
 							"parameter_longname" : "volume",
 							"parameter_mmax" : 6.0,
-							"parameter_initial" : [ 0.0 ],
-							"parameter_shortname" : "volume"
+							"parameter_initial" : [ 0.0 ]
 						}
 
 					}
@@ -67561,7 +67584,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-380", 0 ],
+					"order" : 1,
+					"source" : [ "obj-211", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
+					"order" : 0,
 					"source" : [ "obj-211", 3 ]
 				}
 
@@ -68915,6 +68947,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-353", 1 ],
 					"source" : [ "obj-379", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-319", 0 ],
+					"source" : [ "obj-380", 0 ]
 				}
 
 			}

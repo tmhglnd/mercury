@@ -6,20 +6,23 @@
 		"env" : [ 2, 400, 0, 0 ],
 		"pan" : 0,
 		"note" : [ 0, 0 ],
+		"range" : [ 0, 4 ],
 		"res" : 0.9,
 		"fm_index" : 1,
 		"fm_depth" : 0.5,
 		"fm_env" : [ 5, 200, 0, 0 ],
 		"stretch" : 0,
 		"slide" : 0,
-		"wave2" : [ "off" ],
-		"noise" : [ "off" ],
+		"wave2" : "off",
+		"noise" : 0,
 		"deep" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
 		"useDetune" : 0,
 		"sendOSC" : 0,
-		"clock" : 0
+		"clock" : 0,
+		"wave" : "sine",
+		"snap" : 0.2
 	}
 ,
 	"polySynth" : 	{

@@ -1,0 +1,23 @@
+
+set tempo 100
+
+ring lns pisano(7)
+ring nps norm(lns)
+ring nps subtract(1 nps)
+ring lns multiply(lns 500)
+
+ring att pisano(7)
+ring att multiply(att 5)
+
+new synth kick time(1/4) shape(200)
+
+// new synth kick time(1/4) shape(50 300) wave(sine) note(-5 0) range(0 5) fx(kink 1.2) snap(1)
+
+// new synth kick time(1/16) shape(10 lns) wave(sine) snap(0.7) fx(chip nps) gain(1) name(kck) note(0 0) range()
+
+// set kck fx(reverb 0.2 19) 
+// set kck fx(delay 5/16 4/16 0.4)
+
+// new sample hat_min time(1/4) gain(0.3)
+// new sample kick_min time(1/4)
+silence
