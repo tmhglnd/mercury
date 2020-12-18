@@ -123,8 +123,13 @@ const examplesPath = path.posix.join(system.app, '../../examples/');
 const examples = loadFiles(examplesPath, '**/*.txt');
 max.post('Located examples in: ' + examplesPath);
 
+// variables for library files (requires for synths, dsp, visuals)
+// const libPath = path.posix.join(base, '/Library');
+const libFile = path.posix.join(base, '/Data/code-library.json');
+let library = {};
+
 // directories for storage of code logs, recordings and sketches
-const userDirs = ['/Code Logs', '/Recordings'/*, '/Sketches'*/];
+const userDirs = ['/Code Logs', '/Recordings', '/Library'/*, '/Sketches'*/];
 
 // check if path for preference file exists
 // check if file exists, otherwise write the default prefs
@@ -186,6 +191,12 @@ max.addHandler('init', () => {
 		fs.ensureDirSync(f);
 		max.outlet('folders', userDirs[d], f);
 	}
+
+	// create path for requires and load if exists
+	library = loadFiles(path.posix.join(base, '/Library'), '**/*.maxpat');
+	writeJson(libFile, library);
+	max.post('Created code library: '+libFile);
+	max.outlet('lib', library);
 });
 
 const prefHandlers = {
