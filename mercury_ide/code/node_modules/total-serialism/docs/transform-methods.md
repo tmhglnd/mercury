@@ -105,6 +105,26 @@ Mod.filterType([0, 1, [1, 2], 'foo', 2, null, true, {bar: 5}, 3.14, undefined], 
 
 <iframe src="https://editor.p5js.org/tmhglnd/embed/iU3-FJDWG" width="100%" height="250px" frameBorder="0" scrolling="no"></iframe>
 
+## lookup
+
+Build an array of items based on another array of indeces 
+The values are wrapped within the length of the lookup array
+
+**arguments**
+- {Array} -> Array with indeces to lookup
+- {Array} -> Array with values returned from lookup
+- {Array} -> Looked up values
+
+```js
+// first array is the index, second array are the items to lookup
+Mod.lookup([0, 1, 1, 2, 0, 2, 2, 1], ['c', 'e', 'f', 'g']);
+//=> [ 'c', 'e', 'e', 'f', 'c', 'f', 'f', 'e' ]
+
+// indices are wrapped between listlength
+Mod.lookup([8, -5, 144, 55], ['c', 'e', 'g']);
+//=> [ 'g', 'e', 'c', 'e' ]
+```
+
 ## invert
 
 ```js

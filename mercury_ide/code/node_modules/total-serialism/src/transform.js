@@ -183,6 +183,25 @@ function lace(...args){
 }
 exports.lace = lace;
 
+// Build an array of items based on another array of indeces 
+// The values are wrapped within the length of the lookup array
+// 
+// @param {Array} -> Array with indeces to lookup
+// @param {Array} -> Array with values returned from lookup
+// @return {Array} -> Looked up values
+// 
+function lookup(idx=1, arr=[0]){
+	idx = (Array.isArray(idx))? idx : [idx];
+	arr = (Array.isArray(arr))? arr : [arr];
+	let a = [];
+	let l = arr.length;
+	for (let i in idx){
+		a[i] = arr[((idx[i] % l) + l) % l];
+	}
+	return a;
+}
+exports.lookup = lookup;
+
 // merge all values of two arrays on the same index
 // into a 2D array. preserves length of longest list
 // 

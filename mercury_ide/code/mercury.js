@@ -293,6 +293,13 @@ const handlers = {
 	'inv' : (...v) => {
 		return Mod.invert(...v);
 	},
+	// lookup the values from an array based on another array
+	'lookup' : (...v) => {
+		return Mod.lookup(...v);
+	},
+	'get' : (...v) => {
+		return Mod.lookup(...v);
+	},
 	// interleave multiple arrays into one
 	'lace' : (...v) => {
 		return Mod.lace(...v);
@@ -424,6 +431,13 @@ const handlers = {
 	},
 	'norm' : (...v) => {
 		return Util.normalize(...v);
+	},
+	// take the modulus of an array
+	'modulo' : (...v) => {
+		return Util.mod(...v);
+	},
+	'mod' : (...v) => {
+		return Util.mod(...v);
 	}
 }
 max.addHandlers(handlers);

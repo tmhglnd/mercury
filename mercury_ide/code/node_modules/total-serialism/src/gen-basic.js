@@ -256,4 +256,3 @@ function cosine(len=1, periods=1, lo=12, hi, phase=0){
 	return arr.map(v => Math.trunc(v));
 }
 exports.cosine = cosine;
-

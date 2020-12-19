@@ -58,6 +58,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [every](#every)
 	- [invert / flip](#invert)
 	- [lace / zip](#lace)
+	- [lookup / get](#lookup)
 	- [merge / mix](#merge)
 	- [palindrome / mirror](#palindrome)
 	- [repeat](#repeat)
@@ -723,6 +724,32 @@ ring melody lace(partA partB)
 ```
 
 Alternative: `zip`
+
+## lookup
+
+Build a ring of items based on another ring of indices 
+The values are wrapped within the length of the lookup array
+
+**arguments**
+- {NumberRing} -> Ring with indeces to lookup
+- {Ring} -> Ring with values returned from lookup
+- {Ring} -> Looked up values
+
+```java
+ring items [c e f g]
+ring indices [0 1 1 2 0 2 2 1]
+
+// first array is the index, second ring are the items to lookup
+ring notes lookup(indices, items);
+//=> [ c e e f c f f e ]
+
+// indices are wrapped between listlength
+ring indices [8 -5 144 55]
+ring notes lookup(indices, items);
+//=> [ g e c e ]
+```
+
+Alternative: `get`
 
 ## merge
 

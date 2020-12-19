@@ -58,14 +58,14 @@ fullTest();
 function fullTest(){
 	console.time('Total Time');
 
-	testSerial();
-	testGen();
-	testAlgo();
-	testRand();
+	// testSerial();
+	// testGen();
+	// testAlgo();
+	// testRand();
 	testMod();
-	testStat();
-	testTranslate();
-	testUtil();
+	// testStat();
+	// testTranslate();
+	// testUtil();
 
 	pagebreak("All Tests Passed");
 	console.timeEnd('Total Time');
@@ -329,6 +329,10 @@ function testMod(){
 	// console.log(lacArr2);
 	test("Mod.lace([0, 2, 4], [1, 3, 5], ['hello'])");
 	test("Mod.lace([0, 5, 9], [3, 3], [7, 12, 11, -1])");
+
+	test("Mod.lookup()");
+	test("Mod.lookup([0, 1, 1, 2, 0, 2, 2, 1], ['c', 'e', 'f', 'g'])");
+	test("Mod.lookup([8, -5, 144, 55], ['c', 'e', 'g'])");
 
 	// var merArr1 = [0, 3, 7];
 	// var merArr2 = [3, 12];

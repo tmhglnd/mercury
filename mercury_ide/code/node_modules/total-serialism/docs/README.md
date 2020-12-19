@@ -33,6 +33,7 @@
 	- [filter / filterType](./transform-methods.md#filter)
 	- [invert](./transform-methods.md#invert)
 	- [lace](./transform-methods.md#lace)
+	- [lookup](./transform-methods.md#lookup)
 	- [merge](./transform-methods.md#merge)
 	- [mirror / palindrome](./transform-methods.md#palindrome)
 	- [reverse](./transform-methods.md#reverse)
