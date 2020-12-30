@@ -39,11 +39,80 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-419",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2166.333333333333485, 1035.0, 71.0, 22.0 ],
+					"text" : "s audioSide"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-420",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 2166.333333333333485, 996.0, 64.0, 22.0 ],
+					"text" : "snapshot~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-417",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2081.0, 1035.0, 67.0, 22.0 ],
+					"text" : "s audioMid"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-418",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 2081.0, 996.0, 64.0, 22.0 ],
+					"text" : "snapshot~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-411",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2337.0, 1035.0, 72.0, 22.0 ],
+					"text" : "s audioHigh"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-416",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 2337.0, 996.0, 64.0, 22.0 ],
+					"text" : "snapshot~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-407",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2400.0, 918.0, 69.0, 22.0 ],
+					"patching_rect" : [ 2251.666666666666515, 1035.0, 69.0, 22.0 ],
 					"text" : "s audioLow"
 				}
 
@@ -55,7 +124,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 2400.0, 879.0, 64.0, 22.0 ],
+					"patching_rect" : [ 2251.666666666666515, 996.0, 64.0, 22.0 ],
 					"text" : "snapshot~"
 				}
 
@@ -67,7 +136,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2400.0, 819.0, 51.0, 22.0 ],
+					"patching_rect" : [ 2016.0, 918.0, 51.0, 22.0 ],
 					"text" : "r render"
 				}
 
@@ -21580,7 +21649,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2337.0, 960.0, 86.0, 22.0 ],
+					"patching_rect" : [ 2355.0, 960.0, 86.0, 22.0 ],
 					"text" : "send~ audioHi"
 				}
 
@@ -21591,7 +21660,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2251.666666666666515, 918.0, 88.0, 22.0 ],
+					"patching_rect" : [ 2271.666666666666515, 918.0, 88.0, 22.0 ],
 					"text" : "send~ audioLo"
 				}
 
@@ -21602,7 +21671,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2166.333333333333485, 960.0, 98.0, 22.0 ],
+					"patching_rect" : [ 2186.0, 960.0, 98.0, 22.0 ],
 					"text" : "send~ audioSide"
 				}
 
@@ -21613,7 +21682,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2081.0, 918.0, 94.0, 22.0 ],
+					"patching_rect" : [ 2107.0, 918.0, 94.0, 22.0 ],
 					"text" : "send~ audioMid"
 				}
 
@@ -48451,7 +48520,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "Liquid56 MIDI", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -66756,13 +66825,13 @@
 					"presentation_rect" : [ 210.0, 259.5, 135.0, 47.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_mmax" : 6.0,
 							"parameter_initial" : [ 0.0 ],
 							"parameter_shortname" : "volume",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
-							"parameter_longname" : "volume",
-							"parameter_mmax" : 6.0
+							"parameter_longname" : "volume"
 						}
 
 					}
@@ -67221,6 +67290,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-330", 0 ],
+					"order" : 0,
 					"source" : [ "obj-152", 3 ]
 				}
 
@@ -67228,7 +67298,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-331", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-152", 2 ]
 				}
 
@@ -67236,6 +67306,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-332", 0 ],
+					"order" : 0,
 					"source" : [ "obj-152", 1 ]
 				}
 
@@ -67243,6 +67314,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-333", 0 ],
+					"order" : 0,
 					"source" : [ "obj-152", 0 ]
 				}
 
@@ -67250,8 +67322,32 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-404", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-152", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-416", 0 ],
+					"order" : 1,
+					"source" : [ "obj-152", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-418", 0 ],
+					"order" : 1,
+					"source" : [ "obj-152", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-420", 0 ],
+					"order" : 1,
+					"source" : [ "obj-152", 1 ]
 				}
 
 			}
@@ -69085,6 +69181,31 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-404", 0 ],
+					"order" : 1,
+					"source" : [ "obj-390", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-416", 0 ],
+					"order" : 0,
+					"source" : [ "obj-390", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-418", 0 ],
+					"order" : 3,
+					"source" : [ "obj-390", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-420", 0 ],
+					"order" : 2,
 					"source" : [ "obj-390", 0 ]
 				}
 
@@ -69310,6 +69431,27 @@
 				"patchline" : 				{
 					"destination" : [ "obj-415", 0 ],
 					"source" : [ "obj-414", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-411", 0 ],
+					"source" : [ "obj-416", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-417", 0 ],
+					"source" : [ "obj-418", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-419", 0 ],
+					"source" : [ "obj-420", 0 ]
 				}
 
 			}
@@ -69942,38 +70084,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "liber-abaci.maxpat",
+				"name" : "twinrings.maxpat",
 				"bootpath" : "~/Documents/Mercury/Library",
 				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "kaleido.genjit",
-				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Examples/jitter-examples/gen",
-				"patcherrelativepath" : "../../../../../../../../../Library/Application Support/Cycling '74/Max 8/Examples/jitter-examples/gen",
-				"type" : "gJIT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "urn-jb.maxpat",
-				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Examples/max-tricks/random_with_no_repeat",
-				"patcherrelativepath" : "../../../../../../../../../Library/Application Support/Cycling '74/Max 8/Examples/max-tricks/random_with_no_repeat",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "pix.noise.maxpat",
-				"bootpath" : "~/Documents/Max 7/Library/abstractions/gl-pix-shaders/patchers",
-				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/gl-pix-shaders/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "noise.genjit",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/_deprecated",
-				"patcherrelativepath" : "../_deprecated",
-				"type" : "gJIT",
 				"implicit" : 1
 			}
 , 			{
@@ -70023,11 +70137,11 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ease.mxo",
+				"name" : "jit.mo.func.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "jit.mo.time.mxo",
+				"name" : "jit.mo.join.mxo",
 				"type" : "iLaX"
 			}
 , 			{
