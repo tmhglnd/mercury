@@ -125,6 +125,7 @@ max.post('Located examples in: ' + examplesPath);
 
 // variables for library files (requires for synths, dsp, visuals)
 // const libPath = path.posix.join(base, '/Library');
+const libPath = path.posix.join(system.app, '../patchers/visual/');
 const libFile = path.posix.join(base, '/Data/code-library.json');
 let library = {};
 
@@ -193,7 +194,8 @@ max.addHandler('init', () => {
 	}
 
 	// create path for requires and load if exists
-	library = loadFiles(path.posix.join(base, '/Library'), '**/*.maxpat');
+	library = loadFiles(libPath, '**/*.maxpat');
+	library = Object.assign({}, loadFiles(path.posix.join(base, '/Library'), '**/*.maxpat'), library);
 	writeJson(libFile, library);
 	max.post('Created code library: '+libFile);
 	max.outlet('lib', library);

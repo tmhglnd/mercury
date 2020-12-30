@@ -70084,9 +70084,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "twinrings.maxpat",
-				"bootpath" : "~/Documents/Mercury/Library",
-				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library",
+				"name" : "circling.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers/visual",
+				"patcherrelativepath" : "./visual",
 				"type" : "JSON",
 				"implicit" : 1
 			}
