@@ -3681,10 +3681,10 @@ exports.getRoot     = Translate.getRoot;
   'use strict';
 
 /*
- *      bignumber.js v9.0.0
+ *      bignumber.js v9.0.1
  *      A JavaScript library for arbitrary-precision arithmetic.
  *      https://github.com/MikeMcl/bignumber.js
- *      Copyright (c) 2019 Michael Mclaughlin <M8ch88l@gmail.com>
+ *      Copyright (c) 2020 Michael Mclaughlin <M8ch88l@gmail.com>
  *      MIT Licensed.
  *
  *      BigNumber.prototype methods     |  BigNumber methods
@@ -4220,9 +4220,9 @@ exports.getRoot     = Translate.getRoot;
           if (obj.hasOwnProperty(p = 'ALPHABET')) {
             v = obj[p];
 
-            // Disallow if only one character,
+            // Disallow if less than two characters,
             // or if it contains '+', '-', '.', whitespace, or a repeated character.
-            if (typeof v == 'string' && !/^.$|[+-.\s]|(.).*\1/.test(v)) {
+            if (typeof v == 'string' && !/^.?$|[+\-.\s]|(.).*\1/.test(v)) {
               ALPHABET = v;
             } else {
               throw Error
@@ -6075,7 +6075,7 @@ exports.getRoot     = Translate.getRoot;
         e = bitFloor((e + 1) / 2) - (e < 0 || e % 2);
 
         if (s == 1 / 0) {
-          n = '1e' + e;
+          n = '5e' + e;
         } else {
           n = s.toExponential();
           n = n.slice(0, n.indexOf('e') + 1) + e;
@@ -7798,7 +7798,6 @@ function cosine(len=1, periods=1, lo=12, hi, phase=0){
 }
 exports.cosine = cosine;
 
-
 },{"./utility.js":43}],38:[function(require,module,exports){
 //==============================================================================
 // gen-complex.js
@@ -8924,6 +8923,25 @@ function lace(...args){
 	return arr;
 }
 exports.lace = lace;
+
+// Build an array of items based on another array of indeces 
+// The values are wrapped within the length of the lookup array
+// 
+// @param {Array} -> Array with indeces to lookup
+// @param {Array} -> Array with values returned from lookup
+// @return {Array} -> Looked up values
+// 
+function lookup(idx=1, arr=[0]){
+	idx = (Array.isArray(idx))? idx : [idx];
+	arr = (Array.isArray(arr))? arr : [arr];
+	let a = [];
+	let l = arr.length;
+	for (let i in idx){
+		a[i] = arr[((idx[i] % l) + l) % l];
+	}
+	return a;
+}
+exports.lookup = lookup;
 
 // merge all values of two arrays on the same index
 // into a 2D array. preserves length of longest list

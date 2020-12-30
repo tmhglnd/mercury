@@ -981,10 +981,10 @@ for(var _i3=0;_i3<=rows;_i3++){result[_i3]=new Array(width);for(var _j=0;_j<widt
 var label=format(rows>0?max-(y-min2)*range/rows:y,y-min2);result[y-min2][Math.max(offset-label.length,0)]=label;result[y-min2][offset-1]=y==0?symbols[0]:symbols[1];}for(var _j2=0;_j2<series.length;_j2++){var currentColor=colors[_j2%colors.length];var y0=Math.round(series[_j2][0]*ratio)-min2;result[rows-y0][offset-1]=colored(symbols[0],currentColor);// first value
 for(var x=0;x<series[_j2].length-1;x++){// plot the line
 var _y=Math.round(series[_j2][x+0]*ratio)-min2;var y1=Math.round(series[_j2][x+1]*ratio)-min2;if(_y==y1){result[rows-_y][x+offset]=colored(symbols[4],currentColor);}else{result[rows-y1][x+offset]=colored(_y>y1?symbols[5]:symbols[6],currentColor);result[rows-_y][x+offset]=colored(_y>y1?symbols[7]:symbols[8],currentColor);var from=Math.min(_y,y1);var to=Math.max(_y,y1);for(var _y2=from+1;_y2<to;_y2++){result[rows-_y2][x+offset]=colored(symbols[9],currentColor);}}}}return result.map(function(x){return x.join('');}).join('\n');};})(typeof exports==='undefined'?/* istanbul ignore next */this['asciichart']={}:exports);},{}],27:[function(require,module,exports){;(function(globalObject){'use strict';/*
- *      bignumber.js v9.0.0
+ *      bignumber.js v9.0.1
  *      A JavaScript library for arbitrary-precision arithmetic.
  *      https://github.com/MikeMcl/bignumber.js
- *      Copyright (c) 2019 Michael Mclaughlin <M8ch88l@gmail.com>
+ *      Copyright (c) 2020 Michael Mclaughlin <M8ch88l@gmail.com>
  *      MIT Licensed.
  *
  *      BigNumber.prototype methods     |  BigNumber methods
@@ -1186,9 +1186,9 @@ if(obj.hasOwnProperty(p='POW_PRECISION')){v=obj[p];intCheck(v,0,MAX,p);POW_PRECI
 // '[BigNumber Error] FORMAT not an object: {v}'
 if(obj.hasOwnProperty(p='FORMAT')){v=obj[p];if(_typeof(v)=='object')FORMAT=v;else throw Error(bignumberError+p+' not an object: '+v);}// ALPHABET {string}
 // '[BigNumber Error] ALPHABET invalid: {v}'
-if(obj.hasOwnProperty(p='ALPHABET')){v=obj[p];// Disallow if only one character,
+if(obj.hasOwnProperty(p='ALPHABET')){v=obj[p];// Disallow if less than two characters,
 // or if it contains '+', '-', '.', whitespace, or a repeated character.
-if(typeof v=='string'&&!/^.$|[+-.\s]|(.).*\1/.test(v)){ALPHABET=v;}else{throw Error(bignumberError+p+' invalid: '+v);}}}else{// '[BigNumber Error] Object expected: {v}'
+if(typeof v=='string'&&!/^.?$|[+\-.\s]|(.).*\1/.test(v)){ALPHABET=v;}else{throw Error(bignumberError+p+' invalid: '+v);}}}else{// '[BigNumber Error] Object expected: {v}'
 throw Error(bignumberError+'Object expected: '+obj);}}return{DECIMAL_PLACES:DECIMAL_PLACES,ROUNDING_MODE:ROUNDING_MODE,EXPONENTIAL_AT:[TO_EXP_NEG,TO_EXP_POS],RANGE:[MIN_EXP,MAX_EXP],CRYPTO:CRYPTO,MODULO_MODE:MODULO_MODE,POW_PRECISION:POW_PRECISION,FORMAT:FORMAT,ALPHABET:ALPHABET};};/*
      * Return true if v is a BigNumber instance, otherwise return false.
      *
@@ -1683,7 +1683,7 @@ for(v=c[0];v>=10;v/=10,n++){;}}if(sd&&x.e+1>n)n=x.e+1;return n;};/*
 if(s!==1||!c||!c[0]){return new BigNumber(!s||s<0&&(!c||c[0])?NaN:c?x:1/0);}// Initial estimate.
 s=Math.sqrt(+valueOf(x));// Math.sqrt underflow/overflow?
 // Pass x to Math.sqrt as integer, then adjust the exponent of the result.
-if(s==0||s==1/0){n=coeffToString(c);if((n.length+e)%2==0)n+='0';s=Math.sqrt(+n);e=bitFloor((e+1)/2)-(e<0||e%2);if(s==1/0){n='1e'+e;}else{n=s.toExponential();n=n.slice(0,n.indexOf('e')+1)+e;}r=new BigNumber(n);}else{r=new BigNumber(s+'');}// Check for zero.
+if(s==0||s==1/0){n=coeffToString(c);if((n.length+e)%2==0)n+='0';s=Math.sqrt(+n);e=bitFloor((e+1)/2)-(e<0||e%2);if(s==1/0){n='5e'+e;}else{n=s.toExponential();n=n.slice(0,n.indexOf('e')+1)+e;}r=new BigNumber(n);}else{r=new BigNumber(s+'');}// Check for zero.
 // r could be zero if MIN_EXP is changed after the this value was created.
 // This would cause a division by zero (x/t) and hence Infinity below, which would cause
 // coeffToString to throw.
@@ -2679,7 +2679,14 @@ function invert(){var arr=arguments.length>0&&arguments[0]!==undefined?arguments
 // @param {Array0, Array1, ..., Array-n} -> arrays to interleave
 // @return {Array}
 //  
-function lace(){for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}if(!args.length){return[0];}var l=0;for(var _i4 in args){l=Math.max(args[_i4].length,l);}var arr=[];for(var i=0;i<l;i++){for(var k in args){var v=args[k][i];if(v!=undefined){arr.push(v);}}}return arr;}exports.lace=lace;// merge all values of two arrays on the same index
+function lace(){for(var _len3=arguments.length,args=new Array(_len3),_key3=0;_key3<_len3;_key3++){args[_key3]=arguments[_key3];}if(!args.length){return[0];}var l=0;for(var _i4 in args){l=Math.max(args[_i4].length,l);}var arr=[];for(var i=0;i<l;i++){for(var k in args){var v=args[k][i];if(v!=undefined){arr.push(v);}}}return arr;}exports.lace=lace;// Build an array of items based on another array of indeces 
+// The values are wrapped within the length of the lookup array
+// 
+// @param {Array} -> Array with indeces to lookup
+// @param {Array} -> Array with values returned from lookup
+// @return {Array} -> Looked up values
+// 
+function lookup(){var idx=arguments.length>0&&arguments[0]!==undefined?arguments[0]:1;var arr=arguments.length>1&&arguments[1]!==undefined?arguments[1]:[0];idx=Array.isArray(idx)?idx:[idx];arr=Array.isArray(arr)?arr:[arr];var a=[];var l=arr.length;for(var i in idx){a[i]=arr[(idx[i]%l+l)%l];}return a;}exports.lookup=lookup;// merge all values of two arrays on the same index
 // into a 2D array. preserves length of longest list
 // 
 // @params {Array0, Array1, ..., Array-n} -> Arrays to merge

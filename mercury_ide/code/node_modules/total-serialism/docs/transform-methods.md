@@ -125,14 +125,6 @@ Mod.lookup([8, -5, 144, 55], ['c', 'e', 'g']);
 //=> [ 'g', 'e', 'c', 'e' ]
 ```
 
-## invert
-
-```js
-// invert an array around a center point
-Mod.invert([0, 2, 5, 10, 13], 5); 
-//=> [ 10, 8, 5, 0, -3 ]
-```
-
 ## repeat
 
 repeat the values of an array n-times
@@ -180,11 +172,17 @@ Mod.stretch([0, 12, 3, 7], 15);
 //    4.80 ┤╭╯  ╰╮╭─╯ 
 //    2.40 ┤│    ╰╯   
 //    0.00 ┼╯         
-``
+```
 
-*more documentation needed for following functions*
+## Undocumented
+
+*documentation is still needed for the following functions*. Feel free to contribute and send a pull request.
 
 ```js
+// invert an array around a center point
+Mod.invert([0, 2, 5, 10, 13], 5); 
+//=> [ 10, 8, 5, 0, -3 ]
+
 // interleave multiple arrays into one
 Mod.lace([0, 5, 9], [3, 3], [7, 12, 11, -1]); 
 //=> [ 0, 3, 7, 5, 3, 12, 9, 11, -1 ]
