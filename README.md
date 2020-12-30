@@ -232,6 +232,7 @@ All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.o
 ## 👾 Made with Mercury
 
 - *Made something with Mercury? Please add a URL here and send a pull request!* 😎
+- [Nick Levantis - Wake Up](https://youtu.be/UsfKF0ggn7k)
 - [Rafa & Timo - "Hello, off-world!" (Live at NMF)](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s)
 - [Roald van Dillewijn - Mercury & DigiLog](https://www.youtube.com/watch?v=1v7xicXuSbo&t=346s)
 - [Sasj & Timo - Amalgam (Live at Github Sattelite 2020)](https://www.youtube.com/watch?v=zzmgX4QSBMM)
