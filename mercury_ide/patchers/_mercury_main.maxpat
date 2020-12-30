@@ -67156,8 +67156,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "bang", "" ],
-					"patching_rect" : [ 45.0, 457.0, 270.0, 49.0 ],
-					"text" : "jit.world mercury @visible 0 @floating 1 @fsaa 1 @fps 60 @fsmenubar 0 @erase_color 0 0 0 1 @windowposition 50 100 @size 480 270"
+					"patching_rect" : [ 45.0, 457.0, 245.0, 49.0 ],
+					"text" : "jit.world mercury @visible 0 @floating 1 @fps 60 @fsmenubar 0 @erase_color 0 0 0 1 @windowposition 50 100 @size 480 270"
 				}
 
 			}
@@ -67196,7 +67196,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"midpoints" : [ 180.0, 520.0, 54.5, 520.0 ],
+					"midpoints" : [ 167.5, 520.0, 54.5, 520.0 ],
 					"source" : [ "obj-1", 1 ]
 				}
 
@@ -70269,9 +70269,16 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "circling.maxpat",
+				"name" : "meshwave.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers/visual",
 				"patcherrelativepath" : "./visual",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "urn-jb.maxpat",
+				"bootpath" : "~/Library/Application Support/Cycling '74/Max 8/Examples/max-tricks/random_with_no_repeat",
+				"patcherrelativepath" : "../../../../../../../../../Library/Application Support/Cycling '74/Max 8/Examples/max-tricks/random_with_no_repeat",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -70322,11 +70329,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "jit.mo.func.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.mo.join.mxo",
+				"name" : "jit.mo.time.mxo",
 				"type" : "iLaX"
 			}
 , 			{
