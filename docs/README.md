@@ -1,114 +1,234 @@
-# 📖 Mercury Documentation
 
-*Disclaimer: This documentation is not entirely finished and will subject to changes. If you like to contribute or find errors, feel free to report them in the issues or send a pull request*
+# 🌕 Mercury Live Coding Environment
 
-## Table of Content
+**The minimal and human-readable language for the live coding of algorithmic electronic audiovisual performances**
 
-- [🏃 Quick Start](./quick-start.md)
 
-- [🤓 Tutorial (work in progress...)](./tutorial.md)
+[Mercury?](#-mercury-)
 
-- [💻 Shortkeys](./06-shortkeys.md)
+Start coding
 
-- [⚠️ Troubleshooting](./08-troubleshooting.md)
+Help
 
-- [🔊 Settings and Sounds](./07-environment.md)
-	- [Mercury Main Window](./07-environment.md#mercury-main-window)
-	- [Menubar](./07-environment.md#menubar)
-## Code Documentation
+Community
 
-- [Actions](./00-general.md)
-	- [new](./00-general.md#new)
-	- [ring](./00-general.md#ring)
-	- [set](./00-general.md#set)
-	- [print](./00-general.md#print)
-	- [silence](./00-general.md#silence)
+Support
 
-- [Global (set)](./01-global.md)
-	- [tempo](./01-global.md#tempo)
-	- [scale](./01-global.md#scale)
-	- [scalar](./01-global.md#scalar)
-	- [randomSeed](./01-global.md#randomseed)
-	- [volume](./01-global.md#volume)
-	- [highPass](./01-global.md#highpass) 
-	- [lowPass](./01-global.md#lowpass)
-	- [osc](./01-global.md#osc)
-	- [midi](./01-global.md#midi-and-midiclock)
+Licenses
 
-- [Synth/Sample/Midi (new)](./02-instrument.md)
-	- All instruments (except midi)
-		- [name](./02-instrument.md#name)
-		- [group](./02-instrument.md#group)
-		- [time](./02-instrument.md#time)
-		- [beat](./02-instrument.md#beat)
-		- [shape](./02-instrument.md#shape)
-		- [gain](./02-instrument.md#gain)
-		- [pan](./02-instrument.md#pan)
-		- [fx](./02-instrument.md#fx)
-	- Synth / polySynth
-		- [note](./02-instrument.md#note)
-		- [useDetune](./02-instrument.md#usedetune)
-		- [wave2](./02-instrument.md#wave2)
-	- Sample / Loop
-		- [speed](./02-instrument.md#speed)
-		- [offset](./02-instrument.md#offset)
-		- [useNote](./02-instrument.md#usenote)
-		- [note](./02-instrument.md#note)
-		- [stretch](./02-instrument.md#stretch)
-	- Midi
-		- [note](./02-instrument.md#note-1)
-		- [length](./02-instrument.md#length)
-		- [out](./02-instrument.md#out)
-		- [chord](./02-instrument.md#chord)
-		- [sync](./02-instrument.md#sync)
+### [Become a Patron!](https://www.patreon.com/bePatron?u=9649817) 
 
-- [Emitter (osc)](./03-emitter.md)
-	- [osc](./03-emitter.md#osc)
-	- [name](./03-emitter.md#name)
-	- [address](./03-emitter.md#address)
+### [Join the Discord Community!](https://discord.gg/vt59NYU)
 
-- [Sound Effects (fx)](./04-fx.md)
-	- [chip](./04-fx.md#chip)
-	- [delay](./04-fx.md#delay)
-	- [double](./04-fx.md#double)
-	- [drive](./04-fx.md#drive)
-	- [filter](./04-fx.md#filter)
-	- [lfo](./04-fx.md#lfo)
-	- [reverb](./04-fx.md#reverb)
+**📦 Latest stable release**
 
-- [Ring functions](./05-ring.md)
-	- [Generative Methods](#generative-methods)
-		- eg: `spread`, `fill`, `sine`, `cosine`
-	- [Algorithmic Methods](#algorithmic-methods)
-		- eg: `euclidean`, `hexBeat`, `fibonacci`
-	- [Stochastic Methods](#stochastic-methods)
-		- eg: `random`, `drunk`, `shuffle`, `choose`
-	- [Transformative Methods](#transformative-methods)
-		- eg: `join`, `palindrome`, `expand`, `lace`
-	- [Translate Methods](#translate-methods)
-		- eg: `divisionToMs`, `toScale`
-	- [Utility Methods](#utility-methods)
-		- eg: `add`, `subtract`, `divide`, `multiply`
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
-## Param Glossary
+![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](./../media/mercury-live.png)
 
-When describing input argumenst for functions in some cases it is necessary to know if the values can be a number (positive and/or negative), a decimal number (float) or even a name.
+## 📋 Table of Contents
 
-**Values**
+- [Newest Features](#-newest-features)
+<!-- - [About](#-about) -->
+- [Vision & Goals](#-vision--goals)
+- [Collaborative Coding](#-collaborative-coding)
+- [Install](#-install)
+	- [Quick Start](/docs/quick-start.md)
+	- [Tutorial](/docs/tutorial.md)
+	- [Troubleshooting](/docs/08-troubleshooting.md)
+	- [Documentation](/docs/README.md)
+	- [System Requirements](#-system-requirements)
+	- [Sounds in Mercury](/mercury_ide/media/README.md)
+	<!-- - [Build Application](#-build-application) -->
+- [Modify Code](#-modify-code)
+- [Further Reading](#-further-reading-and-listening)
+- [Made with Mercury](#-made-with-mercury)
+- [Powered By](#-powered-by)
+- [Thanks](#-thanks)
+- [Licenses](#-licenses)
 
-- `Value` -> Any Number or Name
-	- `Number` -> Int+, Int or Float
-		- `Bool` -> 0 or 1 (true or false)
-		- `Int+` -> A positive whole number, bigger than 0
-		- `Int` -> A whole number, negative or positive, including 0
-		- `Float` -> A floating-point number, negative or positive, including 0
-	- `Name` -> A combination of letter-characters, may include capital letter, underscores and digits
+<!-- ## 🎉 Newest Features
 
-**Rings**
+**Control external midi devices or send midi to other Applications with the new `midi` instrument**
 
-- `Ring` -> A ring with `Value`'s
-	- `NumberRing` -> A ring with `Number`'s
-		- `IntRing+` -> A ring with `Int+`'s
-		- `IntRing` -> A ring with `Int`'s
-		- `FloatRing` -> A ring with `Float`'s
-	- `NameRing` -> A ring with `Name`'s
+```java
+set midi getPorts
+//=> prints the available devices to the console
+
+new midi "Your Awesome Midi Device" time(1/4) note(7 1) length(100) gain(0.8)
+```
+
+**Input OSC addresses as arguments or output osc-messages in a similar way as using instruments**
+
+```java
+set osc default
+
+new synth sine name(sn)
+    set sn note(/sine/pitch 0) shape(5 /sine/release)
+    set sn fx(reverb 1 /sine/verb)
+
+new emitter osc name(myOSC) someParam(3.14)
+    // result => /myOsc/someParam 3.14
+``` -->
+
+## 📟 Mercury? 
+
+**Mercury is a minimal and human-readable language for the live coding of algorithmic electronic music.** 
+
+All elements of the language are designed around making code more accessible and less obfuscating for the audience. This motivation stretches down to the coding style itself which uses clear descriptive names for functions and a clear syntax. Furthermore the editor is restricted to 30 lines of code, keeping all code always visible. Mercury provides the performer with an extensive library of algorithms to generate or transform numbersequences that can modulate parameters, such as melody and rhythm, over time. The environment produces sound in conjunction with visuals. Besides looking at the code, the audience is also looking at the visuals that are reactive to the sound or generated by the sound.
+
+It is named after te planet Mercury. Mercury rules the creation and expression of our mental processes. The planet implores us to express ourselves. Mercury is about a quick wit, quick thinking. It lets us move from one thing to the next.
+
+Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-serialism#total-serialism) package available on npmjs.com. This package features many algorithmic composition methods.
+
+Mercury is programmed in the Cycling'74 Max8 node-based creative coding environment, as an abstracted layer on the Max/MSP audio engine and with the use of Node4Max for parsing, lexing and generative algorithms and Jitter/OpenGL for the visuals and the responsive texteditor. You do not need a Max License to use Mercury.
+
+![Screenshot of the Mercury environment](media/mercury-screenshot2.png)
+
+## 🔭 Vision / Goals
+
+- Quick and hands-on coding environment/language for expression, communication and improvisation of livecoded works.
+- A teaching environment for:
+	- introduction in (electronic) music
+	- algorithmic composition
+	- sequencing
+	- synthesis (upcoming...)
+	- creative coding and live coding.
+- Providing creatives with an extensive library of algorithmic composition techniques
+	- released as a seperate Node Package titled [Total-Serialism](https://www.npmjs.com/package/total-serialism)
+	- included in the Mercury environment through Node4Max
+- Providing creatives with a multi-purpose non-linear-sequencer 
+	- using OSC to communicate with other platforms
+	- using MIDI to communicate with other environments and devices
+- Providing creatives with easy sampler/synthesis for sounddesign and composing
+	- using external OSC to control parameters in the sampler/synthesis
+	- using external MIDI devices and messages to play the sampler/synthesizers
+- Working towards a stand-alone application for MacOS and Windows, making workflow easier (upcoming)
+- Extending the Mercury users-community and including extensions on the environment in the master-branch
+
+Mercury is a development-in-progress and the language is still very fluid, with changes made to the language/environment/libraries almost weekly. Feel free to clone/fork this repository, but you might also want to watch and/or star the repo to keep up-to-date with the latest changes whenever they're made.
+
+## 💻 Install
+
+- Follow the [Quick Start](./docs/quick-start.md) guide (for experienced computer users)
+- Follow the [Tutorial](./docs/tutorial.md).
+- Read the [System Requirements](#system-requirements)
+- Download the latest [Release](https://github.com/tmhglnd/mercury/releases)
+
+```
+$ cd ~/Documents/Max\ 8/Projects
+$ git clone http://github.com/tmhglnd/mercury
+$ cd mercury
+$ open mercury_ide/mercury_ide.maxproj
+```
+
+### 🚀 Quick Start
+
+[Open the Quick Start Guide](./docs/quick-start.md)
+
+### 📖 Tutorial
+
+🚧 (work in progress) 🚧
+
+If this is your first time with either the usage of creative coding software (like Max8), music theory, electronic music making and programming in general I highly recommend following the tutorial.
+
+[Open the Tutorial](./docs/tutorial.md)
+
+### ⚠ Troubleshooting
+
+It could be that you are having issues with Mercury, since it's still in development and there may occasionally be some bugs. Please follow the steps below:
+
+[Open the Troubleshooting](./docs/08-troubleshooting.md)
+
+### 📖 Documentation
+
+[**Open the documentation**](./docs/README.md)
+
+### 💻 System Requirements
+
+These system requirements are the requirements to install and run Max8 on your computer. A dedicated Graphics Card (GPU) is recommended to run the visual side of Mercury smoothly (the text-editor is part of the visuals since it is programmed in the OpenGL language).
+
+#### OS
+
+`Mac` : OSX 10.13 recommended (at least 10.11.6 or later)
+
+`Windows` : 10 (7, 8 might also work)
+
+#### CPU
+
+`Mac` : Intel® Core™2 Duo processor 
+
+`Windows` : 64-bit Intel® or AMD multi-core processor
+
+Intel® Core™ i5 or higher recommended
+
+#### RAM / GPU
+
+4 GB RAM (8 GB or more recommended)
+
+Dedicated Graphics Card recommended
+
+<!-- ### 🛠 Build Application
+
+`Optional`
+
+**Why?** - Building the Application is recommended when using Mercury with other MaxMSP projects. This will allow Mercury to have a seperate thread from the other Max processes, giving it enough RAM and CPU space. Also the application will probably run more stable because the project can not be editted anymore. This, of course, also dependents on your system specifications.
+
+**How?** - The Cycling'74 Max8 coding environment is needed to build the application from the `mercury_ide_x.x.x.maxproj` file. Open the `.maxproj` file and select `Build Collective/Application` from the `Settings` menu on the bottom of the project window. *Building the Application is not necessary in order to run the environment!* -->
+
+### 🎵 Sounds
+
+All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. A list of all the available sounds and the original sample can be found here:
+
+[List of sounds and credits](././mercury_ide/media/README.md)
+
+## 📝 Modify Code
+
+`patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
+
+`JS code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the JS code.
+
+`GenExpr Code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the GenExpr code.
+
+## 🔍 Further reading and listening
+
+1. [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
+2. [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
+3. [Total Serialism Library](https://github.com/tmhglnd/total-serialism#total-serialism)
+
+## 👾 Made with Mercury
+
+- *Made something with Mercury? Please add a URL here and send a pull request!* 😎
+- [Nick Levantis - Wake Up](https://youtu.be/UsfKF0ggn7k)
+- [Rafa & Timo - "Hello, off-world!" (Live at NMF)](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s)
+- [Roald van Dillewijn - Mercury & DigiLog](https://www.youtube.com/watch?v=1v7xicXuSbo&t=346s)
+- [Sasj & Timo - Amalgam (Live at Github Sattelite 2020)](https://www.youtube.com/watch?v=zzmgX4QSBMM)
+- [Anne Veinberg - CodeKlaver & Mercury Extension](https://www.youtube.com/watch?v=VSoibHwQJ98&t=175s)
+- [Timo - Live at NerdLab VR 2020](https://www.youtube.com/watch?v=EW9x68sxhvM)
+- [T.mo - Live at Eulerroom Equinox 2020](https://www.youtube.com/watch?v=X0FFcdd1QEE)
+- [T.mo - Live at Algo:Ritmi 2020](https://www.facebook.com/timohoogland/videos/3654187371320680/)
+- [T.mo - Live at NLCL Meetup STEIM](https://www.youtube.com/watch?v=leckC_yUMss)
+
+## 🔋 Powered By
+
+- Mercury has been granted funding from [**Creative Industries Fund NL**](https://stimuleringsfonds.nl/en/)
+- Mercury has been granted in-kind funding from [**Creative Coding Utrecht**](https://creativecodingutrecht.nl/)
+
+## 🙏 Thanks
+
+- Roald van Dillewijn for working together on osc and midi functionalities combined with his [Digilog modified guitar-pedals](https://roaldvandillewijn.nl/projects/digilog)
+- Guillem Gongora Moral for using Mercury as a composition tool and sharing valuable feedback in the process
+- Anne Veinberg for working with Mercury and a Mercury extensions for the [CodeKlavier](https://codeklavier.space/) project
+- Rafaele Maria Andrade for collaboration on [networked performance](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s) between Mercury and Knurl
+- Repo banner image by Annebel Bunt
+- Live performance image by Zuzanna Zgierska
+
+## 📄 Licenses
+
+1. Main Source - [The GNU GPL v.3 License](https://choosealicense.com/licenses/gpl-3.0/) (c) Timo Hoogland 2019
+2. Sound Files - Individually licensed, listed under [media/README.md](/mercury_ide_0.9.9/media/README.md)
+3. Documentation - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
+4. Examples - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
+5. Max8 - Proprietary Software, Max (c) 1990-2019 Cycling'74 / IRCAM All rights reserved
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

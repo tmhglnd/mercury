@@ -1,25 +1,14 @@
 # 🌕 Mercury Live Coding Environment 
 
-## [Become a Patron!](https://www.patreon.com/bePatron?u=9649817) 
-
-## [Join the Discord Community!](https://discord.gg/vt59NYU)
-
-**📦 Latest stable release**
-
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
-
-**📑 Info**
-
-[![GitHub](https://img.shields.io/github/license/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/blob/master/LICENSE)
-[![GitHub repo size](https://img.shields.io/github/repo-size/tmhglnd/mercury)](http://github.com/tmhglnd/mercury)
-[![GitHub issues](https://img.shields.io/github/issues-raw/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/issues)
-[![GitHub last commit](https://img.shields.io/github/last-commit/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/commits/master)
-
 **A minimal and human-readable language for the live coding of algorithmic electronic audiovisual performances.**
 
-Programmed in the Cycling'74 Max8 node-based creative coding environment, as an abstracted layer on the Max/MSP audio engine and with the use of Node4Max for parsing, lexing and generative algorithms and Jitter/OpenGL for the visuals and the responsive texteditor.
+[**🙏 Support Mercury by becoming a Patron**](https://www.patreon.com/bePatron?u=9649817) 
 
->See also the [NodeJS Total-Serialism Package](https://github.com/tmhglnd/total-serialism#total-serialism) for an extensive library of Algorithmic Composition Methods
+[**💬 Join the Discord Community!**](https://discord.gg/vt59NYU)
+
+**📦 Start coding with the latest version:** 
+
+- [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
 ![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](media/mercury-live.png)
 
@@ -37,8 +26,8 @@ Programmed in the Cycling'74 Max8 node-based creative coding environment, as an 
 	- [System Requirements](#-system-requirements)
 	- [Sounds in Mercury](/mercury_ide/media/README.md)
 	<!-- - [Build Application](#-build-application) -->
-- [Modify Code](#-modify-code)
-- [Further Reading](#-further-reading-and-listening)
+<!-- - [Contribute](#-contribute) -->
+<!-- - [Further Reading](#-further-reading-and-listening) -->
 - [Made with Mercury](#-made-with-mercury)
 - [Powered By](#-powered-by)
 - [Thanks](#-thanks)
@@ -76,32 +65,38 @@ All elements of the language are designed around making code more accessible and
 
 It is named after te planet Mercury. Mercury rules the creation and expression of our mental processes. The planet implores us to express ourselves. Mercury is about a quick wit, quick thinking. It lets us move from one thing to the next.
 
-Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-serialism#total-serialism) package available on npmjs.com. This package features many algorithmic composition methods.
+Mercury is programmed in the Cycling'74 Max8 node-based creative coding environment, as an abstracted layer on the Max/MSP audio engine and with the use of Node4Max for parsing, lexing and generative algorithms and Jitter/OpenGL for the visuals and the responsive texteditor.
+
+Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-serialism#total-serialism) package available on npmjs.com. This package contains an extensive library of algorithmic composition methods.
 
 ![Screenshot of the Mercury environment](media/mercury-screenshot2.png)
 
 ## 🔭 Vision / Goals
 
-- Providing a quick and hands-on coding environment/language for expression, communication and improvisation of livecoded works.
-- Using the language as a teaching environment for:
-	- introduction in (electronic) music
+- Provide a quick and hands-on coding environment/language for expression, communication and improvisation of livecoded works.
+- Use the environment as a teaching environment for:
+	- introduction to (electronic) music
 	- algorithmic composition
-	- sequencing
-	- synthesis (upcoming)
-	- creative coding and live coding.
-- Providing creatives with an extensive library of algorithmic composition techniques
+	- sequencing and pattern generating
+	- sound design
+	- creative coding and live coding
+- Provide creatives with an hands-on language to create realtime processes
+	- code sound and music
+	- code visuals and let them react to sound
+- Provide creatives with an extensive library of algorithmic composition techniques
 	- released as a seperate Node Package titled [Total-Serialism](https://www.npmjs.com/package/total-serialism)
-	- exposed in the Mercury environment through Node4Max
-- Providing creatives with a multi-purpose non-linear-sequencer 
-	- using OSC to communicate with other (creative-coding) platforms
-	- using MIDI to communicate with other environments (upcoming)
-- Providing creatives with easy sampler/synthesis for sounddesign and composing
-	- using external OSC to control parameters in the sampler/synthesis
-	- using external MIDI devices and messages to play the sampler/synthesizers (upcoming)
-- Working towards a stand-alone application for MacOS and Windows, making workflow easier (upcoming)
+	- included in the Mercury environment through Node4Max
+- Provide creatives with a multi-purpose non-linear-sequencer 
+	- use OSC to communicate with other platforms
+	- use MIDI to communicate with other environments and devices
+- Provide creatives with an easy sampler/synthesizer for sounddesign and composition
+	- use external OSC to control parameters in the sampler/synthesis
+	- use external MIDI devices and messages to play the sampler/synthesizers (coming soon...)
+- Release a stand-alone application for MacOS and Windows, making installing and workflow easier (coming soon...)
+- Collaborate in Mercury via the browser and code music together
 - Extending the Mercury users-community and including extensions on the environment in the master-branch
 
-Mercury is a development-in-progress and the language is still very much fluid, with changes made to the language/environment/libraries almost weekly. Feel free the clone/fork this repository, but you might also want to watch and/or star the repo to keep up-to-date with the latest changes whenever they're made.
+⭐️ *watch and star this repo to keep up-to-date with the latest changes whenever they're made*
 
 ## 👩‍💻👨‍💻 Collaborative Coding
 
@@ -211,23 +206,23 @@ Dedicated Graphics Card recommended
 
 ### 🎵 Sounds
 
-All sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. A list of all the available sounds and the original sample can be found here:
+Many sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. If not downloaded from freesound it is made sure that the license allows to redistribute the sounds via the Mercury environment and that you can use them in your projects. A list of all the available sounds and the original sample can be found here:
 
 [List of sounds and credits](././mercury_ide/media/README.md)
 
-## 📝 Modify Code
+## 📝 Contribute
 
-`patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
+<!-- `patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
 
 `JS code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the JS code.
 
-`GenExpr Code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the GenExpr code.
+`GenExpr Code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the GenExpr code. -->
 
-## 🔍 Further reading and listening
+<!-- ## 🔍 Further reading and listening
 
 1. [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
 2. [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
-3. [Total Serialism Library](https://github.com/tmhglnd/total-serialism#total-serialism)
+3. [Total Serialism Library](https://github.com/tmhglnd/total-serialism#total-serialism) -->
 
 ## 👾 Made with Mercury
 
