@@ -8,18 +8,18 @@
 
 **📦 Start coding with the latest version:** 
 
-- [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
 ![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](media/mercury-live.png)
 
 ## 📋 Table of Contents
 
 <!-- - [Newest Features](#-newest-features) -->
-- [Mercury?](#-about)
-- [What can I do with Mercury?](#-features-overview)
-- [Who is it for?](#-vision--goals)
-- [Code together with others!](#-collaborative-coding)
-- [Let's get started!](#-install)
+- 📟 [Mercury?](#-about)
+- 🎮 [What can I do with Mercury?](#-features-overview)
+- 🔭 [Who is it for?](#-vision--goals)
+- 👩‍💻 [Code together with others!](#-collaborative-coding)
+- 🚀 [Let's get started!](#-install)
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
 	- [Troubleshooting](/docs/08-troubleshooting.md)
@@ -27,12 +27,12 @@
 	- [System Requirements](#-system-requirements)
 	- [Sounds in Mercury](/mercury_ide/media/README.md)
 	<!-- - [Build Application](#-build-application) -->
-<!-- - [Contribute](#-contribute) -->
-<!-- - [Further Reading](#-further-reading-and-listening) -->
-- [Hear what others make](#-made-with-mercury)
-- [Powered By](#-powered-by)
-- [Thanks](#-thanks)
-- [Licenses](#-licenses)
+- 🔎 [Read more in-depth](#-further-reading-and-listening)
+- 👾 [Hear what others made](#-made-with-mercury)
+- 🤓 [I like to help](#-contribute)
+- 🔋 [Powered By](#-powered-by)
+- 🙏 [Thanks](#-thanks)
+- 📄 [Licenses](#-licenses)
 
 <!-- ##  Newest Features
 
@@ -236,7 +236,7 @@ Flok will send the entire code via OSC messaging to port 4880. Mercury should be
 
 - 📖 [I need some help installing](./docs/tutorial.md)
 - 🚀 [I'm an experienced computer user](./docs/quick-start.md)
-- 💻 [Is my computer powerful enough?](#system-requirements)
+- 💻 [Is my computer powerful enough?](#-system-requirements)
 
 OR
 
@@ -273,27 +273,12 @@ It could be that you are having issues with Mercury, since it's still in develop
 
 ### 💻 System Requirements
 
-These system requirements are the requirements to install and run Max8 on your computer. A dedicated Graphics Card (GPU) is recommended to run the visual side of Mercury smoothly (the text-editor is part of the visuals since it is programmed in the OpenGL language).
+These system requirements are recommended to install and run Max and Mercury on your computer. Lower specs may work but not guaranteed. A dedicated Graphics Card (GPU) is recommended to run the visual side of Mercury smoothly (the text-editor runs on the graphics card).
 
-#### OS
-
-`Mac` : OSX 10.13 recommended (at least 10.11.6 or later)
-
-`Windows` : 10 (7, 8 might also work)
-
-#### CPU
-
-`Mac` : Intel® Core™2 Duo processor 
-
-`Windows` : 64-bit Intel® or AMD multi-core processor
-
-Intel® Core™ i5 or higher recommended
-
-#### RAM / GPU
-
-4 GB RAM (8 GB or more recommended)
-
-Dedicated Graphics Card recommended
+| OS | CPU | RAM |
+| -- | --- | --- |
+| Mac OSX 10.13 recommended (at least 10.11.6+) | Intel i5 processor recommended | 4 GB (8 GB or more recommended) | 
+| Windows 10 (7 or 8 may work) | Intel i5 recommended or AMD mult-core processor | 4 GB (8 GB or more recommended) |
 
 <!-- ### 🛠 Build Application
 
@@ -309,19 +294,11 @@ Many sounds in Mercury are downloaded from [freesound.org](http://www.freesound.
 
 [List of sounds and credits](././mercury_ide/media/README.md)
 
-## 📝 Contribute
-
-<!-- `patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
-
-`JS code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the JS code.
-
-`GenExpr Code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the GenExpr code. -->
-
-<!-- ## 🔍 Further reading and listening
+## 🔍 Further reading and listening
 
 1. [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
 2. [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
-3. [Total Serialism Library](https://github.com/tmhglnd/total-serialism#total-serialism) -->
+3. [Total Serialism Library](https://github.com/tmhglnd/total-serialism#total-serialism)
 
 ## 👾 Made with Mercury
 
@@ -335,6 +312,36 @@ Many sounds in Mercury are downloaded from [freesound.org](http://www.freesound.
 - [T.mo - Live at Eulerroom Equinox 2020](https://www.youtube.com/watch?v=X0FFcdd1QEE)
 - [T.mo - Live at Algo:Ritmi 2020](https://www.facebook.com/timohoogland/videos/3654187371320680/)
 - [T.mo - Live at NLCL Meetup STEIM](https://www.youtube.com/watch?v=leckC_yUMss)
+
+## 📝 Contribute
+
+Contributions to the Mercury environment are much appreciated in whatever form they come! You can contribute by looking at the issues section or by doing any of the following:
+
+- Add suggestions, bugs or feature-requests to the [issues](https://github.com/tmhglnd/mercury/issues)
+- Make additions or changes to the Documentation, Tutorial and any other text in this repository
+- Adjust the source code or make bugfixes and add features by forking and sending a pull request
+
+In order to make changes to the source code you will need the following:
+
+`patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
+
+`JS code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the JS code.
+
+`GenExpr Code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the GenExpr code.
+
+### Guidelines
+
+In order to receive your contribution please follow these steps:
+
+1. Fork this repository (click `fork` in the top right)
+2. Clone the repository to your computer `git clone https://github.com/<this-is-you>/<forked-repo>.git`
+3. Branch the Fork `git checkout -b <name-your-branch>`
+4. Make any changes/additions to the code or docs
+5. Add, commit and push your changes `git add .` `git commit -a` `git push origin <your-branch-name>`
+6. Go to your forked repo in the browser and click `compare & pull request`, then `create pull request`
+7. Please add a comment to clearify what you did and why
+
+[All steps with examples and images](https://github.com/firstcontributions/first-contributions/blob/master/README.md)
 
 ## 🔋 Powered By
 
