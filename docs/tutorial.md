@@ -11,7 +11,7 @@ After that we will focus on creating a synthesizer that allows us to play differ
 
 While working on this tutorial you might run into some issues where something is not working as expected or as mentioned in the tutorial. This can have many different reasons. The first thing you can do is go to the [**troubleshooting**]() page and see if you can find your problem there. The next thing you can do is try to restart Mercury and see if that solves the issue. If none of that worked you can check the [**issues**](https://github.com/tmhglnd/mercury/issues) to see if your problem was already reported by someone else. If not, you can file a [new issue](https://github.com/tmhglnd/mercury/issues/new) yourself. An other possibility for the issue is that this tutorial actually has an typ-o or error of some kind. 
 
-**You are welcome to edit this tutorial and make a pull request.** :pray:
+**You are welcome to edit this tutorial and make a pull request** :pray:
 
 # Table of Contents
 
@@ -35,7 +35,9 @@ While working on this tutorial you might run into some issues where something is
 
 # 💻 Install Mercury
 
-1. Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative coding environment from Cycling'74. You can download Max8 through any of the links below. At the moment Mercury seems to run best in Max8.0.8. **You do not need to buy a license in order to use Mercury!** 😎
+Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative coding environment from Cycling'74. **You do not need to buy a Max-license in order to use Mercury!** 😎 At the moment Mercury seems to run best in Max8.0.8, but if this crashes for you please try the latest Max version from their website. 
+
+1. Please download Max8 through any of the links below.
 
 - [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
 - [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
@@ -43,12 +45,14 @@ While working on this tutorial you might run into some issues where something is
 
 2. Once you installed Max8 you can launch it. It will create a `Max 8` folder in your `Documents`. In there you may create a folder named `Projects`. The full path should now look like this: `<User>/Documents/Max 8/Projects`
 
-3. Now [download the latest release](https://github.com/tmhglnd/mercury/releases) or clone/fork Mercury to the Projects folder in your Documents.
+3. Now [download the latest release](https://github.com/tmhglnd/mercury/releases)
 
 	```
 	Download latest release and unzip entire folder in ~/Documents/Max 8/Projects
 	```
-	Or via commandline
+	
+	Or for git-users via the commandline, you can clone/fork Mercury to the Projects folder in your Documents.
+	
 	```
 	$ cd ~/Documents/Max\ 8/Projects
 	$ git clone http://github.com/tmhglnd/mercury
@@ -58,30 +62,16 @@ While working on this tutorial you might run into some issues where something is
 
 # 🚀 Launch Mercury
 
-Launch Mercury by double clicking `mercury_ide.maxproj` located in the folder `mercury-v.x.x.x/mercury-ide`.
+Launch Mercury by double clicking `mercury_ide.maxproj` located in the folder `mercury-v.x.x.x/mercury-ide`. If you like you can create a shortcut or alias on your desktop for it or in your Applications folder.
 
 - ⏳ Give it some time to load, this might take a bit depending on your computers processor.
 
-Once it's ready you will see 2 windows. The `_mercury_main` window and a (still black) window named `mercury`. The main window is used to quickly access the most important functions in Mercury such as turning the audio on/off and starting a recording of your sound. When you turn the Rendering on you will start to see the text-editor in the `mercury` window. This is the window were you will type your code.
+Once it's ready you will see two windows:
 
-<!-- 
-## _mercury_main window
+1. The `_mercury_main` window 
+2. A (still black) window named `mercury`. 
 
-The main window is used to quickly access some of the most important functions in Mercury. From here you can do the following:
-
-- Enable Rendering
-	- Turn the rendering on/off, this will show the text-editor in the `mercury` window, and also optionally show the visuals when you choose to code those.
-- Enable Audio
-	- Turn the audio on/off, this will turn the audio processing which allows you to hear the sound that is generated.
-- Volume
-	- Adjust the volume with the slider if necessary.
-- Auto Log Code
-	- Turn the code logging mode on/off. This will store a .txt of your code every time you execute it.
-- Start Record Audio 
-	- Start a recording of the sound that you currently hear. Click again to stop the recording. The file is stored in your Documents in the folder Mercury.
-- Show Variables
-- Show Audiofiles
-- Use External Editor -->
+The main window is used to quickly access the most important functions in Mercury such as turning the audio on/off and starting a recording of your sound. When you turn the Rendering on you will start to see the text-editor in the `mercury` window. This is the window were you will type your code.
 
 - 📺 Turn the **Rendering on**
 - 🔈 Turn the **Audio on**

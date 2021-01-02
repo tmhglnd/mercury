@@ -1,25 +1,29 @@
 # 🏃 Quick Start
 
-This quick start guide is meant for people who are confident in working with the computer and have some experience with (creative) coding, music technology and music making.
+Hi! Welcome to the Quick Start guide. If you experience any issues with installing or running the code, please have a look in the Tutorial or Troubleshooting sections. This Quick Start guide is meant for people who are confident in working with the computer and have some experience with (creative) coding, music technology and music making.
 
 # 💻 Install Mercury
 
-Read the [system requirements](./../README.md#-system-requirements) first before getting started.
+Please read the [system requirements](./../README.md#-system-requirements) before getting started.
 
-1. Download and install Max8 via any of the links below. At the moment Mercury seems to run best in Max8.0.8. **You do not need to buy a license in order to use Mercury!** 😎
+Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative coding environment from Cycling'74. **You do not need to buy a Max-license in order to use Mercury!** 😎 At the moment Mercury seems to run best in Max8.0.8, but if this crashes for you please try the latest Max version from their website. 
+
+1. Please download Max8 through any of the links below.
 
 - [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
 - [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
 - If links are not working you can go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
 
-2. Launch Max8 when the installation is done. It will create a `Max 8` folder in your `Documents`. In there you may create a folder named `Projects`. The full path should now look like this: `<User>/Documents/Max 8/Projects`
+2. Once you installed Max8 you can launch it. It will create a `Max 8` folder in your `Documents`. In there you may create a folder named `Projects`. The full path should now look like this: `<User>/Documents/Max 8/Projects`
 
-3. Now [download the latest release](https://github.com/tmhglnd/mercury/releases) or clone/fork Mercury to the Projects folder in your Documents.
+3. Now [download the latest release](https://github.com/tmhglnd/mercury/releases)
 
 	```
 	Download latest release and unzip entire folder in ~/Documents/Max 8/Projects
 	```
-	Or via commandline
+	
+	Or for git-users via the commandline, you can clone/fork Mercury to the Projects folder in your Documents.
+	
 	```
 	$ cd ~/Documents/Max\ 8/Projects
 	$ git clone http://github.com/tmhglnd/mercury
@@ -29,16 +33,18 @@ Read the [system requirements](./../README.md#-system-requirements) first before
 
 # 🚀 Launch Mercury
 
-Launch Mercury by double clicking `mercury_ide.maxproj` or 
+Launch Mercury by double clicking `mercury_ide.maxproj` located in the folder `mercury-v.x.x.x/mercury-ide` or by running the following terminal command: 
 
 ```
 $ cd mercury
 $ open mercury_ide/mercury_ide.maxproj
 ```
 
+If you like you can create a shortcut or alias on your desktop for it or in your Applications folder.
+
 - ⏳ Give it some time to load.
 
-- ⚠ **Mac 10.14+ Users**: Make sure you give permissions under Security & Privacy Preferences.
+<!-- - ⚠ **Mac 10.14+ Users**: Make sure you give permissions under Security & Privacy Preferences. -->
 
 In the `_mercury_main` window:
 
@@ -58,7 +64,9 @@ In the `mercury` code editor:
 - 🔊 Hit `alt + return` or `Menubar > File > Execute Code` 
 	- *Mac users: Disable the Alert Volume in `System Preferences > Sounds` to disable the error sound when using shortkeys*
 
-Adjust settings under `Menubar > Settings`. [For detailed explanation go here](./07-environment.md#settings)
+- Adjust shortkey commands under `Menubar > Settings > Shortkeys Setup`
+
+- Adjust settings under `Menubar > Settings`. [For detailed explanation go here](./07-environment.md#settings)
 
 You are now ready to start coding your first sounds! 🎶💻🎶
 

@@ -14,11 +14,12 @@
 
 ## 📋 Table of Contents
 
-- [Newest Features](#-newest-features)
-- [About](#-about)
-- [Vision & Goals](#-vision--goals)
-- [Collaborative Coding](#-collaborative-coding)
-- [Install](#-install)
+<!-- - [Newest Features](#-newest-features) -->
+- [Mercury?](#-about)
+- [What can I do with Mercury?](#-features-overview)
+- [Who is it for?](#-vision--goals)
+- [Code together with others!](#-collaborative-coding)
+- [Let's get started!](#-install)
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
 	- [Troubleshooting](/docs/08-troubleshooting.md)
@@ -28,12 +29,12 @@
 	<!-- - [Build Application](#-build-application) -->
 <!-- - [Contribute](#-contribute) -->
 <!-- - [Further Reading](#-further-reading-and-listening) -->
-- [Made with Mercury](#-made-with-mercury)
+- [Hear what others make](#-made-with-mercury)
 - [Powered By](#-powered-by)
 - [Thanks](#-thanks)
 - [Licenses](#-licenses)
 
-## 🎉 Newest Features
+<!-- ##  Newest Features
 
 **Control external midi devices or send midi to other Applications with the new `midi` instrument**
 
@@ -55,7 +56,7 @@ new synth sine name(sn)
 
 new emitter osc name(myOSC) someParam(3.14)
     // result => /myOsc/someParam 3.14
-```
+``` -->
 
 ## 📟 About 
 
@@ -71,9 +72,102 @@ Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-seria
 
 ![Screenshot of the Mercury environment](media/mercury-screenshot2.png)
 
+## 🎮 Features Overview
+
+Quick access to playback of samples and change timing and tempo of samples or synthesizers
+
+```java
+set tempo 89
+
+new sample kick_909 time(1/4)
+new sample hat_909 time(3/16)
+```
+
+Make rhythmic patterns with sequences of numbers and probabilities
+
+```java
+ring loBeat [1 0 0 1 0.5]
+ring hiBeat [0 1 0.2 0]
+
+new sample tabla_lo time(1/8) play(loBeat)
+new sample tabla_hi time(1/8) play(hiBeat)
+```
+
+Generate psuedorandom melodic content for a synthesizer in a range and set a scale
+
+```java
+set scale minor d
+set randomSeed 31415
+
+ring melody random(16 0 24)
+
+new synth saw note(melody) time(1/16) shape(4 100)
+```
+
+Design sounds with various effects
+
+```java
+new sample chimes time(2) speed(-0.25) fx(reverb 0.3 15) fx(drive 10) fx(lfo 1/8 sine)
+```
+
+Easily give multiple instruments the same effects
+
+```java
+new sample chimes time(2)
+new sample harp_down time(3)
+new sample gong_lo time(5)
+
+set all fx(lfo 1/16) fx(delay) fx(reverb 0.5 11)
+```
+
+Generate sequences algorithmically to compose complex structures and choose from an extensive library of algorithms to work with
+
+```java
+set scale minor a 
+
+ring rhythm euclidean(32 13)
+
+ring melody spread(5 0 24)
+ring melody palinedrome(melody)
+ring melody clone(melody 0 5 7 3)
+ring melody lace(melody melody)
+
+new synth triangle note(melody 1) shape(1 80) play(rhythm)
+```
+
+Control external midi devices or send midi to other applications and use clock sync
+
+```java
+set midi getPorts
+//=> prints the available devices to the console
+new midi "Your Awesome Midi Device" time(1/4) note(7 1) length(100) sync(on)
+```
+
+Control other environments via OSC-messages
+
+```java
+ring params [0.25 0.5 0.75]
+
+new emitter osc address(yourDevice) theParam(params) time(1/4)
+
+// emits => /yourDevice/theParam 0.25
+//          /yourDevice/theParam 0.5
+//          /yourDevice/theParam 0.75
+//          /yourDevice/theParam 0.25
+//          etc...
+```
+
+Easily control parameters in Mercury via external OSC-messages
+
+```java
+new synth triangle fx(reverb /extOSC/verbAmount) fx(filter low /extOSC/cutoff 0.4) time(1) shape(1 1000)
+```
+
+**AND MANY MORE (TO COME...)**
+
 ## 🔭 Vision / Goals
 
-- Provide a quick and hands-on coding environment/language for expression, communication and improvisation of livecoded works.
+- Provide creatives with a quick and hands-on coding environment/language to expres, communicate and improvise livecoded works.
 - Use the environment as a teaching environment for:
 	- introduction to (electronic) music
 	- algorithmic composition
@@ -100,8 +194,10 @@ Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-seria
 
 ## 👩‍💻👨‍💻 Collaborative Coding
 
-It is now possible to code together in Mercury using the amazing [**Flok**](https://flok.clic.cf/) live coding environment for the browser. 
+It is now possible to code together in Mercury using the amazing [**Flok**](https://flok.clic.cf/) live coding environment in the browser.
 
+[Start coding together here](./docs/collaborate.md)
+<!-- 
 There are 3 options for how you can use Flok with Mercury:
 1. Use Flok to combine Mercury with Hydra visuals (or other languages like Tidal, Foxdot and SuperCollider) on a localhost
 2. Collaborate together in the same room (only requires 1 computer to run Mercury)
@@ -134,14 +230,17 @@ Now start typing some code! 🎵
 - `Ctrl/Alt + Return` to evaluate
 - `Ctrl/Alt + .` to silence
 
-Flok will send the entire code via OSC messaging to port 4880. Mercury should be listening to this port automatically. Bug reports are very much welcome in the issues!
+Flok will send the entire code via OSC messaging to port 4880. Mercury should be listening to this port automatically. Bug reports are very much welcome in the issues! -->
 
 ## 💻 Install
 
-- Follow the [Quick Start](./docs/quick-start.md) guide (for experienced computer users)
-- Follow the [Tutorial](./docs/tutorial.md).
-- Read the [System Requirements](#system-requirements)
-- Download the latest [Release](https://github.com/tmhglnd/mercury/releases)
+- 📖 [I need some help installing](./docs/tutorial.md)
+- 🚀 [I'm an experienced computer user](./docs/quick-start.md)
+- 💻 [Is my computer powerful enough?](#system-requirements)
+
+OR
+
+- I'll just [download](https://github.com/tmhglnd/mercury/releases)  and figure it out myself
 
 ```
 $ cd ~/Documents/Max\ 8/Projects
@@ -150,17 +249,17 @@ $ cd mercury
 $ open mercury_ide/mercury_ide.maxproj
 ```
 
-### 🚀 Quick Start
+<!-- ### 🚀 Quick Start -->
 
-[Open the Quick Start Guide](./docs/quick-start.md)
+<!-- [Open the Quick Start Guide](./docs/quick-start.md) -->
 
-### 📖 Tutorial
+<!-- ### 📖 Tutorial -->
 
-🚧 (work in progress) 🚧
+<!-- 🚧 (work in progress) 🚧 -->
 
-If this is your first time with either the usage of creative coding software (like Max8), music theory, electronic music making and programming in general I highly recommend following the tutorial.
+<!-- If this is your first time with either the usage of creative coding software (like Max8), music theory, electronic music making and programming in general I highly recommend following the tutorial. -->
 
-[Open the Tutorial](./docs/tutorial.md)
+<!-- [Open the Tutorial](./docs/tutorial.md) -->
 
 ### ⚠ Troubleshooting
 
