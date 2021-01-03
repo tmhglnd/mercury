@@ -1,20 +1,7 @@
-# 📖 Mercury Documentation
+# 📖 Mercury Function Reference
 
 *Disclaimer: This documentation is not entirely finished and will subject to changes. If you like to contribute or find errors, feel free to report them in the issues or send a pull request*
 
-## Table of Content
-
-- [🏃 Quick Start](./quick-start.md)
-
-- [🤓 Tutorial (work in progress...)](./tutorial.md)
-
-- [💻 Shortkeys](./06-shortkeys.md)
-
-- [⚠️ Troubleshooting](./08-troubleshooting.md)
-
-- [🔊 Settings and Sounds](./07-environment.md)
-	- [Mercury Main Window](./07-environment.md#mercury-main-window)
-	- [Menubar](./07-environment.md#menubar)
 ## Code Documentation
 
 - [Actions](./00-general.md)
