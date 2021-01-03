@@ -20,10 +20,10 @@
 - 🔭 [Who is it for?](#-vision--goals)
 - 👩‍💻 [Code together with others!](#-collaborative-coding)
 - 🚀 [Let's get started!](#-install)
-	- [Quick Start](/docs/quick-start.md)
-	- [Tutorial](/docs/tutorial.md)
-	- [Documentation](/docs/table-of-content.md)
-	- [Troubleshooting](/docs/08-troubleshooting.md)
+	- [Quick Start](./quick-start.md)
+	- [Tutorial](./tutorial.md)
+	- [Documentation](./table-of-content.md)
+	- [Troubleshooting](./08-troubleshooting.md)
 	- [System Requirements](#-system-requirements)
 	- [Sounds in Mercury](/mercury_ide/media/README.md)
 	<!-- - [Build Application](#-build-application) -->
@@ -70,7 +70,7 @@ Mercury is programmed in the Cycling'74 Max8 node-based creative coding environm
 
 Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-serialism#total-serialism) package available on npmjs.com. This package contains an extensive library of algorithmic composition methods.
 
-![Screenshot of the Mercury environment](media/mercury-screenshot2.png)
+![Screenshot of the Mercury environment](./../media/mercury-screenshot2.png)
 
 ## 🎮 Features Overview
 
@@ -196,7 +196,7 @@ new synth triangle fx(reverb /extOSC/verbAmount) fx(filter low /extOSC/cutoff 0.
 
 It is now possible to code together in Mercury using the amazing [**Flok**](https://flok.clic.cf/) live coding environment in the browser.
 
-- [Start coding together here](./docs/collaborate.md)
+- [Start coding together here](./collaborate.md)
 
 <!-- 
 There are 3 options for how you can use Flok with Mercury:
@@ -235,8 +235,8 @@ Flok will send the entire code via OSC messaging to port 4880. Mercury should be
 
 ## 💻 Install
 
-- 📖 [I need some help installing](./docs/tutorial.md)
-- 🚀 [I'm an experienced computer user](./docs/quick-start.md)
+- 📖 [I need some help installing](./tutorial.md)
+- 🚀 [I'm an experienced computer user](./quick-start.md)
 - 💻 [Is my computer powerful enough?](#-system-requirements)
 
 OR
@@ -266,13 +266,13 @@ $ open mercury_ide/mercury_ide.maxproj
 
 It could be that you are having issues with Mercury. Please follow the steps below:
 
-- [Open the Troubleshooting](./docs/08-troubleshooting.md)
+- [Open the Troubleshooting](./08-troubleshooting.md)
 
 ### 📖 Documentation
 
 Full explanation of all the possibilities in Mercury:
 
-- [Open the documentation](./docs/table-of-content.md)
+- [Open the documentation](./table-of-content.md)
 
 ### 💻 System Requirements
 
