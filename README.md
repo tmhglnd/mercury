@@ -23,7 +23,7 @@
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
 	- [Troubleshooting](/docs/08-troubleshooting.md)
-	- [Documentation](/docs/README.md)
+	- [Documentation](/docs/table-of-content.md)
 	- [System Requirements](#-system-requirements)
 	- [Sounds in Mercury](/mercury_ide/media/README.md)
 	<!-- - [Build Application](#-build-application) -->
@@ -272,7 +272,7 @@ It could be that you are having issues with Mercury. Please follow the steps bel
 
 Full explanation of all the possibilities in Mercury:
 
-- [Open the documentation](./docs/README.md)
+- [Open the documentation](./docs/table-of-content.md)
 
 ### 💻 System Requirements
 
