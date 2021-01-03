@@ -196,7 +196,8 @@ new synth triangle fx(reverb /extOSC/verbAmount) fx(filter low /extOSC/cutoff 0.
 
 It is now possible to code together in Mercury using the amazing [**Flok**](https://flok.clic.cf/) live coding environment in the browser.
 
-[Start coding together here](./docs/collaborate.md)
+- [Start coding together here](./docs/collaborate.md)
+
 <!-- 
 There are 3 options for how you can use Flok with Mercury:
 1. Use Flok to combine Mercury with Hydra visuals (or other languages like Tidal, Foxdot and SuperCollider) on a localhost
@@ -265,13 +266,13 @@ $ open mercury_ide/mercury_ide.maxproj
 
 It could be that you are having issues with Mercury. Please follow the steps below:
 
-[Open the Troubleshooting](./docs/08-troubleshooting.md)
+- [Open the Troubleshooting](./docs/08-troubleshooting.md)
 
 ### 📖 Documentation
 
 Full explanation of all the possibilities in Mercury:
 
-[Open the documentation](./docs/README.md)
+- [Open the documentation](./docs/README.md)
 
 ### 💻 System Requirements
 
@@ -294,13 +295,13 @@ These system requirements are recommended to install and run Max and Mercury on 
 
 Many sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. If not downloaded from freesound it is made sure that the license allows to redistribute the sounds via the Mercury environment and that you can use them in your projects. A list of all the available sounds and the original sample can be found here:
 
-[List of sounds and credits](././mercury_ide/media/README.md)
+- [List of sounds and credits](././mercury_ide/media/README.md)
 
 ## 🔍 Further reading and listening
 
-1. [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
-2. [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
-3. [Total Serialism Library](https://github.com/tmhglnd/total-serialism#total-serialism)
+- [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
+- [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
+- [Total Serialism Library](https://github.com/tmhglnd/total-serialism#total-serialism)
 
 ## 👾 Made with Mercury
 
@@ -359,10 +360,10 @@ In order to receive your contribution please follow these steps:
 
 ## 📄 Licenses
 
-1. Main Source - [The GNU GPL v.3 License](https://choosealicense.com/licenses/gpl-3.0/) (c) Timo Hoogland 2019
-2. Sound Files - Individually licensed, listed under [media/README.md](/mercury_ide_0.9.9/media/README.md)
-3. Documentation - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
-4. Examples - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
-5. Max8 - Proprietary Software, Max (c) 1990-2019 Cycling'74 / IRCAM All rights reserved
+- Main Source - [The GNU GPL v.3 License](https://choosealicense.com/licenses/gpl-3.0/) (c) Timo Hoogland 2019
+- Sound Files - Individually licensed, listed under [media/README.md](/mercury_ide_0.9.9/media/README.md)
+- Documentation - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
+- Examples - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
+- Max8 - Proprietary Software, Max (c) 1990-2019 Cycling'74 / IRCAM All rights reserved
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
