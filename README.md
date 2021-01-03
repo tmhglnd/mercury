@@ -6,7 +6,7 @@
 
 [**💬 Join the Discord Community!**](https://discord.gg/vt59NYU)
 
-**📦 Start coding with the latest version:** 
+**🚀 Start coding with the latest version:** 
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
@@ -240,7 +240,7 @@ Flok will send the entire code via OSC messaging to port 4880. Mercury should be
 
 OR
 
-- I'll just [download](https://github.com/tmhglnd/mercury/releases)  and figure it out myself
+- 🤓 I'll just [download](https://github.com/tmhglnd/mercury/releases) and figure it out myself
 
 ```
 $ cd ~/Documents/Max\ 8/Projects
@@ -263,22 +263,24 @@ $ open mercury_ide/mercury_ide.maxproj
 
 ### ⚠ Troubleshooting
 
-It could be that you are having issues with Mercury, since it's still in development and there may occasionally be some bugs. Please follow the steps below:
+It could be that you are having issues with Mercury. Please follow the steps below:
 
 [Open the Troubleshooting](./docs/08-troubleshooting.md)
 
 ### 📖 Documentation
 
-[**Open the documentation**](./docs/README.md)
+Full explanation of all the possibilities in Mercury:
+
+[Open the documentation](./docs/README.md)
 
 ### 💻 System Requirements
 
-These system requirements are recommended to install and run Max and Mercury on your computer. Lower specs may work but not guaranteed. A dedicated Graphics Card (GPU) is recommended to run the visual side of Mercury smoothly (the text-editor runs on the graphics card).
+These system requirements are recommended to install and run Max and Mercury on your computer. Lower specs may work but it's not guaranteed. A dedicated Graphics Card (GPU) is also recommended to run the visual side of Mercury smoothly (the text-editor runs on the graphics card as well).
 
 | OS | CPU | RAM |
 | -- | --- | --- |
-| Mac OSX 10.13 recommended (at least 10.11.6+) | Intel i5 processor recommended | 4 GB (8 GB or more recommended) | 
-| Windows 10 (7 or 8 may work) | Intel i5 recommended or AMD mult-core processor | 4 GB (8 GB or more recommended) |
+| Mac OSX 10.13 (at least 10.11.6+) | Intel i5 processor | 8 GB | 
+| Windows 10 (7 or 8 may work) | Intel i5 or AMD mult-core processor | 8 GB |
 
 <!-- ### 🛠 Build Application
 
@@ -315,19 +317,17 @@ Many sounds in Mercury are downloaded from [freesound.org](http://www.freesound.
 
 ## 📝 Contribute
 
-Contributions to the Mercury environment are much appreciated in whatever form they come! You can contribute by looking at the issues section or by doing any of the following:
+Contributions to the Mercury environment are much appreciated in whatever form they come! You can contribute in any of the following ways:
 
 - Add suggestions, bugs or feature-requests to the [issues](https://github.com/tmhglnd/mercury/issues)
-- Make additions or changes to the Documentation, Tutorial and any other text in this repository
-- Adjust the source code or make bugfixes and add features by forking and sending a pull request
+- Make additions or changes to the Documentation, Tutorials, Examples and any other text in this repository
+- Adjust the source code or make bugfixes and add features by forking and sending a pull request (see the [Guidelines](#guidelines))
 
-In order to make changes to the source code you will need the following:
+In order to make changes to various types of source code files you will need the following:
 
-`patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
-
-`JS code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the JS code.
-
-`GenExpr Code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the GenExpr code.
+- `patchers` - Requires Max8 environment and license to edit/modify/save the patchers of this project.
+- `JS code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the JS code.
+- `GenExpr Code` - Requires a standard code-editor (eg. VSCode or Atom) to edit/modify/save the GenExpr code.
 
 ### Guidelines
 
