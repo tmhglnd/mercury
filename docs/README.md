@@ -10,7 +10,7 @@
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
-![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](media/mercury-live.png)
+![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](./../media/mercury-live.png)
 
 ## 📋 Table of Contents
 
@@ -22,12 +22,12 @@
 - 🚀 [Let's get started!](#-install)
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
-	- [Troubleshooting](/docs/08-troubleshooting.md)
 	- [Documentation](/docs/table-of-content.md)
+	- [Troubleshooting](/docs/08-troubleshooting.md)
 	- [System Requirements](#-system-requirements)
 	- [Sounds in Mercury](/mercury_ide/media/README.md)
 	<!-- - [Build Application](#-build-application) -->
-- 🔎 [Read more in-depth](#-further-reading-and-listening)
+- 🔎 [Read more](#-further-reading-and-listening)
 - 👾 [Hear what others made](#-made-with-mercury)
 - 🤓 [I like to help](#-contribute)
 - 🔋 [Powered By](#-powered-by)
@@ -297,7 +297,7 @@ Many sounds in Mercury are downloaded from [freesound.org](http://www.freesound.
 
 - [List of sounds and credits](././mercury_ide/media/README.md)
 
-## 🔍 Further reading and listening
+## 🔍 Further reading
 
 - [Mercury homepage](http://www.timohoogland.com/mercury-livecoding)
 - [Paper in ICLC 2019](http://iclc.livecodenetwork.org/2019/papers/paper67.pdf)
