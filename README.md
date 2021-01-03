@@ -70,7 +70,7 @@ Mercury is programmed in the Cycling'74 Max8 node-based creative coding environm
 
 Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-serialism#total-serialism) package available on npmjs.com. This package contains an extensive library of algorithmic composition methods.
 
-![Screenshot of the Mercury environment](media/mercury-screenshot2.png)
+![Screenshot of the Mercury environment](./../media/mercury-screenshot2.png)
 
 ## 🎮 Features Overview
 
