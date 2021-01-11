@@ -7,7 +7,7 @@ There are 3 options for how you can use Flok with Mercury:
 2. Collaborate together in the same room (only requires 1 computer to run Mercury)
 3. Collaborate remotely over a network (all computers need to run Mercury)
 
-Install NodeJS v.12 [for Mac](https://nodejs.org/dist/latest-v12.x/node-v12.20.0.pkg) or [for Windows](https://nodejs.org/dist/latest-v12.x/node-v12.20.0-x64.msi).
+Install NodeJS v.12 [for Mac](https://nodejs.org/dist/latest-v12.x/node-v12.20.1.pkg) or [for Windows](https://nodejs.org/dist/latest-v12.x/node-v12.20.1-x64.msi).
 
 Install the latest version of Mercury via the [quick start quide](https://github.com/tmhglnd/mercury/blob/master/docs/quick-start.md).
 
