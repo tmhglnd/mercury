@@ -70,7 +70,7 @@ Mercury is programmed in the Cycling'74 Max8 node-based creative coding environm
 
 Mercury uses the [Total Serialism NodeJS](https://github.com/tmhglnd/total-serialism#total-serialism) package available on npmjs.com. This package contains an extensive library of algorithmic composition methods.
 
-![Screenshot of the Mercury environment](./../media/mercury-screenshot2.png)
+![Screenshot of the Mercury environment](media/mercury-screenshot2.png)
 
 ## 🎮 Features Overview
 
@@ -306,11 +306,16 @@ Many sounds in Mercury are downloaded from [freesound.org](http://www.freesound.
 ## 👾 Made with Mercury
 
 - *Made something with Mercury? Please add a URL here and send a pull request!* 😎
+- [T.mo - Liber Abaci (Mercury Coding Sessions)](https://youtu.be/syUL76qCV6w)
+- [Roald van Dillewijn - Smashing Temparateness (Mercury Coding Sessions)](https://youtu.be/KJ4OpJ3-Ik0)
+- [Rafa & Timo - "Hello, off-world!" (Mercury Coding Sessions)](https://youtu.be/BbOz1XBu8f8)
+- [Guillem Góngora Moral - Transcription #1 (Mercury Coding Sessions)](https://youtu.be/wRVQHlghitM)
+- [Anne Veinberg - CodeKlavier meets Mercury (Mercury Coding Sessions)](https://youtu.be/e4sPKOlaYS8)
 - [Nick Levantis - Wake Up](https://youtu.be/UsfKF0ggn7k)
 - [Rafa & Timo - "Hello, off-world!" (Live at NMF)](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s)
 - [Roald van Dillewijn - Mercury & DigiLog](https://www.youtube.com/watch?v=1v7xicXuSbo&t=346s)
 - [Sasj & Timo - Amalgam (Live at Github Sattelite 2020)](https://www.youtube.com/watch?v=zzmgX4QSBMM)
-- [Anne Veinberg - CodeKlaver & Mercury Extension](https://www.youtube.com/watch?v=VSoibHwQJ98&t=175s)
+- [Anne Veinberg - CodeKlaver & Mercury Extension Tryout](https://www.youtube.com/watch?v=VSoibHwQJ98&t=175s)
 - [Timo - Live at NerdLab VR 2020](https://www.youtube.com/watch?v=EW9x68sxhvM)
 - [T.mo - Live at Eulerroom Equinox 2020](https://www.youtube.com/watch?v=X0FFcdd1QEE)
 - [T.mo - Live at Algo:Ritmi 2020](https://www.facebook.com/timohoogland/videos/3654187371320680/)
