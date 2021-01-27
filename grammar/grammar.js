@@ -1,4 +1,4 @@
-// Generated automatically by nearley, version 2.19.0
+// Generated automatically by nearley, version 2.20.1
 // http://github.com/Hardmath123/nearley
 (function () {
 function id(x) { return x[0]; }
@@ -17,6 +17,7 @@ const lexer = moo.compile({
 	ring:		[/ring\ /, /array\ /, /data\ /],
 	newObject:	[/new\ /, /add\ /],
 	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
+	//action:		[/ring\ /, /new\ /, /set\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
 	//seperator:	/[\,\;]/,
@@ -39,9 +40,9 @@ const lexer = moo.compile({
 					value: x => x.slice(1, x.length-1)
 				},
 	
-	// identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
-	// identifier:	/[a-zA-Z\_\-][^\s]*/,
-	identifier:	/[^0-9\s][^\s]*/,
+	//identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
+	//identifier:	/[a-zA-Z\_\-][^\s]*/,
+	identifier:	/[^0-9\s][^\s\(\)\[\]]*/,
 
 	// signal:		/~(?:\\["\\]|[^\n"\\ \t])+/,
 	// osc:		/\/(?:\\["\\]|[^\n"\\ \t])*/,
@@ -61,6 +62,7 @@ var grammar = {
         		"@new" : d[2].value,
         		"@type" : d[4]
         	}
+        	return d;
         }},
     {"name": "objectStatement$subexpression$2", "symbols": ["name"]},
     {"name": "objectStatement$subexpression$2", "symbols": ["array"]},
@@ -86,7 +88,6 @@ var grammar = {
         	}
         } },
     {"name": "globalStatement", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)], "postprocess": (d) => { return { "@comment": d[0].value }}},
-    {"name": "globalStatement", "symbols": ["objExpression"], "postprocess": (d) => d[0]},
     {"name": "objExpression", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "objExpression", "symbols": ["paramElement", "__", "objExpression"], "postprocess": (d) => [d[0], d[2]]},
     {"name": "function", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier), "functionArguments"], "postprocess":  (d) => {
@@ -104,7 +105,7 @@ var grammar = {
     {"name": "array", "symbols": [(lexer.has("lArray") ? {type: "lArray"} : lArray), "_", "array$ebnf$1", "_", (lexer.has("rArray") ? {type: "rArray"} : rArray)], "postprocess": (d) => { return { "@array" : d[2] }}},
     {"name": "params", "symbols": ["paramElement"], "postprocess": (d) => d[0]},
     {"name": "params", "symbols": ["paramElement", "_", "params"], "postprocess": (d) => [d[0], d[2]]},
-    {"name": "paramElement", "symbols": [(lexer.has("number") ? {type: "number"} : number)], "postprocess": (d) => { return { "@number" : d[0].value }}},
+    {"name": "paramElement", "symbols": [(lexer.has("number") ? {type: "number"} : number)], "postprocess": (d) => { return IR.num(d) }},
     {"name": "paramElement", "symbols": ["name"], "postprocess":  (d) => {
         	return d[0]
         } },

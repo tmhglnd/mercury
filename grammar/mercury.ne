@@ -14,6 +14,7 @@ const lexer = moo.compile({
 	ring:		[/ring\ /, /array\ /, /data\ /],
 	newObject:	[/new\ /, /add\ /],
 	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
+	//action:		[/ring\ /, /new\ /, /set\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
 	//seperator:	/[\,\;]/,
@@ -36,9 +37,9 @@ const lexer = moo.compile({
 					value: x => x.slice(1, x.length-1)
 				},
 	
-	// identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
-	// identifier:	/[a-zA-Z\_\-][^\s]*/,
-	identifier:	/[^0-9\s][^\s]*/,
+	//identifier:	/[a-zA-Z\_\-][a-zA-Z0-9\_\-\.]*/,
+	//identifier:	/[a-zA-Z\_\-][^\s]*/,
+	identifier:	/[^0-9\s][^\s\(\)\[\]]*/,
 
 	// signal:		/~(?:\\["\\]|[^\n"\\ \t])+/,
 	// osc:		/\/(?:\\["\\]|[^\n"\\ \t])*/,
@@ -59,6 +60,12 @@ main ->
 	|
 	_ objectStatement _
 		{% (d) => { return { "@object" : d[1] }} %}
+	# |
+	# _ %newObject | %setObject | %ring _
+	# 	{% (d) => {
+	# 		console.log('not enough arguments for message');
+	# 		return null; 
+	# 	}%}
 
 objectStatement ->
 	%newObject _ %instrument _ (name|array)
@@ -67,6 +74,7 @@ objectStatement ->
 				"@new" : d[2].value,
 				"@type" : d[4]
 			}
+			return d;
 		}%}
 	|
 	%newObject _ %instrument _ (name|array) __ objExpression
@@ -98,9 +106,9 @@ ringStatement ->
 globalStatement ->
 	%comment
 		{% (d) => { return { "@comment": d[0].value }} %}
-	|
-	objExpression
-		{% (d) => d[0] %}
+	# |
+	# objExpression
+	# 	{% (d) => d[0] %}
 	# |
 	# objExpression _ %seperator:?
 	# 	{% (d) => d[0] %}
@@ -153,7 +161,7 @@ paramElement ->
 	# 	{% (d) => { return { "@address" : d[0].value }} %}
 	# |
 	%number
-		{% (d) => { return { "@number" : d[0].value }} %}
+		{% (d) => { return IR.num(d) } %}
 		# {% (d) => { return IR.num(d) } %}
 	|
 	# %note
@@ -175,7 +183,7 @@ paramElement ->
 
 division ->
 	%number %divider %number
-		{% (d) => { return { "@division" : d[0]+"/"+d[2] }} %}
+		{% (d) => { return IR.division(d) } %}
 
 name ->
 	%identifier

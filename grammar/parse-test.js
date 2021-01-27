@@ -1,11 +1,11 @@
-// parse-test script
+
 const util = require('util');
 const nearley = require('nearley');
 const grammar = require('./grammar.js');
 const worker = require('./mercuryIR.js');
 
 function parse(s){
-	// create a Parser object from our grammar.
+	// create a Parser object from our grammar
 	var parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
 	try {
 		// parse something!
@@ -25,9 +25,12 @@ function parse(s){
 		} else {
 			console.log("Parse succesful: \n", util.inspect(parser.results[0], { depth: 10}), "\n");
 		}
+
+		// traverse tree
+		worker.parseTree(parser.results[0]);
 	} catch (e) {
-		console.log("!!! Parse failed: \n", e.message);
-		// console.log("Interpret as comment:", { '@comment': parser.lexer.buffer });
+		// console.log("!!! Parse failed: \n", e.message);
+		console.log("Interpreted as comment:", { '@comment': parser.lexer.buffer });
 		// console.log(parser.lexer);
 		// console.log("Trying: \n", s.substring(0, parser.lexer.index-1));
 		// parse(s.substring(0, parser.lexer.index-1));
@@ -35,7 +38,7 @@ function parse(s){
 }
 
 // @global:
-parseNumbers();
+// parseNumbers();
 // parseRhythm();
 // parseComments();
 // parseStrings();
@@ -43,10 +46,11 @@ parseNumbers();
 // parseKeywords();
 // parseSettings();
 // parseSignal();
+
 // parseOSC();
 
 // @ring:
-// parseRing();
+parseRing();
 
 // @object:
 // parseInst();
@@ -73,6 +77,7 @@ function parseNumbers(){
 	parse("a1 A0 b2b B4# c1 C2bb d4## D3 e2 E1 f4# F5 g6 G2");
 }
 
+// Parse rhythmic division values
 function parseRhythm(){
 	parse("1/4");
 	parse("3/16");
@@ -135,23 +140,23 @@ function parseKeywords(){
 	parse("new ");
 	parse("set ");
 
-	parse("array ");
-	parse("data ");
-	parse("add ");
-	parse("apply ");
+	// parse("array ");
+	// parse("data ");
+	// parse("add ");
+	// parse("apply ");
 }
 
 function parseRing(){
 	parse("ring myVal 3.14");
-	parse("ring myArr [ 1 2 3.4 56 7.89e-13 ]");
-	parse("ring hats [hat_dub hat_dub_open]");
+	// parse("ring myArr [ 1 2 3.4 56 7.89e-13 ]");
+	// parse("ring hats [hat_dub hat_dub_open]");
 	// parse("ring ring2D [ 1 2 [3 4] 5 [6 [7 8] 9] 10 11 ] ");
 
 	// parse("ring beat euclid(16 4 0)")
 	// parse("ring grv choose(8 [hat kick snare])")
 	// parse("ring arpMel clone( palin( spread(5 0 12) ) 0 0 7 3 )");
 	// parse("ring bsLine clone( spray( bassBt spread(5 0 17) ) )" );
-	parse("ring bsLine clone( spray( bassBt spread(5 0 17) ) )" );
+	// parse("ring bsLine clone( spray( bassBt spread(5 0 17) ) )" );
 }
 
 function parseInst(){
@@ -181,13 +186,14 @@ function parseSet(){
 
 function parseSettings(){
 	parse("silence");
-	parse("tempo(125)");
-	parse("print(aRing)");
-	parse("print(random(10 5 50) )");
-	parse("audio()");
-	// parse("audio 1, record 1, tempo 143 1000");
+	parse("set scale minor_harmonic c");
+	// parse("tempo(125)");
+	// parse("print(aRing)");
+	// parse("print(random(10 5 50) )");
+	// parse("audio()");
+	parse("audio 1");
 	// parse("tempo(143 15000) scale(minor-harmonic dis) random-seed(5372)")
-	// parse("set tempo 143 15000 ");
+	parse("set tempo 143 15000 ");
 	// parse("set tempo(143)");
 }
 
