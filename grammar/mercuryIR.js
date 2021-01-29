@@ -16,17 +16,17 @@ function identifier(obj){
 	} else if (v.match(/^~[^\s]*$/)){
 		return { "@signal" : v }
 	}
-	return { "@identifier" : v }
+	return v;
 }
 
 // processing for numbers
 function num(obj){
-	return { "@number" : Number(obj[0].value) };
+	return Number(obj[0].value);
 }
 
 // processing for division
 function division(obj){
-	return { "@division" : obj[0]+"/"+obj[2] };
+	return `${obj[0]}/${obj[2]}`;
 }
 
 /*function bindFunction(obj){
@@ -46,31 +46,55 @@ let code = {
 	'objects' : {}
 }
 
+const util = require('util');
+
 function parseTree(tree){
-	traverseTree(tree, code, 0);
+	code = traverseTree(tree, code);
 
 	console.log(code);
+	// console.log(util.inspect(code, {showHidden: false, depth: null}))
 }
 
-function traverseTree(tree, code, level){
+function traverseTree(tree, code){
 	// console.log(`tree at level ${level}`, tree);
 
 	let map = {
 		'@global' : (ccode, el) => {
-			console.log('@global', el);
+			// console.log('@global', el);
 			return ccode;
 		},
-		'@ring' : (ccode, el) => {
+		'@list' : (ccode, el) => {
 			// console.log('@ring', el);
-			ccode.variables[el['@name']] = [];
+			let r = traverseTree(el['@params'], ccode);
+			// r = (Array.isArray(r))? r : [r];
+
+			ccode.variables[el['@name']] = r;
 			return ccode;
 		},
 		'@object' : (ccode, el) => {
 
 		},
+		'@array' : (ccode, el) => {
+			let arr = [];
+			el.map((e) => {
+				Object.keys(e).map((k) => {
+					arr.push(map[k](code, e[k]));
+				});
+			});
+			return arr;
+		},
+		'@identifier' : (ccode, el) => {
+			if (code.variables[el]){
+				return code.variables[el];
+			}
+			return el;
+		},
+		'@string' : (ccode, el) => {
+			return el;
+		},
 		'@number' : (ccode, el) => {
-			console.log(el);
-		}
+			return el;
+		},
 	}
 
 	if (Array.isArray(tree)) {
@@ -85,17 +109,7 @@ function traverseTree(tree, code, level){
 			code = map[k](code, tree[k]);
 		});
 	}
-	// return code;
-
-	// Object.keys(tree).forEach((k) => {
-	// 	if (k === '@ring'){
-	// 		// code.variables[tree[k]['@name']] = [];
-	// 		// console.log(`ring, level ${level} :`, tree[k]);
-	// 		traverseTree(tree[k], code, ++level);
-	// 	} else {
-	// 		traverseTree(tree[k], code, ++level);
-	// 	}
-	// });
+	return code;
 }
 
 module.exports = { identifier, num, parseTree, traverseTree };

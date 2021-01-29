@@ -29,8 +29,9 @@ function parse(s){
 		// traverse tree
 		worker.parseTree(parser.results[0]);
 	} catch (e) {
-		// console.log("!!! Parse failed: \n", e.message);
-		console.log("Interpreted as comment:", { '@comment': parser.lexer.buffer });
+		console.log("!!! Parse failed: \n", e.message);
+		// console.log("Interpreted as comment:", { '@comment': parser.lexer.buffer });
+
 		// console.log(parser.lexer);
 		// console.log("Trying: \n", s.substring(0, parser.lexer.index-1));
 		// parse(s.substring(0, parser.lexer.index-1));
@@ -147,9 +148,11 @@ function parseKeywords(){
 }
 
 function parseRing(){
-	parse("ring myVal 3.14");
-	// parse("ring myArr [ 1 2 3.4 56 7.89e-13 ]");
-	// parse("ring hats [hat_dub hat_dub_open]");
+	parse("ring myVal 3.141592654");
+	parse('ring arr [ 1 2 myVal ]');
+	parse("ring myArr [ 1 2 arr 56 7.89e-13 ]");
+	parse("ring hats [hat_dub hat_dub_open]");
+	parse("ring strArr ['hey' `a string here` 'and one more']");
 	// parse("ring ring2D [ 1 2 [3 4] 5 [6 [7 8] 9] 10 11 ] ");
 
 	// parse("ring beat euclid(16 4 0)")

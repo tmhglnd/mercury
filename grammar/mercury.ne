@@ -33,7 +33,7 @@ const lexer = moo.compile({
 	// rFunc:		'}'
 	
 	string:		{ 
-					match: /["|'|\`](?:\\["\\]|[^\n"\\])*["|'|\`]/, 
+					match: /["'`](?:\\["\\]|[^\n"'``])*["'`]/, 
 					value: x => x.slice(1, x.length-1)
 				},
 	
@@ -56,7 +56,7 @@ main ->
 		{% (d) => { return { "@global" : d[1] }} %}
 	|
 	_ ringStatement _
-		{% (d) => { return { "@ring" : d[1] }} %}
+		{% (d) => { return { "@list" : d[1] }} %}
 	|
 	_ objectStatement _
 		{% (d) => { return { "@object" : d[1] }} %}
@@ -143,7 +143,8 @@ functionArguments ->
 
 array ->
 	%lArray _ params:? _ %rArray
-		{% (d) => { return { "@array" : d[2] }} %}
+		{% (d) => { return { "@array" : d[2].flat(Infinity) }} %}
+		# {% (d) => { return { "@array" : d[2] }} %}
 
 params ->
 	paramElement
@@ -151,7 +152,7 @@ params ->
 	|
 	paramElement _ params
 		{% (d) => [d[0], d[2]] %}
-		# {% (d) => d[0].join(d[2]) %}
+		# {% (d) => [d[0]].join(d[2]) %}
 
 paramElement ->
 	# %signal
@@ -161,7 +162,7 @@ paramElement ->
 	# 	{% (d) => { return { "@address" : d[0].value }} %}
 	# |
 	%number
-		{% (d) => { return IR.num(d) } %}
+		{% (d) => { return { "@number" : IR.num(d) }} %}
 		# {% (d) => { return IR.num(d) } %}
 	|
 	# %note
@@ -183,11 +184,11 @@ paramElement ->
 
 division ->
 	%number %divider %number
-		{% (d) => { return IR.division(d) } %}
+		{% (d) => { return { "@division" : IR.division(d) }} %}
 
 name ->
 	%identifier
-		{% (d) => { return IR.identifier(d) } %}
+		{% (d) => { return { "@identifier" : IR.identifier(d) }} %}
 	|
 	%string
 		{% (d) => { return { "@string" : d[0].value }} %}
