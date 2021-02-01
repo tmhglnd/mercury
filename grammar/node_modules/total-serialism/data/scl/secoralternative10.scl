@@ -1,0 +1,31 @@
+! secoralternative10.scl
+!
+George Secor "meantone alternative", {196/195, 676/675}-tempering in POTE tuning of 2.3.5.7.13 scale
+ 10
+!
+ 140.00441
+ 264.20379
+ 388.40316
+ 496.79750
+ 594.80816
+ 703.20250
+ 843.20691
+ 967.40629
+ 1091.60566
+ 2/1
+!
+!! secoralternativeJI.scl
+!!
+!Transversal (original JI version)
+! 10
+!
+! 13/12
+! 7/6
+! 5/4
+! 4/3
+! 45/32
+! 3/2
+! 13/8
+! 7/4
+! 15/8
+! 2/1

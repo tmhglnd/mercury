@@ -5,28 +5,31 @@
 //==========================================================================
 
 // const bind = require('./bind-functions.gen.json');
+const tsIR = require('./totalSerialismIR.js').functionMap;
 
 // processing for identifiers
 function identifier(obj){
-	// console.log('identifier():', obj);
 	let v = obj[0].value;
-	// is the identifier a note?
-	if (v.match(/^[a-gA-G](?:[0-9])?(?:#+|b+|x)?$/)){
+	if (v.match(/^[a-gA-G](?:#+|b+|x)?(?:[0-9])?$/)){
+		// is the identifier a note?
 		return { "@note" : v }
 	} else if (v.match(/^~[^\s]*$/)){
+		// is the identiefer a signal?
 		return { "@signal" : v }
 	}
-	return v;
-}
-
-// processing for numbers
-function num(obj){
-	return Number(obj[0].value);
+	return { "@identifier" : v };
 }
 
 // processing for division
 function division(obj){
-	return `${obj[0]}/${obj[2]}`;
+	// concatenate division numbers to string
+	return { "@division" : obj[0].value + '/' + obj[2].value };
+}
+
+// processing for numbers
+function num(obj){
+	// parse string to number
+	return { "@number" : Number(obj[0].value) };
 }
 
 /*function bindFunction(obj){
@@ -40,39 +43,84 @@ function division(obj){
 	return b;
 }*/
 
+const instruments = {
+	'synth' : {
+		'type' : 'saw',
+		'functions' : {
+			'note' : [ 0, 0 ],
+			'time' : [ '1', 0 ],
+			'env' : [ 5, 500 ],
+			'beat' : 1,
+			'amp' : 0.7,
+			'wave2' : [ 'saw', 0 ],
+			'add_fx' : [],
+		}
+	}
+}
+
 let code = {
-	'global' : {},
+	'global' : {
+		'tempo' : 90,
+		'scale' : 'chromatic',
+		'root' : 'c',
+		'randomSeed' : 0
+	},
 	'variables' : {},
 	'objects' : {}
 }
 
-const util = require('util');
-
-function parseTree(tree){
-	code = traverseTree(tree, code);
-
-	console.log(code);
-	// console.log(util.inspect(code, {showHidden: false, depth: null}))
+function traverseTreeIR(tree){
+	tree.map((t) => {
+		// console.log(t);
+		code = traverseTree(t, code);
+	})
+	return code;
 }
 
-function traverseTree(tree, code){
+function traverseTree(tree, code, level){
 	// console.log(`tree at level ${level}`, tree);
-
 	let map = {
 		'@global' : (ccode, el) => {
 			// console.log('@global', el);
 			return ccode;
 		},
 		'@list' : (ccode, el) => {
-			// console.log('@ring', el);
-			let r = traverseTree(el['@params'], ccode);
-			// r = (Array.isArray(r))? r : [r];
-
+			// console.log('@list', el);
+			let r = traverseTree(el['@params'], ccode, '@list');
 			ccode.variables[el['@name']] = r;
 			return ccode;
 		},
 		'@object' : (ccode, el) => {
+			// console.log('@object', el);
+			if (el['@action'] === 'new'){
+				let inst = JSON.parse(JSON.stringify(instruments[el['@new']]));
 
+			}
+			return ccode;
+		},
+		'@function' : (ccode, el, level) => {
+			// console.log('@func', el);
+			let args = [];
+			if (el['@args'] !== null){
+				el['@args'].map((e) => {
+					Object.keys(e).map((k) => {
+						args.push(map[k](code, e[k], level));
+					});
+				});
+			}
+			// console.log('@func', el, '@args', args, '@level', level);
+			if (tsIR[el['@name']]){
+				if (args){
+					return tsIR[el['@name']](...args);
+				}
+				return tsIR[el['@name']]();
+			} else if (level === '@list'){
+					console.error(`Unknown list function: ${el['@name']}`);
+					return [0];
+			} else {
+				el['@args'] = args;
+				return el;
+			}
 		},
 		'@array' : (ccode, el) => {
 			let arr = [];
@@ -95,21 +143,27 @@ function traverseTree(tree, code){
 		'@number' : (ccode, el) => {
 			return el;
 		},
+		'@division' : (ccode, el) => {
+			return el;
+		},
+		'@note' : (ccode, el) => {
+			return el;
+		}
 	}
 
 	if (Array.isArray(tree)) {
 		tree.map((el) => {
 			Object.keys(el).map((k) => {
-				code = map[k](code, el[k]);
+				code = map[k](code, el[k], level);
 			});
 		})
 	} else {
 		Object.keys(tree).map((k) => {
 			// console.log(k);
-			code = map[k](code, tree[k]);
+			code = map[k](code, tree[k], level);
 		});
 	}
 	return code;
 }
 
-module.exports = { identifier, num, parseTree, traverseTree };
+module.exports = { identifier, division, num, traverseTreeIR };

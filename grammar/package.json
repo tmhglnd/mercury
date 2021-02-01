@@ -14,8 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fs-extra": "^9.1.0",
     "jsonfile": "^5.0.0",
-    "nearley": "^2.20.1"
+    "nearley": "^2.20.1",
+    "total-serialism": "^1.14.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

@@ -1,0 +1,26 @@
+! diamond9block.scl
+!
+Weak Fokker block one note different from the 9-limit diamond
+! <<3 -2 7 -10 2 22||: -9 to 9; <<1 -7 -4 -13 -9 11||: -9 to 9; <<4 10 3 6 -7 -22||: -8 to 10
+! Fokker block commas: 135/112, 126/125, 160/147
+19
+!
+10/9
+9/8
+8/7
+7/6
+6/5
+5/4
+9/7
+4/3
+7/5
+10/7
+3/2
+14/9
+5/3
+12/7
+7/4
+16/9
+9/5
+27/14
+2/1

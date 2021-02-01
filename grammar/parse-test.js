@@ -1,42 +1,73 @@
 
+const fs = require('fs-extra');
 const util = require('util');
 const nearley = require('nearley');
+
 const grammar = require('./grammar.js');
 const worker = require('./mercuryIR.js');
 
-function parse(s){
-	// create a Parser object from our grammar
-	var parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
-	try {
-		// parse something!
-		parser.feed(s);
+function parse(code){
+	// split multiple lines into array of strings
+	let lines = code.split('\n');
+	let ast = { '@main' : [] };
+	let result = {};
 
-		// parser.results is an array of possible parsings.
-		var results = parser.results.length;
+	for (let l in lines){
+		// create a Parser object from our grammar
+		let parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
+		if (lines[l] !== ''){			
+			try {
+				// parse something!
+				parser.feed(lines[l]);
 
-		if (results > 1){
-			console.log("!!! Warning, ambiguous grammar!");
-			for (var i=0; i<results; i++){
-				console.log("Result", i+1, "of", results, "\n", 
-				util.inspect(parser.results[i], { depth: 10 }), 
-				// console.log(parser.results[i]), 
-				"\n");
+				// parser.results is an array of possible parsings.
+				var results = parser.results.length;
+
+				if (results > 1){
+					console.log("!!! Warning, ambiguous grammar!");
+					for (var i=0; i<results; i++){
+						console.log("Result", i+1, "of", results, "\n", 
+						util.inspect(parser.results[i], { depth: 10 }), 
+						// console.log(parser.results[i]), 
+						"\n");
+					}
+				} else {
+					// console.log("Parse succesful: \n", util.inspect(parser.results[0], { depth: 10}), "\n");
+				}
+				// build the tokenized syntax tree
+				ast['@main'].push(parser.results[0]);
+			} catch (e) {
+				console.log("!!! Parse failed: \n", e.message);
+				// console.log("Interpreted as comment:", { '@comment': parser.lexer.buffer });
+
+				// console.log(parser.lexer);
+				// console.log("Trying: \n", s.substring(0, parser.lexer.index-1));
+				// parse(s.substring(0, parser.lexer.index-1));
 			}
-		} else {
-			console.log("Parse succesful: \n", util.inspect(parser.results[0], { depth: 10}), "\n");
 		}
-
-		// traverse tree
-		worker.parseTree(parser.results[0]);
-	} catch (e) {
-		console.log("!!! Parse failed: \n", e.message);
-		// console.log("Interpreted as comment:", { '@comment': parser.lexer.buffer });
-
-		// console.log(parser.lexer);
-		// console.log("Trying: \n", s.substring(0, parser.lexer.index-1));
-		// parse(s.substring(0, parser.lexer.index-1));
 	}
+	// traverse Syntax Tree and create Intermediate Representation
+	result = worker.traverseTreeIR(ast['@main']);
+
+	// write AST and IR as json files to disk
+	// fs.writeJSONSync('./test/mercuryAST.json', ast, { spaces: 2 });
+	// fs.writeJSONSync('./test/mercuryIR.json', result, { spaces: 2 });
+	return result;
 }
+
+function parseFile(f){
+	let time = Date.now();
+
+	let file = fs.readFileSync(f, 'utf-8');
+	let result = parse(file);
+
+	time = Date.now() - time;
+	console.log(`parsed code succesful within: ${time} ms`);
+
+	// console.log(result);
+}
+
+parseFile('./test/ring-dev.txt');
 
 // @global:
 // parseNumbers();
@@ -51,7 +82,7 @@ function parse(s){
 // parseOSC();
 
 // @ring:
-parseRing();
+// parseRing();
 
 // @object:
 // parseInst();
@@ -153,27 +184,30 @@ function parseRing(){
 	parse("ring myArr [ 1 2 arr 56 7.89e-13 ]");
 	parse("ring hats [hat_dub hat_dub_open]");
 	parse("ring strArr ['hey' `a string here` 'and one more']");
-	// parse("ring ring2D [ 1 2 [3 4] 5 [6 [7 8] 9] 10 11 ] ");
+	parse("ring ring2D [ 1 2 [3 4] 5 [6 [7 8] 9] 10 11 ] ");
 
-	// parse("ring beat euclid(16 4 0)")
-	// parse("ring grv choose(8 [hat kick snare])")
-	// parse("ring arpMel clone( palin( spread(5 0 12) ) 0 0 7 3 )");
-	// parse("ring bsLine clone( spray( bassBt spread(5 0 17) ) )" );
-	// parse("ring bsLine clone( spray( bassBt spread(5 0 17) ) )" );
+	parse("ring beat euclid(16 9 0)")
+	parse("ring grv choose(8 [hat kick snare])")
+	parse("ring arpMel clone( palin( spread(5 0 12) ) 0 0 7 3 )");
+	parse("ring bsLine clone( spread(5 0 17) 0 5 7 )" );
+	parse("ring bsLine2 shuffle( spread(5 0 17))" );
+	parse("ring bsLine3 clone( spray( bassBt spread(5 0 17) ) )" );
+
+	parse('ring notes palin([c4 e4 f4 d#4 gb5])');
 }
 
 function parseInst(){
 	parse("new synth saw");
 	parse("new sample hat_min");
-	parse("new polySynth triangle");
+	// parse("new polySynth triangle");
 	parse("new sample [hat_min kick snare tabla]");
-	parse("new synth [ saw triangle ]");
+	// parse("new synth [ saw triangle ]");
 
-	parse("new synth saw note([0 5 7 9] 0)");
-	parse("new sample [kick snare] time(0.25 0.5) speed(0.9) ");
-	parse("new loop amen-break02 speed(randomFloat(8 0.5 0.9))");
+	// parse("new synth saw note([0 5 7 9] 0)");
+	// parse("new sample [kick snare] time(0.25 0.5) speed(0.9) ");
+	// parse("new loop amen-break02 speed(randomFloat(8 0.5 0.9))");
 
-	parse("new emitter osc name(fred)");
+	// parse("new emitter osc name(fred)");
 }
 
 function parseSet(){

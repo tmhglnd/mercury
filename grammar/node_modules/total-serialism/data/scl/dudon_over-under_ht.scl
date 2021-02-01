@@ -1,0 +1,20 @@
+! dudon_over-under_ht.scl
+!
+Cycle of fifths, one half above 3/2, the other below (meantone)
+! white keys play the meantone part, black keys add interesting chromatisms
+! suggested tonics : A, G#m, C#m , C, F7
+ 12
+!
+ 33/32
+ 215/192
+ 75/64
+ 239/192
+ 4/3
+ 131/96
+ 287/192
+ 149/96
+ 5/3
+ 85/48
+ 179/96
+ 2/1
+! Dudon 2009

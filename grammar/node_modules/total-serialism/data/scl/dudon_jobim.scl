@@ -1,0 +1,20 @@
+! dudon_jobim.scl
+!
+Triple equal-beating 1/5 syntonic comma meantone, full 12 tones scale
+ 12
+!
+ 13893147/13238272
+ 1809/1616
+ 246989/206848
+ 64801/51712
+ 135/101
+ 2321289/1654784
+ 1209/808
+ 10155/6464
+ 10827/6464
+ 184251/103424
+ 387843/206848
+ 2/1
+!
+! Deolia sequence  x^4 = (3/4)x^3 + 5/2, triple eq-b of all minor chords, Dudon 2006
+! 8E - 10C   =   6A - 8E   =   3A - 5C    (etc.)

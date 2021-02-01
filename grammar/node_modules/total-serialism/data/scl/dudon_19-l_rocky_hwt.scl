@@ -1,0 +1,19 @@
+! dudon_19-l_rocky_hwt.scl
+!
+19-limit well-temperament, C to B achieving eq-b of bluesy DEG-type chords (2005)
+ 12
+!
+ 256/243 ! C#
+ 272/243 ! D
+ 32/27 ! Eb
+ 304/243 ! E
+ 4/3 ! F
+ 1024/729 ! F#
+ 364/243 ! G
+ 128/81 ! G#
+ 1216/729 ! A
+ 16/9 ! Bb
+ 4096/2187 ! B
+ 2/1
+! three occurrences of Eair eq-b recurrent sequence 2x^3 - 3 = x^2
+! 3C - 2G = 3A - 5C, etc. (and complements) all in synchronous-beating

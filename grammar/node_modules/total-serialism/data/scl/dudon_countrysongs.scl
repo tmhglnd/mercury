@@ -1,0 +1,19 @@
+! dudon_countrysongs.scl
+!
+CDEG chords and all transpositions equal-beating meantone sequence
+ 12
+!
+ 7413/7072
+ 495/442
+ 264/221
+ 4429/3536
+ 591/442
+ 9925/7072
+ 1323/884
+ 11097/7072
+ 2961/1768
+ 395/221
+ 6633/3536
+ 2/1
+! Hummy recurrent sequence x^4 - 5 = x(3 - 2x), Dudon 2006
+! 4E - 5C = 6G - 8D  etc., in all possible fifths transpositions from Eb

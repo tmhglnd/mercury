@@ -1,0 +1,20 @@
+! dudon_cometslendro2.scl
+!
+Five septimal tone comets (quasi auto-coherent intervals) in one octave
+ 12
+!
+ 4117/3600
+ 517/450
+ 473/360
+ 95/72
+ 33/25
+ 679/450
+ 10913/7200
+ 26/15
+ 1567/900
+ 448/225
+ 448/225
+ 2/1
+!
+! -c based on 225/224 (1792 - 1567 = 225, maximally 5-edo)
+! difference tones : 900  1034  1188  1360-1364  1567

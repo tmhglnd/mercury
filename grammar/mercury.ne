@@ -6,14 +6,15 @@ const IR = require('./mercuryIR.js');
 const lexer = moo.compile({
 	comment:	/(?:\/\/|\$).*?$/,
 	
-	instrument:	{
+	//instrument: [/synth/, /sample/, /polySynth/, /loop/, /emitter/],
+	/*instrument:	{
 					match: [/synth\ /, /sample\ /, /polySynth\ /, /loop\ /,/emitter\ / ],
 					value: x => x.slice(0, x.length-1)
-				},
+				},*/
 
-	ring:		[/ring\ /, /array\ /, /data\ /],
-	newObject:	[/new\ /, /add\ /],
-	setObject:	[/set\ /, /apply\ /, /send\ /, /give\ /],
+	ring:		[/ring\ /, /array\ /, /list\ /],
+	newObject:	[/new\ /, /make\ /, /add\ /],
+	setObject:	[/set\ /, /apply\ /, /give\ /, /send\ /],
 	//action:		[/ring\ /, /new\ /, /set\ /],
 	//kill:		/kill[\-|_]?[a|A]ll/,
 
@@ -68,18 +69,20 @@ main ->
 	# 	}%}
 
 objectStatement ->
-	%newObject _ %instrument _ (name|array)
+	%newObject _ %instrument __ objectIdentifier
 		{% (d) => {
+			console.log('object', d[4]);
 			return {
+				"@action" : 'new',
 				"@new" : d[2].value,
 				"@type" : d[4]
 			}
-			return d;
 		}%}
 	|
-	%newObject _ %instrument _ (name|array) __ objExpression
+	%newObject _ %instrument __ objectIdentifier __ objExpression
 		{% (d) => {
 			return {
+				"@action" : 'new',
 				"@new" : d[2].value,
 				"@type" : d[4],
 				"@funcs" : d[6]
@@ -89,10 +92,18 @@ objectStatement ->
 	%setObject _ name __ objExpression
 		{% (d) => {	
 			return {
+				"@action" : 'set',
 				"@set" : d[2],
 				"@args" : d[4]
 			}
 		}%}
+
+objectIdentifier ->
+	name
+		{% id %}
+	|
+	array
+		{% id %}
 
 ringStatement ->
 	%ring _ %identifier _ paramElement:?
@@ -106,9 +117,9 @@ ringStatement ->
 globalStatement ->
 	%comment
 		{% (d) => { return { "@comment": d[0].value }} %}
-	# |
-	# objExpression
-	# 	{% (d) => d[0] %}
+	|
+	objExpression
+		{% (d) => d[0] %}
 	# |
 	# objExpression _ %seperator:?
 	# 	{% (d) => d[0] %}
@@ -132,8 +143,10 @@ function ->
 		{% (d) => {
 			return { 
 				//"@function": IR.bindFunction(d[0].value),
-				"@function": d[0].value,
-				"@args": d[1]
+				"@function": { 
+					"@name": d[0].value,
+					"@args": d[1]
+				}
 			}
 		}%}
 
@@ -143,35 +156,22 @@ functionArguments ->
 
 array ->
 	%lArray _ params:? _ %rArray
-		{% (d) => { return { "@array" : d[2].flat(Infinity) }} %}
-		# {% (d) => { return { "@array" : d[2] }} %}
+		{% (d) => { return { "@array" : d[2] }} %}
 
 params ->
 	paramElement
-		{% (d) => d[0] %}
+		{% (d) => [d[0]] %}
 	|
 	paramElement _ params
-		{% (d) => [d[0], d[2]] %}
-		# {% (d) => [d[0]].join(d[2]) %}
+		{% (d) => [d[0], d[2]].flat(Infinity) %}
 
 paramElement ->
-	# %signal
-	# 	{% (d) => { return { "@signal" : d[0].value }} %}
-	# |
-	# %osc
-	# 	{% (d) => { return { "@address" : d[0].value }} %}
-	# |
 	%number
-		{% (d) => { return { "@number" : IR.num(d) }} %}
-		# {% (d) => { return IR.num(d) } %}
+		{% (d) => { return IR.num(d) } %}
 	|
-	# %note
-	# 	{% (d) => { return { "@note" : d[0].value }} %}
-	# |
 	name
-		{% (d) => {
-			return d[0]
-		} %}
+		{% (d) => d[0] %}
+		# {% id %}
 	|
 	array
 		{% (d) => d[0] %}
@@ -181,14 +181,17 @@ paramElement ->
 	|
 	division
 		{% (d) => d[0] %}
+	# |	
+	# %osc
+	# 	{% (d) => { return { "@address" : d[0].value }} %}
 
 division ->
 	%number %divider %number
-		{% (d) => { return { "@division" : IR.division(d) }} %}
+		{% (d) => { return IR.division(d) } %}
 
 name ->
 	%identifier
-		{% (d) => { return { "@identifier" : IR.identifier(d) }} %}
+		{% (d) => { return IR.identifier(d) } %}
 	|
 	%string
 		{% (d) => { return { "@string" : d[0].value }} %}

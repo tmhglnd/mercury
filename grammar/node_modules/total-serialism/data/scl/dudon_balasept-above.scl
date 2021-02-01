@@ -1,0 +1,22 @@
+! dudon_balasept-above.scl
+!
+5.7.13.15 tuning based on a single Balasept sequence 
+ 12
+!
+ 517/480
+ 277/240
+ 597/480
+ 13/10
+ 4/3
+ 689/480
+ 3/2 
+ 53/32
+ 26/15
+ 28/15
+ 39/20
+ 2/1
+! Balasept -c recurrent sequence, x^15 = 4x + 4
+! x = 1,15440763765962 or 248.58329996 cents (5 then 29 notes MOS)
+! first segment [117 (135) 156 180 208 240 277 320 ... 
+! second and higher segment on black keys :
+! [448 517 597 689 795 ... (517 = C#)

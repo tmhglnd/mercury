@@ -1,0 +1,20 @@
+! dudon_mandinka.scl
+!
+Guinean Balafon circular tuning, neutral diatonic -c interpretation 
+ 12
+!
+ 1/1
+ 581/524
+ 581/524
+ 161/131
+ 176/131
+ 176/131
+ 195/131
+ 195/131
+ 865/524
+ 865/524
+ 240/131
+ 2/1
+! Gazelle -c recurrent sequence x^5 = 8x^4 - 32 , Dudon 2009
+!  differential coherence of major thirds and semitones
+!  series (octave-reduced) 11 131 195 581 865 161 15

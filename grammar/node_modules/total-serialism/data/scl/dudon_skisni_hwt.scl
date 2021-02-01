@@ -1,0 +1,22 @@
+! dudon_skisni_hwt.scl
+!
+Triple equal-beating sequence from C to B, optimal major chords on white keys
+ 12
+! 
+ 256/243
+ 573/512
+ 32/27
+ 641/512
+ 4/3
+ 1024/729
+ 383/256
+ 128/81
+ 857/512
+ 16/9
+ 959/512
+ 2/1
+! 2 x^4 = x^3 + 4
+! Skisni triple equal-beating and -c quasi-1/5 Pyth.c meantone sequence, Dudon 2006 :
+! 4E - 5C = 3G - 2C = (3/8)E - (5/4)G,   4B - 5G = 6D - 2G = (3/8)B - (5/2)D
+! fifths beatings from C : 2 3 5 7 10 
+! (other version of Kellner 1/5 Pyth.c.wt by changing 959/512 to 1923/1024) 

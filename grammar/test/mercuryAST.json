@@ -1,0 +1,1756 @@
+{
+  "@main": [
+    {
+      "@global": {
+        "@comment": "// // set debug 0"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // possible arrays and datatypes with arbitrary spaces"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ar1 [0 12 3.14 56 789]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ar1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ar2 [11 22 33 44 55]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ar2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ar3 [hat kick 3.14 123]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ar3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ar4 [0 5 7 9]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ar4"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ar5 [0 12 24 -12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ar5"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring arr2d [0[1 2] 3]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print arr2d"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ar6 [0 [ 1 2 ] 3 [ 4 5 6] 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ar6"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring arr2d2 [hat [kick snare] 1.23 [4 5 [6 7] ]8 9]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print arr2d2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // ring ar8 (0 (1 3)2 5(6 7 8 )  )"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // print ar8"
+      }
+    },
+    {
+      "@list": {
+        "@name": "spr",
+        "@params": {
+          "@function": {
+            "@name": "spread",
+            "@args": null
+          }
+        }
+      }
+    },
+    {
+      "@list": {
+        "@name": "spr1",
+        "@params": {
+          "@function": {
+            "@name": "spread",
+            "@args": [
+              {
+                "@number": 5
+              },
+              {
+                "@number": 0
+              },
+              {
+                "@number": 12
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print spr1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 2 4 7 9]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring spr2 spreadFloat(5 -1 1)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print spr2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [-1 -0.6 -0.2 0.2 0.6]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring spr3 spreadF(5 0 2)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print spr3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 0.4 0.8 1.2 1.6]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring spr4 spread(5 12 0)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print spr4"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [9 7 4 2 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring spi1 spreadInclusive(5 0 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print spi1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 3 6 9 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring spi2 spreadInclusiveFloat(5 -1 1)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print spi2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [-1 -0.5 0 0.5 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring spi3 spreadInclusiveF(5 0 2)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print spi3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 0.5 1 1.5 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring spi4 spreadInclusive(5 12 0)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print spi4"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [12 9 6 3 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring fll1 fill(10 2 15 3 20 4)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print fll1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [10 10 15 15 15 20 20 20 20]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring fll2 fill(kick_min 2 hat_min 3)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print fll2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [kick_min kick_min hat_min hat_min hat_min]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sin1 sine(10)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sin1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [6 9 11 11 9 6 2 0 0 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sin2 sine(10 1 -12 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sin2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 7 11 11 7 0 -7 -11 -11 -7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sin3 sine(10 2 0 5)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sin3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [2 4 3 1 0 2 4 3 1 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sin4 sineFloat(8)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sin4"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 0.707 1 0.707 0 -0.707 -1 -0.707]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sin5 sineF(12 3 -1 1)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sin5"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 1 0 -1 0 1 0 -1 0 1 0 -1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring cos1 cosine(10)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print cos1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [12 10 7 4 1 0 1 4 7 10]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring cos2 cosine(10 1 -12 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print cos2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [12 9 3 -3 -9 -12 -9 -3 3 9]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring cos3 cosine(10 2 0 5)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print cos3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [5 3 0 0 3 4 3 0 0 3]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring cos4 cosineFloat(8)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print cos4"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 0.707 0 -0.707 -1 -0.707 0 0.707]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring cos5 cosineF(12 3 -1 1)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print cos5"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 0 -1 0 1 0 -1 0 1 0 -1 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring euc1 euclidean()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print euc1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 0 1 0 1 0 1 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring euc2 euclid(7 5)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print euc2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 1 0 1 1 0 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring euc3 euclid(7 5 2)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print euc3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// //=> [0 1 1 1 0 1 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring hex1 hexBeat()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print hex1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 0 0 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring hex2 hex(a)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print hex2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 0 1 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring hex3 hex(f9cb)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print hex3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 1 1 1 1 0 0 1 1 1 0 0 1 0 1 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring fib1 fibonacci(10)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print fib1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 1 1 2 3 5 8 13 21 34]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring fib2 fibonacci(3 10)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print fib2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [55 89 144]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring psn1 pisano()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print psn1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 1 1 2 3 5 8 1 9 10 7 5 0 5 5 10 3 1 4 5 9 2 11 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring psn2 pisano(3)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print psn2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 1 1 2 0 2 2 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring psn3 pisano(11)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print psn3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 1 1 2 3 5 8 2 10 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring psn4 pisano(1)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print psn4"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring pll1 pell(8)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print pll1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 1 2 5 12 29 70 169]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring luc1 lucas(8)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print luc1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [2 1 3 4 7 11 18 29]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring tfi1 threeFibonacci(8)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print tfi1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 1 3 10 33 109 360 1189]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 31415"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rnd1 random(5)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print rnd1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 0 0 1 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rnd2 random(5 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print rnd2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 10 3 2 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rnd3 rand(5 -12 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print rnd3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [-2 -5 -8 -11 6]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 31415"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rnf1 randomFloat(5)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print rnf1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0.81 0.32 0.01 0.85 0.88]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rnf2 randomF(5 0 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print rnf2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0.16 10.72 3.16 262 2.34]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rnf3 randF(5 -12 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print rnf3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [-1.19 -4.21 -7.36 -10.31 6.82]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 1618"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring urn1 urn(5)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print urn1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [3 7 10 0 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring urn2 urn(8 4)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print urn2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 2 1 3 1 3 0 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring urn3 urn(8 10 14)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print urn3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [13 10 12 11 12 10 13 11]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 271828"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring coin1 coin(8)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print coin1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 0 1 0 1 0 1 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring dice1 dice(8)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print dice1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [5 4 6 4 4 5 4 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 271828"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring twv1 twelveTone()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print twv1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// => [10 7 6 3 2 9 8 4 1 5 0 11]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 62832"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring samples [hat snare kick]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sequence choose(10 samples)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sequence"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [hat kick hat kick hat snare kick hat hat hat]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 3 7 5 9 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melody choose(10 notes)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print melody"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 5 3 9 0 7 3 12 3 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 62832"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring samples [hat snare kick tom]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sequence pick(10 samples)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sequence"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [hat kick tom snare tom hat snare kick tom hat]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 3 7 5 9 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melody pick(10 notes)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print melody"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [3 0 7 9 12 5 0 7 12 9]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 14142"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring samples [hat snare kick tom]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring shf1 shuffle(samples)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print shf1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [snare tom kick hat]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 3 7 5 9 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring shf2 scramble(notes)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print shf2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [12 0 3 7 5 9]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 3 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melody clone(notes 0 12 7 -7)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print melody"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 3 7 12 15 19 7 10 14 -7 -4 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partA [0 3 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partB [24 19 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partC [-7 -5 -3]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring phrase combine(partA partB partC)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print phrase"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 3 7 24 19 12 -7 -5 -3]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partC [kick hat snare hat]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partD [hat hat hat snare]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sequence join(partC partD)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sequence"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [kick hat snare hat hat hat hat snare]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // concat()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 3 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring phrase duplicate(notes 4)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print phrase"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 3 7 0 3 7 0 3 7 0 3 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // dup()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rhythm [1 0 1 1 0 1 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sequence every(rhythm 2 8)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sequence"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melody [5 7 3 9 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring phrase every(melody 2 7 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print phrase"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [5 7 3 9 1 12 12 12 12 12 12 12 12 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rhythm [1 1 0 1 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sequence every(rhythm 2 8 0 1)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sequence"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 3 7 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring inv1 invert(notes)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print inv1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [12 9 5 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring inv2 invert(notes 5)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print inv2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [10 7 3 -2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring inv3 invert(notes 3 10)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print inv3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [13 10 6 1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // inverse()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // flip()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // inv()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 7 7 5 3 12 0 3 3]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring flt1 filter(notes 3)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print flt1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring flt2 filter(notes 7 5 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print flt2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partA [0 3 7 5 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partB [12 19 15]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partC [24 22]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melody lace(partA partB partC)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print melody"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 12 24 3 19 22 7 15 5 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // zip()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partA [0 3 7 5 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring partB [12 19 15] "
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring merged merge(partA partB)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print merged"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [[0 12] [3 19] [7 15] 5 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // mix()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 3 7 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melodyA palindrome(notes)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print melodyA"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 3 7 12 12 7 3 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melodyB palindrome(notes 1)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print melodyB"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 3 7 12 7 3]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // palin()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // mirror()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melody [0 3 7 5 7 9 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring left rotate(melody -2)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print left"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [7 5 7 9 12 0 3]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring right rotate(melody 2)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print right"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [9 12 0 3 7 5 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // rotate()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // turn()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // rot()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring melody [0 3 7 5]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring rev reverse(melody)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print rev"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [5 7 3 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // retrograde()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // // rev()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 3 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring phrase repeat(notes 4)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 0 0 0 3 3 3 3 7 7 7 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print phrase"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring repeats [2 5 3]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring phraseB repeat(notes repeats)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 0 3 3 3 3 3 7 7 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print phraseB"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // also works with strings"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring samples [kick snare hat]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring beats repeat(samples repeats)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [kick kick snare snare snare snare hat hat hat]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print beats"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 4837"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes random(12 0 12)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring srt1 sort(notes)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print srt1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [2 2 3 3 5 6 6 6 7 9 10 11]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring srt2 sort(notes -1)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print srt2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [11 10 9 7 6 6 6 5 3 3 2 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [12 19 15 17]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring places [1 0 0 1 1 0 1 0 1 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring sprayed spray(notes places)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print sprayed"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [12 0 0 19 15 0 17 0 12 0]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring notes [0 5 7 3 7 7 0 12 5]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring thinned unique(notes)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print thinned"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [0 5 7 3 12]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // thin()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // add()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // subtract()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // sub()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // multiply()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // mul()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // divide()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // div()"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set tempo 120"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ms1 dtoms(divs)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ms1"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [500 1000 250 375 500 333.33 4000]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ms2 dtoms(divs 100)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ms2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [600 1200 300 450 600 400 4800]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ratios [0.25 0.125 0.1875 0.25 0.16667 2]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring ms3 dtoms(ratios)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print ms3"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// // => [500 1000 250 375 500 333.33 4000]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring nts [0 12 5 7]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring str stretch(nts 50)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print str"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring strF stretchFloat(nts 50)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print strF"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 3141"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring nts [0 9 7 3 5 0 -1]"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring exp expand(nts 30)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print exp"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// set randomSeed 1618"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// ring exp2 expand(nts 30)"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print exp2"
+      }
+    },
+    {
+      "@global": {
+        "@comment": "// print DONE!!!"
+      }
+    }
+  ]
+}

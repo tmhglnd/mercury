@@ -1,0 +1,19 @@
+! dudon_slendro_m-mean.scl
+!
+Wilson meantone from Bb to F# extended in a Slendro M on black keys
+ 12
+!
+ 2689/2576
+ 359/322
+ 55/46
+ 803/644
+ 215/161
+ 32/23
+ 481/322
+ 36/23
+ 537/322
+ 288/161
+ 1199/644
+ 2/1
+! Erv Wilson Meta-meantone,   x^4 = 2x + 2
+! Slendro_M -c version = 385  7  63  9  2689  (> 63  7  9  385), Dudon 1992

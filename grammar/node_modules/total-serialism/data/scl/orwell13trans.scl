@@ -1,0 +1,19 @@
+! orwell13trans.scl
+! 
+Orwell[13] 5-limit symmetric transversal
+! Fokblock([2109375/2097152, 25/24], [5, 6]) standard val Fokker block 
+13 
+! 
+16/15 
+2048/1875 
+75/64 
+5/4 
+32/25 
+512/375 
+375/256 
+25/16 
+8/5 
+128/75 
+2048/1125 
+15/8 
+2/1 

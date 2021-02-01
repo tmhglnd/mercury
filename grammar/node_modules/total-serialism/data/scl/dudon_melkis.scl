@@ -1,0 +1,19 @@
+! dudon_melkis.scl
+!
+Sequence of 11 Melkis fourths (499.11472 c.) from D
+ 12
+!
+ 30739/29088
+ 3064/2727
+ 3238/2727
+ 36499/29088
+ 539/404
+ 15379/10908
+ 4088/2727
+ 160/101
+ 584345/349056
+ 1618/909
+ 10259/5454
+ 2/1
+! Melkis recurrent sequence  x^4 - 2x = 1/2  (-c of minor thirds)
+! Dudon 1992

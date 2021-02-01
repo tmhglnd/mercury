@@ -1,0 +1,19 @@
+! dudon_sapaan.scl
+!
+7 tones from a sequence of Sapaan very low fifths (in theory 680.015678 c.)
+ 12
+!
+ 1/1
+ 337/300
+ 337/300
+ 277/225
+ 304/225
+ 304/225
+ 1333/900
+ 1333/900
+ 374/225
+ 374/225
+ 82/45
+ 2/1
+! Sapaan differentially-coherent recurrent sequence, 4x^4  - 16 = x^3, Dudon 2009
+! series used here (octave reduced) : 1011 187 277 205 19 225 1333

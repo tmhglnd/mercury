@@ -1,0 +1,21 @@
+{
+  "global": {
+    "tempo": 90,
+    "scale": "chromatic",
+    "root": "c",
+    "randomSeed": 0
+  },
+  "variables": {
+    "spr": [
+      0
+    ],
+    "spr1": [
+      0,
+      2,
+      4,
+      7,
+      9
+    ]
+  },
+  "objects": {}
+}
