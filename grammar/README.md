@@ -9,6 +9,8 @@ This folder contains the work in progress of an updated grammar design for the M
 
 ## How To Use
 
+first run `npm install` in the grammar directory
+
 1. Open the `mercury.ne` file to view the grammar in the Nearley language including the moo tokenizer as embedded js code on the top.
 2. Generate the `grammar.js` parser file with the command `npm run gen` on the commandline.
 3. Generate the railroad graph with the command `npm run graph` on the commandline.
