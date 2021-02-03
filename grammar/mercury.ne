@@ -12,7 +12,7 @@ const lexer = moo.compile({
 					value: x => x.slice(0, x.length-1)
 				},*/
 
-	ring:		[/ring\ /, /array\ /, /list\ /],
+	list:		[/ring\ /, /array\ /, /list\ /],
 	newObject:	[/new\ /, /make\ /, /add\ /],
 	setObject:	[/set\ /, /apply\ /, /give\ /, /send\ /],
 	//action:		[/ring\ /, /new\ /, /set\ /],
@@ -53,13 +53,13 @@ const lexer = moo.compile({
 @lexer lexer
 
 main ->
-	_ globalStatement _
+	_ globalStatement _ %comment:?
 		{% (d) => { return { "@global" : d[1] }} %}
 	|
-	_ ringStatement _
+	_ listStatement _ %comment:?
 		{% (d) => { return { "@list" : d[1] }} %}
 	|
-	_ objectStatement _
+	_ objectStatement _ %comment:?
 		{% (d) => { return { "@object" : d[1] }} %}
 	# |
 	# _ %newObject | %setObject | %ring _
@@ -69,23 +69,22 @@ main ->
 	# 	}%}
 
 objectStatement ->
-	%newObject _ %instrument __ objectIdentifier
+	%newObject _ name __ objectIdentifier
 		{% (d) => {
-			console.log('object', d[4]);
 			return {
 				"@action" : 'new',
-				"@new" : d[2].value,
+				"@name" : d[2],
 				"@type" : d[4]
 			}
 		}%}
 	|
-	%newObject _ %instrument __ objectIdentifier __ objExpression
+	%newObject _ name __ objectIdentifier __ objExpression
 		{% (d) => {
 			return {
 				"@action" : 'new',
-				"@new" : d[2].value,
+				"@name" : d[2],
 				"@type" : d[4],
-				"@funcs" : d[6]
+				"@functions" : d[6]
 			}
 		}%}
 	|
@@ -93,8 +92,8 @@ objectStatement ->
 		{% (d) => {	
 			return {
 				"@action" : 'set',
-				"@set" : d[2],
-				"@args" : d[4]
+				"@name" : d[2],
+				"@functions" : d[4]
 			}
 		}%}
 
@@ -105,8 +104,8 @@ objectIdentifier ->
 	array
 		{% id %}
 
-ringStatement ->
-	%ring _ %identifier _ paramElement:?
+listStatement ->
+	%list _ %identifier _ paramElement
 		{% (d) => {
 			return {
 				"@name" : d[2].value,
@@ -129,10 +128,10 @@ globalStatement ->
 
 objExpression ->
 	paramElement
-		{% (d) => d[0] %}
+		{% (d) => [d[0]] %}
 	|
 	paramElement __ objExpression
-		{% (d) => [d[0], d[2]] %}
+		{% (d) => [d[0], d[2]].flat(Infinity) %}
 
 # ringExpression ->
 # 	paramElement
@@ -144,7 +143,7 @@ function ->
 			return { 
 				//"@function": IR.bindFunction(d[0].value),
 				"@function": { 
-					"@name": d[0].value,
+					"@name": IR.keyBind(d[0].value),
 					"@args": d[1]
 				}
 			}
@@ -171,7 +170,6 @@ paramElement ->
 	|
 	name
 		{% (d) => d[0] %}
-		# {% id %}
 	|
 	array
 		{% (d) => d[0] %}

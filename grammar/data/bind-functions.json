@@ -1,21 +1,31 @@
 {
+	"new" : [
+		"make",
+		"sound"
+	],
+
+	"ring" : [
+		"list",
+		"array",
+		"items"
+	],
+
+	"set" : [
+		"apply",
+		"give"
+	],
+
 	"amp" : [
-		"amp",
 		"gain",
 		"vol",
 		"volume",
 		"amplitude",
-		"a",
-		"g",
-		"v",
 		"velocity",
 		"vel"
 	],
 
 	"beat" : [
-		"beat",
 		"rhythm",
-		"b",
 		"play"
 	],
 
@@ -23,28 +33,21 @@
 		"envelope",
 		"shape",
 		"transient",
-		"env",
-		"e",
 		"length",
 		"duration",
 		"dur"
 	],
 
 	"note" : [
-		"note",
-		"pitch",
-		"n"
+		"pitch"
 	],
 
 	"time" : [
-		"time",
-		"timing",
-		"t"
+		"timing"
 	],
 
 	"offset" : [
 		"onset",
-		"offset",
 		"position",
 		"start",
 		"startAt",
@@ -52,77 +55,69 @@
 	],
 
 	"pan" : [
-		"pan",
 		"panning",
 		"spat",
-		"location",
-		"p"
+		"location"
 	],
 
 	"slide" : [
-		"slide",
 		"glide",
 		"portamento",
 		"porta"
 	],
 
 	"speed" : [
-		"speed",
 		"rate",
-		"playback",
-		"s"
+		"playback"
 	],
 
 	"sub" : [
-		"sub",
 		"deep",
 		"low"
 	],
 
 	"add_fx" : [
-		"add_fx",
-		"with_fx",
+		"withFX",
+		"addFX",
 		"effect",
 		"fx"
 	],
 
 	"res" : [
 		"resonance",
-		"reson",
-		"res"
+		"reson"
 	],
 
 	"stretch" : [
-		"stretch",
 		"beatstretch",
 		"loop"
 	],
 
 	"wave2" : [
-		"wave2",
 		"osc2",
 		"add_osc"
 	],
 
+	"noise" : [
+		"add_noise",
+		"with_noise"
+	],
+
 	"group" : [
-		"group",
 		"aux",
 		"bus"
 	],
 
 	"name" : [
-		"name",
 		"id"
 	],
 
 	"tempo" : [
-		"tempo",
 		"pace",
 		"bpm"
 	],
 
 	"address" : [
-		"address",
 		"tag",
 		"url"
 	],
@@ -130,12 +125,10 @@
 	"out" : [
 		"channel",
 		"output",
-		"outlet",
-		"to"
+		"outlet"
 	],
 
 	"clock" : [
-		"clock",
 		"sync",
 		"clockSync",
 		"midiClock",

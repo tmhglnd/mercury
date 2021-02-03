@@ -5,7 +5,20 @@
 //==========================================================================
 
 // const bind = require('./bind-functions.gen.json');
+
+// total-serialism library functions
 const tsIR = require('./totalSerialismIR.js').functionMap;
+// included instrument/object defaults
+const instruments = require('./data/objects.js').objects;
+// keyword bindings, use custom keywords for functions
+const keywords = require('./data/bind-functions.json');
+// mini language, use single characters for keywords and functions
+const miniLang = require('./data/mini-functions.json');
+
+let keywordBinds = {};
+keywordBinds = keywordBindings(keywords, keywordBinds);
+keywordBinds = keywordBindings(miniLang, keywordBinds);
+// console.log(keywordBinds);
 
 // processing for identifiers
 function identifier(obj){
@@ -32,30 +45,34 @@ function num(obj){
 	return { "@number" : Number(obj[0].value) };
 }
 
-/*function bindFunction(obj){
-	var f = obj;
-	var b = bind[f];
+// check if the function is part of mapped functions
+// else return original value
+function keyBind(f){
+	return (keywordBinds[f]) ? keywordBinds[f] : f;
+}
 
-	if (b === undefined){
-		b = f;
-		// console.log("undefined return: ", f);
-	}
-	return b;
-}*/
-
-const instruments = {
-	'synth' : {
-		'type' : 'saw',
-		'functions' : {
-			'note' : [ 0, 0 ],
-			'time' : [ '1', 0 ],
-			'env' : [ 5, 500 ],
-			'beat' : 1,
-			'amp' : 0.7,
-			'wave2' : [ 'saw', 0 ],
-			'add_fx' : [],
-		}
-	}
+// Generate a dictionary of keyword and binding pairs based on 
+// input dictionary of categorized keybindings 
+function keywordBindings(dict, obj){
+	// console.log('Generating function keyword bindings...');	
+	let binds = { ...obj };
+	Object.keys(dict).forEach((k) => {
+		// store itself first
+		binds[k] = k;
+		dict[k].forEach((b) => {
+			if (binds[b]) {
+				// if already exists ignore and print warning
+				console.log('Warning! Duplicate keyword: [ '+b+' ] \nfor: [ '+binds[b]+' ] and: [ '+k+' ] \n => BIND IGNORED');
+			} else {
+				// store binding name with resulting keyword
+				binds[b] = k;
+			}
+			// console.log('mapped: [ '+b+' ] to: [ '+k+' ]');
+		});
+	});
+	// post(binds);
+	// console.logt('...keyword bindings generated');
+	return binds;
 }
 
 let code = {
@@ -69,6 +86,10 @@ let code = {
 	'objects' : {}
 }
 
+function deepCopy(o){
+	return JSON.parse(JSON.stringify(o));
+}
+
 function traverseTreeIR(tree){
 	tree.map((t) => {
 		// console.log(t);
@@ -78,7 +99,7 @@ function traverseTreeIR(tree){
 }
 
 function traverseTree(tree, code, level){
-	// console.log(`tree at level ${level}`, tree);
+	// console.log(`tree at level ${level}`, tree, code);
 	let map = {
 		'@global' : (ccode, el) => {
 			// console.log('@global', el);
@@ -92,31 +113,88 @@ function traverseTree(tree, code, level){
 		},
 		'@object' : (ccode, el) => {
 			// console.log('@object', el);
-			if (el['@action'] === 'new'){
-				let inst = JSON.parse(JSON.stringify(instruments[el['@new']]));
+			let inst;
+			
+			let action = el['@action'];
+			let init = (action === 'new')? true : false;
+			delete el['@action'];
 
+			if (!init){
+				let key = Object.keys(el['@name'])[0];
+				let name = map[key](ccode, el['@name'][key]);
+
+				inst = ccode.objects[name]
+				delete el['@name'];
 			}
+
+			Object.keys(el).forEach((e) => {
+				inst = map[e](ccode, el[e], inst, '@object');
+			});
+			ccode.objects[inst.functions.name] = inst;
+			
 			return ccode;
 		},
-		'@function' : (ccode, el, level) => {
+		'@name' : (ccode, el) => {
+			// console.log('@name', ccode, el, level);
+			let name;
+			let inst;
+			Object.keys(el).forEach((e) => {
+				name = map[e](ccode, el[e]);
+			});
+			if (!instruments[name]){
+				console.error(`Unknown object type: ${name}`);
+				inst = deepCopy(instruments['empty']);
+			}
+			inst = deepCopy(instruments[name]);
+			inst.object = name;
+			return inst;
+		},
+		'@type' : (ccode, el, inst) => {
+			// console.log('@type', ccode, el);
+			Object.keys(el).forEach((e) => {
+				inst.type = map[e](ccode, el[e]);
+			});
+			return inst;
+		},
+		'@functions' : (ccode, el, inst, level) => {
+			// console.log('@funcs', ccode);
+			let arr = [];
+			el.map((e) => {
+				Object.keys(e).map((k) => {
+					inst.functions = map[k](ccode, e[k], inst.functions, level);
+				})
+			})
+			return inst;
+			// console.log('@funcs', arr);
+		},
+		'@function' : (ccode, el, funcs, level) => {
 			// console.log('@func', el);
 			let args = [];
+			let func = keyBind(el['@name']);
+
 			if (el['@args'] !== null){
 				el['@args'].map((e) => {
 					Object.keys(e).map((k) => {
-						args.push(map[k](code, e[k], level));
+						args.push(map[k](ccode, e[k], level));
 					});
 				});
 			}
 			// console.log('@func', el, '@args', args, '@level', level);
-			if (tsIR[el['@name']]){
+			if (tsIR[func]){
 				if (args){
-					return tsIR[el['@name']](...args);
+					return tsIR[func](...args);
 				}
-				return tsIR[el['@name']]();
+				return tsIR[func]();
 			} else if (level === '@list'){
-					console.error(`Unknown list function: ${el['@name']}`);
-					return [0];
+				console.error(`Unknown list function: ${func}`);
+				return [0];
+			} else if (level === '@object'){
+				if (func === 'add_fx'){
+					funcs[func].push(args);
+				} else {
+					funcs[func] = args;
+				}
+				return funcs;
 			} else {
 				el['@args'] = args;
 				return el;
@@ -126,12 +204,13 @@ function traverseTree(tree, code, level){
 			let arr = [];
 			el.map((e) => {
 				Object.keys(e).map((k) => {
-					arr.push(map[k](code, e[k]));
+					arr.push(map[k](ccode, e[k]));
 				});
 			});
 			return arr;
 		},
 		'@identifier' : (ccode, el) => {
+			// console.log('@identifier', ccode, el);
 			if (code.variables[el]){
 				return code.variables[el];
 			}
@@ -154,6 +233,7 @@ function traverseTree(tree, code, level){
 	if (Array.isArray(tree)) {
 		tree.map((el) => {
 			Object.keys(el).map((k) => {
+				console.log('array process', k);
 				code = map[k](code, el[k], level);
 			});
 		})
@@ -166,4 +246,4 @@ function traverseTree(tree, code, level){
 	return code;
 }
 
-module.exports = { identifier, division, num, traverseTreeIR };
+module.exports = { identifier, division, num, keyBind, traverseTreeIR };

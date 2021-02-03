@@ -46,13 +46,16 @@ function parse(code){
 			}
 		}
 	}
+	// write AST as json to disk
+	fs.writeJSONSync('./test/mercuryAST.json', ast, { spaces: 4 });
+	console.log('Parse succesful!');
+	
 	// traverse Syntax Tree and create Intermediate Representation
-	result = worker.traverseTreeIR(ast['@main']);
+	// result = worker.traverseTreeIR(ast['@main']);
 
-	// write AST and IR as json files to disk
-	// fs.writeJSONSync('./test/mercuryAST.json', ast, { spaces: 2 });
-	// fs.writeJSONSync('./test/mercuryIR.json', result, { spaces: 2 });
-	return result;
+	// write IR as json to disk
+	// fs.writeJSONSync('./test/mercuryIR.json', result, { spaces: 4 });
+	// return result;
 }
 
 function parseFile(f){
@@ -67,7 +70,8 @@ function parseFile(f){
 	// console.log(result);
 }
 
-parseFile('./test/ring-dev.txt');
+// parseFile('./test/ring-test.txt');
+parseFile('./test/synth-test.txt');
 
 // @global:
 // parseNumbers();

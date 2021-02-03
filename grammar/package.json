@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node function-parse.js",
-    "test": "node parse-test.js",
+    "test": "node parser.js",
     "build": "npm run gen && nearley-railroad mercury.ne -o grammar.html",
     "gen": "nearleyc mercury.ne -o grammar.js",
     "graph": "nearley-railroad mercury.ne -o grammar.html \n open -a Google\\ Chrome.app grammar.html"
