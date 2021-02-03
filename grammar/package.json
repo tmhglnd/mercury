@@ -2,10 +2,10 @@
   "name": "mercury-grammar",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "parser.js",
   "scripts": {
     "start": "node function-parse.js",
-    "test": "node parser.js",
+    "test": "node parser.js ./test/synth-test.txt",
     "build": "npm run gen && nearley-railroad mercury.ne -o grammar.html",
     "gen": "nearleyc mercury.ne -o grammar.js",
     "graph": "nearley-railroad mercury.ne -o grammar.html \n open -a Google\\ Chrome.app grammar.html"

@@ -6,6 +6,15 @@ const nearley = require('nearley');
 const grammar = require('./grammar.js');
 const worker = require('./mercuryIR.js');
 
+if (process.argv.length < 3){
+	console.log('Please provide file as argument');
+} else {
+	let args = process.argv.slice(2, process.argv.length);
+	let file = args[0];
+
+	parseFile(args[0]);
+}
+
 function parse(code){
 	// split multiple lines into array of strings
 	let lines = code.split('\n');
@@ -49,7 +58,7 @@ function parse(code){
 	// write AST as json to disk
 	fs.writeJSONSync('./test/mercuryAST.json', ast, { spaces: 4 });
 	console.log('Parse succesful!');
-	
+
 	// traverse Syntax Tree and create Intermediate Representation
 	// result = worker.traverseTreeIR(ast['@main']);
 
@@ -71,7 +80,7 @@ function parseFile(f){
 }
 
 // parseFile('./test/ring-test.txt');
-parseFile('./test/synth-test.txt');
+// parseFile('./test/synth-test.txt');
 
 // @global:
 // parseNumbers();
@@ -83,6 +92,7 @@ parseFile('./test/synth-test.txt');
 // parseSettings();
 // parseSignal();
 
+// To Do:
 // parseOSC();
 
 // @ring:
@@ -207,19 +217,19 @@ function parseInst(){
 	parse("new sample [hat_min kick snare tabla]");
 	// parse("new synth [ saw triangle ]");
 
-	// parse("new synth saw note([0 5 7 9] 0)");
-	// parse("new sample [kick snare] time(0.25 0.5) speed(0.9) ");
-	// parse("new loop amen-break02 speed(randomFloat(8 0.5 0.9))");
+	parse("new synth saw note([0 5 7 9] 0)");
+	parse("new sample [kick snare] time(0.25 0.5) speed(0.9) ");
+	parse("new loop amen-break02 speed(randomFloat(8 0.5 0.9))");
 
-	// parse("new emitter osc name(fred)");
+	parse("new emitter osc name(fred)");
 }
 
 function parseSet(){
 	// parse("set bass gain(0.3) fx(reverb) note(drunk(12))");
 	parse("set tempo 143 1000");
 	parse("set scale major g#");
-	// parse("give bass with_fx(delay 3 5 0.3) fx(double)");
-	// parse("set aname pitch([0 7 12 3] 2) shape(1 200) id(newname)");
+	parse("give bass with_fx(delay 3 5 0.3) fx(double)");
+	parse("set aname pitch([0 7 12 3] 2) shape(1 200) id(newname)");
 
 	parse("tempo(143 1000)");
 	parse("scale(minor_harmonic 23) hi_pass(800)");
@@ -235,10 +245,12 @@ function parseSettings(){
 	parse("audio 1");
 	// parse("tempo(143 15000) scale(minor-harmonic dis) random-seed(5372)")
 	parse("set tempo 143 15000 ");
-	// parse("set tempo(143)");
+	parse("set tempo(143)");
 }
 
 function parseMain(){
 	parse("killAll()");
 	parse("record(1) killAll()");
+	parse("silence");
+	parse("print this");
 }
