@@ -77,13 +77,15 @@ function keywordBindings(dict, obj){
 
 let code = {
 	'global' : {
-		'tempo' : 90,
-		'scale' : 'chromatic',
-		'root' : 'c',
-		'randomSeed' : 0
+		'volume' : [ 0.8 ],
+		'tempo' : [ 90 ],
+		'scale' : [ 'chromatic', 'c' ],
+		'root' : [ 'c' ],
+		'randomSeed' : [ 0 ]
 	},
 	'variables' : {},
-	'objects' : {}
+	'objects' : {},
+	'groups' : {}
 }
 
 function deepCopy(o){
@@ -102,54 +104,97 @@ function traverseTree(tree, code, level){
 	// console.log(`tree at level ${level}`, tree, code);
 	let map = {
 		'@global' : (ccode, el) => {
+			// if global code (comments, numbers, functions)
+			
 			// console.log('@global', el);
 			return ccode;
 		},
 		'@list' : (ccode, el) => {
+			// if list/ring/array is instantiated store in variables
+
 			// console.log('@list', el);
 			let r = traverseTree(el['@params'], ccode, '@list');
 			ccode.variables[el['@name']] = r;
 			return ccode;
 		},
 		'@object' : (ccode, el) => {
+			// if object is instantiated or set (new/make, set/apply)
+
 			// console.log('@object', el);
-			let inst;
-			
-			let action = el['@action'];
-			let init = (action === 'new')? true : false;
-			delete el['@action'];
-
-			if (!init){
-				let key = Object.keys(el['@name'])[0];
-				let name = map[key](ccode, el['@name'][key]);
-
-				inst = ccode.objects[name]
-				delete el['@name'];
-			}
-
-			Object.keys(el).forEach((e) => {
-				inst = map[e](ccode, el[e], inst, '@object');
+			Object.keys(el).forEach((k) => {
+				ccode = map[k](ccode, el[k]);
 			});
-			ccode.objects[inst.functions.name] = inst;
-			
 			return ccode;
 		},
-		'@name' : (ccode, el) => {
-			// console.log('@name', ccode, el, level);
-			let name;
-			let inst;
-			Object.keys(el).forEach((e) => {
-				name = map[e](ccode, el[e]);
+		'@new' : (ccode, el) => {
+			// when new instrument check for instrument 
+			// name and apply functions
+
+			// console.log('@new', el);
+			let inst = map['@inst'](ccode, el['@inst']);
+			delete el['@inst'];
+
+			Object.keys(el).forEach((k) => {
+				inst = map[k](ccode, el[k], inst, '@object');
 			});
-			if (!instruments[name]){
-				console.error(`Unknown object type: ${name}`);
+			ccode.objects[inst.functions.name] = inst;
+
+			return ccode;
+		},
+		'@set' : (ccode, el) => {
+			// when an instrument or global parameter is set
+			// check if part of instruments, otherwise check if part of
+			// environment settings, otherwise error log
+
+			// console.log('@set', el);
+			let name = el['@name'];
+			delete el['@name'];
+
+			if (ccode.objects[name]){
+				let inst = ccode.objects[name];
+				Object.keys(el).forEach((k) => {
+					inst = map[k](ccode, el[k], inst, '@object');
+				});
+				ccode.objects[inst.functions.name] = inst;
+			} else if (name === 'all'){
+				Object.keys(ccode.objects).forEach((o) => {
+					let inst = ccode.objects[o];
+					Object.keys(el).forEach((k) => {
+						inst = map[k](ccode, el[k], inst, '@object');
+					});
+					ccode.objects[inst.functions.name] = inst;
+				});
+			} else if (ccode.global[name]){
+				let args;
+				Object.keys(el).forEach((k) => {
+					args = map[k](ccode, el[k], args, '@setting');
+				});
+				ccode.global[name] = args;
+			} else {
+				console.error(`Unkown object or setting name: ${name}`);
+			}
+			return ccode;
+		},
+		'@inst' : (ccode, el) => {
+			// check instruments for name and then deepcopy to output
+			// if not a valid instrument return empty instrument
+
+			// console.log('@name', ccode, el, level);
+			let obj = el;
+			let inst;
+
+			if (!instruments[obj]){
+				console.error(`Unknown object type: ${obj}`);
 				inst = deepCopy(instruments['empty']);
 			}
-			inst = deepCopy(instruments[name]);
-			inst.object = name;
+			inst = deepCopy(instruments[obj]);
+			inst.object = obj;
+
 			return inst;
 		},
 		'@type' : (ccode, el, inst) => {
+			// return the value of the type, can be identifier, string, array
+
 			// console.log('@type', ccode, el);
 			Object.keys(el).forEach((e) => {
 				inst.type = map[e](ccode, el[e]);
@@ -157,17 +202,34 @@ function traverseTree(tree, code, level){
 			return inst;
 		},
 		'@functions' : (ccode, el, inst, level) => {
-			// console.log('@funcs', ccode);
-			let arr = [];
+			// add all functions to object or parse for settigns
+
+			// console.log('@funcs', ccode);			
+			if (level === '@setting'){
+				let args = [];
+
+				el.map((e) => {
+					Object.keys(e).map((k) => {
+						args.push(map[k](ccode, e[k]));
+					});
+				});
+				return args;
+			}
+			let funcs = inst.functions;
 			el.map((e) => {
 				Object.keys(e).map((k) => {
-					inst.functions = map[k](ccode, e[k], inst.functions, level);
-				})
-			})
+					funcs = map[k](ccode, e[k], funcs, level);
+				});
+			});
+			inst.functions = funcs;
+
 			return inst;
-			// console.log('@funcs', arr);
 		},
 		'@function' : (ccode, el, funcs, level) => {
+			// for every function check if the keyword maps to other
+			// function keyword from keyword bindings.
+			// if function is part of ts library execute and parse results
+
 			// console.log('@func', el);
 			let args = [];
 			let func = keyBind(el['@name']);
@@ -192,6 +254,24 @@ function traverseTree(tree, code, level){
 				if (func === 'add_fx'){
 					funcs[func].push(args);
 				} else {
+					if (func === 'name'){
+						if (!ccode.groups.all){
+							ccode.groups.all = [];
+						}
+						ccode.groups.all.push(...args);
+					}
+					else if (func === 'group'){
+						console.log(args);
+						args.forEach((g) => {
+							console.log(ccode.groups);
+							if (!ccode.groups[g]){
+								ccode.groups[g] = [];
+							}
+							console.log(funcs.name);
+							// ccode.groups[g].push(funcs.name);
+						});
+						// if (!ccode.groups)
+					}
 					funcs[func] = args;
 				}
 				return funcs;
@@ -227,7 +307,10 @@ function traverseTree(tree, code, level){
 		},
 		'@note' : (ccode, el) => {
 			return el;
-		}
+		},
+		// '@comment' : (ccode, el) => {
+		// 	return;
+		// }
 	}
 
 	if (Array.isArray(tree)) {

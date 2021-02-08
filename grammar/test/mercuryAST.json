@@ -2,59 +2,114 @@
     "@main": [
         {
             "@object": {
-                "@action": "set",
-                "@name": {
-                    "@identifier": "volume"
-                },
-                "@functions": [
-                    {
-                        "@number": 1
-                    }
-                ]
+                "@set": {
+                    "@name": "volume",
+                    "@functions": [
+                        {
+                            "@number": 3
+                        },
+                        {
+                            "@number": 5000
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@global": {
+                "@comment": "// set tempo 143"
+            }
+        },
+        {
+            "@global": {
+                "@comment": "// set tempo random(1 80 120)"
             }
         },
         {
             "@object": {
-                "@action": "set",
-                "@name": {
-                    "@identifier": "randomSeed"
-                },
-                "@functions": [
-                    {
-                        "@number": 9123
-                    }
-                ]
+                "@set": {
+                    "@name": "randomSeed",
+                    "@functions": [
+                        {
+                            "@number": 9123
+                        }
+                    ]
+                }
             }
         },
         {
             "@object": {
-                "@action": "set",
-                "@name": {
-                    "@identifier": "scale"
-                },
-                "@functions": [
-                    {
-                        "@identifier": "pentatonic_minor"
-                    },
-                    {
-                        "@note": "c"
+                "@set": {
+                    "@name": "scale",
+                    "@functions": [
+                        {
+                            "@identifier": "pentatonic_minor"
+                        },
+                        {
+                            "@note": "c"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "@list": {
+                "@name": "bss",
+                "@params": {
+                    "@function": {
+                        "@name": "fill",
+                        "@args": [
+                            {
+                                "@number": 0
+                            },
+                            {
+                                "@number": 16
+                            },
+                            {
+                                "@number": -3
+                            },
+                            {
+                                "@number": 16
+                            }
+                        ]
                     }
-                ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// ring bss fill(0 16 -3 16)"
+            "@list": {
+                "@name": "notes",
+                "@params": {
+                    "@function": {
+                        "@name": "spread",
+                        "@args": [
+                            {
+                                "@number": 5
+                            },
+                            {
+                                "@number": 0
+                            },
+                            {
+                                "@number": 12
+                            }
+                        ]
+                    }
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// ring notes spread(5 0 12)"
-            }
-        },
-        {
-            "@global": {
-                "@comment": "// ring nts palin(notes)"
+            "@list": {
+                "@name": "nts",
+                "@params": {
+                    "@function": {
+                        "@name": "palin",
+                        "@args": [
+                            {
+                                "@identifier": "notes"
+                            }
+                        ]
+                    }
+                }
             }
         },
         {
@@ -73,8 +128,106 @@
             }
         },
         {
-            "@global": {
-                "@comment": "// new synth sine time(1/4) note(7 1) env(1 300) beat(0.2) group(sn) add_fx(reverb 0.9 11) add_fx(lfo 1/4 up)"
+            "@object": {
+                "@new": {
+                    "@inst": "synth",
+                    "@type": {
+                        "@identifier": "sine"
+                    },
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "time",
+                                "@args": [
+                                    {
+                                        "@division": "1/4"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "note",
+                                "@args": [
+                                    {
+                                        "@number": 7
+                                    },
+                                    {
+                                        "@number": 1
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "env",
+                                "@args": [
+                                    {
+                                        "@number": 1
+                                    },
+                                    {
+                                        "@number": 300
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "beat",
+                                "@args": [
+                                    {
+                                        "@number": 0.2
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "group",
+                                "@args": [
+                                    {
+                                        "@identifier": "sn"
+                                    },
+                                    {
+                                        "@identifier": "bass"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "reverb"
+                                    },
+                                    {
+                                        "@number": 0.9
+                                    },
+                                    {
+                                        "@number": 11
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "lfo"
+                                    },
+                                    {
+                                        "@division": "1/4"
+                                    },
+                                    {
+                                        "@identifier": "up"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
@@ -83,23 +236,166 @@
             }
         },
         {
-            "@global": {
-                "@comment": "// new synth sine name(s)"
+            "@object": {
+                "@new": {
+                    "@inst": "synth",
+                    "@type": {
+                        "@identifier": "sine"
+                    },
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "name",
+                                "@args": [
+                                    {
+                                        "@identifier": "mySynth"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s note(notes 1) timing(1/16) shape(1 300) play(0.2) aux(sn)"
+            "@object": {
+                "@set": {
+                    "@name": "mySynth",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "note",
+                                "@args": [
+                                    {
+                                        "@identifier": "notes"
+                                    },
+                                    {
+                                        "@number": 1
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "time",
+                                "@args": [
+                                    {
+                                        "@division": "1/16"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "env",
+                                "@args": [
+                                    {
+                                        "@number": 1000
+                                    },
+                                    {
+                                        "@number": 200
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "beat",
+                                "@args": [
+                                    {
+                                        "@number": 0.8
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "group",
+                                "@args": [
+                                    {
+                                        "@identifier": "sn"
+                                    },
+                                    {
+                                        "@identifier": "ld"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s gain(1)"
+            "@object": {
+                "@set": {
+                    "@name": "mySynth",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "amp",
+                                "@args": [
+                                    {
+                                        "@number": 0.5
+                                    },
+                                    {
+                                        "@number": 100
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s osc2(sine 2) withFX(drive 16)"
+            "@object": {
+                "@set": {
+                    "@name": "mySynth",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "wave2",
+                                "@args": [
+                                    {
+                                        "@identifier": "sine"
+                                    },
+                                    {
+                                        "@number": 2
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "drive"
+                                    },
+                                    {
+                                        "@number": 16
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "lfo"
+                                    },
+                                    {
+                                        "@division": "1/4"
+                                    },
+                                    {
+                                        "@identifier": "sine"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
@@ -123,58 +419,302 @@
             }
         },
         {
-            "@global": {
-                "@comment": "// new synth saw name(s2)"
+            "@object": {
+                "@new": {
+                    "@inst": "synth",
+                    "@type": {
+                        "@identifier": "saw"
+                    },
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "name",
+                                "@args": [
+                                    {
+                                        "@identifier": "s2"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s2 note(random(4 0 12) 2) time(1/16) env(300 1000) beat(0.7)"
+            "@object": {
+                "@set": {
+                    "@name": "s2",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "note",
+                                "@args": [
+                                    {
+                                        "@function": {
+                                            "@name": "random",
+                                            "@args": [
+                                                {
+                                                    "@number": 4
+                                                },
+                                                {
+                                                    "@number": 0
+                                                },
+                                                {
+                                                    "@number": 12
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "@number": 2
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "time",
+                                "@args": [
+                                    {
+                                        "@division": "1/16"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "env",
+                                "@args": [
+                                    {
+                                        "@number": 300
+                                    },
+                                    {
+                                        "@number": 1000
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "beat",
+                                "@args": [
+                                    {
+                                        "@number": 0.7
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s2 pan(random) group(sn)"
+            "@object": {
+                "@set": {
+                    "@name": "s2",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "pan",
+                                "@args": [
+                                    {
+                                        "@identifier": "random"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "group",
+                                "@args": [
+                                    {
+                                        "@identifier": "bass"
+                                    },
+                                    {
+                                        "@identifier": "intro"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s2 gain(0)"
+            "@object": {
+                "@set": {
+                    "@name": "s2",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "amp",
+                                "@args": [
+                                    {
+                                        "@number": 0
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// new synth square name(s3)"
+            "@object": {
+                "@new": {
+                    "@inst": "sample",
+                    "@type": {
+                        "@identifier": "kick_min"
+                    },
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "name",
+                                "@args": [
+                                    {
+                                        "@identifier": "kck"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s3 note(bss 0) time(1/16) shape(2 90 4) beat(1)"
+            "@object": {
+                "@set": {
+                    "@name": "kck",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "time",
+                                "@args": [
+                                    {
+                                        "@division": "1/4"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "drive"
+                                    },
+                                    {
+                                        "@number": 1.1
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "filter"
+                                    },
+                                    {
+                                        "@identifier": "low"
+                                    },
+                                    {
+                                        "@number": 500
+                                    },
+                                    {
+                                        "@number": 0.3
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s3 fx(reverb 0.8 9) "
+            "@object": {
+                "@set": {
+                    "@name": "all",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "reverb"
+                                    },
+                                    {
+                                        "@number": 1
+                                    },
+                                    {
+                                        "@number": 20
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "chip"
+                                    },
+                                    {
+                                        "@number": 0.5
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s3 fx(drive 5)"
+            "@object": {
+                "@set": {
+                    "@name": "sn",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "reverb"
+                                    },
+                                    {
+                                        "@number": 0.9
+                                    },
+                                    {
+                                        "@number": 17
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {
-            "@global": {
-                "@comment": "// \tset s3 gain(2) wave2(sine 1 2) fx(lfo 1/4 2 1)"
-            }
-        },
-        {
-            "@global": {
-                "@comment": "// set sn fx(reverb 0.9 17)"
-            }
-        },
-        {
-            "@global": {
-                "@comment": "// set sn fx(drive 5)"
+            "@object": {
+                "@set": {
+                    "@name": "bass",
+                    "@functions": [
+                        {
+                            "@function": {
+                                "@name": "add_fx",
+                                "@args": [
+                                    {
+                                        "@identifier": "drive"
+                                    },
+                                    {
+                                        "@number": 5
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             }
         },
         {

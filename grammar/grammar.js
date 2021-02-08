@@ -62,26 +62,32 @@ var grammar = {
     {"name": "main$ebnf$3", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)], "postprocess": id},
     {"name": "main$ebnf$3", "symbols": [], "postprocess": function(d) {return null;}},
     {"name": "main", "symbols": ["_", "objectStatement", "_", "main$ebnf$3"], "postprocess": (d) => { return { "@object" : d[1] }}},
-    {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", "name", "__", "objectIdentifier"], "postprocess":  (d) => {
+    {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", (lexer.has("identifier") ? {type: "identifier"} : identifier), "__", "objectIdentifier"], "postprocess":  (d) => {
         	return {
-        		"@action" : 'new',
-        		"@name" : d[2],
-        		"@type" : d[4]
+        		//"@action" : 'new',
+        		"@new" : {
+        			"@inst" : d[2].value,
+        			"@type" : d[4]
+        		}
         	}
         }},
-    {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", "name", "__", "objectIdentifier", "__", "objExpression"], "postprocess":  (d) => {
+    {"name": "objectStatement", "symbols": [(lexer.has("newObject") ? {type: "newObject"} : newObject), "_", (lexer.has("identifier") ? {type: "identifier"} : identifier), "__", "objectIdentifier", "__", "objExpression"], "postprocess":  (d) => {
         	return {
-        		"@action" : 'new',
-        		"@name" : d[2],
-        		"@type" : d[4],
-        		"@functions" : d[6]
+        		//"@action" : 'new',
+        		"@new" : {
+        			"@inst" : d[2].value,
+        			"@type" : d[4],
+        			"@functions" : d[6]
+        		}
         	}
         }},
-    {"name": "objectStatement", "symbols": [(lexer.has("setObject") ? {type: "setObject"} : setObject), "_", "name", "__", "objExpression"], "postprocess":  (d) => {	
+    {"name": "objectStatement", "symbols": [(lexer.has("setObject") ? {type: "setObject"} : setObject), "_", (lexer.has("identifier") ? {type: "identifier"} : identifier), "__", "objExpression"], "postprocess":  (d) => {	
         	return {
-        		"@action" : 'set',
-        		"@name" : d[2],
-        		"@functions" : d[4]
+        		"@set" : {
+        			"@name" : d[2].value,
+        			"@functions" : d[4]
+        		}
+        		//"@action" : 'set',
         	}
         }},
     {"name": "objectIdentifier", "symbols": ["name"], "postprocess": id},
@@ -93,7 +99,7 @@ var grammar = {
         	}
         } },
     {"name": "globalStatement", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)], "postprocess": (d) => { return { "@comment": d[0].value }}},
-    {"name": "globalStatement", "symbols": ["objExpression"], "postprocess": (d) => d[0]},
+    {"name": "globalStatement", "symbols": ["objExpression"], "postprocess": (d) => { return { "@functions" : d[0] }}},
     {"name": "objExpression", "symbols": ["paramElement"], "postprocess": (d) => [d[0]]},
     {"name": "objExpression", "symbols": ["paramElement", "__", "objExpression"], "postprocess": (d) => [d[0], d[2]].flat(Infinity)},
     {"name": "function", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier), "functionArguments"], "postprocess":  (d) => {

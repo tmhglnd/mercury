@@ -12,7 +12,7 @@ if (process.argv.length < 3){
 	let args = process.argv.slice(2, process.argv.length);
 	let file = args[0];
 
-	parseFile(args[0]);
+	parseFile(file);
 }
 
 function parse(code){
@@ -57,13 +57,13 @@ function parse(code){
 	}
 	// write AST as json to disk
 	fs.writeJSONSync('./test/mercuryAST.json', ast, { spaces: 4 });
-	console.log('Parse succesful!');
+	// console.log('Parse succesful!');
 
 	// traverse Syntax Tree and create Intermediate Representation
-	// result = worker.traverseTreeIR(ast['@main']);
+	result = worker.traverseTreeIR(ast['@main']);
 
 	// write IR as json to disk
-	// fs.writeJSONSync('./test/mercuryIR.json', result, { spaces: 4 });
+	fs.writeJSONSync('./test/mercuryIR.json', result, { spaces: 4 });
 	// return result;
 }
 

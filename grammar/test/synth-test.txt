@@ -1,40 +1,41 @@
-set volume 1
+set volume 3 5000
+// set tempo 143
+// set tempo random(1 80 120)
 set randomSeed 9123
 set scale pentatonic_minor c
 
-// ring bss fill(0 16 -3 16)
-// ring notes spread(5 0 12)
-// ring nts palin(notes)
+ring bss fill(0 16 -3 16)
+ring notes spread(5 0 12)
+ring nts palin(notes)
 // ring nts clone(nts 0 0 3 -2)
 // ring nts clone(nts 0 7 9 12)
 // ring jnd join(random(4 0 24) spread(4 0 24) urn(4 4))
 
-// new synth sine time(1/4) note(7 1) env(1 300) beat(0.2) group(sn) add_fx(reverb 0.9 11) add_fx(lfo 1/4 up)
+new synth sine time(1/4) note(7 1) env(1 300) beat(0.2) group(sn bass) add_fx(reverb 0.9 11) add_fx(lfo 1/4 up)
 
 // new synth sine time(1/4) note(palindrome(spread(5 0 12)) 1)
 
-// new synth sine name(s)
-// 	set s note(notes 1) timing(1/16) shape(1 300) play(0.2) aux(sn)
-// 	set s gain(1)
-// 	set s osc2(sine 2) withFX(drive 16)
+new synth sine name(mySynth)
+	set mySynth note(notes 1) timing(1/16) shape(1000 200) play(0.8) aux(sn ld)
+	set mySynth gain(0.5 100)
+	set mySynth osc2(sine 2) withFX(drive 16) addFX(lfo 1/4 sine)
 
 // = notes spread(5 0 24)
 // << synth sine name(s)
 // 	>> s #(notes 1) %(1/16) ^(1 300) !(0.2)
 // 	>> s *(1) ~(drive 16)
 
-// new synth saw name(s2)
-// 	set s2 note(random(4 0 12) 2) time(1/16) env(300 1000) beat(0.7)
-// 	set s2 pan(random) group(sn)
-// 	set s2 gain(0)
+new synth saw name(s2)
+	set s2 note(random(4 0 12) 2) time(1/16) env(300 1000) beat(0.7)
+	set s2 pan(random) group(bass intro)
+	set s2 gain(0)
 
-// new synth square name(s3)
-// 	set s3 note(bss 0) time(1/16) shape(2 90 4) beat(1)
-// 	set s3 fx(reverb 0.8 9) 
-// 	set s3 fx(drive 5)
-// 	set s3 gain(2) wave2(sine 1 2) fx(lfo 1/4 2 1)
+new sample kick_min name(kck)
+	set kck time(1/4) fx(drive 1.1) fx(filter low 500 0.3)
 
-// set sn fx(reverb 0.9 17)
-// set sn fx(drive 5)
+set all fx(reverb 1 20) fx(chip 0.5)
+
+set sn fx(reverb 0.9 17)
+set bass fx(drive 5)
 
 // silence

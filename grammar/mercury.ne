@@ -69,33 +69,48 @@ main ->
 	# 	}%}
 
 objectStatement ->
-	%newObject _ name __ objectIdentifier
+	%newObject _ %identifier __ objectIdentifier
 		{% (d) => {
 			return {
-				"@action" : 'new',
-				"@name" : d[2],
-				"@type" : d[4]
+				//"@action" : 'new',
+				"@new" : {
+					"@inst" : d[2].value,
+					"@type" : d[4]
+				}
 			}
 		}%}
 	|
-	%newObject _ name __ objectIdentifier __ objExpression
+	%newObject _ %identifier __ objectIdentifier __ objExpression
 		{% (d) => {
 			return {
-				"@action" : 'new',
-				"@name" : d[2],
-				"@type" : d[4],
-				"@functions" : d[6]
+				//"@action" : 'new',
+				"@new" : {
+					"@inst" : d[2].value,
+					"@type" : d[4],
+					"@functions" : d[6]
+				}
 			}
 		}%}
 	|
-	%setObject _ name __ objExpression
+	%setObject _ %identifier __ objExpression
 		{% (d) => {	
 			return {
-				"@action" : 'set',
-				"@name" : d[2],
-				"@functions" : d[4]
+				"@set" : {
+					"@name" : d[2].value,
+					"@functions" : d[4]
+				}
+				//"@action" : 'set',
 			}
 		}%}
+	# |
+	# %setObject _ name __ objExpression
+	# 	{% (d) => {	
+	# 		return {
+	# 			"@action" : 'set',
+	# 			"@name" : d[2],
+	# 			"@functions" : d[4]
+	# 		}
+	# 	}%}
 
 objectIdentifier ->
 	name
@@ -118,7 +133,7 @@ globalStatement ->
 		{% (d) => { return { "@comment": d[0].value }} %}
 	|
 	objExpression
-		{% (d) => d[0] %}
+		{% (d) => { return { "@functions" : d[0] }} %}
 	# |
 	# objExpression _ %seperator:?
 	# 	{% (d) => d[0] %}
