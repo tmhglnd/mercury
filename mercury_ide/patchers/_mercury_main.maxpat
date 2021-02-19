@@ -363,7 +363,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 416.333333333333371, 1146.0, 73.0, 22.0 ],
+					"patching_rect" : [ 390.0, 1185.0, 73.0, 22.0 ],
 					"text" : "s storePrefs"
 				}
 
@@ -61408,7 +61408,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 194.0, 80.0, 22.0 ],
+									"patching_rect" : [ 50.0, 195.0, 80.0, 22.0 ],
 									"text" : "prepend read"
 								}
 
