@@ -158,6 +158,10 @@ const handlers = {
 		// console.log(Algo.pisano(...v));
 		return Algo.pisano(...v);
 	},
+	// generate a normalized pisano period. returns in range 0 - 1
+	'fPisano' : (...v) => {
+		return Util.normalize(Algo.pisano(...v));
+	},
 	// generate the numbers in the fibonacci sequence
 	'pell' : (...v) => {
 		return Algo.pell(...v);
