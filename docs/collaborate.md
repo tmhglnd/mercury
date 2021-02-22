@@ -35,3 +35,40 @@ Now start typing some code! 🎵
 - `Ctrl/Alt + .` to silence
 
 Flok will send the entire code via OSC messaging to port 4880. Mercury should be listening to this port automatically. Bug reports are very much welcome in the issues!
+
+## Combine Mercury with Hydra (Audioreactive Visuals)
+
+Follow this guide if you like to let Hydra react to the sounds that you code with Mercury when using Flok. 
+
+**for Mac**
+
+1. Install [blackhole](https://existential.audio/blackhole/) for virtual audio routing
+2. Open `Audio MIDI Setup` in your Applications
+3. Click `+` in left-bottom corner and then `Create Multi-Output Device`
+4. Select both `Built-in Output` and `Blackhole` (if blackhole is not listed restart the computer first)
+5. Start Mercury and under `Settings` > `Audio Setup` change the output to the `Multi-Output Device`
+6. Open Google Chrome and setup Flok as described under [Collaborate](#collaborate)
+7. Click the `Microphone` icon and selecte `Manage`
+8. Select `Blackhole (Virtual)` 
+
+**for Windows**
+
+1. Install [vbcables](https://vb-audio.com/Cable/index.htm) for virtual audio routing
+2. More steps are needed but this has not been tested on Windows, please contribute to this documentation if you know the steps
+
+**Both**
+
+Now start coding some Mercury and Hydra code! 📟
+
+To create audio reactive visuals with hydra use the FFT audio object accessible via the `a` object. Below is some example code for hydra that you can use.
+
+```js
+a.show() 
+//=> show the FFT bins audio amplitude
+
+a.setBins(6)
+//=> set the amount of FFT bins to extract from the sound (low -> high frequencies)
+
+osc(10, 0, () => a.fft[0]*4 ).out()
+//=> choose a bin index and modulate a parameter with function return
+```
