@@ -25,7 +25,7 @@
 	- [Documentation](/docs/table-of-content.md)
 	- [Troubleshooting](/docs/08-troubleshooting.md)
 	- [System Requirements](#-system-requirements)
-	- [Sounds in Mercury](/mercury_ide/media/README.md)
+	- [Sounds in Mercury](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md)
 	<!-- - [Build Application](#-build-application) -->
 - 🔎 [Read more](#-further-reading-and-listening)
 - 👾 [Hear what others made](#-made-with-mercury)
