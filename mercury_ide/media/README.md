@@ -36,6 +36,7 @@ This pack of sounds contains sounds by the following users:
 - Cunningar0807 ( https://freesound.org/people/Cunningar0807/ )
 - mmiron ( https://freesound.org/people/mmiron/ )
 - ldk1609 ( https://freesound.org/people/ldk1609/ )
+- gowers ( https://freesound.org/people/gowers/ )
 
 You can find the packs online at: 
 - https://freesound.org/people/NoiseCollector/packs/219/
@@ -61,6 +62,10 @@ You can find the packs online at:
 - https://freesound.org/people/mmiron/packs/8162/
 - https://freesound.org/people/ldk1609/packs/3578/
 - https://freesound.org/people/ldk1609/packs/3561/
+- https://freesound.org/people/DWSD/packs/9115/ 
+- https://freesound.org/people/gowers/packs/12911/
+- https://freesound.org/people/DWSD/packs/9116/
+- https://freesound.org/people/DWSD/packs/12146/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
@@ -138,7 +143,7 @@ You can find the packs online at:
 * url: https://freesound.org/s/171104/
 * license: Creative Commons 0
 
-#### kick_house
+#### kick_vintage
 * 171103__dwsd__kick-dw-vintagehouse.wav
 * url: https://freesound.org/s/171103/
 * license: Creative Commons 0
@@ -222,6 +227,87 @@ You can find the packs online at:
 * 493026__veiler__snarefat.wav
 * url: https://freesound.org/s/493026/
 * license: Creative Commons 0
+
+#### kick_ua
+* 147997__dwsd__kick-ua.wav
+* url: https://freesound.org/s/147997/
+* license: Attribution
+
+#### kick_house
+* 147995__dwsd__kick-pretunedhousebd.wav
+* url: https://freesound.org/s/147995/
+* license: Attribution
+
+#### kick_deep
+* 147994__dwsd__deep-house-kick.wav
+* url: https://freesound.org/s/147994/
+* license: Attribution
+
+#### maracas_808
+* 191638__dwsd__jhd-shk-2.wav
+* url: https://freesound.org/s/191638/
+* license: Attribution
+
+#### tom_808
+* 191637__dwsd__jhd-prc-3.wav
+* url: https://freesound.org/s/191637/
+* license: Attribution
+
+#### clave_808
+* 191636__dwsd__jhd-prc-4.wav
+* url: https://freesound.org/s/191636/
+* license: Attribution
+
+#### cowbell_808
+* 191635__dwsd__jhd-prc-5.wav
+* url: https://freesound.org/s/191635/
+* license: Attribution
+
+#### cymbal_808
+* 191633__dwsd__jhd-cym-1.wav
+* url: https://freesound.org/s/191633/
+* license: Attribution
+
+#### hat_808_half
+* 191632__dwsd__jhd-hat-1.wav
+* url: https://freesound.org/s/191632/
+* license: Attribution
+
+#### hat_808_open
+* 191631__dwsd__jhd-hat-2.wav
+* url: https://freesound.org/s/191631/
+* license: Attribution
+
+#### hat_808
+* 191630__dwsd__jhd-hat-3.wav
+* url: https://freesound.org/s/191630/
+* license: Attribution
+
+#### clap_808_short
+* 191623__dwsd__jhd-clp-1.wav
+* url: https://freesound.org/s/191623/
+* license: Attribution
+
+#### clap_808
+* 191621__dwsd__jhd-clp-28.wav
+* url: https://freesound.org/s/191621/
+* license: Attribution
+
+#### snare_808
+* 191620__dwsd__jhd-clp-37.wav
+* url: https://freesound.org/s/191620/
+* license: Attribution
+
+#### kick_808
+* 191617__dwsd__jhd-bd-35.wav
+* url: https://freesound.org/s/191617/
+* license: Attribution
+
+#### kick_808_dist
+* 191610__dwsd__jhd-bd-3.wav
+* url: https://freesound.org/s/191610/
+* license: Attribution
+
 
 ## Tabla
 
@@ -506,6 +592,13 @@ You can find the packs online at:
 * url: https://freesound.org/s/104090/
 * license: Creative Commons 0
 
+## Pads
+
+#### rhodes_8bit
+* 147998__dwsd__g-126-8bitrhod-rhde.wav
+* url: https://freesound.org/s/147998/
+* license: Attribution Noncommercial
+
 ## Noise
 
 #### noise_a
@@ -514,6 +607,33 @@ You can find the packs online at:
 * license: Creative Commons 0
 
 # Loops
+
+## Breaks
+
+#### amen
+* 202537__gowers__140-bpm-amen-break-original-processed.wav
+* url: https://freesound.org/s/202537/
+* license: Creative Commons 0
+
+#### amen_alt
+* 202537__gowers__140-bpm-amen-break-original-processed.wav
+* url: https://freesound.org/s/202537/
+* license: Creative Commons 0
+
+#### amen_fill
+* 202537__gowers__140-bpm-amen-break-original-processed.wav
+* url: https://freesound.org/s/202537/
+* license: Creative Commons 0
+
+#### amen_break
+* 202537__gowers__140-bpm-amen-break-original-processed.wav
+* url: https://freesound.org/s/202537/
+* license: Creative Commons 0
+
+#### house
+* 148005__dwsd__drumloop126-2.wav
+* url: https://freesound.org/s/148005/
+* license: Attribution Noncommercial
 
 ## Idiophonic
 
