@@ -4,6 +4,7 @@
 - [One-shots](#one-shots)
 	- [Drums](#drums)
 	- [Strings](#strings)
+	- [Keys](#keys)
 	- [Idiophonic](#idiophonic)
 	- [Vocal](#vocal)
 	- [Foley](#foley)
@@ -37,6 +38,7 @@ This pack of sounds contains sounds by the following users:
 - mmiron ( https://freesound.org/people/mmiron/ )
 - ldk1609 ( https://freesound.org/people/ldk1609/ )
 - gowers ( https://freesound.org/people/gowers/ )
+- ion_ ( https://freesound.org/people/ion_/ )
 
 You can find the packs online at: 
 - https://freesound.org/people/NoiseCollector/packs/219/
@@ -66,6 +68,7 @@ You can find the packs online at:
 - https://freesound.org/people/gowers/packs/12911/
 - https://freesound.org/people/DWSD/packs/9116/
 - https://freesound.org/people/DWSD/packs/12146/
+- https://freesound.org/people/ion_/packs/31585/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
@@ -453,6 +456,42 @@ You can find the packs online at:
 * url: https://freesound.org/s/55959/
 * license: Creative Commons 0
 
+## Keys
+
+#### piano_g
+* 562761__ion__g3.mp3
+* url: https://freesound.org/s/562761/
+* license: Creative Commons 0
+
+#### piano_e
+* 562760__ion__e3.mp3
+* url: https://freesound.org/s/562760/
+* license: Creative Commons 0
+
+#### piano_f
+* 562759__ion__f3.mp3
+* url: https://freesound.org/s/562759/
+* license: Creative Commons 0
+
+#### piano_d
+* 562756__ion__d3.mp3
+* url: https://freesound.org/s/562756/
+* license: Creative Commons 0
+
+#### piano_a
+* 562754__ion__a3.mp3
+* url: https://freesound.org/s/562754/
+* license: Creative Commons 0
+
+#### piano_b
+* 562752__ion__b3.mp3
+* url: https://freesound.org/s/562752/
+* license: Creative Commons 0
+
+#### piano_c
+* 562751__ion__c3.mp3
+* url: https://freesound.org/s/562751/
+* license: Creative Commons 0
 
 ## Idiophonic
 
