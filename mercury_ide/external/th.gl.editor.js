@@ -556,7 +556,8 @@ function commentLine(){
 	// add comment-characters to regex
 	// escape special characters
 	var esc = CMMT.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-	var rgx = new RegExp('^ *' + esc + ' *', 'g');
+	
+	var rgx = new RegExp('^ *' + esc + ' ?', 'g');
 	// if has comment remove it, else add
 	if (textBuf[curLine].match(rgx)){
 		textBuf[curLine] = textBuf[curLine].replace(rgx, '');
@@ -573,8 +574,11 @@ function drawText(){
 	textMtx.setall(0);
 	// draw all the characters as ascii code in a matrix
 	for (var l=0; l<textBuf.length; l++){
-		for (var c=0; c<textBuf[l].length; c++){
-			textMtx.setcell2d(c, l, textBuf[l].charCodeAt(c));
+		// check if not an empty line/string
+		if (!textBuf[l].match(/^[ \t]*$/g)){	
+			for (var c=0; c<textBuf[l].length; c++){
+				textMtx.setcell2d(c, l, textBuf[l].charCodeAt(c));
+			}
 		}
 	}
 }
