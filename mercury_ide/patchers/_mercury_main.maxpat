@@ -71434,6 +71434,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "fluid.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "emptyScene.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -71477,6 +71484,10 @@
 			}
 , 			{
 				"name" : "jit.gl.syphonserver.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit.mo.time.mxo",
 				"type" : "iLaX"
 			}
 , 			{
