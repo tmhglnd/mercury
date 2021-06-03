@@ -71526,6 +71526,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "plane-cube.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "emptyScene.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -71569,6 +71576,10 @@
 			}
 , 			{
 				"name" : "jit.gl.syphonserver.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "ease.mxo",
 				"type" : "iLaX"
 			}
 , 			{
