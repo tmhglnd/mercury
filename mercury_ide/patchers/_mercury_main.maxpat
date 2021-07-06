@@ -51282,7 +51282,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 435.0, 1793.0, 192.666666666666686, 33.0 ],
-					"text" : "// Master\n// hipass / lopass filters"
+					"text" : "// Master\n// hipass / lopass SVF filters"
 				}
 
 			}
