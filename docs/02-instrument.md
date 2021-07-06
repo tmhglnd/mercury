@@ -38,7 +38,7 @@ new sample snare_909 group(drums) time(1/2 1/4)
 
 ## time 
 
-Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `ring`'s provided as argument in methods for this instrument.
+Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `ring`'s provided as argument in methods for this instrument. Setting the first argumen to `free` allows to use external triggering via osc messages. The trigger reacts when a value greater than 0 is received.
 
 **arguments**
 - {Number/Division} -> the timing division (default=1/4)
@@ -50,8 +50,11 @@ set tempo 130
 new sample kick_909 name(kick)
 	set kick time(1/4)
 
-new synth saw name(hat)
-	set hat time(1/2 3/16)
+new synth saw name(syn)
+	set syn time(1/2 3/16)
+
+new sample snare_dnb name(snare)
+	set snare time(free /snareOSC/amplitude)
 ```
 
 Alternative function-names: `timing() | t()`
