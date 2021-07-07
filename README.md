@@ -32,6 +32,7 @@
 - 🤓 [I like to help](#-contribute)
 - 🔋 [Powered By](#-powered-by)
 - 🙏 [Thanks](#-thanks)
+- ✨ [Inspiration](#-inspiration)
 - 📄 [Licenses](#-licenses)
 
 <!-- ##  Newest Features
@@ -362,6 +363,18 @@ In order to receive your contribution please follow these steps:
 - Rafaele Maria Andrade for collaboration on [networked performance](https://www.youtube.com/watch?v=7UWywv_DPHI&t=4s) between Mercury and Knurl
 - Repo banner image by Annebel Bunt
 - Live performance image by Zuzanna Zgierska
+
+## ✨ Inspiration
+
+During the development of Mercury (both the playground and the full version) I've found inspiration in many other live coding environments, practices and other platforms. Some of these are:
+
+- [Hydra](https://hydra.ojack.xyz/) - Live coding visual synthesizer by Olivia Jack
+- [Sema](https://sema.codes/about) - Live coding language design platform combined with Machine Learning
+- [MIMIC Project](https://mimicproject.com/about) - a web platform for the artistic exploration of musical machine learning and machine listening.
+- [Tidal](https://tidalcycles.org/index.php/Welcome) - Live coding of patterns
+- [Sonic Pi](https://sonic-pi.net/) - The live coding synth for everyone
+- [Tone.js](https://tonejs.github.io/) - Webaudio framework for programming synths and sequencers
+- [Nearley](https://nearley.js.org/) - Parsing toolkit
 
 ## 📄 Licenses
 
