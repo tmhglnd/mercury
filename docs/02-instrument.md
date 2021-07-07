@@ -424,6 +424,21 @@ new midi "otherDevice" sync(off)
 
 Alternative function-names: `clock()`
 
+## change
+
+Send control change messages to the midi device. This function can have multiple calls in the same instrument, every call can be a different control number. The first argument is the control number, the second argument is the controller value or a ring of controller values.
+
+**arguments**
+
+- {Int+} -> Midi controller number between 0-127
+- {Int+/RingInt+} -> Midi controller value between 0-127
+
+```java
+ring ccValues [10 20 30 40 50]
+
+new midi "device" change(13 100) change(21 ccValues)
+```
+
 <!-- 
 # Text to Speech (mac-only)
 
