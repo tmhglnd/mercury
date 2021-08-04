@@ -183,3 +183,36 @@ set midiClock midiPortName
 set midiClock off
 // turn the clock off (default)
 ```
+
+## click
+
+Enable a clicktrack/metronome sound to allow you to easily play along with the music. You can adjust the interval for the low pitch separately from the interval of the accent. The accent sounds an octave higher. You can also adjust the channel output for the click so you can hear it separately from the main output. Reset the settings with `default`.
+
+**arguments**
+- {Name} -> `on`, `off` or `default` (default=off)
+
+```java
+set click on
+// turn the click on/off (default=off)
+
+set click freq 1000
+// set the base frequency for the click (default=900)
+
+set click length 0.9
+// adjust the length of the tone (default=0.65)
+
+set click time 1/8
+// set the base interval for the low pitch (default=1/4)
+
+set click accent 1/2
+// set the accent interval for the high pitch (default=1/1)
+
+set click gain 0.8
+// adjust the volume of the click sound (default=0.75)
+
+set click out 3 4
+// set the output channel(s) for the click, can be mono or stereo (default=1 2)
+
+set click default
+// reset all attributes to the default settings
+```

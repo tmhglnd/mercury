@@ -21,6 +21,7 @@
 	- [lowPass](./01-global.md#lowpass)
 	- [osc](./01-global.md#osc)
 	- [midi](./01-global.md#midi-and-midiclock)
+	- [click](./01-global.md#click)
 
 - [Synth/Sample/Midi (new)](./02-instrument.md)
 	- All instruments (except midi)
