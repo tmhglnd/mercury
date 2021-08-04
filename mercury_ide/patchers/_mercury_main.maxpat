@@ -6499,7 +6499,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1965.0, 1476.5, 45.0, 22.0 ],
+					"patching_rect" : [ 1905.0, 1476.5, 45.0, 22.0 ],
 					"text" : "open 1"
 				}
 
@@ -6510,7 +6510,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1860.0, 1520.5, 136.0, 22.0 ],
+					"patching_rect" : [ 1800.0, 1520.5, 136.0, 22.0 ],
 					"text" : "poly~ planetaryMotion 2"
 				}
 
@@ -6522,7 +6522,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1860.0, 1444.0, 40.0, 22.0 ],
+					"patching_rect" : [ 1800.0, 1444.0, 40.0, 22.0 ],
 					"text" : "r EOF"
 				}
 
@@ -6534,7 +6534,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1927.0, 1444.0, 40.0, 22.0 ],
+					"patching_rect" : [ 1867.0, 1444.0, 40.0, 22.0 ],
 					"text" : "r SOF"
 				}
 
@@ -6546,7 +6546,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1860.0, 1476.5, 86.0, 22.0 ],
+					"patching_rect" : [ 1800.0, 1476.5, 86.0, 22.0 ],
 					"text" : "newInstance 2"
 				}
 
@@ -6558,7 +6558,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1893.5, 1414.0, 49.0, 22.0 ],
+					"patching_rect" : [ 1833.5, 1414.0, 49.0, 22.0 ],
 					"text" : "r solsys"
 				}
 
@@ -44158,7 +44158,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"items" : [ "FaceTime HD Camera", ",", "OBS Virtual Camera", ",", "CamTwist (2VUY)", ",", "CamTwist", ",", "NDI Video", ",", "c10h16" ],
+									"items" : [ "FaceTime HD Camera", ",", "OBS Virtual Camera", ",", "CamTwist (2VUY)", ",", "CamTwist", ",", "NDI Video" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -47881,8 +47881,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -54923,6 +54921,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
