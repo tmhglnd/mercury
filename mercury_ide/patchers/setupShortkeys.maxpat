@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-100",
@@ -305,8 +306,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 3,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -339,6 +340,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-24",
@@ -1618,10 +1620,10 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
 					"bgfillcolor_autogradient" : 0.0,
-					"bgfillcolor_color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgfillcolor_color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
 					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
 					"bgfillcolor_proportion" : 0.5,
@@ -1629,7 +1631,7 @@
 					"color" : [ 0.400000006, 0.8000000119, 1.0, 1.0 ],
 					"hint" : "Select a command to create a shortkey for",
 					"id" : "obj-104",
-					"items" : [ "execute", ",", "silence", ",", "comment", ",", "disable-editor", ",", "delete-line", ",", "copy-line", ",", "paste-line", ",", "paste-replace-line", ",", "jump-top", ",", "jump-bottom", ",", "jump-begin", ",", "jump-end", ",", "up", ",", "down", ",", "left", ",", "right" ],
+					"items" : [ "execute", ",", "silence", ",", "comment", ",", "disable-editor", ",", "delete-line", ",", "copy-line", ",", "paste-line", ",", "paste-replace-line", ",", "jump-top", ",", "jump-bottom", ",", "jump-begin", ",", "jump-end", ",", "up", ",", "down", ",", "left", ",", "right", ",", "jump-word-left", ",", "jump-word-right" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1644,7 +1646,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"id" : "obj-103",
 					"maxclass" : "dict.view",
 					"numinlets" : 1,
@@ -1652,7 +1654,7 @@
 					"patching_rect" : [ 165.0, 361.5, 135.0, 79.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 15.0, 120.0, 197.0, 285.0 ],
-					"stripecolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ]
+					"stripecolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
 			}
@@ -1775,7 +1777,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bordercolor" : [ 0.200000003, 0.200000003, 0.200000003, 1.0 ],
 					"hint" : "The current keycombination for the command",
 					"id" : "obj-84",
@@ -1917,8 +1919,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 3,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1951,6 +1953,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-38",
@@ -3252,7 +3255,7 @@
 				"multi" : 0
 			}
  ],
-		"bgcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 1.0 ],
+		"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 		"editing_bgcolor" : [ 0.2980392277, 0.2980392277, 0.2980392277, 1.0 ]
 	}
 
