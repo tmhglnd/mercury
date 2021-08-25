@@ -439,6 +439,34 @@ function jumpTo(k){
 	}
 }
 
+// move the cursor to the index of the letter in the full text
+function gotoIndex(i){
+	// go to beginning if index less then 0
+	if (i < 0){
+		jumpTo(0);
+		jumpTo(2);
+		draw();
+		return;
+	}
+	// else move to the index by checking every line length
+	for (var l=0; l<textBuf.length; l++){
+		if (i < textBuf[l].length){
+			curLine = l;
+			curChar = i;
+			draw();
+			return;
+		} else {
+			// curLine = l;
+			// curChar = textBuf[l].length;
+			i -= textBuf[l].length;
+		}
+	}
+	// else jump to end if index greater than max length;
+	jumpTo(3);
+	jumpTo(1);
+	draw();
+}
+
 function newLine(){
 	if (endOfLines()){
 		return;
@@ -659,6 +687,8 @@ function fillText(mat){
 // this can be a list of symbols for every line
 function set(){
 	var text = arrayfromargs(arguments);
+	text = (text.length < 1) ? '' : text;
+	
 	totalLines = Math.min(EDITOR_LINES, text.length);
 	text = text.slice(0, totalLines);
 	// empty buffer
@@ -740,6 +770,31 @@ function insert(){
 		}
 		textBuf = textBuf.concat(text);
 	}
+	draw();
+}
+
+// add one or multiple characters as a string
+function add(c){
+	c = (typeof c !== 'string') ? c.toString() : c;
+	for (var i=0; i<c.length; i++){
+		var char = c.charCodeAt(i);
+		post('char', char, "\n");
+		if (char === 13 || char === 10){
+			newLine();
+		} else if (char > 31 && char < 126){
+			addChar(char);
+		}
+	}
+	draw();
+}
+
+function back(){
+	backSpace();
+	draw();
+}
+
+function del(){
+	deleteChar();
 	draw();
 }
 
@@ -1060,6 +1115,7 @@ glVid.transform_reset = 2;
 glVid.blend_enable = 1;
 glVid.depth_enable = 0;
 glVid.layer = 1000;
+glVid.blend = "difference";
 
 //====================================================================
 // written by Timo Hoogland (c) 2020

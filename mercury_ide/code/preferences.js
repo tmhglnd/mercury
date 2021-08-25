@@ -61,6 +61,8 @@ let prefs = {
 	"blink_enable" : 1,
 	"blink_time" : 300,
 	"cursor" : "<<",
+	"ignore_keys": 0,
+	"slide_time": 15,
 	"autoLog" : 1,
 	"autoCopy" : 1,
 	"extEditor" : 0,
