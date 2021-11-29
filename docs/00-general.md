@@ -19,6 +19,8 @@ new emitter osc
 new midi "AU DLS Synth 1"
 ```
 
+Alias: `make`, `sound`
+
 By default Mercury has a small library of samples and single-cycle waveforms included in the environment. A full list of these samples and waveforms can be found here: [Sounds in Mercury](/mercury_ide/media/README.md)
 
 ## ring
@@ -37,6 +39,8 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 ring fromFunction random(20 0 100)
 ```
+
+Alias: `list`, `array`
 
 **Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
 
@@ -71,6 +75,8 @@ set bass gain(0.5)
 set drums fx(drive 10)
 set all fx(reverb 0.8 10)
 ```
+
+Alias: `give`, `apply`
 
 ## print
 
@@ -108,6 +114,8 @@ Disable all sounds that are evaluated **before** this line. Alternatively you ca
 ```java
 silence
 ```
+
+Alias: `mute`, `killAll` (deprecated)
 
 ## audio
 

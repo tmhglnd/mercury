@@ -65,17 +65,17 @@
 	- [reverb](./04-fx.md#reverb)
 
 - [List functions](./05-ring.md)
-	- [Generative Methods](#generative-methods)
+	- [Generative Methods](./05-ring.md#generative-methods)
 		- eg: `spread`, `fill`, `sine`, `cosine`
-	- [Algorithmic Methods](#algorithmic-methods)
+	- [Algorithmic Methods](./05-ring.md#algorithmic-methods)
 		- eg: `euclidean`, `hexBeat`, `fibonacci`
-	- [Stochastic Methods](#stochastic-methods)
+	- [Stochastic Methods](./05-ring.md#stochastic-methods)
 		- eg: `random`, `drunk`, `shuffle`, `choose`
-	- [Transformative Methods](#transformative-methods)
+	- [Transformative Methods](./05-ring.md#transformative-methods)
 		- eg: `join`, `palindrome`, `expand`, `lace`
-	- [Translate Methods](#translate-methods)
+	- [Translate Methods](./05-ring.md#translate-methods)
 		- eg: `divisionToMs`, `toScale`
-	- [Utility Methods](#utility-methods)
+	- [Utility Methods](./05-ring.md#utility-methods)
 		- eg: `add`, `multiply`, `wrap`, `fold`
 
 ## Param Glossary

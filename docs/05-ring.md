@@ -75,6 +75,14 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [stretch](#stretch)
 	- [unique](#unique)
 - [Utility Methods](#utility-methods)
+	- [wrap](#wrap)
+	- [clip](#clip)
+	- [fold](#fold)
+	- [map](#map)
+	- [add](#add)
+	- [subtract](#subtract)
+	- [multiply](#multiply)
+	- [divide](#divide)
 - [Translate Methods](#translate-methods)
 	- [tempo](#tempo)
 	- [divisionToMs](#divisiontoms)
@@ -242,7 +250,7 @@ list sin5 sineFloat(40 sineFloat(40 4 1 5))
 //   -0.80 ┤         ││    ││ ╰╯ │ │╰╯│ │     ╰─╯ │ 
 //   -1.00 ┤         ╰╯    ╰╯    ╰─╯  ╰─╯         ╰  
 ```
-Alias: sinF(), cosF()
+Alias: `sinF()`, `cosF()`
 
 ## saw / sawFloat
 
@@ -279,7 +287,7 @@ list saw2 saw(34 sinF(30 2 0 100) 0 12)
 //    1.00 ┤ ╭╯  ││   ╰╯  │╭╯   │ │      ╰─╮│ 
 //    0.00 ┼─╯   ╰╯       ╰╯    ╰─╯        ╰╯  
 ```
-Alias: sawF()
+Alias: `sawF()`
 
 ## square / squareFloat
 
@@ -297,7 +305,7 @@ list sqr1 square(30 4 0 1 0.2)
 //=>  1.00 ┼─╮     ╭─╮    ╭─╮     ╭╮           
 //    0.00 ┤ ╰─────╯ ╰────╯ ╰─────╯╰─────  
 ```
-Alias: rect()
+Alias: `rect()`
 
 ```java
 // Frequency Modulation with Gen.sin
@@ -309,7 +317,7 @@ list sqr2 squareFloat(30 sinF(30 2 1 5))
 //    0.20 ┤   │     │  ││  │ │ │  │ │ │  
 //    0.00 ┤   ╰─────╯  ╰╯  ╰─╯ ╰──╯ ╰─╯   
 ```
-Alias: squareF(), rectFloat(), rectF()
+Alias: `squareF()`, `rectFloat()`, `rectF()`
 
 # Algorithmic Methods
 
@@ -332,7 +340,7 @@ ring euc2 euclidean(7 5)
 ring euc3 euclidean(7 5 2)
 // => [0 1 1 1 0 1 1]
 ```
-Alias: euclid()
+Alias: `euclid()`
 
 ## hexBeat / hex
 
@@ -351,7 +359,7 @@ ring hex2 hexBeat(a)
 ring hex3 hexBeat(f9cb)
 // => [1 1 1 1 1 0 0 1 1 1 0 0 1 0 1 1]
 ```
-Alias: hex()
+Alias: `hex()`
 
 - [Learn hex beats](https://kunstmusik.github.io/learn-hex-beats/)
 
@@ -467,7 +475,7 @@ ring rnd2 random(5 12)
 ring rnd3 random(5 -12 12)
 // => [-2 -5 -8 -11 6]
 ```
-Alias: rand()
+Alias: `rand()`
 
 ## randomFloat
 
@@ -488,7 +496,7 @@ ring rnf2 randomFloat(5 0 12)
 ring rnf3 randomFloat(5 -12 12)
 // => [-1.19 -4.21 -7.36 -10.31 6.82]
 ```
-Alias: randF()
+Alias: `randF()`
 
 ## drunk
 
@@ -549,7 +557,7 @@ ring dr1 drunkFloat(5)
 //  0.39 ┤   │ 
 //  0.26 ┤   ╰ 
 ```
-Alias: drunkF()
+Alias: `drunkF()`
 
 ## urn
 
@@ -1096,7 +1104,7 @@ Stretch (or shrink) a ring to a specified length, linearly interpolating between
 ```java
 ring notes [0 12 3 7]
 ring str stretch(notes 15)
-//=> [ 0, 2, 5, 7, 10, 11, 9, 7, 5, 3, 3, 4, 5, 6, 7 ] 
+//=> [ 0 2 5 7 10 11 9 7 5 3 3 4 5 6 7 ] 
 
 //   12.00 ┼  ╭╮      
 //    9.60 ┤  │╰╮     
@@ -1126,7 +1134,178 @@ Alias: `thin()`
 
 # Utility Methods
 
-(coming soon...)
+## wrap
+
+Wrap values from a list within a specified low and high range.
+
+**arguments**
+- {Ring} -> Ring to wrap
+- {Number} -> Low value (optional, default=12)
+- {Number} -> High value (optional, default=0)
+
+```java
+list wr1 wrap([0 [1 [2 3]] [4 5] 6] 2 5)
+//=> [ 3 [ 4 [ 2 3 ] ] [ 4 2 ] 3 ] 
+
+list wr2 wrap(spread(30) 2 8)
+//=>  7.00 ┤╭╮    ╭╮    ╭╮    ╭╮    ╭╮    
+//    6.00 ┼╯│   ╭╯│   ╭╯│   ╭╯│   ╭╯│    
+//    5.00 ┤ │  ╭╯ │  ╭╯ │  ╭╯ │  ╭╯ │  ╭ 
+//    4.00 ┤ │ ╭╯  │ ╭╯  │ ╭╯  │ ╭╯  │ ╭╯ 
+//    3.00 ┤ │╭╯   │╭╯   │╭╯   │╭╯   │╭╯  
+//    2.00 ┤ ╰╯    ╰╯    ╰╯    ╰╯    ╰╯    
+```
+
+## clip
+
+Constrain values from a list within a specified low and high range.
+
+**arguments**
+- {Ring} -> Ring to constrain
+- {Number} -> Low value (optional default=12)
+- {Number} -> High value (optional default=0)
+
+```java
+list cn1 constrain([0 [1 [2 3]] [4 5] 6] 2 5)
+//=> [ 2 [ 2 [ 2 3 ] ] [ 4 5 ] 5 ] 
+
+list cn2 constrain(cosine(30 1) 5 9)
+//=>  9.00 ┼─────╮                   ╭─── 
+//    8.20 ┤     │                  ╭╯    
+//    7.40 ┤     ╰╮                ╭╯     
+//    6.60 ┤      ╰╮              ╭╯      
+//    5.80 ┤       │              │       
+//    5.00 ┤       ╰──────────────╯ 
+
+// Alias: constrain()
+```
+
+## fold
+
+Fold values from a list within a specified low and high range.
+
+**arguments**
+- {Ring} -> Ring to fold
+- {Number} -> Low value (optional, default=12)
+- {Number} -> High value (optional, default=0)
+
+```java
+list fl1 fold([0 [1 [2 3]] [4 5] 6] 2 5)
+//=> [ 4 [ 3 [ 2 3 ] ] [ 4 5 ] 4 ]
+
+list fl2 fold(spreadFloat(30 -9 13) 0 1)
+//=>  1.00 ┼╮         ╭╮      ╭╮          
+//    0.80 ┤│ ╭╮   ╭╮ ││ ╭╮╭╮ ││ ╭╮   ╭╮  
+//    0.60 ┤│ ││╭─╮││ ││╭╯││╰╮││ ││╭─╮││  
+//    0.40 ┤│╭╯││ ││╰─╯││ ││ ││╰─╯││ ││╰╮ 
+//    0.20 ┤╰╯ ││ ╰╯   ╰╯ ││ ╰╯   ╰╯ ││ ╰ 
+//    0.00 ┤   ╰╯         ╰╯         ╰╯    
+```
+
+## map
+
+Rescale values from a list from a specified input range to a specified low and high output range.
+
+**arguments**
+- {Ring} -> Ring to wrap
+- {Number} -> Low value (optional, default=1)
+- {Number} -> High value (optional, default=0)
+- {Number} -> Low value (optional, default=1)
+- {Number} -> High value (optional, default=0)
+- {Number} -> Exponent value (optional, default=1)
+
+```java
+list sc1 scale([0 [1 [2 3]] 4] 0 4 -1 1)
+//=> [ -1 [ -0.5 [ 0 0.5 ] ] 1 ] 
+```
+
+## mod
+
+Return the remainder after division. Also works in the negative direction, so wrap starts at 0
+
+**arguments**
+- {Int/Ring} -> input value
+- {Int/Ring} -> divisor (optional, default=12)
+- {Int/Ring} -> remainder after division
+
+```js
+list vals mod([-2 [4 [3 7]]] 5)
+//=> [ 3 [ 4 [ 3 2 ] ] ]
+```
+
+## add
+
+Add two lists sequentially
+
+```java
+list vals add([1 2 3 4] [1 2 3])
+//=> [ 2 4 6 5 ] 
+
+// Works with n-dimensional lists
+list vals add([1 [2 3]] [10 [20 30 40]])
+//=> [ 11 [ 22 33 42 ] ] 
+```
+
+## subtract
+
+Subtract two lists sequentially
+
+```java
+list vals subtract([1 2 3 4] [1 2 3])
+//=> [ 0 0 0 3 ] 
+
+list vals sub([1 [2 3]] [10 [20 30 40]])
+//=> [ -9 [ -18 -27 -38 ] ] 
+```
+
+Alias: `sub`
+
+## multiply
+
+Multiply two lists sequentially
+
+```java
+list vals multiply([1 2 3 4] [1 2 3])
+//=> [ 1 4 9 4 ] 
+
+list vals mul([1 [2 3]] [10 [20 30 40]])
+//=> [ 10 [ 40 90 80 ] ] 
+```
+
+Alias: `mul`
+
+## divide
+
+Divide two lists sequentially
+
+```java
+list vals divide([1 2 3 4] [1 2 3])
+//=> [ 1 1 1 4 ] 
+
+list vals div([1 [2 3]] [10 [20 30 40]])
+//=> [ 0.1 [ 0.1 0.1 0.05 ] ] 
+```
+
+Alias: `div`
+
+## normalize
+
+Normalize all the values in a list between 0. and 1. The highest value will be 1, the lowest value will be 0.
+
+**arguments**
+- {Number/Ring} -> input values
+- {Int/Ring} -> normailzed values
+
+```java
+list vals normalize([0 1 2 3 4])
+//=> [ 0 0.25 0.5 0.75 1 ]
+
+// works with n-dimensional lists
+list vals normalize([5 [12 [4 17]] 3 1])
+//=> [ 0.25 [ 0.6875 [ 0.1875 1 ] ] 0.125 0 ]  
+```
+
+Alias: `norm()`
 
 # Translate Methods
 

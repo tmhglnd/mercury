@@ -57,7 +57,7 @@ new sample snare_dnb name(snare)
 	set snare time(free /snareOSC/amplitude)
 ```
 
-Alternative function-names: `timing() | t()`
+Alias: `timing() | t()`
 
 ## beat
 
@@ -83,7 +83,7 @@ new sample hat_909 name(ht)
 new sample kick_909 time(1/4)
 ```
 
-Alternative function-names: `play() | rhythm() | b()`
+Alias: `play() | rhythm() | b()`
 
 ## shape
 
@@ -119,7 +119,7 @@ new synth saw shape(1/4 1/32) time(1)
 new synth saw shape(1/64 1/8 1/16) time(1)
 ```
 
-Alternative function-names: `length() | duration() | envelope() | env() | e()`
+Alias: `length() | duration() | envelope() | env() | e()`
 
 ## gain
 
@@ -135,7 +135,7 @@ new sample snare_909 name(sn)
 
 When using the `midi` instrument the gain will be multiplied by `127` to construct a velocity message. A `gain(0.5)` therefore maps to `63` and a `gain(1)` to `127`
 
-Alternative function-names: `amp() | volume() | g() | a() | v() | velocity()`
+Alias: `amp() | volume() | g() | a() | v() | velocity()`
 
 ## pan
 
@@ -149,7 +149,7 @@ new sample clap_909 name(hand)
 	set hand pan(random)
 ```
 
-Alternative function-names: `panning() | p()`
+Alias: `panning() | p()`
 
 ## fx
 
@@ -177,7 +177,7 @@ The currently available effects are:
 - reverb
 ```
 
-Alternative function-names: `effect() | with_fx() | add_fx()`
+Alias: `effect() | with_fx() | add_fx()`
 
 # synth and polySynth only
 
@@ -209,6 +209,8 @@ new synth sine note(mel 1) time(1/16)
 
 ```
 
+Alias: `pitch()`
+
 ## useDetune
 
 Allow detuning to have effect on the played note. The detuning is made by adding a floating-point value to the played note, Where the ratio is the amount of detune between one semitone and the next. For example `7.5` results in `7` semitones (mapped to the scale if `set scale` is used) and then a `0.5` semitone is added (= 50 cents). Detuning is applied after mapping the integer semitone to a scale.
@@ -233,6 +235,8 @@ Add a second oscillator to the synths sound. This can either be a sine, triangle
 ```java
 new synth saw note(0 1) time(1/4) wave2(square 0.998)
 ```
+
+Alias: `osc2()`
 
 ## noise
 
@@ -281,7 +285,7 @@ ring positions randomFloat(8 0 0.5)
 new sample choir time(1/16) offset(positions)
 ```
 
-Alternative function-names: `start() | from() | onset()`
+Alias: `start() | from() | onset()`
 
 ## useNote
 
@@ -376,7 +380,7 @@ new midi "AU DLS Synth 1" length(1/2) time(1)
 //=> duration of 1/2 (1200 ms at 100 bpm)
 ```
 
-Alternative function-names: `duration()`
+Alias: `duration()`
 
 ## out
 
@@ -391,7 +395,7 @@ new midi "AU DLS Synth 1" note(7 2) out(1)
 new midi "AU DLS Synth 1" note(0 0) out(2)
 ```
 
-Alternative function-names: `channel()`
+Alias: `channel()`
 
 ## chord
 
@@ -407,7 +411,7 @@ ring chords [[0 4 7] [2 5 9] [5 9 0]]
 new midi "AU DLS Synth 1" note(chords 1) chord(on)
 ```
 
-Alternative function-names: `poly()`
+Alias: `poly()`
 
 ## sync
 
@@ -422,7 +426,7 @@ new midi "aMidiDevice" sync(on)
 new midi "otherDevice" sync(off)
 ```
 
-Alternative function-names: `clock()`
+Alias: `clock()`
 
 ## change
 
