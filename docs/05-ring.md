@@ -1,6 +1,6 @@
 # List Methods
 
-Mercury uses the `total-serialism` Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (array) is circular, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the array. When the index is higher then the amount of values in the array it will return to the begin and start over, hence a circular array or `ring`. 
+Mercury uses the `total-serialism` Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (list) is circular, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the list. When the index is higher then the amount of values in the list it will return to the begin and start over, hence a circular list or `ring`. 
 
 ```
 ring <the-ring-name> [ v0 v1 v2 ... v-n ] 
@@ -17,7 +17,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 **Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
 
-[`total-serialism`](https://www.npmjs.com/package/total-serialism) is a set of methods used for procedurally generating and transforming number sequences. This library is mainly designed with algorithmic composition of music in mind, but can surely be useful for other purposes that involve generation and manipulation of arrays and numbers. The library is a result of my research in algorithmic composition, livecoding and electronic music and was first prototyped with Max/MSP in the Mercury livecoding environment.
+[`total-serialism`](https://www.npmjs.com/package/total-serialism) is a set of methods used for procedurally generating and transforming number sequences. This library is mainly designed with algorithmic composition of music in mind, but can surely be useful for other purposes that involve generation and manipulation of lists and numbers. The library is a result of my research in algorithmic composition, livecoding and electronic music and was first prototyped with Max/MSP in the Mercury livecoding environment.
 
 # Table of Content
 
@@ -28,6 +28,8 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [fill](#fill)
 	- [sine / cosine](#sine--cosine)
 	- [sineFloat / cosineFloat](#sineFloat--cosineFloat)
+	- [saw / sawFloat](#saw--sawFloat)
+	- [square / squareFloat](#square--squareFloat)
 - [Algorithmic Methods](#algorithmic-methods)
 	- [euclidean](#euclidean--euclid)
 	- [hexBeat](#hexbeat--hex)
@@ -36,7 +38,6 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [pell](#pell)
 	- [lucas](#lucas)
 	- [threeFibonacci](#threefibonacci)
-	- lindenmayerStringExpansion (coming soon...)
 - [Stochastic Methods](#stochastic-methods)
 	- [randomSeed](#randomseed)
 	- [random](#random)
@@ -44,9 +45,9 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [drunk](#drunk)
 	- [drunkFloat](#drunkFloat)
 	- [urn](#urn)
-	- [clave](#clave)
 	- [coin](#coin)
 	- [dice](#dice)
+	- [clave](#clave)
 	- [twelveTone](#twelvetone)
 	- [choose](#choose)
 	- [pick](#pick)
@@ -54,20 +55,25 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [expand](#expand)
 - [Transformative Methods](#transformative-methods)
 	- [clone](#clone)
-	- [combine / join](#combine)
-	- [duplicate](#duplicate)
+	- [join](#combine)
+	- [copy](#duplicate)
+	- [pad](#pad)
 	- [every](#every)
-	- [invert / flip](#invert)
-	- [lace / zip](#lace)
-	- [lookup / get](#lookup)
-	- [merge / mix](#merge)
-	- [palindrome / mirror](#palindrome)
+	- [flat](#flat)
+	- [invert](#invert)
+	- [lace](#lace)
+	- [lookup](#lookup)
+	- [merge](#merge)
+	- [palindrome](#palindrome)
 	- [repeat](#repeat)
-	- [reverse / retrograde](#reverse)
-	- [rotate / turn](#rotate)
+	- [reverse](#reverse)
+	- [rotate](#rotate)
+	- [slice](#slice)
+	- [split](#split)
+	- [cut](#cut)
 	- [spray](#spray)
-	- [stretch / stretchFloat](#stretch)
-	- [unique / thin](#unique)
+	- [stretch](#stretch)
+	- [unique](#unique)
 - [Utility Methods](#utility-methods)
 - [Translate Methods](#translate-methods)
 	- [tempo](#tempo)
@@ -160,7 +166,7 @@ ring fll2 fill(kick_min 2 hat_min 3)
 
 ## sine / cosine
 
-Generate an array with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
+Generate a list with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
 
 **arguments**
 - {Int+} -> Length of ring
@@ -178,6 +184,16 @@ ring sin2 sine(10 1 -12 12)
 
 ring sin3 sine(10 2 0 5)
 // => [2 4 3 1 0 2 4 3 1 0]
+
+// generate 10 ints with 4 periods a sine function
+list sin4 sine(11 4 0 7)
+// 6.00 ┼╭╮   ╭╮ ╭╮ 
+// 5.00 ┤││╭╮ ││ ││ 
+// 4.00 ┤│││╰╮││ ││ 
+// 3.00 ┼╯││ │││ ││ 
+// 2.00 ┤ ││ ││╰╮││ 
+// 1.00 ┤ ││ ││ ╰╯│ 
+// 0.00 ┤ ╰╯ ╰╯   ╰  
 ```
 
 ```java
@@ -193,7 +209,7 @@ ring cos3 cosine(10 2 0 5)
 
 ## sineFloat / cosineFloat
 
-Generate an array with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
+Generate a list with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
 
 **arguments**
 - {Int+} -> Length of ring
@@ -203,19 +219,97 @@ Generate an array with n-periods of a (co)sine function. Optional last arguments
 - {Number} -> Phase offset (optional, default=0)
 
 ```java
-ring sin4 sineFloat(8)
-// => [0 0.707 1 0.707 0 -0.707 -1 -0.707]
+// generate 16 floats with 1 period of a cosine function
+list cos4 cosineFloat(8)
+//  1.00 ┼╮               
+//  0.60 ┤╰─╮          ╭─ 
+//  0.20 ┼  ╰╮        ╭╯  
+// -0.20 ┤   ╰╮      ╭╯   
+// -0.60 ┤    ╰╮    ╭╯    
+// -1.00 ┤     ╰────╯      
 
-ring sin5 sineF(12 3 -1 1)
-// => [0 1 0 -1 0 1 0 -1 0 1 0 -1]
+// frequency modulation of the period argument with another list
+list sin5 sineFloat(40 sineFloat(40 4 1 5))
+//=>  1.00 ┤ ╭╮  ╭──╮           ╭╮   ╭╮  ╭─╮        
+//    0.80 ┤ │╰╮╭╯  │ ╭╮  ╭╮    ││   ││ ╭╯ │        
+//    0.60 ┤╭╯ ││   ╰╮││  ││    ││   ││ │  │        
+//    0.40 ┤│  ╰╯    │││  ││    ││   ││ │  │        
+//    0.20 ┤│        ││╰╮╭╯│╭╮  ││   ││ │  │╭╮   ╭╮ 
+//    0.00 ┼╯        ││ ││ ││╰╮╭╯│ ╭╮││ │  │││  ╭╯│ 
+//   -0.20 ┤         ││ ││ ││ ││ │ ││││ │  │││  │ │ 
+//   -0.40 ┤         ││ ││ ││ ││ │ ││││ │  ╰╯╰╮ │ │ 
+//   -0.60 ┤         ││ ╰╯ ││ ││ │ ││││ │     │ │ │ 
+//   -0.80 ┤         ││    ││ ╰╯ │ │╰╯│ │     ╰─╯ │ 
+//   -1.00 ┤         ╰╯    ╰╯    ╰─╯  ╰─╯         ╰  
 ```
+Alias: sinF(), cosF()
+
+## saw / sawFloat
+
+Generate a list with n-periods of a saw/phasor function. Optional last arguments set lo and hi range and phase offset. Only setting first range argument sets the low-range to 0
+
+**arguments**
+- {Int} -> Length of output list (resolution)
+- {Number/Ring} -> Periods of the wave (option, default=1)
+- {Number} -> Low range of values (optional, default=-1) 
+- {Number} -> High range of values (optional, default=1)
+- {Number} -> Phase offset (optional, default=0)
+
 ```java
-ring cos4 cosineFloat(8)
-// => [1 0.707 0 -0.707 -1 -0.707 0 0.707]
+list saw1 sawFloat(25 2.5)
+//=>  0.80 ┤       ╭─╮       ╭─╮     
+//    0.44 ┤     ╭─╯ │     ╭─╯ │     
+//    0.08 ┤    ╭╯   │    ╭╯   │     
+//   -0.28 ┼  ╭─╯    │  ╭─╯    │  ╭─ 
+//   -0.64 ┤╭─╯      │╭─╯      │╭─╯  
+//   -1.00 ┼╯        ╰╯        ╰╯    
 
-ring cos5 cosineF(12 3 -1 1)
-// => [1 0 -1 0 1 0 -1 0 1 0 -1 0]
+// Modulation on frequency
+list saw2 saw(34 sinF(30 2 0 100) 0 12)
+//=> 11.00 ┼         ╭╮             ╭╮╭╮      
+//   10.00 ┤         ││╭─╮     ╭╮   ││││      
+//    9.00 ┤         │││ │     ││ ╭╮││││      
+//    8.00 ┤   ╭─╮   │││ │    ╭╯│ ││││││    ╭ 
+//    7.00 ┤  ╭╯ │   │││ │   ╭╯ │ ││││││    │ 
+//    6.00 ┤  │  │   │││ │  ╭╯  │ │╰╯││╰╮   │ 
+//    5.00 ┤  │  │╭╮╭╯││ │  │   │ │  ││ │   │ 
+//    4.00 ┤  │  ││││ ││ │  │   │ │  ││ │   │ 
+//    3.00 ┤  │  ││╰╯ ││ │  │   │ │  ││ ╰╮  │ 
+//    2.00 ┤  │  ││   ││ ╰╮ │   │ │  ╰╯  │  │ 
+//    1.00 ┤ ╭╯  ││   ╰╯  │╭╯   │ │      ╰─╮│ 
+//    0.00 ┼─╯   ╰╯       ╰╯    ╰─╯        ╰╯  
 ```
+Alias: sawF()
+
+## square / squareFloat
+
+Generate a list with n-periods of a square/pulse wave function. Optional last arguments set lo and hi range and pulse width. Only setting first range argument sets the low-range to 0.
+
+**arguments**
+- {Int} -> Length of output list (resolution)
+- {Number/Ring} -> Periods of the wave (option, default=1)
+- {Number} -> Low range of values (optional, default=0) 
+- {Number} -> High range of values (optional, default=1)
+- {Number} -> Pulse width (optional, default=0.5)
+
+```java
+list sqr1 square(30 4 0 1 0.2)
+//=>  1.00 ┼─╮     ╭─╮    ╭─╮     ╭╮           
+//    0.00 ┤ ╰─────╯ ╰────╯ ╰─────╯╰─────  
+```
+Alias: rect()
+
+```java
+// Frequency Modulation with Gen.sin
+list sqr2 squareFloat(30 sinF(30 2 1 5))
+//=>  1.00 ┼───╮     ╭──╮╭──╮ ╭─╮  ╭─╮ ╭─ 
+//    0.80 ┤   │     │  ││  │ │ │  │ │ │  
+//    0.60 ┤   │     │  ││  │ │ │  │ │ │  
+//    0.40 ┤   │     │  ││  │ │ │  │ │ │  
+//    0.20 ┤   │     │  ││  │ │ │  │ │ │  
+//    0.00 ┤   ╰─────╯  ╰╯  ╰─╯ ╰──╯ ╰─╯   
+```
+Alias: squareF(), rectFloat(), rectF()
 
 # Algorithmic Methods
 
@@ -232,12 +326,13 @@ Generate a euclidean rhythm evenly spacing n-beats amongst n-steps.Inspired by G
 ring euc1 euclidean()
 // => [1 0 1 0 1 0 1 0]
 
-ring euc2 euclid(7 5)
+ring euc2 euclidean(7 5)
 // => [1 1 0 1 1 0 1]
 
-ring euc3 euclid(7 5 2)
+ring euc3 euclidean(7 5 2)
 // => [0 1 1 1 0 1 1]
 ```
+Alias: euclid()
 
 ## hexBeat / hex
 
@@ -250,12 +345,13 @@ Generate hexadecimal rhythms. Hexadecimal beats make use of hexadecimal values (
 ring hex1 hexBeat()
 // => [1 0 0 0]
 
-ring hex2 hex(a)
+ring hex2 hexBeat(a)
 // => [1 0 1 0]
 
-ring hex3 hex(f9cb)
+ring hex3 hexBeat(f9cb)
 // => [1 1 1 1 1 0 0 1 1 1 0 0 1 0 1 1]
 ```
+Alias: hex()
 
 - [Learn hex beats](https://kunstmusik.github.io/learn-hex-beats/)
 
@@ -368,9 +464,10 @@ ring rnd1 random(5)
 // => [1 0 0 1 1]
 ring rnd2 random(5 12)
 // => [0 10 3 2 2]
-ring rnd3 rand(5 -12 12)
+ring rnd3 random(5 -12 12)
 // => [-2 -5 -8 -11 6]
 ```
+Alias: rand()
 
 ## randomFloat
 
@@ -386,11 +483,12 @@ set randomSeed 31415
 
 ring rnf1 randomFloat(5)
 // => [0.81 0.32 0.01 0.85 0.88]
-ring rnf2 randomF(5 0 12)
+ring rnf2 randomFloat(5 0 12)
 // => [0.16 10.72 3.16 262 2.34]
-ring rnf3 randF(5 -12 12)
+ring rnf3 randomFloat(5 -12 12)
 // => [-1.19 -4.21 -7.36 -10.31 6.82]
 ```
+Alias: randF()
 
 ## drunk
 
@@ -406,7 +504,7 @@ Generate a ring of random values but the next random value is within a limited r
 - {Bool} -> fold between lo and hi range (optional, default=true)
 
 ```java
-Rand.drunk(10, 5, 0, 24);
+Rand.drunk(10, 5, 0, 24)
 //=> [ 13, 10, 14, 13, 14, 13, 15, 10, 8, 4 ] 
 
 // 22.00 ┼       ╭╮ 
@@ -416,7 +514,7 @@ Rand.drunk(10, 5, 0, 24);
 //  5.20 ┤ ╰╯     │ 
 //  1.00 ┤        ╰ 
 
-Rand.drunk(10, 4, 0, 12, 6, false);
+Rand.drunk(10, 4, 0, 12, 6, false)
 //=> [ 2, -2, 2, 1, -3, -1, -2, -1, 3, 6 ] 
 
 //  2.00 ┤╭╮        
@@ -441,7 +539,7 @@ Generate a ring of random floating-point values but the next random value is wit
 - {Bool} -> fold between lo and hi range (optional, default=true)
 
 ```java
-ring dr1 drunkFloat(5);
+ring dr1 drunkFloat(5)
 //=> [ 0.493, 0.459, 0.846, 0.963, 0.400 ] 
 
 //  0.88 ┼╮╭╮  
@@ -451,6 +549,7 @@ ring dr1 drunkFloat(5);
 //  0.39 ┤   │ 
 //  0.26 ┤   ╰ 
 ```
+Alias: drunkF()
 
 ## urn
 
@@ -470,6 +569,30 @@ ring urn2 urn(8 4)
 // => [0 2 1 3 1 3 0 2]
 ring urn3 urn(8 10 14)
 // => [13 10 12 11 12 10 13 11]
+```
+
+## coin
+
+Generate a list of random integer values 0 or 1 like a coin toss, heads/tails. Or 
+
+**arguments**
+- {Int+} -> number of coin tosses to output as ring
+
+```java
+ring coin1 coin(8)
+// => [1 0 1 0 1 0 1 1]
+```
+
+## dice
+
+Generate a list of random integer values 1 to 6 like the roll of a dice.
+
+**arguments**
+- {Int+} -> number of dice rolls to output as ring
+
+```java
+ring dice1 dice(8)
+// => [5 4 6 4 4 5 4 2]
 ```
 
 ## clave
@@ -499,30 +622,6 @@ list clv4 clave(16 3 1)
 //=> █  █  ██  █ █  █  
 ```
 
-## coin
-
-Generate a list of random integer values 0 or 1 like a coin toss, heads/tails. Or 
-
-**arguments**
-- {Int+} -> number of coin tosses to output as ring
-
-```java
-ring coin1 coin(8)
-// => [1 0 1 0 1 0 1 1]
-```
-
-## dice
-
-Generate a list of random integer values 1 to 6 like the roll of a dice.
-
-**arguments**
-- {Int+} -> number of dice rolls to output as ring
-
-```java
-ring dice1 dice(8)
-// => [5 4 6 4 4 5 4 2]
-```
-
 ## twelveTone
 
 Generate a list of 12 semitones then shuffle the list based on the random seed. 
@@ -543,7 +642,7 @@ ring notes shuffle(notes)
 
 ## choose
 
-Choose random items from an array provided with uniform probability distribution. The default array is an array of 0 and 1.
+Choose random items from a list provided with uniform probability distribution. The default list is a list of 0 and 1.
 
 **arguments**
 - {Int+} -> length of ring output
@@ -563,7 +662,7 @@ ring melody choose(10 notes)
 
 ## pick
 
-Pick random items from an array provided. An "urn" is filled with values and when one is picked it is removed from the urn. If the outputlist is longer then the range, the urn refills when empty. On refill it is made sure no repeating value can be picked.
+Pick random items from a list provided. An "urn" is filled with values and when one is picked it is removed from the urn. If the outputlist is longer then the range, the urn refills when empty. On refill it is made sure no repeating value can be picked.
 
 **arguments**
 - {Int+} -> length of ring output
@@ -676,11 +775,11 @@ ring partE [hat hat hat snare]
 ring sequence join(partD partE)
 // => [kick hat snare hat hat hat hat snare]
 ```
-Alternative: `join()`, `concat()`
+Alias: `join()`, `concat()`
 
-## duplicate
+## copy / duplicate
 
-Duplicate an array a certain amount of times.
+Duplicate a list a certain amount of times.
 
 **arguments**
 - {Ring} -> Ring to duplicate
@@ -692,7 +791,25 @@ ring phrase duplicate(notes 4)
 // => [0 3 7 0 3 7 0 3 7 0 3 7]
 ```
 
-Alternative: `dup()`
+Alias: `copy(), dup()`
+
+## pad 
+
+Pad a list with zeroes (or any other value) up to the length specified. The padding value can optionally be changed and the shift argument rotates the list n-steps left or right (negative). This method is similar to `every()` except arguments are not specified in musical bars/divisions.
+
+**arguments**
+- {NumberRing} -> List to use every n-bars
+- {Int} -> output length of list (optional, default=16)
+- {Value} -> padding value for the added items (optional, default=0)
+- {Number} -> shift in steps (optional, default=0)
+
+```java 
+list pad2 pad(pad1 9)
+// [ 3 7 11 12 0 0 0 0 0]
+
+list pad3 pad([c f g] 11 - 4)
+// [ - - - - c f g - - - - ]
+```
 
 ## every
 
@@ -711,6 +828,19 @@ ring sequence every(rhythm 2 8)
 ring melody [12 19 24 27 24]
 ring phrase every(melody 2 8)
 // => [12 19 24 27 24 0 0 0 0 0 0 0 0 0 0 0]
+```
+
+## flat
+
+Flatten a multidimensional list. Optionally set the depth for the flattening with the second argument.
+
+**arguments**
+- {Ring} -> list to flatten
+- {Number} -> depth of flatten (default=Infinity)
+
+```java 
+list fl1 flat([1 [2 3 [ 4 ] 5] 6])
+//=> [ 1 2 3 4 5 6 ] 
 ```
 
 ## invert
@@ -734,7 +864,7 @@ ring inv3 invert(notes 3 10)
 // => [13 10 6 1]
 ```
 
-Alternative: `inverse()`, `flip()`, `inv()`
+Alias: `inverse()`, `flip()`, `inv()`
 
 ## lace
 
@@ -751,12 +881,12 @@ ring melody lace(partA partB)
 // => [0 12 24 3 19 22 7 15 5 0]
 ```
 
-Alternative: `zip`
+Alias: `zip()`
 
 ## lookup
 
 Build a ring of items based on another ring of indices 
-The values are wrapped within the length of the lookup array
+The values are wrapped within the length of the lookup list
 
 **arguments**
 - {NumberRing} -> Ring with indeces to lookup
@@ -767,17 +897,17 @@ The values are wrapped within the length of the lookup array
 ring items [c e f g]
 ring indices [0 1 1 2 0 2 2 1]
 
-// first array is the index, second ring are the items to lookup
-ring notes lookup(indices, items);
+// first list is the index, second ring are the items to lookup
+ring notes lookup(indices, items)
 //=> [ c e e f c f f e ]
 
 // indices are wrapped between listlength
 ring indices [8 -5 144 55]
-ring notes lookup(indices, items);
+ring notes lookup(indices, items)
 //=> [ g e c e ]
 ```
 
-Alternative: `get`
+Alias: `get()`
 
 ## merge
 
@@ -793,14 +923,14 @@ ring merged merge(partA partB)
 // => [[0 12] [3 19] [7 15] 5 0]
 // mix()
 ```
-Alternative: `mix()`
+Alias: `mix()`
 
 ## palindrome
 
 Reverse a ring and concatenating to the input, creating a palindrome of the ring. A second argument 1 will remove the duplicates halfway through and at the end.
 
 **arguments**
-- {Ring} -> array to make palindrome of
+- {Ring} -> list to make palindrome of
 - {Bool} -> no-double flag (optional, default=0)
 
 ```java
@@ -814,7 +944,7 @@ ring melodyB palindrome(notes 1)
 // mirror()
 ```
 
-Alternative: `palin()`, `mirror()`
+Alias: `palin()`, `mirror()`
 
 ## repeat
 
@@ -853,7 +983,7 @@ ring rev reverse(melody)
 // retrograde()
 // rev()
 ```
-Alternative: `retrograde()`, `rev()`
+Alias: `retrograde()`, `rev()`
 
 ## rotate
 
@@ -875,7 +1005,72 @@ ring right rotate(melody 2)
 // rot()
 ```
 
-Alternative: `turn()`, `rot()`
+Alias: `turn()`, `rot()`
+
+## sort
+
+Sort an list of numbers or strings. sorts ascending or descending in numerical and alphabetical order.
+
+**arguments**
+- {Ring} -> List to sort
+- {Int} -> sort direction (positive value is ascending)
+
+```java
+list srt1 sort([-5 7 0 3 12 -7 9] -1)
+//=> [ 12 9 7 3 0 -5 -7 ] 
+
+// works with strings (but alphabetical order!)
+list srt2 sort([e4 g3 c4 f3 b5])
+//=> [ b5 c4 e4 f3 g3 ]
+```
+
+## slice
+
+Slice a list in one or multiple parts. Slice lengths are determined by the second argument list. Outputs a list of lists of the result
+
+**arguments**
+- {Ring} -> list to slice in parts
+- {Number/Ring} -> slice lengths to slice list into
+- {Bool} -> output rest flag (optional, default=false)
+
+```java
+list sl1 slice(spread(8) [3 2])
+//=> [ [ 0 1 2 ] [ 3 4 ] [ 5 6 7 ] ] 
+
+// set rest-flag to false removes last slice 
+list sl2 slice(spread(24) [3 2 -1 5] 0)
+//=> [ [ 0 1 2 ] [ 3 4 ] [ 5 6 7 8 9 ] ] 
+```
+
+## split
+
+Similar to slice in that it also splits a list, except that slice recursively splits until the list is completely empty. If a list is provided as split sizes it will iterate the lengths.
+
+**arguments**
+- {Ring} -> list to split in parts
+- {Number/Ring} -> split lengths to split list into
+
+```java
+list sp1 split(spread(12) 3)
+//=> [ [ 0 1 2 ] [ 3 4 5 ] [ 6 7 8 ] [ 9 10 11 ] ] 
+
+list sp2 split(spread(12) [3 2 -1])
+//=> [ [ 0 1 2 ] [ 3 4 ] [ 5 6 7 ] [ 8 9 ] [ 10 11 ] ] 
+```
+
+## cut
+
+Cut the beginning of a list and return. Slice length is determined by the second argument number. Outputs a list of the result.
+
+**arguments**
+- {Ring} -> list to slice in parts
+- {Number} -> slice length to cut list into
+- {Bool} -> output rest flag (optional, default=false)
+
+```java
+list ct1 cut(spread(8) 3)
+//=> [ 0 1 2 ]
+```
 
 ## spray
 
@@ -898,7 +1093,7 @@ Stretch (or shrink) a ring to a specified length, linearly interpolating between
 
 **arguments**
 
-```js
+```java
 ring notes [0 12 3 7]
 ring str stretch(notes 15)
 //=> [ 0, 2, 5, 7, 10, 11, 9, 7, 5, 3, 3, 4, 5, 6, 7 ] 
@@ -916,7 +1111,7 @@ ring str stretchFloat(notes 15)
 
 ## unique
 
-Filter duplicate items from a ring. does not account for 2-dimensional arrays in the ring.
+Filter duplicate items from a ring. does not account for 2-dimensional lists in the ring.
 
 **arguments**
 - {Ring} -> Ring to filter
@@ -927,7 +1122,7 @@ ring thinned unique(notes)
 // => [0 5 7 3 12]
 ```
 
-Alternative: `thin()`
+Alias: `thin()`
 
 # Utility Methods
 
@@ -951,7 +1146,7 @@ set tempo 100
 Convert beat division strings or beat ratio floats to milliseconds using BPM from the global settings. Optional second argument sets BPM and ignores global setting.
 
 **arguments**
-- {Ring} -> beat division or ratio array
+- {Ring} -> beat division or ratio list
 - {Number} -> set the BPM (optional, default = global tempo)
 
 ```java
@@ -967,4 +1162,4 @@ ring ms3 divisionToMs(ratios)
 // => [500 1000 250 375 500 333.33 4000]
 ```
 
-Alternative: `dtoms()`
+Alias: `dtoms()`
