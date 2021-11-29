@@ -64,7 +64,7 @@
 	- [lfo](./04-fx.md#lfo)
 	- [reverb](./04-fx.md#reverb)
 
-- [Ring functions](./05-ring.md)
+- [List functions](./05-ring.md)
 	- [Generative Methods](#generative-methods)
 		- eg: `spread`, `fill`, `sine`, `cosine`
 	- [Algorithmic Methods](#algorithmic-methods)
@@ -76,11 +76,11 @@
 	- [Translate Methods](#translate-methods)
 		- eg: `divisionToMs`, `toScale`
 	- [Utility Methods](#utility-methods)
-		- eg: `add`, `subtract`, `divide`, `multiply`
+		- eg: `add`, `multiply`, `wrap`, `fold`
 
 ## Param Glossary
 
-When describing input argumenst for functions in some cases it is necessary to know if the values can be a number (positive and/or negative), a decimal number (float) or even a name.
+When describing input arguments for functions in some cases it is necessary to know if the values can be a number (positive and/or negative), a decimal number (float) or a name (string).
 
 **Values**
 
