@@ -1,6 +1,6 @@
-# Ring Methods
+# List Methods
 
-Mercury uses the `total-serialism` Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences are refered to as `ring`'s, because the sequence (array) is circular. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the array. When the index is higher then the amount of values in the array it will return to the begin and start over, hence a circular array or `ring`. 
+Mercury uses the `total-serialism` Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (array) is circular, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the array. When the index is higher then the amount of values in the array it will return to the begin and start over, hence a circular array or `ring`. 
 
 ```
 ring <the-ring-name> [ v0 v1 v2 ... v-n ] 
@@ -44,6 +44,7 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [drunk](#drunk)
 	- [drunkFloat](#drunkFloat)
 	- [urn](#urn)
+	- [clave](#clave)
 	- [coin](#coin)
 	- [dice](#dice)
 	- [twelveTone](#twelvetone)
@@ -469,6 +470,33 @@ ring urn2 urn(8 4)
 // => [0 2 1 3 1 3 0 2]
 ring urn3 urn(8 10 14)
 // => [13 10 12 11 12 10 13 11]
+```
+
+## clave
+
+Generate random clave patterns. The output is a binary list that represents a rhythm, where 1's represent onsets and 0's rests. First argument sets the list length output, second argument sets the maximum gap between onsets, third argument the minimum gap.
+
+**arguments**
+- {Int+} -> output length of rhythm (default=8)
+- {Int+} -> maximum gap between onsets (default=3)
+- {Int+} -> minimum gap between onsets (default=2)
+
+```java
+list clv1 clave()
+//=> [ 1 0 1 0 0 1 0 1 ] 
+//=> █ █  █ █
+
+list clv2 clave(8)
+//=> [ 1 0 0 1 0 1 0 1 ] 
+//=> █  █ █ █
+
+list clv3 clave(16 4)
+//=> [ 1 0 0 0 1 0 1 0 0 0 1 0 0 1 0 1 ] 
+//=> █   █ █   █  █ █
+
+list clv4 clave(16 3 1)
+//=> [ 1 0 0 1 0 0 1 1 0 0 1 0 1 0 0 1 ] 
+//=> █  █  ██  █ █  █  
 ```
 
 ## coin
