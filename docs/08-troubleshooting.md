@@ -1,13 +1,13 @@
 
 # ⚠ Troubleshooting
 
-It could be that you are having issues with Mercury, since it's still in development and there may occasionally be some bugs. Please follow the steps below:
+If you are having issues please follow the steps below:
 
-1. First check the [Troubleshooting page](#table-of-content)
-2. Check if your problem was already reported in the [Issues](https://github.com/tmhglnd/mercury/issues)
+1. Check this [troubleshooting page](#table-of-content)
+2. Check if your problem was already reported in the [issues](https://github.com/tmhglnd/mercury/issues)
 3. If not, please file a [new issue](https://github.com/tmhglnd/mercury/issues/new)
-4. Ask around in the [Mercury Discord](https://discord.gg/vt59NYU)
-5. Or, fix the bug yourself and send a pull request! :pray: (much appreciated!)
+4. Ask help on the [Mercury Discord](https://discord.gg/vt59NYU)
+5. Or fix the bug yourself and send me a pull request 🙏 (much appreciated!)
 
 # Table of Content
 
@@ -27,11 +27,11 @@ Do the same for the waveforms: `Sounds > Replace Waveforms`, then select the fol
 
 ## I hear an Alert sound when I execute the code
 
-Most Mac users will hear an Alert sound when they hit keycommands that the operation system does not recognize. You can disable the Alert Volume in `System Preferences > Sounds > Sound Effects`.
+Most Mac users will hear an Alert sound when they hit keycommands that the operating system does not recognize. You can disable the Alert Volume in `System Preferences > Sounds > Sound Effects`.
 
 ## My CPU usage is very high
 
-In case you are experiencing a very high cpu usage please try the following settings:
+In case you are experiencing a very high cpu usage (resulting in clicks/pops/glitches) please try the following settings in `Settings > Audio`:
 
 - Total instruments: `4`
 - Driver: `Core Audio` or `Asio4All`

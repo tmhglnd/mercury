@@ -35,7 +35,7 @@ While working on this tutorial you might run into some issues where something is
 
 # 💻 Install Mercury
 
-Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative coding environment from Cycling'74. **You do not need to buy a Max-license in order to use Mercury!** 😎 At the moment Mercury seems to run best in Max8.0.8, but if this crashes for you please try the latest Max version from their website. 
+Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative coding environment from Cycling'74. **You do not need to buy a Max-license in order to use Mercury!** 😎
 
 1. Please download Max8 through any of the links below.
 
@@ -51,25 +51,18 @@ Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative codin
 	Download latest release and unzip entire folder in ~/Documents/Max 8/Projects
 	```
 	
-	Or for git-users via the commandline, you can clone/fork Mercury to the Projects folder in your Documents.
-	
-	```
-	$ cd ~/Documents/Max\ 8/Projects
-	$ git clone http://github.com/tmhglnd/mercury
-	```
-	
 	Now your filepath should look something like: `<User>/Documents/Max 8/Projects/mercury-v.0.13.0-alpha`
 
 # 🚀 Launch Mercury
 
-Launch Mercury by double clicking `mercury_ide.maxproj` located in the folder `mercury-v.x.x.x/mercury-ide`. If you like you can create a shortcut or alias on your desktop for it or in your Applications folder.
+Launch Mercury by double clicking `mercury_ide.maxproj` located in the folder `mercury-v.x.x.x/mercury-ide`.
 
 - ⏳ Give it some time to load, this might take a bit depending on your computers processor.
 
 Once it's ready you will see two windows:
 
 1. The `_mercury_main` window 
-2. A (still black) window named `mercury`. 
+2. The  `mercury` window (still black). 
 
 The main window is used to quickly access the most important functions in Mercury such as turning the audio on/off and starting a recording of your sound. When you turn the Rendering on you will start to see the text-editor in the `mercury` window. This is the window were you will type your code.
 
@@ -79,13 +72,6 @@ The main window is used to quickly access the most important functions in Mercur
 You are now ready to start coding your first sounds! 🎶💻🎶
 
 [**🚧 If you experience any issues, please see the Troubleshooting 🚧**](./08-troubleshooting.md)
-
-<!-- 
-## 🚧 Sounds issue for some Windows computers 🚧
-
-Lately I've noticed that for some the soundfiles don't load correctly the first time you start Mercury, and therefore you don't hear any sounds playing (for both the `sample` and `synth`).
-
-**Fix**: In the menu go to `Sounds > Replace Sounds`, then select the folder `/mercury_v.0.13.0-alpha/mercury_ide/media/samples`. Do the same for the waveforms: `Sounds > Replace Waveforms`, then select the folder `/mercury_v.0.13.0-alpha/mercury_ide/media/waveforms` -->
 
 # 💾 The Sampler
 
