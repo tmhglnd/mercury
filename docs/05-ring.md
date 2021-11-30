@@ -1,6 +1,6 @@
 # List Methods
 
-Mercury uses the `total-serialism` Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (list) is circular, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the list. When the index is higher then the amount of values in the list it will return to the begin and start over, hence a circular list or `ring`. 
+Mercury uses the [`total-serialism`](https://www.npmjs.com/package/total-serialism) Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (list) is circular, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the list. When the index is higher then the amount of values in the list it will return to the begin and start over, hence a circular list or `ring`. 
 
 ```
 ring <the-ring-name> [ v0 v1 v2 ... v-n ] 
@@ -79,10 +79,12 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [clip](#clip)
 	- [fold](#fold)
 	- [map](#map)
+	- [mod](#mod)
 	- [add](#add)
 	- [subtract](#subtract)
 	- [multiply](#multiply)
 	- [divide](#divide)
+	- [normalize](#normalize)
 - [Translate Methods](#translate-methods)
 	- [tempo](#tempo)
 	- [divisionToMs](#divisiontoms)
