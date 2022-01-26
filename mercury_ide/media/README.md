@@ -3,6 +3,8 @@
 - [Credits](#credits)
 - [One-shots](#one-shots)
 	- [Drums](#drums)
+	- [Percussion](#percussion)
+	- [Tabla](#tabla)
 	- [Strings](#strings)
 	- [Keys](#keys)
 	- [Idiophonic](#idiophonic)
@@ -13,65 +15,8 @@
 	- [Idiophonic](#idiophonic-1)
 	- [Foley](#foley-1)
 	- [Noise](#noise-1)
-- [Waveforms](#waveforms)
-
-<!-- 4. Ambient -->
-
-# Credits
-
-This pack of sounds contains sounds by the following users:
-- NoiseCollector ( https://freesound.org/people/NoiseCollector/ )
-- ZeSoundResearchInc. ( https://freesound.org/people/ZeSoundResearchInc./ )
-- DWSD ( https://freesound.org/people/DWSD/ )
-- waveplay_old ( https://freesound.org/people/waveplay_old/ )
-- altemark ( https://freesound.org/people/altemark/ )
-- Veiler ( https://freesound.org/people/Veiler/ )
-- alexthegr81 ( https://freesound.org/people/alexthegr81/ )
-- stomachache ( https://freesound.org/people/stomachache/ )
-- uair01 ( https://freesound.org/people/uair01/ )
-- dobroide ( https://freesound.org/people/dobroide/ )
-- klankbeeld ( https://freesound.org/people/klankbeeld/ )
-- RutgerMuller ( https://freesound.org/people/RutgerMuller/ )
-- juskiddink ( https://freesound.org/people/juskiddink/ )
-- unfa ( https://freesound.org/people/unfa/ )
-- Cunningar0807 ( https://freesound.org/people/Cunningar0807/ )
-- mmiron ( https://freesound.org/people/mmiron/ )
-- ldk1609 ( https://freesound.org/people/ldk1609/ )
-- gowers ( https://freesound.org/people/gowers/ )
-- ion_ ( https://freesound.org/people/ion_/ )
-
-You can find the packs online at: 
-- https://freesound.org/people/NoiseCollector/packs/219/
-- https://freesound.org/people/ZeSoundResearchInc./packs/7375/
-- https://freesound.org/people/DWSD/packs/10679/
-- https://freesound.org/people/waveplay_old/packs/12570/
-- https://freesound.org/people/altemark/packs/13232/
-- https://freesound.org/people/Veiler/packs/13344/
-- https://freesound.org/people/Veiler/packs/13345/
-- https://freesound.org/people/alexthegr81/packs/14600/
-- https://freesound.org/people/stomachache/packs/8170/
-- https://freesound.org/people/uair01/packs/4311/
-- https://freesound.org/people/dobroide/packs/7573/
-- https://freesound.org/people/klankbeeld/packs/10770/
-- https://freesound.org/people/RutgerMuller/packs/3273/
-- https://freesound.org/people/juskiddink/packs/5069/
-- https://freesound.org/people/RutgerMuller/packs/6618/
-- https://freesound.org/people/RutgerMuller/packs/3254/
-- https://freesound.org/people/RutgerMuller/packs/3283/
-- https://freesound.org/people/RutgerMuller/packs/3268/
-- https://freesound.org/people/unfa/packs/14014/
-- https://freesound.org/people/Cunningar0807/packs/24779/
-- https://freesound.org/people/mmiron/packs/8162/
-- https://freesound.org/people/ldk1609/packs/3578/
-- https://freesound.org/people/ldk1609/packs/3561/
-- https://freesound.org/people/DWSD/packs/9115/ 
-- https://freesound.org/people/gowers/packs/12911/
-- https://freesound.org/people/DWSD/packs/9116/
-- https://freesound.org/people/DWSD/packs/12146/
-- https://freesound.org/people/ion_/packs/31585/
-
-*Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
-
+<!-- - [Waveforms](#waveforms) -->
+- [Credits](#credits)
 # One-shots
 
 ## Drums
@@ -246,29 +191,9 @@ You can find the packs online at:
 * url: https://freesound.org/s/147994/
 * license: Attribution
 
-#### maracas_808
-* 191638__dwsd__jhd-shk-2.wav
-* url: https://freesound.org/s/191638/
-* license: Attribution
-
 #### tom_808
 * 191637__dwsd__jhd-prc-3.wav
 * url: https://freesound.org/s/191637/
-* license: Attribution
-
-#### clave_808
-* 191636__dwsd__jhd-prc-4.wav
-* url: https://freesound.org/s/191636/
-* license: Attribution
-
-#### cowbell_808
-* 191635__dwsd__jhd-prc-5.wav
-* url: https://freesound.org/s/191635/
-* license: Attribution
-
-#### cymbal_808
-* 191633__dwsd__jhd-cym-1.wav
-* url: https://freesound.org/s/191633/
 * license: Attribution
 
 #### hat_808_half
@@ -311,6 +236,47 @@ You can find the packs online at:
 * url: https://freesound.org/s/191610/
 * license: Attribution
 
+## Percussion
+
+#### maracas_808
+* 191638__dwsd__jhd-shk-2.wav
+* url: https://freesound.org/s/191638/
+* license: Attribution
+
+#### clave_808
+* 191636__dwsd__jhd-prc-4.wav
+* url: https://freesound.org/s/191636/
+* license: Attribution
+
+#### cowbell_808
+* 191635__dwsd__jhd-prc-5.wav
+* url: https://freesound.org/s/191635/
+* license: Attribution
+
+#### cymbal_808
+* 191633__dwsd__jhd-cym-1.wav
+* url: https://freesound.org/s/191633/
+* license: Attribution
+
+#### block
+* 219158__jagadamba__frogblock04.wav
+* url: https://freesound.org/s/219158/
+* license: Creative Commons 0
+
+#### block_lo
+* 219159__jagadamba__frogblock03.wav
+* url: https://freesound.org/s/219159/
+* license: Creative Commons 0
+
+#### bongo 
+* 219154__jagadamba__bongo04.wav
+* url: https://freesound.org/s/219154/
+* license: Creative Commons 0
+
+#### bongo_lo
+* 219156__jagadamba__bongo02.wav
+* url: https://freesound.org/s/219156/
+* license: Creative Commons 0
 
 ## Tabla
 
@@ -495,6 +461,31 @@ You can find the packs online at:
 
 ## Idiophonic
 
+#### kalimba_ab
+* 175582__sergeeo__kalimba-note-g.wav
+* url: https://freesound.org/s/175582/
+* license: Attribution
+
+#### kalimba_g
+* 175579__sergeeo__kalimba-note-g.wav
+* url: https://freesound.org/s/175579/
+* license: Attribution
+
+#### kalimba_e
+* 175570__sergeeo__kalimba-note-e.wav
+* url: https://freesound.org/s/175570/
+* license: Attribution
+
+#### kalimba_c#
+* 175568__sergeeo__note-c.wav
+* url: https://freesound.org/s/175568/
+* license: Attribution
+
+#### kalimba_a
+* 175562__sergeeo__kalimba-note-a.wav
+* url: https://freesound.org/s/175562/
+* license: Attribution
+
 #### bamboo_g
 * 130533__stomachache__g2.wav
 * url: https://freesound.org/s/130533/
@@ -548,6 +539,16 @@ You can find the packs online at:
 #### chimes
 * 86277__juskiddink__Chimes.wav
 * url: https://freesound.org/s/86277/
+* license: Attribution
+
+#### chimes_hi
+* 257555__jagadamba__bar-chimes-v6-aluminium-8mm-wind.wav
+* url: https://freesound.org/s/257555/
+* license: Attribution
+
+#### bell
+* 254756__jagadamba__ceramic-bell-02.wav
+* url: https://freesound.org/s/254756/
 * license: Attribution
 
 #### gong_hi
@@ -618,6 +619,37 @@ You can find the packs online at:
 * 221528__unfa__glass-break.flac
 * url: https://freesound.org/s/221528/
 * license: Attribution
+
+#### tongue
+* 387793__jagadamba__tongue-mouth-pop-4.wav
+* url: https://freesound.org/s/387793/
+* license: Attribution
+
+#### tongue_lo
+* 387797__jagadamba__tongue-mouth-pop-7.wav
+* url: https://freesound.org/s/387797/
+* license: Attribution
+
+#### metal
+* 387724__jagadamba__metal-drum-8.wav
+* url: https://freesound.org/s/387724/
+* license: Attribution
+
+#### metal_lo
+* 387727__jagadamba__metal-drum-5.wav
+* url: https://freesound.org/s/387727/
+* license: Attribution
+
+#### wobble
+* 254396__jagadamba__wobble-board.wav
+* url: https://freesound.org/s/254396/
+* license: Attribution
+
+#### wobble_02
+* 254401__jagadamba__wobble-board.wav
+* url: https://freesound.org/s/254401/
+* license: Attribution
+
 
 ## Ambient
 
@@ -735,6 +767,66 @@ You can find the packs online at:
 * url: https://freesound.org/s/50750/
 * license: Creative Commons 0
 
+# Credits
+
+This pack of sounds contains sounds by the following users:
+- NoiseCollector ( https://freesound.org/people/NoiseCollector/ )
+- ZeSoundResearchInc. ( https://freesound.org/people/ZeSoundResearchInc./ )
+- DWSD ( https://freesound.org/people/DWSD/ )
+- waveplay_old ( https://freesound.org/people/waveplay_old/ )
+- altemark ( https://freesound.org/people/altemark/ )
+- Veiler ( https://freesound.org/people/Veiler/ )
+- alexthegr81 ( https://freesound.org/people/alexthegr81/ )
+- stomachache ( https://freesound.org/people/stomachache/ )
+- uair01 ( https://freesound.org/people/uair01/ )
+- dobroide ( https://freesound.org/people/dobroide/ )
+- klankbeeld ( https://freesound.org/people/klankbeeld/ )
+- RutgerMuller ( https://freesound.org/people/RutgerMuller/ )
+- juskiddink ( https://freesound.org/people/juskiddink/ )
+- unfa ( https://freesound.org/people/unfa/ )
+- Cunningar0807 ( https://freesound.org/people/Cunningar0807/ )
+- mmiron ( https://freesound.org/people/mmiron/ )
+- ldk1609 ( https://freesound.org/people/ldk1609/ )
+- gowers ( https://freesound.org/people/gowers/ )
+- ion_ ( https://freesound.org/people/ion_/ )
+- Jagadamba ( https://freesound.org/people/Jagadamba/ )
+- sergeeo ( https://freesound.org/people/sergeeo/ )
+
+You can find the packs online at: 
+- https://freesound.org/people/NoiseCollector/packs/219/
+- https://freesound.org/people/ZeSoundResearchInc./packs/7375/
+- https://freesound.org/people/DWSD/packs/10679/
+- https://freesound.org/people/waveplay_old/packs/12570/
+- https://freesound.org/people/altemark/packs/13232/
+- https://freesound.org/people/Veiler/packs/13344/
+- https://freesound.org/people/Veiler/packs/13345/
+- https://freesound.org/people/alexthegr81/packs/14600/
+- https://freesound.org/people/stomachache/packs/8170/
+- https://freesound.org/people/uair01/packs/4311/
+- https://freesound.org/people/dobroide/packs/7573/
+- https://freesound.org/people/klankbeeld/packs/10770/
+- https://freesound.org/people/RutgerMuller/packs/3273/
+- https://freesound.org/people/juskiddink/packs/5069/
+- https://freesound.org/people/RutgerMuller/packs/6618/
+- https://freesound.org/people/RutgerMuller/packs/3254/
+- https://freesound.org/people/RutgerMuller/packs/3283/
+- https://freesound.org/people/RutgerMuller/packs/3268/
+- https://freesound.org/people/unfa/packs/14014/
+- https://freesound.org/people/Cunningar0807/packs/24779/
+- https://freesound.org/people/mmiron/packs/8162/
+- https://freesound.org/people/ldk1609/packs/3578/
+- https://freesound.org/people/ldk1609/packs/3561/
+- https://freesound.org/people/DWSD/packs/9115/ 
+- https://freesound.org/people/gowers/packs/12911/
+- https://freesound.org/people/DWSD/packs/9116/
+- https://freesound.org/people/DWSD/packs/12146/
+- https://freesound.org/people/ion_/packs/31585/
+- https://freesound.org/people/Jagadamba/packs/13878/
+- https://freesound.org/people/sergeeo/packs/11046/
+
+*Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
+
+<!-- 
 # Waveforms
 
 ## Basic
@@ -745,4 +837,4 @@ You can find the packs online at:
 
 #### saw
 
-#### square
+#### square -->
