@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 68.0, 228.0, 328.0, 483.0 ],
+		"rect" : [ 277.0, 211.0, 328.0, 483.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -223,7 +223,7 @@
 					"id" : "obj-46",
 					"maxclass" : "number",
 					"maximum" : 32,
-					"minimum" : 4,
+					"minimum" : 2,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -524,7 +524,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 40.5, 315.0, 69.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 68, 228, 396, 711, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 277, 211, 605, 694, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -572,8 +572,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1863,7 +1863,14 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 1015.859069999999974, 66.0, 10.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 371.0, 295.0, 10.0 ]
+					"presentation_rect" : [ 15.0, 371.0, 295.0, 10.0 ],
+					"saved_attribute_attributes" : 					{
+						"linecolor" : 						{
+							"expression" : ""
+						}
+
+					}
+
 				}
 
 			}
@@ -2024,8 +2031,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2209,8 +2216,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2433,8 +2440,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2656,8 +2663,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2855,7 +2862,7 @@
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"hint" : "",
 					"id" : "obj-94",
-					"items" : [ "None", ",", "Built-in Microphone", ",", "PreSonus Studio 26", ",", "NDI Audio", ",", "BlackHole", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "ZoomAudioDevice" ],
+					"items" : [ "None", ",", "Built-in Microphone", ",", "NDI Audio", ",", "BlackHole", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "from Max", ",", "ZoomAudioDevice", ",", "Aggregate Device" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -2879,8 +2886,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3063,8 +3070,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3269,8 +3276,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3634,7 +3641,7 @@
 					"color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"id" : "obj-58",
-					"items" : [ "None", ",", "Built-in Output", ",", "PreSonus Studio 26", ",", "BlackHole", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "ZoomAudioDevice" ],
+					"items" : [ "None", ",", "Built-in Output", ",", "BlackHole", ",", "Soundflower (2ch)", ",", "Soundflower (64ch)", ",", "ZoomAudioDevice" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3737,8 +3744,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3882,8 +3889,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5611,8 +5618,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6529,8 +6536,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7737,7 +7744,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-163",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -7769,7 +7776,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-164",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -7801,7 +7808,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-165",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -7833,7 +7840,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-166",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -7865,7 +7872,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-167",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -7897,7 +7904,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-168",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -7929,7 +7936,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-169",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -7961,7 +7968,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-170",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -7993,7 +8000,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-171",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -8025,7 +8032,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-172",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -8057,7 +8064,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-173",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -8089,7 +8096,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-174",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -8121,7 +8128,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-175",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -8153,7 +8160,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-176",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -8185,7 +8192,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-177",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -8217,7 +8224,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-178",
-									"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+									"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -8727,8 +8734,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9645,8 +9652,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10853,7 +10860,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-93",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -10885,7 +10892,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-94",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -10917,7 +10924,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-95",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -10949,7 +10956,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-96",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -10981,7 +10988,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-97",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11013,7 +11020,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-98",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11045,7 +11052,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-99",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11077,7 +11084,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-100",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11109,7 +11116,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-101",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11141,7 +11148,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-102",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11173,7 +11180,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-103",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11205,7 +11212,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-104",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11237,7 +11244,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-105",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11269,7 +11276,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-106",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11301,7 +11308,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-107",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -11333,7 +11340,7 @@
 									"fontsize" : 12.0,
 									"hint" : "",
 									"id" : "obj-108",
-									"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+									"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -12564,7 +12571,7 @@
 					"color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"id" : "obj-28",
-					"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+					"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12602,7 +12609,7 @@
 					"color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"id" : "obj-30",
-					"items" : [ "Off", ",", 1, "Main Out Left", ",", 2, "Main Out Right", ",", 3, "Line Out 3", ",", 4, "Line Out 4" ],
+					"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12640,7 +12647,7 @@
 					"color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"id" : "obj-26",
-					"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+					"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12678,7 +12685,7 @@
 					"color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"id" : "obj-25",
-					"items" : [ "Off", ",", 1, "Mic/Inst 1", ",", 2, "Mic/Inst 2" ],
+					"items" : [ "Off", ",", 1, "Input 1", ",", 2, "Input 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12815,7 +12822,7 @@
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"hint" : "Set the samplerate. Higher samplerate is better sound quality but heavier on cpu. Default = 44100 Hz",
 					"id" : "obj-10",
-					"items" : [ 44100, ",", 48000, ",", 88200, ",", 96000, ",", 176400, ",", 192000 ],
+					"items" : [ 44100, ",", 48000, ",", 88200, ",", 96000 ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12839,8 +12846,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -13061,7 +13068,14 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 990.0, 66.0, 10.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 221.0, 295.0, 10.0 ]
+					"presentation_rect" : [ 15.0, 221.0, 295.0, 10.0 ],
+					"saved_attribute_attributes" : 					{
+						"linecolor" : 						{
+							"expression" : ""
+						}
+
+					}
+
 				}
 
 			}
