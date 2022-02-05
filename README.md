@@ -346,7 +346,7 @@ In order to receive your contribution please follow these steps:
 4. Make any changes/additions to the code or docs
 5. Add, commit and push your changes `git add .` `git commit -a` `git push origin <your-branch-name>`
 6. Go to your forked repo in the browser and click `compare & pull request`, then `create pull request`
-7. Please add a comment to clearify what you did and why
+7. Please add a comment to clarify what you did and why
 
 [All steps with examples and images](https://github.com/firstcontributions/first-contributions/blob/master/README.md)
 
