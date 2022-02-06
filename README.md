@@ -10,6 +10,9 @@
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
+[**👾 Or sketch in the browser playground!**](https://mercury-sketch.glitch.me/)
+
+
 ![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](media/mercury-live.png)
 
 ## 📋 Table of Contents
