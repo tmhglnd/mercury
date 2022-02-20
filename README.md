@@ -2,16 +2,15 @@
 
 **A minimal and human-readable language for the live coding of algorithmic electronic audiovisual performances.**
 
-[**🙏 Support Mercury by becoming a Patron**](https://www.patreon.com/bePatron?u=9649817) 
-
-[**💬 Join the Discord Community!**](https://discord.gg/vt59NYU)
-
 **🚀 Start coding with the latest version:** 
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
 [**👾 Or sketch in the browser playground!**](https://mercury.timohoogland.com/)
 
+[**🙏 Support Mercury by becoming a Patron**](https://www.patreon.com/bePatron?u=9649817) 
+
+[**💬 Join the Discord Community!**](https://discord.gg/vt59NYU)
 
 ![Livecoding Performance with Mercury (photo: Zuzanna Zgierska)](media/mercury-live.png)
 
