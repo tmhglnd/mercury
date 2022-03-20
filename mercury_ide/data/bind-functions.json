@@ -46,6 +46,12 @@
 		"timing"
 	],
 
+	"warp" : [
+		"timewarp",
+		"timediv",
+		"timedivide"
+	],
+
 	"offset" : [
 		"onset",
 		"position",
