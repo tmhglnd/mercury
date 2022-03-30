@@ -77,3 +77,19 @@ new emitter osc name(osc2) address(myOSC) time(1/2)
 //          /myOSC/anotherParam 1
 //          etc...
 ```
+
+## receiving
+
+You can use osc adresses as arguments for other functions by putting the address as argument in the form: `/<address>/<tag>/<etc.>`. For example to control the `gain()` of a `sample` and the `note()` value of a `synth` enter the following:
+
+```java
+new sample kick_909 time(1/4) gain(/myOSC/sliderValue1)
+new synth saw note(/myOSC/sliderValue2) shape(1 100) time(1/8)
+```
+
+It is possible to scale the incoming osc value to a different range by using `{}` after the address inputting a low and high output range separated by a colon `:`. The scaling function considers an incoming range of `0 - 1` floatingpoint values. For example to control the `note()` and `shape()` ranges in a `synth` enter the following:
+
+```java
+new synth saw note(/myOsc/sliderValue3{2:19} 0) shape(1 /myOsc/sliderValue4{50:500}) 
+// => converts incoming slider values from 0-1 to 2-19 for note and 0-1 to 50-500 for note length
+```
