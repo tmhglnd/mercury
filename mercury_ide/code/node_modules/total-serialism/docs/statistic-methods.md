@@ -1,5 +1,5 @@
 
-# Statistic Methods
+# Statistic
 
 A set of methods from Statistics and Probability Theory that allow for analysis of number sequences for statistical purposes. For example getting the average value or the most common value from an array. 
 
@@ -8,6 +8,16 @@ A set of methods from Statistics and Probability Theory that allow for analysis 
 ```js
 const Stat = require('total-serialism').Statistic;
 ```
+
+# Methods
+
+- sort
+- avarage
+- center
+- common
+- maximum
+- minimum
+- change
 
 ## sort
 

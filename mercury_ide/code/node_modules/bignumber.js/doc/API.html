@@ -58,7 +58,7 @@ li span{float:right;margin-right:10px;color:#c0c0c0}
 
   <div class="nav">
 
-    <b>v9.0.0</b>
+    <b>v9.0.2</b>
 
 	<a class='nav-title' href="#">API</a>
 
@@ -219,10 +219,10 @@ new BigNumber(-0)                          // '0'
 new BigNumber('.5')                        // '0.5'
 new BigNumber('+2')                        // '2'</pre>
     <p>
-      String values in hexadecimal literal form, e.g. <code>'0xff'</code>, are valid, as are
-      string values with the octal and binary prefixs <code>'0o'</code> and <code>'0b'</code>.
-      String values in octal literal form without the prefix will be interpreted as
-      decimals, e.g. <code>'011'</code> is interpreted as 11, not 9.
+      String values in hexadecimal literal form, e.g. <code>'0xff'</code> or <code>'0xFF'</code>
+      (but not <code>'0xfF'</code>), are valid, as are string values with the octal and binary
+      prefixs <code>'0o'</code> and <code>'0b'</code>. String values in octal literal form without
+      the prefix will be interpreted as decimals, e.g. <code>'011'</code> is interpreted as 11, not 9.
     </p>
     <pre>
 new BigNumber(-10110100.1, 2)              // '-180.5'
@@ -1128,8 +1128,8 @@ y.integerValue(BigNumber.ROUND_DOWN)    // '-12'</pre>
       <code> BigNumber.ROUND_DOWN</code> respectively.
     </p>
     <pre>
-BigNumber.prototype.round = function (n) {
-  return n.integerValue(BigNumber.ROUND_HALF_CEIL);
+BigNumber.prototype.round = function () {
+  return this.integerValue(BigNumber.ROUND_HALF_CEIL);
 };
 x.round()                               // '123'</pre>
 

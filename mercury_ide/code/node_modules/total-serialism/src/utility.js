@@ -276,6 +276,21 @@ exports.truncate = truncate;
 exports.trunc = truncate;
 exports.int = truncate;
 
+// Return the sum of all values in the array
+// Ignore all non numeric values
+// 
+// @param {Array} -> input array
+// @return {Number} -> summed array
+function sum(a=[0]){
+	a = Array.isArray(a)? a : [a];
+	let s = 0;
+	a.forEach((v) => {
+		s += isNaN(v)? 0 : v;
+	});
+	return s;
+}
+exports.sum = sum;
+
 // Return the biggest value from an array
 // 
 // @param {NumberArray} -> input array

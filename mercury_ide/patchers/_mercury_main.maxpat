@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 53.0, 90.0, 368.0, 416.0 ],
+		"rect" : [ 113.0, 197.0, 368.0, 416.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -9419,8 +9419,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1515.0, 526.0, 53.0, 22.0 ],
-					"text" : "r visuals"
+					"patching_rect" : [ 1515.0, 526.0, 54.0, 22.0 ],
+					"text" : "r newVis"
 				}
 
 			}
@@ -9495,8 +9495,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 268.763855333333368, 1575.0, 55.0, 22.0 ],
-					"text" : "s visuals"
+					"patching_rect" : [ 268.763855333333368, 1575.0, 56.0, 22.0 ],
+					"text" : "s newVis"
 				}
 
 			}
@@ -9507,8 +9507,8 @@
 					"numinlets" : 4,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 193.763885333333349, 1485.0, 202.0, 22.0 ],
-					"text" : "route visuals solarSystem modulator"
+					"patching_rect" : [ 193.763885333333349, 1485.0, 196.0, 22.0 ],
+					"text" : "route visual solarSystem modulator"
 				}
 
 			}

@@ -1,4 +1,4 @@
-## Translate Methods
+## Translate
 
 Translate between different notation systems. For example convert midi values to frequency, or note names to midi integers. Or use a relative semitone notation system and convert to midi. Map values in an Array to a specified scale, and output the relative values in the specified scale, root and octave.
 
@@ -15,6 +15,29 @@ const TL = require('total-serialism').Translate;
 - [Conversion between units](#conversion-between-units)
 - [Working with predefined scale and root](#working-with-predefined-scale-and-root)
 - [Using Scala tuning format](#using-scala-tuning-format)
+
+# Methods
+
+- midiToNote
+- noteToMidi
+- midiToFreq
+- noteToFreq
+- relativeToMidi
+- relativeToFreq
+- setTempo
+- divisionToMs
+- divisionToRatio
+- setScale
+- setRoot
+- getSettings
+- scaleNames
+- toScale
+- toMidi
+- Scala
+- Scala.tune
+- Scale.center
+- Scala.parse
+- Scala.scalaToFreq
 
 ### Conversion between units
 
