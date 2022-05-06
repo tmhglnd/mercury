@@ -3,16 +3,16 @@
 Mercury uses the [`total-serialism`](https://www.npmjs.com/package/total-serialism) Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (list) is circular, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the list. When the index is higher then the amount of values in the list it will return to the begin and start over, hence a circular list or `ring`. 
 
 ```
-ring <the-ring-name> [ v0 v1 v2 ... v-n ] 
+list <the-list-name> [ v0 v1 v2 ... v-n ] 
 ```
 
 example
 
 ```java
-ring someInts [0 10 20 30]
-ring someFloats [1.618 3.1415]
-ring twoDimensional [0 1 [2 3] 4 [5 6 7]]
-ring someSamples [kick_909 hat_909 snare_909 hat_909]
+list someInts [0 10 20 30]
+list someFloats [1.618 3.1415]
+list twoDimensional [0 1 [2 3] 4 [5 6 7]]
+list someSamples [kick_909 hat_909 snare_909 hat_909]
 ```
 
 **Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
@@ -103,74 +103,74 @@ ring someSamples [kick_909 hat_909 snare_909 hat_909]
 
 **Rings**
 
-- `Ring` -> A ring with `Value`'s
-	- `NumberRing` -> A ring with `Number`'s
-		- `IntRing+` -> A ring with `Int+`'s
-		- `IntRing` -> A ring with `Int`'s
-		- `FloatRing` -> A ring with `Float`'s
-	- `NameRing` -> A ring with `Name`'s
+- `Ring` -> A list with `Value`'s
+	- `NumberRing` -> A list with `Number`'s
+		- `IntRing+` -> A list with `Int+`'s
+		- `IntRing` -> A list with `Int`'s
+		- `FloatRing` -> A list with `Float`'s
+	- `NameRing` -> A list with `Name`'s
 
 # Generative Methods
 
 ## spread / spreadFloat
 
-Generate a ring of n-length of evenly spaced values between a starting number up untill (but excluding) the 3th argument. Flipping the low and high values results in a descending ring.
+Generate a list of n-length of evenly spaced values between a starting number up untill (but excluding) the 3th argument. Flipping the low and high values results in a descending list.
 
 **arguments**
-- {Int+} -> Length of ring
+- {Int+} -> Length of list
 - {Int/Float} -> Low value
 - {Int/Float} -> High value (excluded)
 
 ```java
-ring spr1 spread(5 0 12)
+list spr1 spread(5 0 12)
 // => [0 2 4 7 9]
 
-ring spr2 spreadFloat(5 -1 1)
+list spr2 spreadFloat(5 -1 1)
 // => [-1 -0.6 -0.2 0.2 0.6]
 
-ring spr3 spreadF(5 0 2)
+list spr3 spreadF(5 0 2)
 // => [0 0.4 0.8 1.2 1.6]
 
-ring spr4 spread(5 12 0)
+list spr4 spread(5 12 0)
 // => [9 7 4 2 0]
 ```
 
 ## spreadInclusive / spreadInclusiveFloat
 
-Generate a ring of n-length of evenly spaced values between a starting number up to (and including) the 3th argument. Flipping the low and high values results in a descending ring.
+Generate a list of n-length of evenly spaced values between a starting number up to (and including) the 3th argument. Flipping the low and high values results in a descending list.
 
 **arguments**
-- {Int+} -> Length of ring
+- {Int+} -> Length of list
 - {Number} -> Low value
 - {Number} -> High value (included)
 
 ```java
-ring spi1 spreadInclusive(5 0 12)
+list spi1 spreadInclusive(5 0 12)
 // => [0 3 6 9 12]
 
-ring spi2 spreadInclusiveFloat(5 -1 1)
+list spi2 spreadInclusiveFloat(5 -1 1)
 // => [-1 -0.5 0 0.5 1]
 
-ring spi3 spreadInclusiveF(5 0 2)
+list spi3 spreadInclusiveF(5 0 2)
 // => [0 0.5 1 1.5 2]
 
-ring spi4 spreadInclusive(5 12 0)
+list spi4 spreadInclusive(5 12 0)
 // => [12 9 6 3 0]
 ```
 
 ## fill
 
-Fill a ring with values. Arguments are in pairs. Every pair consists of `<value, amount>` The value is repeated n-amount of times in the ring.
+Fill a list with values. Arguments are in pairs. Every pair consists of `<value, amount>` The value is repeated n-amount of times in the list.
 
 **arguments**
 - {Value} -> value to duplicate
 - {Int+} -> amount of duplicates
 
 ```java
-ring fll1 fill(10 2 15 3 20 4)
+list fll1 fill(10 2 15 3 20 4)
 // => [10 10 15 15 15 20 20 20 20]
 
-ring fll2 fill(kick_min 2 hat_min 3)
+list fll2 fill(kick_min 2 hat_min 3)
 // => [kick_min kick_min hat_min hat_min hat_min]
 ```
 
@@ -179,20 +179,20 @@ ring fll2 fill(kick_min 2 hat_min 3)
 Generate a list with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
 
 **arguments**
-- {Int+} -> Length of ring
+- {Int+} -> Length of list
 - {Number} -> Periods of (co)sine-wave (optional, default=1)
 - {Number} -> Low range of values (optional, default=0)
 - {Number} -> High range of values (optional, default=12)
 - {Number} -> Phase offset (optional, default=0)
 
 ```java
-ring sin1 sine(10)
+list sin1 sine(10)
 // => [6 9 11 11 9 6 2 0 0 2]
 
-ring sin2 sine(10 1 -12 12)
+list sin2 sine(10 1 -12 12)
 // => [0 7 11 11 7 0 -7 -11 -11 -7]
 
-ring sin3 sine(10 2 0 5)
+list sin3 sine(10 2 0 5)
 // => [2 4 3 1 0 2 4 3 1 0]
 
 // generate 10 ints with 4 periods a sine function
@@ -207,13 +207,13 @@ list sin4 sine(11 4 0 7)
 ```
 
 ```java
-ring cos1 cosine(10)
+list cos1 cosine(10)
 // => [12 10 7 4 1 0 1 4 7 10]
 
-ring cos2 cosine(10 1 -12 12)
+list cos2 cosine(10 1 -12 12)
 // => [12 9 3 -3 -9 -12 -9 -3 3 9]
 
-ring cos3 cosine(10 2 0 5)
+list cos3 cosine(10 2 0 5)
 // => [5 3 0 0 3 4 3 0 0 3]
 ```
 
@@ -222,7 +222,7 @@ ring cos3 cosine(10 2 0 5)
 Generate a list with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
 
 **arguments**
-- {Int+} -> Length of ring
+- {Int+} -> Length of list
 - {Number} -> Periods of (co)sine-wave (optional, default=1)
 - {Number} -> Low range of values (optional, default=-1)
 - {Number} -> High range of values (optional, default=1)
@@ -328,18 +328,18 @@ Alias: `squareF()`, `rectFloat()`, `rectF()`
 Generate a euclidean rhythm evenly spacing n-beats amongst n-steps.Inspired by Godfried Toussaints famous paper "The Euclidean Algorithm Generates Traditional Musical Rhythms".
 
 **arguments**
-- {Int+} -> length of ring (optional, default=8)
+- {Int+} -> length of list (optional, default=8)
 - {Int+} -> beats (optional, default=4)
 - {Int} -> rotate (optional, default=0)
 
 ```java
-ring euc1 euclidean()
+list euc1 euclidean()
 // => [1 0 1 0 1 0 1 0]
 
-ring euc2 euclidean(7 5)
+list euc2 euclidean(7 5)
 // => [1 1 0 1 1 0 1]
 
-ring euc3 euclidean(7 5 2)
+list euc3 euclidean(7 5 2)
 // => [0 1 1 1 0 1 1]
 ```
 Alias: `euclid()`
@@ -352,13 +352,13 @@ Generate hexadecimal rhythms. Hexadecimal beats make use of hexadecimal values (
 - {Name} -> hexadecimal characters (0 t/m f) (optional, default=8)
 
 ```java
-ring hex1 hexBeat()
+list hex1 hexBeat()
 // => [1 0 0 0]
 
-ring hex2 hexBeat(a)
+list hex2 hexBeat(a)
 // => [1 0 1 0]
 
-ring hex3 hexBeat(f9cb)
+list hex3 hexBeat(f9cb)
 // => [1 1 1 1 1 0 0 1 1 1 0 0 1 0 1 1]
 ```
 Alias: `hex()`
@@ -372,14 +372,14 @@ Generate the Fibonacci sequence `F(n) = F(n-1) + F(n-2)`. The ratio between cons
 `OEIS: A000045` (Online Encyclopedia of Integer Sequences)
 
 **arguments**
-- {Int+} -> output length of ring
+- {Int+} -> output length of list
 - {Int+} -> offset, start the sequence at nth-fibonacci number (optional, default=0)
 
 ```java
-ring fib1 fibonacci(10)
+list fib1 fibonacci(10)
 // => [0 1 1 2 3 5 8 13 21 34]
 
-ring fib2 fibonacci(3 10)
+list fib2 fibonacci(3 10)
 // => [55 89 144]
 ```
 
@@ -389,16 +389,16 @@ Generate the Pisano period sequence. The pisano period is a result of applying a
 
 **arguments**
 - {Int+} -> modulus for pisano period (optional, default=12)
-- {Int+} -> output length of ring (optional, defaults to pisano-period length)
+- {Int+} -> output length of list (optional, defaults to pisano-period length)
 
 ```java
-ring psn1 pisano()
+list psn1 pisano()
 // => [0 1 1 2 3 5 8 1 9 10 7 5 0 5 5 10 3 1 4 5 9 2 11 1]
 
-ring psn2 pisano(3)
+list psn2 pisano(3)
 // => [0 1 1 2 0 2 2 1]
 
-ring psn3 pisano(11)
+list psn3 pisano(11)
 // => [0 1 1 2 3 5 8 2 10 1]
 ```
 
@@ -409,10 +409,10 @@ Generate the Pell numbers `F(n) = 2 * F(n-1) + F(n-2)`. The ratio between consec
 `OEIS: A006190` (Online Encyclopedia of Integer Sequences)
 
 **arguments**
-- {Int+} -> output length of ring
+- {Int+} -> output length of list
 
 ```java
-ring pll1 pell(8)
+list pll1 pell(8)
 // => [0 1 2 5 12 29 70 169]
 ```
 
@@ -423,10 +423,10 @@ Generate the Lucas numbers `F(n) = F(n-1) + F(n-2), with F0=2 and F1=1`.
 `OEIS: A000032` (Online Encyclopedia of Integer Sequences)
 
 **arguments**
-- {Int+} -> output length of ring
+- {Int+} -> output length of list
 
 ```java
-ring luc1 lucas(8)
+list luc1 lucas(8)
 // => [2 1 3 4 7 11 18 29]
 ```
 
@@ -437,10 +437,10 @@ Generate the Tribonacci numbers `F(n) = 2 * F(n-1) + F(n-2)`. The ratio between 
 `OEIS: A000129` (Online Encyclopedia of Integer Sequences)
 
 **arguments**
-- {Int+} -> output length of ring
+- {Int+} -> output length of list
 
 ```java
-ring tfi1 threeFibonacci(8)
+list tfi1 threeFibonacci(8)
 // => [0 1 3 10 33 109 360 1189]
 ```
 
@@ -453,14 +453,14 @@ Set the seed for the Random Number Genrators. A value of `0` sets to unpredictab
 ```java
 set randomSeed 31415 
 // ^^^^^^^^^^^ will be overwritten by 1618 before random() call
-ring randomValues random(10 0 100)
+list randomValues random(10 0 100)
 // ^^^^^^^^^^^ the random() will use the seed from below
 set randomSeed 1618
 // ^^^^^^^^^^^ 1618 overwrites 31415
 ```
 ## random
 
-Generate a ring of random integers between a specified range (excluding high value).
+Generate a list of random integers between a specified range (excluding high value).
 
 **arguments**
 - {Int+} -> number of values to output
@@ -470,18 +470,18 @@ Generate a ring of random integers between a specified range (excluding high val
 ```java
 set randomSeed 31415
 
-ring rnd1 random(5)
+list rnd1 random(5)
 // => [1 0 0 1 1]
-ring rnd2 random(5 12)
+list rnd2 random(5 12)
 // => [0 10 3 2 2]
-ring rnd3 random(5 -12 12)
+list rnd3 random(5 -12 12)
 // => [-2 -5 -8 -11 6]
 ```
 Alias: `rand()`
 
 ## randomFloat
 
-Generate a ring of random floating-point values between a specified range (excluding high value).
+Generate a list of random floating-point values between a specified range (excluding high value).
 
 **arguments**
 - {Int+} -> number of values to output
@@ -491,18 +491,18 @@ Generate a ring of random floating-point values between a specified range (exclu
 ```java
 set randomSeed 31415
 
-ring rnf1 randomFloat(5)
+list rnf1 randomFloat(5)
 // => [0.81 0.32 0.01 0.85 0.88]
-ring rnf2 randomFloat(5 0 12)
+list rnf2 randomFloat(5 0 12)
 // => [0.16 10.72 3.16 262 2.34]
-ring rnf3 randomFloat(5 -12 12)
+list rnf3 randomFloat(5 -12 12)
 // => [-1.19 -4.21 -7.36 -10.31 6.82]
 ```
 Alias: `randF()`
 
 ## drunk
 
-Generate a ring of random values but the next random value is within a limited range of the previous value generating a random "drunk" walk, also referred to as brownian motion.
+Generate a list of random values but the next random value is within a limited range of the previous value generating a random "drunk" walk, also referred to as brownian motion.
 
 **arguments**
 
@@ -537,7 +537,7 @@ Rand.drunk(10, 4, 0, 12, 6, false)
 
 ## drunkFloat
 
-Generate a ring of random floating-point values but the next random value is within a limited range of the previous value generating a random "drunk" walk, also referred to as brownian motion.
+Generate a list of random floating-point values but the next random value is within a limited range of the previous value generating a random "drunk" walk, also referred to as brownian motion.
 
 **arguments**
 
@@ -549,7 +549,7 @@ Generate a ring of random floating-point values but the next random value is wit
 - {Bool} -> fold between lo and hi range (optional, default=true)
 
 ```java
-ring dr1 drunkFloat(5)
+list dr1 drunkFloat(5)
 //=> [ 0.493, 0.459, 0.846, 0.963, 0.400 ] 
 
 //  0.88 ┼╮╭╮  
@@ -573,11 +573,11 @@ Generate a list of unique random integer values between a certain specified rang
 ```java
 set randomSeed 1618
 
-ring urn1 urn(5)
+list urn1 urn(5)
 // => [3 7 10 0 2]
-ring urn2 urn(8 4)
+list urn2 urn(8 4)
 // => [0 2 1 3 1 3 0 2]
-ring urn3 urn(8 10 14)
+list urn3 urn(8 10 14)
 // => [13 10 12 11 12 10 13 11]
 ```
 
@@ -586,10 +586,10 @@ ring urn3 urn(8 10 14)
 Generate a list of random integer values 0 or 1 like a coin toss, heads/tails. Or 
 
 **arguments**
-- {Int+} -> number of coin tosses to output as ring
+- {Int+} -> number of coin tosses to output as list
 
 ```java
-ring coin1 coin(8)
+list coin1 coin(8)
 // => [1 0 1 0 1 0 1 1]
 ```
 
@@ -598,10 +598,10 @@ ring coin1 coin(8)
 Generate a list of random integer values 1 to 6 like the roll of a dice.
 
 **arguments**
-- {Int+} -> number of dice rolls to output as ring
+- {Int+} -> number of dice rolls to output as list
 
 ```java
-ring dice1 dice(8)
+list dice1 dice(8)
 // => [5 4 6 4 4 5 4 2]
 ```
 
@@ -640,14 +640,14 @@ Generate a list of 12 semitones then shuffle the list based on the random seed.
 - {None}
 
 ```java
-ring twv1 twelveTone()
+list twv1 twelveTone()
 // => [10 7 6 3 2 9 8 4 1 5 0 11]
 ```
 
 ```java
 //Basically a shorthand for: 
-ring notes spread(12)
-ring notes shuffle(notes)
+list notes spread(12)
+list notes shuffle(notes)
 ```
 
 ## choose
@@ -655,18 +655,18 @@ ring notes shuffle(notes)
 Choose random items from a list provided with uniform probability distribution. The default list is a list of 0 and 1.
 
 **arguments**
-- {Int+} -> length of ring output
+- {Int+} -> length of list output
 - {Ring} -> items to choose from (optional, default=[0 1])
 
 ```java
 set randomSeed 62832
 
-ring samples [hat snare kick]
-ring sequence choose(10 samples)
+list samples [hat snare kick]
+list sequence choose(10 samples)
 // => [hat kick hat kick hat snare kick hat hat hat]
 
-ring notes [0 3 7 5 9 12]
-ring melody choose(10 notes)
+list notes [0 3 7 5 9 12]
+list melody choose(10 notes)
 // => [0 5 3 9 0 7 3 12 3 7]
 ```
 
@@ -675,24 +675,24 @@ ring melody choose(10 notes)
 Pick random items from a list provided. An "urn" is filled with values and when one is picked it is removed from the urn. If the outputlist is longer then the range, the urn refills when empty. On refill it is made sure no repeating value can be picked.
 
 **arguments**
-- {Int+} -> length of ring output
+- {Int+} -> length of list output
 - {Ring} -> items to choose from (optional, default=[0 1])
 
 ```java
 set randomSeed 62832
 
-ring samples [hat snare kick tom]
-ring sequence pick(10 samples)
+list samples [hat snare kick tom]
+list sequence pick(10 samples)
 // => [hat kick tom snare tom hat snare kick tom hat]
 
-ring notes [0 3 7 5 9 12]
-ring melody pick(10 notes)
+list notes [0 3 7 5 9 12]
+list melody pick(10 notes)
 // => [3 0 7 9 12 5 0 7 12 9]
 ```
 
 ## shuffle
 
-Shuffle a ring, influenced by the random seed. Based on the Fisher-Yates shuffle algorithm by Ronald Fisher and Frank Yates in 1938. The algorithm has run time complexity of O(n)
+Shuffle a list, influenced by the random seed. Based on the Fisher-Yates shuffle algorithm by Ronald Fisher and Frank Yates in 1938. The algorithm has run time complexity of O(n)
 
 **arguments**
 - {Ring} -> Ring to shuffle
@@ -700,27 +700,27 @@ Shuffle a ring, influenced by the random seed. Based on the Fisher-Yates shuffle
 ```java
 set randomSeed 14142
 
-ring samples [hat snare kick tom]
-ring shf1 shuffle(samples)
+list samples [hat snare kick tom]
+list shf1 shuffle(samples)
 // => [snare tom kick hat]
 
-ring notes [0 3 7 5 9 12]
-ring shf2 scramble(notes)
+list notes [0 3 7 5 9 12]
+list shf2 scramble(notes)
 // => [12 0 3 7 5 9]
 ```
 
 ## expand
 
-Expand a ring based upon the pattern within a ring. The pattern is derived from the rate in change between values by calculating the differences between every consecutive value. The newly generated values are selected randomly from the list of possible changes, but in such a way that every change occurs once in the sequence of total changes before reshuffling and selecting the next one (see the `pick` method for explanation). The resulting output starts with the input ring.
+Expand a list based upon the pattern within a list. The pattern is derived from the rate in change between values by calculating the differences between every consecutive value. The newly generated values are selected randomly from the list of possible changes, but in such a way that every change occurs once in the sequence of total changes before reshuffling and selecting the next one (see the `pick` method for explanation). The resulting output starts with the input list.
 
 **arguments**
-- {Int+} -> length of ring output
+- {Int+} -> length of list output
 - {Ring} -> Ring to expand
 
 ```java
 set randomSeed 3141
-ring notes [0 9 7 3 5 0 -1]
-ring exp expand(notes 30)
+list notes [0 9 7 3 5 0 -1]
+list exp expand(notes 30)
 
 //=>  9.00 ┤╭╮      ╭╮                    
 //    6.80 ┤│╰╮     ││                    
@@ -735,7 +735,7 @@ ring exp expand(notes 30)
 //  -13.00 ┤                    ╰╯╰╯       
 
 set randomSeed 6181
-ring exp2 expand(notes 30)
+list exp2 expand(notes 30)
 
 //=>  9.00 ┤╭╮                            
 //    6.80 ┤│╰╮                           
@@ -754,35 +754,35 @@ ring exp2 expand(notes 30)
 
 ## clone
 
-Duplicate a ring with an offset added to every value
+Duplicate a list with an offset added to every value
 
 **arguments**
 - {IntRing} -> Ring to clone
 - {Int, Int2, ... Int-n} -> amount of clones with integer offset
 
 ```java
-ring notes [0 3 7]
-ring melody clone(notes 0 12 7 -7)
+list notes [0 3 7]
+list melody clone(notes 0 12 7 -7)
 // => [0 3 7 12 15 19 7 10 14 -7 -4 0]
 ```
 
 ## combine
 
-Combine rings into one ring. Multiple rings as arguments is possible.
+Combine lists into one list. Multiple lists as arguments is possible.
 
 **arguments**
 - {Ring-0, Ring-1, ..., Ring-n} -> Ring to combine
 
 ```java
-ring partA [0 3 7]
-ring partB [24 19 12]
-ring partC [-7 -3 -5]
-ring phrase combine(partA partB partC)
+list partA [0 3 7]
+list partB [24 19 12]
+list partC [-7 -3 -5]
+list phrase combine(partA partB partC)
 // => [0 3 7 24 19 12 -7 -5 -3]
 
-ring partD [kick hat snare hat]
-ring partE [hat hat hat snare]
-ring sequence join(partD partE)
+list partD [kick hat snare hat]
+list partE [hat hat hat snare]
+list sequence join(partD partE)
 // => [kick hat snare hat hat hat hat snare]
 ```
 Alias: `join()`, `concat()`
@@ -796,8 +796,8 @@ Duplicate a list a certain amount of times.
 - {Int+} -> amount of duplicates (optional, default=2)
 
 ```java
-ring notes [0 3 7]
-ring phrase duplicate(notes 4)
+list notes [0 3 7]
+list phrase duplicate(notes 4)
 // => [0 3 7 0 3 7 0 3 7 0 3 7]
 ```
 
@@ -823,7 +823,7 @@ list pad3 pad([c f g] 11 - 4)
 
 ## every
 
-Add zeroes to a ring with a number sequence. The division determines the amount of values per bar. The total length = bars * div. Very useful for rhythms that must occur once in a while, but can also be use for melodic phrases.
+Add zeroes to a list with a number sequence. The division determines the amount of values per bar. The total length = bars * div. Very useful for rhythms that must occur once in a while, but can also be use for melodic phrases.
 
 **arguments**
 - {IntRing} -> Ring to use every n-bars
@@ -831,12 +831,12 @@ Add zeroes to a ring with a number sequence. The division determines the amount 
 - {Int} -> amount of values per bar
 
 ```java
-ring rhythm [1 0 1 1 0 1 1]
-ring sequence every(rhythm 2 8)
+list rhythm [1 0 1 1 0 1 1]
+list sequence every(rhythm 2 8)
 // => [1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0]
 
-ring melody [12 19 24 27 24]
-ring phrase every(melody 2 8)
+list melody [12 19 24 27 24]
+list phrase every(melody 2 8)
 // => [12 19 24 27 24 0 0 0 0 0 0 0 0 0 0 0]
 ```
 
@@ -863,14 +863,14 @@ Invert a list of values by mapping the lowest value to the highest value and vic
 - {Int} -> high range (optional)
 
 ```java
-ring notes [0 3 7 12]
-ring inv1 invert(notes)
+list notes [0 3 7 12]
+list inv1 invert(notes)
 // => [12 9 5 0]
 
-ring inv2 invert(notes 5)
+list inv2 invert(notes 5)
 // => [10 7 3 -2]
 
-ring inv3 invert(notes 3 10)
+list inv3 invert(notes 3 10)
 // => [13 10 6 1]
 ```
 
@@ -878,16 +878,16 @@ Alias: `inverse()`, `flip()`, `inv()`
 
 ## lace
 
-Interleave two or more rings. The output length of the is always the length of the longest input ring.
+Interleave two or more lists. The output length of the is always the length of the longest input list.
 
 **arguments**
 - {Ring0, Ring1, ..., Ring-n} -> Rings to interleave
 
 ```java
-ring partA [0 3 7 5 0]
-ring partB [12 19 15]
-ring partC [24 22]
-ring melody lace(partA partB)
+list partA [0 3 7 5 0]
+list partB [12 19 15]
+list partC [24 22]
+list melody lace(partA partB)
 // => [0 12 24 3 19 22 7 15 5 0]
 ```
 
@@ -895,7 +895,7 @@ Alias: `zip()`
 
 ## lookup
 
-Build a ring of items based on another ring of indices 
+Build a list of items based on another list of indices 
 The values are wrapped within the length of the lookup list
 
 **arguments**
@@ -904,16 +904,16 @@ The values are wrapped within the length of the lookup list
 - {Ring} -> Looked up values
 
 ```java
-ring items [c e f g]
-ring indices [0 1 1 2 0 2 2 1]
+list items [c e f g]
+list indices [0 1 1 2 0 2 2 1]
 
-// first list is the index, second ring are the items to lookup
-ring notes lookup(indices, items)
+// first list is the index, second list are the items to lookup
+list notes lookup(indices, items)
 //=> [ c e e f c f f e ]
 
 // indices are wrapped between listlength
-ring indices [8 -5 144 55]
-ring notes lookup(indices, items)
+list indices [8 -5 144 55]
+list notes lookup(indices, items)
 //=> [ g e c e ]
 ```
 
@@ -921,15 +921,15 @@ Alias: `get()`
 
 ## merge
 
-Merge all values of two rings on the same index into a 2-dimensional ring. Preserves the length of longest input ring.
+Merge all values of two lists on the same index into a 2-dimensional list. Preserves the length of longest input list.
 
 **arguments**
 - {Ring0, Ring1, ..., Ring-n} -> Rings to merge
 
 ```java
-ring partA [0 3 7 5 0]
-ring partB [12 19 15] 
-ring merged merge(partA partB)
+list partA [0 3 7 5 0]
+list partB [12 19 15] 
+list merged merge(partA partB)
 // => [[0 12] [3 19] [7 15] 5 0]
 // mix()
 ```
@@ -937,18 +937,18 @@ Alias: `mix()`
 
 ## palindrome
 
-Reverse a ring and concatenating to the input, creating a palindrome of the ring. A second argument 1 will remove the duplicates halfway through and at the end.
+Reverse a list and concatenating to the input, creating a palindrome of the list. A second argument 1 will remove the duplicates halfway through and at the end.
 
 **arguments**
 - {Ring} -> list to make palindrome of
 - {Bool} -> no-double flag (optional, default=0)
 
 ```java
-ring notes [0 3 7 12]
-ring melodyA palindrome(notes)
+list notes [0 3 7 12]
+list melodyA palindrome(notes)
 // => [0 3 7 12 12 7 3 0]
 
-ring melodyB palindrome(notes 1)
+list melodyB palindrome(notes 1)
 // => [0 3 7 12 7 3]
 // palin()
 // mirror()
@@ -958,37 +958,37 @@ Alias: `palin()`, `mirror()`
 
 ## repeat
 
-Repeats separate values in a ring a certain amount of times. The repeats argument can be a ring that will be iterated for every value in the to-repeat ring.
+Repeats separate values in a list a certain amount of times. The repeats argument can be a list that will be iterated for every value in the to-repeat list.
 
 **arguments**
 - {Ring} -> Ring to repeat
 - {Int+|IntRing} -> amount of repeats per value
 
 ```java
-ring notes [0 3 7]
-ring phrase repeat(notes 4)
+list notes [0 3 7]
+list phrase repeat(notes 4)
 // => [0 0 0 0 3 3 3 3 7 7 7 7]
 
-ring repeats [2 5 3]
-ring phraseB repeat(notes repeats)
+list repeats [2 5 3]
+list phraseB repeat(notes repeats)
 // => [0 0 3 3 3 3 3 7 7 7]
 
 // also works with strings
-ring samples [kick snare hat]
-ring beats repeat(samples repeats)
+list samples [kick snare hat]
+list beats repeat(samples repeats)
 // => [kick kick snare snare snare snare hat hat hat]
 ```
 
 ## reverse
 
-Reverse the order of items in a ring.
+Reverse the order of items in a list.
 
 **arguments**
 - {Ring} -> Ring to reverse
 
 ```java
-ring melody [0 3 7 5]
-ring rev reverse(melody)
+list melody [0 3 7 5]
+list rev reverse(melody)
 // => [5 7 3 0]
 // retrograde()
 // rev()
@@ -997,18 +997,18 @@ Alias: `retrograde()`, `rev()`
 
 ## rotate
 
-Rotate the position of items in a ring. positive numbers = direction right, negative numbers = direction left
+Rotate the position of items in a list. positive numbers = direction right, negative numbers = direction left
 
 **arguments**
 - {Ring} -> Ring to rotate
 - {Int} -> Steps to rotate
 
 ```java
-ring melody [0 3 7 5 7 9 12]
-ring left rotate(melody -2)
+list melody [0 3 7 5 7 9 12]
+list left rotate(melody -2)
 // => [7 5 7 9 12 0 3]
 
-ring right rotate(melody 2)
+list right rotate(melody 2)
 // => [9 12 0 3 7 5 7]
 // rotate()
 // turn()
@@ -1084,28 +1084,28 @@ list ct1 cut(spread(8) 3)
 
 ## spray
 
-"Spray" the values of one ring on the places of values of another ring if that value is greater than 0. Wraps input ring if more places must be set then length of the ring.
+"Spray" the values of one list on the places of values of another list if that value is greater than 0. Wraps input list if more places must be set then length of the list.
 
 **arguments**
 - {Ring} -> Ring to spray
 - {Ring} -> Positions to spray on
 
 ```java
-ring notes [12 19 15 17]
-ring places [1 0 0 1 1 0 1 0 1 0]
-ring sprayed spray(notes places)
+list notes [12 19 15 17]
+list places [1 0 0 1 1 0 1 0 1 0]
+list sprayed spray(notes places)
 // => [12 0 0 19 15 0 17 0 12 0]
 ```
 
 ## stretch
 
-Stretch (or shrink) a ring to a specified length, linearly interpolating between all values within the ring. Minimum output length is 2 (which will be the outmost values from the ring). Third optional argument sets the interpolation mode. Available modes are `none` (or `null`, `false`) and `linear`.
+Stretch (or shrink) a list to a specified length, linearly interpolating between all values within the list. Minimum output length is 2 (which will be the outmost values from the list). Third optional argument sets the interpolation mode. Available modes are `none` (or `null`, `false`) and `linear`.
 
 **arguments**
 
 ```java
-ring notes [0 12 3 7]
-ring str stretch(notes 15)
+list notes [0 12 3 7]
+list str stretch(notes 15)
 //=> [ 0 2 5 7 10 11 9 7 5 3 3 4 5 6 7 ] 
 
 //   12.00 ┼  ╭╮      
@@ -1116,19 +1116,19 @@ ring str stretch(notes 15)
 //    0.00 ┼╯ 
 
 // use stretchFloat if you want the result to have more precision
-ring str stretchFloat(notes 15)
+list str stretchFloat(notes 15)
 ```
 
 ## unique
 
-Filter duplicate items from a ring. does not account for 2-dimensional lists in the ring.
+Filter duplicate items from a list. does not account for 2-dimensional lists in the list.
 
 **arguments**
 - {Ring} -> Ring to filter
 
 ```java
-ring notes [0 5 7 3 7 7 0 12 5]
-ring thinned unique(notes)
+list notes [0 5 7 3 7 7 0 12 5]
+list thinned unique(notes)
 // => [0 5 7 3 12]
 ```
 
@@ -1332,14 +1332,14 @@ Convert beat division strings or beat ratio floats to milliseconds using BPM fro
 
 ```java
 set tempo 120
-ring divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
-ring ms1 divisionToMs(divs)
+list divs [1/4 1/2 1/8 3/16 1/4 1/6 2]
+list ms1 divisionToMs(divs)
 // => [500 1000 250 375 500 333.33 4000]
-ring ms2 divisionToMs(divs 100)
+list ms2 divisionToMs(divs 100)
 // => [600 1200 300 450 600 400 4800]
 
-ring ratios [0.25 0.125 0.1875 0.25 0.16667 2]
-ring ms3 divisionToMs(ratios)
+list ratios [0.25 0.125 0.1875 0.25 0.16667 2]
+list ms3 divisionToMs(ratios)
 // => [500 1000 250 375 500 333.33 4000]
 ```
 

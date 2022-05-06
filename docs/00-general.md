@@ -23,9 +23,9 @@ Alias: `make`, `sound`
 
 By default Mercury has a small library of samples and single-cycle waveforms included in the environment. A full list of these samples and waveforms can be found here: [Sounds in Mercury](/mercury_ide/media/README.md)
 
-## ring
+## ring / list
 
-Create a circular array, which is called a `ring`. This ring can hold integers, floats, symbols and other rings (2-dimensional). Use these to change parameters over time for instruments. The `ring` must be declared with a name before it can be used as a variable in an instrument function. 
+Create a circular array, which is called a `ring` or `list`. This ring can hold integers, floats, symbols and other rings (2-dimensional). Use these to change parameters over time for instruments. The `ring` must be declared with a name before it can be used as a variable in an instrument function. 
 
 **arguments**
 - {Name} -> ring name
@@ -35,16 +35,16 @@ Create a circular array, which is called a `ring`. This ring can hold integers, 
 ```java
 ring someValues [0 1.618 21 3.14]
 
-ring someSamples [kick_909 hat_909 snare_909 hat_909]
+list someSamples [kick_909 hat_909 snare_909 hat_909]
 
-ring fromFunction random(20 0 100)
+list fromFunction random(20 0 100)
 ```
 
 Alias: `list`, `array`
 
 **Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
 
-Read more about all the algorithmic methods available for generating and transforming rings in Mercury under [Ring Methods](./05-ring.md#ring-methods).
+Read more about all the algorithmic methods available for generating and transforming lists in Mercury under [Ring Methods](./05-ring.md#ring-methods).
 
 ## set
 
@@ -80,13 +80,13 @@ Alias: `give`, `apply`
 
 ## print
 
-Print the output of a ring to the console to see its output.
+Print the output of a list to the console to see its output.
 
 ```java
 console show
 
-ring rnd random(12)
-ring sin sine(10 5.4)
+list rnd random(12)
+list sin sine(10 5.4)
 
 print rnd
 print sin

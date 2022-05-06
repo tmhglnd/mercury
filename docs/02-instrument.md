@@ -38,7 +38,7 @@ new sample snare_909 group(drums) time(1/2 1/4)
 
 ## time 
 
-Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `ring`'s provided as argument in methods for this instrument. Setting the first argumen to `free` allows to use external triggering via osc messages. The trigger reacts when a value greater than 0 is received.
+Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `list`'s provided as argument in methods for this instrument. Setting the first argumen to `free` allows to use external triggering via osc messages. The trigger reacts when a value greater than 0 is received.
 
 **arguments**
 - {Number/Division} -> the timing division (default=1/4)
@@ -61,22 +61,22 @@ Alias: `timing() | t()`
 
 ## beat
 
-Provide the beat function with a `ring` consisting of ones and zeroes. For every time interval defined by the `time()` method, the next value in the ring will be used. A one results in a trigger of the instrument and an increment of the internal counter. A zero results in no trigger. An optional second argument resets the internal instrument index after a certain amount of time in n-bars.
+Provide the beat function with a `list` consisting of ones and zeroes. For every time interval defined by the `time()` method, the next value in the list will be used. A one results in a trigger of the instrument and an increment of the internal counter. A zero results in no trigger. An optional second argument resets the internal instrument index after a certain amount of time in n-bars.
 
 **arguments**
 - {FloatRing+|Float+} -> the rhythmic pattern of ones and zeroes to play (default=1)
 
 ```java
-ring aBeat [1 0 0 1 0 1 1 0 0]
+list aBeat [1 0 0 1 0 1 1 0 0]
 
 new sample hat_909 name(ht)
 	set ht time(1/16) beat(aBeat 2)
 ```
 
-Alternatively you can use floating-point values in a ring which result in a probability that the instrument will play. Here 0 means 0% chance, 1=100% and 0.5 is 50%. Inspired by Nick Collins paper on [Algorithmic Composition Methods for Breakbeat Science](https://www.dmu.ac.uk/documents/technology-documents/research/mtirc/nowalls/mww-collins.pdf).
+Alternatively you can use floating-point values in a list which result in a probability that the instrument will play. Here 0 means 0% chance, 1=100% and 0.5 is 50%. Inspired by Nick Collins paper on [Algorithmic Composition Methods for Breakbeat Science](https://www.dmu.ac.uk/documents/technology-documents/research/mtirc/nowalls/mww-collins.pdf).
 
 ```java
-ring aBeat [1 0.5 0.2 0.8 0.5]
+list aBeat [1 0.5 0.2 0.8 0.5]
 
 new sample hat_909 name(ht)
 	set ht time(1/16) beat(aBeat 2)
@@ -192,8 +192,8 @@ The synth and polySynth instruments allow you to play synthesized sounds using a
 Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root.
 
 **arguments**
-- {Value|RingValue} -> positive or negative semitone note value or ring, x-coordinate (default=0)
-- {Value|RingValue} -> positive or negative octave value or ring, y-coordinate (default=0)
+- {Value|RingValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
+- {Value|RingValue} -> positive or negative octave value or list, y-coordinate (default=0)
 
 ```java
 set scale major D
@@ -201,11 +201,11 @@ new synth sine note(2 2)
 //=> results in midi-note 64 > F4
 ```
 
-Also excepts rings to play a melody over time:
+Also excepts lists to play a melody over time:
 
 ```java
 set scale minor A
-ring mel [0 5 7 3 2 -2 0]
+list mel [0 5 7 3 2 -2 0]
 new synth sine note(mel 1) time(1/16)
 
 ```
@@ -281,7 +281,7 @@ Set the offset (the start position of the playback) of the sample. 0 = start at 
 - {Float} -> the playback position between 0 and 1 (default=0)
 
 ```java
-ring positions randomFloat(8 0 0.5)
+list positions randomFloat(8 0 0.5)
 
 new sample choir time(1/16) offset(positions)
 ```
@@ -296,7 +296,7 @@ Set the `useNote` method to 1 in order to be able to play the sample on differen
 - {Int+} -> turn the note usage on/off (default=0)
 
 ```java
-ring melody [0 3 7 9 -1]
+list melody [0 3 7 9 -1]
 
 new sample pluck_c time(1/8) useNote(1) note(melody 0)
 ```
@@ -340,8 +340,8 @@ new midi "AU DLS Synth 1" time(1/4) note(0 0) length(100) gain(0.8)
 Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root.
 
 **arguments**
-- {Value|RingValue} -> positive or negative semitone note value or ring, x-coordinate (default=0)
-- {Value|RingValue} -> positive or negative octave value or ring, y-coordinate (default=0)
+- {Value|RingValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
+- {Value|RingValue} -> positive or negative octave value or list, y-coordinate (default=0)
 
 ```java
 set scale major D
@@ -350,11 +350,11 @@ new midi "AU DLS Synth 1" note(2 2)
 //=> results in midi-note 64 > F4
 ```
 
-Also excepts rings to play a melody over time:
+Also excepts lists to play a melody over time:
 
 ```java
 set scale minor A
-ring mel [0 5 7 3 2 -2 0]
+list mel [0 5 7 3 2 -2 0]
 
 new midi "AU DLS Synth 1" note(mel 1) time(1/16)
 ```
@@ -400,14 +400,14 @@ Alias: `channel()`
 
 ## chord
 
-Turn the chord output (polyphonic) on for a midi instrument. This allows you to use 2-dimensional rings where the 2nd dimension is used to generate chords. 
+Turn the chord output (polyphonic) on for a midi instrument. This allows you to use 2-dimensional lists where the 2nd dimension is used to generate chords. 
 
 **arguments**
 
 - {Bool} -> Turn chord output on/off
 
 ```java
-ring chords [[0 4 7] [2 5 9] [5 9 0]]
+list chords [[0 4 7] [2 5 9] [5 9 0]]
 
 new midi "AU DLS Synth 1" note(chords 1) chord(on)
 ```
@@ -431,7 +431,7 @@ Alias: `clock()`
 
 ## change
 
-Send control change messages to the midi device. This function can have multiple calls in the same instrument, every call can be a different control number. The first argument is the control number, the second argument is the controller value or a ring of controller values.
+Send control change messages to the midi device. This function can have multiple calls in the same instrument, every call can be a different control number. The first argument is the control number, the second argument is the controller value or a list of controller values.
 
 **arguments**
 
@@ -439,7 +439,7 @@ Send control change messages to the midi device. This function can have multiple
 - {Int+/RingInt+} -> Midi controller value between 0-127
 
 ```java
-ring ccValues [10 20 30 40 50]
+list ccValues [10 20 30 40 50]
 
 new midi "device" change(13 100) change(21 ccValues)
 ```

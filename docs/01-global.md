@@ -88,7 +88,7 @@ set scalar 2
 
 ## randomSeed
 
-Set the random seed as integer for the psuedorandom number generators used in all functions across the environment. Setting the seed to a fixed integer will help make sure random values keep the same sequence every time you re-evaluate the code. A second optional argument resets the seed every n-bar, which can be useful for random arguments used outside ring generation, such as `pan(random)` or `beat(0.5)`
+Set the random seed as integer for the psuedorandom number generators used in all functions across the environment. Setting the seed to a fixed integer will help make sure random values keep the same sequence every time you re-evaluate the code. A second optional argument resets the seed every n-bar, which can be useful for random arguments used outside list generation, such as `pan(random)` or `beat(0.5)`
 
 **arguments**
 - {Int+} -> the seed for the psudeorandom number generators (default=0)

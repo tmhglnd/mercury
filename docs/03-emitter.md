@@ -17,8 +17,8 @@ new emitter osc name(<name>) time(<division><offset>)
 ```
 example
 ```java
-ring params [0.25 0.5 0.75]
-ring values [3 1]
+list params [0.25 0.5 0.75]
+list values [3 1]
 
 new emitter osc name(myOSC) time(1/4) 
 	set myOSC someParam(params) anotherParam(values)
@@ -36,8 +36,8 @@ new emitter osc name(myOSC) time(1/4)
 The messages also support multiple arguments up to a length of 256. Multiple arguments can be provided as rings, symbols, floats or integers.
 
 ```java
-ring val1 [0.25 0.5 0.75]
-ring val2 [3 1]
+list val1 [0.25 0.5 0.75]
+list val2 [3 1]
 
 new emitter osc name(myOSC) time(1/4)
 	set myOSC aMessage(0.1 val1 val2 100)
@@ -60,8 +60,8 @@ Set the name for the OSC emitter. This can be any string of 2 or more characters
 Alternatively, if you want multiple emitters to send to the same address, you can use the `address()` method. The `address` is prepended as first address in the osc-message in the format: `/<address>/<function> argument`. Useful if you want to send messages to the same address, but with different timing-intervals.
 
 ```java
-ring params [0.25 0.5 0.75]
-ring values [3 1 4]
+list params [0.25 0.5 0.75]
+list values [3 1 4]
 
 new emitter osc name(osc1) address(myOSC) time(1/4) 
 	set osc1 someParam(params)
