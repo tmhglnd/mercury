@@ -5,7 +5,7 @@
 		"time" : 1,
 		"warp" : 1,
 		"ratchet" : [ 1, 0 ],
-		"env" : [ 2, 400, 0, 0 ],
+		"env" : [ 1, 100, 0, 0 ],
 		"pan" : 0,
 		"note" : [ 0, 0 ],
 		"range" : [ 0, 4 ],
@@ -24,7 +24,10 @@
 		"sendOSC" : 0,
 		"clock" : 0,
 		"wave" : "sine",
-		"snap" : 0.2
+		"snap" : 0.2,
+		"damp" : 0.4,
+		"tail" : 1500,
+		"color" : 0.6
 	}
 ,
 	"polySynth" : 	{

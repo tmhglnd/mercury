@@ -1,0 +1,38 @@
+set scale minor_harmonic c
+set tempo 80
+set randomSeed 84932
+
+list bt clave(7)
+list nt cosine(16 5.1242 0 24)
+list nt repeat(nt 4)
+list ln random(5 1000 5000)
+list dm randomF(7 0.05 0.6)
+list cl cosineF(16 3.423 0.1 0.7)
+list sl random(7 10 100)
+
+// new synth saw time(1/4) note(nt 1) slide(200) fx(reverb) shape(1 500)
+
+// new synth pluck time(1/4)
+// new synth pluck time(1/4) shape(300 1) damp(0.3) color(0.4) tail(1000)
+list kck clave(16 2 3)
+new sample kick_ua time(1/16) gain(1.1) play(kck 1) 
+
+new synth pluck time(1/16 1/8) color(cl) damp(dm) tail(ln) note(nt 2) slide(0) shape(1 10) fx(drive 3) gain(0.7) fx(reverb 0.5 11) gain(0.7)
+
+new synth pluck time(1/8 1/16) shape(1 10) note(0 0) color(0.2) tail(3500) damp(0.3) sub(0.5) gain(1) fx(reverb 0.7 18) fx(drive 5) fx(lfo 1/8 up)
+
+// new synth saw note(0 0) shape(-1) fx(filter low 1/8 100 5000 0.5 0 4) time(1/16) fx(lfo 1/1) wave2(saw 0.98987) fx(chorus)
+
+// new sample kick_ua time(1/4) gain(1)
+list offs spreadF(8 0 1)
+list offs choose(32 offs)
+list brks [1/16 1/32]
+list brks choose(5 brks)
+new loop amen time(1/16) fx(lfo brks) offset(offs 2) pan(random) gain(0.6) speed(2)
+
+new sample hat_min time(1/16) play(0.72) gain(0.4) ratchet(2 0.2) pan(random)
+new sample snare_dnb time(1/4 1/8) gain(0.5)
+// list kck clave(16 2 3)
+// new sample kick_ua time(1/16) gain(1.1) play(kck 1)
+
+silence 

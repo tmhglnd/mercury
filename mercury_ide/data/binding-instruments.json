@@ -16,7 +16,8 @@
 	"synth" : 	{
 		"tone" : [ "synth_blip", 2 ],
 		"fm" : [ "synth_fm", 3 ],
-		"kick" : [ "synth_kick", 7 ]
+		"kick" : [ "synth_kick", 7 ],
+		"pluck" : [ "synth_karplus", 8 ]
 	}
 ,
 	"polySynth" : 	{
