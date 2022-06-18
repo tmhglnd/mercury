@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 54.0, 133.0, 693.0, 669.0 ],
+		"rect" : [ 731.0, 111.0, 693.0, 669.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -117,7 +117,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.0, 555.0, 75.0, 22.0 ],
+					"patching_rect" : [ 45.0, 570.0, 75.0, 22.0 ],
 					"text" : "s syphonTex"
 				}
 
@@ -170,7 +170,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -352,7 +352,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 45.0, 510.0, 49.0, 22.0 ],
+					"patching_rect" : [ 45.0, 525.0, 49.0, 22.0 ],
 					"text" : "jit.gl.pix"
 				}
 
@@ -503,12 +503,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-3",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 45.0, 465.0, 438.0, 22.0 ],
-					"text" : "jit.gl.texture @dim 512 512 @adapt 0 @type char @rectangle 1 @name external"
+					"patching_rect" : [ 45.0, 465.0, 273.0, 35.0 ],
+					"text" : "jit.gl.texture mercury @dim 512 512 @adapt 0 @type char @rectangle 1 @name external"
 				}
 
 			}
