@@ -4,7 +4,7 @@
   "description": "",
   "main": "parser.js",
   "scripts": {
-    "start": "node function-parse.js",
+    "start": "node ./src/function-parse.js",
     "test": "node parser.js ./test/synth-test.txt",
     "build": "npm run gen && nearley-railroad mercury.ne -o grammar.html",
     "gen": "nearleyc mercury.ne -o grammar.js",

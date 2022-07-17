@@ -8,7 +8,7 @@
 // require jsonfile for read/write
 const jsonFile = require('jsonfile');
 // require dictionary class
-const Dict = require('./dict.js');
+const Dict = require('../src/dict.js');
 
 // in/out filenames and relative path
 const bind_func = './bind-functions.json';

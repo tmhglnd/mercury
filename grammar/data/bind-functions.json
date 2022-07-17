@@ -95,7 +95,8 @@
 
 	"wave2" : [
 		"osc2",
-		"add_osc"
+		"add_osc",
+		"super"
 	],
 
 	"noise" : [
