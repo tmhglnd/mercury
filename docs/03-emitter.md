@@ -78,6 +78,14 @@ new emitter osc name(osc2) address(myOSC) time(1/2)
 //          etc...
 ```
 
+## sendOSC
+
+You can enable/disable sending messages with the sendOSC function
+
+```java
+new emitter osc name(osc3) sendOSC(0)
+```
+
 ## receiving
 
 You can use osc adresses as arguments for other functions by putting the address as argument in the form: `/<address>/<tag>/<etc.>`. For example to control the `gain()` of a `sample` and the `note()` value of a `synth` enter the following:
