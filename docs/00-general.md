@@ -23,9 +23,9 @@ Alias: `make`, `sound`
 
 By default Mercury has a small library of samples and single-cycle waveforms included in the environment. A full list of these samples and waveforms can be found here: [Sounds in Mercury](/mercury_ide/media/README.md)
 
-## ring / list
+## list
 
-Create a circular array, which is called a `ring` or `list`. This ring can hold integers, floats, symbols and other rings (2-dimensional). Use these to change parameters over time for instruments. The `ring` must be declared with a name before it can be used as a variable in an instrument function. 
+Create a circular array, which is called a `ring` or `list`. (in older versions this was designed to be `ring` because it refers to a "circular array", but for ease of use with beginners `list` makes more sense). This ring can hold integers, floats, symbols and other rings (2-dimensional). Use these to change parameters over time for instruments. The `ring` must be declared with a name before it can be used as a variable in an instrument function. 
 
 **arguments**
 - {Name} -> ring name
@@ -119,7 +119,7 @@ Alias: `mute`, `killAll` (deprecated)
 
 ## audio
 
-Disable/enable the Digital Signal Processing (DSP) engine.
+Disable/enable the Digital Signal Processing (DSP) engine. This can also be done via the interface and is usually not desirable to use during coding sessions.
 
 ```
 audio <1-0>

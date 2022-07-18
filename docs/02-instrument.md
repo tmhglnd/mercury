@@ -1,6 +1,6 @@
 # All Instruments
 
-The following methods apply to all the different types of instruments: `synth`, `sample`, `polySynth`, `loop` and `midi`.
+The following methods apply to all the types of instruments: `synth`, `sample`, `polySynth`, `loop` and `midi`.
 
 For instrument specific functions see below:
 
@@ -17,10 +17,10 @@ Set the name for this instrument. This can be any string of 2 or more characters
 - {Name} -> an instrument name (default=null)
 
 ```java
-new synth saw name(foo)
-	set foo gain(0.8) time(1/16)
-new sample kick_909 name(bar)
-	set bar gain(1.2) time(1/4)
+new synth saw name(bob)
+	set bob gain(0.8) time(1/16)
+new sample kick_909 name(alice)
+	set alice gain(1.2) time(1/4)
 ```
 
 ## group
@@ -38,7 +38,7 @@ new sample snare_909 group(drums) time(1/2 1/4)
 
 ## time 
 
-Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `list`'s provided as argument in methods for this instrument. Setting the first argumen to `free` allows to use external triggering via osc messages. The trigger reacts when a value greater than 0 is received.
+Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `list`'s provided as argument in methods for this instrument. Setting the first argument to `free` allows to use external triggering via osc messages. The trigger reacts when a value greater than `0` is received.
 
 **arguments**
 - {Number/Division} -> the timing division (default=1/4)
@@ -59,18 +59,18 @@ new sample snare_dnb name(snare)
 
 Alias: `timing() | t()`
 
-## beat
+## play
 
 Provide the beat function with a `list` consisting of ones and zeroes. For every time interval defined by the `time()` method, the next value in the list will be used. A one results in a trigger of the instrument and an increment of the internal counter. A zero results in no trigger. An optional second argument resets the internal instrument index after a certain amount of time in n-bars.
 
 **arguments**
-- {FloatRing+|Float+} -> the rhythmic pattern of ones and zeroes to play (default=1)
+- {FloatList+/Float+} -> a rhythmic pattern of ones and zeroes to play (default=1)
 
 ```java
 list aBeat [1 0 0 1 0 1 1 0 0]
 
 new sample hat_909 name(ht)
-	set ht time(1/16) beat(aBeat 2)
+	set ht time(1/16) play(aBeat 2)
 ```
 
 Alternatively you can use floating-point values in a list which result in a probability that the instrument will play. Here 0 means 0% chance, 1=100% and 0.5 is 50%. Inspired by Nick Collins paper on [Algorithmic Composition Methods for Breakbeat Science](https://www.dmu.ac.uk/documents/technology-documents/research/mtirc/nowalls/mww-collins.pdf).
@@ -79,11 +79,11 @@ Alternatively you can use floating-point values in a list which result in a prob
 list aBeat [1 0.5 0.2 0.8 0.5]
 
 new sample hat_909 name(ht)
-	set ht time(1/16) beat(aBeat 2)
+	set ht time(1/16) play(aBeat 2)
 new sample kick_909 time(1/4)
 ```
 
-Alias: `play() | rhythm() | b()`
+Alias: `beat() | rhythm() | b()`
 
 ## shape
 
@@ -91,9 +91,9 @@ Set the envelope generator of a sound. Various modes are possible depending on t
 
 **arguments**
 
-- {Number/Division} -> Attack time in ms or division (optional, default=2)
-- {Number/Division} -> Decay time in ms or division (optional, default=0)
-- {Number/Division} -> Release time in ms or division
+- {Number+/Division/NumberList} -> Attack time in ms or division (optional, default=2)
+- {Number+/Division/NumberList} -> Decay time in ms or division (optional, default=0)
+- {Number+/Division/NumberList} -> Release time in ms or division
 
 ```java
 new synth saw shape(1500) time(1)
@@ -134,7 +134,7 @@ new sample snare_909 name(sn)
 	set sn gain(0.8)
 ```
 
-When using the `midi` instrument the gain will be multiplied by `127` to construct a velocity message. A `gain(0.5)` therefore maps to `63` and a `gain(1)` to `127`
+**Note:** When using the `midi` instrument the gain will be multiplied by `127` to construct a velocity message. A `gain(0.5)` therefore maps to `63` and a `gain(1)` to `127`
 
 Alias: `amp() | volume() | g() | a() | v() | velocity()`
 
@@ -154,7 +154,7 @@ Alias: `panning() | p()`
 
 ## fx
 
-Apply an effect to the sound of the instrument to shape your sounds timbre in many ways. The first argument is always the effectname. The following arguments depend on the selected effect. See [FX Documentation](./04-fx.md#fx) for more details on individual effects.
+Apply an effect to the sound of the instrument to manipulate your sounds timbre in many ways. The first argument is always the `effectname`. The following arguments depend on the selected effect. See [FX Documentation](./04-fx.md) for more details.
 
 **arguments**
 - {Name} -> the effect name
@@ -171,11 +171,14 @@ The currently available effects are:
 - chip
 - delay
 - double
+- chorus
 - drive
+- envFilter
 - filter
 - freeze
 - lfo
 - reverb
+- squash
 ```
 
 Alias: `effect() | with_fx() | add_fx()`
@@ -192,8 +195,8 @@ The synth and polySynth instruments allow you to play synthesized sounds using a
 Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root.
 
 **arguments**
-- {Value|RingValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
-- {Value|RingValue} -> positive or negative octave value or list, y-coordinate (default=0)
+- {Value|ListValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
+- {Value|ListValue} -> positive or negative octave value or list, y-coordinate (default=0)
 
 ```java
 set scale major D
@@ -224,7 +227,47 @@ new synth sine shape(1 2000) time(1) note(7.5 2) useDetune(on)
 new synth sine shape(1 2000) time(1) note(7 2) 
 ```
 
+## super
+
+Add multiple oscillators in unison with a detuning factor to create a *SuperSaw* effect. One oscillator will always be the base frequency of the `note()`, the others are tuned above and below in incremental steps based on the detuning factor. The first argument sets the amount of oscillators (minum of 1, default=1), the second argument sets the detuning factor in semi-tones, the third optional argument sets the oscillator type for the odd numbered oscillators.
+
+**arguments**
+- {Int+} -> number of oscillators (default=1, maximum=64)
+- {Float|FloatList} -> detuning factor in semi-tone, 12=octave
+- {Name} -> the name of the odd numbered oscillators (optional, default=main oscillator)
+
+```java
+new synth saw note(0 1) shape(-1) super(5 0.031415)
+```
+
+```java
+new synth saw note(0 1) shape(-1) super(11 0.0618 square) 
+```
+
+Detuning can be changed in time with a `list`
+
+```java
+list voices [3 5 9 21]
+list detune [0.1 0.5 0.9 12.01 0.3]
+
+new synth saw note(0 1) time(1/4) shape(-1) super(voices detune)
+```
+
+**backwards compatible with wave2()**
+
+Using the previous syntax of `wave2()` now calls the `super()` method like so
+
+```java
+new synth saw note(0 1) wave2(square 0.998)
+// is translated and equivalant to:
+new synth saw note(0 1) super(2 -0.03 square)
+```
+
+Alias: `wave2()` `osc2()`
+
 ## wave2
+
+**Deprecated, use super() instead**
 
 Add a second oscillator to the synths sound. This can either be a sine, triangle, square or saw. The second argument sets a multiplication ratio for the second oscillators frequency.
 
@@ -237,7 +280,7 @@ Add a second oscillator to the synths sound. This can either be a sine, triangle
 new synth saw note(0 1) time(1/4) wave2(square 0.998)
 ```
 
-Alias: `osc2()`
+Alias: `osc2()` `super`
 
 ## noise
 

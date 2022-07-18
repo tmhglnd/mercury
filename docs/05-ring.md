@@ -1,6 +1,6 @@
 # List Methods
 
-Mercury uses the [`total-serialism`](https://www.npmjs.com/package/total-serialism) Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (list) is circular, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the list. When the index is higher then the amount of values in the list it will return to the begin and start over, hence a circular list or `ring`. 
+Mercury uses the [`total-serialism`](https://www.npmjs.com/package/total-serialism) Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (list) is a circular array, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the list. When the index is higher then the amount of values in the list it will return to the begin and start over, hence a circular list or `ring`. 
 
 ```
 list <the-list-name> [ v0 v1 v2 ... v-n ] 
@@ -15,7 +15,7 @@ list twoDimensional [0 1 [2 3] 4 [5 6 7]]
 list someSamples [kick_909 hat_909 snare_909 hat_909]
 ```
 
-**Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`
+**Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`. Using names that are also a function is also not advised (eg. `gain`, `shape`, `time` etc.)
 
 [`total-serialism`](https://www.npmjs.com/package/total-serialism) is a set of methods used for procedurally generating and transforming number sequences. This library is mainly designed with algorithmic composition of music in mind, but can surely be useful for other purposes that involve generation and manipulation of lists and numbers. The library is a result of my research in algorithmic composition, livecoding and electronic music and was first prototyped with Max/MSP in the Mercury livecoding environment.
 

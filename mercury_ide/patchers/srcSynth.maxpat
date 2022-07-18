@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
+			"minor" : 2,
 			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -45,7 +45,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 416.0, 420.0, 62.0, 22.0 ],
+					"patching_rect" : [ 407.0, 435.0, 62.0, 22.0 ],
 					"text" : "r #0_c"
 				}
 
@@ -73,7 +73,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 2,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -459,7 +459,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 424.5, 345.0, 84.0, 22.0 ],
+					"patching_rect" : [ 444.0, 345.0, 84.0, 22.0 ],
 					"text" : "routepass env"
 				}
 
@@ -487,7 +487,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 2,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -829,14 +829,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 2,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 103.0, 676.0, 674.0 ],
+						"rect" : [ 131.0, 152.0, 676.0, 674.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -865,6 +865,66 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-37",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 276.0, 285.0, 29.5, 22.0 ],
+									"text" : "+ 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-36",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 255.0, 165.0, 29.5, 22.0 ],
+									"text" : "t b l"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-33",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 276.0, 255.0, 29.5, 22.0 ],
+									"text" : "> 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 255.0, 195.0, 138.0, 22.0 ],
+									"text" : "square saw sine triangle"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 255.0, 225.0, 40.0, 22.0 ],
+									"text" : "zl.sub"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-30",
 									"maxclass" : "newobj",
@@ -909,18 +969,6 @@
 									"outlettype" : [ "int" ],
 									"patching_rect" : [ 165.0, 240.0, 22.0, 22.0 ],
 									"text" : "t 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-22",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"patching_rect" : [ 196.25, 240.0, 22.0, 22.0 ],
-									"text" : "t 2"
 								}
 
 							}
@@ -1110,6 +1158,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
@@ -1161,13 +1216,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"source" : [ "obj-22", 0 ]
 								}
 
 							}
@@ -1236,8 +1284,29 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-22", 0 ],
-									"source" : [ "obj-4", 4 ]
+									"destination" : [ "obj-37", 0 ],
+									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-36", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 1 ],
+									"source" : [ "obj-36", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-37", 0 ]
 								}
 
 							}
@@ -1271,8 +1340,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-36", 0 ],
+									"source" : [ "obj-4", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-33", 0 ],
+									"source" : [ "obj-6", 1 ]
 								}
 
 							}
@@ -1312,7 +1395,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 444.833333333333371, 750.0, 62.0, 22.0 ],
+					"patching_rect" : [ 467.333333333333371, 705.0, 62.0, 22.0 ],
 					"text" : "r #0_c"
 				}
 
@@ -1324,7 +1407,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 465.166666666666629, 780.0, 108.0, 22.0 ],
+					"patching_rect" : [ 487.666666666666629, 735.0, 108.0, 22.0 ],
 					"text" : "r #0_argsDone"
 				}
 
@@ -1372,7 +1455,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 351.0, 480.0, 84.0, 22.0 ],
+					"patching_rect" : [ 342.0, 480.0, 84.0, 22.0 ],
 					"text" : "argListLookup"
 				}
 
@@ -1432,7 +1515,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 404.166666666666686, 750.0, 22.0, 22.0 ],
+					"patching_rect" : [ 426.666666666666686, 705.0, 22.0, 22.0 ],
 					"text" : "t 1"
 				}
 
@@ -1444,7 +1527,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
-					"patching_rect" : [ 404.166666666666686, 810.0, 80.0, 22.0 ],
+					"patching_rect" : [ 426.666666666666686, 765.0, 80.0, 22.0 ],
 					"text" : "envelopeGen"
 				}
 
@@ -1460,7 +1543,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 2,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1569,7 +1652,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
+											"minor" : 2,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2157,7 +2240,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 404.166666666666686, 720.0, 59.0, 22.0 ],
+					"patching_rect" : [ 426.666666666666686, 675.0, 59.0, 22.0 ],
 					"text" : "r #0_t"
 				}
 
@@ -2166,11 +2249,11 @@
 				"box" : 				{
 					"id" : "obj-19",
 					"maxclass" : "newobj",
-					"numinlets" : 5,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 138.0, 285.0, 158.0, 22.0 ],
-					"text" : "route slide super wave2 sub"
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 138.0, 300.0, 325.0, 22.0 ],
+					"text" : "route slide wave2 sub"
 				}
 
 			}
@@ -2193,7 +2276,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 351.0, 570.0, 45.0, 22.0 ],
+					"patching_rect" : [ 342.0, 570.0, 45.0, 22.0 ],
 					"text" : "sub $1"
 				}
 
@@ -2245,7 +2328,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 2,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2294,7 +2377,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "Buffer oscEven;\r\nBuffer oscOdd;\r\n\r\nData phases(64);\r\n\r\nParam sub(0, min=0);\r\nParam voices(1, min=1, max=64);\r\nParam detune(0);\r\n\r\n// frequency is signal input\r\nf = in1;\r\n\r\n// sum all voices for output\r\ns = 0;\r\n\r\nfor (i=0; i<voices; i+=1){\r\n\tidx = i - floor(voices/2);\r\n\t// get phase for voice\r\n\tp = peek(phases, i);\r\n\t// increment phase with frequency and detuning\r\n\tp += (f * pow(2, -detune * idx / 12)) / samplerate;\r\n\t\r\n\t// select odd or even oscillator based on index\r\n\tif (idx % 2){\t\r\n\t\ts += sample(oscOdd, p, boundmode=\"wrap\");\r\n\t} else {\r\n\t\ts += sample(oscEven, p, boundmode=\"wrap\");\r\n\t}\r\n\tpoke(phases, fract(fixnan(p)), i);\t\r\n}\r\n\r\n// add a sub frequency octave lower\r\n// s += sample(oscMain, phasor(f * 0.5)) * sub;\r\n\r\n// equal loadness based on voice number\r\nout1 = s / pow(voices, 0.5);",
+									"code" : "Buffer oscEven;\r\nBuffer oscOdd;\r\n\r\nData phases(64);\r\n\r\nParam sub(0, min=0);\r\nParam voices(1, min=1, max=64);\r\nParam detune(0);\r\n\r\n// frequency is signal input\r\nf = in1;\r\n\r\n// sum all voices for output\r\ns = 0;\r\n\r\nfor (i=0; i<voices; i+=1){\r\n\t// the idx goes from negative to positive\r\n\tidx = i - floor(voices/2);\r\n\t\r\n\t// get phase for voice\r\n\tp = peek(phases, i);\r\n\t\r\n\t// increment phase with frequency and detuning\r\n\tp += (f * pow(2, -detune * idx / 12)) / samplerate;\r\n\t\r\n\t// select odd or even oscillator based on index\r\n\tif (idx % 2){\t\r\n\t\ts += sample(oscOdd, p, boundmode=\"wrap\");\r\n\t} else {\r\n\t\ts += sample(oscEven, p, boundmode=\"wrap\");\r\n\t}\r\n\t// set new phase positin in data\r\n\tpoke(phases, fract(fixnan(p)), i);\t\r\n}\r\n\r\n// add a sub frequency octave lower\r\nif (sub > 0.0001){\r\n\ts += cycle(f * 0.5) * sub;\r\n}\r\n\r\n// approximate equal loudness based on voice number\r\nout1 = s / fastpow(voices, 0.5);",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -2333,7 +2416,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 182.0, 675.0, 124.0, 22.0 ],
@@ -2512,13 +2596,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
-					"source" : [ "obj-19", 3 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-35", 0 ],
 					"source" : [ "obj-19", 2 ]
 				}
 
@@ -2533,7 +2610,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
-					"source" : [ "obj-19", 4 ]
+					"source" : [ "obj-19", 3 ]
 				}
 
 			}

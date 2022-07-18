@@ -6,10 +6,11 @@
 
 - [Actions](./00-general.md)
 	- [new](./00-general.md#new)
-	- [ring](./00-general.md#ring)
+	- [list](./00-general.md#list)
 	- [set](./00-general.md#set)
 	- [print](./00-general.md#print)
 	- [silence](./00-general.md#silence)
+	- [audio](./00-general.md#audio)
 
 - [Global (set)](./01-global.md)
 	- [tempo](./01-global.md#tempo)
@@ -28,7 +29,7 @@
 		- [name](./02-instrument.md#name)
 		- [group](./02-instrument.md#group)
 		- [time](./02-instrument.md#time)
-		- [beat](./02-instrument.md#beat)
+		- [play](./02-instrument.md#beat)
 		- [shape](./02-instrument.md#shape)
 		- [gain](./02-instrument.md#gain)
 		- [pan](./02-instrument.md#pan)
@@ -36,12 +37,13 @@
 	- Synth / polySynth
 		- [note](./02-instrument.md#note)
 		- [useDetune](./02-instrument.md#usedetune)
-		- [wave2](./02-instrument.md#wave2)
+		<!-- - [wave2](./02-instrument.md#wave2) -->
+		- [super](./02-instrument.md#super)
 	- Sample / Loop
 		- [speed](./02-instrument.md#speed)
 		- [offset](./02-instrument.md#offset)
-		- [useNote](./02-instrument.md#usenote)
-		- [note](./02-instrument.md#note)
+		<!-- - [useNote](./02-instrument.md#usenote) -->
+		<!-- - [note](./02-instrument.md#note) -->
 		- [stretch](./02-instrument.md#stretch)
 	- Midi
 		- [note](./02-instrument.md#note-1)
@@ -92,11 +94,11 @@ When describing input arguments for functions in some cases it is necessary to k
 		- `Float` -> A floating-point number, negative or positive, including 0
 	- `Name` -> A combination of letter-characters, may include capital letter, underscores and digits
 
-**Rings**
+**Lists**
 
-- `Ring` -> A ring with `Value`'s
-	- `NumberRing` -> A ring with `Number`'s
-		- `IntRing+` -> A ring with `Int+`'s
-		- `IntRing` -> A ring with `Int`'s
-		- `FloatRing` -> A ring with `Float`'s
-	- `NameRing` -> A ring with `Name`'s
+- `List` -> A list with `Value`'s
+	- `NumberList` -> A list with `Number`'s
+		- `IntList+` -> A list with `Int+`'s
+		- `IntList` -> A list with `Int`'s
+		- `FloatList` -> A list with `Float`'s
+	- `NameList` -> A list with `Name`'s

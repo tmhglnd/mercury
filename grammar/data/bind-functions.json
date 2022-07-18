@@ -96,7 +96,8 @@
 	"wave2" : [
 		"osc2",
 		"add_osc",
-		"super"
+		"super",
+		"unison"
 	],
 
 	"noise" : [
@@ -137,6 +138,7 @@
 	],
 
 	"poly" : [
+		"chord",
 		"chords",
 		"polyphonic"
 	]
