@@ -39,16 +39,16 @@ Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative codin
 
 1. Please download Max8 through any of the links below.
 
-- [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_x64_190808.zip)
-- [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max808_190808.dmg)
+- [Windows](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max831_220510.zip)
+- [Mac](https://akiaj5esl75o5wbdcv2a-maxmspjitter.s3.amazonaws.com/Max831_220510.dmg)
 - If links are not working you can go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
 
 2. Once you installed Max8 you can launch it. It will create a `Max 8` folder in your `Documents`. In there you may create a folder named `Projects`. The full path should now look like this: `<User>/Documents/Max 8/Projects`
 
-3. Now [download the latest release](https://github.com/tmhglnd/mercury/releases)
+3. Now [download the latest update]([https://github.com/tmhglnd/mercury/releases](https://github.com/tmhglnd/mercury/archive/refs/heads/master.zip))
 
 	```
-	Download latest release and unzip entire folder in ~/Documents/Max 8/Projects
+	Download latest Mercury version and unzip entire folder in ~/Documents/Max 8/Projects
 	```
 	
 	Now your filepath should look something like: `<User>/Documents/Max 8/Projects/mercury-v.0.13.0-alpha`
