@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 54.0, 90.0, 368.0, 416.0 ],
+		"rect" : [ 88.0, 117.0, 368.0, 416.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -48220,8 +48220,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -55223,6 +55221,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -72749,6 +72749,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "clockwarp.gendsp",
+				"bootpath" : "~/Documents/Max 7/Library/abstractions/th.clockwarp/code",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/th.clockwarp/code",
+				"type" : "gDSP",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "consoleLog.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -72768,6 +72775,13 @@
 			}
 , 			{
 				"name" : "envelopeGen.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "eventSequencer.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -73030,6 +73044,13 @@
 				"name" : "syphon.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers/visual",
 				"patcherrelativepath" : "./visual",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "th.clockwarp~.maxpat",
+				"bootpath" : "~/Documents/Max 7/Library/abstractions/th.clockwarp/patchers",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Max 7/Library/abstractions/th.clockwarp/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
