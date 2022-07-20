@@ -85,6 +85,23 @@ new sample kick_909 time(1/4)
 
 Alias: `beat() | rhythm() | b()`
 
+## ratchet
+
+Add a ratcheting effect (doubling/tripling of hits) with a probability. A technique that introduces some variety in rhythm that originated with electronic music of Tangerine Dream. The first argument sets the probality a note will be repeated. The second argument sets the amount of repetitions within the time, effectively doubling, tripling or more.
+
+**arguments**
+- {Float+} -> probability of ratchet happening (default=0.1)
+- {Int+/IntList+} -> amount of repetitions (default=2)
+
+```java
+new sample hat_909 time(1/8) ratchet(0.3 2)
+```
+
+```java
+list rtc [2 3 2 4 8]
+new sample hat_909 time(1/4) ratchet(1 rtc)
+```
+
 ## shape
 
 Set the envelope generator of a sound. Various modes are possible depending on the amount of arguments. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds. The sustain time holds the sound at a static volume for a while. If the sound is triggered before the end of the envelope, the envelope is canceled, faded to 0 in 1ms and starts over. You can specify the times in absolute values using integer/floating points (in ms) or in relative values using beat divisions.
