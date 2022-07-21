@@ -102,6 +102,10 @@ list rtc [2 3 2 4 8]
 new sample hat_909 time(1/4) ratchet(1 rtc)
 ```
 
+## warp
+
+Warp a rhythm in more complex ways
+
 ## shape
 
 Set the envelope generator of a sound. Various modes are possible depending on the amount of arguments. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds. The sustain time holds the sound at a static volume for a while. If the sound is triggered before the end of the envelope, the envelope is canceled, faded to 0 in 1ms and starts over. You can specify the times in absolute values using integer/floating points (in ms) or in relative values using beat divisions.
