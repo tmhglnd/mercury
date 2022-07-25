@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 148.0, 306.0, 368.0, 416.0 ],
+		"rect" : [ 54.0, 90.0, 368.0, 416.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -47353,7 +47353,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 150.0, 193.0, 789.0, 639.0 ],
+						"rect" : [ 82.0, 147.0, 789.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -48220,8 +48220,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -51564,7 +51562,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC-besturingsbestand Bus 1", ",", "M4", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -55223,6 +55221,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,

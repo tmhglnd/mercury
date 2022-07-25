@@ -1,0 +1,170 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 2,
+			"revision" : 2,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 733.0, 78.0, 652.0, 788.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 611.0, 15.0, 28.0, 22.0 ],
+					"text" : "in 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 589.0, 750.0, 35.0, 22.0 ],
+					"text" : "out 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 412.333333333333314, 750.0, 35.0, 22.0 ],
+					"text" : "out 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 213.666666666666657, 750.0, 35.0, 22.0 ],
+					"text" : "out 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "// buffers with patterns for rhythm and warping\r\nBuffer beatPtrn;\r\nBuffer warpPtrn;\r\nBuffer ratchetPtrn;\r\n\r\n// external parameters\r\nParam div(1);\r\nParam thresh(0.9);\r\nParam barReset(0);\r\nParam offset(0);\r\nParam resetCount(0);\r\n\r\n// send external clicks to increment counter\r\nParam free(0);\r\n\r\n// ratcheting probability param\r\nParam ratchet(0);\r\n\r\n// history for storage of params\r\nHistory d(1);\r\nHistory o(0);\r\n\r\nHistory bCount(0);\r\nHistory nCount(0);\r\nHistory rCount(0);\r\nHistory wPhasor(0);\r\n\r\n// global variables\r\ntrig, cr, rt = 0;\r\n\r\n// reset counter bang after specified amount of time\r\nif (resetCount > 0){\r\n\tcr = rate(in1, resetCount, sync=\"lock\");\r\n\tcr = delta(cr) < -thresh;\r\n}\r\n\r\n// manual click when free=true\r\nif (free){\r\n\ttrig = in2;\r\n} else {\r\n\t// only adjust the new parameters when one bar \r\n\t// of 4/4 finished\r\n\tif (barReset){\r\n\t\tbarTrig = delta(in1) < -thresh;\r\n\t\td = latch(div, barTrig);\r\n\t\to = fract(latch(offset, barTrig));\t\r\n\t} else {\r\n\t\td = div;\r\n\t\to = fract(offset);\r\n\t}\r\n\r\n\t// apply offset to the phasor\r\n\t// of = ((in1 - o) % 1 + 1) % 1;\r\n\tof = fract(in1 - o);\r\n\r\n\t// stretch/shrink phasor with rate and locked to main\r\n\trt = rate(of, d, sync=\"lock\");\r\n\r\n\t// create a trigger when delta is below thresh\r\n\ttrig = delta(rt) < -thresh;\r\n\r\n\t// warp the phasor based on warping pattern if more than 1 value\r\n\tif (dim(warpPtrn) > 1){\r\n\t\t// get warp increment\r\n\t\twp = peek(warpPtrn, trunc(wPhasor));\r\n\t\t// add to wphasor\r\n\t\twPhasor += delta(rt) * wp;\r\n\t\tif (trig) {\r\n\t\t\twPhasor = 0;\r\n\t\t}\r\n\t\t// get fractional component of wPhasor\r\n\t\trt = fract(wPhasor);\r\n\t\t// new triggers\r\n\t\ttrig = delta(rt) < -thresh;\r\n\t}\r\n}//if not free\r\n\r\n// increment the beat counter (used to look up patterns)\r\nbCount = counter(trig, cr);\r\n\r\nbt = 0;\r\n// get the beat pattern value\r\nif (trig){\r\n\tbt = peek(beatPtrn, trunc(bCount % dim(beatPtrn)));\r\n\tbt = abs(noise()) < bt;\r\n}\r\n\r\n// increment the note counter (the notes that are actually played)\r\nnCount = counter(trig * bt, cr);\r\n\r\n// no ratchet effect when free=true\r\nif (!free){\r\n\t// ratcheting effect, triggering extra divisions\r\n\t// in between the standard trigger\r\n\t// based on probability percentage\r\n\tif (ratchet > 0){\r\n\t\tns = latch(abs(noise()), trig);\r\n\t\t//rch = latch(ratchet, trig);\r\n\t\trch = latch(peek(ratchetPtrn, trunc(rCount % dim(ratchetPtrn))), trig);\r\n\t\r\n\t\tif (ns < ratchet){\r\n\t\t\t// increment the ratchet counter (that are actually played)\r\n\t\t\trCount = counter(trig * bt, cr);\r\n\t\t\trch = fract(rt * rch);\r\n\t\t\t// output the ratchet triggers separately\r\n\t\t\tout2 = max(0, (delta(rch) < -thresh) - trig);\r\n\t\t\t// or not?\r\n\t\t\t//trig += delta(rch) < -thresh;\r\n\t\t}\r\n\t}\r\n}\r\n\r\n// output the beat count\r\nout4 = bCount;\r\n// output the note count\r\nout3 = nCount;\r\n// output the main trigger\r\nout1 = trig * bt;",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "codebox",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 15.0, 45.0, 615.0, 690.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 15.0, 15.0, 28.0, 22.0 ],
+					"text" : "in 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 15.0, 750.0, 35.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-5", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-5", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 1 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+ ]
+	}
+
+}
