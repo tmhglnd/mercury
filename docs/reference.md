@@ -58,21 +58,21 @@
 	- [address](./03-emitter.md#address)
 
 - [Sound Effects (fx)](./04-fx.md)
-	- [freeze](./04-fx.md#freeze) *\**
+	- [freeze](./04-fx.md#freeze) \*
 	- [shift](./04-fx.md#shift)
-	- [envFilter](./04-fx.md#envFilter) *\**
-	- [kink](./04-fx.md#kink) *\**
+	- [envFilter](./04-fx.md#envFilter) \*
+	- [kink](./04-fx.md#kink) \*
 	- [drive](./04-fx.md#drive)
 	- [filter](./04-fx.md#filter) 
-	- [degrade](./04-fx.md#degrade) *\**
-	- [comb](./04-fx.md#comb) *\**
+	- [degrade](./04-fx.md#degrade) \*
+	- [comb](./04-fx.md#comb) \*
 	- [squash](./04-fx.md#squash)
-	- [double](./04-fx.md#double--chorus) *\**
+	- [double](./04-fx.md#double--chorus) \*
 	- [reverb](./04-fx.md#reverb--hall)
 	- [lfo](./04-fx.md#lfo)
 	- [echo](./04-fx.md#delay--echo)
 
-* *This effect is only available in the full standalone version*
+\* *This effect is only available in the full standalone version*
 
 - [List functions](./05-ring.md)
 	- [Generative Methods](./05-ring.md#generative-methods)
