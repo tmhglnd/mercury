@@ -215,15 +215,15 @@ The synth and polySynth instruments allow you to play synthesized sounds using a
 
 Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root.
 
-|`note(x y)`|-… |-3 |-2 |-1 |0     |1  |2  |3  |4  |5  |6  |7  |8  |9  |10 |11 |12 |13    |14 |…  |
-|---------|---|---|---|---|------|---|---|---|---|---|---|---|---|---|---|---|---|------|---|---|
-|4        |…  |A# |B  |B# |C `84`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |B# |C `96`|C# |…  |
-|3        |…  |A# |B  |B# |C `72`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |B# |C `84`|C# |…  |
-|2        |…  |A# |B  |B# |C `60`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |B# |C `72`|C# |…  |
-|1        |…  |A# |B  |B# |C `48`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |B# |C `60`|C# |…  |
-|0        |…  |A# |B  |B# |C `36`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |B# |C `48`|C# |…  |
-|-1       |…  |A# |B  |B# |C `24`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |B# |C `36`|C# |…  |
-|-2       |…  |A# |B  |B# |C `12`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |B# |C `24`|C# |…  |
+|`note(x y)`|-… |-3 |-2 |-1 |0     |1  |2  |3  |4  |5  |6  |7  |8  |9  |10 |11 |12   |13 |…  |
+|---------|---|---|---|---|------|---|---|---|---|---|---|---|---|---|---|---|------|---|---|
+|4        |…  |A# |B  |B# |C `84`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |C `96`|C# |…  |
+|3        |…  |A# |B  |B# |C `72`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |C `84`|C# |…  |
+|2        |…  |A# |B  |B# |C `60`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |C `72`|C# |…  |
+|1        |…  |A# |B  |B# |C `48`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |C `60`|C# |…  |
+|0        |…  |A# |B  |B# |C `36`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |C `48`|C# |…  |
+|-1       |…  |A# |B  |B# |C `24`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |C `36`|C# |…  |
+|-2       |…  |A# |B  |B# |C `12`|C# |D  |D# |E  |F  |F# |G  |G# |A  |A# |B  |C `24`|C# |…  |
 
 
 **arguments**
