@@ -57,7 +57,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 182.0, 705.0, 88.0, 22.0 ],
+					"patching_rect" : [ 214.5, 705.0, 88.0, 22.0 ],
 					"text" : "onepole~ 6000"
 				}
 
@@ -2416,8 +2416,7 @@
 								}
 
 							}
- ],
-						"autosave" : 0
+ ]
 					}
 ,
 					"patching_rect" : [ 182.0, 675.0, 124.0, 22.0 ],
@@ -2574,7 +2573,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-48", 0 ],
+					"destination" : [ "obj-30", 0 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -2847,13 +2846,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
 					"source" : [ "obj-47", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-30", 0 ],
-					"source" : [ "obj-48", 0 ]
 				}
 
 			}
