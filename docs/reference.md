@@ -29,7 +29,7 @@
 		- [name](./02-instrument.md#name)
 		- [group](./02-instrument.md#group)
 		- [time](./02-instrument.md#time)
-		- [play](./02-instrument.md#beat)
+		- [play](./02-instrument.md#play)
 		- [shape](./02-instrument.md#shape)
 		- [gain](./02-instrument.md#gain)
 		- [pan](./02-instrument.md#pan)
@@ -58,13 +58,21 @@
 	- [address](./03-emitter.md#address)
 
 - [Sound Effects (fx)](./04-fx.md)
-	- [chip](./04-fx.md#chip)
-	- [delay](./04-fx.md#delay)
-	- [double](./04-fx.md#double)
+	- [freeze](./04-fx.md#freeze) *\**
+	- [shift](./04-fx.md#shift)
+	- [envFilter](./04-fx.md#envFilter) *\**
+	- [kink](./04-fx.md#kink) *\**
 	- [drive](./04-fx.md#drive)
-	- [filter](./04-fx.md#filter)
+	- [filter](./04-fx.md#filter) 
+	- [degrade](./04-fx.md#degrade) *\**
+	- [comb](./04-fx.md#comb) *\**
+	- [squash](./04-fx.md#squash)
+	- [double](./04-fx.md#double--chorus) *\**
+	- [reverb](./04-fx.md#reverb--hall)
 	- [lfo](./04-fx.md#lfo)
-	- [reverb](./04-fx.md#reverb)
+	- [echo](./04-fx.md#delay--echo)
+
+* *This effect is only available in the full standalone version*
 
 - [List functions](./05-ring.md)
 	- [Generative Methods](./05-ring.md#generative-methods)
