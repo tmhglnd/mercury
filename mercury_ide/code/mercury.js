@@ -159,7 +159,7 @@ const handlers = {
 		return Algo.pisano(...v);
 	},
 	// generate a normalized pisano period. returns in range 0 - 1
-	'fPisano' : (...v) => {
+	'nPisano' : (...v) => {
 		return Util.normalize(Algo.pisano(...v));
 	},
 	// generate the numbers in the fibonacci sequence

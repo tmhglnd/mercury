@@ -131,6 +131,13 @@ const libPath = path.posix.join(system.app, '../patchers/visual/');
 const libFile = path.posix.join(base, '/Data/code-library.json');
 let library = {};
 
+const soundLibPath = path.posix.join(system.app, '../patchers/sound/');
+const soundLibFile = path.posix.join(base, '/Data/sound-extensions.json');
+let soundLibrary = {};
+const visualLibPath = path.posix.join(system.app, '../patchers/visual/');
+const visualLibFile = path.posix.join(base, '/Data/visual-extensions.json');
+let visualLibrary = {};
+
 // directories for storage of code logs, recordings and sketches
 const userDirs = ['/Code Logs', '/Recordings', '/Library'/*, '/Sketches'*/];
 
@@ -196,11 +203,26 @@ max.addHandler('init', () => {
 	}
 
 	// create path for requires and load if exists
-	library = loadFiles(libPath, '**/*.maxpat');
-	library = Object.assign({}, loadFiles(path.posix.join(base, '/Library'), '**/*.maxpat'), library);
-	writeJson(libFile, library);
-	max.post('Created code library: '+libFile);
-	max.outlet('lib', library);
+	// library = loadFiles(libPath, '**/*.maxpat');
+	// library = Object.assign({}, loadFiles(path.posix.join(base, '/Library'), '**/*.maxpat'), library);
+
+	soundLibrary = loadFiles(soundLibPath, '**/*.maxpat');
+	soundLibrary = Object.assign({}, loadFiles(path.posix.join(base, '/Library/Sound'), '**/*.maxpat'), soundLibrary);
+	visualLibrary = loadFiles(visualLibPath, '**/*.maxpat');
+	visualLibrary = Object.assign({}, loadFiles(path.posix.join(base, '/Library/Visual'), '**/*.maxpat'), visualLibrary);
+	// max.post('soundLib', soundLibrary);
+	// max.post('visualLib', visualLibrary);
+
+	writeJson(soundLibFile, soundLibrary);
+	writeJson(visualLibFile, visualLibrary);
+
+	// writeJson(libFile, library);
+	// max.post('Created code library: '+libFile);
+	// max.outlet('lib', library);
+	max.outlet('vlib', visualLibrary);
+	max.outlet('slib', soundLibrary);
+	max.post('Visual library imported: '+visualLibFile);
+	max.post('Sound library imported: '+soundLibFile);
 });
 
 const prefHandlers = {
