@@ -2,7 +2,12 @@
 
 **A minimal and human-readable language for the live coding of algorithmic electronic audiovisual performances.**
 
-**🚀 Start coding with the latest version:** 
+Mercury currently has 2 versions:
+
+* Full version running in Max8 (Windows/Mac only) (you're in the right place)
+* Web version running in the browser (Windows/Mac/Linux) [go to this repo](https://github.com/tmhglnd/mercury-playground)
+
+**🚀 Start coding with the latest full version:** 
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
