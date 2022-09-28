@@ -1,6 +1,8 @@
 # 📖 Mercury Function Reference
 
-*Disclaimer: This documentation is not entirely finished and will subject to changes. If you like to contribute or find errors, feel free to report them in the issues or send a pull request*
+**Disclaimer: This documentation is not entirely finished and will subject to changes. If you like to contribute or find errors, please report them in the issues or correct them yourself and send a pull request**
+
+**Disclaimer: There are still differences between the Mercury Browser version and the Mercury Max8 version. Please be aware that this may be the reason some functions are not working**
 
 ## Code Documentation
 
@@ -84,7 +86,7 @@
 	- [Transformative Methods](./05-ring.md#transformative-methods)
 		- eg: `join`, `palindrome`, `expand`, `lace`
 	- [Translate Methods](./05-ring.md#translate-methods)
-		- eg: `divisionToMs`, `toScale`
+		- eg: `divisionToMs`, `toScale`, `noteToMidi`, `chromaToRelative`
 	- [Utility Methods](./05-ring.md#utility-methods)
 		- eg: `add`, `multiply`, `wrap`, `fold`
 

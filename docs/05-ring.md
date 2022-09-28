@@ -1,23 +1,23 @@
 # List Methods
 
-Mercury uses the [`total-serialism`](https://www.npmjs.com/package/total-serialism) Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (list) is a circular array, but now the keyword `list` can also be used. Every step an instrument takes in the sequencer based on the speed from `time()` it will increment a counter and use that as an index to take the value in the list. When the index is higher then the amount of values in the list it will return to the begin and start over, hence a circular list or `ring`. 
+Mercury uses the [`total-serialism`](https://www.npmjs.com/package/total-serialism) Node Package to generate and transform numbersequences that are used for melodies, rhythms, parameters and basically anything that can be sequenced in the environment. These numbersequences were originally refered to as `ring`'s, because the sequence (list) is a circular array, but now the keyword `list` can also be used for simplicity. Every step an instrument takes in the sequencer based on the time-interval from `time()` a counter increments (eg 0, 1, 2, 3...n) and uses that as an index to look up the value in the list. When the index is higher then the amount of values in the list it will return to the beginning of the list, hence a circular list or `ring`. 
 
 ```
-list <the-list-name> [ v0 v1 v2 ... v-n ] 
+list <unique-list-name> [ value0 v1 v2 ... v-n ] 
 ```
 
 example
 
 ```java
-list someInts [0 10 20 30]
+list someNumbers [0 10 20 30]
 list someFloats [1.618 3.1415]
 list twoDimensional [0 1 [2 3] 4 [5 6 7]]
 list someSamples [kick_909 hat_909 snare_909 hat_909]
 ```
 
-**Note:** Some variable names are not allowed because they are part of the built-in names for datastructures. These are: `bang, int, float, list, mode, zlclear, zlmaxsize`. Using names that are also a function is also not advised (eg. `gain`, `shape`, `time` etc.)
+**Note:** Some variable names are not allowed because they are part of the built-in namespace for datastructures. These are: ` set, new, list, bang, int, float, mode, zlclear, zlmaxsize`. Using names that are also a function is not advised (eg. `gain`, `shape`, `time` etc.)
 
-[`total-serialism`](https://www.npmjs.com/package/total-serialism) is a set of methods used for procedurally generating and transforming number sequences. This library is mainly designed with algorithmic composition of music in mind, but can surely be useful for other purposes that involve generation and manipulation of lists and numbers. The library is a result of my research in algorithmic composition, livecoding and electronic music and was first prototyped with Max/MSP in the Mercury livecoding environment.
+[`total-serialism`](https://www.npmjs.com/package/total-serialism) is a set of methods used for procedurally generating and transforming number sequences. This library is mainly designed with algorithmic composition of music in mind, but can surely be useful for other purposes that involve generating and manipulating lists and numbers. The library is a result of my research in algorithmic composition, livecoding and electronic music and was first prototyped with Max/MSP in the Mercury livecoding environment.
 
 # Table of Content
 
@@ -86,8 +86,24 @@ list someSamples [kick_909 hat_909 snare_909 hat_909]
 	- [divide](#divide)
 	- [normalize](#normalize)
 - [Translate Methods](#translate-methods)
-	- [tempo](#tempo)
+	- midiToNote
+	- midiToFreq
+	- noteToMidi
+	- noteToFreq
+	- freqToMidi
+	- freqToMidi
+	- freqToNote
+	- relativeToMidi
+	- relativeToFreq
+	- chromaToRelative 
+	- ratioToCent
+	- chordsFromNumerals
+	- chordsFromNames
 	- [divisionToMs](#divisiontoms)
+	- divisionToRatio
+	- ratioToMs
+	- scaleNames
+	- toScale
 
 # Param Glossary
 
@@ -514,8 +530,8 @@ Generate a list of random values but the next random value is within a limited r
 - {Bool} -> fold between lo and hi range (optional, default=true)
 
 ```java
-Rand.drunk(10, 5, 0, 24)
-//=> [ 13, 10, 14, 13, 14, 13, 15, 10, 8, 4 ] 
+list dr1 drunk(10 5 0 24)
+//=> [ 13 10 14 13 14 13 15 10 8 4 ] 
 
 // 22.00 ┼       ╭╮ 
 // 17.80 ┼─╮╭─╮  ││ 
@@ -524,8 +540,8 @@ Rand.drunk(10, 5, 0, 24)
 //  5.20 ┤ ╰╯     │ 
 //  1.00 ┤        ╰ 
 
-Rand.drunk(10, 4, 0, 12, 6, false)
-//=> [ 2, -2, 2, 1, -3, -1, -2, -1, 3, 6 ] 
+list dr2 drunk(10 4 0 12 6 false)
+//=> [ 2 -2 2 1 -3 -1 -2 -1 3 6 ] 
 
 //  2.00 ┤╭╮        
 // -0.20 ┤│╰╮     ╭ 
@@ -908,12 +924,12 @@ list items [c e f g]
 list indices [0 1 1 2 0 2 2 1]
 
 // first list is the index, second list are the items to lookup
-list notes lookup(indices, items)
+list notes lookup(indices items)
 //=> [ c e e f c f f e ]
 
 // indices are wrapped between listlength
 list indices [8 -5 144 55]
-list notes lookup(indices, items)
+list notes lookup(indices items)
 //=> [ g e c e ]
 ```
 
@@ -1311,18 +1327,91 @@ Alias: `norm()`
 
 # Translate Methods
 
-## tempo
+## Conversion between pitch units
 
-Set the global tempo for the sequencer and used with the conversion methods
-
-**arguments**
-- {Number} -> Set the tempo in Beats Per Minute (BPM)
+Convert easily between relative-semitones, midinotes, notenames, chord-numerals, chordnames and frequencies with the methods below. Thankfully using the amazing `Tonal.js` package by `@danigb` for various functions.
 
 ```java
-set tempo 100
+// Convert Array or Int as midi-number to midi-notenames
+midiToNote([60 [63 67 69] [57 65]])
+//=> [ c4 [ eb4 g4 a4 ] [ a3 f4 ] ] 
+// Alias: mton()
+
+// Convert midi-pitches to frequency (A4 = 440 Hz)
+midiToFreq([60 [63 67 69] [57 65]])
+//=> [ 261.63 [ 311.13 391.995 440 ] [ 220 349.23 ] ] 
+// Alias: mtof()
+
+// Convert Array of String as midi-notenames to midi-pitch
+noteToMidi([c4 [eb4 g4 a4] [a3 f4]])
+//=> [ 60 [ 63 67 69 ] [ 57 65 ] ] 
+// Alias: ntom()
+
+// Convert midi-notenames to frequency (A4 = 440 Hz)
+noteToFreq([c4 [eb4 g4 a4] [a3 f4]])
+//=> [ 261.63 [ 311.13 391.995 440 ] [ 220 349.23 ] ] 
+// Alias: ntof()
+
+// Convert frequency to nearest midi note
+freqToMidi([ 261 [ 311 391 440 ] [ 220 349 ] ])
+//=> [ 60 [ 63 67 69 ] [ 57 65 ] ] 
+// Alias: ftom()
+
+// Set detune flag to true to get floating midi output for pitchbend
+freqToMidi([ 261 [ 311 391 440 ] [ 220 349 ] ] true)
+//=> [ 59.959 [ 62.993 66.956 69 ] [ 57 64.989 ]] 
+
+// Convert frequency to nearest midi note name
+freqToNote([ 261 [ 311 391 440 ] [ 220 349 ] ])
+//=> [ c4 [ eb4 g4 a4 ] [ a3 f4 ] ] 
+// Alias: fton()
+
+// Convert relative semitone values to midi-numbers
+// specify the octave as second argument (default = C4 = 4 => 48)
+relativeToMidi([[-12 -9 -5] [0 4 7] [2 5 9]] c4)
+//=> [ [ 48 51 55 ] [ 60 64 67 ] [ 62 65 69 ] ]
+// Alias: rtom()
+
+// Convert relative semitone values to frequency (A4 = 440 Hz)
+// specify the octave as second argument (default = C4 = 4 => 48)
+relativeToFreq([[-12 -9 -5] [0 4 7] [2 5 9]] c4)
+//=> [ [ 130.81 155.56 196 ] [ 261.62 329.63 392 ] [ 293.66 349.23 440 ] ]
+// Alias: rtof()
+
+// Convert a chroma value to a relative note number
+// Can also include octave offsets with -/+ case-insensitive
+chromaToRelative([c [eb G Ab] [a+ f-]]) 
+//=> [ 0 [ 3 7 8 ] [ 21 -7 ] ]
+// Alias: ctor()
+
+// Convert ratio to relative cents
+ratioToCent([2/1 [3/2 [4/3 5/4]] 9/8])
+//=> [ 1200 [ 701.95 [ 498.04 386.31 ] ] 203.91 ] 
+// Alias: rtoc()
+
+// Convert a chord progression from roman numerals to semitones
+chordsFromNumerals([I IIm IVsus2 V7 VIm9])
+// => [[ 0 4 7 ]
+//     [ 2 5 9 ]
+//     [ 5 7 0 ]
+//     [ 7 11 2 5 ]
+//     [ 9 0 4 7 11 ]] 
+// Alias: chords()
+
+// Convert a chord progression from chordnames to semitones
+chordsFromNames([C Dm Fsus2 G7 Am9])
+//=> [[ 0 4 7 ]
+//    [ 2 5 9 ]
+//    [ 5 7 0 ]
+//    [ 7 11 2 5 ]
+//    [ 9 0 4 7 11 ]] 
 ```
 
-## divisionToMs
+## Conversion between time units
+
+Convert between rhythmic notation such as divisions or ratios and milliseconds based on the set tempo in the global settings.
+
+### divisionToMs
 
 Convert beat division strings or beat ratio floats to milliseconds using BPM from the global settings. Optional second argument sets BPM and ignores global setting.
 
@@ -1344,3 +1433,45 @@ list ms3 divisionToMs(ratios)
 ```
 
 Alias: `dtoms()`
+
+Other methods:
+
+```java
+// convert beat division strings to beat ratio floats
+divisionToRatio([1/4 1/8 3/16 1/4 1/6 2])
+//=> [ 0.25 0.125 0.1875 0.25 0.167 2 ] 
+// Alias: print dtor()
+
+// convert beat ratio floats to milliseconds
+ratioToMs([0.25 [0.125 [0.1875 0.25]] 0.1667 2] 100)
+//=> [ 600 [ 300 [ 450 600 ] ] 400.08 4800 ] 
+// Alias: print rtoms()
+```
+
+## Working with fixed scale and root
+
+Convert notes to a fixed scale based on the global settings.
+
+```java
+// Set the global scale used with toScale() and toMidi() methods
+set scale minor a
+
+// Set only the root for the global scale
+set root c
+
+// Return all the available scale names
+print scaleNames()
+//=> [ chromatic major etc... ] 
+
+// Map relative numbers to a specified scale class (excluding root)
+toScale([0 1 2 3 4 5 6 7 8 9 10 11])
+//=> [0 0 2 3 3 5 5 7 8 8 10 10]
+
+// Works with negative relative values
+toScale([8 13 -1 20 -6 21 -4 12])
+//=> [8 12 -2 20 -7 20 -4 12]
+
+// Preserves floating point for detune/microtonality
+toScale([0 4.1 6.5 7.1 9.25])
+//=> [0 3.1 5.5 7.1 8.25] 
+```
