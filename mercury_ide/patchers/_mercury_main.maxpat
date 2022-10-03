@@ -73298,6 +73298,10 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ease.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "emptyScene.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
