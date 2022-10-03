@@ -40,6 +40,216 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-396",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 3,
+							"revision" : 2,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 680.0, 180.0, 640.0, 480.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 30.0, 120.0, 71.0, 22.0 ],
+									"text" : "fromsymbol"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 30.0, 90.0, 66.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"filename" : "parser.js",
+										"parameter_enable" : 0
+									}
+,
+									"text" : "js parser.js"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-327",
+									"maxclass" : "newobj",
+									"numinlets" : 7,
+									"numoutlets" : 7,
+									"outlettype" : [ "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 30.0, 150.0, 313.0, 22.0 ],
+									"text" : "routepass ortho lens_angle lookat position locklook tripod"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-347",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 30.0, 60.0, 79.0, 22.0 ],
+									"text" : "route camera"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-359",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 30.0, 30.0, 47.0, 22.0 ],
+									"text" : "r visual"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-381",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 30.0, 210.0, 30.0, 30.0 ],
+									"varname" : "u685008906"
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-327", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-381", 0 ],
+									"source" : [ "obj-327", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-381", 0 ],
+									"source" : [ "obj-327", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-381", 0 ],
+									"source" : [ "obj-327", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-381", 0 ],
+									"source" : [ "obj-327", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-381", 0 ],
+									"source" : [ "obj-327", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-381", 0 ],
+									"source" : [ "obj-327", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-347", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-347", 0 ],
+									"source" : [ "obj-359", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 1279.0, 370.5, 41.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p cam"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-499",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -568,9 +778,9 @@
 								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "newobj",
-									"numinlets" : 5,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "int", "bang" ],
+									"numinlets" : 4,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 45.0, 285.0, 70.0, 22.0 ],
 									"text" : "aka.speech"
 								}
@@ -11112,7 +11322,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1313.0, 450.0, 101.0, 22.0 ],
+					"patching_rect" : [ 1313.0, 495.0, 101.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -15229,7 +15439,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1250.833333333333485, 420.0, 91.0, 22.0 ],
+					"patching_rect" : [ 1250.833333333333485, 465.0, 91.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -15600,7 +15810,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1250.833333333333485, 480.0, 79.0, 22.0 ],
+					"patching_rect" : [ 1250.833333333333485, 525.0, 79.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -16096,7 +16306,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1250.833333333333485, 450.0, 52.0, 22.0 ],
+					"patching_rect" : [ 1250.833333333333485, 495.0, 52.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -20184,7 +20394,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1250.833333333333485, 510.0, 63.0, 22.0 ],
+					"patching_rect" : [ 1250.833333333333485, 555.0, 63.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -47552,9 +47762,8 @@
 				"box" : 				{
 					"id" : "obj-49",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"numinlets" : 1,
+					"numoutlets" : 0,
 					"patching_rect" : [ 884.0, 635.0, 167.0, 22.0 ],
 					"text" : "jit.gl.syphonserver @enable 0"
 				}
@@ -48445,8 +48654,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -51789,7 +51996,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "M4", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -53883,7 +54090,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1448.833333333333485, 315.0, 57.0, 22.0 ],
+					"patching_rect" : [ 1448.833333333333485, 465.0, 57.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -55489,6 +55696,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -69704,7 +69913,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 1250.833333333333485, 370.5, 255.0, 35.0 ],
+					"patching_rect" : [ 1250.833333333333485, 405.0, 255.0, 35.0 ],
 					"text" : "jit.gl.camera @position 0 1.2 4 @lookat 0 0 0 @locklook 1 @far_clip 150 @lens_angle 60"
 				}
 
@@ -72337,6 +72546,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-103", 0 ],
+					"source" : [ "obj-396", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-236", 0 ],
 					"source" : [ "obj-397", 0 ]
 				}
@@ -73026,17 +73242,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "aka.speech.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "amdrone.maxpat",
-				"bootpath" : "~/Documents/Mercury/Library/Sound",
-				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "analyseDisplay.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -73065,7 +73270,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "bleep.maxpat",
+				"name" : "atom.maxpat",
 				"bootpath" : "~/Documents/Mercury/Library/Sound",
 				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
 				"type" : "JSON",
@@ -73091,10 +73296,6 @@
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "cv.jit.resize.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "emptyScene.maxpat",
@@ -73228,14 +73429,6 @@
 				"patcherrelativepath" : "../external",
 				"type" : "JSON",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "jit.gl.syphonclient.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.gl.syphonserver.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "lexer.js",
