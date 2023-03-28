@@ -395,6 +395,84 @@ const handlers = {
 	'dtoms' : (...v) => {
 		return TL.divisionToMs(...v);
 	},
+	// ratioToMs
+	'ratioToMs' : (...v) => {
+		return TL.ratioToMs(...v);
+	},
+	'rtoms' : (...v) => {
+		return TL.ratioToMs(...v);
+	},
+	// timeToRatio
+	'timeToRatio' : (...v) => {
+		return TL.timevalueToRatio(...v);
+	},
+	'ttor' : (...v) => {
+		return TL.timevalueToRatio(...v);
+	},
+	// pitch translate methods
+	// midiToNote
+	'midiToNote' : (...v) => {
+		return TL.midiToNote(...v);
+	},
+	'mton' : (...v) => {
+		return TL.midiToNote(...v);
+	},
+	// midiToFreq
+	'midiToFreq' : (...v) => {
+		return TL.midiToFreq(...v);
+	},
+	'mtof' : (...v) => {
+		return TL.midiToFreq(...v);
+	},
+	// freqToMidi
+	'freqToMidi' : (...v) => {
+		return TL.freqToMidi(...v);
+	},
+	'ftom' : (...v) => {
+		return TL.freqToMidi(...v);
+	},
+	// freqToNote
+	'freqToNote' : (...v) => {
+		return TL.freqToNote(...v);
+	},
+	'fton' : (...v) => {
+		return TL.freqToNote(...v);
+	},
+	// noteToMidi
+	'noteToMidi' : (...v) => {
+		return TL.ntom(...v);
+	},
+	'ntom' : (...v) => {
+		return TL.ntom(...v);
+	},
+	// noteToFreq
+	'noteToFreq' : (...v) => {
+		return TL.noteToFreq(...v);
+	},
+	'ntof' : (...v) => {
+		return TL.noteToFreq(...v);
+	},
+	// chromaToRelative
+	'chromaToRelative' : (...v) => {
+		return TL.chromaToRelative(...v);
+	},
+	'ctor' : (...v) => {
+		return TL.chromaToRelative(...v);
+	},
+	// relativeToMidi
+	'relativeToMidi' : (...v) => {
+		return TL.relativeToMidi(...v);
+	},
+	'rtom' : (...v) => {
+		return TL.relativeToMidi(...v);
+	},
+	// relativeToFreq
+	'relativeToFreq' : (...v) => {
+		return TL.relativeToFreq(...v);
+	},
+	'rtof' : (...v) => {
+		return TL.relativeToFreq(...v);
+	},
 	// 
 	// Statistic Methods
 	// 

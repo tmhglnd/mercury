@@ -1,17 +1,37 @@
 # 👩‍💻👨‍💻 Collaborative Coding
 
-It is now possible to code together in Mercury using the amazing [**Flok**](https://flok.clic.cf/) live coding environment for the browser. 
+You can code together in Mercury using the amazing [**Flok**](https://flok.clic.cf/) live coding environment for the browser. 
 
 There are 3 options for how you can use Flok with Mercury:
 1. Use Flok to combine Mercury with Hydra visuals (or other languages like Tidal, Foxdot and SuperCollider) on a localhost
 2. Collaborate together in the same room (only requires 1 computer to run Mercury)
 3. Collaborate remotely over a network (all computers need to run Mercury)
 
-Install NodeJS v.12 [for Mac](https://nodejs.org/dist/latest-v12.x/node-v12.20.1.pkg) or [for Windows](https://nodejs.org/dist/latest-v12.x/node-v12.20.1-x64.msi).
+# Flok & Mercury Playground
 
-Install the latest version of Mercury via the [quick start quide](https://github.com/tmhglnd/mercury/blob/master/docs/quick-start.md).
+*Follow these steps if you are a beginner and have been using the Mercury Playground at [mercury.timohoogland.com](https://mercury.timohoogland.com)*
 
-Install Flok via the Terminal with `npm install -g flok-web flok-repl`
+1. Install NodeJS [for Mac](https://nodejs.org/en) or [for Windows](https://nodejs.org/en).
+2. Download the Mercury Playground via the Terminal. Navigate to the folder you want to install Mercury. Then run: `git clone http://github.com/tmhglnd/mercury-playground`, or [download and unzip](https://github.com/tmhglnd/mercury-playground/archive/refs/heads/main.zip)
+	- Navigate to the folder with: `cd mercury-playground` (or `cd mercury-playground-main` if downloaded)
+	- Start the local server: `npm start`, open a browser and go to [`http://localhost:8080`](http://localhost:8080).
+3. Install Flok via the Terminal/Command Prompt with `npm install -g flok-repl` (or `sudo npm install -g flok-repl`)
+	- Open Google Chrome and go to [https://flok.cc/](https://flok.cc/)
+	- Setup Flok with target `mercury` and click **Create session**.
+	- Copy the `flok-repl -H xxx -s xxx -t mercury` command, paste in the terminal and run.
+	- **Join** the Flok with your nickname.
+4. Now start typing some code! 🎵
+	- `Ctrl/Alt + Enter` to play
+	- `Ctrl/Alt + .` to silence
+	- Flok will send the entire code via OSC messaging to port `4880`. Mercury is listening to this port automatically.
+
+# Flok & Mercury in Max8
+
+*Follow these steps for local use, advanced use or if you're already familiar with the Mercury standalone in Max8*
+
+1. Install NodeJS [for Mac](https://nodejs.org/en) or [for Windows](https://nodejs.org/en).
+2. Install the latest version of Mercury via the [quick start guide](https://github.com/tmhglnd/mercury/blob/master/docs/quick-start.md).
+3. Install Flok repl and web via the Terminal with `npm install -g flok-web flok-repl`
 
 ## Localhost
 
@@ -24,7 +44,7 @@ Install Flok via the Terminal with `npm install -g flok-web flok-repl`
 ## Collaborate
 
 Now follow these steps for a succesful setup.
-1. Open Google Chrome and go to [https://flok.clic.cf/](https://flok.clic.cf/)
+1. Open Google Chrome and go to [https://flok.cc/](https://flok.cc/)
 1. Setup Flok with target `mercury` and click **Create session**.
 2. Copy the `flok-repl -H xxx -s xxx -t mercury` command and run in the terminal.
 4. **Join** the Flok with your nickname.
@@ -34,7 +54,7 @@ Now start typing some code! 🎵
 - `Ctrl/Alt + Return` to evaluate
 - `Ctrl/Alt + .` to silence
 
-Flok will send the entire code via OSC messaging to port 4880. Mercury should be listening to this port automatically. Bug reports are very much welcome in the issues!
+Flok will send the entire code via OSC messaging to port 4880. Mercury should be listening to this port automatically.
 
 ## Combine Mercury with Hydra (Audioreactive Visuals)
 

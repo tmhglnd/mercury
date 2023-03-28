@@ -202,7 +202,7 @@ new synth triangle fx(reverb /extOSC/verbAmount) fx(filter low /extOSC/cutoff 0.
 
 ## 👩‍💻👨‍💻 Collaborative Coding
 
-It is now possible to code together in Mercury using the amazing [**Flok**](https://flok.clic.cf/) live coding environment in the browser.
+You can code together in Mercury using the amazing [**Flok**](https://flok.cc/) live coding environment in the browser. The easiest way to get started is by combining **Flok** with the **Mercury Playground**, but you can also combine Flok with this Mercury standalone running in Max8.
 
 - [Start coding together here](./docs/collaborate.md)
 
