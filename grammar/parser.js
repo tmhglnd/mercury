@@ -26,6 +26,11 @@ function parse(code){
 		let parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
 		if (lines[l] !== ''){			
 			try {
+				//fix line ending, if needed
+				if(lines[l].at(-1) == '\r'){
+					lines[l] = lines[l].slice(0, -1);
+				}
+
 				// parse something!
 				parser.feed(lines[l]);
 
