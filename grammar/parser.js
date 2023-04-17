@@ -49,7 +49,9 @@ function parse(code){
 					// console.log("Parse succesful: \n", util.inspect(parser.results[0], { depth: 10}), "\n");
 				}
 				// build the tokenized syntax tree
-				ast['@main'].push(parser.results[0]);
+				if(parser.results[0] != undefined){
+					ast['@main'].push(parser.results[0]);
+				}
 			} catch (e) {
 				console.log("!!! Parse failed: \n", e.message);
 				// console.log("Interpreted as comment:", { '@comment': parser.lexer.buffer });
