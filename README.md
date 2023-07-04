@@ -4,14 +4,14 @@
 
 Mercury currently has 2 versions:
 
-* Full version running in Max8 (Windows/Mac only) (you're in the right place)
+* Original version running in Max8 (Windows/Mac only) (you're in the right place)
 * Web version running in the browser (Windows/Mac/Linux) [go to this repo](https://github.com/tmhglnd/mercury-playground)
 
 **🚀 Start coding with the latest full version:** 
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/tmhglnd/mercury)](https://github.com/tmhglnd/mercury/releases)
 
-[**👾 Or sketch in the browser playground!**](https://mercury.timohoogland.com/)
+[**👾 Or sketch in the browser playground!** (recommended for beginners)](https://mercury.timohoogland.com/)
 
 [**🙏 Support Mercury by becoming a Patron**](https://www.patreon.com/bePatron?u=9649817) 
 
@@ -176,7 +176,7 @@ new synth triangle fx(reverb /extOSC/verbAmount) fx(filter low /extOSC/cutoff 0.
 ## 🔭 Vision / Goals
 
 - Provide creatives with a quick and hands-on coding environment/language to expres, communicate and improvise livecoded works.
-- Use the environment as a teaching environment for:
+- Use the environment as a teaching tool for:
 	- introduction to (electronic) music
 	- algorithmic composition
 	- sequencing and pattern generating
@@ -190,19 +190,19 @@ new synth triangle fx(reverb /extOSC/verbAmount) fx(filter low /extOSC/cutoff 0.
 	- included in the Mercury environment through Node4Max
 - Provide creatives with a multi-purpose non-linear-sequencer 
 	- use OSC to communicate with other platforms
-	- use MIDI to communicate with other environments and devices
+	- use MIDI to communicate with other platforms and devices
 - Provide creatives with an easy sampler/synthesizer for sounddesign and composition
 	- use external OSC to control parameters in the sampler/synthesis
 	- use external MIDI devices and messages to play the sampler/synthesizers (coming soon...)
-- Release a stand-alone application for MacOS and Windows, making installing and workflow easier (coming soon...)
-- Collaborate in Mercury via the browser and code music together
+- Release a browser version and standalone Electron app, making getting started easier
+- Collaborate in Mercury via the browser with Flok and code music together
 - Extending the Mercury users-community and including extensions on the environment in the master-branch
 
 ⭐️ *watch and star this repo to keep up-to-date with the latest changes whenever they're made*
 
 ## 👩‍💻👨‍💻 Collaborative Coding
 
-You can code together in Mercury using the amazing [**Flok**](https://flok.cc/) live coding environment in the browser. The easiest way to get started is by combining **Flok** with the **Mercury Playground**, but you can also combine Flok with this Mercury standalone running in Max8.
+You can code together in Mercury using the amazing [**Flok**](https://flok.cc/) live coding environment in the browser. The easiest way to get started is by combining **Flok** with the **Mercury Playground**, but you can also combine Flok with the Mercury Max8 version.
 
 - [Start coding together here](./docs/collaborate.md)
 
@@ -301,7 +301,7 @@ These system requirements are recommended to install and run Max and Mercury on 
 
 ### 🎵 Sounds
 
-Many sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. If not downloaded from freesound it is made sure that the license allows to redistribute the sounds via the Mercury environment and that you can use them in your projects. A list of all the available sounds and the original sample can be found here:
+Most sounds in Mercury are downloaded from [freesound.org](http://www.freesound.org) and are licensed with Creative Commons Attribution or Creative Commons 0 licenses. If not downloaded from freesound it is made sure that the license allows to redistribute the sounds via the Mercury environment and that you can use them in your projects. A list of all the available sounds and the original sample can be found here:
 
 - [List of sounds and credits](././mercury_ide/media/README.md)
 
@@ -385,10 +385,10 @@ During the development of Mercury (both the playground and the full version) I'v
 
 ## 📄 Licenses
 
-- Main Source - [The GNU GPL v.3 License](https://choosealicense.com/licenses/gpl-3.0/) (c) Timo Hoogland 2019
+- Main Source - [The GNU GPL v.3 License](https://choosealicense.com/licenses/gpl-3.0/) (c) Timo Hoogland 2019-2023
 - Sound Files - Individually licensed, listed under [media/README.md](/mercury_ide_0.9.9/media/README.md)
-- Documentation - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
-- Examples - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019
+- Documentation - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019-2023
+- Examples - [The CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/) (c) Timo Hoogland 2019-2023
 - Max8 - Proprietary Software, Max (c) 1990-2019 Cycling'74 / IRCAM All rights reserved
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
