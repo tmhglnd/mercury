@@ -40,6 +40,50 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-424",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1398.2861736666664, 959.0, 29.5, 22.0 ],
+					"text" : "edit"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-77",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1429.783285088325556, 928.0, 67.0, 47.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 71.0, 337.0, 135.0, 20.0 ],
+					"text" : "Show Loaded Externals",
+					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.600650665749428 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"blinkcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ],
+					"id" : "obj-359",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"outlinecolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 0.5 ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1398.2861736666664, 928.0, 24.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 47.0, 336.0, 22.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"clip_size" : 1,
 					"id" : "obj-471",
 					"lastchannelcount" : 0,
@@ -49988,6 +50032,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -57030,8 +57076,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -69320,7 +69364,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 914.783285088325556, 857.0, 67.0, 47.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 71.0, 300.0, 126.0, 20.0 ],
+					"presentation_rect" : [ 71.0, 289.0, 126.0, 20.0 ],
 					"text" : "Show Loaded Sounds",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.600650665749428 ]
 				}
@@ -69339,7 +69383,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 969.166666666666515, 894.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 47.0, 299.0, 22.0, 22.0 ]
+					"presentation_rect" : [ 47.0, 288.0, 22.0, 22.0 ]
 				}
 
 			}
@@ -69838,7 +69882,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 645.0, 1502.5, 99.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 71.0, 324.0, 128.0, 20.0 ],
+					"presentation_rect" : [ 71.0, 313.0, 67.0, 20.0 ],
 					"text" : "Show Lists",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.600650665749428 ]
 				}
@@ -69857,7 +69901,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 645.0, 1414.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 47.0, 323.0, 22.0, 22.0 ]
+					"presentation_rect" : [ 47.0, 312.0, 22.0, 22.0 ]
 				}
 
 			}
@@ -73622,6 +73666,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-424", 0 ],
+					"source" : [ "obj-359", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-36", 1 ]
 				}
@@ -74095,6 +74146,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-110", 0 ],
 					"source" : [ "obj-423", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-459", 0 ],
+					"source" : [ "obj-424", 0 ]
 				}
 
 			}
@@ -74772,6 +74830,13 @@
 , 			{
 				"name" : "cv.jit.resize.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "cvSine.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "emptyScene.maxpat",
