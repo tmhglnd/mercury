@@ -29,6 +29,7 @@ Mercury currently has 2 versions:
 - 🚀 [Let's get started!](#-install)
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
+	- [External Editor](#-external-editor)
 	- [Documentation](/docs/table-of-content.md)
 	- [Troubleshooting](/docs/08-troubleshooting.md)
 	- [System Requirements](#-system-requirements)
@@ -275,6 +276,13 @@ $ open mercury_ide/mercury_ide.maxproj
 It could be that you are having issues with Mercury. Please follow the steps below:
 
 - [Open the Troubleshooting](./docs/08-troubleshooting.md)
+
+### ⌨️ External Editor
+
+Instead of using the editor built in the Max Mercury version you can also load an external textfile or use a plugin for Pulsar (previously Atom).
+
+- [Follow the instructions here for the Pulsar Plugin](https://github.com/tmhglnd/mercury-pulsar#-mercury-plugin-for-pulsar)
+- [Follow the instructions here for other editors](https://github.com/tmhglnd/mercury/blob/master/docs/07-environment.md#external-editor)
 
 ### 📖 Documentation
 
