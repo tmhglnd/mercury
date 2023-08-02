@@ -37,7 +37,13 @@ const handlers = {
 	// seperate lines are input as a string of characters
 	'parse' : (...v) => {
 		// post('@parse', ...v);
-		mainParse(v);
+		// use try catch to make sure the script doesn't crash 
+		// during a performance when errors are typed
+		try {
+			mainParse(v);
+		} catch (e) {
+			max.post('Unkown error while parsing code');
+		}
 
 		// copy sketch to clipboard for pasting to other editors
 		if (AUTO_COPY){
@@ -747,7 +753,7 @@ function mainParse(lines){
 	max.outlet('done');
 	
 	time = Date.now() - time;
-	max.post('parsed code succesful within: ' + time + ' ms');
+	max.post('Parsed code succesful in ' + time + ' ms');
 }
 
 const actions = {
