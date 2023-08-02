@@ -29,7 +29,7 @@ Mercury currently has 2 versions:
 - 🚀 [Let's get started!](#-install)
 	- [Quick Start](/docs/quick-start.md)
 	- [Tutorial](/docs/tutorial.md)
-	- [External Editor](#-external-editor)
+	- [External Editor](#%EF%B8%8F-external-editor)
 	- [Documentation](/docs/table-of-content.md)
 	- [Troubleshooting](/docs/08-troubleshooting.md)
 	- [System Requirements](#-system-requirements)
