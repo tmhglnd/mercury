@@ -48488,6 +48488,42 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-28",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 280.0, 255.0, 60.0, 22.0 ],
+									"text" : "r INTERP"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 390.0, 537.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 503.0, 506.0, 109.0, 22.0 ],
+									"text" : "Started succesfully"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-11",
 									"linecount" : 3,
 									"maxclass" : "comment",
@@ -49076,8 +49112,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 480.0, 510.0, 175.0, 22.0 ],
-									"text" : "syntax error. parse unsuccesful"
+									"patching_rect" : [ 480.0, 537.0, 208.0, 22.0 ],
+									"text" : "Stopped due to syntax error or restart"
 								}
 
 							}
@@ -49087,8 +49123,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 540.0, 79.0, 22.0 ],
-									"text" : "print ERROR"
+									"patching_rect" : [ 480.0, 567.0, 120.0, 22.0 ],
+									"text" : "print INTERPRETER"
 								}
 
 							}
@@ -49174,18 +49210,6 @@
 									"outlettype" : [ "int" ],
 									"patching_rect" : [ 390.0, 465.0, 22.0, 22.0 ],
 									"text" : "t 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "toggle",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 390.0, 510.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -49437,7 +49461,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
+									"destination" : [ "obj-19", 0 ],
 									"order" : 1,
 									"source" : [ "obj-10", 0 ]
 								}
@@ -49468,6 +49492,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-44", 0 ],
 									"source" : [ "obj-13", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-15", 0 ]
 								}
 
 							}
@@ -49561,6 +49592,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-17", 1 ],
 									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-28", 0 ]
 								}
 
 							}
@@ -49664,7 +49702,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
+									"destination" : [ "obj-15", 0 ],
+									"order" : 0,
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"order" : 1,
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -54911,6 +54958,17 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-65",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1052.166666666666515, 135.0, 62.0, 22.0 ],
+									"text" : "s INTERP"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-27",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -54968,7 +55026,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 899.0, 150.0, 40.0, 22.0 ],
+									"patching_rect" : [ 1005.0, 135.0, 40.0, 22.0 ],
 									"text" : "s INIT"
 								}
 
@@ -55878,7 +55936,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1080.0, 91.0, 35.0, 22.0 ],
+									"patching_rect" : [ 1013.5, 212.0, 35.0, 22.0 ],
 									"text" : "open"
 								}
 
@@ -55890,7 +55948,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1080.0, 118.0, 51.0, 22.0 ],
+									"patching_rect" : [ 1013.5, 239.0, 51.0, 22.0 ],
 									"text" : "pcontrol"
 								}
 
@@ -55901,7 +55959,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1080.0, 150.0, 91.0, 22.0 ],
+									"patching_rect" : [ 1013.5, 267.0, 91.0, 22.0 ],
 									"text" : "setupShortkeys"
 								}
 
@@ -55948,7 +56006,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 996.5, 91.0, 35.0, 22.0 ],
+									"patching_rect" : [ 930.0, 212.0, 35.0, 22.0 ],
 									"text" : "open"
 								}
 
@@ -55960,7 +56018,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 996.5, 118.0, 51.0, 22.0 ],
+									"patching_rect" : [ 930.0, 239.0, 51.0, 22.0 ],
 									"text" : "pcontrol"
 								}
 
@@ -55971,7 +56029,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 996.5, 150.0, 69.0, 22.0 ],
+									"patching_rect" : [ 930.0, 267.0, 69.0, 22.0 ],
 									"text" : "setupEditor"
 								}
 
@@ -56030,7 +56088,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 996.5, 184.0, 112.0, 22.0 ],
+									"patching_rect" : [ 1170.0, 184.0, 112.0, 22.0 ],
 									"text" : "r SHOW_CURSOR"
 								}
 
@@ -56549,7 +56607,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1032.416666666666515, 208.0, 75.0, 47.0 ],
+									"patching_rect" : [ 1205.916666666666515, 208.0, 75.0, 47.0 ],
 									"text" : "temporarily disable hidecursor"
 								}
 
@@ -56748,7 +56806,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 938.5, 267.0, 51.0, 22.0 ],
+									"patching_rect" : [ 1112.0, 267.0, 51.0, 22.0 ],
 									"text" : "pcontrol"
 								}
 
@@ -56760,7 +56818,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 938.5, 236.0, 35.0, 22.0 ],
+									"patching_rect" : [ 1112.0, 236.0, 35.0, 22.0 ],
 									"text" : "open"
 								}
 
@@ -56771,7 +56829,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 996.5, 267.0, 76.0, 22.0 ],
+									"patching_rect" : [ 1170.0, 267.0, 76.0, 22.0 ],
 									"text" : "setupVisuals"
 								}
 
@@ -56783,7 +56841,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 855.0, 209.0, 35.0, 22.0 ],
+									"patching_rect" : [ 855.0, 213.0, 35.0, 22.0 ],
 									"text" : "open"
 								}
 
@@ -58549,7 +58607,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 938.5, 208.0, 32.0, 22.0 ],
+									"patching_rect" : [ 1112.0, 208.0, 32.0, 22.0 ],
 									"text" : "t b b"
 								}
 
@@ -58561,7 +58619,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 855.0, 236.0, 51.0, 22.0 ],
+									"patching_rect" : [ 855.0, 240.0, 51.0, 22.0 ],
 									"text" : "pcontrol"
 								}
 
@@ -58570,11 +58628,11 @@
 								"box" : 								{
 									"id" : "obj-149",
 									"maxclass" : "newobj",
-									"numinlets" : 6,
-									"numoutlets" : 6,
-									"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "" ],
-									"patching_rect" : [ 855.0, 90.0, 74.0, 22.0 ],
-									"text" : "sel 1 2 3 4 5"
+									"numinlets" : 7,
+									"numoutlets" : 7,
+									"outlettype" : [ "bang", "bang", "bang", "bang", "bang", "bang", "" ],
+									"patching_rect" : [ 855.0, 90.0, 244.0, 22.0 ],
+									"text" : "sel 1 2 3 4 5 6"
 								}
 
 							}
@@ -58806,6 +58864,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-60", 0 ],
 									"source" : [ "obj-149", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-65", 0 ],
+									"source" : [ "obj-149", 5 ]
 								}
 
 							}
@@ -59734,7 +59799,7 @@
 					"numoutlets" : 7,
 					"outlettype" : [ "int", "int", "int", "int", "int", "int", "int" ],
 					"patching_rect" : [ 285.0, 186.0, 270.0, 22.0 ],
-					"save" : [ "#N", "menubar", 7, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 60, "Execute", "Code", ";", "#X", "file", 50, "Silence", "Code", ";", "#X", "file", 70, "Clear", "All", "Code", ";", "#X", "file", 40, "Load", "External", "Editor", "File", ";", "#X", "menutitle", 5, "Sounds", ";", "#X", "item", 5, 1, "Sounds", ">", "Add", ";", "#X", "item", 5, 2, "Sounds", ">", "Replace", ";", "#X", "item", 5, 3, "Sounds", ">", "Default", ";", "#X", "item", 5, 4, "Sounds", ">", "Show", "Loaded", ";", "#X", "item", 5, 5, "Waveforms", ">", "Add", ";", "#X", "item", 5, 6, "Waveforms", ">", "Replace", ";", "#X", "item", 5, 7, "Waveforms", ">", "Default", ";", "#X", "item", 5, 8, "Waveforms", ">", "Show", "Loaded", ";", "#X", "item", 5, 9, "Wavetables", ">", "(coming", "soon...)", ";", "#X", "menutitle", 6, "Settings", ";", "#X", "item", 6, 1, "🎧", "Audio", "Setup", ";", "#X", "item", 6, 2, "💻", "Visual", "Setup", ";", "#X", "item", 6, 3, "📟", "Editor", "Setup", ";", "#X", "item", 6, 4, "⌨️", "Shortkeys", "Setup", ";", "#X", "item", 6, 5, "☢️", "Initialize", ";", "#X", "menutitle", 7, "Explanation", ";", "#X", "item", 7, 5, "🎲", "Random", "Example", ";", "#X", "item", 7, 7, "🤓", "Tutorial", ";", "#X", "item", 7, 1, "📖", "Documentation", ";", "#X", "item", 7, 2, "🎶", "Sounds", "in", "Mercury", ";", "#X", "item", 7, 8, "👾", "Join", "the", "Discord", ";", "#X", "item", 7, 6, "⚠️", "Troubleshooting", ";", "#X", "end", ";" ],
+					"save" : [ "#N", "menubar", 7, 0, ";", "#X", "about", "About", "Mercury", ";", "#X", "open", 10, ";", "#X", "newitem", 20, ";", "#X", "saveas", 30, ";", "#X", "closeitem", ";", "#X", "file", 60, "Execute", "Code", ";", "#X", "file", 50, "Silence", "Code", ";", "#X", "file", 70, "Clear", "All", "Code", ";", "#X", "file", 40, "Load", "External", "Editor", "File", ";", "#X", "menutitle", 5, "Sounds", ";", "#X", "item", 5, 1, "Sounds", ">", "Add", ";", "#X", "item", 5, 2, "Sounds", ">", "Replace", ";", "#X", "item", 5, 3, "Sounds", ">", "Default", ";", "#X", "item", 5, 4, "Sounds", ">", "Show", "Loaded", ";", "#X", "item", 5, 5, "Waveforms", ">", "Add", ";", "#X", "item", 5, 6, "Waveforms", ">", "Replace", ";", "#X", "item", 5, 7, "Waveforms", ">", "Default", ";", "#X", "item", 5, 8, "Waveforms", ">", "Show", "Loaded", ";", "#X", "item", 5, 9, "Wavetables", ">", "(coming", "soon...)", ";", "#X", "menutitle", 6, "Settings", ";", "#X", "item", 6, 1, "🎧", "Audio", "Setup", ";", "#X", "item", 6, 2, "💻", "Visual", "Setup", ";", "#X", "item", 6, 3, "📟", "Editor", "Setup", ";", "#X", "item", 6, 4, "⌨️", "Shortkeys", "Setup", ";", "#X", "item", 6, 6, "🔬", "Restart", "Interpreter", ";", "#X", "item", 6, 5, "☢️", "Initialize", ";", "#X", "menutitle", 7, "Explanation", ";", "#X", "item", 7, 5, "🎲", "Random", "Example", ";", "#X", "item", 7, 7, "🤓", "Tutorial", ";", "#X", "item", 7, 1, "📖", "Documentation", ";", "#X", "item", 7, 2, "🎶", "Sounds", "in", "Mercury", ";", "#X", "item", 7, 8, "👾", "Join", "the", "Discord", ";", "#X", "item", 7, 6, "⚠️", "Troubleshooting", ";", "#X", "end", ";" ],
 					"text" : "menubar 7"
 				}
 
