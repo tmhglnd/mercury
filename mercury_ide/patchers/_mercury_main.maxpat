@@ -47,7 +47,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 479.180556999999965, 2220.0, 244.0, 33.0 ],
-					"presentation_linecount" : 4,
 					"text" : "// Enable monitoring on channels 3/4\n// Add compression to the monitor output"
 				}
 
@@ -48458,7 +48457,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 585.0, 149.0, 789.0, 639.0 ],
+						"rect" : [ 80.0, 255.0, 789.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -48487,6 +48486,42 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-27",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 122.631942666666674, 390.0, 36.0, 22.0 ],
+									"text" : "defer"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 109.0, 62.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 60.0, 102.0, 38.0, 22.0 ],
+									"text" : "zl.reg"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-29",
 									"maxclass" : "newobj",
@@ -49251,18 +49286,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-6",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 219.631942666666674, 420.0, 36.0, 22.0 ],
-									"text" : "defer"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-71",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
@@ -49280,7 +49303,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 122.631942666666674, 450.0, 79.0, 22.0 ],
+									"patching_rect" : [ 122.631942666666674, 480.0, 79.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -49298,7 +49321,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 219.631942666666674, 450.0, 106.0, 22.0 ],
+									"patching_rect" : [ 219.631942666666674, 480.0, 106.0, 22.0 ],
 									"text" : "route done parsed"
 								}
 
@@ -49310,7 +49333,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 122.631942666666674, 390.0, 116.0, 22.0 ],
+									"patching_rect" : [ 122.631942666666674, 420.0, 116.0, 22.0 ],
 									"text" : "routepass dictionary"
 								}
 
@@ -49361,8 +49384,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -49427,7 +49448,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 219.631942666666674, 510.0, 30.0, 30.0 ]
+									"patching_rect" : [ 219.631942666666674, 540.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -49439,7 +49460,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 263.131942666666646, 510.0, 30.0, 30.0 ]
+									"patching_rect" : [ 263.131942666666646, 540.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -49530,8 +49551,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-27", 0 ],
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
@@ -49553,14 +49588,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-49", 0 ],
-									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-318", 0 ],
+									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-211", 0 ]
 								}
 
@@ -49604,6 +49632,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-17", 1 ],
 									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-49", 0 ],
+									"source" : [ "obj-27", 0 ]
 								}
 
 							}
@@ -49672,6 +49707,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-318", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"source" : [ "obj-44", 0 ]
 								}
@@ -49679,7 +49721,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-54", 0 ],
 									"source" : [ "obj-49", 1 ]
 								}
 
@@ -49702,13 +49744,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-224", 0 ],
 									"source" : [ "obj-54", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -52697,7 +52732,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "M4", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -56408,6 +56443,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
