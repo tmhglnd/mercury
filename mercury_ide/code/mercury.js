@@ -581,9 +581,10 @@ function mainParse(lines){
 	lines = lines.map(x => x.replace(/^\s+|\s+$/g, ''));
 */
 	
-	// store rings and rest of code separately
+	// store rings, rest of code and parsed separately
 	let rings = [];
 	let other = [];
+	let parsed = [];
 
 	// regular expression to match rings/debug/seed/scale/tempo
 	let ring = /(ring\ |list\ |array\ ).+/;
@@ -628,8 +629,6 @@ function mainParse(lines){
 		params[0] = mapFunc(params[0]);
 		mainFunc.call(handlers, ...params);
 	}
-	// output the new variables dictionary
-	max.outlet(dict.items);
 	
 	// max.post('code', other);
 	for (let o in other){
@@ -664,7 +663,9 @@ function mainParse(lines){
 			max.post('WARNING: '+expr.join(' ')+' needs at least 1 more argument');
 		} else {
 			post('@code', expr);
-			max.outlet('parsed', ...expr);
+			// stored in array with all parsed lines to be output at the end
+			parsed.push(expr);
+			// max.outlet('parsed', ...expr);
 		}
 
 /*
@@ -749,7 +750,13 @@ function mainParse(lines){
 			post('@ast', def);
 		}*/
 	}
-
+	// output the new variables dictionary
+	max.outlet(dict.items);
+	// output the parsed lines
+	parsed.forEach((p) => {
+		max.outlet('parsed', ...p);
+	});
+	// done with parsing
 	max.outlet('done');
 	
 	time = Date.now() - time;
