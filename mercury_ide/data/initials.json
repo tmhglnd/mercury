@@ -137,4 +137,16 @@
 		"sendOSC" : 0,
 		"clock" : 0
 	}
+,
+	"input" : {
+		"amp" : 0.8,
+		"beat" : 1,
+		"time" : 1,
+		"warp" : 1,
+		"ratchet" : [ 0, 2 ],
+		"env" : -1,
+		"pan" : 0,
+		"name" : "no_name",
+		"group" : "no_group"
+	}
 }
