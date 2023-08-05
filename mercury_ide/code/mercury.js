@@ -54,8 +54,9 @@ const handlers = {
 	// clear the dictionary with variables
 	'clear' : () => {
 		post('@clear', 'variables cleared');
+		// only clear internal dictionary, output new dict later
 		dict.clear();
-		max.outlet(dict.items);
+		// max.outlet(dict.items);
 	},
 	// done processing
 	'done' : () => {
@@ -906,6 +907,7 @@ function parseParam(v){
 function parseString(str){
 	let depth = 0;
 	let type = '1d';
+	let string = false;
 	let items = []; // array for ascii storage
 	let items2D = []; // array for items array
 	let arg = ""; // string of arguments
@@ -942,7 +944,7 @@ function parseString(str){
 				}
 			}
 		}
-		else if (char == " "){
+		else if (char == " " && !string){
 			if (arg != ""){ 
 				if (depth > 1){
 					type = '2d';
@@ -952,6 +954,9 @@ function parseString(str){
 				}
 			}
 			arg = "";
+		}
+		else if (char === '"' || char === "'" || char === "`"){
+			string = !string;
 		}
 		else {
 			arg += char;
