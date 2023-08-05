@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-372",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 210.0, 1515.0, 50.0, 22.0 ],
+					"text" : "r voices"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-488",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -9264,7 +9276,7 @@
 				"box" : 				{
 					"id" : "obj-257",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1800.0, 1476.5, 86.0, 22.0 ],
@@ -11447,7 +11459,7 @@
 				"box" : 				{
 					"id" : "obj-375",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1628.0, 600.0, 86.0, 22.0 ],
@@ -49793,6 +49805,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -56852,8 +56866,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -60299,7 +60311,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 165.263885333333349, 1544.0, 40.0, 22.0 ],
+					"patching_rect" : [ 165.263885333333349, 1515.0, 40.0, 22.0 ],
 					"text" : "r EOF"
 				}
 
@@ -60311,7 +60323,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 239.263885333333349, 1544.0, 40.0, 22.0 ],
+					"patching_rect" : [ 180.0, 1544.0, 40.0, 22.0 ],
 					"text" : "r SOF"
 				}
 
@@ -60320,7 +60332,7 @@
 				"box" : 				{
 					"id" : "obj-432",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 165.263885333333349, 1575.0, 93.0, 22.0 ],
@@ -60918,7 +60930,7 @@
 								"box" : 								{
 									"id" : "obj-540",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
+									"numinlets" : 4,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 43.0, 195.0, 93.0, 22.0 ],
@@ -73650,6 +73662,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-432", 3 ],
+					"source" : [ "obj-372", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-61", 0 ],
 					"source" : [ "obj-374", 0 ]
 				}
@@ -74687,13 +74706,6 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "cvSine.maxpat",
-				"bootpath" : "~/Documents/Mercury/Library/Sound",
-				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "divToMs.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -74830,13 +74842,6 @@
 				"name" : "hidecursor.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/external",
 				"patcherrelativepath" : "../external",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "homeostat.maxpat",
-				"bootpath" : "~/Documents/Mercury/Library/Sound",
-				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -74982,13 +74987,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "srcWrapper.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "syncToScale.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -75006,13 +75004,6 @@
 				"name" : "syphon.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers/visual",
 				"patcherrelativepath" : "./visual",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "terrain.maxpat",
-				"bootpath" : "~/Documents/Mercury/Library/Sound",
-				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
 				"type" : "JSON",
 				"implicit" : 1
 			}
