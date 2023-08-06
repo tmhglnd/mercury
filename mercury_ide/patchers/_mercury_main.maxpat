@@ -2828,7 +2828,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1224.619506999999885, 1612.5, 125.0, 22.0 ],
+					"patching_rect" : [ 1195.619506999999885, 1551.5, 125.0, 22.0 ],
 					"text" : "loadmess chromatic c"
 				}
 
@@ -61056,18 +61056,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-190",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1224.619506999999885, 1581.5, 104.0, 22.0 ],
-					"text" : "minor_harmonic c"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-183",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -61587,18 +61575,6 @@
 					}
 ,
 					"text" : "p console-code-TODO"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-422",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1224.619506999999885, 1551.5, 70.0, 22.0 ],
-					"text" : "chromatic c"
 				}
 
 			}
@@ -63632,7 +63608,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1322.619506999999885, 1414.0, 48.0, 22.0 ],
+					"patching_rect" : [ 1213.619506999999885, 1414.0, 48.0, 22.0 ],
 					"text" : "r scalar"
 				}
 
@@ -63644,19 +63620,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1252.084777999999915, 1414.0, 58.0, 22.0 ],
-					"text" : "r EOFpre"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-397",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1143.084777999999915, 1478.5, 58.0, 22.0 ],
+					"patching_rect" : [ 1143.084777999999915, 1414.0, 58.0, 22.0 ],
 					"text" : "r EOFpre"
 				}
 
@@ -63668,7 +63632,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1162.084777999999915, 1414.0, 44.0, 22.0 ],
+					"patching_rect" : [ 1143.084777999999915, 1551.5, 44.0, 22.0 ],
 					"text" : "r scale"
 				}
 
@@ -69856,7 +69820,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 1376.619506999999885, 1444.0, 24.0, 22.0 ],
+					"patching_rect" : [ 1267.619506999999885, 1444.0, 24.0, 22.0 ],
 					"text" : "t 0"
 				}
 
@@ -69868,7 +69832,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1376.619506999999885, 1414.0, 40.0, 22.0 ],
+					"patching_rect" : [ 1267.619506999999885, 1414.0, 40.0, 22.0 ],
 					"text" : "r SOF"
 				}
 
@@ -69880,7 +69844,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 1304.619506999999885, 1477.5, 37.0, 22.0 ],
+					"patching_rect" : [ 1195.619506999999885, 1477.5, 37.0, 22.0 ],
 					"text" : "int"
 				}
 
@@ -69891,7 +69855,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1304.619506999999885, 1520.5, 69.0, 22.0 ],
+					"patching_rect" : [ 1195.619506999999885, 1520.5, 69.0, 22.0 ],
 					"text" : "s theScalar"
 				}
 
@@ -69960,25 +69924,13 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-272",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1224.619506999999885, 1520.5, 40.0, 22.0 ],
-					"text" : "r SOF"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-236",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1143.084777999999915, 1612.5, 38.0, 22.0 ],
-					"text" : "zl.reg"
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1143.084777999999915, 1612.5, 19.0, 22.0 ],
+					"text" : "t l"
 				}
 
 			}
@@ -72202,13 +72154,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-236", 1 ],
-					"source" : [ "obj-190", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-201", 0 ],
 					"source" : [ "obj-191", 0 ]
 				}
@@ -72797,13 +72742,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-241", 0 ],
 					"source" : [ "obj-270", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-422", 0 ],
-					"source" : [ "obj-272", 0 ]
 				}
 
 			}
@@ -73820,7 +73758,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-236", 1 ],
+					"destination" : [ "obj-236", 0 ],
 					"source" : [ "obj-395", 0 ]
 				}
 
@@ -73829,13 +73767,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-103", 0 ],
 					"source" : [ "obj-396", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-236", 0 ],
-					"source" : [ "obj-397", 0 ]
 				}
 
 			}
@@ -74020,7 +73951,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-236", 1 ],
+					"destination" : [ "obj-236", 0 ],
 					"source" : [ "obj-421", 0 ]
 				}
 
@@ -74702,8 +74633,22 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "control.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "cv.jit.resize.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "cvSine.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "divToMs.maxpat",
@@ -74842,6 +74787,13 @@
 				"name" : "hidecursor.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/external",
 				"patcherrelativepath" : "../external",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "homeostat.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -74987,6 +74939,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "srcWrapper.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "syncToScale.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -75004,6 +74963,13 @@
 				"name" : "syphon.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers/visual",
 				"patcherrelativepath" : "./visual",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "terrain.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
 				"type" : "JSON",
 				"implicit" : 1
 			}

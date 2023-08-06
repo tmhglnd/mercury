@@ -78,5 +78,16 @@
 		"group",
 		"name",
 		"offset"
+	],
+
+	"input" : [
+		"time",
+		"beat",
+		"amp",
+		"env",
+		"pan",
+		"name",
+		"group",
+		"add_fx"
 	]
 }

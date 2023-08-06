@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 472.0, 264.0, 567.0, 595.0 ],
+		"rect" : [ 220.0, 253.0, 567.0, 595.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 343.5, 255.0, 150.0, 261.0 ],
+					"patching_rect" : [ 343.5, 255.0, 153.0, 261.0 ],
 					"text" : "class: srcInput\n\nA simple input source\n\nSet the input, this is either the name of the input as listed in the audio settings, or in1 in2 in3 etc.\n\nApply a shape to the sound triggered by the time(),\n\nOr set the shape to (-1) for continuous sound output.\n\nAlso allows to set all the fx() as with the other synth/sampler"
 				}
 
@@ -92,7 +92,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+						"rect" : [ 59.0, 115.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -120,6 +120,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-56",
@@ -606,7 +607,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 45.0, 45.0, 30.0, 30.0 ]
 				}
 

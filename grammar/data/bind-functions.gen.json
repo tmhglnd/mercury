@@ -189,5 +189,32 @@
     "start": "offset",
     "startAt": "offset",
     "from": "offset"
+  },
+  "input": {
+    "timing": "time",
+    "rhythm": "beat",
+    "play": "beat",
+    "gain": "amp",
+    "vol": "amp",
+    "volume": "amp",
+    "amplitude": "amp",
+    "velocity": "amp",
+    "vel": "amp",
+    "envelope": "env",
+    "shape": "env",
+    "transient": "env",
+    "length": "env",
+    "duration": "env",
+    "dur": "env",
+    "panning": "pan",
+    "spat": "pan",
+    "location": "pan",
+    "id": "name",
+    "aux": "group",
+    "bus": "group",
+    "withFX": "add_fx",
+    "addFX": "add_fx",
+    "effect": "add_fx",
+    "fx": "add_fx"
   }
 }
