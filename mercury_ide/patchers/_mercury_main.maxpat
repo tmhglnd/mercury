@@ -40,6 +40,42 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-373",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1160.084777999999915, 1782.5, 81.0, 22.0 ],
+					"text" : "pv mcy_scale"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-272",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1305.0, 1782.5, 74.0, 22.0 ],
+					"text" : "pv mcy_root"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-190",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1195.619506999999885, 1515.0, 85.0, 22.0 ],
+					"text" : "pv mcy_scalar"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-372",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -49805,6 +49841,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -53153,7 +53191,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "M4", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -56939,8 +56977,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -69517,17 +69553,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-230",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1304.619506999999885, 1782.5, 60.0, 22.0 ],
-					"text" : "s theRoot"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-157",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -69926,17 +69951,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-47",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1195.619506999999885, 1520.5, 69.0, 22.0 ],
-					"text" : "s theScalar"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-393",
 					"linecount" : 3,
 					"maxclass" : "comment",
@@ -70018,17 +70032,6 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 421.895827999999995, 1414.0, 77.0, 22.0 ],
 					"text" : "route set say"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-112",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1166.084777999999915, 1782.5, 65.0, 22.0 ],
-					"text" : "s theScale"
 				}
 
 			}
@@ -71957,16 +71960,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-112", 0 ],
-					"order" : 0,
+					"destination" : [ "obj-141", 0 ],
+					"order" : 1,
 					"source" : [ "obj-157", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-141", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-373", 0 ],
+					"order" : 0,
 					"source" : [ "obj-157", 0 ]
 				}
 
@@ -73048,7 +73051,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-230", 0 ],
+					"destination" : [ "obj-272", 0 ],
 					"order" : 0,
 					"source" : [ "obj-294", 0 ]
 				}
@@ -73954,7 +73957,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-47", 0 ],
+					"destination" : [ "obj-190", 0 ],
 					"source" : [ "obj-41", 0 ]
 				}
 
@@ -74882,6 +74885,13 @@
 			}
 , 			{
 				"name" : "newInstance.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "noteToMidi.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
