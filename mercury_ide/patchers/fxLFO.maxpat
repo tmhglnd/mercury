@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 754.0, 96.0, 652.0, 788.0 ],
+		"rect" : [ 67.0, 96.0, 652.0, 788.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,7 +44,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "list" ],
+					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -56,7 +56,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 103.0, 640.0, 480.0 ],
+						"rect" : [ 103.0, 132.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -85,6 +85,66 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "", "bang" ],
+									"patching_rect" : [ 150.0, 145.0, 40.0, 22.0 ],
+									"text" : "t b l b"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 150.0, 265.0, 38.0, 22.0 ],
+									"text" : "zl.reg"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 7,
+									"outlettype" : [ "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 169.0, 205.0, 82.0, 22.0 ],
+									"text" : "unjoin 6"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 184.0, 175.0, 82.0, 22.0 ],
+									"text" : "1/16 3 1 0.5 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 6,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 169.0, 235.0, 71.5, 22.0 ],
+									"text" : "join 6"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "message",
@@ -141,7 +201,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 102.5, 255.0, 30.0, 30.0 ]
+									"patching_rect" : [ 71.0, 300.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -155,8 +215,57 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 5 ],
+									"source" : [ "obj-12", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 4 ],
+									"source" : [ "obj-12", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 3 ],
+									"source" : [ "obj-12", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 2 ],
+									"source" : [ "obj-12", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 1 ],
+									"source" : [ "obj-12", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-18", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-18", 5 ]
 								}
 
 							}
@@ -184,7 +293,28 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"source" : [ "obj-18", 5 ]
+									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-20", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-20", 2 ]
 								}
 
 							}
@@ -199,6 +329,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
 									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 1 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -1026,7 +1170,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 211.0, 405.0, 78.0, 22.0 ],
@@ -1150,7 +1295,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 45.0, 585.0, 345.0, 100.0 ],
-					"text" : "method:\n\nfx(stutter <args>)\n\nfx(stutter <time>)\n\nfx(stutter <time> <duty_cycle> <wave> <depth> <offset>)"
+					"text" : "method:\n\nfx(lfo <args>)\n\nfx(lfo <time>)\n\nfx(lfo <time> <wave> <depth> <duty_cycle> <offset>)"
 				}
 
 			}
@@ -1232,7 +1377,7 @@
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 34.0, 79.0, 652.0, 783.0 ],
+						"rect" : [ 726.0, 113.0, 652.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1338,7 +1483,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "//==================================================\r\n// LFO Wave Selector\r\n// \r\n// by Timo Hoogland (c) 2019\r\n//==================================================\r\n\r\nHistory lfo(0);\r\nHistory z(0);\r\n\r\nParam smooth(0.015);\r\n\r\np = in5;\r\n// sync with phasor\r\ns = (in1 + p) % 1;\r\n// wave selected, only change after cycle\r\nw = sah(in2, (s + .5) % 1, 0.5);\r\n// duty cycle/pulse-width\r\nd = in3;\r\n// modulation depth\r\na = in4;\r\n\r\nif (w == 0){\r\n\t// cosine\r\n\tlfo = cycle(s, index=\"phase\") * -.5 + .5;\r\n} else if (w == 1){\r\n\t// ramp down\r\n\tlfo = s * -1 + 1;\r\n} else if (w == 2){\r\n\t// triangle, adjustable duty cycle\r\n\t// lfo = triangle(s, d);\r\n\t// ramp up\r\n\tlfo = s;\r\n} else if (w == 3){\r\n\t// square, adjustable pulse width\r\n\tlfo = s < d;\r\n} else if (w == 4){\r\n\t// triangle, adjustable duty cycle\r\n\tlfo = triangle(s, d);\r\n} else {\r\n\t// if no argument matches\r\n\tlfo = s < d;\r\n}\r\n\r\nlfo = mix(lfo, z, 1 - smooth);\r\nz = fixdenorm(lfo);\r\n\r\nout1 = lfo * a + (1 - a);",
+									"code" : "//==================================================\r\n// LFO Wave Selector\r\n// \r\n// by Timo Hoogland (c) 2019\r\n//==================================================\r\n\r\nHistory lfo(0);\r\nHistory z(0);\r\n\r\nParam smooth(0.015);\r\n\r\np = in5;\r\n// sync with phasor\r\ns = (in1 + (1 - p)) % 1;\r\n// wave selected, only change after cycle\r\nw = sah(in2, (s + .5) % 1, 0.5);\r\n// duty cycle/pulse-width\r\nd = in3;\r\n// modulation depth\r\na = in4;\r\n\r\nif (w == 0){\r\n\t// cosine\r\n\tlfo = cycle(s, index=\"phase\") * -.5 + .5;\r\n} else if (w == 1){\r\n\t// ramp down\r\n\tlfo = s * -1 + 1;\r\n} else if (w == 2){\r\n\t// triangle, adjustable duty cycle\r\n\t// lfo = triangle(s, d);\r\n\t// ramp up\r\n\tlfo = s;\r\n} else if (w == 3){\r\n\t// square, adjustable pulse width\r\n\tlfo = s < d;\r\n} else if (w == 4){\r\n\t// triangle, adjustable duty cycle\r\n\tlfo = triangle(s, d);\r\n} else {\r\n\t// if no argument matches\r\n\tlfo = s < d;\r\n}\r\n\r\nlfo = mix(lfo, z, 1 - smooth);\r\nz = fixdenorm(lfo);\r\n\r\nout1 = lfo * a + (1 - a);",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -1394,7 +1539,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 211.0, 450.0, 197.5, 22.0 ],
@@ -1410,10 +1556,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 585.999999999999886, 165.0, 28.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in 2"
 				}
 
@@ -1426,10 +1568,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 120.0, 330.0, 35.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in~ 2"
 				}
 
@@ -1441,10 +1579,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 120.0, 555.0, 42.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "out~ 2"
 				}
 
@@ -1456,6 +1590,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 45.0, 555.0, 42.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "out~ 1"
 				}
 
@@ -1468,6 +1606,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 211.0, 45.0, 28.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 1"
 				}
 
@@ -1480,6 +1622,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 45.0, 330.0, 35.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in~ 1"
 				}
 
