@@ -111,7 +111,7 @@
 	- [Transformative Methods](./05-ring.md#transformative-methods)
 		- [clone](./05-ring.md#clone)
 		- [join](./05-ring.md#combine)
-		- [copy](./05-ring.md#duplicate)
+		- [copy](./05-ring.md#copy)
 		- [pad](./05-ring.md#pad)
 		- [every](./05-ring.md#every)
 		- [flat](./05-ring.md#flat)
