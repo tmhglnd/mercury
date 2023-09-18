@@ -145,24 +145,6 @@ const userDirs = ['/Code Logs', '/Recordings', '/Library'/*, '/Sketches'*/];
 // check if file exists, otherwise write the default prefs
 // if file exists, read the preferences
 max.addHandler('init', () => {
-
-	// create path for preferences file and load if exists
-	if (fs.pathExistsSync(prefFile)){
-		prefs = fs.readJsonSync(prefFile);
-		Object.keys(defaults).forEach((p) => {
-			if (prefs[p] === undefined) {
-				prefHandlers.store(p, defaults[p]);
-				max.post('new preferences added: '+p);
-			}	
-		});
-		max.post('Loaded preferences: '+prefFile);
-	} else {
-		prefs = { ...defaults };
-		writeJson(prefFile, prefs);
-		max.post('Created preferences: '+prefFile);
-	}
-	max.outlet('settings', prefs);
-
 	// create file for shortkeys and load if exists
 	if (fs.pathExistsSync(shortkeysFile)){
 		shortkeys = fs.readJsonSync(shortkeysFile);
@@ -223,6 +205,23 @@ max.addHandler('init', () => {
 	max.outlet('slib', soundLibrary);
 	max.post('Visual library imported: '+visualLibFile);
 	max.post('Sound library imported: '+soundLibFile);
+
+	// create path for preferences file and load if exists
+	if (fs.pathExistsSync(prefFile)){
+		prefs = fs.readJsonSync(prefFile);
+		Object.keys(defaults).forEach((p) => {
+			if (prefs[p] === undefined) {
+				prefHandlers.store(p, defaults[p]);
+				max.post('new preferences added: '+p);
+			}	
+		});
+		max.post('Loaded preferences: '+prefFile);
+	} else {
+		prefs = { ...defaults };
+		writeJson(prefFile, prefs);
+		max.post('Created preferences: '+prefFile);
+	}
+	max.outlet('settings', prefs);
 });
 
 const prefHandlers = {

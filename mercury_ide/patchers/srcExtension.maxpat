@@ -102,11 +102,11 @@
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 330.0, 117.0, 57.0, 22.0 ],
-					"text" : "r bindSrc"
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 330.0, 117.0, 58.0, 22.0 ],
+					"text" : "loadbang"
 				}
 
 			}
