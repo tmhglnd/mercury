@@ -13,6 +13,8 @@ list someNumbers [0 10 20 30]
 list someFloats [1.618 3.1415]
 list twoDimensional [0 1 [2 3] 4 [5 6 7]]
 list someSamples [kick_909 hat_909 snare_909 hat_909]
+list count spread(10)
+list rands random(5 0 20)
 ```
 
 **Note:** Some variable names are not allowed because they are part of the built-in namespace for datastructures. These are: ` set, new, list, bang, int, float, mode, zlclear, zlmaxsize`. Using names that are also a function is not advised (eg. `gain`, `shape`, `time` etc.)
@@ -117,14 +119,14 @@ list someSamples [kick_909 hat_909 snare_909 hat_909]
 		- `Float` -> A floating-point number, negative or positive, including 0
 	- `Name` -> A combination of letter-characters, may include capital letter, underscores and digits
 
-**Rings**
+**Lists**
 
-- `Ring` -> A list with `Value`'s
-	- `NumberRing` -> A list with `Number`'s
-		- `IntRing+` -> A list with `Int+`'s
-		- `IntRing` -> A list with `Int`'s
-		- `FloatRing` -> A list with `Float`'s
-	- `NameRing` -> A list with `Name`'s
+- `List` -> A list with `Value`'s
+	- `NumberList` -> A list with `Number`'s
+		- `IntList+` -> A list with `Int+`'s
+		- `IntList` -> A list with `Int`'s
+		- `FloatList` -> A list with `Float`'s
+	- `NameList` -> A list with `Name`'s
 
 # Generative Methods
 

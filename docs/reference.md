@@ -78,17 +78,88 @@
 
 - [List functions](./05-ring.md)
 	- [Generative Methods](./05-ring.md#generative-methods)
-		- eg: `spread`, `fill`, `sine`, `cosine`
+		- [spread / spreadFloat](./05-ring.md#spread--spreadFloat)
+		- [spreadInclusive / spreadInclusiveFloat](./05-ring.md#spreadInclusive--spreadInclusiveFloat)
+		- [fill](./05-ring.md#fill)
+		- [sine / cosine](./05-ring.md#sine--cosine)
+		- [sineFloat / cosineFloat](./05-ring.md#sineFloat--cosineFloat)
+		- [saw / sawFloat](./05-ring.md#saw--sawFloat)
+		- [square / squareFloat](./05-ring.md#square--squareFloat)
 	- [Algorithmic Methods](./05-ring.md#algorithmic-methods)
-		- eg: `euclidean`, `hexBeat`, `fibonacci`
+		- [euclidean](./05-ring.md#euclidean--euclid)
+		- [hexBeat](./05-ring.md#hexbeat--hex)
+		- [fibonacci](./05-ring.md#fibonacci)
+		- [pisano](./05-ring.md#pisano)
+		- [pell](./05-ring.md#pell)
+		- [lucas](./05-ring.md#lucas)
+		- [threeFibonacci](./05-ring.md#threefibonacci)
 	- [Stochastic Methods](./05-ring.md#stochastic-methods)
-		- eg: `random`, `drunk`, `shuffle`, `choose`
+		- [randomSeed](./05-ring.md#randomseed)
+		- [random](./05-ring.md#random)
+		- [randomFloat](./05-ring.md#randomfloat)
+		- [drunk](./05-ring.md#drunk)
+		- [drunkFloat](./05-ring.md#drunkFloat)
+		- [urn](./05-ring.md#urn)
+		- [coin](./05-ring.md#coin)
+		- [dice](./05-ring.md#dice)
+		- [clave](./05-ring.md#clave)
+		- [twelveTone](./05-ring.md#twelvetone)
+		- [choose](./05-ring.md#choose)
+		- [pick](./05-ring.md#pick)
+		- [shuffle](./05-ring.md#shuffle)
+		- [expand](./05-ring.md#expand)
 	- [Transformative Methods](./05-ring.md#transformative-methods)
-		- eg: `join`, `palindrome`, `expand`, `lace`
+		- [clone](./05-ring.md#clone)
+		- [join](./05-ring.md#combine)
+		- [copy](./05-ring.md#duplicate)
+		- [pad](./05-ring.md#pad)
+		- [every](./05-ring.md#every)
+		- [flat](./05-ring.md#flat)
+		- [invert](./05-ring.md#invert)
+		- [lace](./05-ring.md#lace)
+		- [lookup](./05-ring.md#lookup)
+		- [merge](./05-ring.md#merge)
+		- [palindrome](./05-ring.md#palindrome)
+		- [repeat](./05-ring.md#repeat)
+		- [reverse](./05-ring.md#reverse)
+		- [rotate](./05-ring.md#rotate)
+		- [slice](./05-ring.md#slice)
+		- [split](./05-ring.md#split)
+		- [cut](./05-ring.md#cut)
+		- [spray](./05-ring.md#spray)
+		- [stretch](./05-ring.md#stretch)
+		- [unique](./05-ring.md#unique)
 	- [Translate Methods](./05-ring.md#translate-methods)
-		- eg: `divisionToMs`, `toScale`, `noteToMidi`, `chromaToRelative`
+		- midiToNote
+		- midiToFreq
+		- noteToMidi
+		- noteToFreq
+		- freqToMidi
+		- freqToMidi
+		- freqToNote
+		- relativeToMidi
+		- relativeToFreq
+		- chromaToRelative 
+		- ratioToCent
+		- chordsFromNumerals
+		- chordsFromNames
+		- [divisionToMs](./05-ring.md#divisiontoms)
+		- divisionToRatio
+		- ratioToMs
+		- scaleNames
+		- toScale
 	- [Utility Methods](./05-ring.md#utility-methods)
-		- eg: `add`, `multiply`, `wrap`, `fold`
+		- [wrap](./05-ring.md#wrap)
+		- [clip](./05-ring.md#clip)
+		- [fold](./05-ring.md#fold)
+		- [map](./05-ring.md#map)
+		- [mod](./05-ring.md#mod)
+		- [add](./05-ring.md#add)
+		- [subtract](./05-ring.md#subtract)
+		- [multiply](./05-ring.md#multiply)
+		- [divide](./05-ring.md#divide)
+		- [normalize](./05-ring.md#normalize)
+
 
 ## Param Glossary
 
