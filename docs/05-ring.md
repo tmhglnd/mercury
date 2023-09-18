@@ -25,16 +25,16 @@ list rands random(5 0 20)
 
 - [Param Glossary](#param-glossary)
 - [Generative Methods](#generative-methods)
-	- [spread / spreadFloat](#spread--spreadFloat)
-	- [spreadInclusive / spreadInclusiveFloat](#spreadInclusive--spreadInclusiveFloat)
+	- [spread / spreadFloat](#spread-spreadFloat)
+	- [spreadInclusive / spreadInclusiveFloat](#spreadInclusive-spreadInclusiveFloat)
 	- [fill](#fill)
-	- [sine / cosine](#sine--cosine)
-	- [sineFloat / cosineFloat](#sineFloat--cosineFloat)
-	- [saw / sawFloat](#saw--sawFloat)
-	- [square / squareFloat](#square--squareFloat)
+	- [sine / cosine](#sine-cosine)
+	- [sineFloat / cosineFloat](#sineFloat-cosineFloat)
+	- [saw / sawFloat](#saw-sawFloat)
+	- [square / squareFloat](#square-squareFloat)
 - [Algorithmic Methods](#algorithmic-methods)
-	- [euclidean](#euclidean--euclid)
-	- [hexBeat](#hexbeat--hex)
+	- [euclidean](#euclidean)
+	- [hexBeat](#hexbeat)
 	- [fibonacci](#fibonacci)
 	- [pisano](#pisano)
 	- [pell](#pell)
@@ -57,7 +57,7 @@ list rands random(5 0 20)
 	- [expand](#expand)
 - [Transformative Methods](#transformative-methods)
 	- [clone](#clone)
-	- [join](#combine)
+	- [join](#join)
 	- [copy](#duplicate)
 	- [pad](#pad)
 	- [every](#every)
@@ -130,7 +130,7 @@ list rands random(5 0 20)
 
 # Generative Methods
 
-## spread / spreadFloat
+## spread spreadFloat
 
 Generate a list of n-length of evenly spaced values between a starting number up untill (but excluding) the 3th argument. Flipping the low and high values results in a descending list.
 
@@ -153,7 +153,7 @@ list spr4 spread(5 12 0)
 // => [9 7 4 2 0]
 ```
 
-## spreadInclusive / spreadInclusiveFloat
+## spreadInclusive spreadInclusiveFloat
 
 Generate a list of n-length of evenly spaced values between a starting number up to (and including) the 3th argument. Flipping the low and high values results in a descending list.
 
@@ -192,7 +192,7 @@ list fll2 fill(kick_min 2 hat_min 3)
 // => [kick_min kick_min hat_min hat_min hat_min]
 ```
 
-## sine / cosine
+## sine cosine
 
 Generate a list with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
 
@@ -235,7 +235,7 @@ list cos3 cosine(10 2 0 5)
 // => [5 3 0 0 3 4 3 0 0 3]
 ```
 
-## sineFloat / cosineFloat
+## sineFloat cosineFloat
 
 Generate a list with n-periods of a (co)sine function. Optional last arguments set lo and hi range. Only setting first range argument sets the low-range to 0.
 
@@ -272,13 +272,13 @@ list sin5 sineFloat(40 sineFloat(40 4 1 5))
 ```
 Alias: `sinF()`, `cosF()`
 
-## saw / sawFloat
+## saw sawFloat
 
 Generate a list with n-periods of a saw/phasor function. Optional last arguments set lo and hi range and phase offset. Only setting first range argument sets the low-range to 0
 
 **arguments**
 - {Int} -> Length of output list (resolution)
-- {Number/Ring} -> Periods of the wave (option, default=1)
+- {Number/List} -> Periods of the wave (option, default=1)
 - {Number} -> Low range of values (optional, default=-1) 
 - {Number} -> High range of values (optional, default=1)
 - {Number} -> Phase offset (optional, default=0)
@@ -309,13 +309,13 @@ list saw2 saw(34 sinF(30 2 0 100) 0 12)
 ```
 Alias: `sawF()`
 
-## square / squareFloat
+## square squareFloat
 
 Generate a list with n-periods of a square/pulse wave function. Optional last arguments set lo and hi range and pulse width. Only setting first range argument sets the low-range to 0.
 
 **arguments**
 - {Int} -> Length of output list (resolution)
-- {Number/Ring} -> Periods of the wave (option, default=1)
+- {Number/List} -> Periods of the wave (option, default=1)
 - {Number} -> Low range of values (optional, default=0) 
 - {Number} -> High range of values (optional, default=1)
 - {Number} -> Pulse width (optional, default=0.5)
@@ -341,7 +341,7 @@ Alias: `squareF()`, `rectFloat()`, `rectF()`
 
 # Algorithmic Methods
 
-# euclidean / euclid
+# euclidean
 
 Generate a euclidean rhythm evenly spacing n-beats amongst n-steps.Inspired by Godfried Toussaints famous paper "The Euclidean Algorithm Generates Traditional Musical Rhythms".
 
@@ -362,7 +362,7 @@ list euc3 euclidean(7 5 2)
 ```
 Alias: `euclid()`
 
-## hexBeat / hex
+## hexBeat
 
 Generate hexadecimal rhythms. Hexadecimal beats make use of hexadecimal values (0 - f) that are a base-16 number system. Because one digit in a base-16 number system has 16 possible values (0 - 15) these can be converted to 4 bits that therefore can be seen as groups of 4 16th notes. These hexadecimal values will then represent any permutation of 1's and 0's in a 4 bit number, where 0 = 0 0 0 0, 7 = 0 1 1 1, b = 1 0 1 1, f = 1 1 1 1 and all possible values in between.
 
@@ -674,7 +674,7 @@ Choose random items from a list provided with uniform probability distribution. 
 
 **arguments**
 - {Int+} -> length of list output
-- {Ring} -> items to choose from (optional, default=[0 1])
+- {List} -> items to choose from (optional, default=[0 1])
 
 ```java
 set randomSeed 62832
@@ -694,7 +694,7 @@ Pick random items from a list provided. An "urn" is filled with values and when 
 
 **arguments**
 - {Int+} -> length of list output
-- {Ring} -> items to choose from (optional, default=[0 1])
+- {List} -> items to choose from (optional, default=[0 1])
 
 ```java
 set randomSeed 62832
@@ -713,7 +713,7 @@ list melody pick(10 notes)
 Shuffle a list, influenced by the random seed. Based on the Fisher-Yates shuffle algorithm by Ronald Fisher and Frank Yates in 1938. The algorithm has run time complexity of O(n)
 
 **arguments**
-- {Ring} -> Ring to shuffle
+- {List} -> List to shuffle
 
 ```java
 set randomSeed 14142
@@ -733,7 +733,7 @@ Expand a list based upon the pattern within a list. The pattern is derived from 
 
 **arguments**
 - {Int+} -> length of list output
-- {Ring} -> Ring to expand
+- {List} -> List to expand
 
 ```java
 set randomSeed 3141
@@ -775,7 +775,7 @@ list exp2 expand(notes 30)
 Duplicate a list with an offset added to every value
 
 **arguments**
-- {IntRing} -> Ring to clone
+- {IntList} -> List to clone
 - {Int, Int2, ... Int-n} -> amount of clones with integer offset
 
 ```java
@@ -784,18 +784,18 @@ list melody clone(notes 0 12 7 -7)
 // => [0 3 7 12 15 19 7 10 14 -7 -4 0]
 ```
 
-## combine
+## join
 
-Combine lists into one list. Multiple lists as arguments is possible.
+Join lists into one list. Using multiple lists as arguments is possible.
 
 **arguments**
-- {Ring-0, Ring-1, ..., Ring-n} -> Ring to combine
+- {List-0, List-1, ..., List-n} -> List to combine
 
 ```java
 list partA [0 3 7]
 list partB [24 19 12]
 list partC [-7 -3 -5]
-list phrase combine(partA partB partC)
+list phrase join(partA partB partC)
 // => [0 3 7 24 19 12 -7 -5 -3]
 
 list partD [kick hat snare hat]
@@ -803,30 +803,30 @@ list partE [hat hat hat snare]
 list sequence join(partD partE)
 // => [kick hat snare hat hat hat hat snare]
 ```
-Alias: `join()`, `concat()`
+Alias: `combine()`, `concat()`
 
-## copy / duplicate
+## copy
 
-Duplicate a list a certain amount of times.
+Copy a list a certain amount of times.
 
 **arguments**
-- {Ring} -> Ring to duplicate
+- {List} -> List to duplicate
 - {Int+} -> amount of duplicates (optional, default=2)
 
 ```java
 list notes [0 3 7]
-list phrase duplicate(notes 4)
+list phrase copy(notes 4)
 // => [0 3 7 0 3 7 0 3 7 0 3 7]
 ```
 
-Alias: `copy(), dup()`
+Alias: `duplicate(), dup()`
 
 ## pad 
 
 Pad a list with zeroes (or any other value) up to the length specified. The padding value can optionally be changed and the shift argument rotates the list n-steps left or right (negative). This method is similar to `every()` except arguments are not specified in musical bars/divisions.
 
 **arguments**
-- {NumberRing} -> List to use every n-bars
+- {NumberList} -> List to use every n-bars
 - {Int} -> output length of list (optional, default=16)
 - {Value} -> padding value for the added items (optional, default=0)
 - {Number} -> shift in steps (optional, default=0)
@@ -844,7 +844,7 @@ list pad3 pad([c f g] 11 - 4)
 Add zeroes to a list with a number sequence. The division determines the amount of values per bar. The total length = bars * div. Very useful for rhythms that must occur once in a while, but can also be use for melodic phrases.
 
 **arguments**
-- {IntRing} -> Ring to use every n-bars
+- {IntList} -> List to use every n-bars
 - {Int} -> amount of bars
 - {Int} -> amount of values per bar
 
@@ -863,7 +863,7 @@ list phrase every(melody 2 8)
 Flatten a multidimensional list. Optionally set the depth for the flattening with the second argument.
 
 **arguments**
-- {Ring} -> list to flatten
+- {List} -> list to flatten
 - {Number} -> depth of flatten (default=Infinity)
 
 ```java 
@@ -876,7 +876,7 @@ list fl1 flat([1 [2 3 [ 4 ] 5] 6])
 Invert a list of values by mapping the lowest value to the highest value and vice versa, flipping everything in between.  Second optional argument sets the center to flip values against. Third optional argument sets a range to flip values against.
 
 **arguments**
-- {IntRing} -> Ring to invert
+- {IntList} -> List to invert
 - {Int} -> invert center / low range (optional)
 - {Int} -> high range (optional)
 
@@ -899,7 +899,7 @@ Alias: `inverse()`, `flip()`, `inv()`
 Interleave two or more lists. The output length of the is always the length of the longest input list.
 
 **arguments**
-- {Ring0, Ring1, ..., Ring-n} -> Rings to interleave
+- {List0, List1, ..., List-n} -> Lists to interleave
 
 ```java
 list partA [0 3 7 5 0]
@@ -917,9 +917,9 @@ Build a list of items based on another list of indices
 The values are wrapped within the length of the lookup list
 
 **arguments**
-- {NumberRing} -> Ring with indeces to lookup
-- {Ring} -> Ring with values returned from lookup
-- {Ring} -> Looked up values
+- {NumberList} -> List with indeces to lookup
+- {List} -> List with values returned from lookup
+- {List} -> Looked up values
 
 ```java
 list items [c e f g]
@@ -942,7 +942,7 @@ Alias: `get()`
 Merge all values of two lists on the same index into a 2-dimensional list. Preserves the length of longest input list.
 
 **arguments**
-- {Ring0, Ring1, ..., Ring-n} -> Rings to merge
+- {List0, List1, ..., List-n} -> Lists to merge
 
 ```java
 list partA [0 3 7 5 0]
@@ -958,7 +958,7 @@ Alias: `mix()`
 Reverse a list and concatenating to the input, creating a palindrome of the list. A second argument 1 will remove the duplicates halfway through and at the end.
 
 **arguments**
-- {Ring} -> list to make palindrome of
+- {List} -> list to make palindrome of
 - {Bool} -> no-double flag (optional, default=0)
 
 ```java
@@ -979,8 +979,8 @@ Alias: `palin()`, `mirror()`
 Repeats separate values in a list a certain amount of times. The repeats argument can be a list that will be iterated for every value in the to-repeat list.
 
 **arguments**
-- {Ring} -> Ring to repeat
-- {Int+|IntRing} -> amount of repeats per value
+- {List} -> List to repeat
+- {Int+|IntList} -> amount of repeats per value
 
 ```java
 list notes [0 3 7]
@@ -1002,7 +1002,7 @@ list beats repeat(samples repeats)
 Reverse the order of items in a list.
 
 **arguments**
-- {Ring} -> Ring to reverse
+- {List} -> List to reverse
 
 ```java
 list melody [0 3 7 5]
@@ -1018,7 +1018,7 @@ Alias: `retrograde()`, `rev()`
 Rotate the position of items in a list. positive numbers = direction right, negative numbers = direction left
 
 **arguments**
-- {Ring} -> Ring to rotate
+- {List} -> List to rotate
 - {Int} -> Steps to rotate
 
 ```java
@@ -1040,7 +1040,7 @@ Alias: `turn()`, `rot()`
 Sort an list of numbers or strings. sorts ascending or descending in numerical and alphabetical order.
 
 **arguments**
-- {Ring} -> List to sort
+- {List} -> List to sort
 - {Int} -> sort direction (positive value is ascending)
 
 ```java
@@ -1057,8 +1057,8 @@ list srt2 sort([e4 g3 c4 f3 b5])
 Slice a list in one or multiple parts. Slice lengths are determined by the second argument list. Outputs a list of lists of the result
 
 **arguments**
-- {Ring} -> list to slice in parts
-- {Number/Ring} -> slice lengths to slice list into
+- {List} -> list to slice in parts
+- {Number/List} -> slice lengths to slice list into
 - {Bool} -> output rest flag (optional, default=false)
 
 ```java
@@ -1075,8 +1075,8 @@ list sl2 slice(spread(24) [3 2 -1 5] 0)
 Similar to slice in that it also splits a list, except that slice recursively splits until the list is completely empty. If a list is provided as split sizes it will iterate the lengths.
 
 **arguments**
-- {Ring} -> list to split in parts
-- {Number/Ring} -> split lengths to split list into
+- {List} -> list to split in parts
+- {Number/List} -> split lengths to split list into
 
 ```java
 list sp1 split(spread(12) 3)
@@ -1091,7 +1091,7 @@ list sp2 split(spread(12) [3 2 -1])
 Cut the beginning of a list and return. Slice length is determined by the second argument number. Outputs a list of the result.
 
 **arguments**
-- {Ring} -> list to slice in parts
+- {List} -> list to slice in parts
 - {Number} -> slice length to cut list into
 - {Bool} -> output rest flag (optional, default=false)
 
@@ -1105,8 +1105,8 @@ list ct1 cut(spread(8) 3)
 "Spray" the values of one list on the places of values of another list if that value is greater than 0. Wraps input list if more places must be set then length of the list.
 
 **arguments**
-- {Ring} -> Ring to spray
-- {Ring} -> Positions to spray on
+- {List} -> List to spray
+- {List} -> Positions to spray on
 
 ```java
 list notes [12 19 15 17]
@@ -1142,7 +1142,7 @@ list str stretchFloat(notes 15)
 Filter duplicate items from a list. does not account for 2-dimensional lists in the list.
 
 **arguments**
-- {Ring} -> Ring to filter
+- {List} -> List to filter
 
 ```java
 list notes [0 5 7 3 7 7 0 12 5]
@@ -1159,7 +1159,7 @@ Alias: `thin()`
 Wrap values from a list within a specified low and high range.
 
 **arguments**
-- {Ring} -> Ring to wrap
+- {List} -> List to wrap
 - {Number} -> Low value (optional, default=12)
 - {Number} -> High value (optional, default=0)
 
@@ -1181,7 +1181,7 @@ list wr2 wrap(spread(30) 2 8)
 Constrain values from a list within a specified low and high range.
 
 **arguments**
-- {Ring} -> Ring to constrain
+- {List} -> List to constrain
 - {Number} -> Low value (optional default=12)
 - {Number} -> High value (optional default=0)
 
@@ -1205,7 +1205,7 @@ list cn2 constrain(cosine(30 1) 5 9)
 Fold values from a list within a specified low and high range.
 
 **arguments**
-- {Ring} -> Ring to fold
+- {List} -> List to fold
 - {Number} -> Low value (optional, default=12)
 - {Number} -> High value (optional, default=0)
 
@@ -1227,7 +1227,7 @@ list fl2 fold(spreadFloat(30 -9 13) 0 1)
 Rescale values from a list from a specified input range to a specified low and high output range.
 
 **arguments**
-- {Ring} -> Ring to wrap
+- {List} -> List to wrap
 - {Number} -> Low value (optional, default=1)
 - {Number} -> High value (optional, default=0)
 - {Number} -> Low value (optional, default=1)
@@ -1244,9 +1244,9 @@ list sc1 scale([0 [1 [2 3]] 4] 0 4 -1 1)
 Return the remainder after division. Also works in the negative direction, so wrap starts at 0
 
 **arguments**
-- {Int/Ring} -> input value
-- {Int/Ring} -> divisor (optional, default=12)
-- {Int/Ring} -> remainder after division
+- {Int/List} -> input value
+- {Int/List} -> divisor (optional, default=12)
+- {Int/List} -> remainder after division
 
 ```js
 list vals mod([-2 [4 [3 7]]] 5)
@@ -1313,8 +1313,8 @@ Alias: `div`
 Normalize all the values in a list between 0. and 1. The highest value will be 1, the lowest value will be 0.
 
 **arguments**
-- {Number/Ring} -> input values
-- {Int/Ring} -> normailzed values
+- {Number/List} -> input values
+- {Int/List} -> normailzed values
 
 ```java
 list vals normalize([0 1 2 3 4])
@@ -1418,7 +1418,7 @@ Convert between rhythmic notation such as divisions or ratios and milliseconds b
 Convert beat division strings or beat ratio floats to milliseconds using BPM from the global settings. Optional second argument sets BPM and ignores global setting.
 
 **arguments**
-- {Ring} -> beat division or ratio list
+- {List} -> beat division or ratio list
 - {Number} -> set the BPM (optional, default = global tempo)
 
 ```java
