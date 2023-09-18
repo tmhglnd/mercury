@@ -38,7 +38,7 @@
 		- [fx](./02-instrument.md#fx)
 	- Synth / polySynth
 		- [note](./02-instrument.md#note)
-		- [useDetune](./02-instrument.md#usedetune)
+		- [useDetune](./02-instrument.md#usedetune) *deprecated*
 		<!-- - [wave2](./02-instrument.md#wave2) -->
 		- [super](./02-instrument.md#super)
 	- Sample / Loop
@@ -64,15 +64,15 @@
 	- [shift](./04-fx.md#shift)
 	- [envFilter](./04-fx.md#envFilter) \*
 	- [kink](./04-fx.md#kink) \*
-	- [drive](./04-fx.md#drive)
+	- [drive / distort](./04-fx.md#distort)
 	- [filter](./04-fx.md#filter) 
-	- [degrade](./04-fx.md#degrade) \*
+	- [degrade / chip](./04-fx.md#degrade)
 	- [comb](./04-fx.md#comb) \*
 	- [squash](./04-fx.md#squash)
-	- [double](./04-fx.md#double--chorus) \*
-	- [reverb](./04-fx.md#reverb--hall)
+	- [double / chorus](./04-fx.md#double--chorus) \*
+	- [hall / reverb](./04-fx.md#reverb)
 	- [lfo](./04-fx.md#lfo)
-	- [echo](./04-fx.md#delay--echo)
+	- [echo / delay](./04-fx.md#delay)
 
 \* *This effect is only available in the full standalone version*
 
