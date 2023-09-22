@@ -19,7 +19,11 @@ const TL   = require('total-serialism').Translate;
 const Util = require('total-serialism').Utility;
 const Dict = require('./dictionary.js');
 
-var dict = new Dict();
+let dict = new Dict();
+let parseResult = [];
+
+let evaluated = false;
+let evalAfter = false;
 
 let DEBUG = false;
 let AUTO_COPY = true;
@@ -33,6 +37,10 @@ const handlers = {
 	'debug' : (v) => {
 		DEBUG = (v > 0);
 	},
+	// set evaluate after bar/time
+	'evalAfter' : (v) => {
+		evalAfter = v;
+	},
 	// parse the input strings from code editor
 	// seperate lines are input as a string of characters
 	'parse' : (...v) => {
@@ -40,6 +48,7 @@ const handlers = {
 		// use try catch to make sure the script doesn't crash 
 		// during a performance when errors are typed
 		try {
+			evaluated = false;
 			mainParse(v);
 		} catch (e) {
 			max.post('Unkown error while parsing code');
@@ -49,6 +58,13 @@ const handlers = {
 		if (AUTO_COPY){
 			let head = ['//=== MERCURY SKETCH ' + date() + ' ==='];
 			copy.writeSync(head.concat(v).join('\n'));
+		}
+	},
+	// output the latest parsed code
+	'output' : () => {
+		if (!evaluated){	
+			outputParse();
+			evaluated = true;
 		}
 	},
 	// clear the dictionary with variables
@@ -752,16 +768,34 @@ function mainParse(lines){
 		}*/
 	}
 	// output the new variables dictionary
+	// max.outlet(dict.items);
+	// output the parsed lines
+	// parsed.forEach((p) => {
+	//	max.outlet('parsed', ...p);
+	// });
+	// done with parsing
+	// max.outlet('done');
+	parseResult = parsed;
+	
+	if (!evalAfter){
+		outputParse();
+	}
+	
+	time = Date.now() - time;
+	max.post('Parsed code succesful in ' + time + ' ms');
+}
+
+function outputParse(){
+	// send a bang at Start Of File
+	max.outlet('SOF');
+	// output the new variables dictionary
 	max.outlet(dict.items);
 	// output the parsed lines
-	parsed.forEach((p) => {
+	parseResult.forEach((p) => {
 		max.outlet('parsed', ...p);
 	});
 	// done with parsing
 	max.outlet('done');
-	
-	time = Date.now() - time;
-	max.post('Parsed code succesful in ' + time + ' ms');
 }
 
 const actions = {

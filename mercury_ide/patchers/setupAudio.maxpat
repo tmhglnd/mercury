@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 68.0, 228.0, 328.0, 483.0 ],
+		"rect" : [ 68.0, 228.0, 328.0, 511.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,101 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-120",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 930.0, 717.0, 41.0, 22.0 ],
+					"text" : "set $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-86",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 960.0, 853.0, 89.0, 22.0 ],
+					"text" : "s evaluateAfter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"id" : "obj-83",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 15.0, 97.0, 130.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 15.0, 94.0, 142.0, 20.0 ],
+					"text" : "Evaluate after",
+					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-82",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 930.0, 885.0, 127.0, 22.0 ],
+					"text" : "prepend evaluateAfter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-81",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 930.0, 915.0, 73.0, 22.0 ],
+					"text" : "s storePrefs"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-80",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 930.0, 806.0, 59.0, 22.0 ],
+					"text" : "route text"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"id" : "obj-65",
+					"keymode" : 1,
+					"lines" : 1,
+					"maxclass" : "textedit",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "int", "", "" ],
+					"outputmode" : 1,
+					"parameter_enable" : 0,
+					"patching_rect" : [ 930.0, 748.0, 100.0, 50.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 165.0, 93.0, 145.0, 22.0 ],
+					"rounded" : 1.0,
+					"text" : "1/1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-67",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -49,8 +144,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -350,11 +445,11 @@
 				"box" : 				{
 					"id" : "obj-56",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 790.5, 675.0, 73.0, 22.0 ],
-					"text" : "route voices"
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 790.5, 675.0, 147.0, 22.0 ],
+					"text" : "route voices evaluateAfter"
 				}
 
 			}
@@ -680,7 +775,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 68.041870000000003, 232.204722000000004, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 210.0, 308.0, 22.0, 22.0 ],
+					"presentation_rect" : [ 210.0, 335.0, 22.0, 22.0 ],
 					"thickness" : 70.0
 				}
 
@@ -699,7 +794,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 40.5, 232.204722000000004, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 210.0, 332.0, 22.0, 22.0 ],
+					"presentation_rect" : [ 210.0, 359.0, 22.0, 22.0 ],
 					"thickness" : 70.0
 				}
 
@@ -712,7 +807,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 40.5, 315.0, 69.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "float", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 68, 228, 396, 711, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 68, 228, 396, 739, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -727,7 +822,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 30.5, 208.204722000000004, 40.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 235.0, 333.0, 40.0, 20.0 ],
+					"presentation_rect" : [ 235.0, 360.0, 40.0, 20.0 ],
 					"text" : "View",
 					"textcolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ]
 				}
@@ -743,7 +838,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 74.811004999999994, 208.204722000000004, 58.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 235.0, 310.0, 58.0, 20.0 ],
+					"presentation_rect" : [ 235.0, 337.0, 58.0, 20.0 ],
 					"text" : "NoFloat",
 					"textcolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ]
 				}
@@ -760,8 +855,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1410,7 +1505,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 309.305480999999986, 170.172408999999988, 127.0, 23.0 ],
-									"text" : "68 228 396 711"
+									"text" : "68 228 396 739"
 								}
 
 							}
@@ -2051,7 +2146,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 1015.859069999999974, 66.0, 10.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 371.0, 295.0, 10.0 ],
+					"presentation_rect" : [ 15.0, 398.0, 295.0, 10.0 ],
 					"saved_attribute_attributes" : 					{
 						"linecolor" : 						{
 							"expression" : ""
@@ -2087,7 +2182,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 790.5, 435.0, 200.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 446.0, 295.0, 24.0 ],
+					"presentation_rect" : [ 15.0, 473.0, 295.0, 24.0 ],
 					"tabcolor" : [ 0.200000003, 0.200000003, 0.200000003, 0.498130751533742 ],
 					"tabs" : [ "I/O Mappings", "Driver Setup" ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
@@ -2115,7 +2210,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 490.5, 150.0, 98.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 285.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 312.0, 143.0, 20.0 ],
 					"text" : "Signal Buffersize",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -2131,7 +2226,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 340.5, 150.0, 81.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 261.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 288.0, 143.0, 20.0 ],
 					"text" : "I/O Buffersize",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -2147,7 +2242,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 150.0, 73.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 237.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 264.0, 143.0, 20.0 ],
 					"text" : "Samplerate ",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -2163,7 +2258,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 490.5, 780.0, 44.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 94.0, 142.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 121.0, 142.0, 20.0 ],
 					"text" : "Driver ",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -2191,7 +2286,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 490.5, 810.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 93.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 120.0, 145.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -2219,8 +2314,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2388,7 +2483,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 633.5, 631.0, 104.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 190.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 217.0, 143.0, 20.0 ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
 
@@ -2404,8 +2499,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2573,7 +2668,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 490.5, 631.0, 104.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 166.0, 142.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 193.0, 142.0, 20.0 ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
 
@@ -2612,7 +2707,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 633.5, 675.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 189.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 216.0, 145.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -2628,8 +2723,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2835,7 +2930,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 490.5, 675.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 165.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 192.0, 145.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -2851,8 +2946,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3050,7 +3145,7 @@
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"hint" : "",
 					"id" : "obj-94",
-					"items" : [ "None", ",", "BlackHole 16ch", ",", "MacBook Pro Microphone", ",", "Max" ],
+					"items" : [ "None", ",", "NDI Audio", ",", "BlackHole 16ch", ",", "External Microphone", ",", "MacBook Pro Microphone", ",", "Browser", ",", "Max", ",", "Double Stereo", ",", "Tidal" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3058,7 +3153,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 190.5, 675.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 117.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 144.0, 145.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -3074,8 +3169,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3258,8 +3353,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3452,8 +3547,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3625,7 +3720,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 190.5, 346.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 308.0, 22.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 335.0, 22.0, 22.0 ],
 					"thickness" : 70.0
 				}
 
@@ -3644,7 +3739,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 490.5, 361.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 332.0, 22.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 359.0, 22.0, 22.0 ],
 					"thickness" : 70.0
 				}
 
@@ -3706,7 +3801,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 340.5, 870.0, 38.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 418.62203999999997, 38.0, 20.0 ],
+					"presentation_rect" : [ 165.0, 445.62203999999997, 38.0, 20.0 ],
 					"text" : "Out 2",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -3722,7 +3817,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 340.5, 780.0, 38.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 393.62203999999997, 38.0, 20.0 ],
+					"presentation_rect" : [ 165.0, 420.62203999999997, 38.0, 20.0 ],
 					"text" : "Out 1",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -3738,7 +3833,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 870.0, 29.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 418.62203999999997, 29.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 445.62203999999997, 29.0, 20.0 ],
 					"text" : "In 2",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -3754,7 +3849,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 780.0, 29.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 393.62203999999997, 30.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 420.62203999999997, 30.0, 20.0 ],
 					"text" : "In 1",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -3770,7 +3865,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 340.5, 631.0, 104.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 142.0, 142.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 169.0, 142.0, 20.0 ],
 					"text" : "Output Device",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -3786,7 +3881,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 630.0, 103.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 118.0, 142.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 145.0, 142.0, 20.0 ],
 					"text" : "Input Device",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -3817,7 +3912,7 @@
 					"color" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"elementcolor" : [ 0.09803921729, 0.09803921729, 0.09803921729, 0.5 ],
 					"id" : "obj-58",
-					"items" : [ "None", ",", "BlackHole 16ch", ",", "MacBook Pro Speakers" ],
+					"items" : [ "None", ",", "BlackHole 16ch", ",", "External Headphones", ",", "MacBook Pro Speakers", ",", "NDI Audio", ",", "Double Stereo" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3825,7 +3920,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 340.5, 675.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 141.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 168.0, 145.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -3876,7 +3971,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 315.0, 61.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 309.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 336.0, 143.0, 20.0 ],
 					"text" : "Overdrive",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -3891,7 +3986,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 490.5, 331.0, 87.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 333.0, 143.0, 20.0 ],
+					"presentation_rect" : [ 15.0, 360.0, 143.0, 20.0 ],
 					"text" : "Audio Interrupt",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 0.6 ]
 				}
@@ -3920,8 +4015,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4065,8 +4160,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5794,8 +5889,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6712,8 +6807,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8910,8 +9005,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9828,8 +9923,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -12755,7 +12850,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 340.5, 900.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 210.0, 416.62203999999997, 100.0, 22.0 ],
+					"presentation_rect" : [ 210.0, 443.62203999999997, 100.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -12793,7 +12888,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 340.5, 810.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 210.0, 392.62203999999997, 100.0, 22.0 ],
+					"presentation_rect" : [ 210.0, 419.62203999999997, 100.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -12831,7 +12926,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 190.5, 900.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 59.0, 416.62203999999997, 100.0, 22.0 ],
+					"presentation_rect" : [ 59.0, 443.62203999999997, 100.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -12869,7 +12964,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 190.5, 810.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 59.0, 392.62203999999997, 100.0, 22.0 ],
+					"presentation_rect" : [ 59.0, 419.62203999999997, 100.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -12944,7 +13039,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 490.5, 180.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 284.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 311.0, 145.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -13006,7 +13101,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 190.5, 180.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 236.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 263.0, 145.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -13022,8 +13117,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -13230,7 +13325,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 340.5, 180.0, 100.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 260.0, 145.0, 22.0 ],
+					"presentation_rect" : [ 165.0, 287.0, 145.0, 22.0 ],
 					"textcolor" : [ 0.9019607902, 0.9019607902, 0.9019607902, 1.0 ]
 				}
 
@@ -13244,7 +13339,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 190.5, 990.0, 66.0, 10.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 221.0, 295.0, 10.0 ],
+					"presentation_rect" : [ 15.0, 248.0, 295.0, 10.0 ],
 					"saved_attribute_attributes" : 					{
 						"linecolor" : 						{
 							"expression" : ""
@@ -13388,6 +13483,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-65", 0 ],
+					"source" : [ "obj-120", 0 ]
 				}
 
 			}
@@ -13800,8 +13902,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-120", 0 ],
+					"order" : 1,
+					"source" : [ "obj-56", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-46", 0 ],
 					"source" : [ "obj-56", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-86", 0 ],
+					"order" : 0,
+					"source" : [ "obj-56", 1 ]
 				}
 
 			}
@@ -13816,6 +13934,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-57", 0 ],
 					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-80", 0 ],
+					"source" : [ "obj-65", 0 ]
 				}
 
 			}
@@ -13879,6 +14004,29 @@
 				"patchline" : 				{
 					"destination" : [ "obj-127", 0 ],
 					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-82", 0 ],
+					"order" : 1,
+					"source" : [ "obj-80", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-86", 0 ],
+					"order" : 0,
+					"source" : [ "obj-80", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-81", 0 ],
+					"source" : [ "obj-82", 0 ]
 				}
 
 			}
