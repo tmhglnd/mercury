@@ -147,8 +147,9 @@ Alias: `length() | duration() | envelope() | env() | e()`
 Set the volume for the instrument in floating-point amplitude. Where `1` is the normalized amplitude, `0.5` is the half softer (-6 dBFS) and `2` is twice as loud (+ 6dBFS). An optional second argument sets the sliding time to go to the next gain value in milliseconds.
 
 **arguments**
-- {Float+} -> the volume of the instrument (default=1)
-- {Number+} -> the sliding time in ms (optional, default=0)
+- {Float+} -> the (start) volume of the instrument (default=1)
+- {Number+} -> the sliding time in division or ms (optional, default=0)
+<!-- - {Float+} -> the end volume of the instrument to generate a ramp (optional, default=previous-gain-value) -->
 
 ```java
 new sample snare_909 name(sn)
