@@ -777,10 +777,9 @@ function mainParse(lines){
 	// max.outlet('done');
 	parseResult = parsed;
 	
-	outputParse();
-	// disabled parse after for now
-	// if (!evalAfter){
-	// }
+	if (!evalAfter){
+		outputParse();
+	}
 	
 	time = Date.now() - time;
 	max.post('Parsed code succesful in ' + time + ' ms');
