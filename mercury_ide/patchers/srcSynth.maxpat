@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 782.0, 96.0, 680.0, 837.0 ],
+		"rect" : [ 34.0, 96.0, 680.0, 837.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,103 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-63",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 570.0, 480.0, 53.0, 22.0 ],
+					"text" : "clip 0. 1."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-61",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 482.0, 405.0, 51.0, 22.0 ],
+					"text" : "unjoin 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-60",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 570.0, 450.0, 84.0, 22.0 ],
+					"text" : "argListLookup"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-59",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 482.0, 510.0, 84.0, 22.0 ],
+					"text" : "argListLookup"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-58",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 482.0, 375.0, 68.0, 22.0 ],
+					"text" : "route noise"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 570.0, 510.0, 53.0, 22.0 ],
+					"text" : "* 22000."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-41",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 570.0, 540.0, 66.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "oscNxF $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 482.0, 540.0, 59.0, 22.0 ],
+					"text" : "oscNx $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-56",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -50,7 +147,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -259,7 +356,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -368,7 +465,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 4,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -960,7 +1057,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 407.0, 465.0, 62.0, 22.0 ],
+					"patching_rect" : [ 407.0, 435.0, 62.0, 22.0 ],
 					"text" : "r #0_c"
 				}
 
@@ -977,7 +1074,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1367,7 +1464,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1709,7 +1806,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2519,13 +2616,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 34.0, 78.0, 652.0, 788.0 ],
+						"rect" : [ 34.0, 96.0, 652.0, 788.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2567,7 +2664,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "Buffer oscEven;\r\nBuffer oscOdd;\r\n\r\nData phases(64);\r\n\r\nParam sub(0, min=0);\r\nParam voices(1, min=1, max=64);\r\nParam detune(0);\r\n\r\n// frequency is signal input\r\nf = in1;\r\n\r\n// sum all voices for output\r\ns = 0;\r\n\r\nfor (i=0; i<voices; i+=1){\r\n\t// the idx goes from negative to positive\r\n\tidx = i - floor(voices/2);\r\n\t\r\n\t// get phase for voice\r\n\tp = peek(phases, i);\r\n\t\r\n\t// increment phase with frequency and detuning\r\n\tp += (f * pow(2, -detune * idx / 12)) / samplerate;\r\n\t\r\n\t// select odd or even oscillator based on index\r\n\tif (idx % 2){\t\r\n\t\ts += sample(oscOdd, p, boundmode=\"wrap\");\r\n\t} else {\r\n\t\ts += sample(oscEven, p, boundmode=\"wrap\");\r\n\t}\r\n\t// set new phase positin in data\r\n\tpoke(phases, fract(fixnan(p)), i);\t\r\n}\r\n\r\n// add a sub frequency octave lower\r\nif (sub > 0.0001){\r\n\ts += cycle(f * 0.5) * sub;\r\n}\r\n\r\n// approximate equal loudness based on voice number\r\nout1 = fixnan(s / fastpow(voices, 0.5));",
+									"code" : "Buffer oscEven;\r\nBuffer oscOdd;\r\n\r\nData phases(64);\r\n\r\nParam sub(0, min=0);\r\nParam voices(1, min=1, max=64);\r\nParam detune(0);\r\nParam oscNx(0);\r\nParam oscNxF(10000);\r\n\r\nHistory prevNs(0);\r\nHistory nextNs(0);\r\n\r\n// frequency is signal input\r\nf = in1;\r\n\r\n// sum all voices for output\r\ns = 0;\r\n\r\nfor (i=0; i<voices; i+=1){\r\n\t// the idx goes from negative to positive\r\n\tidx = i - floor(voices/2);\r\n\t\r\n\t// get phase for voice\r\n\tp = peek(phases, i);\r\n\t\r\n\t// increment phase with frequency and detuning\r\n\tp += (f * pow(2, -detune * idx / 12)) / samplerate;\r\n\t\r\n\t// select odd or even oscillator based on index\r\n\tif (idx % 2){\t\r\n\t\ts += sample(oscOdd, p, boundmode=\"wrap\");\r\n\t} else {\r\n\t\ts += sample(oscEven, p, boundmode=\"wrap\");\r\n\t}\r\n\t// set new phase positin in data\r\n\tpoke(phases, fract(fixnan(p)), i);\t\r\n}\r\n\r\n// add a sub frequency octave lower\r\nif (sub > 0.0001){\r\n\ts += cycle(f * 0.5) * sub;\r\n}\r\n\r\n// add some noise to the oscillators\r\nif (oscNx > 0.0001){\r\n\tp = phasor(oscNxF);\r\n\tif (delta(p) < 0){\r\n\t\tprevNs = nextNs;\r\n\t\tnextNs = noise();\r\n\t}\r\n\ts += mix(prevNs, nextNs, p) * oscNx;\r\n\t// s += noise() * oscNx;\r\n}\r\n\r\n// approximate equal loudness based on voice number\r\nout1 = fixnan(s / fastpow(voices, 0.5));",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -2806,7 +2903,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"order" : 0,
+					"source" : [ "obj-19", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-83", 1 ],
+					"order" : 1,
 					"source" : [ "obj-19", 3 ]
 				}
 
@@ -2920,6 +3026,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-83", 2 ],
 					"source" : [ "obj-33", 0 ]
 				}
@@ -3000,6 +3113,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-41", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-111", 0 ],
 					"source" : [ "obj-44", 0 ]
 				}
@@ -3035,6 +3155,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-41", 0 ],
+					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-52", 1 ],
 					"source" : [ "obj-51", 0 ]
 				}
@@ -3043,14 +3170,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 1 ],
-					"order" : 0,
-					"source" : [ "obj-53", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-37", 1 ],
 					"order" : 2,
 					"source" : [ "obj-53", 0 ]
 				}
@@ -3058,8 +3177,32 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-37", 1 ],
+					"order" : 4,
+					"source" : [ "obj-53", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-38", 1 ],
+					"order" : 3,
+					"source" : [ "obj-53", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-59", 1 ],
 					"order" : 1,
+					"source" : [ "obj-53", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-60", 1 ],
+					"order" : 0,
 					"source" : [ "obj-53", 0 ]
 				}
 
@@ -3073,6 +3216,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-61", 0 ],
+					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"source" : [ "obj-59", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"source" : [ "obj-6", 0 ]
 				}
@@ -3080,8 +3237,36 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-63", 0 ],
+					"source" : [ "obj-60", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-59", 0 ],
+					"source" : [ "obj-61", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-60", 0 ],
+					"source" : [ "obj-61", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-50", 0 ],
+					"source" : [ "obj-63", 0 ]
 				}
 
 			}
