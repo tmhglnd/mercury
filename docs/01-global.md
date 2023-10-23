@@ -115,9 +115,11 @@ set volume 0.5 5000
 
 Set the global highPass filter cutoff in Hz for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create smooth transitions from one value to another.
 
+Alias: `hipass`
+
 **arguments**
 - {Float+} -> cutoff frequenzy in Hertz
-- {Int+} -> ramptime in milliseconds (optiona, default=0)
+- {Int+} -> ramptime in milliseconds (optional, default=0)
 
 ```java
 set highPass 900 5000
@@ -127,12 +129,27 @@ set highPass 900 5000
 
 Set the global low-pass filter cutoff in Hz for all instruments across the entire environment. Additional ramptime in milliseconds can be provided to create smooth transitions from one value to another.
 
+Alias: `lopass`
+
 **arguments**
 - {Float+} -> cutoff frequenzy in Hertz
-- {Int+} -> ramptime in milliseconds (optiona, default=0)
+- {Int+} -> ramptime in milliseconds (optional, default=0)
 
 ```java
 set lowPass 900 5000
+```
+
+## beatRepeat
+
+A beatrepeating effect (sometimes called stutter) that continuously repeats a section of the entire sound that was last played. The repating interval is determined in divisions (`1/4`, `3/16`, etc). It immediately starts repeating at the moment of evaluating the code, so timing is key!
+
+Alias: `stutter`
+
+**arguments**
+- {Division} -> beatrepeat time interval in division
+
+```java
+set beatRepeat 1/4
 ```
 
 ## osc
