@@ -51401,7 +51401,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 425.0, 60.0, 139.0, 60.0 ],
+									"patching_rect" : [ 503.0, 60.0, 139.0, 60.0 ],
 									"text" : "Get code from external Collaborative livecoding environment via OSC\nlike Troop or Flok"
 								}
 
@@ -51437,8 +51437,12 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 295.5, 60.0, 97.0, 22.0 ],
-									"text" : "udpreceive 4880"
+									"patching_rect" : [ 295.5, 60.0, 150.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"defer" : 1
+									}
+,
+									"text" : "udpreceive 4880 @defer 1"
 								}
 
 							}
@@ -51590,8 +51594,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -55435,7 +55437,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 428.0, 441.0, 919.0, 453.0 ],
+						"rect" : [ 156.0, 256.0, 918.0, 499.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -55464,6 +55466,18 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 300.0, 251.0, 77.0, 22.0 ],
+									"text" : "r internalOsc"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-22",
 									"maxclass" : "newobj",
@@ -56038,6 +56052,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"source" : [ "obj-22", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-23", 0 ]
 								}
 
 							}
@@ -58705,6 +58726,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
