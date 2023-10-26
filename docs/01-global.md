@@ -105,10 +105,11 @@ Set the global volume in floating-point amplitude for all instruments across the
 
 **arguments**
 - {Float} -> attenuate the total volume of all instruments (default=1)
-- {Int+} -> ramptime in milliseconds (optional, default=0)
+- {Int+} -> ramptime in milliseconds or divisions (optional, default=0)
 
 ```java
 set volume 0.5 5000
+set volume 0.4 2/1
 ```
 
 ## highPass
@@ -119,10 +120,11 @@ Alias: `hipass`
 
 **arguments**
 - {Float+} -> cutoff frequenzy in Hertz
-- {Int+} -> ramptime in milliseconds (optional, default=0)
+- {Int+} -> ramptime in milliseconds or division (optional, default=1)
 
 ```java
 set highPass 900 5000
+set highPass 800 2/1
 ```
 
 ## lowPass
@@ -133,10 +135,11 @@ Alias: `lopass`
 
 **arguments**
 - {Float+} -> cutoff frequenzy in Hertz
-- {Int+} -> ramptime in milliseconds (optional, default=0)
+- {Int+} -> ramptime in milliseconds or division (optional, default=1)
 
 ```java
 set lowPass 900 5000
+set lowPass 800 2/1
 ```
 
 ## beatRepeat

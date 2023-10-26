@@ -62250,12 +62250,24 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 300.0, 240.0, 55.0, 22.0 ],
+									"text" : "divToMS"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "float" ],
-									"patching_rect" : [ 240.0, 225.0, 61.0, 22.0 ],
+									"patching_rect" : [ 240.0, 207.0, 61.0, 22.0 ],
 									"text" : "unpack f f"
 								}
 
@@ -62279,7 +62291,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 183.0, 135.0, 55.0, 22.0 ],
+									"patching_rect" : [ 183.0, 117.0, 55.0, 22.0 ],
 									"text" : "r volume"
 								}
 
@@ -62291,7 +62303,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 268.0, 165.0, 22.0, 22.0 ],
+									"patching_rect" : [ 268.0, 147.0, 22.0, 22.0 ],
 									"text" : "t 5"
 								}
 
@@ -62303,7 +62315,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 268.0, 135.0, 40.0, 22.0 ],
+									"patching_rect" : [ 268.0, 117.0, 40.0, 22.0 ],
 									"text" : "r SOF"
 								}
 
@@ -62315,7 +62327,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 240.0, 195.0, 47.0, 22.0 ],
+									"patching_rect" : [ 240.0, 177.0, 47.0, 22.0 ],
 									"text" : "pack f f"
 								}
 
@@ -62495,7 +62507,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 240.0, 108.0, 80.0, 22.0 ],
+									"patching_rect" : [ 240.0, 90.0, 80.0, 22.0 ],
 									"text" : "loadmess 1 0"
 								}
 
@@ -62574,15 +62586,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"source" : [ "obj-2", 1 ]
+									"destination" : [ "obj-276", 0 ],
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-276", 0 ],
-									"source" : [ "obj-2", 0 ]
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-2", 1 ]
 								}
 
 							}
@@ -62639,6 +62651,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-277", 0 ],
 									"source" : [ "obj-295", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
