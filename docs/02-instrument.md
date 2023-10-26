@@ -38,11 +38,11 @@ new sample snare_909 group(drums) time(1/2 1/4)
 
 ## time 
 
-Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `list`'s provided as argument in methods for this instrument. Setting the first argument to `free` allows to use external triggering via osc messages. The trigger reacts when a value greater than `0` is received.
+Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `list`'s provided as argument in methods for this instrument. Setting the first argument to `free` allows to use external triggering via osc messages. The trigger reacts when a value greater than `0` is received. When another instrument in the code has a `name()` that name can be used as osc-message input trigger for another instrument to synchronize the triggering.
 
 **arguments**
-- {Number/Division} -> the timing division (default=1/4)
-- {Number/Division} -> timing offset (optional, default=0)
+- {Number/Division} -> the timing division or `free` (default=1/4)
+- {Number/Division} -> timing offset or osc-message when `free` (optional, default=0)
 
 ```java
 set tempo 130
@@ -54,7 +54,10 @@ new synth saw name(syn)
 	set syn time(1/2 3/16)
 
 new sample snare_dnb name(snare)
-	set snare time(free /snareOSC/amplitude)
+	set snare time(free "/snareOSC/amplitude")
+
+new sample kick_909 time(1/8) play(0.3) name(kick)
+new synth saw note(0 0) time(free "/kick")
 ```
 
 Alias: `timing() | t()`
