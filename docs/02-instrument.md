@@ -7,6 +7,7 @@ For instrument specific functions see below:
 - [Synth / polySynth](#synth-and-polysynth-only)
 - [Sample / Loop](#sample-and-loop-only)
 - [Midi](#midi)
+- [Modulator](#modulator) *Mercury for Max8 Only!*
 <!-- - text to speech -->
 
 ## name
@@ -537,3 +538,40 @@ new voice Alex speak("Hello world!") time(2)
 
 new voice Samantha speak("Hi Alex!") time(2 1)
 ``` -->
+
+# Modulator
+
+The modulator allows you to send a modulation signal as an argument to parameters from functions of other instruments. These parameters are continuously modulated at a specific rate with a specific waveform. The modulation rate is independent from the instruments `time()` (in comparison when using a list as an argument).
+
+```java
+new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>)
+```
+
+## name
+
+Set the name for the modulator, this name can be used as argument in the functions of an instrument like `synth` and `sample`
+
+```java
+// set the name to myModulator
+new modulator sine name(myModulator)
+// the synth uses the modulator in the gain function
+new synth saw gain(myModulator)
+```
+
+## time
+
+Set the modulation speed in division. The default is `1/1` (one period per bar).
+
+```java
+// modulate once per 4 bars
+new modulator sine time(4/1)
+```
+
+## range
+
+Set the modulation range between a low and high value with an option exponential value. The default range is 0 to 1.
+
+```java
+// set the range from 200 to 5000, for example to modulate a filter cutoff
+new modulator sine range(200 5000)
+```

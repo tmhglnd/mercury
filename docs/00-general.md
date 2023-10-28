@@ -2,10 +2,10 @@
 
 ## new
 
-Create a new instance of an instrument or external output. This can be a `sample`, a `synth`, a `loop`, a `polySynth`, `midi` or an `emitter` for osc followed by the name of the sample, the name of the waveshape to use for the synth, the emitter type (currently only supports `osc`) or the midi device name. After that use functions to set parameters for the object.
+Create a new instance of an instrument or external output. This can be a `sample`, a `synth`, a `loop`, a `polySynth`, `midi`, `modulator` or an `emitter` for osc followed by the name of the sample, the name of the waveshape to use for the synth, the emitter type (currently only supports `osc`) or the midi device name. After that use functions to set parameters for the object.
 
 **arguments**
-- {Instrument} -> the instrument type (sample, synth, loop, polySynth, emitter)
+- {Instrument} -> the instrument type (sample, synth, loop, polySynth, midi, modulator)
 	- {Type} -> selected sample or synth waveform (based on loaded files)
 		- {Functions+} -> instrument methods seperated by spaces (optional)
 

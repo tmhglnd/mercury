@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 352.0, 176.0, 697.0, 589.0 ],
+		"rect" : [ 224.0, 216.0, 697.0, 589.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-21",
@@ -189,8 +190,8 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 330.0, 32.0, 30.0, 30.0 ]
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 330.0, 30.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -202,7 +203,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 433.0, 201.0, 175.0, 74.0 ],
-					"text" : "if more than 1 value output list for note count.\n\nElse through put the single value"
+					"text" : "If more than 1 value output list for note count.\n\nElse through put the single value"
 				}
 
 			}
@@ -249,7 +250,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.0, 202.0, 34.0, 22.0 ],
+					"patching_rect" : [ 315.0, 200.0, 34.0, 22.0 ],
 					"text" : "gate"
 				}
 
@@ -355,7 +356,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"midpoints" : [ 174.5, 348.0, 280.0, 348.0, 280.0, 189.0, 324.5, 189.0 ],
+					"midpoints" : [ 174.5, 348.0, 284.0, 348.0, 284.0, 189.0, 324.5, 189.0 ],
 					"order" : 0,
 					"source" : [ "obj-1", 0 ]
 				}
