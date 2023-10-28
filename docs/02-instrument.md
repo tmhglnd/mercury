@@ -543,6 +543,9 @@ new voice Samantha speak("Hi Alex!") time(2 1)
 
 The modulator allows you to send a modulation signal as an argument to parameters from functions of other instruments. These parameters are continuously modulated at a specific rate with a specific waveform. The modulation rate is independent from the instruments `time()` (in comparison when using a list as an argument).
 
+**arguments**
+- {Name} -> waveform type: `sine`, `sawUp`, `sawDown`, `square`, `triangle`
+
 ```java
 new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>)
 ```
@@ -550,6 +553,9 @@ new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division
 ## name
 
 Set the name for the modulator, this name can be used as argument in the functions of an instrument like `synth` and `sample`
+
+**arguments**
+- {Name} -> the modulator name for reference in other functions
 
 ```java
 // set the name to myModulator
@@ -562,6 +568,10 @@ new synth saw gain(myModulator)
 
 Set the modulation speed in division. The default is `1/1` (one period per bar).
 
+**arguments**
+- {Division} -> The time interval for one period of the modulation waveform (optional, default=1/1)
+- {Division} -> The time offset for the modulation (optional, default=0)
+
 ```java
 // modulate once per 4 bars
 new modulator sine time(4/1)
@@ -570,6 +580,11 @@ new modulator sine time(4/1)
 ## range
 
 Set the modulation range between a low and high value with an option exponential value. The default range is 0 to 1.
+
+**arguments**
+- {Number} -> The low output range (optional, default=0)
+- {Number} -> The high output range (optional, default=1)
+- {Number} -> The scaling exponent (optional, default=1)
 
 ```java
 // set the range from 200 to 5000, for example to modulate a filter cutoff
