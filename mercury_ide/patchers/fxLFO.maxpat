@@ -888,13 +888,12 @@
 										"sqr" : 3,
 										"triangle" : 4,
 										"tri" : 4,
-										"noise" : 5,
-										"rand" : 5,
-										"random" : 5,
-										"randomHold" : 6,
-										"randomSah" : 6,
-										"randHold" : 6,
-										"randSah" : 6
+										"randomLine" : 5,
+										"randLine" : 5,
+										"randL" : 5,
+										"noise" : 6,
+										"rand" : 6,
+										"random" : 6
 									}
 ,
 									"id" : "obj-10",
@@ -1179,7 +1178,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 211.0, 405.0, 78.0, 22.0 ],
@@ -1547,7 +1547,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 211.0, 450.0, 197.5, 22.0 ],

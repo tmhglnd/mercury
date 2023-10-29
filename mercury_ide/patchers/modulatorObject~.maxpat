@@ -876,45 +876,19 @@
 							}
 , 							{
 								"box" : 								{
-									"data" : 									{
-										"default" : 0,
-										"sine" : 0,
-										"sin" : 0,
-										"saw" : 1,
-										"sawDown" : 1,
-										"rampDown" : 1,
-										"down" : 1,
-										"phasor" : 2,
-										"sawUp" : 2,
-										"rampUp" : 2,
-										"up" : 2,
-										"square" : 3,
-										"rect" : 3,
-										"sqr" : 3,
-										"triangle" : 4,
-										"tri" : 4,
-										"noise" : 5,
-										"rand" : 5,
-										"random" : 5,
-										"randomHold" : 6,
-										"randomSah" : 6,
-										"randHold" : 6,
-										"randSah" : 6
-									}
-,
 									"id" : "obj-10",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 50.0, 255.0, 178.0, 22.0 ],
+									"patching_rect" : [ 87.666666666666657, 255.0, 65.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"embed" : 1,
+										"embed" : 0,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict waves @embed 1 @quiet 1"
+									"text" : "dict waves"
 								}
 
 							}

@@ -544,7 +544,7 @@ new voice Samantha speak("Hi Alex!") time(2 1)
 The modulator allows you to send a modulation signal as an argument to parameters from functions of other instruments. These parameters are continuously modulated at a specific rate with a specific waveform. The modulation rate is independent from the instruments `time()` (in comparison when using a list as an argument).
 
 **arguments**
-- {Name} -> waveform type: `sine`|`sin`, `sawUp`|`phasor`, `sawDown`|`saw`, `square`|`rect`, `triangle`|`tri`, `random`|`rand`, `randomHold`|`randHold`
+- {Name} -> waveform type: `sine`|`sin`, `sawUp`|`phasor`, `sawDown`|`saw`, `square`|`rect`, `triangle`|`tri`, `random`|`rand`, `randomLine`|`randL`
 
 ```java
 new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>)
