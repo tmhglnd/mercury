@@ -236,7 +236,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 345.0, 375.0, 55.0, 22.0 ],
+					"patching_rect" : [ 371.0, 375.0, 55.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -393,6 +393,7 @@
 					"data" : 					{
 						"time" : [ "1/1", 0 ],
 						"range" : [ 0, 1, 1 ],
+						"out" : [ 0 ],
 						"name" : "no_name",
 						"from" : "no_from"
 					}
@@ -474,7 +475,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 223.0, 525.0, 51.0, 22.0 ],
+					"patching_rect" : [ 223.0, 540.0, 51.0, 22.0 ],
 					"text" : "unjoin 3"
 				}
 
@@ -726,7 +727,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 345.0, 405.0, 51.0, 22.0 ],
+					"patching_rect" : [ 371.0, 405.0, 51.0, 22.0 ],
 					"text" : "unjoin 2"
 				}
 
@@ -738,7 +739,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 523.5, 510.0, 55.0, 22.0 ],
+					"patching_rect" : [ 549.5, 510.0, 55.0, 22.0 ],
 					"text" : "calcExpr"
 				}
 
@@ -1040,7 +1041,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 435.0, 375.0, 83.0, 22.0 ],
+					"patching_rect" : [ 461.0, 375.0, 83.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1059,7 +1060,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 345.0, 465.0, 77.0, 22.0 ],
+					"patching_rect" : [ 371.0, 465.0, 77.0, 22.0 ],
 					"text" : "prepend rate"
 				}
 
@@ -1182,7 +1183,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 345.0, 540.0, 78.0, 22.0 ],
+					"patching_rect" : [ 371.0, 540.0, 78.0, 22.0 ],
 					"text" : "gen~ @t rate"
 				}
 
@@ -1194,7 +1195,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 523.5, 540.0, 41.0, 22.0 ],
+					"patching_rect" : [ 549.5, 540.0, 41.0, 22.0 ],
 					"text" : "sig~ 0"
 				}
 
@@ -1206,7 +1207,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 435.0, 540.0, 41.0, 22.0 ],
+					"patching_rect" : [ 461.0, 540.0, 41.0, 22.0 ],
 					"text" : "sig~ 3"
 				}
 
@@ -1218,7 +1219,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 371.0, 498.0, 116.0, 22.0 ],
+					"patching_rect" : [ 397.0, 498.0, 116.0, 22.0 ],
 					"text" : "phasor~ 1n @lock 1"
 				}
 
@@ -1230,7 +1231,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 345.0, 435.0, 55.0, 22.0 ],
+					"patching_rect" : [ 371.0, 435.0, 55.0, 22.0 ],
 					"text" : "calcExpr"
 				}
 
@@ -1328,7 +1329,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 167.75, 30.0, 127.0, 49.0 ],
+									"patching_rect" : [ 167.75, 30.0, 132.0, 49.0 ],
 									"text" : "in 2 @comment \"wave select\" @min 0 @max 5 @default 0"
 								}
 
@@ -1359,7 +1360,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "//==================================================\r\n// LFO Wave Selector\r\n// \r\n// by Timo Hoogland (c) 2019\r\n//==================================================\r\n\r\nHistory lfo(0);\r\nHistory z(0);\r\n\r\nHistory rand(0);\r\nHistory _rand(0);\r\n\r\nParam smooth(0.015);\r\n\r\np = in5;\r\n// sync with phasor\r\ns = (in1 + (1 - p)) % 1;\r\n// wave selected, only change after cycle\r\nw = sah(in2, (s + .5) % 1, 0.5);\r\n// duty cycle/pulse-width\r\nd = in3;\r\n// modulation depth\r\na = in4;\r\n\r\nif (w == 0){\r\n\t// cosine\r\n\tlfo = cycle(s, index=\"phase\") * -.5 + .5;\r\n} else if (w == 1){\r\n\t// ramp down\r\n\tlfo = s * -1 + 1;\r\n} else if (w == 2){\r\n\t// ramp up\r\n\tlfo = s;\r\n} else if (w == 3){\r\n\t// square, adjustable pulse width\r\n\tlfo = s < d;\r\n} else if (w == 4){\r\n\t// triangle, adjustable duty cycle\r\n\tlfo = triangle(s, d);\r\n} else if (w == 5){\r\n\t// ramp to next random value based on noise\r\n\tif (delta(s) < 0){\r\n\t\t_rand = rand;\r\n\t\trand = abs(noise());\r\n\t}\r\n\tlfo = mix(_rand, rand, s);\r\n} else {\r\n\t// if no argument matches return ramp up\r\n\tlfo = s;\r\n}\r\n\r\nlfo = mix(lfo, z, 1 - smooth);\r\nz = fixdenorm(lfo);\r\n\r\nout1 = lfo * a + (1 - a);",
+									"code" : "//==================================================\r\n// LFO Wave Selector\r\n// \r\n// by Timo Hoogland (c) 2019\r\n//==================================================\r\n\r\nHistory lfo(0);\r\nHistory z(0);\r\n\r\nHistory rand(0);\r\nHistory _rand(0);\r\n\r\nParam smooth(0.015);\r\n\r\np = in5;\r\n// sync with phasor\r\ns = (in1 + (1 - p)) % 1;\r\n// wave selected, only change after cycle\r\nw = sah(in2, (s + .5) % 1, 0.5);\r\n// duty cycle/pulse-width\r\nd = in3;\r\n// modulation depth\r\na = in4;\r\n\r\nif (w == 0){\r\n\t// cosine\r\n\tlfo = cycle(s, index=\"phase\") * -.5 + .5;\r\n} else if (w == 1){\r\n\t// ramp down\r\n\tlfo = s * -1 + 1;\r\n} else if (w == 2){\r\n\t// ramp up\r\n\tlfo = s;\r\n} else if (w == 3){\r\n\t// square, adjustable pulse width\r\n\tlfo = s < d;\r\n} else if (w == 4){\r\n\t// triangle, adjustable duty cycle\r\n\tlfo = triangle(s, d);\r\n} else if (w == 5){\r\n\t// ramp to next random value based on noise\r\n\tif (delta(s) < -0.95){\r\n\t\t_rand = rand;\r\n\t\trand = abs(noise());\r\n\t}\r\n\tlfo = mix(_rand, rand, s);\r\n} else {\r\n\t// if no argument matches return ramp up\r\n\tlfo = s;\r\n}\r\n\r\nlfo = mix(lfo, z, 1 - smooth);\r\nz = fixdenorm(lfo);\r\n\r\nout1 = lfo * a + (1 - a);",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -1415,11 +1416,10 @@
 								}
 
 							}
- ],
-						"autosave" : 0
+ ]
 					}
 ,
-					"patching_rect" : [ 345.0, 585.0, 197.5, 22.0 ],
+					"patching_rect" : [ 371.0, 585.0, 197.5, 22.0 ],
 					"text" : "gen~ @t lfo"
 				}
 
@@ -1643,11 +1643,11 @@
 				"box" : 				{
 					"id" : "obj-471",
 					"maxclass" : "newobj",
-					"numinlets" : 5,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 154.0, 375.0, 157.0, 22.0 ],
-					"text" : "route name from range time"
+					"numinlets" : 6,
+					"numoutlets" : 6,
+					"outlettype" : [ "", "", "", "", "", "" ],
+					"patching_rect" : [ 154.0, 375.0, 177.0, 22.0 ],
+					"text" : "route name from range time out"
 				}
 
 			}
