@@ -573,7 +573,7 @@ Set the modulation speed in division. The default is `1/1` (one period per bar).
 - {Division} -> The time offset for the modulation (optional, default=0)
 
 ```java
-// modulate once per 4 bars
+// modulate a sinewave at a period of one per 4 bars
 new modulator sine time(4/1)
 ```
 
@@ -589,4 +589,7 @@ Set the modulation range between a low and high value with an option exponential
 ```java
 // set the range from 200 to 5000, for example to modulate a filter cutoff
 new modulator sine range(200 5000)
+
+// include the third argument to set the exponential in the scaling
+new modulator sine range(200 5000 3)
 ```
