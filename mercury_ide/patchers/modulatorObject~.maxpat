@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 96.0, 680.0, 837.0 ],
+		"rect" : [ 104.0, 96.0, 680.0, 837.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -392,7 +392,7 @@
 				"box" : 				{
 					"data" : 					{
 						"time" : [ "1/1", 0 ],
-						"range" : [ 0, 1 ],
+						"range" : [ 0, 1, 1 ],
 						"name" : "no_name",
 						"from" : "no_from"
 					}
@@ -881,15 +881,20 @@
 										"sin" : 0,
 										"saw" : 1,
 										"sawDown" : 1,
+										"rampDown" : 1,
 										"down" : 1,
 										"phasor" : 2,
 										"sawUp" : 2,
+										"rampUp" : 2,
 										"up" : 2,
 										"square" : 3,
 										"rect" : 3,
 										"sqr" : 3,
 										"triangle" : 4,
-										"tri" : 4
+										"tri" : 4,
+										"noise" : 5,
+										"rand" : 5,
+										"random" : 5
 									}
 ,
 									"id" : "obj-10",
@@ -1248,7 +1253,7 @@
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 726.0, 113.0, 652.0, 783.0 ],
+						"rect" : [ 52.0, 130.0, 652.0, 783.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1323,8 +1328,8 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 167.75, 30.0, 132.0, 49.0 ],
-									"text" : "in 2 @comment \"wave select\" @min 0 @max 4 @default 0"
+									"patching_rect" : [ 167.75, 30.0, 127.0, 49.0 ],
+									"text" : "in 2 @comment \"wave select\" @min 0 @max 5 @default 0"
 								}
 
 							}
@@ -1354,7 +1359,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "//==================================================\r\n// LFO Wave Selector\r\n// \r\n// by Timo Hoogland (c) 2019\r\n//==================================================\r\n\r\nHistory lfo(0);\r\nHistory z(0);\r\n\r\nParam smooth(0.015);\r\n\r\np = in5;\r\n// sync with phasor\r\ns = (in1 + (1 - p)) % 1;\r\n// wave selected, only change after cycle\r\nw = sah(in2, (s + .5) % 1, 0.5);\r\n// duty cycle/pulse-width\r\nd = in3;\r\n// modulation depth\r\na = in4;\r\n\r\nif (w == 0){\r\n\t// cosine\r\n\tlfo = cycle(s, index=\"phase\") * -.5 + .5;\r\n} else if (w == 1){\r\n\t// ramp down\r\n\tlfo = s * -1 + 1;\r\n} else if (w == 2){\r\n\t// triangle, adjustable duty cycle\r\n\t// lfo = triangle(s, d);\r\n\t// ramp up\r\n\tlfo = s;\r\n} else if (w == 3){\r\n\t// square, adjustable pulse width\r\n\tlfo = s < d;\r\n} else if (w == 4){\r\n\t// triangle, adjustable duty cycle\r\n\tlfo = triangle(s, d);\r\n} else {\r\n\t// if no argument matches\r\n\tlfo = s < d;\r\n}\r\n\r\nlfo = mix(lfo, z, 1 - smooth);\r\nz = fixdenorm(lfo);\r\n\r\nout1 = lfo * a + (1 - a);",
+									"code" : "//==================================================\r\n// LFO Wave Selector\r\n// \r\n// by Timo Hoogland (c) 2019\r\n//==================================================\r\n\r\nHistory lfo(0);\r\nHistory z(0);\r\n\r\nHistory rand(0);\r\nHistory _rand(0);\r\n\r\nParam smooth(0.015);\r\n\r\np = in5;\r\n// sync with phasor\r\ns = (in1 + (1 - p)) % 1;\r\n// wave selected, only change after cycle\r\nw = sah(in2, (s + .5) % 1, 0.5);\r\n// duty cycle/pulse-width\r\nd = in3;\r\n// modulation depth\r\na = in4;\r\n\r\nif (w == 0){\r\n\t// cosine\r\n\tlfo = cycle(s, index=\"phase\") * -.5 + .5;\r\n} else if (w == 1){\r\n\t// ramp down\r\n\tlfo = s * -1 + 1;\r\n} else if (w == 2){\r\n\t// ramp up\r\n\tlfo = s;\r\n} else if (w == 3){\r\n\t// square, adjustable pulse width\r\n\tlfo = s < d;\r\n} else if (w == 4){\r\n\t// triangle, adjustable duty cycle\r\n\tlfo = triangle(s, d);\r\n} else if (w == 5){\r\n\t// ramp to next random value based on noise\r\n\tif (delta(s) < 0){\r\n\t\t_rand = rand;\r\n\t\trand = abs(noise());\r\n\t}\r\n\tlfo = mix(_rand, rand, s);\r\n} else {\r\n\t// if no argument matches return ramp up\r\n\tlfo = s;\r\n}\r\n\r\nlfo = mix(lfo, z, 1 - smooth);\r\nz = fixdenorm(lfo);\r\n\r\nout1 = lfo * a + (1 - a);",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -1410,7 +1415,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 345.0, 585.0, 197.5, 22.0 ],
@@ -1588,10 +1594,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 30.5, 45.0, 28.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in 1"
 				}
 
