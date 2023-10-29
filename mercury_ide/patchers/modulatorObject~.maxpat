@@ -895,7 +895,11 @@
 										"tri" : 4,
 										"noise" : 5,
 										"rand" : 5,
-										"random" : 5
+										"random" : 5,
+										"randomHold" : 6,
+										"randomSah" : 6,
+										"randHold" : 6,
+										"randSah" : 6
 									}
 ,
 									"id" : "obj-10",
@@ -1180,7 +1184,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 371.0, 540.0, 78.0, 22.0 ],
@@ -1329,8 +1334,8 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 167.75, 30.0, 132.0, 49.0 ],
-									"text" : "in 2 @comment \"wave select\" @min 0 @max 5 @default 0"
+									"patching_rect" : [ 167.75, 30.0, 126.0, 49.0 ],
+									"text" : "in 2 @comment \"wave select\" @min 0 @max 6 @default 0"
 								}
 
 							}
@@ -1360,7 +1365,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "//==================================================\r\n// LFO Wave Selector\r\n// \r\n// by Timo Hoogland (c) 2019\r\n//==================================================\r\n\r\nHistory lfo(0);\r\nHistory z(0);\r\n\r\nHistory rand(0);\r\nHistory _rand(0);\r\n\r\nParam smooth(0.015);\r\n\r\np = in5;\r\n// sync with phasor\r\ns = (in1 + (1 - p)) % 1;\r\n// wave selected, only change after cycle\r\nw = sah(in2, (s + .5) % 1, 0.5);\r\n// duty cycle/pulse-width\r\nd = in3;\r\n// modulation depth\r\na = in4;\r\n\r\nif (w == 0){\r\n\t// cosine\r\n\tlfo = cycle(s, index=\"phase\") * -.5 + .5;\r\n} else if (w == 1){\r\n\t// ramp down\r\n\tlfo = s * -1 + 1;\r\n} else if (w == 2){\r\n\t// ramp up\r\n\tlfo = s;\r\n} else if (w == 3){\r\n\t// square, adjustable pulse width\r\n\tlfo = s < d;\r\n} else if (w == 4){\r\n\t// triangle, adjustable duty cycle\r\n\tlfo = triangle(s, d);\r\n} else if (w == 5){\r\n\t// ramp to next random value based on noise\r\n\tif (delta(s) < -0.95){\r\n\t\t_rand = rand;\r\n\t\trand = abs(noise());\r\n\t}\r\n\tlfo = mix(_rand, rand, s);\r\n} else {\r\n\t// if no argument matches return ramp up\r\n\tlfo = s;\r\n}\r\n\r\nlfo = mix(lfo, z, 1 - smooth);\r\nz = fixdenorm(lfo);\r\n\r\nout1 = lfo * a + (1 - a);",
+									"code" : "//==================================================\r\n// LFO Wave Selector\r\n// \r\n// by Timo Hoogland (c) 2019\r\n//==================================================\r\n\r\nHistory lfo(0);\r\nHistory z(0);\r\n\r\nHistory rand(0);\r\nHistory _rand(0);\r\n\r\nParam smooth(0.015);\r\n\r\np = in5;\r\n// sync with phasor\r\ns = (in1 + (1 - p)) % 1;\r\n// wave selected, only change after cycle\r\nw = sah(in2, (s + .5) % 1, 0.5);\r\n// duty cycle/pulse-width\r\nd = in3;\r\n// modulation depth\r\na = in4;\r\n\r\nif (w == 0){\r\n\t// cosine\r\n\tlfo = cycle(s, index=\"phase\") * -.5 + .5;\r\n} else if (w == 1){\r\n\t// ramp down\r\n\tlfo = s * -1 + 1;\r\n} else if (w == 2){\r\n\t// ramp up\r\n\tlfo = s;\r\n} else if (w == 3){\r\n\t// square, adjustable pulse width\r\n\tlfo = s < d;\r\n} else if (w == 4){\r\n\t// triangle, adjustable duty cycle\r\n\tlfo = triangle(s, d);\r\n} else if (w == 5 || w == 6){\r\n\t// ramp to next random value based on noise\r\n\tif (delta(s) < -0.95){\r\n\t\t_rand = rand;\r\n\t\trand = noise() * .5 + .5;\r\n\t}\r\n\tif (w == 5){\r\n\t\tlfo = mix(_rand, rand, s);\r\n\t} else {\r\n\t\tlfo = rand;\r\n\t}\r\n} else {\r\n\t// if no argument matches return ramp up\r\n\tlfo = s;\r\n}\r\n\r\nlfo = mix(lfo, z, 1 - smooth);\r\nz = fixdenorm(lfo);\r\n\r\nout1 = lfo * a + (1 - a);",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -1416,7 +1421,8 @@
 								}
 
 							}
- ]
+ ],
+						"autosave" : 0
 					}
 ,
 					"patching_rect" : [ 371.0, 585.0, 197.5, 22.0 ],
