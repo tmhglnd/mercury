@@ -550,7 +550,7 @@ The modulator allows you to send a modulation signal as an argument to parameter
 new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>)
 ```
 
-## name
+## modulator name
 
 Set the name for the modulator, this name can be used as argument in the functions of an instrument like `synth` and `sample`
 
@@ -564,7 +564,7 @@ new modulator sine name(myModulator)
 new synth saw gain(myModulator)
 ```
 
-## time
+## modulator time
 
 Set the modulation speed in division. The default is `1/1` (one period per bar).
 
@@ -577,7 +577,7 @@ Set the modulation speed in division. The default is `1/1` (one period per bar).
 new modulator sine time(4/1)
 ```
 
-## range
+## modulator range
 
 Set the modulation range between a low and high value with an option exponential value. The default range is 0 to 1.
 
