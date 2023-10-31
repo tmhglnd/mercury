@@ -1,13 +1,14 @@
 # All Instruments
 
-The following methods apply to all the types of instruments: `synth`, `sample`, `polySynth`, `loop` and `midi`.
+The following methods apply to all the types of instruments: `synth`, `sample`, `polySynth`, `loop`, `midi` and `input`.
 
 For instrument specific functions see below:
 
 - [Synth / polySynth](#synth-and-polysynth-only)
 - [Sample / Loop](#sample-and-loop-only)
 - [Midi](#midi)
-- [Modulator](#modulator) *Mercury for Max8 Only!*
+- [Input](#input) *Mercury for Max8 only!*
+- [Modulator](#modulator) *Mercury for Max8 only!*
 <!-- - text to speech -->
 
 ## name
@@ -538,6 +539,24 @@ new voice Alex speak("Hello world!") time(2)
 
 new voice Samantha speak("Hi Alex!") time(2 1)
 ``` -->
+
+# Input
+
+Use the input from the soundcard (ADC) as the source for an instrument. The sound can be modified by all the various `fx()`. The volume can be adjusted with `gain()`. An envelope can also be applied on the sound with `shape()` and this envelope can be triggered with `time()` just as with the regular instruments `sample`, `synth`, etc. Use the words `in1`, `in2`, ..., `inx` to choose the input source.
+
+**arguments**
+- {Name} -> `default` or the input channel number as a string `inX`
+
+```java
+// use the default input, in most cases channel 1
+new input default gain(1)
+
+// use a specific channel
+new input in3 gain(0.9) 
+
+// add functions like shape, time and fx
+new input in4 gain(0.9) time(1/16) shape(1 100) fx(reverb) fx(distort)
+```
 
 # Modulator
 
