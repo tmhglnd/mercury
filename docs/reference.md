@@ -53,7 +53,9 @@
 		- [out](./02-instrument.md#out)
 		- [chord](./02-instrument.md#chord)
 		- [sync](./02-instrument.md#sync)
-	- Modulator *(Max8 version only!)*
+	- Input *(Max8 version only)*
+		- [input](./02-instrument.md#input)
+	- Modulator *(Max8 version only)*
 		- [name](./02-instrument.md#modulator-name)
 		- [time](./02-instrument.md#modulator-time)
 		- [range](./02-instrument.mdmodulator-range)
