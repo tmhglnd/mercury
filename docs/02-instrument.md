@@ -541,13 +541,13 @@ new voice Samantha speak("Hi Alex!") time(2 1)
 
 # Modulator
 
-The modulator allows you to send a modulation signal as an argument to parameters from functions of other instruments. These parameters are continuously modulated at a specific rate with a specific waveform. The modulation rate is independent from the instruments `time()` (in comparison when using a list as an argument).
+The modulator allows you to send a modulation signal as an argument to parameters from functions of other instruments. These parameters are continuously modulated at a specific rate with a specific waveform. The modulation rate is independent from the instruments `time()` (in comparison when using a list as an argument). It is also possible to send the modulation signal directly out to the connected soundcard on a specific channel. This can for example be used for cv modulations.
 
 **arguments**
 - {Name} -> waveform type: `sine`|`sin`, `sawUp`|`phasor`, `sawDown`|`saw`, `square`|`rect`, `triangle`|`tri`, `random`|`rand`, `randomLine`|`randL`
 
 ```java
-new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>)
+new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>) out(<channel>)
 ```
 
 ## modulator name
@@ -592,4 +592,16 @@ new modulator sine range(200 5000)
 
 // include the third argument to set the exponential in the scaling
 new modulator sine range(200 5000 3)
+```
+
+## modulator out
+
+Set the output channel from your connected soundcard to send the modulation signal directly to. The default is 0 (no output to DAC). Currently the maximum number of channels that can be used is 16. If the modulation signal is only used for direct output it is not necessary to also `name()` the modulator.
+
+**arguments**
+- {Number+} -> The channel number from 1 till number of outputs available, maximum of 16 (default=0)
+
+```java
+// send a sinewave modulator signal to DAC channel 3
+new modulator sine range(-1 1) out(3)
 ```
