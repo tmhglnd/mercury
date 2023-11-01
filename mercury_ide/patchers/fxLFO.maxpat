@@ -893,7 +893,9 @@
 										"randL" : 5,
 										"noise" : 6,
 										"rand" : 6,
-										"random" : 6
+										"random" : 6,
+										"trigger" : 7,
+										"gate" : 7
 									}
 ,
 									"id" : "obj-10",
@@ -1178,8 +1180,7 @@
 								}
 
 							}
- ],
-						"autosave" : 0
+ ]
 					}
 ,
 					"patching_rect" : [ 211.0, 405.0, 78.0, 22.0 ],
@@ -1547,8 +1548,7 @@
 								}
 
 							}
- ],
-						"autosave" : 0
+ ]
 					}
 ,
 					"patching_rect" : [ 211.0, 450.0, 197.5, 22.0 ],

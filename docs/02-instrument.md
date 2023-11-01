@@ -563,7 +563,7 @@ new input in4 gain(0.9) time(1/16) shape(1 100) fx(reverb) fx(distort)
 The modulator allows you to send a modulation signal as an argument to parameters from functions of other instruments. These parameters are continuously modulated at a specific rate with a specific waveform. The modulation rate is independent from the instruments `time()` (in comparison when using a list as an argument). It is also possible to send the modulation signal directly out to the connected soundcard on a specific channel. This can for example be used for cv modulations.
 
 **arguments**
-- {Name} -> waveform type: `sine`|`sin`, `sawUp`|`phasor`, `sawDown`|`saw`, `square`|`rect`, `triangle`|`tri`, `random`|`rand`, `randomLine`|`randL`
+- {Name} -> waveform type: `sine`|`sin`, `sawUp`|`phasor`, `sawDown`|`saw`, `square`|`rect`, `triangle`|`tri`, `random`|`rand`, `randomLine`|`randL`, `trigger`|`gate`
 
 ```java
 new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>) out(<channel>)
@@ -623,4 +623,32 @@ Set the output channel from your connected soundcard to send the modulation sign
 ```java
 // send a sinewave modulator signal to DAC channel 3
 new modulator sine range(-1 1) out(3)
+```
+
+## modulator trigger
+
+When using the mode `trigger`/`gate` the modulator functions like the sequencer in the instruments. Meaning it is also possible to use `play()` to add a rhythm list, use `ratchet()` to add a list of timing subdivisions with probability, use `warp()` to add a list of time warpings.
+
+**arguments**
+- {Name} -> `trigger`/`gate` sets the intrument to use the stepsequencer
+
+```java
+// generate a euclidean rhythm and use it in the trigger
+list rtm euclid(16 11)
+new modulator trigger time(1/8) play(rtm) ratchet(0.1 2)
+```
+
+## modulator hold
+
+The hold function transforms the `trigger` into a gate that goes open and closes after a certain amount of time. The time value can be either `ms` or a `division`. If the hold time is longer than the time interval between triggers the gate stays open. A hold of `0` results in the click from the default trigger.
+
+**arguments**
+- {Number+} -> hold time in ms or division (default=0)
+
+```java
+// trigger every 8th note, and leave the gate open for the length of 50ms
+new modulator trigger time(1/8) hold(50)
+
+// trigger every 8th note, and leave the gate open for the length of a 16th
+new modulator trigger time(1/8) hold(1/16)
 ```
