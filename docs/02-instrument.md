@@ -615,6 +615,8 @@ new modulator sine range(200 5000 3)
 
 ## modulator out
 
+**Warning: be careful when sending DC signals with large ranges to your DAC, this could damage your speakers if you choose the wrong output!**
+
 Set the output channel from your connected soundcard to send the modulation signal directly to. The default is 0 (no output to DAC). Currently the maximum number of channels that can be used is 16. If the modulation signal is only used for direct output it is not necessary to also `name()` the modulator.
 
 **arguments**
