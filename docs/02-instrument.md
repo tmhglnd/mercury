@@ -7,7 +7,7 @@ For instrument specific functions see below:
 - [Synth / polySynth](#synth-and-polysynth-only)
 - [Sample / Loop](#sample-and-loop-only)
 - [Midi](#midi)
-- [Input](#input) *Mercury for Max8 only!*
+- [Input](#input)
 - [Modulator](#modulator) *Mercury for Max8 only!*
 <!-- - text to speech -->
 
@@ -548,7 +548,9 @@ new voice Samantha speak("Hi Alex!") time(2 1)
 
 # Input
 
-Use the input from the soundcard (ADC) as the source for an instrument. The sound can be modified by all the various `fx()`. The volume can be adjusted with `gain()`. An envelope can also be applied on the sound with `shape()` and this envelope can be triggered with `time()` just as with the regular instruments `sample`, `synth`, etc. Use the words `in1`, `in2`, ..., `inx` to choose the input source.
+Use the input from the soundcard (ADC) as the source for an instrument. The sound can be modified by all the various `fx()`. The volume can be adjusted with `gain()`. An envelope can also be applied on the sound with `shape()` and this envelope can be triggered with `time()` just as with the regular instruments `sample`, `synth`, etc. Use the words `in1`, `in2`, ..., `inx` to choose the input source. 
+
+*In the browser version you will need to give permission to use the microphone and afterwards you might need to refresh the page*
 
 **arguments**
 - {Name} -> `default` or the input channel number as a string `inX`

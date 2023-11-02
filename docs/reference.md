@@ -2,7 +2,7 @@
 
 **Disclaimer: This documentation is not entirely finished and will subject to changes. If you like to contribute or find errors, please report them in the issues or correct them yourself and send a pull request**
 
-**Disclaimer: There are still differences between the Mercury Browser version and the Mercury Max8 version. Please be aware that this may be the reason some functions are not working**
+**Disclaimer: There are differences between the Mercury Browser version and the Mercury for Max8 version. Please be aware that this may be the reason some functions are not working**
 
 ## Code Documentation
 
@@ -12,19 +12,19 @@
 	- [set](./00-general.md#set)
 	- [print](./00-general.md#print)
 	- [silence](./00-general.md#silence)
-	- [audio](./00-general.md#audio)
+	- [audio](./00-general.md#audio)  *(Mercury4Max only)*
 
 - [Global (set)](./01-global.md)
 	- [tempo](./01-global.md#tempo)
 	- [scale](./01-global.md#scale)
-	- [scalar](./01-global.md#scalar)
+	- [scalar](./01-global.md#scalar)  *(Mercury4Max only)*
 	- [randomSeed](./01-global.md#randomseed)
 	- [volume](./01-global.md#volume)
 	- [highPass](./01-global.md#highpass) 
 	- [lowPass](./01-global.md#lowpass)
-	- [osc](./01-global.md#osc)
-	- [midi](./01-global.md#midi-and-midiclock)
-	- [click](./01-global.md#click)
+	- [osc](./01-global.md#osc)  *(Mercury4Max only)*
+	- [midi](./01-global.md#midi-and-midiclock)  *(Mercury4Max only)*
+	- [click](./01-global.md#click)  *(Mercury4Max only)*
 
 - [Synth/Sample/Midi (new)](./02-instrument.md)
 	- All instruments (except midi)
@@ -53,34 +53,32 @@
 		- [out](./02-instrument.md#out)
 		- [chord](./02-instrument.md#chord)
 		- [sync](./02-instrument.md#sync)
-	- Input *(Max8 version only)*
+	- Input
 		- [input](./02-instrument.md#input)
-	- Modulator *(Max8 version only)*
+	- Modulator *(Mercury4Max only)*
 		- [name](./02-instrument.md#modulator-name)
 		- [time](./02-instrument.md#modulator-time)
 		- [range](./02-instrument.mdmodulator-range)
 
-- [Emitter (osc)](./03-emitter.md)
+- [Emitter (osc)](./03-emitter.md) *(Mercury4Max only)*
 	- [osc](./03-emitter.md#osc)
 	- [name](./03-emitter.md#name)
 	- [address](./03-emitter.md#address)
 
 - [Sound Effects (fx)](./04-fx.md)
-	- [freeze](./04-fx.md#freeze) \*
+	- [freeze](./04-fx.md#freeze)  *(Mercury4Max only)*
 	- [shift](./04-fx.md#shift)
-	- [envFilter](./04-fx.md#envFilter) \*
-	- [kink](./04-fx.md#kink) \*
+	- [triggerFilter](./04-fx.md#envFilter)
+	- [kink](./04-fx.md#kink)  *(Mercury4Max only)*
 	- [drive / distort](./04-fx.md#distort)
 	- [filter](./04-fx.md#filter) 
 	- [degrade / chip](./04-fx.md#degrade)
 	- [comb](./04-fx.md#comb) \*
 	- [squash](./04-fx.md#squash)
-	- [double / chorus](./04-fx.md#double--chorus) \*
+	- [double / chorus](./04-fx.md#double--chorus) *(Mercury4Max only)*
 	- [hall / reverb](./04-fx.md#reverb)
 	- [lfo](./04-fx.md#lfo)
 	- [echo / delay](./04-fx.md#delay)
-
-\* *This effect is only available in the full standalone version*
 
 - [List functions](./05-ring.md)
 	- [Generative Methods](./05-ring.md#generative-methods)
