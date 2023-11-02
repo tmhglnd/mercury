@@ -1,14 +1,16 @@
 # All Instruments
 
-The following methods apply to all the types of instruments: `synth`, `sample`, `polySynth`, `loop`, `midi` and `input`.
+The following methods apply to all the types of instruments: `synth`, `sample`, `loop`, `polySynth`, `polySample`, `midi` and `input`.
 
 For instrument specific functions see below:
 
-- [Synth / polySynth](#synth-and-polysynth-only)
-- [Sample / Loop](#sample-and-loop-only)
+- [Synth](#synth)
+- [Sample / Loop](#sample)
+- [polySynth](#polysynth)
+- [polySample](#polysample) *MercuryPlayground only*
 - [Midi](#midi)
 - [Input](#input)
-- [Modulator](#modulator) *Mercury for Max8 only!*
+- [Modulator](#modulator) *Mercury4Max only*
 <!-- - text to speech -->
 
 ## name
@@ -48,6 +50,8 @@ new sample snare_909 group(drums) time(1/2 1/4)
 
 Set the time interval in which a synth or sample is triggered. This can be an integer, float or expression. `1 = bar`, `1/4 = quarter-note`, `1/12  = 8th triplet`, `3/16 = 3-16th notes` etc. Similarly you can set an offset in the timing. The `time()` will start an internal counter for this instrument, incremented every time it is triggerd (based on the `beat()` method). The counter is used as an index to lookup values from other `list`'s provided as argument in methods for this instrument. Setting the first argument to `free` allows to use external triggering via osc messages. The trigger reacts when a value greater than `0` is received. When another instrument in the code has a `name()` that name can be used as osc-message input trigger for another instrument to synchronize the triggering.
 
+Alias: `timing()`
+
 **arguments**
 - {Number/Division} -> the timing division or `free` (default=1/4)
 - {Number/Division} -> timing offset or osc-message when `free` (optional, default=0)
@@ -68,11 +72,11 @@ new sample kick_909 time(1/8) play(0.3) name(kick)
 new synth saw note(0 0) time(free "/kick")
 ```
 
-Alias: `timing() | t()`
-
 ## play
 
 Provide the beat function with a `list` consisting of ones and zeroes. For every time interval defined by the `time()` method, the next value in the list will be used. A one results in a trigger of the instrument and an increment of the internal counter. A zero results in no trigger. An optional second argument resets the internal instrument index after a certain amount of time in n-bars.
+
+Alias: `beat() | rhythm()`
 
 **arguments**
 - {FloatList+/Float+} -> a rhythmic pattern of ones and zeroes to play (default=1)
@@ -94,8 +98,6 @@ new sample hat_909 name(ht)
 new sample kick_909 time(1/4)
 ```
 
-Alias: `beat() | rhythm() | b()`
-
 ## ratchet
 
 Add a ratcheting effect (doubling/tripling of hits) with a probability. A technique that introduces some variety in rhythm that originated with electronic music of Tangerine Dream. The first argument sets the probality a note will be repeated. The second argument sets the amount of repetitions within the time, effectively doubling, tripling or more.
@@ -115,11 +117,13 @@ new sample hat_909 time(1/4) ratchet(1 rtc)
 
 ## warp
 
-Warp a rhythm in more complex ways
+Warp a rhythm in more complex ways.
 
 ## shape
 
 Set the envelope generator of a sound. Various modes are possible depending on the amount of arguments. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds. The sustain time holds the sound at a static volume for a while. If the sound is triggered before the end of the envelope, the envelope is canceled, faded to 0 in 1ms and starts over. You can specify the times in absolute values using integer/floating points (in ms) or in relative values using beat divisions.
+
+Alias: `length() | duration() | envelope() | env()`
 
 **arguments**
 
@@ -151,11 +155,11 @@ new synth saw shape(1/4 1/32) time(1)
 new synth saw shape(1/64 1/8 1/16) time(1)
 ```
 
-Alias: `length() | duration() | envelope() | env() | e()`
-
 ## gain
 
 Set the volume for the instrument in floating-point amplitude. Where `1` is the normalized amplitude, `0.5` is the half softer (-6 dBFS) and `2` is twice as loud (+ 6dBFS). An optional second argument sets the sliding time to go to the next gain value in milliseconds.
+
+Alias: `amp() | volume() | velocity()`
 
 **arguments**
 - {Float+} -> the (start) volume of the instrument (default=1)
@@ -169,11 +173,11 @@ new sample snare_909 name(sn)
 
 **Note:** When using the `midi` instrument the gain will be multiplied by `127` to construct a velocity message. A `gain(0.5)` therefore maps to `63` and a `gain(1)` to `127`
 
-Alias: `amp() | volume() | g() | a() | v() | velocity()`
-
 ## pan
 
 Set the panning position in floating-point for the sound in the stereo-image. `-1` is 100% left channel, `0` is center (both speakers), `1` is 100% right channel. Higher or lower values wrap between -1 and 1. Provide pan with the `random` argument to get a new random panning value every moment of the `time()` counter.
+
+Alias: `panning()`
 
 **arguments**
 - {Float} -> the panning position between -1 and 1 (default=0)
@@ -183,11 +187,11 @@ new sample clap_909 name(hand)
 	set hand pan(random)
 ```
 
-Alias: `panning() | p()`
-
 ## fx
 
 Apply an effect to the sound of the instrument to manipulate your sounds timbre in many ways. The first argument is always the `effectname`. The following arguments depend on the selected effect. See [FX Documentation](./04-fx.md) for more details.
+
+Alias: `effect() | with_fx() | add_fx()`
 
 **arguments**
 - {Name} -> the effect name
@@ -214,9 +218,7 @@ The currently available effects are:
 - squash
 ```
 
-Alias: `effect() | with_fx() | add_fx()`
-
-# synth and polySynth only
+# synth
 
 The synth and polySynth instruments allow you to play synthesized sounds using a single cycle waveform. These waveforms are loaded in RAM and can be accessed by their filename (without the extension). The default waveforms are `sine`, `triangle`, `square` and `saw`.
 
@@ -261,19 +263,15 @@ Alias: `pitch()`
 
 ## useDetune
 
-Allow detuning to have effect on the played note. The detuning is made by adding a floating-point value to the played note, Where the ratio is the amount of detune between one semitone and the next. For example `7.5` results in `7` semitones (mapped to the scale if `set scale` is used) and then a `0.5` semitone is added (= 50 cents). Detuning is applied after mapping the integer semitone to a scale.
+**REMOVED**
 
-**arguments**
-- {Bool/String} -> enable or disable with `on`/`off` or `0`/`1` detuning (default=0)
-
-```java
-new synth sine shape(1 2000) time(1) note(7.5 2) useDetune(on)
-new synth sine shape(1 2000) time(1) note(7 2) 
-```
+Allow detuning is enabled by default by adding a floating-point value to the played note, Where the ratio is the amount of detune between one semitone and the next. For example `7.5` results in `7` semitones (mapped to the scale if `set scale` is used) and then a `0.5` semitone is added (= 50 cents). Detuning is applied after mapping the integer semitone to a scale.
 
 ## super
 
 Add multiple oscillators in unison with a detuning factor to create a *SuperSaw* effect. One oscillator will always be the base frequency of the `note()`, the others are tuned above and below in incremental steps based on the detuning factor. The first argument sets the amount of oscillators (minum of 1, default=1), the second argument sets the detuning factor in semi-tones, the third optional argument sets the oscillator type for the odd numbered oscillators.
+
+Alias: `wave2()`, `osc2()`
 
 **arguments**
 - {Int+} -> number of oscillators (default=1, maximum=64)
@@ -307,11 +305,9 @@ new synth saw note(0 1) wave2(square 0.998)
 new synth saw note(0 1) super(2 -0.03 square)
 ```
 
-Alias: `wave2()` `osc2()`
-
 ## wave2
 
-**Deprecated, use super() instead**
+**DEPRECATED, use super() instead**
 
 Add a second oscillator to the synths sound. This can either be a sine, triangle, square or saw. The second argument sets a multiplication ratio for the second oscillators frequency.
 
@@ -330,21 +326,15 @@ Alias: `osc2()` `super`
 
 Add a noise oscillator to the synth sound. The first argument is the amplitude (gain), the second argument is the "color" of the noise between 0 and 1 (1 = white noise, lower values give a more darker noise sound).
 
-<!-- , the second, third and fourth argument control an LFO (low-frequency-oscillator) that modulates the amplitude of the noise.  -->
-
 **arguments**
 - {Float+} -> amplitude of the noise (default = 0)
 - {Float+} -> color of the noise 0-1 (default = 0.5)
-
-<!-- - {Number/Division} -> LFO speed in division (optional, default=1) -->
-<!-- - {Number} -> the slope of the LFO shape (0 is down, 0.5 is trangle, 1 is up) (optional, default=0.5) -->
-<!-- - {Number} -> the LFO depth (optional, default depends on other arguments) -->
 
 ```java
 new synth saw note(0 1) time(1/4) noise(0.3 0.8)
 ```
 
-# Sample and Loop only
+# Sample and Loop
 
 The sample and loop instruments allow you to play sound-recordings and loops. These so called "samples" are loaded in RAM and can be accessed by their filename (without the extension). 
 
@@ -355,6 +345,8 @@ The sample and loop instruments allow you to play sound-recordings and loops. Th
 
 Set the playback speed for the sample, where 1 = original speed, 0.5 = half the speed and 2 = twice as fast. Adjusting the playback speed will change the pitch of the sample. A negative value will play the sample backwards starting at the end (or at the `offset()` position)
 
+Alias: `rate()`
+
 **arguments**
 - {Number} -> playback speed (default=1)
 
@@ -364,9 +356,11 @@ new sample choir time(5) speed(-0.5)
 set all fx(reverb 2 17)
 ```
 
-## offset
+## start
 
-Set the offset (the start position of the playback) of the sample. 0 = start at the beginning, 0.5 = start midway in the sample. With long decaying samples the offset is very useful if playing the sounds backwards when using for example `speed(-1)`. 
+Set the start (the offset position of the playback) of the sample. 0 = start at the beginning, 0.5 = start midway in the sample. With long decaying samples the offset is very useful if playing the sounds backwards when using for example `speed(-1)`. 
+
+Alias: `offset() | from() | onset()`
 
 **arguments**
 - {Float} -> the playback position between 0 and 1 (default=0)
@@ -374,22 +368,31 @@ Set the offset (the start position of the playback) of the sample. 0 = start at 
 ```java
 list positions randomFloat(8 0 0.5)
 
-new sample choir time(1/16) offset(positions)
+new sample choir time(1/16) start(positions)
 ```
-
-Alias: `start() | from() | onset()`
 
 ## useNote
 
-Set the `useNote` method to 1 in order to be able to play the sample on different pitches with the use of the `note()` function. The `note(0 0)` will be the original pitch, and `note(0 1)` will be the same as `speed(2)`. The `speed` method is disabled when using `note`.
+**DEPRECATED**
+
+## note
+
+*Mercury Playground only*
+
+The `note` method allows you to tune the sample to a specific pitch instead of using the `speed()` function. The function works the same as the `note` function explained under the `synth`.
+
+## tune
+
+*Mercury Playground only*
+
+Set the base note as a MIDI value for the sample to determine how the `note()` function changes the playback speed. For example if your sample was recorded as a `a4` then tune will be set to `69`.
 
 **arguments**
-- {Int+} -> turn the note usage on/off (default=0)
+- {Number+} -> MIDI pitch as base for tuning (optional, default=60)
 
 ```java
-list melody [0 3 7 9 -1]
-
-new sample pluck_c time(1/8) useNote(1) note(melody 0)
+list notes [0 7 5 3]
+new sample kalimba_a time(1/4) note(notes 2) tune(a3)
 ```
 
 ## stretch
@@ -407,12 +410,62 @@ new sample chimes stretch(1 1 general) speed(-1)
 
 ### Stretching modes explained
 
+*Mercury4Max only*
+
 - `basic` : best option for real-time performance
 - `monophonic` : best option for any monophonic source without ambience
 - `rhythmic` : best option for drums and percussion when transient preservation is critical
 - `general` : balances spectral integrity with transient preservaton
 - `extremestretch` : optimized for stretching (slowing down) material, limited to a stretch factor between 0.5 and 4
 - `effcient` : best option when CPU efficiency is critical
+
+# polySynth
+
+The polySynth functions the same as the synth in the sense that you choose a waveform, set a `note()`, add a `shape()`, etc. For explanation of those functions see above.
+
+The extra feature of the polySynth is that it allows for overlapping notes to generate for example chords. Notes provided to the `note()` function as a 2-dimensional list will be played at the same time as a chord. By default there are 8 voices available at the same time.
+
+```java
+// note the double [[ ]] to generate a 2d-list
+list chord [ [ 0 4 5 7 8 10 12 ] ]
+
+new polySynth sine note(chord 2) time(1/2) shape(1 1/4) 
+```
+
+## steal
+
+If new notes are triggered while all voices are still in use they will not be played. This behaviour can be changed by setting the stealing to `on` or `1`.
+
+**arguments**
+- {Bool/Name} -> turn voice stealing `on` (optional, default=off)
+
+```java
+list notes spread(16 0 36)
+
+new polySynth sine note(notes 2) time(1/16) shape(1 1/1) steal(on)
+```
+
+## voices
+
+**not implemented yet**
+
+# polySample
+
+*Mercury Playground only*
+
+The polySample functions the same as the sample in the sense that you choose a sample file, set a `speed()`, add a `shape()`, etc. For explanation of those functions see `sample` above.
+
+The extra feature of the polySample is that it allows for overlapping sounds. For example useful when generating chords. Notes provided to the `note()` function as a 2-dimensional list will be played at the same time as a chord. By default there are 8 voices available at the same time.
+
+For voice-stealing see `steal` under `polySynth`. For setting voice-amount see `voices` under `polySynth`.
+
+```java
+set tempo 100
+set scale dorian eb
+
+list notes shuffle(spread(24))
+new polySample piano_e time(1/16) note(notes 1) shape(1 1/2) steal(off) tune(64)
+```
 
 # Midi
 

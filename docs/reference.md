@@ -14,7 +14,7 @@
 	- [silence](./00-general.md#silence)
 	- [audio](./00-general.md#audio)  *(Mercury4Max only)*
 
-- [Global (set)](./01-global.md)
+- [set (global)](./01-global.md)
 	- [tempo](./01-global.md#tempo)
 	- [scale](./01-global.md#scale)
 	- [scalar](./01-global.md#scalar)  *(Mercury4Max only)*
@@ -26,8 +26,8 @@
 	- [midi](./01-global.md#midi-and-midiclock)  *(Mercury4Max only)*
 	- [click](./01-global.md#click)  *(Mercury4Max only)*
 
-- [Synth/Sample/Midi (new)](./02-instrument.md)
-	- All instruments (except midi)
+- [new (instruments)](./02-instrument.md)
+	- [All instruments (except midi)](./02-instrument.md#all-instruments)
 		- [name](./02-instrument.md#name)
 		- [group](./02-instrument.md#group)
 		- [time](./02-instrument.md#time)
@@ -36,36 +36,40 @@
 		- [gain](./02-instrument.md#gain)
 		- [pan](./02-instrument.md#pan)
 		- [fx](./02-instrument.md#fx)
-	- Synth / polySynth
+	- [synth](./02-instrument.md#synth)
 		- [note](./02-instrument.md#note)
 		- [useDetune](./02-instrument.md#usedetune) *deprecated*
 		<!-- - [wave2](./02-instrument.md#wave2) -->
 		- [super](./02-instrument.md#super)
-	- Sample / Loop
+	- [sample / loop](./02-instrument.md#sample-and-loop)
 		- [speed](./02-instrument.md#speed)
 		- [offset](./02-instrument.md#offset)
 		<!-- - [useNote](./02-instrument.md#usenote) -->
-		<!-- - [note](./02-instrument.md#note) -->
 		- [stretch](./02-instrument.md#stretch)
-	- Midi
-		- [note](./02-instrument.md#note-1)
+		- [note](./02-instrument.md#note-1) *(MercuryPlayground only)*
+	- [polySynth](./02-instrument.md#polysynth)
+		- [steal](./02-instrument.md#steal) 
+		- [voices](./02-instrument.md#voices)
+	- [polySample](./02-instrument.md#polysample) *(MercuryPlayground only)*
+		- [steal](./02-instrument.md#steal) 
+		- [voices](./02-instrument.md#voices)
+	- [midi](./02-instrument.md#midi)
+		- [note](./02-instrument.md#note-2)
 		- [length](./02-instrument.md#length)
 		- [out](./02-instrument.md#out)
 		- [chord](./02-instrument.md#chord)
-		- [sync](./02-instrument.md#sync)
-	- Input
-		- [input](./02-instrument.md#input)
-	- Modulator *(Mercury4Max only)*
+		- [sync](./02-instrument.md#sync) *(Mercury4Max only)*
+	- [input](./02-instrument.md#input)
+	- [modulator](./02-instrument.md#modulator) *(Mercury4Max only)*
 		- [name](./02-instrument.md#modulator-name)
 		- [time](./02-instrument.md#modulator-time)
 		- [range](./02-instrument.mdmodulator-range)
+	- [emitter (osc)](./03-emitter.md) *(Mercury4Max only)*
+		- [osc](./03-emitter.md#osc)
+		- [name](./03-emitter.md#name)
+		- [address](./03-emitter.md#address)
 
-- [Emitter (osc)](./03-emitter.md) *(Mercury4Max only)*
-	- [osc](./03-emitter.md#osc)
-	- [name](./03-emitter.md#name)
-	- [address](./03-emitter.md#address)
-
-- [Sound Effects (fx)](./04-fx.md)
+- [fx (Sound Effects)](./04-fx.md)
 	- [freeze](./04-fx.md#freeze)  *(Mercury4Max only)*
 	- [shift](./04-fx.md#shift)
 	- [triggerFilter](./04-fx.md#envFilter)
@@ -80,7 +84,7 @@
 	- [lfo](./04-fx.md#lfo)
 	- [echo / delay](./04-fx.md#delay)
 
-- [List functions](./05-ring.md)
+- [list (list functions)](./05-ring.md)
 	- [Generative Methods](./05-ring.md#generative-methods)
 		- [spread / spreadFloat](./05-ring.md#spread-spreadfloat)
 		- [spreadInclusive / spreadInclusiveFloat](./05-ring.md#spreadInclusive-spreadInclusiveFloat)
