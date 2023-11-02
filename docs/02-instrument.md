@@ -13,7 +13,7 @@ For instrument specific functions see below:
 
 ## name
 
-Set the name for this instrument. This can be any string of 2 or more characters. The `name` is used as a reference to the instrument when the `set` method is used to call methods for a specific instrument.
+Set the name for this instrument. This can be any string of 2 or more characters. The `name` is used as a reference to the instrument when the `set` method is used to call methods for a specific instrument. The name is also used to generate an OSC message that is send out from Mercury to trigger external things in sync with the instrument.
 
 **arguments**
 - {Name} -> an instrument name (default=null)
@@ -23,6 +23,12 @@ new synth saw name(bob)
 	set bob gain(0.8) time(1/16)
 new sample kick_909 name(alice)
 	set alice gain(1.2) time(1/4)
+```
+
+```
+// expected osc messages:
+/bob 1
+/alice 1
 ```
 
 ## group
