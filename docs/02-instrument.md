@@ -5,7 +5,7 @@ The following methods apply to all the types of instruments: `synth`, `sample`, 
 For instrument specific functions see below:
 
 - [Synth](#synth)
-- [Sample / Loop](#sample)
+- [Sample / Loop](#sample-and-loop)
 - [polySynth](#polysynth)
 - [polySample](#polysample) *MercuryPlayground only*
 - [Midi](#midi)
@@ -423,7 +423,7 @@ new sample chimes stretch(1 1 general) speed(-1)
 
 The polySynth functions the same as the synth in the sense that you choose a waveform, set a `note()`, add a `shape()`, etc. For explanation of those functions see above.
 
-The extra feature of the polySynth is that it allows for overlapping notes to generate for example chords. Notes provided to the `note()` function as a 2-dimensional list will be played at the same time as a chord. By default there are 8 voices available at the same time.
+The extra feature of the polySynth is that it allows for overlapping notes to generate for example chords. Notes provided to the `note()` function as a 2-dimensional list will be played at the same time as a chord. By default there are 8 voices available at the same time. Voice stealing is `on` by default meaning if a new note is played while all voices are busy the oldest triggered note will be removed.
 
 ```java
 // note the double [[ ]] to generate a 2d-list
@@ -437,12 +437,12 @@ new polySynth sine note(chord 2) time(1/2) shape(1 1/4)
 If new notes are triggered while all voices are still in use they will not be played. This behaviour can be changed by setting the stealing to `on` or `1`.
 
 **arguments**
-- {Bool/Name} -> turn voice stealing `on` (optional, default=off)
+- {Bool/Name} -> turn voice stealing `on` or `off` (optional, default=on)
 
 ```java
 list notes spread(16 0 36)
 
-new polySynth sine note(notes 2) time(1/16) shape(1 1/1) steal(on)
+new polySynth sine note(notes 2) time(1/16) shape(1 1/1) steal(off)
 ```
 
 ## voices
