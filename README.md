@@ -322,6 +322,7 @@ Most sounds in Mercury are downloaded from [freesound.org](http://www.freesound.
 ## 👾 Made with Mercury
 
 - *Made something with Mercury? Please add a URL here and send a pull request!* 😎
+- [Linalab(Mercury) + Turbulente(p5Live) - Live at Algorave Lisbon](https://youtu.be/WSPNDC0a2X4)
 - [T.mo - Liber Abaci (Mercury Coding Sessions)](https://youtu.be/syUL76qCV6w)
 - [Roald van Dillewijn - Smashing Temparateness (Mercury Coding Sessions)](https://youtu.be/KJ4OpJ3-Ik0)
 - [Rafa & Timo - "Hello, off-world!" (Mercury Coding Sessions)](https://youtu.be/BbOz1XBu8f8)
