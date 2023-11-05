@@ -236,3 +236,91 @@ set click out 3 4
 set click default
 // reset all attributes to the default settings
 ```
+
+# samples
+
+With `set samples` you can load samples in the playback buffer so they can be used with the `sample`, `loop` and `polySample` instruments. There are multiple ways to add samples, for example using a `url` from a freesound.org preview file, or by using a soundfile from a raw github content link. `set samples` can only be called **once** in the code, so it is important to add all the sounds you want in that single line. This can lead to a very long line of code, so there are some ways to work around this. For example it is possible to input a `.json` file that consists of name:url pairs for the soundfiles. You don't have to load the samples every time you evaluate, once at the beginning of a session is enough. So after loading you can comment the line and the samples are available until you refresh/restart the browser.
+
+Below you can read various scenarios:
+
+## single soundfile
+
+### freesound
+
+Load a single soundfile from for example freesound.org. Go to the site and find the file you like, right-click on the file and click 'inspect' (in chromium browser). Search for the `cdn.freesound.org/previews` url in the html, this is the soundfile that needs to be copy-pasted. By default the name of the soundfile will be the name you use in the code.
+
+```java
+// only evaluate set samples once, when loading is done you can comment the line
+set samples 'https://cdn.freesound.org/previews/145/145778_2101444-lq.mp3'
+
+new sample '145778_2101444-lq' time(1/4)
+```
+
+You can load a single soundfile and also adjust the name by creating a list. The first item in the list is the name you want to give the sample. The second item in the list is the url to the file.
+
+```java
+// only evaluate set samples once, when loading is done you can comment the line
+set samples [ psykick 'https://cdn.freesound.org/previews/145/145778_2101444-lq.mp3' ]
+
+new sample psykick time(1/4)
+```
+
+### github
+
+Load a single soundfile from a source like github by locating the file in the repository. For example the url looks like this: `https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/samples/drums/kick/kick_house.wav`. Now construct a new url starting with `https://raw.githubusercontent.com/` then past the `user/repository/branch` after this but remove the `/blob`! For example the result should look like this: `https://raw.githubusercontent.com/tmhglnd/mercury/master/mercury_ide/media/samples/drums/kick/kick_house.wav`
+
+```java
+set samples [ housekick 'https://raw.githubusercontent.com/tmhglnd/mercury/master/mercury_ide/media/samples/drums/kick/kick_house.wav' ]
+
+new sample housekick time(1/4)
+```
+
+## multiple soundfiles
+
+### lists
+
+There are two ways to load a larger collection of samples. The first option is by creating variables of `list`s that store the name and url combination. Then in one single `set samples` line you can add all the names of the lists
+
+```java
+list s1 [ snare_short 'https://cdn.freesound.org/previews/671/671221_3797507-lq.mp3' ]
+list s2 [ psykick 'https://cdn.freesound.org/previews/145/145778_2101444-lq.mp3' ]
+list s3 [ hat_short 'https://cdn.freesound.org/previews/222/222058_1676145-lq.mp3' ]
+set samples s1 s2 s3
+
+new sample psykick time(1/4)
+new sample snare_short time(1/16) play(euclid(7 3)) gain(0.5)
+new sample hat_short time(1/4 1/8) gain(1.3)
+```
+
+### json
+
+The second option is creating a `.json` file. This file can be stored on the computer or on for example github. The json file is structured in the following way: `{ "sample-name" : "url-to-file" }`. When clicking `add sounds` the json file can be selected instead of a soundfile and it will be used to load the samples.
+
+```json
+{
+	"snare_short" : "https://cdn.freesound.org/previews/671/671221_3797507-lq.mp3",
+	"psykick" : "https://cdn.freesound.org/previews/145/145778_2101444-lq.mp3",
+	"hat_short" : "https://cdn.freesound.org/previews/222/222058_1676145-lq.mp3"
+}
+```
+
+```java
+set samples <url-to-raw-json-file>
+
+new sample psykick time(1/4)
+new sample snare_short time(1/16) play(euclid(7 3)) gain(0.5)
+new sample hat_short time(1/4 1/8) gain(1.3)
+```
+
+### base
+
+If the base url is the same for all the sample files, for example when loading samples via freesound, you can add a `"_base" :` key, followed by the part of the url that is the same for all the samples. Make sure you include the last `/` so the complete url is correct.
+
+```json
+{
+	"snare_short" : "671/671221_3797507-lq.mp3",
+	"psykick" : "145/145778_2101444-lq.mp3",
+	"hat_short" : "222/222058_1676145-lq.mp3",
+	"_base" : "https://cdn.freesound.org/previews/"
+}
+```

@@ -25,6 +25,7 @@
 	- [osc](./01-global.md#osc)  *(Mercury4Max only)*
 	- [midi](./01-global.md#midi-and-midiclock)  *(Mercury4Max only)*
 	- [click](./01-global.md#click)  *(Mercury4Max only)*
+	- [samples](./01-global.md#samples) *(Mercury Playground only)*
 
 - [new (instruments)](./02-instrument.md)
 	- [All instruments (except midi)](./02-instrument.md#all-instruments)
