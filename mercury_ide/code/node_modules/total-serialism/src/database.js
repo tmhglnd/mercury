@@ -111,5 +111,10 @@ function buildScalaSet(f, fold){
 	});
 
 	fs.writeJsonSync(f, dataBase, { spaces: 0 });
+
+	// let buf = Buffer.from(JSON.stringify(dataBase), 'utf8');
+	// let b64 = buf.toString('base64');
+	// fs.writeFileSync('data/scl.min.txt', b64);
+
 	console.log("Scala database parsed and written succesfully");
 }

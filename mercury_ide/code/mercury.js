@@ -159,10 +159,10 @@ const handlers = {
 	// 
 	// generate a euclidean rhythm evenly spacing n-beats amongst n-steps
 	'euclid' : (...v) => {
-		return Algo.euclid(...v);
+		return Algo.fastEuclid(...v);
 	},
 	'euclidean' : (...v) => {
-		return Algo.euclid(...v);
+		return Algo.fastEuclid(...v);
 	},
 	// generate a rhythm based on a hexadecimal string (0-f)
 	'hexBeat' : (...v) => {
@@ -383,6 +383,22 @@ const handlers = {
 	'spray' : (...v) => {
 		return Mod.spray(...v);
 	},
+	// slice an array into one or multiple parts
+	'slice' : (...v) => {
+		return Mod.slice(...v);
+	},
+	// split an array recursively till the end
+	'split' : (...v) => {
+		return Mod.split(...v);
+	},
+	// cut a piece of the array and return
+	'cut' : (...v) => {
+		return Mod.slice(...v)[0];
+	},
+	// cut a piece of the array and return the last part
+	'cutLast' : (...v) => {
+		return Mod.slice(...v).pop();
+	},
 	// stretch an array to a specified length, interpolating values
 	'stretch' : (...v) => {
 		// swap because of implementation in total-serialism
@@ -495,6 +511,22 @@ const handlers = {
 	},
 	'rtof' : (...v) => {
 		return TL.relativeToFreq(...v);
+	},
+	// chords generation
+	'chordsFromNumerals' : (...v) => {
+		return TL.chordsFromNumerals(v);
+	},
+	'makeChords' : (...v) => {
+		return TL.chordsFromNumerals(v);
+	},
+	'chordsFigured' : (...v) => {
+		return TL.chordsFromNumerals(v);
+	},
+	'chordsFromNames' : (...v) => {
+		return TL.chordsFromNames(v);
+	},
+	'chordsNamed' : (...v) => {
+		return TL.chordsFromNames(v);
 	},
 	// 
 	// Statistic Methods

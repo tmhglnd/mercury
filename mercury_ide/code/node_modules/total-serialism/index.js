@@ -37,3 +37,8 @@ exports.setScale    = Translate.setScale;
 exports.getScale    = Translate.getScale;
 exports.setRoot     = Translate.setRoot;
 exports.getRoot     = Translate.getRoot;
+
+// Include all methods as part of the main library
+// This allows you to use everything without having to specify the 
+// various libraries
+// Object.assign(this, Generative, Algorithmic, Stochastic, Transform, Statistic, Translate, Utility);
