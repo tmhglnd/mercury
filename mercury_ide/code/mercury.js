@@ -55,10 +55,10 @@ const handlers = {
 		}
 
 		// copy sketch to clipboard for pasting to other editors
-		if (AUTO_COPY){
-			let head = ['//=== MERCURY SKETCH ' + date() + ' ==='];
-			copy.writeSync(head.concat(v).join('\n'));
-		}
+		// if (AUTO_COPY){
+		//	let head = ['//=== MERCURY SKETCH ' + date() + ' ==='];
+		//	copy.writeSync(head.concat(v).join('\n'));
+		// }
 	},
 	// output the latest parsed code
 	'output' : () => {
