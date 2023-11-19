@@ -15,8 +15,10 @@
 	- [Idiophonic](#idiophonic-1)
 	- [Foley](#foley-1)
 	- [Noise](#noise-1)
-<!-- - [Waveforms](#waveforms) -->
 - [Credits](#credits)
+- [Waveforms](#waveforms)
+	- [Overview](#overview)
+
 # One-shots
 
 ## Drums
@@ -826,15 +828,202 @@ You can find the packs online at:
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
 
-<!-- 
+
 # Waveforms
 
-## Basic
+All single cycle waveforms thanks to the amazing AWKF pack. AKWF or Adventure Kid Waveforms is a collection of one cycle waveforms to be used within synthesizers or other kinds of sound generators. 
 
-#### sine
+- https://github.com/KristofferKarlAxelEkstrand/AKWF-
 
-#### triangle
+## Overview
 
-#### saw
+- sine (basic in synth)
+- saw (basic in synth)
+- square (basic from synth)
+- triangle (basic from synth)
+- [altosax]()
+- [bit]()
+- [blend]()
+- [cello]()
+- [dbass]()
+- [distorted]
+- [ebass]()
+- [eorgan]()
+- [guitar]()
+- [raw]()
+- [voice]()
 
-#### square -->
+#### altosax
+* AKWF_altosax_0025.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### bit
+* AKWF_bitreduced_0013.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### bit_1
+* AKWF_bitreduced_0011.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### bit_2
+* AKWF_bitreduced_0016.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### bit_3
+* AKWF_bitreduced_0038.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### blend
+* AKWF_blended_0058.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### cello
+* AKWF_cello_0015.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### cello_1
+* AKWF_cello_0007.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### cello_2
+* AKWF_cello_0008.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### dbass
+* AKWF_dbass_0003.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### dbass_1
+* AKWF_dbass_0008.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### dbass_2
+* AKWF_dbass_0013.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### distorted
+* AKWF_distorted_0013.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### distorted_1
+* AKWF_distorted_0011.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### distorted_2
+* AKWF_distorted_0019.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### ebass
+* AKWF_ebass_0009.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### ebass_1
+* AKWF_ebass_0001.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### ebass_2
+* AKWF_ebass_0005.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### eorgan
+* AKWF_eorgan_0018.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### eorgan_1
+* AKWF_eorgan_0026.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### eorgan_2
+* AKWF_eorgan_0059.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### eorgan_3
+* AKWF_eorgan_0083.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### guitar
+* AKWF_aguitar_0002.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### raw
+* AKWF_raw_0009.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### raw_1
+* AKWF_raw_0005.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### raw_2
+* AKWF_raw_0012.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### saw_1
+* AKWF_R_asym_saw_10.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### saw_2
+* AKWF_saw_0002.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### square_1
+* AKWF_rSymSqu_06.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### square_2
+* AKWF_squ_0006.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### voice
+* AKWF_hvoice_0044.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### voice_a
+* AKWF_hvoice_0010.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### voice_i
+* AKWF_hvoice_0012.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### voice_eu
+* AKWF_hvoice_0031.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
+
+#### voice_o
+* AKWF_hvoice_0036.wav
+* url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
+* license: Creative Commons 0
