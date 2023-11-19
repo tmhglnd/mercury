@@ -53,6 +53,7 @@
 	- [polySynth](./02-instrument.md#polysynth)
 		- [steal](./02-instrument.md#steal) 
 		- [voices](./02-instrument.md#voices)
+		- [spread](./02-instrument.md#spread) *(Mercury4Max only)*
 	- [polySample](./02-instrument.md#polysample) *(MercuryPlayground only)*
 		- [steal](./02-instrument.md#steal) 
 		- [voices](./02-instrument.md#voices)

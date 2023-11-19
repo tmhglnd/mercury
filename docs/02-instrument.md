@@ -460,6 +460,20 @@ new polySynth sine note(notes 2) time(1/16) shape(1 1/1) steal(off)
 
 **not implemented yet**
 
+## spread
+
+Use the spread function to add little delays with optional randomness between every note from a chord, resulting in the chord sounding broken up in time.
+
+**arguments**
+- {Number+/Division} -> the delaytime between note triggers in ms or division (default=0)
+- {Number+/Division} -> random delaytime offset added to the delaytime in ms or division (default=0)
+
+```java
+list notes [[0 3 7 11 12]]
+
+new polySynth sine note(notes 2) shape(1 1/1) time(1/1) spread(150 50)
+```
+
 # polySample
 
 *Mercury Playground only*
