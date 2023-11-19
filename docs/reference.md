@@ -41,7 +41,9 @@
 		- [note](./02-instrument.md#note)
 		- [useDetune](./02-instrument.md#usedetune) *deprecated*
 		<!-- - [wave2](./02-instrument.md#wave2) -->
+		- [sub](./02-instrument.md#sub) *(Mercury4Max only)*
 		- [super](./02-instrument.md#super)
+		- [noise](./02-instrument.md#noise) *(Mercury4Max only)*
 	- [sample / loop](./02-instrument.md#sample-and-loop)
 		- [speed](./02-instrument.md#speed)
 		- [offset](./02-instrument.md#offset)

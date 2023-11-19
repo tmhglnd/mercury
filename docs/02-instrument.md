@@ -305,6 +305,17 @@ new synth saw note(0 1) wave2(square 0.998)
 new synth saw note(0 1) super(2 -0.03 square)
 ```
 
+## sub
+
+Add a second sinewave oscillator one octave lower than the note played for a sub frequency.
+
+**arguments**
+- {Float+} -> amplitude for the sub oscillator (default=0)
+
+```java
+new synth sine note(0 2) time(1/4) sub(0.8)
+```
+
 ## wave2
 
 **DEPRECATED, use super() instead**
