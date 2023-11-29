@@ -335,14 +335,15 @@ Alias: `osc2()` `super`
 
 ## noise
 
-Add a noise oscillator to the synth sound. The first argument is the amplitude (gain), the second argument is the "color" of the noise between 0 and 1 (1 = white noise, lower values give a more darker noise sound).
+Add a noise oscillator to the synth sound. The first argument is the amplitude (gain), the second argument is the "color" of the noise between 0 and 1 (1 = white noise, lower values give a more darker noise sound). When the modulation mode is turned on (with 1) the noise is modulated by the source of the oscillator (or oscillators if super and sub are used).
 
 **arguments**
 - {Float+} -> amplitude of the noise (default = 0)
-- {Float+} -> color of the noise 0-1 (default = 0.5)
+- {Float+} -> color of the noise 0-1 (default = 0.8)
+- {Bool} -> modulation mode (default = 0)
 
 ```java
-new synth saw note(0 1) time(1/4) noise(0.3 0.8)
+new synth saw note(0 1) time(1/4) noise(0.3 0.8 1)
 ```
 
 # Sample and Loop
