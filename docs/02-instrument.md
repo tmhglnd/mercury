@@ -164,6 +164,7 @@ Alias: `amp() | volume() | velocity()`
 **arguments**
 - {Float+} -> the (start) volume of the instrument (default=1)
 - {Number+} -> the sliding time in division or ms (optional, default=0)
+- {Bool} -> mute the instrument but still use named sends (default=0)
 <!-- - {Float+} -> the end volume of the instrument to generate a ramp (optional, default=previous-gain-value) -->
 
 ```java
