@@ -39,7 +39,7 @@
 		- [fx](./02-instrument.md#fx)
 	- [synth](./02-instrument.md#synth)
 		- [note](./02-instrument.md#note)
-		- [useDetune](./02-instrument.md#usedetune) *deprecated*
+		<!-- - [useDetune](./02-instrument.md#usedetune) *removed* -->
 		<!-- - [wave2](./02-instrument.md#wave2) -->
 		- [sub](./02-instrument.md#sub) *(Mercury4Max only)*
 		- [super](./02-instrument.md#super)
@@ -49,7 +49,8 @@
 		- [offset](./02-instrument.md#offset)
 		<!-- - [useNote](./02-instrument.md#usenote) -->
 		- [stretch](./02-instrument.md#stretch)
-		- [note](./02-instrument.md#note-1) *(MercuryPlayground only)*
+		- [note](./02-instrument.md#note-1)
+		- [tune](./02-instrument.md#tune)
 	- [polySynth](./02-instrument.md#polysynth)
 		- [steal](./02-instrument.md#steal) 
 		- [voices](./02-instrument.md#voices)

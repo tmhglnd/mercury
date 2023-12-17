@@ -228,7 +228,7 @@ The synth and polySynth instruments allow you to play synthesized sounds using a
 
 ## note
 
-Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root.
+Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root. Detuning/pitchbending can be done by providing a floating-point note number. The value behind the decimal point is the amount of detuning from one semitone to the next. For example `7.5` results in `7` semitones (mapped to the scale if `set scale` is used) and then a `0.5` semitone is added (= 50 cents). Detuning is applied after mapping the integer semitone to a scale.
 
 |`note(x y)`|-… |-3 |-2 |-1 |0     |1  |2  |3  |4  |5  |6  |7  |8  |9  |10 |11 |12   |13 |…  |
 |---------|---|---|---|---|------|---|---|---|---|---|---|---|---|---|---|---|------|---|---|
@@ -266,7 +266,7 @@ Alias: `pitch()`
 
 **REMOVED**
 
-Allow detuning is enabled by default by adding a floating-point value to the played note, Where the ratio is the amount of detune between one semitone and the next. For example `7.5` results in `7` semitones (mapped to the scale if `set scale` is used) and then a `0.5` semitone is added (= 50 cents). Detuning is applied after mapping the integer semitone to a scale.
+Detune is now done in the `note()` method by providing a floating-point note number. The value behind the decimal point is the amount of detuning from one semitone to the next. For example `7.5` results in `7` semitones (mapped to the scale if `set scale` is used) and then a `0.5` semitone is added (= 50 cents). Detuning is applied after mapping the integer semitone to a scale.
 
 ## super
 
@@ -386,26 +386,29 @@ new sample choir time(1/16) start(positions)
 
 ## useNote
 
-**DEPRECATED**
+**REMOVED**
 
 ## note
 
-*Mercury Playground only*
+<!-- *Mercury Playground only* -->
 
-The `note` method allows you to tune the sample to a specific pitch instead of using the `speed()` function. The function works the same as the `note` function explained under the `synth`.
+The `note` method allows you to tune the sample to a specific pitch instead of using the `speed()` function. The function works the same as the `note` function explained under the `synth`. Please look there for further information.
 
 ## tune
 
-*Mercury Playground only*
+<!-- *Mercury Playground only* -->
 
-Set the base note as a MIDI value for the sample to determine how the `note()` function changes the playback speed. For example if your sample was recorded as a `a4` then tune will be set to `69`.
+Set the base note as a MIDI value for the sample to determine how the `note()` function changes the playback speed. For example if your sample was recorded as a `a4` then you will set tune to `69`. `note(0 2)` will be the same as the `tune()` value in the case of a scale set to have `c` as the root.
 
 **arguments**
 - {Number+} -> MIDI pitch as base for tuning (optional, default=60)
 
 ```java
+set scale minor c
+
 list notes [0 7 5 3]
-new sample kalimba_a time(1/4) note(notes 2) tune(a3)
+// tune the kalimba to a3
+new sample kalimba_a time(1/4) note(notes 2) tune(57)
 ```
 
 ## stretch
