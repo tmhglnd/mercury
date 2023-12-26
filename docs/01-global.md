@@ -144,12 +144,13 @@ set lowPass 800 2/1
 
 ## beatRepeat
 
-A beatrepeating effect (sometimes called stutter) that continuously repeats a section of the entire sound that was last played. The repating interval is determined in divisions (`1/4`, `3/16`, etc). It immediately starts repeating at the moment of evaluating the code, so timing is key!
+A beatrepeating effect (sometimes called stutter) that continuously repeats a section of the entire sound that was last played. The repating interval is determined in divisions (`1/4`, `3/16`, etc). It immediately starts repeating at the moment of evaluating the code, so timing is key! You can switch to a different section of the beatrepeat recording with optional the second argument. Maximum recording length is 8 seconds (2x 4/4 bars at 60bpm).
 
 Alias: `stutter`
 
 **arguments**
 - {Division} -> beatrepeat time interval in division
+- {Division} -> beatrepeat offset time in division
 
 ```java
 set beatRepeat 1/4
