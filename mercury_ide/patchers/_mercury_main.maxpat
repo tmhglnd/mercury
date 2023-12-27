@@ -245,7 +245,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 435.0, 1793.0, 192.666666666666686, 20.0 ],
+					"patching_rect" : [ 435.0, 1740.0, 192.666666666666686, 20.0 ],
 					"text" : "// stutter FX"
 				}
 
@@ -1798,7 +1798,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 165.263900333333311, 1793.0, 126.999955000000057, 22.0 ],
+					"patching_rect" : [ 165.263900333333311, 1740.0, 126.999955000000057, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -48572,7 +48572,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"items" : [ "FaceTime HD Camera", ",", "OBS Virtual Camera" ],
+									"items" : [ "FaceTime HD Camera", ",", "OBS Virtual Camera", ",", "NDI Video" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -52222,6 +52222,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -55549,7 +55551,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "M4", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -57107,7 +57109,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 435.0, 1740.0, 192.666666666666686, 33.0 ],
+					"patching_rect" : [ 435.0, 1793.0, 192.666666666666686, 33.0 ],
 					"text" : "// Master\n// hipass / lopass SVF filters"
 				}
 
@@ -59354,8 +59356,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -68540,7 +68540,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 165.263900333333311, 1740.0, 126.999955000000057, 22.0 ],
+					"patching_rect" : [ 165.263900333333311, 1793.0, 126.999955000000057, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -74596,14 +74596,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-47", 1 ],
+					"destination" : [ "obj-401", 1 ],
 					"source" : [ "obj-216", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-47", 0 ],
+					"destination" : [ "obj-401", 0 ],
 					"source" : [ "obj-216", 0 ]
 				}
 
@@ -74703,14 +74703,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-216", 1 ],
+					"destination" : [ "obj-47", 1 ],
 					"source" : [ "obj-231", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-216", 0 ],
+					"destination" : [ "obj-47", 0 ],
 					"source" : [ "obj-232", 0 ]
 				}
 
@@ -76554,14 +76554,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-401", 1 ],
+					"destination" : [ "obj-216", 1 ],
 					"source" : [ "obj-47", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-401", 0 ],
+					"destination" : [ "obj-216", 0 ],
 					"source" : [ "obj-47", 0 ]
 				}
 
