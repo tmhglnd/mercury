@@ -1,4 +1,6 @@
 
+⚠️ **This Mercury tutorial is outdated, for up-to-date tutorials please use the browser version of mercury at [mercury.timohoogland.com](https://mercury.timohoogland.com)** ⚠️
+
 # 🤓 Mercury Tutorial
 
 🚧 **work in progress** 🚧
@@ -22,9 +24,9 @@ While working on this tutorial you might run into some issues where something is
 	- [What's the `time()`?]()
 	- [More samples]()
 	- [Changing `tempo`]()
-	- [A `beat()` and `ring`]()
+	- [A `beat()` and `list`]()
 		- [Musical Notation Systems]()
-		- [The `ring`]()
+		- [The `list`]()
 		- [To `play(1)` or not to `play(0)`]()
 		- [Linear beats]()
 	- []()
@@ -154,15 +156,15 @@ The tempo is definited in BPM, or Beats Per Minute on a quarter note (`1/4`). Th
 
 >The `set` command is a command that allows you to change parameters of global settings such as the tempo. Later on we'll see how to use it for instruments as well.
 
-## `play()` and `ring`
+## `play()` and `list`
 
 After a while of playing with these divisions and tempo you will maybe think to yourself: "Would it also be possible to play this sample in the same tempo and timing, but maybe not all the time?"
 
-This is where we will introduce `ring`'s and the `play()` function. But before we start making rhythms, let's first have a quick look at various forms of music notation systems.
+This is where we will introduce `list`'s and the `play()` function. But before we start making rhythms, let's first have a quick look at various forms of music notation systems.
 
 ### Musical notation systems
 
-[*skip history lesson*](#the-ring)
+[*skip history lesson*](#the-list)
 
 Maybe you are familiar with the modern western [music notation](https://en.wikipedia.org/wiki/Musical_notation). A notation system consisting of five horizontal lines stretching over the paper. At the beginning of the lines a so called clef is drawn, denoting the position of the note G or F depending on the type of clef. From that point onwards notes can be written down by using various symbols on the paper (usually oval shaped), where the vertical position of the symbol (on or between the lines) determines the pitch (how high or low is the note), the horizontal position together with the symbol itself determines the timing and length of the note (when is it played and for how long).
 
@@ -170,20 +172,20 @@ This western notation system is a form of musical representation originating fro
 
 Around 1920 a new form of composition technique, [*Serialism*],(https://en.wikipedia.org/wiki/Serialism) was described by Josef Hauer and used avidly by composer Arnold Schoenberg. Serialism uses series (or sequences) of values to describe various musical parameters. A series could hold for example pitch information (such as note names c e g f), but could also have rhythmical information. In this way all components (pitch, length, dynamics, articulation and more) of a note can be captured in a series and used to compose with. More on this will be discussed in the section [Algorithmic Composition](#algorithmic-composition)
 
-### The `ring`
+### The `list`
 
-Mercury has its roots in the concept of *Serialism*, where parameters such as pitch and rhythm are expressed in a series of values that adjust the instruments state over time. This series in Mercury is refered to as a `ring`. It is called a ring because the serie (or sequence) is circular. Every instrument has an internal counter. This counter increments for every time an instrument triggers its sound. This is also called the sequencer. When a ring is added as argument the instrument uses its count as a lookup-position (index) taking the corresponding value in the serie. As soon as the index is higher then the amount of values in the serie it will return to the beginning and start over, hence a circular array or `ring`.
+Mercury has its roots in the concept of *Serialism*, where parameters such as pitch and rhythm are expressed in a series of values that adjust the instruments state over time. This series in Mercury is refered to as a `list`. It was originally called a `ring` because the serie (or sequence) is circular. Every instrument has an internal counter. This counter increments for every time an instrument triggers its sound. This is also called the sequencer. When a list is added as argument the instrument uses its count as a lookup-position (index) taking the corresponding value in the serie. As soon as the index is higher then the amount of values in the serie it will return to the beginning and start over, hence a circular array or `list`.
 
-In order to create a ring you type the following code:
+In order to create a list you type the following code:
 ```java
-ring myFirstRing [0.25 0.5 0 2 4 8 16 32]
+list myFirstRing [0.25 0.5 0 2 4 8 16 32]
 ```
 
-The line starts with the code `ring`, followed by the name of the ring. The name can be any characters you like except for numerical values. All values between the `[` and `]` (square brackets) are part of the ring. Every value separated by a space is considered a new value. In this example the ring has 8 values starting at `0.25` and ending at `32`.
+The line starts with the code `list`, followed by the name of the list. The name can be any characters you like except for numerical values. All values between the `[` and `]` (square brackets) are part of the list. Every value separated by a space is considered a new value. In this example the list has 8 values starting at `0.25` and ending at `32`.
 
 ### To `play(1)` or not to `play(0)`
 
-In order to create a rhythm for an instrument we can make a ring consisting of zeroes and ones. The `1` represents a `TRUE` value, resulting in the triggering of the sound, the `0` a `FALSE` value that will not play. Now lets put this into practice. In order to keep it simple for now we erase the previous code and work with only one instrument. 
+In order to create a rhythm for an instrument we can make a list consisting of zeroes and ones. The `1` represents a `TRUE` value, resulting in the triggering of the sound, the `0` a `FALSE` value that will not play. Now lets put this into practice. In order to keep it simple for now we erase the previous code and work with only one instrument. 
 
 Type the following and execute:
 ```java
@@ -192,18 +194,18 @@ set tempo 115
 new sample hat_click time(1/16) play(1)
 ```
 
-This will sound similar to what we heard before. This is because the `play()` function only has a single `1` as argument, which means all notes are played. This is actually the default and was already the case in the code above. Now we create a ring with zeroes and ones and apply the name of the ring as argument in the function.
+This will sound similar to what we heard before. This is because the `play()` function only has a single `1` as argument, which means all notes are played. This is actually the default and was already the case in the code above. Now we create a list with zeroes and ones and apply the name of the list as argument in the function.
 
 Change your code and execute:
 ```java
 set tempo 115
 
-ring aRhythm [1 0 0 1 0 1 1 0]
+list aRhythm [1 0 0 1 0 1 1 0]
 
 new sample hat_909 time(1/16) play(aRhythm)
 ```
 
-Hear how the rhythm is applied to the sample. Every 16th note (`1/16`) the internal counter from that instrument looks up a value from the `ring aRhythm`. When it is a `1` it is played, when it is a `0` it is not. 
+Hear how the rhythm is applied to the sample. Every 16th note (`1/16`) the internal counter from that instrument looks up a value from the `list aRhythm`. When it is a `1` it is played, when it is a `0` it is not. 
 
 Now try some different rhythms of different lengths, for example: `[0 1 0 0 1]`, `[1 1 0 1 1 0 0]`, `[1 1 1 0]`.
 
@@ -211,7 +213,7 @@ Now try some different rhythms of different lengths, for example: `[0 1 0 0 1]`,
 
 ## Combining rhythms
 
-In order to make more complex rhythms we can take a step back to our pop beat from [more samples](#more-samples). Now instead of using different `time()` arguments to make a rhythm, we will use the power of `ring`'s to look up a `1` or `0` to let it play the sound or not. First we make sure that all instruments play in the same time.
+In order to make more complex rhythms we can take a step back to our pop beat from [more samples](#more-samples). Now instead of using different `time()` arguments to make a rhythm, we will use the power of `list`'s to look up a `1` or `0` to let it play the sound or not. First we make sure that all instruments play in the same time.
 
 Make the following code:
 
@@ -223,15 +225,15 @@ new sample snare_fat time(1/16) play(1)
 new sample hat_click time(1/16) play(1)
 ```
 
-Execute this code and you will hear all samples play all 16th notes. Now we create different rings for the different instruments. Notice the rings don't have to be the same length. They will each *loop* individually. This allows you to quickly create quite complex rhythms that change over time with just a few lines of code!
+Execute this code and you will hear all samples play all 16th notes. Now we create different lists for the different instruments. Notice the lists don't have to be the same length. They will each *loop* individually. This allows you to quickly create quite complex rhythms that change over time with just a few lines of code!
 
 Adjust and execute:
 ```java
 set tempo 95
 
-ring kickBeat [1 0 0]
-ring snareBeat [0 0 0 0 1 0 0 0]
-ring hatBeat [1 1 0 1 1 0 1]
+list kickBeat [1 0 0]
+list snareBeat [0 0 0 0 1 0 0 0]
+list hatBeat [1 1 0 1 1 0 1]
 
 new sample kick_house time(1/16) play(kickBeat)
 new sample snare_fat time(1/16) play(kickBeat)
@@ -240,30 +242,30 @@ new sample hat_click time(1/16) play(kickBeat)
 
 ## Linear beats
 
-Instead of using multiple instruments to create our beat, we can also use one sampler and let it play different sounds. For this we need to declare a ring with the names of the samples in the order we want to play them. The playing of samples without any overlap or playing at the same time is sometimes called a *linear beat*. For example we want to play kick, hat, snare, hat. 
+Instead of using multiple instruments to create our beat, we can also use one sampler and let it play different sounds. For this we need to declare a list with the names of the samples in the order we want to play them. The playing of samples without any overlap or playing at the same time is sometimes called a *linear beat*. For example we want to play kick, hat, snare, hat. 
 
 Now our code will look like this:
 ```java
 set tempo 110
 
-ring theSounds [kick_house hat_click snare_fat hat_click]
+list theSounds [kick_house hat_click snare_fat hat_click]
 
 new sample theSounds time(1/8)
 ```
 
-Now to make this a bit more interesting we can combine this technique with another ring that holds some zeroes and ones to play a rhythm at a time of `1/16`.
+Now to make this a bit more interesting we can combine this technique with another list that holds some zeroes and ones to play a rhythm at a time of `1/16`.
 
 For example like so:
 ```java
 set tempo 110
 
-ring theSounds [kick_house hat_click snare_fat hat_click]
-ring rhythm [1 0 1 0 0 1 0 1]
+list theSounds [kick_house hat_click snare_fat hat_click]
+list rhythm [1 0 1 0 0 1 0 1]
 
 new sample theSounds time(1/16) play(rhythm)
 ```
 
-Give yourself some time to experiment with all the code so far to get yourself comfortable with the different functions and their arguments and making of rings. Try some different rhythms in various lengths, try some different samples in different orders as well. Have fun!
+Give yourself some time to experiment with all the code so far to get yourself comfortable with the different functions and their arguments and making of lists. Try some different rhythms in various lengths, try some different samples in different orders as well. Have fun!
 
 There is still so much to do with just the sampler, but for now we'll first introduce another instrument in Mercury: the Synthesizer.
 
@@ -342,10 +344,10 @@ By default Mercury works with `C` as the tonal centre (or root) and `Chromatic` 
 
 ## A melody
 
-Now that we know which numbers make up which notes we can make a melody. By putting the numbers in a ring and giving the name of the ring as argument to the `note()` function.
+Now that we know which numbers make up which notes we can make a melody. By putting the numbers in a list and giving the name of the list as argument to the `note()` function.
 
 ```java
-ring myMelody [0 4 7 5 7 9 4 5]
+list myMelody [0 4 7 5 7 9 4 5]
 
 new synth sine note(myMelody 2) time(1/8)
 ```
@@ -357,31 +359,33 @@ Try different numbers to hear which ones sound nice and which ones don't. You ca
 When two or more melodic instruments play together you hear multiple pitches at the same time. This is called a harmony. We can make two instances of a `synth` and make different notes for them to play, like so:
 
 ```java
-ring myMelody [0 4 7 5 7 9 4 5]
-ring melodyTwo [7 7 5 5 4 4 0 0]
+list myMelody [0 4 7 5 7 9 4 5]
+list melodyTwo [7 7 5 5 4 4 0 0]
 
 new synth sine note(myMelody 3) time(1/8)
 new synth sine note(melodyTwo 2) time(1/8)
 ```
 
-Or we can use the same melody from one `ring` but let the instruments play at different `time()` intervals.
+Or we can use the same melody from one `list` but let the instruments play at different `time()` intervals.
 
 ```java
-ring myMelody [0 4 7 5 7 9 4 5]
+list myMelody [0 4 7 5 7 9 4 5]
 
 new synth sine note(myMelody 2) time(1/8)
 new synth sine note(myMelody 1) time(1/6)
 ```
 
-By adding a rhythm for the synths as well we can make more interesting compositions. The rhythm makes sure that every time a synth is played the next note from the ring is picked and the pitch is changed.
+By adding a rhythm for the synths as well we can make more interesting compositions. The rhythm makes sure that every time a synth is played the next note from the list is picked and the pitch is changed.
 
 ```java
-ring myMelody [0 4 7 5 7 9 4 5]
-ring myRhythm [1 0 0 1 0 0 1 0]
+list myMelody [0 4 7 5 7 9 4 5]
+list myRhythm [1 0 0 1 0 0 1 0]
 
 new synth sine note(myMelody 3) time(1/16) play(myRhythm)
 new synth sine note(myMelody 2) time(1/12) play(myRhythm)
 ```
+
+⚠️ **The following chapters have never been finished, and since Mercury moved to the browser version the tutorials there are much more extensive. Please visit [mercury.timohoogland.com](https://mercury.timohoogland.com) to continue** ⚠️
 
 <!-- ## shape()
 
