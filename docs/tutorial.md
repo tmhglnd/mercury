@@ -1,5 +1,5 @@
 
-⚠️ **This Mercury tutorial is outdated, for up-to-date tutorials please use the browser version of mercury at [mercury.timohoogland.com](https://mercury.timohoogland.com)** ⚠️
+⚠️ **If you are a first time user of Mercury it is recommended to use the browser version instead of the Max version. Please visit [mercury.timohoogland.com](https://mercury.timohoogland.com) and follow the tutorials there. If you plan to use Max8 you can follow the install instructions below, after that it is still recommended to follow the tutorials via the browser** ⚠️
 
 # 🤓 Mercury Tutorial
 
