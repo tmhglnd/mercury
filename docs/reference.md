@@ -81,10 +81,11 @@
 	- [kink](./04-fx.md#kink)  *(Mercury4Max only)*
 	- [drive / distort](./04-fx.md#distort)
 	- [filter](./04-fx.md#filter) 
+		- filterModulation *(Mercury4Max only)*
 	- [degrade / chip](./04-fx.md#degrade)
 	- [comb](./04-fx.md#comb) \*
 	- [squash](./04-fx.md#squash)
-	- [double / chorus](./04-fx.md#double--chorus) *(Mercury4Max only)*
+	- [double / chorus](./04-fx.md#double--chorus)
 	- [hall / reverb](./04-fx.md#reverb)
 	- [lfo](./04-fx.md#lfo)
 	- [echo / delay](./04-fx.md#delay)

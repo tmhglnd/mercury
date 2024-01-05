@@ -6,7 +6,7 @@ Change the global tempo in Beats Per Minute (BPM), counted in quarter-notes. Sec
 
 **arguments**
 - {Number+} -> The BPM as a positive number
-- {Number} -> The ramptime (optional/experimental)
+- {Number/Division} -> The ramptime (optional/experimental)
 
 ```java
 set tempo 128
@@ -105,7 +105,7 @@ Set the global volume in floating-point amplitude for all instruments across the
 
 **arguments**
 - {Float} -> attenuate the total volume of all instruments (default=1)
-- {Int+} -> ramptime in milliseconds or divisions (optional, default=0)
+- {Divison/Int+} -> ramptime in milliseconds or divisions (optional, default=0)
 
 ```java
 set volume 0.5 5000
@@ -120,7 +120,7 @@ Alias: `hipass`
 
 **arguments**
 - {Float+} -> cutoff frequenzy in Hertz
-- {Int+} -> ramptime in milliseconds or division (optional, default=1)
+- {Divison/Int+} -> ramptime in milliseconds or division (optional, default=1)
 
 ```java
 set highPass 900 5000
@@ -135,7 +135,7 @@ Alias: `lopass`
 
 **arguments**
 - {Float+} -> cutoff frequenzy in Hertz
-- {Int+} -> ramptime in milliseconds or division (optional, default=1)
+- {Divison/Int+} -> ramptime in milliseconds or division (optional, default=1)
 
 ```java
 set lowPass 900 5000

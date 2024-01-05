@@ -272,7 +272,7 @@ Detune is now done in the `note()` method by providing a floating-point note num
 
 Add multiple oscillators in unison with a detuning factor to create a *SuperSaw* effect. One oscillator will always be the base frequency of the `note()`, the others are tuned above and below in incremental steps based on the detuning factor. The first argument sets the amount of oscillators (minum of 1, default=1), the second argument sets the detuning factor in semi-tones, the third optional argument sets the oscillator type for the odd numbered oscillators.
 
-Alias: `wave2()`, `osc2()`
+Alias: `unison`
 
 **arguments**
 - {Int+} -> number of oscillators (default=1, maximum=64)
@@ -296,7 +296,7 @@ list detune [0.1 0.5 0.9 12.01 0.3]
 new synth saw note(0 1) time(1/4) shape(-1) super(voices detune)
 ```
 
-**backwards compatible with wave2()**
+<!-- **backwards compatible with wave2()**
 
 Using the previous syntax of `wave2()` now calls the `super()` method like so
 
@@ -304,7 +304,7 @@ Using the previous syntax of `wave2()` now calls the `super()` method like so
 new synth saw note(0 1) wave2(square 0.998)
 // is translated and equivalant to:
 new synth saw note(0 1) super(2 -0.03 square)
-```
+``` -->
 
 ## sub
 
