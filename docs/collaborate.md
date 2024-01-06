@@ -11,6 +11,16 @@ There are 3 options for how you can use Flok with Mercury:
 
 *Follow these steps if you are a beginner and have been using the Mercury Playground at [mercury.timohoogland.com](https://mercury.timohoogland.com)*
 
+1. Open a Chromium based browser (eg. Brave, Arc) and go to [https://next.flok.cc/](https://next.flok.cc/)
+2. Choose a username.
+3. Select the `mercury-web` target from the dropdown menu in the topleft corner
+4. Start typing some code! 🎵
+	- `Ctrl/Alt + Enter` to play
+	- `Ctrl/Alt + .` to silence
+	- The first time you evaluate you might get a message `Mercury engine still loading`. Just wait a little bit for all the soundfiles to load and the code will start as soon as the message `Mercury engine ready!` pops up.
+
+# Flok & Mercury Playground locally
+
 1. Install NodeJS [for Mac](https://nodejs.org/en) or [for Windows](https://nodejs.org/en).
 2. Download the Mercury Playground via the Terminal. Navigate to the folder you want to install Mercury. Then run: `git clone http://github.com/tmhglnd/mercury-playground`, or [download and unzip](https://github.com/tmhglnd/mercury-playground/archive/refs/heads/main.zip)
 	- Navigate to the folder with: `cd mercury-playground` (or `cd mercury-playground-main` if downloaded)
