@@ -1,5 +1,7 @@
 # Global Settings (set)
 
+*Some settings are different between the Max and Browser version*
+
 ## tempo
 
 Change the global tempo in Beats Per Minute (BPM), counted in quarter-notes. Second argument sets a ramptime in milliseconds to gradually change the tempo over the provided amount of time (*!WARNING: experimental and may lag/glitch!*)
@@ -144,6 +146,8 @@ set lowPass 800 2/1
 
 ## beatRepeat
 
+*Mercury4Max only*
+
 A beatrepeating effect (sometimes called stutter) that continuously repeats a section of the entire sound that was last played. The repating interval is determined in divisions (`1/4`, `3/16`, etc). It immediately starts repeating at the moment of evaluating the code, so timing is key! You can switch to a different section of the beatrepeat recording with optional the second argument. Maximum recording length is 8 seconds (2x 4/4 bars at 60bpm).
 
 Alias: `stutter`
@@ -157,6 +161,8 @@ set beatRepeat 1/4
 ```
 
 ## osc
+
+*Mercury4Max only*
 
 Set the ip-address, in-port and out-port number for the network to transmit OSC-messages over using UDP. Default settings are 8000 (in-port), 9000 (out-port), localhost (127.0.0.1) (ip).
 
@@ -176,6 +182,8 @@ set osc out 9000
 ```
 
 ## midi and midiClock
+
+*Mercury4Max only*
 
 With the midi object you can get the available devices (ports) that you can use to send midi notes to with a `new midi` instrument.
 
@@ -206,6 +214,8 @@ set midiClock off
 ```
 
 ## click
+
+*Mercury4Max only*
 
 Enable a clicktrack/metronome sound to allow you to easily play along with the music. You can adjust the interval for the low pitch separately from the interval of the accent. The accent sounds an octave higher. You can also adjust the channel output for the click so you can hear it separately from the main output. Reset the settings with `default`.
 
@@ -238,7 +248,23 @@ set click default
 // reset all attributes to the default settings
 ```
 
+# crossFade
+
+*Mercury Playground only*
+
+Set the crossfade for the engine to fade from the previous running code to the newly evaluated code in x-amount of milliseconds or divisions. This feature is only applicable to the browser version because it works differently under the hood than the Max version.
+
+**arguments**
+- {Division/Int+} -> crossfade time in milliseconds or division (default=250)
+
+```java
+set crossFade 1000
+set crossFade 2/1
+```
+
 # samples
+
+*Mercury Playground only*
 
 With `set samples` you can load samples in the playback buffer so they can be used with the `sample`, `loop` and `polySample` instruments. There are multiple ways to add samples, for example using a `url` from a freesound.org preview file, or by using a soundfile from a raw github content link. `set samples` can only be called **once** in the code, so it is important to add all the sounds you want in that single line. This can lead to a very long line of code, so there are some ways to work around this. For example it is possible to input a `.json` file that consists of name:url pairs for the soundfiles. You don't have to load the samples every time you evaluate, once at the beginning of a session is enough. So after loading you can comment the line and the samples are available until you refresh/restart the browser.
 
