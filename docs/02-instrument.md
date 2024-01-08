@@ -352,6 +352,7 @@ new synth saw note(0 1) time(1/4) noise(0.3 0.8 1)
 The sample and loop instruments allow you to play sound-recordings and loops. These so called "samples" are loaded in RAM and can be accessed by their filename (without the extension). 
 
 - [How to load other sounds into Mercury](./07-environment.md#sounds)
+- [How to load sounds in the Mercury Playground](./01-global.md#samples)
 - [Full list of all the included sounds](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md)
 
 ## speed

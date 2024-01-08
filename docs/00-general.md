@@ -21,7 +21,13 @@ new midi "AU DLS Synth 1"
 
 Alias: `make`, `sound`
 
-By default Mercury has a small library of samples and single-cycle waveforms included in the environment. A full list of these samples and waveforms can be found here: [Sounds in Mercury](/mercury_ide/media/README.md)
+By default Mercury has a small library of samples and single-cycle waveforms included in the environment. Follow these links to find out how to include samples and waveforms in Mercury or if you like to see the full list of available sounds.
+
+- [How to load other sounds into Mercury](./07-environment.md#sounds)
+- [How to load sounds in the Mercury Playground](./01-global.md#samples)
+- [Full list of all the included sounds](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md)
+- [How to load other waveforms into Mercury](./07-environment.md#sounds)
+- [Full list of all the included waveforms](https://github.com/tmhglnd/mercury/blob/master/mercury_ide/media/README.md)
 
 ## list
 
