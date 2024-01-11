@@ -70,7 +70,18 @@ Flok will send the entire code via OSC messaging to port 4880. Mercury should be
 
 Follow this guide if you like to let Hydra react to the sounds that you code with Mercury when using Flok. 
 
-**for Mac**
+**for next.flok with `mercury-web`**
+
+1. Open a panel for `mercury-web` and a panel for `hydra`
+2. Create some code in mercury that generates sound and run it
+3. The amplitude of the total sound is stored in the variable `m`, this can be used in Hydra
+4. Use the variable in a function with: `() => m`
+
+```js
+osc(10, 0, () => m * 4 ).out()
+```
+
+**for Mac (with Mercury local or Mercury Playground)**
 
 1. Install [blackhole](https://existential.audio/blackhole/) for virtual audio routing
 2. Open `Audio MIDI Setup` in your Applications
@@ -81,7 +92,7 @@ Follow this guide if you like to let Hydra react to the sounds that you code wit
 7. Click the `Microphone` icon and selecte `Manage`
 8. Select `Blackhole (Virtual)` 
 
-**for Windows**
+**for Windows (with Mercury local or Mercury Playground)**
 
 1. Install [vbcables](https://vb-audio.com/Cable/index.htm) for virtual audio routing
 2. More steps are needed but this has not been tested on Windows, please contribute to this documentation if you know the steps
