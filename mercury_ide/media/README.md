@@ -4,10 +4,27 @@
 - [One-shots](#one-shots)
 	- [Drums](#drums)
 	- [Percussion](#percussion)
-	- [Tabla](#tabla)
+		- [Tabla](#tabla)
 	- [Strings](#strings)
+		- [harp](#harp)
+		- [violin](#violin)
+		- [pluck](#pluck)
 	- [Keys](#keys)
+		- [piano](#piano)
 	- [Idiophonic](#idiophonic)
+		- [marimba](#marimba)
+		- [kalimba](#kalimba)
+		- [bamboo](#bamboo)
+		- [singing bowl](#singing-bowl)
+		- [chimes](#chimes)
+		- [tubular bell](#tubular-bell)
+		- [xylophone](#xylophone)
+		- [glockenspiel](#glockenspiel)
+		- [music box](#music-box)
+	- [Woodwinds/Fluts](#woodwinds-flutes)
+		- [flute](#flute)
+		- [oboe](#oboe)
+		- [clarinet](#clarinet)
 	- [Vocal](#vocal)
 	- [Foley](#foley)
 	- [Noise](#noise)
@@ -68,7 +85,7 @@
 * url: https://freesound.org/s/3720/
 * license: Attribution
 
-#### hat_909_open_short
+#### hat_909_half
 * 3719__NoiseCollector__909_hat_open.wav
 * url: https://freesound.org/s/3719/
 * license: Attribution
@@ -198,7 +215,7 @@
 * url: https://freesound.org/s/191637/
 * license: Attribution
 
-#### hat_808_half
+#### hat_808_semi
 * 191632__dwsd__jhd-hat-1.wav
 * url: https://freesound.org/s/191632/
 * license: Attribution
@@ -238,6 +255,68 @@
 * url: https://freesound.org/s/191610/
 * license: Attribution
 
+## Nord Mini Kit
+
+#### wood_nord_lo
+* 167803__menegass__nord-drum-wood-4.wav
+* url: https://freesound.org/s/167803/
+* license: Creative Commons 0
+
+#### wood_nord_mid
+* 167800__menegass__nord-drum-wood-3.wav
+* url: https://freesound.org/s/167800/
+* license: Creative Commons 0
+
+#### wood_nord_hi
+* 167798__menegass__nord-drum-wood-1.wav
+* url: https://freesound.org/s/167798/
+* license: Creative Commons 0
+
+#### tom_nord_lo
+* 167797__menegass__nord-drum-tom-6.wav
+* url: https://freesound.org/s/167797/
+* license: Creative Commons 0
+
+#### clap_nord
+* 167791__menegass__nord-drum-clap-1.wav
+* url: https://freesound.org/s/167791/
+* license: Creative Commons 0
+
+#### hat_nord_open
+* 167789__menegass__nord-drum-oh-1.wav
+* url: https://freesound.org/s/167789/
+* license: Creative Commons 0
+
+#### hat_nord
+* 167787__menegass__nord-drum-cc-3.wav
+* url: https://freesound.org/s/167787/
+* license: Creative Commons 0
+
+#### tom_nord_hi
+* 167783__menegass__nord-drum-tom-1.wav
+* url: https://freesound.org/s/167783/
+* license: Creative Commons 0
+
+#### snare_nord_hi
+* 167782__menegass__nord-drum-sd-5.wav
+* url: https://freesound.org/s/167782/
+* license: Creative Commons 0
+
+#### snare_nord
+* 167778__menegass__nord-drum-sd-1.wav
+* url: https://freesound.org/s/167778/
+* license: Creative Commons 0
+
+#### kick_nord_long
+* 167767__menegass__nord-drum-bd-1.wav
+* url: https://freesound.org/s/167767/
+* license: Creative Commons 0
+
+#### kick_nord
+* 167764__menegass__nord-drum-bd-4.wav
+* url: https://freesound.org/s/167764/
+* license: Creative Commons 0
+
 ## Percussion
 
 #### maracas_808
@@ -270,6 +349,8 @@
 * url: https://freesound.org/s/219159/
 * license: Creative Commons 0
 
+### bongo 
+
 #### bongo 
 * 219154__jagadamba__bongo04.wav
 * url: https://freesound.org/s/219154/
@@ -280,7 +361,7 @@
 * url: https://freesound.org/s/219156/
 * license: Creative Commons 0
 
-## Tabla
+### tabla
 
 #### tabla_01
 * 130407__dio-333__dhec.wav
@@ -344,6 +425,8 @@
 
 ## Strings
 
+### harp
+
 #### harp_down
 * 436129__cunningar0807__harp-glissando-down.aiff
 * url: https://freesound.org/s/436129/
@@ -353,6 +436,68 @@
 * 436128__cunningar0807__harp-glissando-up.aiff
 * url: https://freesound.org/s/436128/
 * license: Creative Commons 0
+
+#### harp_g5
+* 373573__samulis__harp-f-5-ksharp-g5-mf.wav
+* url: https://freesound.org/s/373573/
+* license: Creative Commons 0
+
+#### harp_g3
+* 373572__samulis__harp-f-3-ksharp-g3-mf.wav
+* url: https://freesound.org/s/373572/
+* license: Creative Commons 0
+
+#### harp_f4
+* 373570__samulis__harp-e-4-ksharp-f4-mf.wav
+* url: https://freesound.org/s/373570/
+* license: Creative Commons 0
+
+#### harp_e5
+* 373568__samulis__harp-e5-ksharp-e5-mf.wav
+* url: https://freesound.org/s/373568/
+* license: Creative Commons 0
+
+#### harp_e3
+* 373567__samulis__harp-e3-ksharp-e3-mf.wav
+* url: https://freesound.org/s/373567/
+* license: Creative Commons 0
+
+#### harp_d4
+* 373565__samulis__harp-d4-ksharp-d4-mf.wav
+* url: https://freesound.org/s/373565/
+* license: Creative Commons 0
+
+#### harp_c5
+* 373563__samulis__harp-c5-ksharp-c5-mf.wav
+* url: https://freesound.org/s/373563/
+* license: Creative Commons 0
+
+#### harp_c3
+* 373562__samulis__harp-c3-ksharp-c3-mf.wav
+* url: https://freesound.org/s/373562/
+* license: Creative Commons 0
+
+#### harp_b5
+* 373560__samulis__harp-b5-ksharp-b5-mf.wav
+* url: https://freesound.org/s/373560/
+* license: Creative Commons 0
+
+#### harp_b3
+* 373559__samulis__harp-b3-ksharp-b3-mf.wav
+* url: https://freesound.org/s/373559/
+* license: Creative Commons 0
+
+#### harp_a4
+* 373556__samulis__harp-a4-ksharp-a4-mf.wav
+* url: https://freesound.org/s/373556/
+* license: Creative Commons 0
+
+#### harp_a2
+* 373555__samulis__harp-a2-ksharp-a2-mf.wav
+* url: https://freesound.org/s/373555/
+* license: Creative Commons 0
+
+### violin
 
 #### violin_g
 * 56225__ldk1609__violin_spiccato_G2.aiff
@@ -388,6 +533,8 @@
 * 56192__ldk1609__violin_spiccato_A2.aiff
 * url: https://freesound.org/s/56192/
 * license: Creative Commons 0
+
+### pluck 
 
 #### pluck_g
 * 55992__ldk1609__violin_pizz_non_vib_G2.aiff
@@ -426,6 +573,8 @@
 
 ## Keys
 
+### piano
+
 #### piano_g
 * 562761__ion__g3.mp3
 * url: https://freesound.org/s/562761/
@@ -461,7 +610,144 @@
 * url: https://freesound.org/s/562751/
 * license: Creative Commons 0
 
+## Woodwinds / Flutes
+
+### flute
+
+#### flute_e4
+* 373313__samulis__flute-expressive-sustain-e5-ldflute-expvib-e4-v1-1.wav
+* url: https://freesound.org/s/373313/
+* license: Creative Commons 0
+
+#### flute_e3
+* 373311__samulis__flute-expressive-sustain-e4-ldflute-expvib-e3-v1-1.wav
+* url: https://freesound.org/s/373311/
+* license: Creative Commons 0
+
+#### flute_c5
+* 373307__samulis__flute-expressive-sustain-c6-ldflute-expvib-c5-v1-1.wav
+* url: https://freesound.org/s/373307/
+* license: Creative Commons 0
+
+#### flute_c4
+* 373306__samulis__flute-expressive-sustain-c5-ldflute-expvib-c4-v1-1.wav
+* url: https://freesound.org/s/373306/
+* license: Creative Commons 0
+
+#### flute_c3
+* 373305__samulis__flute-expressive-sustain-c4-ldflute-expvib-c3-v1-1.wav
+* url: https://freesound.org/s/373305/
+* license: Creative Commons 0
+
+#### flute_a4
+* 373303__samulis__flute-expressive-sustain-a5-ldflute-expvib-a4-v1-1.wav
+* url: https://freesound.org/s/373303/
+* license: Creative Commons 0
+
+#### flute_a3
+* 373302__samulis__flute-expressive-sustain-a4-ldflute-expvib-a3-v1-1.wav
+* url: https://freesound.org/s/373302/
+* license: Creative Commons 0
+
+### oboe 
+
+#### oboe_f4
+* 373672__samulis__oboe-vibrato-e-5-oboe-vib-f4-v3-main.wav
+* url: https://freesound.org/s/373672/
+* license: Creative Commons 0
+
+#### oboe_f3
+* 373671__samulis__oboe-vibrato-e-4-oboe-vib-f3-v3-main.wav
+* url: https://freesound.org/s/373671/
+* license: Creative Commons 0
+
+#### oboe_d4
+* 373669__samulis__oboe-vibrato-d5-oboe-vib-d4-v3-main.wav
+* url: https://freesound.org/s/373669/
+* license: Creative Commons 0
+
+#### oboe_d3
+* 373668__samulis__oboe-vibrato-d4-oboe-vib-d3-v3-main.wav
+* url: https://freesound.org/s/373668/
+* license: Creative Commons 0
+
+#### oboe_a3
+* 373666__samulis__oboe-vibrato-a-4-oboe-vib-a-3-v3-main.wav
+* url: https://freesound.org/s/373666/
+* license: Creative Commons 0
+
+#### oboe_a2
+* 373665__samulis__oboe-vibrato-a-3-oboe-vib-a-2-v3-main.wav
+* url: https://freesound.org/s/373665/
+* license: Creative Commons 0
+
+### clarinet
+
+#### clarinet_f3
+* 372952__samulis__clarinet-long-sustain-e-4-dcclar-suslong-f3-v3-rr1-sum.wav
+* url: https://freesound.org/s/372952/
+* license: Creative Commons 0
+
+#### clarinet_f2
+* 372951__samulis__clarinet-long-sustain-e-3-dcclar-suslong-f2-v3-rr1-sum.wav
+* url: https://freesound.org/s/372951/
+* license: Creative Commons 0
+
+#### clarinet_d3
+* 372947__samulis__clarinet-long-sustain-d4-dcclar-suslong-d3-v3-rr1-sum.wav
+* url: https://freesound.org/s/372947/
+* license: Creative Commons 0
+
+#### clarinet_d2
+* 372946__samulis__clarinet-long-sustain-d3-dcclar-suslong-d2-v3-rr1-sum.wav
+* url: https://freesound.org/s/372946/
+* license: Creative Commons 0
+
+#### clarinet_a3
+* 372944__samulis__clarinet-long-sustain-a-4-dcclar-suslong-a-3-v3-rr1-sum.wav
+* url: https://freesound.org/s/372944/
+* license: Creative Commons 0
+
+#### clarinet_a2
+* 372943__samulis__clarinet-long-sustain-a-3-dcclar-suslong-a-2-v3-rr1-sum.wav
+* url: https://freesound.org/s/372943/
+* license: Creative Commons 0
+
 ## Idiophonic
+
+### marimba
+
+#### marimba_g4
+* 373586__samulis__marimba-f-5-marimba-hit-outrigger-g4-loud-01.wav
+* url: https://freesound.org/s/373586/
+* license: Creative Commons 0
+
+#### marimba_g2
+* 373585__samulis__marimba-f-3-marimba-hit-outrigger-g2-loud-01.wav
+* url: https://freesound.org/s/373585/
+* license: Creative Commons 0
+
+#### marimba_f3
+* 373583__samulis__marimba-e-4-marimba-hit-outrigger-f3-loud-01.wav
+* url: https://freesound.org/s/373583/
+* license: Creative Commons 0
+
+#### marimba_c4
+* 373580__samulis__marimba-c5-marimba-hit-outrigger-c4-loud-01.wav
+* url: https://freesound.org/s/373580/
+* license: Creative Commons 0
+
+#### marimba_c2
+* 373579__samulis__marimba-c3-marimba-hit-outrigger-c2-loud-01.wav
+* url: https://freesound.org/s/373579/
+* license: Creative Commons 0
+
+#### marimba_b2
+* 373577__samulis__marimba-b3-marimba-hit-outrigger-b2-loud-01.wav
+* url: https://freesound.org/s/373577/
+* license: Creative Commons 0
+
+### kalimba
 
 #### kalimba_ab
 * 175582__sergeeo__kalimba-note-g.wav
@@ -478,7 +764,7 @@
 * url: https://freesound.org/s/175570/
 * license: Attribution
 
-#### kalimba_c#
+#### kalimba_cis
 * 175568__sergeeo__note-c.wav
 * url: https://freesound.org/s/175568/
 * license: Attribution
@@ -487,6 +773,8 @@
 * 175562__sergeeo__kalimba-note-a.wav
 * url: https://freesound.org/s/175562/
 * license: Attribution
+
+### bamboo
 
 #### bamboo_g
 * 130533__stomachache__g2.wav
@@ -508,6 +796,8 @@
 * url: https://freesound.org/s/130523/
 * license: Creative Commons 0
 
+### singing bowl
+
 #### bowl_hi
 * 122650__juskiddink__Singing_bowl.wav
 * url: https://freesound.org/s/122650/
@@ -522,6 +812,8 @@
 * 122647__juskiddink__Singing_bowl_2.wav
 * url: https://freesound.org/s/122647/
 * license: Attribution
+
+### chimes
 
 #### chimes_chord
 * 131977__juskiddink__three-chord-chimes.wav
@@ -563,7 +855,122 @@
 * url: https://freesound.org/s/122681/
 * license: Attribution
 
+### tubular bell
+
+#### bell_g4
+* 374275__samulis__tubular-bells-f-4-tb-hit-g4-v4-rr1.wav
+* url: https://freesound.org/s/374275/
+* license: Creative Commons 0
+
+#### bell_c5
+* 374274__samulis__tubular-bells-c5-tb-hit-c5-v4-rr1.wav
+* url: https://freesound.org/s/374274/
+* license: Creative Commons 0
+
+#### bell_c4
+* 374273__samulis__tubular-bells-c4-tb-hit-c4-v4-rr1.wav
+* url: https://freesound.org/s/374273/
+* license: Creative Commons 0
+
+#### bell_f5
+* 374272__samulis__tubular-bells-e-5-tb-hit-f5-v3-rr1.wav
+* url: https://freesound.org/s/374272/
+* license: Creative Commons 0
+
+### xylophone
+
+#### xylo_g5
+* 374705__samulis__xylophone-f-5-xylo-medium-g5-ff-01-far.wav
+* url: https://freesound.org/s/374705/
+* license: Creative Commons 0
+
+#### xylo_g4
+* 374704__samulis__xylophone-f-4-xylo-medium-g4-ff-01-far.wav
+* url: https://freesound.org/s/374704/
+* license: Creative Commons 0
+
+#### xylo_g3
+* 374703__samulis__xylophone-f-3-xylo-medium-g3-ff-01-far.wav
+* url: https://freesound.org/s/374703/
+* license: Creative Commons 0
+
+#### xylo_c6
+* 374701__samulis__xylophone-c6-xylo-medium-c6-ff-01-far.wav
+* url: https://freesound.org/s/374701/
+* license: Creative Commons 0
+
+#### xylo_c5
+* 374700__samulis__xylophone-c5-xylo-medium-c5-ff-01-far.wav
+* url: https://freesound.org/s/374700/
+* license: Creative Commons 0
+
+#### xylo_c4
+* 374699__samulis__xylophone-c4-xylo-medium-c4-ff-01-far.wav
+* url: https://freesound.org/s/374699/
+* license: Creative Commons 0
+
+### glockenspiel
+
+#### glock_g5
+* 373368__samulis__glockenspiel-f-5-glock-medium-g5.wav
+* url: https://freesound.org/s/373368/
+* license: Creative Commons 0
+
+#### glock_g4
+* 373367__samulis__glockenspiel-f-4-glock-medium-g4.wav
+* url: https://freesound.org/s/373367/
+* license: Creative Commons 0
+
+#### glock_c6
+* 373365__samulis__glockenspiel-c6-glock-medium-c6.wav
+* url: https://freesound.org/s/373365/
+* license: Creative Commons 0
+
+#### glock_c5
+* 373364__samulis__glockenspiel-c5-glock-medium-c5.wav
+* url: https://freesound.org/s/373364/
+* license: Creative Commons 0
+
+### music box
+
+#### box_g5
+* 28160__CommanderRobot__clean_sol_4.wav
+* url: https://freesound.org/s/28160/
+* license: Creative Commons 0
+
+#### box_g3
+* 28159__CommanderRobot__clean_sol_3.wav
+* url: https://freesound.org/s/28159/
+* license: Creative Commons 0
+
+#### box_d6
+* 28155__CommanderRobot__clean_re_2.wav
+* url: https://freesound.org/s/28155/
+* license: Creative Commons 0
+
+#### box_d5
+* 28154__CommanderRobot__clean_re_1.wav
+* url: https://freesound.org/s/28154/
+* license: Creative Commons 0
+
+#### box_c5
+* 28144__CommanderRobot__clean_do_1.wav
+* url: https://freesound.org/s/28144/
+* license: Creative Commons 0
+
+#### box_b4
+* 28141__CommanderRobot__clean_ci_3.wav
+* url: https://freesound.org/s/28141/
+* license: Creative Commons 0
+
+#### box_b5
+* 28140__CommanderRobot__clean_ci_2.wav
+* url: https://freesound.org/s/28140/
+* license: Creative Commons 0
+
 ## Vocal
+
+### choir
 
 #### choir_o
 * 65195__uair01__chamber_choir_chord_o.wav
@@ -793,6 +1200,8 @@ This pack of sounds contains sounds by the following users:
 - ion_ ( https://freesound.org/people/ion_/ )
 - Jagadamba ( https://freesound.org/people/Jagadamba/ )
 - sergeeo ( https://freesound.org/people/sergeeo/ )
+- menegass ( https://freesound.org/people/menegass/ )
+- Samulis ( https://freesound.org/people/Samulis/ )
 
 You can find the packs online at: 
 - https://freesound.org/people/NoiseCollector/packs/219/
@@ -825,9 +1234,17 @@ You can find the packs online at:
 - https://freesound.org/people/ion_/packs/31585/
 - https://freesound.org/people/Jagadamba/packs/13878/
 - https://freesound.org/people/sergeeo/packs/11046/
+- https://freesound.org/people/menegass/packs/10430/
+- https://freesound.org/people/Samulis/packs/21033/
+- https://freesound.org/people/Samulis/packs/21025/
+- https://freesound.org/people/Samulis/packs/21013/
+- https://freesound.org/people/Samulis/packs/21054/
+- https://freesound.org/people/Samulis/packs/21029/
+- https://freesound.org/people/Samulis/packs/21065/
+- https://freesound.org/people/Samulis/packs/21030/
+- https://freesound.org/people/Samulis/packs/21027/
 
 *Note: Audiofiles may have been editted slightly to fit the Mercury Live Coding environment better*
-
 
 # Waveforms
 
