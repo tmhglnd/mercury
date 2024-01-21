@@ -322,6 +322,8 @@ Most sounds in Mercury are downloaded from [freesound.org](http://www.freesound.
 ## 👾 Made with Mercury
 
 - *Made something with Mercury? Please add a URL here and send a pull request!* 😎
+- [iTypeMusic - Electronic Music Stream with Live Coding](https://www.youtube.com/watch?v=x77RP20uWxA&ab_channel=itypemusic)
+- [LXT @levoxtrip (at Solstice Stream December 2023)](https://www.youtube.com/watch?v=TzM-koWkRow&ab_channel=Eulerroom)
 - [Linalab(Mercury) + Turbulente(p5Live) - Live at Algorave Lisbon](https://youtu.be/WSPNDC0a2X4)
 - [T.mo - Liber Abaci (Mercury Coding Sessions)](https://youtu.be/syUL76qCV6w)
 - [Roald van Dillewijn - Smashing Temparateness (Mercury Coding Sessions)](https://youtu.be/KJ4OpJ3-Ik0)
