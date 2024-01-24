@@ -7,11 +7,23 @@ There are 3 options for how you can use Flok with Mercury:
 2. Collaborate together in the same room (only requires 1 computer to run Mercury)
 3. Collaborate remotely over a network (all computers need to run Mercury)
 
+## Table of Content
+
+- [Flok & Mercury Playground](#flok--mercury-playground)
+- [Flok & Mercury Playground Locally](#flok--mercury-playground-locally)
+- [Flok & Mercury in Max8](#flok--mercury-in-max8)
+	- [Localhost](#localhost)
+	- [Collaborate](#collaborate)
+- [Combine Mercury with Hydra (Audioreactive Visuals)](#combine-mercury-with-hydra)
+	- [flok.cc with `mercury-web`](#flokcc-with-mercury-web)
+	- [Mac (with Mercury local or Mercury Playground)](#for-mac)
+	- [Windows (with Mercury local or Mercury Playground)](#for-windows)
+
 # Flok & Mercury Playground
 
 *Follow these steps if you are a beginner and have been using the Mercury Playground at [mercury.timohoogland.com](https://mercury.timohoogland.com)*
 
-1. Open a Chromium based browser (eg. Brave, Arc) and go to [https://next.flok.cc/](https://next.flok.cc/)
+1. Open a Chromium based browser (eg. Brave, Arc) and go to [https://flok.cc/](https://flok.cc/)
 2. Choose a username.
 3. Select the `mercury-web` target from the dropdown menu in the topleft corner
 4. Start typing some code! 🎵
@@ -19,7 +31,7 @@ There are 3 options for how you can use Flok with Mercury:
 	- `Ctrl/Alt + .` to silence
 	- The first time you evaluate you might get a message `Mercury engine still loading`. Just wait a little bit for all the soundfiles to load and the code will start as soon as the message `Mercury engine ready!` pops up.
 
-# Flok & Mercury Playground locally
+# Flok & Mercury Playground Locally
 
 1. Install NodeJS [for Mac](https://nodejs.org/en) or [for Windows](https://nodejs.org/en).
 2. Download the Mercury Playground via the Terminal. Navigate to the folder you want to install Mercury. Then run: `git clone http://github.com/tmhglnd/mercury-playground`, or [download and unzip](https://github.com/tmhglnd/mercury-playground/archive/refs/heads/main.zip)
@@ -66,11 +78,11 @@ Now start typing some code! 🎵
 
 Flok will send the entire code via OSC messaging to port 4880. Mercury should be listening to this port automatically.
 
-## Combine Mercury with Hydra (Audioreactive Visuals)
+## Combine Mercury with Hydra
 
-Follow this guide if you like to let Hydra react to the sounds that you code with Mercury when using Flok. 
+For creating Audioreactive Visuals. Follow this guide if you like to let Hydra react to the sounds that you code with Mercury when using Flok. 
 
-**for next.flok with `mercury-web`**
+### flok.cc with `mercury-web`
 
 1. Open a panel for `mercury-web` and a panel for `hydra`
 2. Create some code in mercury that generates sound and run it
@@ -81,7 +93,9 @@ Follow this guide if you like to let Hydra react to the sounds that you code wit
 osc(10, 0, () => m * 4 ).out()
 ```
 
-**for Mac (with Mercury local or Mercury Playground)**
+### for Mac
+
+**With Mercury local or Mercury Playground**
 
 1. Install [blackhole](https://existential.audio/blackhole/) for virtual audio routing
 2. Open `Audio MIDI Setup` in your Applications
@@ -92,7 +106,9 @@ osc(10, 0, () => m * 4 ).out()
 7. Click the `Microphone` icon and selecte `Manage`
 8. Select `Blackhole (Virtual)` 
 
-**for Windows (with Mercury local or Mercury Playground)**
+### for Windows 
+
+**with Mercury local or Mercury Playground**
 
 1. Install [vbcables](https://vb-audio.com/Cable/index.htm) for virtual audio routing
 2. More steps are needed but this has not been tested on Windows, please contribute to this documentation if you know the steps
