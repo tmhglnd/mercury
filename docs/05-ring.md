@@ -980,7 +980,7 @@ Repeats separate values in a list a certain amount of times. The repeats argumen
 
 **arguments**
 - {List} -> List to repeat
-- {Int+|IntList} -> amount of repeats per value
+- {Int+/IntList} -> amount of repeats per value
 
 ```java
 list notes [0 3 7]

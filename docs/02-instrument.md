@@ -76,7 +76,7 @@ new synth saw note(0 0) time(free "/kick")
 
 Provide the beat function with a `list` consisting of ones and zeroes. For every time interval defined by the `time()` method, the next value in the list will be used. A one results in a trigger of the instrument and an increment of the internal counter. A zero results in no trigger. An optional second argument resets the internal instrument index after a certain amount of time in n-bars.
 
-Alias: `beat() | rhythm()`
+Alias: `beat() / rhythm()`
 
 **arguments**
 - {FloatList+/Float+} -> a rhythmic pattern of ones and zeroes to play (default=1)
@@ -123,7 +123,7 @@ Warp a rhythm in more complex ways.
 
 Set the envelope generator of a sound. Various modes are possible depending on the amount of arguments. The attack time is the fade-in for the sound, the release is the fade-out for the sound both in milliseconds. The sustain time holds the sound at a static volume for a while. If the sound is triggered before the end of the envelope, the envelope is canceled, faded to 0 in 1ms and starts over. You can specify the times in absolute values using integer/floating points (in ms) or in relative values using beat divisions.
 
-Alias: `length() | duration() | envelope() | env()`
+Alias: `length() / duration() / envelope() / env()`
 
 **arguments**
 
@@ -159,7 +159,7 @@ new synth saw shape(1/64 1/8 1/16) time(1)
 
 Set the volume for the instrument in floating-point amplitude. Where `1` is the normalized amplitude, `0.5` is the half softer (-6 dBFS) and `2` is twice as loud (+ 6dBFS). An optional second argument sets the sliding time to go to the next gain value in milliseconds.
 
-Alias: `amp() | volume() | velocity()`
+Alias: `amp() / volume() / velocity()`
 
 **arguments**
 - {Float+} -> the (start) volume of the instrument (default=1)
@@ -190,9 +190,9 @@ new sample clap_909 name(hand)
 
 ## fx
 
-Apply an effect to the sound of the instrument to manipulate your sounds timbre in many ways. The first argument is always the `effectname`. The following arguments depend on the selected effect. See [FX Documentation](./04-fx.md) for more details.
+Apply an effect to the sound of the instrument to manipulate your sounds timbre in many ways. The first argument is always the `effectname`. The following arguments depend on the selected effect. See [FX Documentation](./04-fx.md) for more details and an up-to-date list of all the available effects for both Mercury4Max and the Mercury Playground.
 
-Alias: `effect() | with_fx() | add_fx()`
+Alias: `effect() / with_fx() / add_fx()`
 
 **arguments**
 - {Name} -> the effect name
@@ -201,22 +201,6 @@ Alias: `effect() | with_fx() | add_fx()`
 ```java
 new synth square name(bass)
 	set bass fx(reverb 0.8 11)
-```
-
-The currently available effects are:
-
-```
-- chip
-- delay
-- double
-- chorus
-- drive
-- envFilter
-- filter
-- freeze
-- lfo
-- reverb
-- squash
 ```
 
 # synth
@@ -242,8 +226,8 @@ Set the pitch for the instrument to play a note in a melody or chord. The note i
 
 
 **arguments**
-- {Value|ListValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
-- {Value|ListValue} -> positive or negative octave value or list, y-coordinate (default=0)
+- {Value/ListValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
+- {Value/ListValue} -> positive or negative octave value or list, y-coordinate (default=0)
 
 ```java
 set scale major D
@@ -268,6 +252,20 @@ Alias: `pitch()`
 
 Detune is now done in the `note()` method by providing a floating-point note number. The value behind the decimal point is the amount of detuning from one semitone to the next. For example `7.5` results in `7` semitones (mapped to the scale if `set scale` is used) and then a `0.5` semitone is added (= 50 cents). Detuning is applied after mapping the integer semitone to a scale.
 
+## slide
+
+A portamento/sliding/gliding effect. This will make the synthesizers oscillators slowly slide from one frequency to the next one over a defined period in milliseconds or division. The sliding is logarithmically (meaning it wil slide from midi note to midi note linearly, and when converted to frequency slide logarithmically. This sounds slightly different then when sliding linearly between two frequencies)
+
+Alias: `glide`, `portamento`
+
+**arguments**
+- {Number/Division} -> sliding time in milliseconds or division (default=50)
+
+```js
+list notes [0 7 3]
+new synth saw note(notes 1) time(1/2) slide(1/8)
+```
+
 ## super
 
 Add multiple oscillators in unison with a detuning factor to create a *SuperSaw* effect. One oscillator will always be the base frequency of the `note()`, the others are tuned above and below in incremental steps based on the detuning factor. The first argument sets the amount of oscillators (minum of 1, default=1), the second argument sets the detuning factor in semi-tones, the third optional argument sets the oscillator type for the odd numbered oscillators.
@@ -276,7 +274,7 @@ Alias: `unison`
 
 **arguments**
 - {Int+} -> number of oscillators (default=1, maximum=64)
-- {Float|FloatList} -> detuning factor in semi-tone, 12=octave
+- {Float/FloatList} -> detuning factor in semi-tone, 12=octave
 - {Name} -> the name of the odd numbered oscillators (optional, default=main oscillator)
 
 ```java
@@ -374,7 +372,7 @@ set all fx(reverb 2 17)
 
 Set the start (the offset position of the playback) of the sample. 0 = start at the beginning, 0.5 = start midway in the sample. With long decaying samples the offset is very useful if playing the sounds backwards when using for example `speed(-1)`. 
 
-Alias: `offset() | from() | onset()`
+Alias: `offset`
 
 **arguments**
 - {Float} -> the playback position between 0 and 1 (default=0)
@@ -515,8 +513,8 @@ new midi "AU DLS Synth 1" time(1/4) note(0 0) length(100) gain(0.8)
 Set the pitch for the instrument to play a note in a melody or chord. The note is specified as a 2-dimensional coordinate system, where the first argument is the semitone offset (can be positive or negative) and the second argument is the octave offset (can be positive or negative). The origin of the system, `note(0 0)`, corresponds by default with midi-pitch `36` or `C2`. Depending on the `set scale` the coordinate system will shift and result in a different pitch for the origin. A `note()` should therefore not be taken as an absolute value, but rather a relative direction where the melody is going to in relation to the scale and root. For a detailed table of the note coordinates see `note` under [synth and polySynth only](#synth-and-polysynth-only).
 
 **arguments**
-- {Value|RingValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
-- {Value|RingValue} -> positive or negative octave value or list, y-coordinate (default=0)
+- {Value/RingValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
+- {Value/RingValue} -> positive or negative octave value or list, y-coordinate (default=0)
 
 ```java
 set scale major D
@@ -655,7 +653,7 @@ new input in4 gain(0.9) time(1/16) shape(1 100) fx(reverb) fx(distort)
 The modulator allows you to send a modulation signal as an argument to parameters from functions of other instruments. These parameters are continuously modulated at a specific rate with a specific waveform. The modulation rate is independent from the instruments `time()` (in comparison when using a list as an argument). It is also possible to send the modulation signal directly out to the connected soundcard on a specific channel. This can for example be used for cv modulations.
 
 **arguments**
-- {Name} -> waveform type: `sine`|`sin`, `sawUp`|`phasor`, `sawDown`|`saw`, `square`|`rect`, `triangle`|`tri`, `random`|`rand`, `randomLine`|`randL`, `trigger`|`gate`
+- {Name} -> waveform type: `sine`/`sin`, `sawUp`/`phasor`, `sawDown`/`saw`, `square`/`rect`, `triangle`/`tri`, `random`/`rand`, `randomLine`/`randL`, `trigger`/`gate`
 
 ```java
 new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>) out(<channel>)
