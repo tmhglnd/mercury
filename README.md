@@ -95,8 +95,8 @@ new sample hat_909 time(3/16)
 Make rhythmic patterns with sequences of numbers and probabilities
 
 ```java
-ring loBeat [1 0 0 1 0.5]
-ring hiBeat [0 1 0.2 0]
+list loBeat [1 0 0 1 0.5]
+list hiBeat [0 1 0.2 0]
 
 new sample tabla_lo time(1/8) play(loBeat)
 new sample tabla_hi time(1/8) play(hiBeat)
@@ -108,7 +108,7 @@ Generate psuedorandom melodic content for a synthesizer in a range and set a sca
 set scale minor d
 set randomSeed 31415
 
-ring melody random(16 0 24)
+list melody random(16 0 24)
 
 new synth saw note(melody) time(1/16) shape(4 100)
 ```
@@ -134,12 +134,12 @@ Generate sequences algorithmically to compose complex structures and choose from
 ```java
 set scale minor a 
 
-ring rhythm euclidean(32 13)
+list rhythm euclidean(32 13)
 
-ring melody spread(5 0 24)
-ring melody palinedrome(melody)
-ring melody clone(melody 0 5 7 3)
-ring melody lace(melody melody)
+list melody spread(5 0 24)
+list melody palinedrome(melody)
+list melody clone(melody 0 5 7 3)
+list melody lace(melody melody)
 
 new synth triangle note(melody 1) shape(1 80) play(rhythm)
 ```
@@ -155,7 +155,7 @@ new midi "Your Awesome Midi Device" time(1/4) note(7 1) length(100) sync(on)
 Control other environments via OSC-messages
 
 ```java
-ring params [0.25 0.5 0.75]
+list params [0.25 0.5 0.75]
 
 new emitter osc address(yourDevice) theParam(params) time(1/4)
 
@@ -169,7 +169,7 @@ new emitter osc address(yourDevice) theParam(params) time(1/4)
 Easily control parameters in Mercury via external OSC-messages
 
 ```java
-new synth triangle fx(reverb /extOSC/verbAmount) fx(filter low /extOSC/cutoff 0.4) time(1) shape(1 1000)
+new synth triangle fx(reverb '/extOSC/verbAmount') fx(filter low '/extOSC/cutoff' 0.4) time(1) shape(1 1000)
 ```
 
 **AND MANY MORE (TO COME...)**
