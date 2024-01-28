@@ -20,7 +20,7 @@ Set the name for this instrument. This can be any string of 2 or more characters
 **arguments**
 - {Name} -> an instrument name (default=null)
 
-```java
+```js
 new synth saw name(bob)
 	set bob gain(0.8) time(1/16)
 new sample kick_909 name(alice)
@@ -40,7 +40,7 @@ Set the group-name for this instrument. This can be any string of 2 or more char
 **arguments**
 - {Name} -> a group name used for multiple instruments (default=null)
 
-```java
+```js
 new sample kick_909 group(drums) time(1/4)
 new sample snare_909 group(drums) time(1/2 1/4)
 	set drums gain(0.8) fx(reverb 0.9 11)
@@ -56,7 +56,7 @@ Alias: `timing()`
 - {Number/Division} -> the timing division or `free` (default=1/4)
 - {Number/Division} -> timing offset or osc-message when `free` (optional, default=0)
 
-```java
+```js
 set tempo 130
 
 new sample kick_909 name(kick)
@@ -81,7 +81,7 @@ Alias: `beat() / rhythm()`
 **arguments**
 - {FloatList+/Float+} -> a rhythmic pattern of ones and zeroes to play (default=1)
 
-```java
+```js
 list aBeat [1 0 0 1 0 1 1 0 0]
 
 new sample hat_909 name(ht)
@@ -90,7 +90,7 @@ new sample hat_909 name(ht)
 
 Alternatively you can use floating-point values in a list which result in a probability that the instrument will play. Here 0 means 0% chance, 1=100% and 0.5 is 50%. Inspired by Nick Collins paper on [Algorithmic Composition Methods for Breakbeat Science](https://www.dmu.ac.uk/documents/technology-documents/research/mtirc/nowalls/mww-collins.pdf).
 
-```java
+```js
 list aBeat [1 0.5 0.2 0.8 0.5]
 
 new sample hat_909 name(ht)
@@ -106,11 +106,11 @@ Add a ratcheting effect (doubling/tripling of hits) with a probability. A techni
 - {Float+} -> probability of ratchet happening (default=0.1)
 - {Int+/IntList+} -> amount of repetitions (default=2)
 
-```java
+```js
 new sample hat_909 time(1/8) ratchet(0.3 2)
 ```
 
-```java
+```js
 list rtc [2 3 2 4 8]
 new sample hat_909 time(1/4) ratchet(1 rtc)
 ```
@@ -131,7 +131,7 @@ Alias: `length() / duration() / envelope() / env()`
 - {Number+/Division/NumberList} -> Decay time in ms or division (optional, default=0)
 - {Number+/Division/NumberList} -> Release time in ms or division
 
-```java
+```js
 new synth saw shape(1500) time(1)
 //=> default attack of 2 ms, sustain of 0 ms and a release of 1500 ms
 
@@ -144,7 +144,7 @@ new synth saw shape(10 500 50) time(1)
 
 with division:
 
-```java
+```js
 set tempo 100
 
 new synth saw shape(1/2) time(1)
@@ -167,7 +167,7 @@ Alias: `amp() / volume() / velocity()`
 - {Bool} -> mute the instrument but still use named sends (default=0)
 <!-- - {Float+} -> the end volume of the instrument to generate a ramp (optional, default=previous-gain-value) -->
 
-```java
+```js
 new sample snare_909 name(sn)
 	set sn gain(0.8)
 ```
@@ -183,7 +183,7 @@ Alias: `panning()`
 **arguments**
 - {Float} -> the panning position between -1 and 1 (default=0)
 
-```java
+```js
 new sample clap_909 name(hand)
 	set hand pan(random)
 ```
@@ -198,7 +198,7 @@ Alias: `effect() / with_fx() / add_fx()`
 - {Name} -> the effect name
 - {Value+} -> any values based on effectname arguments
 
-```java
+```js
 new synth square name(bass)
 	set bass fx(reverb 0.8 11)
 ```
@@ -229,7 +229,7 @@ Set the pitch for the instrument to play a note in a melody or chord. The note i
 - {Value/ListValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
 - {Value/ListValue} -> positive or negative octave value or list, y-coordinate (default=0)
 
-```java
+```js
 set scale major D
 new synth sine note(2 2)
 //=> results in midi-note 64 > F4
@@ -237,7 +237,7 @@ new synth sine note(2 2)
 
 Also excepts lists to play a melody over time:
 
-```java
+```js
 set scale minor A
 list mel [0 5 7 3 2 -2 0]
 new synth sine note(mel 1) time(1/16)
@@ -277,17 +277,17 @@ Alias: `unison`
 - {Float/FloatList} -> detuning factor in semi-tone, 12=octave
 - {Name} -> the name of the odd numbered oscillators (optional, default=main oscillator)
 
-```java
+```js
 new synth saw note(0 1) shape(-1) super(5 0.031415)
 ```
 
-```java
+```js
 new synth saw note(0 1) shape(-1) super(11 0.0618 square) 
 ```
 
 Detuning can be changed in time with a `list`
 
-```java
+```js
 list voices [3 5 9 21]
 list detune [0.1 0.5 0.9 12.01 0.3]
 
@@ -298,7 +298,7 @@ new synth saw note(0 1) time(1/4) shape(-1) super(voices detune)
 
 Using the previous syntax of `wave2()` now calls the `super()` method like so
 
-```java
+```js
 new synth saw note(0 1) wave2(square 0.998)
 // is translated and equivalant to:
 new synth saw note(0 1) super(2 -0.03 square)
@@ -311,7 +311,7 @@ Add a second sinewave oscillator one octave lower than the note played for a sub
 **arguments**
 - {Float+} -> amplitude for the sub oscillator (default=0)
 
-```java
+```js
 new synth sine note(0 2) time(1/4) sub(0.8)
 ```
 
@@ -326,7 +326,7 @@ Add a second oscillator to the synths sound. This can either be a sine, triangle
 - {Float} -> tuning in ratio to note() frequency (default=1)
 - {Float} -> tuning offset in Hertz (optional, default=0)
 
-```java
+```js
 new synth saw note(0 1) time(1/4) wave2(square 0.998)
 ```
 
@@ -341,7 +341,7 @@ Add a noise oscillator to the synth sound. The first argument is the amplitude (
 - {Float+} -> color of the noise 0-1 (default = 0.8)
 - {Bool} -> modulation mode (default = 0)
 
-```java
+```js
 new synth saw note(0 1) time(1/4) noise(0.3 0.8 1)
 ```
 
@@ -362,7 +362,7 @@ Alias: `rate()`
 **arguments**
 - {Number} -> playback speed (default=1)
 
-```java
+```js
 new sample choir time(5) speed(0.5)
 new sample choir time(5) speed(-0.5)
 set all fx(reverb 2 17)
@@ -377,7 +377,7 @@ Alias: `offset`
 **arguments**
 - {Float} -> the playback position between 0 and 1 (default=0)
 
-```java
+```js
 list positions randomFloat(8 0 0.5)
 
 new sample choir time(1/16) start(positions)
@@ -402,7 +402,7 @@ Set the base note as a MIDI value for the sample to determine how the `note()` f
 **arguments**
 - {Number+} -> MIDI pitch as base for tuning (optional, default=60)
 
-```java
+```js
 set scale minor c
 
 list notes [0 7 5 3]
@@ -419,7 +419,7 @@ Stretch the entire sample to the length of a full bar. Useful for when working w
 - {Int} -> turn timestretching on when stretching to full bar, preservering the original pitch (default = 0)
 - {Name} -> adjust the stretching mode (default=efficient)
 
-```java
+```js
 new sample chimes stretch(1 1 general) speed(-1)
 ```
 
@@ -440,7 +440,7 @@ The polySynth functions the same as the synth in the sense that you choose a wav
 
 The extra feature of the polySynth is that it allows for overlapping notes to generate for example chords. Notes provided to the `note()` function as a 2-dimensional list will be played at the same time as a chord. By default there are 8 voices available at the same time. Voice stealing is `on` by default meaning if a new note is played while all voices are busy the oldest triggered note will be removed.
 
-```java
+```js
 // note the double [[ ]] to generate a 2d-list
 list chord [ [ 0 4 5 7 8 10 12 ] ]
 
@@ -454,7 +454,7 @@ If new notes are triggered while all voices are still in use they will not be pl
 **arguments**
 - {Bool/Name} -> turn voice stealing `on` or `off` (optional, default=on)
 
-```java
+```js
 list notes spread(16 0 36)
 
 new polySynth sine note(notes 2) time(1/16) shape(1 1/1) steal(off)
@@ -472,7 +472,7 @@ Use the spread function to add little delays with optional randomness between ev
 - {Number+/Division} -> the delaytime between note triggers in ms or division (default=0)
 - {Number+/Division} -> random delaytime offset added to the delaytime in ms or division (default=0)
 
-```java
+```js
 list notes [[0 3 7 11 12]]
 
 new polySynth sine note(notes 2) shape(1 1/1) time(1/1) spread(150 50)
@@ -488,7 +488,7 @@ The extra feature of the polySample is that it allows for overlapping sounds. Fo
 
 For voice-stealing see `steal` under `polySynth`. For setting voice-amount see `voices` under `polySynth`.
 
-```java
+```js
 set tempo 100
 set scale dorian eb
 
@@ -500,7 +500,7 @@ new polySample piano_e time(1/16) note(notes 1) shape(1 1/2) steal(off) tune(64)
 
 The midi instrument allows you to send midi-note messages to other devices or virtual devices on your computer. To setup a basic midi instrument use:
 
-```java
+```js
 
 set midi getPorts
 //=> prints the available devices to the console
@@ -516,7 +516,7 @@ Set the pitch for the instrument to play a note in a melody or chord. The note i
 - {Value/RingValue} -> positive or negative semitone note value or list, x-coordinate (default=0)
 - {Value/RingValue} -> positive or negative octave value or list, y-coordinate (default=0)
 
-```java
+```js
 set scale major D
 
 new midi "AU DLS Synth 1" note(2 2)
@@ -525,7 +525,7 @@ new midi "AU DLS Synth 1" note(2 2)
 
 Also excepts lists to play a melody over time:
 
-```java
+```js
 set scale minor A
 list mel [0 5 7 3 2 -2 0]
 
@@ -540,14 +540,14 @@ Replaces the `shape()` function for Synth and Sample. Set the duration of the mi
 
 - {Number/Division} -> Duration time in ms or division
 
-```java
+```js
 new midi "AU DLS Synth 1" length(1500) time(1)
 //=> duration of 1500 ms triggered once per bar
 ```
 
 with division:
 
-```java
+```js
 set tempo 100
 
 new midi "AU DLS Synth 1" length(1/2) time(1)
@@ -564,7 +564,7 @@ Replaces the `pan()` method for Synth and Sample. Set the channel output for the
 
 - {Number} -> Channel to send the midi-note to
 
-```java
+```js
 new midi "AU DLS Synth 1" note(7 2) out(1)
 new midi "AU DLS Synth 1" note(0 0) out(2)
 ```
@@ -579,7 +579,7 @@ Turn the chord output (polyphonic) on for a midi instrument. This allows you to 
 
 - {Bool} -> Turn chord output on/off
 
-```java
+```js
 list chords [[0 4 7] [2 5 9] [5 9 0]]
 
 new midi "AU DLS Synth 1" note(chords 1) chord(on)
@@ -595,7 +595,7 @@ Turn midiclock syncing on/off for an individual instrument and send it to the se
 
 - {Bool} -> Turn syncing on/off
 
-```java
+```js
 new midi "aMidiDevice" sync(on)
 new midi "otherDevice" sync(off)
 ```
@@ -611,7 +611,7 @@ Send control change messages to the midi device. This function can have multiple
 - {Int+} -> Midi controller number between 0-127
 - {Int+/RingInt+} -> Midi controller value between 0-127
 
-```java
+```js
 list ccValues [10 20 30 40 50]
 
 new midi "device" change(13 100) change(21 ccValues)
@@ -622,7 +622,7 @@ new midi "device" change(13 100) change(21 ccValues)
 
 An experimental text-to-speech instrument is added. Using the Mac terminal speech capabilities with the help of the `aka.speech` object developed by Masayuki Akamatsu.
 
-```java
+```js
 new voice Alex speak("Hello world!") time(2)
 
 new voice Samantha speak("Hi Alex!") time(2 1)
@@ -637,7 +637,7 @@ Use the input from the soundcard (ADC) as the source for an instrument. The soun
 **arguments**
 - {Name} -> `default` or the input channel number as a string `inX`
 
-```java
+```js
 // use the default input, in most cases channel 1
 new input default gain(1)
 
@@ -655,7 +655,7 @@ The modulator allows you to send a modulation signal as an argument to parameter
 **arguments**
 - {Name} -> waveform type: `sine`/`sin`, `sawUp`/`phasor`, `sawDown`/`saw`, `square`/`rect`, `triangle`/`tri`, `random`/`rand`, `randomLine`/`randL`, `trigger`/`gate`
 
-```java
+```js
 new modulator <waveform-type> name(<name>) range(<lo> <hi> <exp>) time(<division>) out(<channel>)
 ```
 
@@ -666,7 +666,7 @@ Set the name for the modulator, this name can be used as argument in the functio
 **arguments**
 - {Name} -> the modulator name for reference in other functions
 
-```java
+```js
 // set the name to myModulator
 new modulator sine name(myModulator)
 // the synth uses the modulator in the gain function
@@ -681,7 +681,7 @@ Set the modulation speed in division. The default is `1/1` (one period per bar).
 - {Division} -> The time interval for one period of the modulation waveform (optional, default=1/1)
 - {Division} -> The time offset for the modulation (optional, default=0)
 
-```java
+```js
 // modulate a sinewave at a period of one per 4 bars
 new modulator sine time(4/1)
 ```
@@ -695,7 +695,7 @@ Set the modulation range between a low and high value with an option exponential
 - {Number} -> The high output range (optional, default=1)
 - {Number} -> The scaling exponent (optional, default=1)
 
-```java
+```js
 // set the range from 200 to 5000, for example to modulate a filter cutoff
 new modulator sine range(200 5000)
 
@@ -712,7 +712,7 @@ Set the output channel from your connected soundcard to send the modulation sign
 **arguments**
 - {Number+} -> The channel number from 1 till number of outputs available, maximum of 16 (default=0)
 
-```java
+```js
 // send a sinewave modulator signal to DAC channel 3
 new modulator sine range(-1 1) out(3)
 ```
@@ -724,7 +724,7 @@ When using the mode `trigger`/`gate` the modulator functions like the sequencer 
 **arguments**
 - {Name} -> `trigger`/`gate` sets the intrument to use the stepsequencer
 
-```java
+```js
 // generate a euclidean rhythm and use it in the trigger
 list rtm euclid(16 11)
 new modulator trigger time(1/8) play(rtm) ratchet(0.1 2)
@@ -737,7 +737,7 @@ The hold function transforms the `trigger` into a gate that goes open and closes
 **arguments**
 - {Number+} -> hold time in ms or division (default=0)
 
-```java
+```js
 // trigger every 8th note, and leave the gate open for the length of 50ms
 new modulator trigger time(1/8) hold(50)
 
