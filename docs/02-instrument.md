@@ -558,7 +558,7 @@ Alias: `duration()`
 
 ## out
 
-Replaces the `pan()` method for Synth and Sample. Set the channel output for the midi-note to be send to. 
+Set the channel output for the midi-note to be send to. 
 
 **arguments**
 
@@ -573,7 +573,7 @@ Alias: `channel()`
 
 ## chord
 
-Turn the chord output (polyphonic) on for a midi instrument. This allows you to use 2-dimensional lists where the 2nd dimension is used to generate chords. 
+Turn the chord output (polyphony) on for a midi instrument. This allows you to use 2-dimensional lists where the 2nd dimension is used to generate chords. 
 
 **arguments**
 
@@ -585,7 +585,7 @@ list chords [[0 4 7] [2 5 9] [5 9 0]]
 new midi "AU DLS Synth 1" note(chords 1) chord(on)
 ```
 
-Alias: `poly()`
+Alias: `poly`
 
 ## sync
 
