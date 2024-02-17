@@ -33,7 +33,9 @@ new sample kick_909 name(alice)
 /alice 1
 ```
 
-## group
+## group 
+
+**Currently not working correctly in both Mercury4Max and MercuryPlayground**
 
 Set the group-name for this instrument. This can be any string of 2 or more characters. The `group` is used as reference to multiple instruments with the same groupname when the `set` method is used.
 
@@ -115,9 +117,35 @@ list rtc [2 3 2 4 8]
 new sample hat_909 time(1/4) ratchet(1 rtc)
 ```
 
+## timediv
+
+*MercuryPlayground only*
+
+Documentation to do...
+
 ## warp
 
-Warp a rhythm in more complex ways.
+*Mercury4Max only*
+
+Warp a rhythm in more complex ways. More documentation to do...
+
+## wait
+
+*MercuryPlayground only*
+
+This function is similar to the offset parameter in the `time()` method except that it allows you to set an additional waiting time (or delay) for an instrument in milliseconds. This function is useful to allign/synchronize instruments with external peripherals such as sending MIDI notes or OSC messages.
+
+**arguments**
+
+- {Int+/Division} -> specify the waiting time in milliseconds or division (default=null)
+
+```js
+new sample kick_909 time(1/4)
+// the hihat plays 100ms later than the kick
+new sample hat_909 time(1/4) wait(100)
+```
+
+<!-- Alias: `delay` -->
 
 ## shape
 
