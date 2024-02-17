@@ -64,6 +64,7 @@
 		- [length](./02-instrument.md#length)
 		- [out](./02-instrument.md#out)
 		- [chord](./02-instrument.md#chord)
+		- [program](./02-instrument.md#program) *(MercuryPlayground only)*
 		- [sync](./02-instrument.md#sync) *(Mercury4Max only)*
 	- [input](./02-instrument.md#input)
 	- [modulator](./02-instrument.md#modulator) *(Mercury4Max only)*

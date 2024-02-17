@@ -587,6 +587,23 @@ new midi "AU DLS Synth 1" note(chords 1) chord(on)
 
 Alias: `poly`
 
+## program
+
+Send program change messages to the specified midi channel of the instrument. The channel number is based on the `out()` method (see above). The default channel `1` is used if no channel is selected. The program change value is an integer from `0` - `127` and can be sequenced as a list. If no value is provided there is no program change send.
+
+**arguments**
+
+- {Int+} -> Program change value 0-127 (default=off)
+
+```js
+list notes spread(5 0 12)
+list changes [0 10 20]
+
+new midi default note(notes 1) out(1) program(changes)
+```
+
+<!-- Alias: `pgm`, `pc` -->
+
 ## sync
 
 Turn midiclock syncing on/off for an individual instrument and send it to the selected port/device from that instrument.
@@ -616,6 +633,8 @@ list ccValues [10 20 30 40 50]
 
 new midi "device" change(13 100) change(21 ccValues)
 ```
+
+Alias: `cc`
 
 <!-- 
 # Text to Speech (mac-only)
