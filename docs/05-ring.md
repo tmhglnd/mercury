@@ -32,6 +32,8 @@ list rands random(5 0 20)
 	- [sineFloat / cosineFloat](#sinefloat-cosinefloat)
 	- [saw / sawFloat](#saw-sawfloat)
 	- [square / squareFloat](#square-squarefloat)
+	- [binaryBeat](#binaryBeat)
+	- [spacingBeat](#spacingBeat)
 - [Algorithmic Methods](#algorithmic-methods)
 	- [euclidean](#euclidean)
 	- [hexBeat](#hexbeat)
@@ -339,9 +341,51 @@ list sqr2 squareFloat(30 sinF(30 2 1 5))
 ```
 Alias: `squareF()`, `rectFloat()`, `rectF()`
 
+## binaryBeat
+
+Generate a binary rhythm from a positive integer number or an array of numbers. Returns the binary value as an array of separated 1's and 0's useful for representing rhythmical patterns.
+
+Alias: `binary`
+
+**arguments**
+- {Int+/List} -> List of numbers to convert to binary representation
+
+```js
+// generate a binary array from a single number
+list bny1 binaryBeat(358);
+//=> [1 0 1 1 0 0 1 1 0]
+
+// use an array of numbers and concatenate binary representations
+list bny2 binaryBeat([4 3 5]);
+//=> [1 0 0 1 1 1 0 1]
+
+// negative values are clipped to 0
+list bny3 binaryBeat([-4 4]);
+//=> [0 1 0 0]
+```
+
+## spacingBeat
+
+Generate an array of 1's and 0's based on a positive integer number or array. Every number in the array will be replaced by a 1 with a specified amount of 0's appended to it. Eg. a 2 => 1 0, a 4 => 1 0 0 0, etc. This technique is useful to generate a rhythm based on spacing length between onsets
+
+Alias: `spacing`, `space`
+
+**arguments**
+- {Int+/List} -> List of numbers to convert to spaced rhythm
+
+```js
+// generate a rhythm based on numbered spacings
+list spc1 spacingBeat(2 3 2)
+//=> [1 0 1 0 0 1 0]
+
+// also works with an array as input
+list spc2 spacingBeat([4 2 0])
+//=> [1 0 0 0 1 0 0]
+```
+
 # Algorithmic Methods
 
-# euclidean
+## euclidean
 
 Generate a euclidean rhythm evenly spacing n-beats amongst n-steps.Inspired by Godfried Toussaints famous paper "The Euclidean Algorithm Generates Traditional Musical Rhythms".
 
