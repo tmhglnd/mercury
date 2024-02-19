@@ -1520,4 +1520,12 @@ toScale([8 13 -1 20 -6 21 -4 12])
 // Preserves floating point for detune/microtonality
 toScale([0 4.1 6.5 7.1 9.25])
 //=> [0 3.1 5.5 7.1 8.25] 
+
+// Optionally add a scale name and root to use a scale other 
+// than the global one
+toScale([0 1 2 3 4 5 6 7 8 9 10 11] major)
+//=> [ 0 0 2 2 4 5 5 7 7 9 9 11 ]
+
+toScale([0 1 2 3 4 5 6 7 8 9 10 11] minor eb);
+//=> [ 3 3 5 6 6 8 8 10 11 11 13 13 ]
 ```
