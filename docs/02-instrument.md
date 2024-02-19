@@ -617,7 +617,7 @@ Alias: `poly`
 
 ## program
 
-Send program change messages to the specified midi channel of the instrument. The channel number is based on the `out()` method (see above). The default channel `1` is used if no channel is selected. The program change value is an integer from `0` - `127` and can be sequenced as a list. If no value is provided there is no program change send.
+Send program change messages to the specified midi channel of the instrument. The channel number is based on the `out()` method (see above). The default channel `1` is used if no channel is selected. The program change value is an integer from `0` - `127` and can be sequenced as a list. If no value is provided there is no program change send. The value is **only** send when it changes based on the previous value. This is done because some midi devices react every time a program change is received (for example cutting of notes), even if the value stays the same.
 
 **arguments**
 
