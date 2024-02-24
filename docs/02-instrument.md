@@ -35,14 +35,18 @@ new sample kick_909 name(alice)
 
 ## group 
 
-**Currently not working correctly in both Mercury4Max and MercuryPlayground**
+*MercuryPlayground only!*
 
-Set the group-name for this instrument. This can be any string of 2 or more characters. The `group` is used as reference to multiple instruments with the same groupname when the `set` method is used.
+Set one or more group-name(s) for this instrument. This can be any string of 3 or more characters. With the `group` you can apply a line of code to multiple instruments at the same time. The `group` is **not** like a mixing bus, so using for example `gain()` will overwrite the `gain()` function on the line of the instrument. If you use the `name()` function you have to make sure the name is set before the group is applied otherwise the reference won't work correctly.
 
 **arguments**
-- {Name} -> a group name used for multiple instruments (default=null)
+- {Name} -> a group name used for multiple instruments (default=none)
 
 ```js
+// the hihat is not included in the group so will 
+// not get the gain(0.8) and fx(reverb 0.9 11)
+new sample hat_909 time(1/8)
+
 new sample kick_909 group(drums) time(1/4)
 new sample snare_909 group(drums) time(1/2 1/4)
 	set drums gain(0.8) fx(reverb 0.9 11)

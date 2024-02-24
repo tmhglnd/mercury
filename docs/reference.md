@@ -31,7 +31,7 @@
 - [new (instruments)](./02-instrument.md)
 	- [All instruments (except midi)](./02-instrument.md#all-instruments)
 		- [name](./02-instrument.md#name)
-		- [group](./02-instrument.md#group)
+		- [group](./02-instrument.md#group) *(MercuryPlayground only)*
 		- [time](./02-instrument.md#time)
 		- [play](./02-instrument.md#play)
 		- [shape](./02-instrument.md#shape)
