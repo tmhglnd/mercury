@@ -89,6 +89,12 @@ list rands random(5 0 20)
 	- [multiply](#multiply)
 	- [divide](#divide)
 	- [normalize](#normalize)
+	- [equals](#equals) *MercuryPlayground Only*
+	- [notEquals](#notequals) *MercuryPlayground Only*
+	- [greater](#greater) *MercuryPlayground Only*
+	- [greaterEquals](#greaterequals) *MercuryPlayground Only*
+	- [less](#less) *MercuryPlayground Only*
+	- [lessEquals](#lessequals) *MercuryPlayground Only*
 - [Translate Methods](#translate-methods)
 	- midiToNote
 	- midiToFreq
@@ -1370,6 +1376,72 @@ list vals normalize([5 [12 [4 17]] 3 1])
 ```
 
 Alias: `norm()`
+
+## equals
+
+Compare two lists for equals (==)
+
+```js
+list vals ([0 1 2 3] [1 10 20 30])
+//=> [  ]
+```
+
+Alias: `eq`
+
+## notEquals
+
+Compare two list for not equals (!=)
+
+```js
+list vals ([0 1 2 3] [1 10 20 30])
+//=> [  ]
+```
+
+Alias: `neq`
+
+## greater
+
+Compare two lists for left values are greater than right (>)
+
+```js
+list vals ([0 1 2 3] [1 10 20 30])
+//=> [  ]
+```
+
+Alias: `gt`
+
+## greaterEquals
+
+Compare two lists for left values are greater than or equal to right (>=)
+
+```js
+list vals ([0 1 2 3] [1 10 20 30])
+//=> [  ]
+```
+
+Alias: `gte`
+
+## less
+
+Compare two lists for left values are less than right (<)
+
+```js
+list vals ([0 1 2 3] [1 10 20 30])
+//=> [  ]
+```
+
+Alias: `lt`
+
+## lessEquals
+
+Compare two lists for left values less than or equal to right (<=)
+
+```js
+list vals ([0 1 2 3] [1 10 20 30])
+//=> [  ]
+```
+
+Alias: `lte`
 
 # Translate Methods
 

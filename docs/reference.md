@@ -175,7 +175,12 @@
 		- [multiply](./05-ring.md#multiply)
 		- [divide](./05-ring.md#divide)
 		- [normalize](./05-ring.md#normalize)
-
+		- [equals](./05-ring.md#equals)
+		- [notEquals](./05-ring.md#notequals)
+		- [greater](./05-ring.md#greater)
+		- [greaterEquals](./05-ring.md#greaterequals)
+		- [less](./05-ring.md#less)
+		- [lessEquals](./05-ring.md#lessequals)
 
 ## Param Glossary
 
