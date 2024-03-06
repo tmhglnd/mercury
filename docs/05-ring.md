@@ -114,6 +114,7 @@ list rands random(5 0 20)
 	- ratioToMs
 	- scaleNames
 	- toScale
+	- [textCode](#textCode)
 
 # Param Glossary
 
@@ -1600,4 +1601,23 @@ toScale([0 1 2 3 4 5 6 7 8 9 10 11] major)
 
 toScale([0 1 2 3 4 5 6 7 8 9 10 11] minor eb);
 //=> [ 3 3 5 6 6 8 8 10 11 11 13 13 ]
+```
+
+## textToCode
+
+Convert a string or array of strings to their ASCII code integer representation. The ASCII code is the American Standard Code for Information Interchange. In this code every unique character/symbol/number is represented by a whole number (integer). For example `a=97`, but `A=65` and `SPACE=32`.
+
+Alias: `textCode`, `ttoc`
+
+**arguments**
+- {String/Array} -> input to convert to ASCII 
+
+```js
+// single string input
+textCode('bach cage');
+//=> [ 98 97 99 104 32 99 97 103 101 ]
+
+// multiple strings in an array results in a 2D array output
+textCode([bach cage]);
+//=> [ [ 98 97 99 104 ] [ 99 97 103 101 ] ]
 ```
