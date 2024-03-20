@@ -57,6 +57,8 @@ list rands random(5 0 20)
 	- [pick](#pick)
 	- [shuffle](#shuffle)
 	- [expand](#expand)
+	- [markovTrain](#markovtrain) *MercuryPlayground Only*
+	- [markovChain](#markovchain) *MercuryPlayground Only*
 - [Transformative Methods](#transformative-methods)
 	- [clone](#clone)
 	- [join](#join)
@@ -817,6 +819,36 @@ list exp2 expand(notes 30)
 //   -8.60 ┤         ╰╮│       ╰╯╰╮│╰╮│   
 //  -10.80 ┤          ╰╯          ││ ╰╯   
 //  -13.00 ┤                      ╰╯      
+```
+
+## markovTrain
+
+Build a Markov Chain transition table from a set of datapoints (a list) and use it together with `markovChain()` to generate a new list of values based on the probabilities of the transitions in the provided training dataset. A Markov Chain is a model that describes possible next events based on a current state (first order) or multiple previous states (2nd, 3rd, ... n-order). The Markov Chain is a broadly used method in algorithmic music to generate new material (melodies, rhythms, but even words) based on a set of provided material, but can also be used in linguistics to analyze word or sentence structures. The first argument is the list to analyze, the second argument is the nth-order (default = 2). In theory, longer chains preserve the original structure of the model, but won't generate as diverse outputs. The output is a 
+
+Alias: `markov()`
+
+**arguments**
+- {List} -> List to analyze into transition table
+- {Int+} -> Order of the markov-chain (optional, default=2)
+- return -> Transition table as a string
+
+```js
+list melody [ 0 0 7 7 9 9 7 5 5 4 4 2 2 0 ]
+list model markovTrain(melody 2)
+```
+
+## markovChain
+
+Generate a list of values of n-length based on a markov transition table (a model) that was trained with `markovTrain()`. The first argument determines the output length, the second input is the reference to the markov model. The resulting output is based on the probabilities that are captured within the transition table. This means the output can also be directed by the `randomSeed`.
+
+```js
+list melody [ 0 0 7 7 9 9 7 5 5 4 4 2 2 0 ]
+list model markovTrain(melody 3)
+
+set randomSeed 3141
+
+list markovMelody markovChain(16 model)
+//=> [9 7 7 5 5 4 4 2 2 0 0 5 4 4 2 2]
 ```
 
 # Transformative Methods
