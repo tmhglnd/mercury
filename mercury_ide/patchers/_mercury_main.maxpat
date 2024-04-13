@@ -268,7 +268,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 118.0, 238.0, 640.0, 591.0 ],
+						"rect" : [ 175.0, 206.0, 640.0, 591.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -314,7 +314,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 79.0, 192.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -769,18 +769,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-6",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 174.0, 330.0, 41.0, 22.0 ],
-									"text" : "sig~ 0"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 4,
@@ -797,7 +785,7 @@
 										}
 ,
 										"classnamespace" : "dsp.gen",
-										"rect" : [ 62.0, 310.0, 705.0, 435.0 ],
+										"rect" : [ 757.0, 409.0, 705.0, 435.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -844,7 +832,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 360.0, 150.0, 28.0, 22.0 ],
+													"patching_rect" : [ 345.0, 150.0, 28.0, 22.0 ],
 													"text" : "in 4"
 												}
 
@@ -856,20 +844,8 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 345.0, 255.0, 28.0, 22.0 ],
+													"patching_rect" : [ 345.0, 270.0, 28.0, 22.0 ],
 													"text" : "in 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-19",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 243.333333333333343, 225.0, 26.0, 22.0 ],
-													"text" : "+ 1"
 												}
 
 											}
@@ -939,7 +915,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 429.0, 45.0, 115.0, 22.0 ],
+													"patching_rect" : [ 538.0, 45.0, 115.0, 22.0 ],
 													"text" : "data stutbuf 352800"
 												}
 
@@ -1048,7 +1024,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-19", 0 ],
+													"destination" : [ "obj-7", 0 ],
 													"source" : [ "obj-16", 0 ]
 												}
 
@@ -1057,13 +1033,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-3", 0 ],
 													"source" : [ "obj-18", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-7", 0 ],
-													"source" : [ "obj-19", 0 ]
 												}
 
 											}
@@ -1168,7 +1137,7 @@
 										}
 ,
 										"classnamespace" : "dsp.gen",
-										"rect" : [ 248.0, 164.0, 705.0, 435.0 ],
+										"rect" : [ 757.0, 409.0, 705.0, 435.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1215,7 +1184,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 360.0, 150.0, 28.0, 22.0 ],
+													"patching_rect" : [ 345.0, 150.0, 28.0, 22.0 ],
 													"text" : "in 4"
 												}
 
@@ -1227,20 +1196,8 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 345.0, 255.0, 28.0, 22.0 ],
+													"patching_rect" : [ 345.0, 270.0, 28.0, 22.0 ],
 													"text" : "in 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-19",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 243.333333333333343, 225.0, 26.0, 22.0 ],
-													"text" : "+ 1"
 												}
 
 											}
@@ -1310,7 +1267,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 429.0, 45.0, 115.0, 22.0 ],
+													"patching_rect" : [ 538.0, 45.0, 115.0, 22.0 ],
 													"text" : "data stutbuf 352800"
 												}
 
@@ -1419,7 +1376,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-19", 0 ],
+													"destination" : [ "obj-7", 0 ],
 													"source" : [ "obj-16", 0 ]
 												}
 
@@ -1428,13 +1385,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-3", 0 ],
 													"source" : [ "obj-18", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-7", 0 ],
-													"source" : [ "obj-19", 0 ]
 												}
 
 											}
@@ -1630,7 +1580,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-5", 1 ],
+									"order" : 0,
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-65", 1 ],
+									"order" : 1,
 									"source" : [ "obj-15", 0 ]
 								}
 
@@ -1739,22 +1698,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 1 ],
-									"order" : 0,
-									"source" : [ "obj-6", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-65", 1 ],
-									"order" : 1,
-									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -52234,8 +52177,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -59375,6 +59316,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
