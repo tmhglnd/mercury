@@ -28,6 +28,10 @@ Use the `[route bang]` object to send a trigger to for example a `[line~]` or `[
 
 Send a bang to `[pv noteCount]` to retrieve the current count the instrument is at. This count increments based on the rhythm of the combined results of the `time()`, `play()` and `warp()`.
 
+## argListLookup
+
+Use the `[argListLookup]` abstraction to allow Mercury to lookup values from a `list` created in the code. `[argListLookup]` expects the `value` or `name` on the left inlet, and the `[pv noteCount]` on the right inlet to index the correct value from the `list`.
+
 ## Example Patcher
 
 Below is copy-compressed code of a example patcher that generates a short sinewave beep.
