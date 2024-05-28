@@ -40,6 +40,16 @@
     "rhythm": "beat",
     "play": "beat"
   },
+  "osc": {
+    "id": "name",
+    "tag": "address",
+    "url": "address",
+    "aux": "group",
+    "bus": "group",
+    "timing": "time",
+    "rhythm": "beat",
+    "play": "beat"
+  },
   "synth": {
     "gain": "amp",
     "vol": "amp",

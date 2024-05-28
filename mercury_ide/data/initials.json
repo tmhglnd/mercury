@@ -100,11 +100,23 @@
 ,
 	"emitter" : 	{
 		"beat" : 1,
-		"time" : "1/16",
+		"time" : "1/4",
 		"once" : 0,
 		"warp" : 1,
 		"ratchet" : [ 0, 2 ],
 		"name" : "null",
+		"group" : "no_group",
+		"emit" : 1,
+		"sendOSC" : 1,
+		"clock" : 0
+	}
+,	"osc" : 	{
+		"beat" : 1,
+		"time" : "1/4",
+		"once" : 0,
+		"warp" : 1,
+		"ratchet" : [ 0, 2 ],
+		"name" : "no_name",
 		"group" : "no_group",
 		"emit" : 1,
 		"sendOSC" : 1,

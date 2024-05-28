@@ -9,6 +9,10 @@
 		"midi" : [ "midi_out", 6 ]
 	}
 ,
+	"osc" : {
+		"default" : [ "osc_out", 5 ]
+	}
+,
 	"midi" : {
 		
 	}

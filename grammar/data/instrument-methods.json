@@ -20,6 +20,14 @@
 		"beat"
 	],
 
+	"osc" : [
+		"name",
+		"address",
+		"group",
+		"time",
+		"beat"
+	],
+
 	"synth" : [
 		"amp",
 		"beat",
