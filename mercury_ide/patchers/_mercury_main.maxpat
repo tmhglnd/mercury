@@ -57032,99 +57032,6 @@
 , 			{
 				"box" : 				{
 					"fontface" : 1,
-					"id" : "obj-122",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 945.0, 50.0, 197.0, 20.0 ],
-					"text" : "// Standalone settings"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 1095.0, 79.0, 24.0, 24.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-117",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1095.0, 109.0, 137.0, 22.0 ],
-					"text" : "searchformissingfiles $1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-119",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 973.833333333333485, 110.0, 92.0, 22.0 ],
-					"text" : "appicon_win $1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-121",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 945.0, 80.0, 97.0, 22.0 ],
-					"text" : "appicon_mac $1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-114",
-					"linecount" : 4,
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 945.0, 159.0, 409.0, 62.0 ],
-					"saved_object_attributes" : 					{
-						"allwindowsactive" : 1,
-						"appicon_mac" : "",
-						"appicon_win" : "",
-						"audiosupport" : 1,
-						"bundleidentifier" : "com.tmhglnd.mercury",
-						"cantclosetoplevelpatchers" : 1,
-						"cefsupport" : 0,
-						"copysupport" : 1,
-						"database" : 0,
-						"extensions" : 1,
-						"gensupport" : 1,
-						"midisupport" : 1,
-						"noloadbangdefeating" : 1,
-						"overdrive" : 1,
-						"preffilename" : "mercury-ide",
-						"searchformissingfiles" : 0,
-						"statusvisible" : 0,
-						"usesearchpath" : 0
-					}
-,
-					"text" : "standalone @allwindowsactive 1 @bundleidentifier com.tmhglnd.mercury @cantclosetoplevelpatchers 1 @cefsupport 0 @copysupport 1 @database 0 @gensupport 1 @noloadbangdefeating 1 @overdrive 1 @preffilename mercury-ide @searchformissingfiles 0 @statusvisible 0 @usesearchpath 0"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 1,
 					"id" : "obj-113",
 					"linecount" : 3,
 					"maxclass" : "comment",
@@ -62836,7 +62743,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1300.0, 79.0, 54.0, 22.0 ],
+					"patching_rect" : [ 1046.0, 79.0, 54.0, 22.0 ],
 					"text" : "onecopy"
 				}
 
@@ -73964,13 +73871,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-117", 0 ],
-					"source" : [ "obj-11", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-413", 0 ],
 					"source" : [ "obj-115", 0 ]
 				}
@@ -73978,22 +73878,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-114", 0 ],
-					"source" : [ "obj-117", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-213", 0 ],
 					"source" : [ "obj-118", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-114", 0 ],
-					"source" : [ "obj-119", 0 ]
 				}
 
 			}
@@ -74017,13 +73903,6 @@
 					"destination" : [ "obj-201", 0 ],
 					"order" : 1,
 					"source" : [ "obj-120", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-114", 0 ],
-					"source" : [ "obj-121", 0 ]
 				}
 
 			}
@@ -75863,7 +75742,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-425", 1 ],
-					"midpoints" : [ 1146.833333333333485, 642.0, 1118.666666666666742, 642.0, 1118.666666666666742, 439.0, 864.5, 439.0 ],
+					"midpoints" : [ 1146.833333333333485, 628.0, 1125.666666666666742, 628.0, 1125.666666666666742, 439.0, 864.5, 439.0 ],
 					"order" : 1,
 					"source" : [ "obj-363", 0 ]
 				}
