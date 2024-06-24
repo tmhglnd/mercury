@@ -6721,18 +6721,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-428",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 106.5, 1635.0, 29.5, 22.0 ],
-					"text" : "1"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-438",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -51402,7 +51390,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 93.0, 192.0, 789.0, 639.0 ],
+						"rect" : [ 112.0, 200.0, 789.0, 639.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -52164,12 +52152,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 295.5, 30.0, 150.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"defer" : 1
-									}
-,
-									"text" : "udpreceive 4880 @defer 1"
+									"patching_rect" : [ 295.5, 30.0, 97.0, 22.0 ],
+									"text" : "udpreceive 4880"
 								}
 
 							}
@@ -52321,6 +52305,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -59301,8 +59287,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -66704,6 +66688,42 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 75.0, 240.0, 135.0, 22.0 ],
+									"text" : "append poly_sample 11"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 75.0, 210.0, 173.0, 22.0 ],
+									"text" : "sprintf symout polySample::%s"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 285.0, 210.0, 138.0, 22.0 ],
+									"text" : "prepend set polySample"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -66721,7 +66741,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 75.0, 189.0, 133.0, 22.0 ],
+									"patching_rect" : [ 60.0, 180.0, 133.0, 22.0 ],
 									"text" : "sprintf symout loop::%s"
 								}
 
@@ -66733,7 +66753,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 285.0, 204.0, 98.0, 22.0 ],
+									"patching_rect" : [ 269.5, 240.0, 98.0, 22.0 ],
 									"text" : "prepend set loop"
 								}
 
@@ -66745,7 +66765,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 253.5, 234.0, 114.0, 22.0 ],
+									"patching_rect" : [ 253.5, 270.0, 114.0, 22.0 ],
 									"text" : "prepend set sample"
 								}
 
@@ -66757,7 +66777,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 253.5, 159.0, 50.5, 22.0 ],
+									"patching_rect" : [ 253.5, 150.0, 50.5, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -66775,7 +66795,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 159.0, 149.0, 22.0 ],
+									"patching_rect" : [ 45.0, 150.0, 149.0, 22.0 ],
 									"text" : "sprintf symout sample::%s"
 								}
 
@@ -66787,7 +66807,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 264.0, 72.0, 22.0 ],
+									"patching_rect" : [ 45.0, 300.0, 72.0, 22.0 ],
 									"text" : "prepend set"
 								}
 
@@ -66799,7 +66819,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 234.0, 105.0, 22.0 ],
+									"patching_rect" : [ 45.0, 270.0, 105.0, 22.0 ],
 									"text" : "append sampler 1"
 								}
 
@@ -66838,7 +66858,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 253.5, 315.0, 30.0, 30.0 ],
+									"patching_rect" : [ 253.5, 330.0, 30.0, 30.0 ],
 									"varname" : "u361009303"
 								}
 
@@ -66854,7 +66874,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-144", 0 ]
 								}
 
@@ -66862,7 +66882,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-153", 0 ],
-									"order" : 1,
+									"order" : 2,
+									"source" : [ "obj-144", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"order" : 0,
 									"source" : [ "obj-144", 0 ]
 								}
 
@@ -66926,7 +66954,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -66934,8 +66962,37 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-241", 0 ],
-									"order" : 1,
+									"order" : 2,
 									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"order" : 0,
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-261", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-238", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -72149,25 +72206,13 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-125",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 50.0, 1635.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-79",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 1668.0, 52.0, 22.0 ],
-					"text" : "open $1"
+					"patching_rect" : [ 50.0, 1658.0, 45.0, 22.0 ],
+					"text" : "open 1"
 				}
 
 			}
@@ -73924,13 +73969,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-55", 0 ],
 					"source" : [ "obj-124", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-79", 0 ],
-					"source" : [ "obj-125", 0 ]
 				}
 
 			}
@@ -76187,13 +76225,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-79", 0 ],
-					"source" : [ "obj-428", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-430", 0 ],
 					"source" : [ "obj-429", 0 ]
 				}
@@ -77412,6 +77443,20 @@
 			}
 , 			{
 				"name" : "srcKarplus.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "srcPolySample.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "srcSample.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
