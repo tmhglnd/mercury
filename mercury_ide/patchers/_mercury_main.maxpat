@@ -52321,8 +52321,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -59303,6 +59301,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -72427,7 +72427,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 130.0, 189.0, 587.0, 517.0 ],
+						"rect" : [ 829.0, 171.0, 587.0, 517.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -77038,6 +77038,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "atom.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "calcExpr.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -77256,6 +77263,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "homeostat.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "jit.gl.syphonclient.mxo",
 				"type" : "iLaX"
 			}
@@ -77275,6 +77289,13 @@
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/code",
 				"patcherrelativepath" : "../code",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "modifier.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -77404,6 +77425,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "srcWrapper.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "syncToScale.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -77421,6 +77449,13 @@
 				"name" : "syphon.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers/visual",
 				"patcherrelativepath" : "./visual",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "terrain.maxpat",
+				"bootpath" : "~/Documents/Mercury/Library/Sound",
+				"patcherrelativepath" : "../../../../../../../../../Documents/Mercury/Library/Sound",
 				"type" : "JSON",
 				"implicit" : 1
 			}
