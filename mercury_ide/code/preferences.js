@@ -1,20 +1,20 @@
+// 
+// Mercury preferences and file loading script
+// 
 
-const max    = require('max-api');
-const os     = require('os');
-const fs     = require('fs-extra');
-const path   = require('path');
-const slash  = require('slash');
-const fg     = require('fast-glob');
+const max = require('max-api');
+const os = require('os');
+const fs = require('fs-extra');
+const path = require('path');
+const slash = require('slash');
+const fg = require('fast-glob');
+const { parse, stringify } = require('ini');
 
 // the system info from the user
 let system = {
 	'user' : os.homedir(),
 	'app' : process.cwd(),
-	'platform' : os.platform()
-	// 'tmp' : os.tmpdir(),
-	// 'type' : os.type(),
-	// 'release' : os.release(),
-	// 'ip' : os.hostname(),
+	'platform' : os.platform(),
 }
 // convert windows paths to posix
 if (system.platform === 'win32'){
@@ -24,17 +24,55 @@ if (system.platform === 'win32'){
 max.post("system-info", system);
 max.outlet("system", system);
 
+// Read a mercury.ini file from the /mercury_ide folder
+// Create the file if there is none present yet
+// User can adjust this themselves if prefered
+let configDefault = `
+; Adjust base if you want to use a different location for /Mercury
+base = /Documents/Mercury
+user = null
+app  = null
+
+[default]
+samples   = ../media/samples/
+waveforms = ../media/waveforms/
+examples  = ../../examples/
+sounds    = ../patchers/sounds/
+visuals   = ../patchers/visual/
+`;
+if (!fs.existsSync('../mercury.ini')){
+	fs.writeFileSync('../mercury.ini', configDefault);
+}
+
+// config ini file default in mercury (default paths)
+let config = parse(fs.readFileSync('../mercury.ini', 'utf-8'));
+const iniOptions = { whitespace: true, align: true, comment: true };
+max.post('ini:', config);
+
+if (!config.user){ config.user = system.user; }
+if (!config.app){ config.app = system.app; }
+fs.writeFileSync('../mercury.ini', stringify(config, iniOptions));
+
+// the basefolder for all Mercury local files
+// >> the path can be changed in the mercury.ini file if you prefer
+const base = join(config.user, config.base);
+max.post('located /Mercury folder: ' + base);
+
+// config ini file for user (custom paths)
+let user;
+const configPath = join(base, './mercury-user.ini');
+
 // the default preferences and object to store prefs
 let prefs = {
 	"driver" : "coreaudio",
 	"input" : "Built-in Microphone",
 	"output" : "Built-in Output",
 	"samplerate": 44100,
-	"iovs": 512,
+	"iovs": 256,
 	"sigvs": 256,
 	"overdrive" : 1,
 	"interrupt" : 1,
-	"voices" : 10,
+	"voices" : 8,
 	"evaluateAfter": 0,
 	"v_res" : "720 (720p)",
 	"res" : "720 (720p)",
@@ -65,7 +103,6 @@ let prefs = {
 	"ignore_keys": 0,
 	"slide_time": 15,
 	"autoLog" : 1,
-	"autoCopy" : 1,
 	"extEditor" : 0,
 	"osc_ip" : "localhost",
 	"osc_in" : 8000,
@@ -86,142 +123,128 @@ let shortkeys = {
 	"jump-bottom" : [ "alt-down", 2038 ],
 	"jump-begin" : [ "alt-left", 2037 ],
 	"jump-end" : [ "alt-right", 2036 ],
+	"jump-word-left" : [ undefined, null ],
+	"jump-word-right" : [ undefined, null ],
 	"up" : [ "alt-w", 8721 ],
 	"down" : [ "alt-s", 223 ],
 	"left" : [ "alt-a", 229 ],
 	"right" : [ "alt-d", 8706 ]
 }
 
-// the basefolder for all Mercury local files
-// const base = system.user + '/Documents/Mercury';
-const base = path.posix.join(system.user, '/Documents/Mercury');
-max.post('Located Mercury folder in: ', base);
-
 // variables for the preferences file
-// const prefFile = base + '/Preferences/preferences.json';
-const prefFile = path.posix.join(base, '/Preferences/preferences.json');
+const prefFile = join(base, '/Preferences/preferences.json');
 const defaults = { ...prefs };
 
 // variables for shortkey preferences file
-const shortkeysFile = path.posix.join(base, '/Preferences/shortkeys.json');
+const shortkeysFile = join(base, '/Preferences/shortkeys.json');
 const defaultShortkeys = { ...shortkeys };
 
 // variables for the sample library file
 // const sampleFile = base + '/Data/sample-library.json';
-const sampleFile = path.posix.join(base, '/Data/sample-library.json');
-const defaultSamplePath = path.posix.join(system.app, "../media/samples/");
+const sampleFile = join(base, '/Data/sample-library.json');
+const defaultSamplePath = join(system.app, config.default.samples);
 const defaultSamples = loadAudioFiles(defaultSamplePath);
 let samples = {};
-max.post('Located default samples in: ' + defaultSamplePath);
+max.post('located default samples: ' + defaultSamplePath);
 
 // variables for the wavetable library
-const wfFile = path.posix.join(base, '/Data/waveform-library.json');
-const defaultWFPath = path.posix.join(system.app, '../media/waveforms/');
+const wfFile = join(base, '/Data/waveform-library.json');
+const defaultWFPath = join(system.app, config.default.waveforms);
 const defaultWF = loadAudioFiles(defaultWFPath);
 let waveforms = {};
-max.post('Located default waveforms in: ' + defaultWFPath);
+max.post('located default waveforms: ' + defaultWFPath);
 
 // variables for the example files
-const examplesPath = path.posix.join(system.app, '../../examples/');
-const examples = loadFiles(examplesPath, '**/*.txt');
-max.post('Located examples in: ' + examplesPath);
+const examplesPath = join(system.app, config.default.examples);
+const examples = loadFiles(examplesPath, '/**/*.txt');
+max.post('Located examples: ' + examplesPath);
 
 // variables for library files (requires for synths, dsp, visuals)
-// const libPath = path.posix.join(base, '/Library');
-const libPath = path.posix.join(system.app, '../patchers/visual/');
-const libFile = path.posix.join(base, '/Data/code-library.json');
-let library = {};
+// const libPath = join(base, '/Library');
+// const libPath = join(system.app, '../patchers/visual/');
+// const libFile = join(base, '/Data/code-library.json');
+// let library = {};
 
-const soundLibPath = path.posix.join(system.app, '../patchers/sound/');
-const soundLibFile = path.posix.join(base, '/Data/sound-extensions.json');
+const soundLibPath = join(system.app, config.default.sounds);
+const soundLibFile = join(base, '/Data/sound-extensions.json');
 let soundLibrary = {};
-const visualLibPath = path.posix.join(system.app, '../patchers/visual/');
-const visualLibFile = path.posix.join(base, '/Data/visual-extensions.json');
+
+const visualLibPath = join(system.app, config.default.visuals);
+const visualLibFile = join(base, '/Data/visual-extensions.json');
 let visualLibrary = {};
 
 // directories for storage of code logs, recordings and sketches
 const userDirs = ['/Code Logs', '/Recordings', '/Library'/*, '/Sketches'*/];
 
-// check if path for preference file exists
-// check if file exists, otherwise write the default prefs
-// if file exists, read the preferences
+// init mercury with all the files from different folders
 max.addHandler('init', () => {
-	// create file for shortkeys and load if exists
-	if (fs.pathExistsSync(shortkeysFile)){
-		shortkeys = fs.readJsonSync(shortkeysFile);
-		max.post('Loaded shortkeys: '+shortkeysFile);
-	} else {
-		shortkeys = { ...defaultShortkeys };
-		writeJson(shortkeysFile, shortkeys);
-		max.post('Created shortkeys: '+shortkeysFile);
-	}
-	max.outlet('shortkeys', shortkeys);
-	
-	// create path for sample file and load if exists
-	if (fs.pathExistsSync(sampleFile)){
-		samples = fs.readJsonSync(sampleFile);
-		max.post('Loaded sample library: '+sampleFile);
-	} else {
-		samples = { ...defaultSamples };
-		writeJson(sampleFile, samples);
-		max.post('Created sample library: '+sampleFile);
-	}
-	max.outlet('samples', samples);
-
-	// create path for wavetablefile and load if exists
-	if (fs.pathExistsSync(wfFile)){
-		waveforms = fs.readJsonSync(wfFile);
-		max.post('Loaded wavetable library: '+wfFile);
-	} else {
-		waveforms = { ...defaultWF };
-		writeJson(wfFile, waveforms);
-		max.post('Created wavetable library:' +wfFile);
-	}
-	max.outlet('wf', waveforms);
-
+	// create user directories in prefered /Mercury location
 	for (let d in userDirs){
-		let f = base + userDirs[d];
+		let f = join(base + userDirs[d]);
 		fs.ensureDirSync(f);
 		max.outlet('folders', userDirs[d], f);
 	}
 
-	// create path for requires and load if exists
+	// create user.ini file with defaults that can be adjusted 
+	// with custom paths to samples, waveforms, etc
+	let configUser = "[samples]\npath[] = default\n\n[waveforms]\npath[] = default\n";
+	if (!fs.existsSync(configPath)){
+		fs.writeFileSync(configPath, configUser, iniOptions);
+	}
+	user = parse(fs.readFileSync(configPath, 'utf-8'));
+	max.post('user ini:', user);
+
+	// load all the other samples based on file paths
+	// files with the same name overwrite previous loaded files
+	loadSamplesFromIni();
+
+	// load all waveforms from the mercury-user.ini file path
+	// files with the same name overwrite previous loaded files
+	loadWaveformsFromIni();
+
+	// create file for shortkeys and load if exists
+	if (fs.pathExistsSync(shortkeysFile)){
+		shortkeys = fs.readJsonSync(shortkeysFile);
+	} else {
+		shortkeys = { ...defaultShortkeys };
+		writeJson(shortkeysFile, shortkeys);
+	}
+	max.outlet('shortkeys', shortkeys);
+	max.post('loaded shortkeys: ' + shortkeysFile);
+
 	// library = loadFiles(libPath, '**/*.maxpat');
-	// library = Object.assign({}, loadFiles(path.posix.join(base, '/Library'), '**/*.maxpat'), library);
-
+	// library = Object.assign({}, loadFiles(join(base, '/Library'), '**/*.maxpat'), library);
+	
+	// load require files from defaults and if the folders exist
+	// in /Documents/Mercury/Library/(Sound|Visual)/
 	soundLibrary = loadFiles(soundLibPath, '**/*.maxpat');
-	soundLibrary = Object.assign({}, loadFiles(path.posix.join(base, '/Library/Sound'), '**/*.maxpat'), soundLibrary);
-	visualLibrary = loadFiles(visualLibPath, '**/*.maxpat');
-	visualLibrary = Object.assign({}, loadFiles(path.posix.join(base, '/Library/Visual'), '**/*.maxpat'), visualLibrary);
-	// max.post('soundLib', soundLibrary);
-	// max.post('visualLib', visualLibrary);
-
+	soundLibrary = Object.assign({}, loadFiles(join(base, '/Library/Sound'), '**/*.maxpat'), soundLibrary);
 	writeJson(soundLibFile, soundLibrary);
+
+	visualLibrary = loadFiles(visualLibPath, '**/*.maxpat');
+	visualLibrary = Object.assign({}, loadFiles(join(base, '/Library/Visual'), '**/*.maxpat'), visualLibrary);
 	writeJson(visualLibFile, visualLibrary);
 
-	// writeJson(libFile, library);
-	// max.post('Created code library: '+libFile);
-	// max.outlet('lib', library);
 	max.outlet('vlib', visualLibrary);
 	max.outlet('slib', soundLibrary);
-	max.post('Visual library imported: '+visualLibFile);
-	max.post('Sound library imported: '+soundLibFile);
+	max.post('visual library imported: ' + visualLibFile);
+	max.post('sound library imported: ' + soundLibFile);
 
-	// create path for preferences file and load if exists
+	// check if preferences exist, otherwise write the default prefs
+	// if file exists, read the preferences
 	if (fs.pathExistsSync(prefFile)){
 		prefs = fs.readJsonSync(prefFile);
 		Object.keys(defaults).forEach((p) => {
 			if (prefs[p] === undefined) {
 				prefHandlers.store(p, defaults[p]);
 				max.post('new preferences added: '+p);
-			}	
+			}
 		});
-		max.post('Loaded preferences: '+prefFile);
 	} else {
 		prefs = { ...defaults };
 		writeJson(prefFile, prefs);
-		max.post('Created preferences: '+prefFile);
 	}
+	max.post('loaded preferences: ' + prefFile);
 	max.outlet('settings', prefs);
 });
 
@@ -260,57 +283,61 @@ const keyHandlers = {
 max.addHandlers(keyHandlers);
 
 const sampleHandlers = {
-	// restore samplelibrary to default
-	// output the lib to Max
-	'defaultSmps': () => {
-		samples = { ...defaultSamples };
-		max.outlet("samples", samples);
-		writeJson(sampleFile, samples);
-		max.post('Samples are reset to default');
-	},
-	// load a folder with samples and store 
-	// names with path in database file
-	'loadSmps': (fold) => {
-		samples = Object.assign({}, loadAudioFiles(fold), samples);
-		writeJson(sampleFile, samples);
-		max.outlet('samples', samples);
-		max.post('Included samples from: '+fold);
-	},
-	// replace all samples with the content of a folder 
-	// and store names with path in database file
-	'replaceSmps': (fold) => {
-		samples = loadAudioFiles(fold);
-		writeJson(sampleFile, samples);
-		max.outlet('samples', samples);
-		max.post('Replaced samples with: '+fold);
+	'samples' : (action, fold) => {
+		// clear or add path to ini file depending on action
+		// default = reset buffers to default files
+		// replace = replace the files with the loaded folder
+		// load = add the folder to the paths
+		if (action !== 'load'){
+			user.samples.path = [];
+		}
+		if (action === 'default'){
+			user.samples.path.push('default');
+		} else {
+			user.samples.path.push(fold);
+		}
+		// write to config to the ini file
+		writeConfig();
+
+		// add files to dict and load in polybuffer
+		loadSamplesFromIni();
+
+		// print a message to the console
+		if (action !== 'default'){
+			max.post('added samples from: ' + fold)
+		} else {
+			max.post('samples reset to default');
+		}
 	}
 }
 max.addHandlers(sampleHandlers);
 
 const wfHandlers = {
-	// restore wavetable library to default
-	// output the library to Max
-	'defaultWF': () => {
-		waveforms = { ...defaultWF };
-		max.outlet('wf', waveforms);
-		writeJson(wfFile, waveforms);
-		max.post('Waveforms are reset to default');
-	},
-	// load a folder with waveforms and store 
-	// names with path in database file
-	'loadWF': (fold) => {
-		waveforms = Object.assign({}, loadAudioFiles(fold), waveforms);
-		writeJson(wfFile, waveforms);
-		max.outlet('wf', waveforms);
-		max.post('Included waveforms from: '+fold);
-	},
-	// replace all samples with the content of a folder 
-	// and store names with path in database file
-	'replaceWF': (fold) => {
-		waveforms = loadAudioFiles(fold);
-		writeJson(wfFile, waveforms);
-		max.outlet('wf', waveforms);
-		max.post('Replaced waveforms with: '+fold);
+	'wf' : (action, fold) => {
+		// clear or add path to ini file depending on action
+		// default = reset buffers to default files
+		// replace = replace the files with the loaded folder
+		// load = add the folder to the paths
+		if (action !== 'load'){
+			user.waveforms.path = [];
+		}
+		if (action === 'default'){
+			user.waveforms.path.push('default');
+		} else {
+			user.waveforms.path.push(fold);
+		}
+		// write to config to the ini file
+		writeConfig();
+
+		// add files to dict and load in polybuffer
+		loadWaveformsFromIni();
+
+		// print a message to the console
+		if (action !== 'default'){
+			max.post('added waveforms from: ' + fold)
+		} else {
+			max.post('waveforms reset to default');
+		}
 	}
 }
 max.addHandlers(wfHandlers);
@@ -335,8 +362,32 @@ max.addHandler('randomExample', () => {
 	max.outlet('example', path);
 });
 
+// use the mercury-user.ini file to load all the folders into memory
+function loadSamplesFromIni(){
+	loadAudioFromIni('samples', samples, defaultSamples, sampleFile);
+}
+// use the mercury-user.ini file to load all the folders into memory
+function loadWaveformsFromIni(){
+	loadAudioFromIni('waveforms', waveforms, defaultWF, wfFile);
+}
+
+// load audiofiles from ini file, also checking default
+function loadAudioFromIni(type, dict, defaults, file){
+	user[type].path?.forEach((path) => {
+		if (path === 'default'){
+			// load the default samples
+			dict = Object.assign({}, dict, defaults);
+		} else if (path){
+			dict = Object.assign({}, dict, loadAudioFiles(path));
+		}
+	});
+	writeJson(file, dict);
+	max.outlet(`${type}`, dict);
+	// max.post(`loaded ${type} library: ` + file);
+}
+
+// Load audio files (.wav, .aif, .mp3)
 function loadAudioFiles(fold){
-	// Load audio files (.wav, .aif, .mp3)
 	let glob = "**/*.+(wav|WAV|aif|AIF|aiff|AIFF|mp3|MP3|m4a|M4A|flac|FLAC)";
 	return loadFiles(fold, glob);
 }
@@ -344,7 +395,8 @@ function loadAudioFiles(fold){
 // Load files into a dictionary based on a 
 // fast-glob search string
 function loadFiles(fold, glob){
-	let files = fg.sync(fold + glob);
+	// use posix.join and slash to make sure no double-slashes on win
+	let files = fg.sync(join(slash(fold), glob));
 	let dict = {};
 
 	for (let f in files){
@@ -358,4 +410,14 @@ function loadFiles(fold, glob){
 // Sync-write a JSON file to disk with spaces
 function writeJson(file, obj){
 	fs.outputJsonSync(file, obj, { spaces: 2 });
+}
+
+// Join two or more paths together
+function join(){
+	return path.posix.join(...arguments);
+}
+
+// write the user config file to disk
+function writeConfig(){
+	fs.writeFileSync(configPath, stringify(user, iniOptions));
 }
