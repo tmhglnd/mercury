@@ -8,7 +8,6 @@
 //====================================================================
 
 const max  = require('max-api');
-const copy = require('clipboardy');
 
 const Gen  = require('total-serialism').Generative;
 const Algo = require('total-serialism').Algorithmic;
@@ -26,13 +25,8 @@ let evaluated = false;
 let evalAfter = false;
 
 let DEBUG = false;
-let AUTO_COPY = true;
 
 const handlers = {
-	// enable copy code to clipboard on execute
-	'autoCopy' : (v) => {
-		AUTO_COPY = (v > 0);
-	},
 	// enable debug logging
 	'debug' : (v) => {
 		DEBUG = (v > 0);
@@ -53,12 +47,6 @@ const handlers = {
 		} catch (e) {
 			max.post('Unkown error while parsing code');
 		}
-
-		// copy sketch to clipboard for pasting to other editors
-		// if (AUTO_COPY){
-		//	let head = ['//=== MERCURY SKETCH ' + date() + ' ==='];
-		//	copy.writeSync(head.concat(v).join('\n'));
-		// }
 	},
 	// output the latest parsed code
 	'output' : () => {
