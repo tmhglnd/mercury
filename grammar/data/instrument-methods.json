@@ -88,6 +88,20 @@
 		"offset"
 	],
 
+	"polySample" : [
+		"amp",
+		"beat",
+		"env",
+		"time",
+		"pan",
+		"speed",
+		"add_fx",
+		"stretch",
+		"group",
+		"name",
+		"offset"
+	],
+
 	"input" : [
 		"time",
 		"beat",
