@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 791.0, 152.0, 289.0, 125.0 ],
+		"rect" : [ 434.0, 100.0, 289.0, 125.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -105,7 +105,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 225.0, 525.0, 40.0, 22.0 ],
+					"patching_rect" : [ 202.666666666666657, 525.0, 40.0, 22.0 ],
 					"text" : "r SOF"
 				}
 
@@ -125,12 +125,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-224",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 158.0, 644.0, 142.0, 62.0 ],
-					"text" : "poly~ visualObject 4 down 2 @args vis 1280 720 @parallel 1 @target 0 @resampling 0"
+					"patching_rect" : [ 158.0, 644.0, 173.0, 49.0 ],
+					"text" : "poly~ visualObject 2 down 2 @args vis 1280 720 @parallel 1 @target 0 @resampling 0",
+					"varname" : "poly~"
 				}
 
 			}
@@ -181,7 +182,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 45.0, 465.0, 67.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "noclose", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 791, 152, 1080, 277, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "noclose", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 434, 100, 723, 225, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -204,7 +205,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 125.0, 245.0, 652.0, 559.0 ],
+						"rect" : [ 499.0, 338.0, 652.0, 559.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -410,7 +411,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 45.0, 195.0, 121.0, 22.0 ],
-									"text" : "696 215 985 340"
+									"text" : "434 100 723 225"
 								}
 
 							}
@@ -13350,13 +13351,6 @@
 				"name" : "consoleLog.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "cubes.maxpat",
-				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers/visual",
-				"patcherrelativepath" : "./visual",
 				"type" : "JSON",
 				"implicit" : 1
 			}

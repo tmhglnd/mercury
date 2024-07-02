@@ -40,6 +40,37 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 45.0, 60.0, 75.0, 22.0 ],
+					"text" : "prepend dim"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 45.0, 30.0, 190.0, 22.0 ],
+					"restore" : [ 1920, 1080 ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "pattr @bindto ::mcyV::vResolution",
+					"varname" : "u763024504"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-173",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -437,7 +468,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 217.166666666666629, 30.0, 100.0, 22.0 ],
+					"patching_rect" : [ 366.833333333333258, 30.0, 100.0, 22.0 ],
 					"text" : "loadmess mute 0"
 				}
 
@@ -449,7 +480,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "int" ],
-					"patching_rect" : [ 217.166666666666629, 60.0, 56.0, 22.0 ],
+					"patching_rect" : [ 366.833333333333258, 60.0, 56.0, 22.0 ],
 					"text" : "thispoly~"
 				}
 
@@ -460,7 +491,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 111.0, 60.0, 81.0, 22.0 ],
+					"patching_rect" : [ 260.666666666666629, 60.0, 81.0, 22.0 ],
 					"text" : "s #0_load"
 				}
 
@@ -472,7 +503,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 111.0, 30.0, 58.0, 22.0 ],
+					"patching_rect" : [ 260.666666666666629, 30.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -1245,7 +1276,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 320.0, 150.0, 302.333333333333371, 35.0 ],
+					"patching_rect" : [ 296.0, 150.0, 302.333333333333371, 35.0 ],
 					"text" : "jit.gl.camera @position 0 0 3 @lookat 0 0 0 @locklook 1 @tripod 1 @lens_angle 50 @near_clip 0.25"
 				}
 
@@ -19154,6 +19185,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 645.0, 30.0, 28.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 1"
 				}
 
@@ -19200,28 +19235,16 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_gl_texture", "", "" ],
-					"patching_rect" : [ 45.0, 105.0, 569.0, 22.0 ],
-					"text" : "jit.gl.node #1 @name #0_node @adapt 0 @dim #2 #3 @erase_color 0 0 0 0 @fsaa 1 @capture 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.0, 60.0, 43.0, 22.0 ],
-					"text" : "r dimV"
+					"patching_rect" : [ 45.0, 105.0, 521.0, 22.0 ],
+					"text" : "jit.gl.node #1 @name #0_node @adapt 0 @dim #2 #3 @erase_color 0 0 0 0 @capture 1"
 				}
 
 			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"source" : [ "obj-10", 0 ]
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-1", 0 ]
 				}
 
 			}
@@ -19796,6 +19819,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-62", 0 ],
 					"source" : [ "obj-68", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
