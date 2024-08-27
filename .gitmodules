@@ -1,0 +1,3 @@
+[submodule "mercury-docs"]
+	path = mercury-docs
+	url = https://github.com/tmhglnd/mercury-docs
