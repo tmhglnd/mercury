@@ -1,3 +1,6 @@
 [submodule "mercury-docs"]
 	path = docs/mercury-docs
 	url = https://github.com/tmhglnd/mercury-docs
+[submodule "docs/mercury-docs"]
+	path = docs/mercury-docs
+	url = https://github.com/tmhglnd/mercury-docs
