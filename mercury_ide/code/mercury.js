@@ -234,7 +234,7 @@ const handlers = {
 		return Algo.infinitySeries(...v);
 	},
 	'infSeries' : (...v) => {
-		return functionMap.infinitySeries(...v);
+		return Algo.infinitySeries(...v);
 	},
 	// 
 	// Stochastic Methods
@@ -329,9 +329,7 @@ const handlers = {
 		// output the table as a string array to use for generating
 		return [ data ];
 	},
-	'markov' : (...v) => {
-		return functionMap['markovTrain'](...v);
-	},
+	// removed 'markov' alias
 	'markovChain' : (...v) => {
 		// train from a markov table and generate a chain
 		let markov = new Rand.DeepMarkovChain();
@@ -345,9 +343,7 @@ const handlers = {
 		// return generated array
 		return gen;
 	},
-	'chain' : (...v) => {
-		return functionMap['markovChain'](...v);
-	},
+	//removed 'chain' alias
 	// 
 	// Transformational Methods
 	// 
@@ -688,7 +684,7 @@ const handlers = {
 		return Util.add(Util.mult(Util.norm(...v), 2), -1);
 	},
 	'snorm' : (...v) => {
-		return functionMap.signedNormalize(...v);
+		return Util.add(Util.mult(Util.norm(...v), 2), -1);
 	},
 	// take the modulus of an array
 	'modulo' : (...v) => {
@@ -717,42 +713,42 @@ const handlers = {
 		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a === b));
 	},
 	'eq' : (...v) => {
-		return functionMap.equals(...v);
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a === b));
 	},
 	// compare two lists for not equal
 	'notEquals' : (...v) => {
 		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a !== b));
 	},
 	'neq' : (...v) => {
-		return functionMap.notEquals(...v);
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a !== b));
 	},
 	// compare left for greater than right list
 	'greater' : (...v) => {
 		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a > b));	
 	},
 	'gt' : (...v) => {
-		return functionMap.greater(...v);
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a > b));	
 	},
 	// compare left for greater than or equal to right list
 	'greaterEquals' : (...v) => {
 		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a >= b));	
 	},
 	'gte' : (...v) => {
-		return functionMap.greaterEquals(...v);
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a >= b));	
 	},
 	// compare left for less than right list
 	'less' : (...v) => {
 		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a < b));	
 	},
 	'lt' : (...v) => {
-		return functionMap.less(...v);
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a < b));
 	},
 	// compare left for less than or equal to right list
 	'lessEquals' : (...v) => {
 		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a <= b));	
 	},
 	'lte' : (...v) => {
-		return functionMap.lessEquals(...v);
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a <= b));
 	}
 }
 max.addHandlers(handlers);
