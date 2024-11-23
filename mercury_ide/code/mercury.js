@@ -50,7 +50,7 @@ const handlers = {
 	},
 	// output the latest parsed code
 	'output' : () => {
-		if (!evaluated){	
+		if (!evaluated && parseResult.length > 0){	
 			outputParse();
 			evaluated = true;
 		}
