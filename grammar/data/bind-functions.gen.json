@@ -87,7 +87,15 @@
     "unison": "wave2",
     "aux": "group",
     "bus": "group",
-    "id": "name"
+    "id": "name",
+    "fmShape": "fm_env",
+    "fmEnvelope": "fm_env",
+    "fmLength": "fm_env",
+    "harmonicity": "fm_harm",
+    "ratio": "fm_harm",
+    "index": "fm_idx",
+    "modDepth": "fm_idx",
+    "modIndex": "fm_idx"
   },
   "polySynth": {
     "gain": "amp",

@@ -38,6 +38,23 @@
 		"dur"
 	],
 
+	"fm_env" : [
+		"fmShape",
+		"fmEnvelope",
+		"fmLength"
+	],
+
+	"fm_harm" : [
+		"harmonicity",
+		"ratio"
+	],
+
+	"fm_idx" : [
+		"index",
+		"modDepth",
+		"modIndex"
+	],
+
 	"note" : [
 		"pitch"
 	],

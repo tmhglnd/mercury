@@ -41,7 +41,10 @@
 		"res",
 		"wave2",
 		"group",
-		"name"
+		"name",
+		"fm_env",
+		"fm_harm",
+		"fm_idx"
 	],
 
 	"polySynth" : [
