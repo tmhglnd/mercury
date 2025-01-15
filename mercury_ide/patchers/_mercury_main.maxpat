@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 145.0, 328.0, 367.0, 404.0 ],
+		"rect" : [ 104.0, 175.0, 367.0, 404.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -5032,8 +5032,8 @@
 									"id" : "obj-149",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "signal", "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "signal", "", "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -5074,6 +5074,30 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-4",
+													"index" : 3,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 375.0, 690.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 437.5, 620.0, 41.0, 22.0 ],
+													"text" : "set $2"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-132",
 													"maxclass" : "newobj",
@@ -5116,8 +5140,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 379.5, 620.0, 39.0, 22.0 ],
-													"text" : "$1 $2"
+													"patching_rect" : [ 379.5, 620.0, 41.0, 22.0 ],
+													"text" : "set $1"
 												}
 
 											}
@@ -5532,6 +5556,15 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-123", 0 ],
+													"order" : 1,
+													"source" : [ "obj-118", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"order" : 0,
 													"source" : [ "obj-118", 1 ]
 												}
 
@@ -5642,6 +5675,13 @@
 													"destination" : [ "obj-39", 2 ],
 													"order" : 1,
 													"source" : [ "obj-28", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"source" : [ "obj-3", 0 ]
 												}
 
 											}
@@ -5809,8 +5849,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 229.5, 330.0, 329.0, 22.0 ],
-									"text" : "out 1 2, gain 0.75, time 1/4, accent 1/1, freq 900, length 0.65"
+									"patching_rect" : [ 229.5, 330.0, 316.0, 22.0 ],
+									"text" : "out 3 4, gain 0.7, time 1/4, accent 1/1, freq 900, length 0.4"
 								}
 
 							}
@@ -5910,6 +5950,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-90", 0 ],
 									"source" : [ "obj-131", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 1 ],
+									"source" : [ "obj-149", 2 ]
 								}
 
 							}
@@ -11363,8 +11410,6 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 1,
 										"defer" : 0,
-										"node_bin_path" : "",
-										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -12382,7 +12427,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-284",
-									"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2", ",", "M6" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -15747,6 +15792,8 @@
 									"saved_object_attributes" : 									{
 										"autostart" : 0,
 										"defer" : 1,
+										"node_bin_path" : "",
+										"npm_bin_path" : "",
 										"watch" : 1
 									}
 ,
@@ -19814,7 +19861,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 45.0, 360.0, 67.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "grow", "close", "zoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 145, 328, 512, 732, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "window", "flags", "nogrow", "close", "nozoom", "nofloat", "menu", "minimize", ";", "#Q", "window", "constrain", 50, 50, 32768, 32768, ";", "#Q", "window", "size", 104, 175, 471, 579, ";", "#Q", "window", "title", ";", "#Q", "window", "exec", ";", "#Q", "savewindow", 1, ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
 
@@ -28320,6 +28367,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "fxLadderFilter.maxpat",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "fxLoopDelay.maxpat",
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
@@ -28426,6 +28480,13 @@
 				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "moogLadderFilter.genexpr",
+				"bootpath" : "~/Drive/work/code/max/major_projects/mercury_lc/mercury/mercury_ide/_deprecated",
+				"patcherrelativepath" : "../_deprecated",
+				"type" : "GenX",
 				"implicit" : 1
 			}
 , 			{
