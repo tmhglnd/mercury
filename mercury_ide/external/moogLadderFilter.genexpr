@@ -1,0 +1,72 @@
+/*
+This GenExpr file is a port of the CSOUND Moogladder opcode, by Victor Lazzarini.
+His original description follows below.
+For GenExpr (JAN/2012, Max6.0.4(52058)), by Pete Dowling.
+*/
+
+/* ------- */
+/*
+Moogladder - An improved implementation of the Moog ladder filter
+
+DESCRIPTION
+This is a new digital implementation of the Moog ladder filter based on the work of
+Antti Huovilainen, described in the paper "Non-Linear Digital Implementation of the
+Moog Ladder Filter" (Proceedings of DaFX04, Univ of Napoli). This implementation is
+probably a more accurate digital representation of the original analogue filter.
+This is version 2 (revised 14/DEC/2004), with improved amplitude/resonance scaling
+and frequency correction using a couple of polynomials, as suggested by Antti.
+
+SYNTAX
+ar  Moogladder  asig, kcf, kres
+
+PERFORMANCE
+asig - input signal
+kcf - cutoff frequency (Hz)
+kres - resonance (0 - 1).
+
+CREDITS
+Victor Lazzarini
+*/
+/* ------- */
+
+
+/* this 'moogLadder' function is designed to be
+entirely upsampled inside a [poly~], therefore there
+are strange goings on with the 'samplerate' sections */
+
+/* input signal, cutoff frequency (Hz), resonance (0. -> 1.) */
+moogLadder(asig, cf, res) { 
+
+	History z1(0), z2(0), z3(0), z4(0), z5(0), y4(0), mf(0);
+
+	i2v = 40000.; /* twice the 'thermal voltage of a transistor' */
+ 	akfc = cf / (samplerate / 2.); /* sr is half the actual (upsampled) filter sampling rate */
+	akf =  cf / samplerate; /* the upsampled [poly~] sampling rate */
+	/* original of above 2 lines is like this:
+	akfc = cf / samplerate;
+	akf =  cf / (samplerate * 2.); */
+
+	/* frequency and amplitude correction  */ 
+	fcr = 1.8730 * (pow(akfc, 3.)) + 0.4955 * (pow(akfc, 2.)) - 0.6490 * akfc + 0.9988;
+	acr = -3.9364 * (pow(akfc, 2.)) + 1.8409 * akfc + 0.9968;
+	twovg = i2v * (1. - exp(-2. * PI * fcr * akf)); /* filter tuning  */
+
+/* INFO: the following is what actually must be 2x oversampled */
+	/* cascade of 4 1st-order-sections */
+	y1 = z1 + twovg * (tanh((asig - 4. * res * mf * acr) / i2v) - tanh(z1 / i2v));
+	z1 = y1;
+	y2 = z2 + twovg * (tanh(y1 / i2v) - tanh(z2 / i2v));
+	z2 = y2;
+	y3 = z3 + twovg * (tanh(y2 / i2v) - tanh(z3 / i2v));
+	z3 = y3;
+	y4 = z4 + twovg * (tanh(y3 / i2v) - tanh(z4 / i2v));
+	z4 = y4;
+	/* 1/2-sample delay for phase compensation */
+	mf = (y4 + z5) * 0.5;
+	z5 = y4;
+/* INFO: the above is what actually must be 2x oversampled */
+
+	return mf;
+}
+
+/* ...and thanks to Graham Wakefield ! */
