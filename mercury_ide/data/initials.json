@@ -1,5 +1,6 @@
 {
 	"synth" : 	{
+		"solo" : 0,
 		"amp" : 0.6,
 		"beat" : 1,
 		"time" : "1/4",
@@ -32,6 +33,7 @@
 	}
 ,
 	"polySynth" : 	{
+		"solo" : 0,
 		"amp" : 0.5,
 		"beat" : 1,
 		"time" : "1/4",
@@ -60,6 +62,7 @@
 	}
 ,
 	"sample" : 	{
+		"solo" : 0,
 		"amp" : 1,
 		"beat" : 1,
 		"time" : "1/4",
@@ -80,6 +83,7 @@
 	}
 ,
 	"loop" : 	{
+		"solo" : 0,
 		"amp" : 0.6,
 		"beat" : 1,
 		"time" : 1,
@@ -100,6 +104,7 @@
 	}
 ,
 	"polySample" : {
+		"solo" : 0,
 		"amp" : 1,
 		"beat" : 1,
 		"time" : "1/4",
@@ -122,6 +127,7 @@
 	}
 ,
 	"emitter" : 	{
+		"solo" : 0,
 		"beat" : 1,
 		"time" : "1/4",
 		"once" : 0,
@@ -134,6 +140,7 @@
 		"clock" : 0
 	}
 ,	"osc" : 	{
+	"solo" : 0,
 		"beat" : 1,
 		"time" : "1/4",
 		"once" : 0,
@@ -147,6 +154,7 @@
 	}
 ,
 	"midi" : 	{
+		"solo" : 0,
 		"amp" : 0.8,
 		"beat" : 1,
 		"time" : "1/4",
@@ -165,6 +173,7 @@
 	}
 ,
 	"voice" : 	{
+		"solo" : 0,
 		"amp" : 0.5,
 		"beat" : 1,
 		"time" : "1",
@@ -179,6 +188,7 @@
 	}
 ,
 	"input" : 	{
+		"solo" : 0,
 		"amp" : 0.8,
 		"beat" : 1,
 		"time" : 1,
