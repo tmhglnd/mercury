@@ -142,6 +142,42 @@ const handlers = {
 	'cosineF' : (...v) => {
 		return Gen.cosineFloat(...v);
 	},
+	'saw' : (...v) => {
+		return Gen.saw(...v);
+	},
+	'sawFloat' : (...v) => {
+		return Gen.sawFloat(...v);
+	},
+	'sawF' : (...v) => {
+		return Gen.sawFloat(...v);
+	},
+	'square' : (...v) => {
+		return Gen.square(...v);
+	},
+	'rect' : (...v) => {
+		return Gen.square(...v);
+	},
+	'squareFloat' : (...v) => {
+		return Gen.squareFloat(...v);
+	},
+	'squareF' : (...v) => {
+		return Gen.squareFloat(...v);
+	},
+	'rectF' : (...v) => {
+		return Gen.squareFloat(...v);
+	},
+	'binaryBeat' : (...v) => {
+		return Gen.binaryBeat(...v);
+	},
+	'binary' : (...v) => {
+		return Gen.binaryBeat(...v);
+	},
+	'spacingBeat' : (...v) => {
+		return Gen.spacingBeat(...v);
+	},
+	'spacing' : (...v) => {
+		return Gen.spacingBeat(...v);
+	},
 	// 
 	// Algorithmic Methods
 	// 
@@ -159,6 +195,14 @@ const handlers = {
 	},
 	'hex' : (...v) => {
 		return Algo.hexBeat(v[0]);
+	},
+	// generate a sequence of numbers from the collatz conjecture
+	// thread lightly, can grow large with large input numbers
+	'collatz' : (...v) => {
+		return Algo.collatz(v[0]);
+	},
+	'collatzMod' : (...v) => {
+		return Algo.collatzMod(...v);
 	},
 	// generate the numbers in the fibonacci sequence
 	'fibonacci' : (...v) => {
@@ -184,6 +228,13 @@ const handlers = {
 	// generate the numbers in the fibonacci sequence
 	'threeFibonacci' : (...v) => {
 		return Algo.threeFibonacci(...v);
+	},
+	// Per Nørgards Inifity series
+	'infinitySeries' : (...v) => {
+		return Algo.infinitySeries(...v);
+	},
+	'infSeries' : (...v) => {
+		return Algo.infinitySeries(...v);
 	},
 	// 
 	// Stochastic Methods
@@ -263,6 +314,36 @@ const handlers = {
 		v[1] = Math.max(2, (Array.isArray(v[1])) ? v[1][0] : v[1]);
 		return Rand.expand(v[0], v[1]);
 	},
+	// markov chain methods
+	// combine the markovTrain with markovChain
+	// first train the model based on a list
+	// then generate a list output from the chain
+	'markovTrain' : (...v) => {
+		// generate markovchain from the incoming list
+		let markov = new Rand.DeepMarkovChain(...v);
+		// create string of data
+		let data = markov.stringify();
+		// clear data and delete
+		markov.clear();
+		markov = null;
+		// output the table as a string array to use for generating
+		return [ data ];
+	},
+	// removed 'markov' alias
+	'markovChain' : (...v) => {
+		// train from a markov table and generate a chain
+		let markov = new Rand.DeepMarkovChain();
+		markov.parse(v[1]);
+		// set the seed based on the global seed
+		markov.seed(Rand.getSeed());
+		let gen = markov.chain(v[0]);
+		// clear the data and remove markov
+		markov.clear();
+		markov = null;
+		// return generated array
+		return gen;
+	},
+	//removed 'chain' alias
 	// 
 	// Transformational Methods
 	// 
@@ -516,6 +597,10 @@ const handlers = {
 	'chordsNamed' : (...v) => {
 		return TL.chordsFromNames(v);
 	},
+	// translate text to ASCII
+	'textCode' : (...v) => {
+		return TL.textCode(...v);
+	},
 	// 
 	// Statistic Methods
 	// 
@@ -529,6 +614,36 @@ const handlers = {
 	// 
 	// Utility Methods
 	// 
+	// wrap values between a low and high range
+	'wrap' : (...v) => {
+		return Util.wrap(...v);
+	},
+	// fold values between a low and high range
+	'fold' : (...v) => {
+		return Util.fold(...v);
+	},
+	// clip values between a low and high range
+	'clip' : (...v) => {
+		return Util.constrain(...v);
+	},
+	'constrain' : (...v) => {
+		return Util.constrain(...v);
+	},
+	// scale values from an input range to an output range
+	'map' : (...v) => {
+		return Util.map(...v);
+	},
+	// sum the values from an array into one number
+	'sum' : (...v) => {
+		return Util.sum(...v);
+	},
+	'reduce' : (...v) => {
+		return Util.sum(...v);
+	},
+	// return the size of an array
+	'size' : (v) => {
+		return Util.size(v);
+	},
 	// add 1 or more values to an array
 	'add' : (...v) => {
 		return Util.add(...v);
@@ -542,6 +657,9 @@ const handlers = {
 	},
 	// multiply 1 or more values to an array
 	'multiply' : (...v) => {
+		return Util.multiply(...v);
+	},
+	'mult' : (...v) => {
 		return Util.multiply(...v);
 	},
 	'mul' : (...v) => {
@@ -561,12 +679,76 @@ const handlers = {
 	'norm' : (...v) => {
 		return Util.normalize(...v);
 	},
+	// signed normalize an array to -1 1 range
+	'signedNormalize' : (...v) => {
+		return Util.add(Util.mult(Util.norm(...v), 2), -1);
+	},
+	'snorm' : (...v) => {
+		return Util.add(Util.mult(Util.norm(...v), 2), -1);
+	},
 	// take the modulus of an array
 	'modulo' : (...v) => {
 		return Util.mod(...v);
 	},
 	'mod' : (...v) => {
 		return Util.mod(...v);
+	},
+	// convert floats to integers by truncating
+	'int' : (v) => {
+		return Util.arrayCalc(v, 0, (a) => Math.trunc(a));
+	},
+	// round down floats
+	'floor' : (v) => {
+		return Util.arrayCalc(v, 0, (a) => Math.floor(a));
+	},
+	// round floats to nearest integer
+	'round' : (v) => {
+		return Util.arrayCalc(v, 0, (a) => Math.round(a));
+	},
+	'ceil' : (v) => {
+		return Util.arrayCalc(v, 0, (a) => Math.ceil(a));
+	},
+	// compare two lists for equals
+	'equals' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a === b));
+	},
+	'eq' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a === b));
+	},
+	// compare two lists for not equal
+	'notEquals' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a !== b));
+	},
+	'neq' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a !== b));
+	},
+	// compare left for greater than right list
+	'greater' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a > b));	
+	},
+	'gt' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a > b));	
+	},
+	// compare left for greater than or equal to right list
+	'greaterEquals' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a >= b));	
+	},
+	'gte' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a >= b));	
+	},
+	// compare left for less than right list
+	'less' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a < b));	
+	},
+	'lt' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a < b));
+	},
+	// compare left for less than or equal to right list
+	'lessEquals' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a <= b));	
+	},
+	'lte' : (...v) => {
+		return Util.arrayCalc(v[0], v[1], (a,b) => Number(a <= b));
 	}
 }
 max.addHandlers(handlers);
