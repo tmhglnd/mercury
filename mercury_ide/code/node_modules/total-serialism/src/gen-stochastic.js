@@ -383,9 +383,11 @@ class MarkovChain {
 	read(t){
 		// read a markov chain table from a json file
 		if (Array.isArray(t) || typeof t !== 'object'){
-			return console.error(`Error: input is not a valid json formatted table. If your input is an array use train() instead.`);
+			console.error(`Error: input is not a valid json formatted table. If your input is an array use train() instead.`);
+			return false;
 		}
 		this._table = t;
+		return true;
 	}
 	clear(){
 		// empty the transition probabilities
@@ -456,17 +458,45 @@ exports.MarkovChain = MarkovChain;
 // @method chain() -> generate an array of values (default length=2)
 // 
 class DeepMarkov {
-	constructor(data){
+	constructor(data, order){
 		// transition probabilities table
 		this._table = new Map();
 		// train if dataset is provided
-		if (data) { this.train(data) };
+		if (data) { this.train(data, order) };
 		// current state of markov chain
 		this._state = '';
 	}
 	get table(){
-		// return copy of object
+		// return copy of Map object
 		return new Map(JSON.parse(JSON.stringify(Array.from(this._table))));
+	}
+	read(t){
+		// read a markov chain table from a Map() generated with DeepMarkov
+		if (Array.isArray(t) || t instanceof Map === false){
+			console.error(`Error: input is not a valid Map() formatted table. If your input is an array use train() instead.`);
+			return false;
+		}
+		this._table = t;
+		return true;
+	}
+	stringify(){
+		// return stringified version of the DeepMarkov table
+		return JSON.stringify(this._table, replacer);
+	}
+	parse(p){
+		// parse an incoming string to a Map() for transition table
+		try {
+			let parsed = JSON.parse(p, reviver);
+			if (parsed instanceof Map === false){
+				console.error(`Error: input is not a valid string that can be parsed to a Map().`)
+				return false;
+			}
+			this._table = parsed;
+			return true;
+		} catch (e) {
+			console.error(`Error: input is not a valid string that can be parsed to a Map().`);
+			return false;
+		}
 	}
 	clear(){
 		// empty the transition probabilities
@@ -541,3 +571,27 @@ class DeepMarkov {
 }
 exports.DeepMarkov = DeepMarkov;
 exports.DeepMarkovChain = DeepMarkov;
+
+// functions thanks to:
+// https://stackoverflow.com/questions/29085197/how-do-you-json-stringify-an-es6-map
+// helper function for Stringifying a Map() in DeepMarkov
+function replacer(key, value) {
+	if (value instanceof Map) {
+		return {
+			dataType: 'Map',
+			value: [...value]
+			// value: [Array.from(value.entries())], 
+		};
+	}
+	return value;
+}
+
+// helper function for parsing a Map() in DeepMarkov
+function reviver(key, value) {
+	if (typeof value === 'object' && value !== null) {
+		if (value.dataType === 'Map') {
+			return new Map(value.value);
+		}
+	}
+	return value;
+}

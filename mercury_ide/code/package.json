@@ -14,6 +14,6 @@
     "ini": "^4.1.3",
     "path": "^0.12.7",
     "slash": "^3.0.0",
-    "total-serialism": "^2.7.2"
+    "total-serialism": "^2.7.5"
   }
 }

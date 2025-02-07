@@ -355,7 +355,7 @@ Alias: `binary`
 ```js
 // generate a binary array from a single number
 Gen.binaryBeat(358);
-//=> [1, 0, 1, 1, 0, 0, 1, 1, 0]
+//=> [1, 0, 0, 0, 0, 1, 1, 0, 1, 0]
 
 // use an array of numbers and concatenate binary representations
 Gen.binaryBeat([4, 3, 5]);

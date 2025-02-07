@@ -124,4 +124,24 @@ function fullTest(Srl){
 		]
 		expect(possible).toContain(markov._state);
 	});
+
+	test("output and read table from other deepmarkov", () => {
+		let markov = new Rand.DeepMarkovChain();
+		markov.train([1, 2, 3, 4], 3);
+
+		let other = new Rand.DeepMarkovChain();
+		other.read(markov.table);
+
+		expect(markov.table).toStrictEqual(other.table);
+	})
+
+	test("stringify and parse deepmarkov table", () => {
+		let markov = new Rand.DeepMarkovChain();
+		markov.train([1, 2, 3, 4], 3);
+
+		let other = new Rand.DeepMarkovChain();
+		other.parse(markov.stringify());
+
+		expect(markov.table).toStrictEqual(other.table);
+	});
 }

@@ -296,6 +296,31 @@ function arrayCalc(a=0, v=0, func=()=>{return a;}){
 }
 exports.arrayCalc = arrayCalc;
 
+// Alternate through 2 or multiple lists consecutively
+// The output length is the lowest common denominator of the input lists
+// so that every combination of consecutive values is included
+// This function is used to allow arrays as input for Generators
+// And for the step function for algorithmic composition
+//
+// @param {Array0, Array1, ..., Array-n} -> arrays to interleave
+// @return {Array} -> outputs a 2D array of the results
+//
+function arrayCombinations(...arrs){
+	// make sure all values are array
+	arrs = arrs.map(a => toArray(a));
+	// the output is the unique list sizes multiplied
+	let sizes = unique(arrs.map(a => a.length));
+	let iters = 1;	
+	sizes.forEach((l) => iters *= l);
+	// iterate over the total amount pushing the items to array
+	let arr = [];
+	for (let i=0; i<iters; i++){
+		arr.push(arrs.map((e) => e[i % e.length] ));
+	}
+	return arr;
+}
+exports.arrayCombinations = arrayCombinations;
+
 // flatten a multidimensional array. Optionally set the depth
 // for the flattening
 //
@@ -393,6 +418,17 @@ function signedNormalize(a=[0]){
 }
 exports.signedNormalize = signedNormalize;
 exports.snorm = signedNormalize;
+
+// filter duplicate items from an array
+// does not account for 2-dimensional arrays in the array
+// 
+// @param {Array} -> array to filter
+// @return {Array}
+// 
+function unique(a=[0]){
+	return [...new Set(toArray(a))];
+}
+exports.unique = unique;
 
 // Plot an array of values to the console in the form of an
 // ascii chart and return chart from function. If you just want the 

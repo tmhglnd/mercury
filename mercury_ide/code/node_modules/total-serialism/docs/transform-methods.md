@@ -29,6 +29,7 @@ const Mod = require('total-serialism').Transform;
 - [slice](#slice)
 - [split](#split)
 - [spray](#spray)
+- [step](#step)
 - [stretch](#stretch)
 - [unique](#unique)
 
@@ -467,6 +468,28 @@ Mod.spray([[5, 7, 9], [12, 14]], [1, 0, 1, 1, 0]);
 // works with strings
 Mod.spray(['c4', 'f4', 'g4'], [1, 0, 0, 1, 1, 0, 1, 0]);
 //=> [ 'c4', 0, 0, 'f4', 'g4', 0, 'c4', 0 ] 
+```
+
+## step
+
+Alternate through 2 or multiple lists consecutively. This gives a similar result as lace except the output length is the lowest common denominator of the input lists and values are reused till the end until repetition wouldd occur. So that every combination of consecutive values is included in the output. A higher dimension in the array is preserved.
+
+**arguments**
+- {Array0, Array1, ..., Array-n} -> arrays to step through
+- {Array} -> array of results
+
+```js
+// total steps is 2 so output is 4
+Mod.step([0, 3], [7, 12]);
+//=> [0, 7, 3, 12]
+
+// total steps is now 6 before repetition, so output is 12
+Mod.step([0, 3, 5], [7, 12]);
+//=> [0, 7, 3, 12, 5, 7, 0, 12, 3, 7, 5, 12]
+
+// works with 2D and multiple arrays
+Mod.step([0, 3], [7, 12], [[19, 24]]);
+//=> [0, 7, [19, 24], 3, 12, [19, 24]]
 ```
 
 ## stretch

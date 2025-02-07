@@ -633,16 +633,16 @@ const handlers = {
 	'map' : (...v) => {
 		return Util.map(...v);
 	},
-	// sum the values from an array into one number
+	// sum the values from an array into one number, return as list
 	'sum' : (...v) => {
-		return Util.sum(...v);
+		return [ Util.sum(...v) ];
 	},
 	'reduce' : (...v) => {
-		return Util.sum(...v);
+		return [ Util.sum(...v) ];
 	},
-	// return the size of an array
+	// return the size of an array, return as list
 	'size' : (v) => {
-		return Util.size(v);
+		return [ Util.size(v) ];
 	},
 	// add 1 or more values to an array
 	'add' : (...v) => {

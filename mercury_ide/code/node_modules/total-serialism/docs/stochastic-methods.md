@@ -413,8 +413,16 @@ markov.chain(10);
 markov.clear();
 
 // TO DO:
-// read/write a model from a json/object/map structure
+// read/write a model from a Map structure
+let model = markov.table;
+let otherMarkov = new DeepMarkov();
+otherMarkov.read(model);
+
 // for storage to file or transfer between DeepMarkov instances
-// markov.write()
-// markov.read()
+// you can use the build in stringify and parse methods
+// these methods utilize JSON.stringify() and .parse()
+// with specific replacer and reviver methods
+let modelString = markov.stringify();
+let fromStringMarkov = new DeepMarkov();
+fromStringMarkov.parse(modelString);
 ```
