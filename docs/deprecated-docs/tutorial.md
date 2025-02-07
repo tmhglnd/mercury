@@ -43,6 +43,7 @@ Mercury runs in Max8 (sometimes also called MaxMSP), a node-based creative codin
 
 - [Windows](https://cycling74.com/downloads)
 - [Mac](https://cycling74.com/downloads)
+- Linux users can try out the [experimental Linux guide](./linux-guide.md)
 - If links are not working you can go to [https://cycling74.com/downloads/older](https://cycling74.com/downloads/older)
 
 2. Once you installed Max8 you can launch it. It will create a `Max 8` folder in your `Documents`. In there you may create a folder named `Projects`. The full path should now look like this: `<User>/Documents/Max 8/Projects`
