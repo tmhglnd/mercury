@@ -1,0 +1,93 @@
+
+set scale minor a
+
+list cs cosine()
+print cs
+
+list sw saw(16 3.34 0 12)
+print sw
+
+list swf sawF(10)
+print swf
+
+list rc rect(16 11.53)
+print rc
+
+list rcf rectF(16 11.53)
+print rcf
+
+list bn binaryBeat(123)
+print bn
+
+list sp spacingBeat(3 2 4)
+print sp
+
+list cl collatz(5)
+print cl
+
+list clm collatzMod(1410 12)
+print clm
+
+list if infinitySeries(4)
+print if
+
+list nt random(20 0 7)
+list mkvT markovTrain(nt)
+print mkvT
+
+list mkv markovChain(10 mkvT)
+print mkv
+
+list txt ['Some long text here']
+list tx textCode(txt)
+print tx
+
+list vals random(10)
+list wr wrap(vals 2 5)
+print wr
+
+list fl fold(vals 2 5)
+print fl
+
+list clp clip(vals 2 5)
+print clip
+
+list mp map(vals 0 12 10 20)
+print mp
+
+list vls spread(5)
+list sm sum(vls)
+print sm
+
+list sz size(vals)
+print sz
+
+list snrm snorm(vals)
+print snrm
+
+list vls2 randomF(10 0 10)
+print vls2
+
+list in int(vls2)
+print in
+
+list flr floor(vls2)
+print flr
+
+list rnd round(vls2)
+print rnd
+
+list cil ceil(vls2)
+print cil
+
+list cmp1 spread(12)
+list cmp2 random(12)
+
+list eq1 equals(cmp1 cmp2)
+print eq1
+
+list eq2 notEquals(cmp1 cmp2)
+print eq2
+
+list eq3 get(cmp1 cmp2)
+print eq3
