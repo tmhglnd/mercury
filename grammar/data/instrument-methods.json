@@ -42,6 +42,7 @@
 		"wave2",
 		"group",
 		"name",
+		"out",
 		"fm_env",
 		"fm_harm",
 		"fm_idx"
@@ -60,7 +61,8 @@
 		"res",
 		"wave2",
 		"group",
-		"name"
+		"name",
+		"out"
 	],
 
 	"sample" : [
@@ -74,6 +76,7 @@
 		"stretch",
 		"group",
 		"name",
+		"out",
 		"offset"
 	],
 	
@@ -88,6 +91,7 @@
 		"stretch",
 		"group",
 		"name",
+		"out",
 		"offset"
 	],
 
@@ -102,6 +106,7 @@
 		"stretch",
 		"group",
 		"name",
+		"out",
 		"offset"
 	],
 
@@ -111,8 +116,9 @@
 		"amp",
 		"env",
 		"pan",
-		"name",
 		"group",
+		"name",
+		"out",
 		"add_fx"
 	]
 }

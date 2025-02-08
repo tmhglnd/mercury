@@ -11,6 +11,7 @@
 		"pan" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
+		"out" : [ 1, 2 ],
 		"note" : [ 0, 0 ],
 		"range" : [ 0, 4 ],
 		"res" : 0.9,
@@ -46,6 +47,7 @@
 		"steal" : "on",
 		"name" : "no_name",
 		"group" : "no_group",
+		"out" : [ 1, 2 ],
 		"note" : [ 0, 0 ],
 		"res" : 0.9,
 		"fm_harm" : 2,
@@ -73,6 +75,7 @@
 		"pan" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
+		"out" : [ 1, 2 ],
 		"speed" : 1,
 		"note" : [ "off" ],
 		"tune" : [ 60 ],
@@ -94,6 +97,7 @@
 		"pan" : 0,
 		"name" : "no_name",
 		"group" : "no_group",
+		"out" : [ 1, 2 ],
 		"speed" : 1,
 		"note" : [ "off" ],
 		"tune" : [ 60 ],
@@ -117,6 +121,7 @@
 		"steal" : "on",
 		"name" : "no_name",
 		"group" : "no_group",
+		"out" : [ 1, 2 ],
 		"speed" : 1,
 		"note" : [ "off" ],
 		"tune" : [ 60 ],
@@ -140,7 +145,7 @@
 		"clock" : 0
 	}
 ,	"osc" : 	{
-	"solo" : 0,
+		"solo" : 0,
 		"beat" : 1,
 		"time" : "1/4",
 		"once" : 0,
@@ -164,8 +169,8 @@
 		"env" : 100,
 		"name" : "no_name",
 		"group" : "no_group",
-		"note" : [ 0, 0 ],
 		"out" : 1,
+		"note" : [ 0, 0 ],
 		"detune" : 0,
 		"poly" : 0,
 		"sendOSC" : 0,
@@ -182,6 +187,7 @@
 		"ratchet" : [ 0, 2 ],
 		"name" : "Samantha",
 		"group" : "no_group",
+		"out" : [ 1, 2 ],
 		"speed" : 1,
 		"sendOSC" : 0,
 		"clock" : 0
@@ -198,7 +204,8 @@
 		"env" : -1,
 		"pan" : 0,
 		"name" : "no_name",
-		"group" : "no_group"
+		"group" : "no_group",
+		"out" : [ 1, 2 ]
 	}
 
 }
