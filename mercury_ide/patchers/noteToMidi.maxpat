@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 822.0, 175.0, 640.0, 480.0 ],
+		"rect" : [ 617.0, 181.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,9 +44,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "bang", "float" ],
+					"outlettype" : [ "bang", "int" ],
 					"patching_rect" : [ 146.666666666666515, 225.0, 29.5, 22.0 ],
-					"text" : "t b f"
+					"text" : "t b i"
 				}
 
 			}
