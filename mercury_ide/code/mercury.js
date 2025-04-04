@@ -107,6 +107,9 @@ const handlers = {
 	'spreadF' : (...v) => {
 		return Gen.spreadFloat(...v);
 	},
+	'spreadInc' : (...v) => {
+		return Gen.spreadInclusive(...v);
+	},
 	// generate an array of ints between specified range (inclusive)
 	'spreadInclusive' : (...v) => {
 		return Gen.spreadInclusive(...v);
@@ -116,6 +119,9 @@ const handlers = {
 		return Gen.spreadInclusiveFloat(...v);
 	},
 	'spreadInclusiveF' : (...v) => {
+		return Gen.spreadInclusiveFloat(...v);
+	},
+	'spreadIncF' : (...v) => {
 		return Gen.spreadInclusiveFloat(...v);
 	},
 	// fill an array with duplicates of a value
