@@ -296,6 +296,22 @@ function arrayCalc(a=0, v=0, func=()=>{return a;}){
 }
 exports.arrayCalc = arrayCalc;
 
+// Call a list function with provided arguments
+// The difference is that first all the possible combinations of the arrays
+// are calculated allowing arrays as arguments to generate
+// multiple versions of the function and joining them together
+//
+function multiCall(func, ...a){
+	// calculate the array combinations
+	let args = arrayCombinations(...a);
+	// call the function for all the argument combinations
+	args = args.map((a) => func(...a));
+	// combine into a single list but preserving multi-dimensional arrays
+	let out = flatten(args, 1);
+	return out;
+}
+exports.multiCall = multiCall;
+
 // Alternate through 2 or multiple lists consecutively
 // The output length is the lowest common denominator of the input lists
 // so that every combination of consecutive values is included
@@ -306,16 +322,19 @@ exports.arrayCalc = arrayCalc;
 // @return {Array} -> outputs a 2D array of the results
 //
 function arrayCombinations(...arrs){
-	// make sure all values are array
+	// make sure all items are an array of at least 1 item
 	arrs = arrs.map(a => toArray(a));
-	// the output is the unique list sizes multiplied
+	// get the lengths, but remove duplicate lengths
 	let sizes = unique(arrs.map(a => a.length));
+	// multiply to get total of possible iterations
 	let iters = 1;	
 	sizes.forEach((l) => iters *= l);
 	// iterate over the total amount pushing the items to array
 	let arr = [];
 	for (let i=0; i<iters; i++){
-		arr.push(arrs.map((e) => e[i % e.length] ));
+		arr.push(arrs.map((e) => {
+			return e[i % e.length]
+		}));
 	}
 	return arr;
 }

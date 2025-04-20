@@ -22,6 +22,7 @@ const Mod = require('total-serialism').Transform;
 - [lookup](#lookup)
 - [merge](#merge)
 - [palindrome](#palindrome)
+- [pinky](#pinky)
 - [repeat](#repeat)
 - [reverse](#reverse)
 - [rotate](#rotate)
@@ -31,6 +32,7 @@ const Mod = require('total-serialism').Transform;
 - [spray](#spray)
 - [step](#step)
 - [stretch](#stretch)
+- [thumb](#thumb)
 - [unique](#unique)
 
 ## clone
@@ -341,6 +343,38 @@ Mod.palindrome(['c4', 'f4', 'g4'], true);
 // Alias: Mod.mirror()
 ```
 
+## pinky
+
+The pinky/pinkyUp technique takes an array and outputs a transformed array where the last value alternates between every other previous value in a left to right order. This function is inspired by the Ableton arpeggiator algorithms. For example a list of `[0 3 7 12 19]` results in `[0 19 3 19 7 19 12 19]`.
+
+**arguments**
+- {Array} -> array to transform
+
+```js
+Mod.pinkyUp([0, 3, 7, 12, 19])
+//=> [ 0, 19, 3, 19, 7, 19, 12, 19 ]
+```
+
+Alias: `pinkyUp`
+
+### pinkyDown
+
+PinkyDown is similar to pinkyUp, but in reverse order. For instance `[0 3 7 12 19]` results in `[12 19 7 19 3 19 0 19]`.
+
+```js
+Mod.pinkyDown([0, 3, 7, 12, 19])
+//=> [12, 19, 7, 19, 3, 19, 0, 19]
+```
+
+### pinkyUpDown
+
+PinkyUpDown is similar to pinkyUp and pinkyDown and is basically a combination of both. For instance `[0 3 7 12 19]` results in `[0 19 3 19 7 19 12 19 7 19 3 19]`.
+
+```js
+Mod.pinkyUpDown([0, 3, 7, 12, 19])
+//=> [0, 19, 3, 19, 7, 19, 12, 19, 7, 19, 3, 19]
+```
+
 ## repeat
 
 Repeat the values of an array n-times
@@ -527,6 +561,38 @@ Mod.stretch([0, 12, 3, 7], 10, 'none');
 //    4.80 ┤  │  │  │ 
 //    2.40 ┤  │  ╰──╯ 
 //    0.00 ┼──╯ 
+```
+
+## thumb
+
+The thumb/thumbUp technique takes an array and outputs a transformed array where the first value alternates between every other value of the array in a left to right order. This is inspiredy by the Ableton arpeggiator algorithms. For example `[0 3 7 12 19]` results in `[0 3 0 7 0 12 0 19]`.
+
+Alias: `thumbUp()`
+
+**arguments**
+- {Array} -> array to transform
+
+```js
+Mod.thumbUp([0, 3, 7, 12, 19])
+//=> [0, 3, 0, 7, 0, 12, 0, 19]
+```
+
+### thumbDown
+
+Similar to thumb-up, but in reverse order. For instance `[0 3 7 12 19]` results in `[0 19 0 12 0 7 0 3]`.
+
+```js
+Mod.thumbDown([0, 3, 7, 12, 19])
+//=> [0, 19, 0, 12, 0, 7, 0, 3]
+```
+
+### thumbUpDown
+
+Similar to thumbUp and thumbDown, basically a combination of both. Creates a palindrome of the notes. For instance `[0 3 7 12 19]` results in `[0 3 0 7 0 12 0 19 0 12 0 7]`.
+
+```js
+Mod.thumbUpDown([0, 3, 7, 12, 19])
+//=> [0, 3, 0, 7, 0, 12, 0, 19, 0, 12, 0, 7]
 ```
 
 ## unique

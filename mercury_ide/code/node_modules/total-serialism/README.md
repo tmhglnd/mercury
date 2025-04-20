@@ -229,6 +229,12 @@ Include latest or specific version of bundled minified es5 through url in index.
 <script src="https://unpkg.com/total-serialism@1.6.12/build/ts.es5.min.js"></script>
 ```
 
+Here are some alternatives to unpkg.com, in case of a server error:
+
+`https://cdn.staticdelivr.com/npm/total-serialism/build/ts.es5.min.js` 
+
+or `https://cdn.jsdelivr.net/npm/total-serialism/build/ts.es5.min.js`
+
 Use in a html `<script>` like so:
 
 ```js

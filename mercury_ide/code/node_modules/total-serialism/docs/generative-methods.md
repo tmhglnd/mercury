@@ -15,6 +15,7 @@ const { spread, fill } = require('total-serialism').Generative;
 
 # Methods
 
+- [counter](#counter)
 - [spread / spreadFloat](#spread-spreadfloat)
 - [spreadInclusive / spreadInclusiveFloat](#spreadinclusive-spreadinclusivefloat)
 - [spreadExp / spreadExpFloat](#spreadexp-spreadexpfloat)
@@ -27,9 +28,37 @@ const { spread, fill } = require('total-serialism').Generative;
 - [binaryBeat](#binarybeat)
 - [spacing](#spacingbeat)
 
+## counter
+
+The counter function generates an array of ascending or descending integers, counted from a starting value up to an (and including) an ending value. When one argument is provided this value acts as the ending value and the default starting value is 0. If two values are provided the first value is the starting value and the second value the end.
+
+**arguments**
+- {Int+} -> count (or count from, default=12)
+- {Int+} -> count from (optional, default=undefined)
+
+```js
+// count to 8 from 0
+Gen.counter(8);
+//=> [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+
+// count to 10 from 4
+Gen.counter(4, 10);
+//=> [ 4, 5, 6, 7, 8, 9, 10 ]
+
+// count down from 7 to 2
+Gen.counter(7, 2);
+//=> [ 7, 6, 5, 4, 3, 2 ]
+
+// count down from 5 to -4
+Gen.counter(5, -4);
+//=> [ 5, 4, 3, 2, 1, 0, -1, -2, -3, -4 ]
+```
+
+Alias: `count()`
+
 ## spread spreadFloat
 
-Generate an array of n-length of evenly spaced values between a starting number up until (but excluding) the 3th argument. Flipping the low and high range will result in the same values but descending.
+The spread function is similar to the count function, but you can decide on the length of the array output resulting in some numbers being skipped or duplicated depending of the output size should be smaller or larger than the start and ending points. The generated array has n-length of evenly spaced values between a starting number up until (but excluding) the 3th argument. Flipping the low and high range will result in the same values but descending.
 
 Alias: `spreadF`
 

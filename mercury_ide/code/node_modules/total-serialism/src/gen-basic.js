@@ -15,6 +15,32 @@
 // const Util = require('./utility.js');
 const { map, flatten, toArray, size, TWO_PI } = require('./utility');
 
+// Generate a list of n-length that counts integers
+// If only one argument provided the function counts from 0 to x
+// If two arguments provided the function counts from x to y
+//
+// @param {Int+} -> count (or count from, default=12)
+// @param {Int+} -> count from (optional, default=undefined)
+// @return -> {IntArray}
+// 
+function count(from=11, to){
+	// if to is undefined set to 0
+	if (to === undefined){ var t=from, from=0, to=t; }
+	// calculate the range
+	let range = Math.abs(to - from);
+	// calculate direction
+	let dir = (from < to) ? 1 : -1;
+	// start with the from value
+	let arr = [ from ];
+	// next value is the current + the direction
+	for (let i=0; i<range; i++){
+		arr.push( arr[i] + dir );
+	}
+	return arr;
+}
+exports.counter = count;
+exports.count = count;
+
 // Generate a list of n-length starting at one value
 // up until (but excluding) the 3th argument. 
 // Evenly spaced values in between in floating-point

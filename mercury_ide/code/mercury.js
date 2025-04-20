@@ -430,6 +430,19 @@ const handlers = {
 	'mirror' : (...v) => {
 		return Mod.palindrome(...v);
 	},
+	// pinky up, down and updown techniques for arp
+	'pinky' : (...v) => {
+		return Mod.pinkyUp(...v);
+	},
+	'pinkyUp' : (...v) => {
+		return Mod.pinkyUp(...v);
+	},
+	'pinkyDown' : (...v) => {
+		return Mod.pinkyDown(...v);
+	},
+	'pinkyUpDown' : (...v) => {
+		return Mod.pinkyUpDown(...v);
+	},
 	// rotate an array in positive or negative direction
 	'rotate' : (...v) => {
 		return Mod.rotate(...v);
@@ -483,6 +496,19 @@ const handlers = {
 	},
 	'stretchFloat' : (...v) => {
 		return Mod.stretch(...v);
+	},
+	// thumb up, down and updown techniques for arpeggiator
+	'thumb' : (...v) => {
+		return Mod.thumbUp(...v);
+	},
+	'thumbUp' : (...v) => {
+		return Mod.thumbUp(...v);
+	},
+	'thumbDown' : (...v) => {
+		return Mod.thumbDown(...v);
+	},
+	'thumbUpDown' : (...v) => {
+		return Mod.thumbUpDown(...v);
 	},
 	// remove duplicates from an array, leave order intact
 	'unique' : (...v) => {

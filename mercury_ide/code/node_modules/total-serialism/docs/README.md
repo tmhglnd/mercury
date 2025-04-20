@@ -3,6 +3,7 @@
 *This library and documentation is a work in progress. I'm always interested in receiving inspiration, suggestions, enhancements, literature and more. Feel free to file an [issue here](https://github.com/tmhglnd/total-serialism/issues) or make a pull request and I will gladly look into it!*
 
 - [Generative Methods](./generative-methods.md)
+	- [counter](./generative-methods.md#counter)
 	- [spread / spreadFloat](./generative-methods.md#spread-spreadfloat)
 	- [spreadInclusive / spreadInclusiveFloat](./generative-methods.md#spreadinclusive-spreadinclusivefloat)
 	- [spreadExp / spreadExpFloat](./generative-methods.md#spreadexp-spreadexpfloat)

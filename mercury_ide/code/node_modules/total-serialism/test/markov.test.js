@@ -1,5 +1,3 @@
-const exp = require('constants');
-const fs = require('fs');
 
 // test with different builds
 let entryPoint = "../index";
