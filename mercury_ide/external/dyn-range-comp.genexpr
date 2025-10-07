@@ -1,0 +1,107 @@
+//==============================================================================
+// dyn-range-comp.genexpr
+// Dynamic Range Compressor Algorithm 
+//
+// Based on
+// https://www.mathworks.com/help/audio/ref/compressor-system-object.html
+//
+// http://c4dm.eecs.qmul.ac.uk/audioengineering/compressors/documents/Reiss-Tutorialondynamicrangecompression.pdf
+// 
+// Port by Timo Hoogland (c) 2019
+// www.timohoogland.com
+// MIT License
+//==============================================================================
+
+/* Description
+The compressor System object™ performs dynamic range compression independently
+across each input channel. Dynamic range compression attenuates the volume of 
+loud sounds that cross a given threshold. It uses specified attack and release 
+times to achieve a smooth applied gain curve. Properties of the compressor 
+System object specify the type of dynamic range compression.
+*/
+
+// Calculate the compression gain reduction based on
+// input sample, threshold and ratio in dB
+gaincomp(x, thresh, ratio) {
+	if (x >= thresh){
+		return ((x - thresh) / ratio) + thresh;
+	} else {
+		return x;
+	}
+}
+
+// Calculate the compression gain reduction with a softknee
+// input sample, threshold, ratio in dB and knee width (0 - 20)
+softknee(x, thresh, ratio, knee) {
+	slope = 1 / ratio - 1;
+	k1 = thresh - knee / 2;
+	k2 = thresh + knee / 2;
+
+	if (x < k1){
+		return x;
+	} else if (x > k2){
+		return ((x - thresh) / ratio) + thresh;
+	} else {
+		return x + ((slope * pow((x - k1), 2)) / (2 * knee));
+	}
+}
+
+// Calculate the smoothing coefficient for a 
+// Millisecond time value
+coeff(x) {
+	// return exp(1 / ((x / 1000) * samplerate));
+	return exp(-log(9) / ((x / 1000) * samplerate));
+}
+
+// Smooth the sample with the coefficient
+// Over a certain amount of time
+smooth(x0, x1, attack, release) {
+	if (x0 <= x1){
+		a = coeff(attack);
+		return (a * x1) + ((1 - a) * x0);
+	} else {
+		a = coeff(release);
+		return (a * x1) + ((1 - a) * x0);
+	}	
+}
+
+// The compressor algorithm and calculations
+// Includes bypass function option
+compressor(sig, side, thr, rat, kn, att, rel, mg, bp, scn){
+	// Variables for storing calculation results
+	History g0(0);
+	History g1(0);
+	History a(0);
+	
+	// Parameters for compressor
+	thresh = clip(thr, -60, 0);
+	ratio = clip(rat, 1, 60);
+	knee = clip(kn, 0, 20);
+	attack = max(0, att);
+	release = max(0, rel);
+	makeup = mg;
+	bypass = (bp == 1);
+	
+	if (bypass){
+		// when bypassed return input signal unchanged
+		return sig;
+	} else {
+		if (scn){
+			g0 = side;
+		} else {
+			g0 = sig;
+		}
+		// convert from linear amplitude to decibel
+		g0 = atodb(g0);
+		// calculate gain reduction with softknee algorithm
+		g0 = softknee(g0, thresh, ratio, knee) + -g0;
+		// apply attack and release logaritmic smoothing
+		g0 = smooth(g0, g1, attack, release);
+		// a sample history for the smoothing algorithm
+		g1 = g0;
+		// apply make-up gain
+		g0 = g0 + makeup;
+
+		return sig * dbtoa(g0);
+	}
+}
