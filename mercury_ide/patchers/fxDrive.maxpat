@@ -2,42 +2,16 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
-			"revision" : 6,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 192.0, 273.0, 571.0, 593.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 656.0, 300.0, 571.0, 593.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-19",
@@ -45,7 +19,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 135.0, 90.0, 51.0, 22.0 ],
+					"patching_rect" : [ 194.0, 165.0, 51.0, 22.0 ],
 					"text" : "unjoin 2"
 				}
 
@@ -60,42 +34,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 6,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
 						"rect" : [ 548.0, 376.0, 640.0, 480.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-7",
@@ -103,7 +51,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 215.0, 38.0, 22.0 ],
+									"patching_rect" : [ 50.0, 225.0, 38.0, 22.0 ],
 									"text" : "zl.reg"
 								}
 
@@ -115,7 +63,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 69.0, 185.0, 37.0, 22.0 ],
+									"patching_rect" : [ 69.0, 195.0, 37.0, 22.0 ],
 									"text" : "join 2"
 								}
 
@@ -127,7 +75,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 69.0, 155.0, 51.0, 22.0 ],
+									"patching_rect" : [ 69.0, 165.0, 51.0, 22.0 ],
 									"text" : "unjoin 2"
 								}
 
@@ -140,7 +88,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 100.5, 125.0, 29.5, 22.0 ],
-									"text" : "2 1"
+									"text" : "5 1"
 								}
 
 							}
@@ -177,7 +125,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 255.0, 30.0, 30.0 ]
+									"patching_rect" : [ 50.0, 265.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -245,17 +193,11 @@
 								}
 
 							}
- ]
+ ],
+						"toolbaradditions" : [ "audiomute", "audiosolo", "packagemanager" ]
 					}
 ,
-					"patching_rect" : [ 135.0, 60.0, 55.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
+					"patching_rect" : [ 194.0, 135.0, 55.0, 22.0 ],
 					"text" : "p default"
 				}
 
@@ -267,7 +209,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 250.5, 315.0, 84.0, 22.0 ],
+					"patching_rect" : [ 210.0, 315.0, 84.0, 22.0 ],
 					"text" : "argListLookup"
 				}
 
@@ -291,44 +233,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 135.0, 150.0, 29.5, 22.0 ],
+					"patching_rect" : [ 173.5, 255.0, 29.5, 22.0 ],
 					"text" : "$1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 199.5, 285.0, 31.0, 22.0 ],
-					"text" : "sig~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 199.5, 255.0, 122.0, 22.0 ],
-					"text" : "expr 1 / pow($f1\\, 0.6)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 135.0, 180.0, 29.5, 22.0 ],
-					"text" : "+ 1."
 				}
 
 			}
@@ -336,72 +242,34 @@
 				"box" : 				{
 					"id" : "obj-105",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 6,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 155.0, 157.0, 604.0, 622.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
+						"rect" : [ 71.0, 142.0, 710.0, 786.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-2",
-									"maxclass" : "newobj",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 476.0, 45.0, 28.0, 22.0 ],
-									"text" : "in 3"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"code" : "// distortion algorithm from: \r\n// Digital Audio Effects (DAFX) book by Udo Zölzer\n// f(x) = sign(x) * (1 - e^-|x|)\r\n\r\ndrive(sig, amt, makeup){\r\n\tpreAmp = 0.6; // gain reduction\r\n\t// g = 1 / pow(amt, 0.6); // equal power curve\r\n\t// g = 1 / sqrt(amt); // equal power gain reduction\r\n\ta = sig * preAmp * pow(amt, 2); // gain\r\n\t\r\n\t// tanh(x) algorithm\r\n\treturn (tanh(a) / preAmp) * makeup;\r\n\t\r\n\t// DAFX algorithm\r\n\t// return (1 - exp(-abs(a))) * g * sign(a);\t\r\n}\r\n\r\nout1 = drive(in1, max(1, in2), in3);\r\n",
+									"code" : "// Overdrive algorithm \r\n// Based on RNBO Overdrive Pedal \n// by manuel@cycling74.com\r\n\r\noverdrive(sig, amt){\r\n\t// makeup gain is based on overdrive amount\r\n\t// scaled from pi/4 pi/2 to 0dB to -15dB\r\n\tmakeup = scale(atan(amt), pi/4, pi/2, 1, 0.177);\r\n\t\r\n\t// atan(x) distortion algorithm\r\n\treturn atan(sig * amt) * makeup;\r\n\t\r\n\t// other distortion algorithms tried:\r\n\t\r\n\t// tanh(x) algorithm:\r\n\t// preAmp = 0.6; // gain reduction\r\n\t// g = 1 / pow(amt, 0.6); // equal power curve\r\n\t// g = 1 / sqrt(amt); // equal power gain reduction\r\n\t// a = sig * preAmp * pow(amt, 2); // gain\r\n\t// return (tanh(a) / preAmp) * makeup;\r\n\t\r\n\t// DAFX algorithm:\r\n\t// return sign(x * g) * (1 - exp( -abs(x * g)));\r\n\t\r\n\t// sigmoid algorithm:\r\n\t// f(x) = x / (1 + |x|)\t\r\n}\r\n\r\nout1 = overdrive(in1, max(1, in2));\r\n\r\n// A \"soft\" arc-tangent non-linear function \r\n// applied to the input signal, which varies \r\n// from no-distortion to almost square wave-like\r\n// distortion.\r\n\r\n// \"Soft\" arc-tangent non-linear function (the inverse \r\n// trigonometric function of the tangent function) applied \r\n// to the input signal. As the input gain is increased, \r\n// the input signal becomes closer to a square wave. An \r\n// amplitude attenuation is then applied to the output of \r\n// the atan~ object, so that the energy gained in the \r\n// process is compensated in terms of perceived volume.",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
 									"id" : "obj-15",
 									"maxclass" : "codebox",
-									"numinlets" : 3,
+									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 90.0, 450.0, 330.0 ]
+									"patching_rect" : [ 30.0, 45.0, 540.0, 645.0 ]
 								}
 
 							}
@@ -412,7 +280,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 260.5, 45.0, 28.0, 22.0 ],
+									"patching_rect" : [ 551.0, 15.0, 28.0, 22.0 ],
 									"text" : "in 2"
 								}
 
@@ -424,7 +292,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 45.0, 28.0, 22.0 ],
+									"patching_rect" : [ 30.0, 15.0, 28.0, 22.0 ],
 									"text" : "in 1"
 								}
 
@@ -435,7 +303,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 45.0, 454.0, 35.0, 22.0 ],
+									"patching_rect" : [ 30.0, 705.0, 35.0, 22.0 ],
 									"text" : "out 1"
 								}
 
@@ -462,19 +330,12 @@
 								}
 
 							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-15", 2 ],
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
  ],
 						"autosave" : 0
 					}
 ,
-					"patching_rect" : [ 70.5, 315.0, 148.0, 22.0 ],
-					"text" : "gen~ @title dafx-distortion"
+					"patching_rect" : [ 70.5, 315.0, 122.0, 22.0 ],
+					"text" : "gen~ @title overdrive"
 				}
 
 			}
@@ -485,7 +346,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 135.0, 120.0, 84.0, 22.0 ],
+					"patching_rect" : [ 173.5, 225.0, 84.0, 22.0 ],
 					"text" : "argListLookup"
 				}
 
@@ -497,7 +358,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 315.5, 90.0, 28.0, 22.0 ],
+					"patching_rect" : [ 275.0, 165.0, 28.0, 22.0 ],
 					"text" : "in 2"
 				}
 
@@ -509,7 +370,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 135.0, 285.0, 31.0, 22.0 ],
+					"patching_rect" : [ 173.5, 285.0, 31.0, 22.0 ],
 					"text" : "sig~"
 				}
 
@@ -532,7 +393,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 135.0, 30.0, 28.0, 22.0 ],
+					"patching_rect" : [ 194.0, 105.0, 28.0, 22.0 ],
 					"text" : "in 1"
 				}
 
@@ -591,13 +452,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-105", 2 ],
-					"source" : [ "obj-11", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
@@ -605,7 +459,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
+					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -647,31 +501,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"order" : 0,
-					"source" : [ "obj-4", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"order" : 1,
-					"source" : [ "obj-4", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"source" : [ "obj-7", 0 ]
 				}
 
 			}
@@ -682,7 +513,8 @@
 				}
 
 			}
- ]
+ ],
+		"toolbaradditions" : [ "audiomute", "audiosolo", "packagemanager" ]
 	}
 
 }
