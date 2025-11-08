@@ -131,6 +131,24 @@
 		"clock" : 0
 	}
 ,
+	"noise" : 	{
+		"solo" : 0,
+		"amp" : 0.7,
+		"beat" : 1,
+		"time" : "1/4",
+		"once" : 0,
+		"warp" : 1,
+		"ratchet" : [ 0, 2 ],
+		"env" : [ 1, 250 ],
+		"pan" : 0,
+		"name" : "no_name",
+		"group" : "no_group",
+		"out" : [ 1, 2 ],
+		"sendOSC" : 0,
+		"clock" : 0,
+		"density" : 0.125
+	}
+,
 	"emitter" : 	{
 		"solo" : 0,
 		"beat" : 1,

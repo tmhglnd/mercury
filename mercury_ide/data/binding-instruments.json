@@ -30,4 +30,8 @@
 		"triangle" : [ "synth_poly", 4 ],
 		"square" : [ "synth_poly", 4 ]
 	}
+,
+	"noise" : {
+		"default" : [ "noise", 7 ]
+	}
 }

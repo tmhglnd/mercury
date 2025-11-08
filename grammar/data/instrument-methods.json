@@ -48,6 +48,18 @@
 		"fm_idx"
 	],
 
+	"noise" : [
+		"amp",
+		"beat",
+		"env",
+		"time",
+		"pan",
+		"add_fx",
+		"group",
+		"name",
+		"out"
+	],
+
 	"polySynth" : [
 		"amp",
 		"beat",
