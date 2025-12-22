@@ -91,7 +91,7 @@
             {
                 "box": {
                     "coll_data": {
-                        "count": 8,
+                        "count": 10,
                         "data": [
                             {
                                 "key": "white",
@@ -106,6 +106,10 @@
                                 "value": [ 2 ]
                             },
                             {
+                                "key": "browny",
+                                "value": [ 2 ]
+                            },
+                            {
                                 "key": "lofi",
                                 "value": [ 3 ]
                             },
@@ -115,6 +119,10 @@
                             },
                             {
                                 "key": "dust",
+                                "value": [ 4 ]
+                            },
+                            {
+                                "key": "dusty",
                                 "value": [ 4 ]
                             },
                             {
