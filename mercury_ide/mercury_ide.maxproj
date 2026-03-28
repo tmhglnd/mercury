@@ -2,7 +2,7 @@
     "name": "mercury_ide",
     "version": 1,
     "creationdate": 3615958543,
-    "modificationdate": 3850636379,
+    "modificationdate": 3854436652,
     "viewrect": [ 47.0, 144.0, 356.0, 590.0 ],
     "autoorganize": 0,
     "hideprojectwindow": 1,
@@ -13,7 +13,8 @@
             "_mercury_main.maxpat": {
                 "kind": "patcher",
                 "local": 1,
-                "toplevel": 1
+                "toplevel": 1,
+                "disclosed": 0
             }
         },
         "media": {

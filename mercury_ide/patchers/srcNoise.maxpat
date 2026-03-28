@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
@@ -91,7 +91,7 @@
             {
                 "box": {
                     "coll_data": {
-                        "count": 10,
+                        "count": 11,
                         "data": [
                             {
                                 "key": "white",
@@ -103,6 +103,10 @@
                             },
                             {
                                 "key": "brownian",
+                                "value": [ 2 ]
+                            },
+                            {
+                                "key": "brown",
                                 "value": [ 2 ]
                             },
                             {
@@ -182,7 +186,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -331,7 +335,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-14",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -515,7 +519,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-1",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -741,6 +745,7 @@
                 }
             }
         ],
-        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager" ]
+        "autosave": 0,
+        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager", "Data Knot" ]
     }
 }
