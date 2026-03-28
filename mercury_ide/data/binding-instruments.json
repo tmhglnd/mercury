@@ -31,6 +31,10 @@
 		"square" : [ "synth_poly", 4 ]
 	}
 ,
+	"wavetable" : {
+
+	}
+,
 	"noise" : {
 		"default" : [ "noise", 7 ]
 	}
