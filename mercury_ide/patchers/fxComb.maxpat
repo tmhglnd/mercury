@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
@@ -133,7 +133,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 1,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -349,7 +349,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 1,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -484,8 +484,8 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 60.0, 178.0, 110.0, 22.0 ],
-                                    "text": "delay samplerate/4"
+                                    "patching_rect": [ 60.0, 178.0, 74.0, 22.0 ],
+                                    "text": "delay 44100"
                                 }
                             },
                             {
@@ -629,10 +629,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 435.0, 150.0, 28.0, 22.0 ],
-                    "saved_object_attributes": {
-                        "attr_comment": "",
-                        "c": ""
-                    },
                     "text": "in 2"
                 }
             },
@@ -643,10 +639,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 45.5, 495.0, 42.0, 22.0 ],
-                    "saved_object_attributes": {
-                        "attr_comment": "",
-                        "c": ""
-                    },
                     "text": "out~ 1"
                 }
             },
@@ -658,10 +650,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 146.0, 45.0, 28.0, 22.0 ],
-                    "saved_object_attributes": {
-                        "attr_comment": "",
-                        "c": ""
-                    },
                     "text": "in 1"
                 }
             },
@@ -673,10 +661,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "signal" ],
                     "patching_rect": [ 45.5, 330.0, 35.0, 22.0 ],
-                    "saved_object_attributes": {
-                        "attr_comment": "",
-                        "c": ""
-                    },
                     "text": "in~ 1"
                 }
             }
@@ -904,6 +888,6 @@
                 "multi": 0
             }
         ],
-        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager" ]
+        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager", "Data Knot" ]
     }
 }

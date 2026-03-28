@@ -225,5 +225,28 @@
 		"group" : "no_group",
 		"out" : [ 1, 2 ]
 	}
-
+,
+	"wavetable" : {
+		"solo" : 0,
+		"amp" : 0.6,
+		"beat" : 1,
+		"time" : "1/1",
+		"once" : 0,
+		"warp" : 1,
+		"ratchet" : [ 0, 2 ],
+		"env" : [ 1, 250 ],
+		"pan" : 0,
+		"name" : "no_name",
+		"group" : "no_group",
+		"out" : [ 1, 2 ],
+		"note" : [ 0, 0 ],
+		"slide" : 0,
+		"sub" : 0,
+		"offset" : 0,
+		"lfo" : [ "off" ],
+		"modShape" : [ "off" ],
+		"size" : 2048,
+		"sendOSC" : 0,
+		"clock" : 0
+	}
 }
