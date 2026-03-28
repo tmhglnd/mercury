@@ -122,6 +122,19 @@
 		"offset"
 	],
 
+	"wavetable" : [
+		"amp",
+		"beat",
+		"env",
+		"time",
+		"pan",
+		"add_fx",
+		"group",
+		"name",
+		"out",
+		"offset"
+	],
+
 	"input" : [
 		"time",
 		"beat",
