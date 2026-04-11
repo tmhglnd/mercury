@@ -35,6 +35,7 @@
 - [Credits](#credits)
 - [Waveforms](#waveforms)
 	- [Overview](#overview)
+- [Wavetables](#wavetables)
 
 # One-shots
 
@@ -1444,3 +1445,10 @@ All single cycle waveforms thanks to the amazing AWKF pack. AKWF or Adventure Ki
 * AKWF_hvoice_0036.wav
 * url: https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE/tree/master/AKWF
 * license: Creative Commons 0
+
+# Wavetables
+
+All wavetables have been generated from (slightly) adapted code from the Mutable Instruments Plaits module, thanks to Emilie Gillet. The original source can be found through the link below. The code to my adaptation for these wavetables can be found on my codeberg here: https://codeberg.org/tmhglnd/plaits-wavetables
+
+* url: https://github.com/pichenettes/eurorack/blob/master/plaits/resources/wavetables.py
+* license: MIT License
