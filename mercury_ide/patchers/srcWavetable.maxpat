@@ -13,6 +13,28 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-32",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 220.33333333333334, 465.0, 84.0, 22.0 ],
+                    "text": "prepend width"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-30",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 220.33333333333334, 435.0, 84.0, 22.0 ],
+                    "text": "argListLookup"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-21",
                     "maxclass": "newobj",
                     "numinlets": 3,
@@ -1142,7 +1164,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-20",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -1189,8 +1211,8 @@
                     "numinlets": 6,
                     "numoutlets": 6,
                     "outlettype": [ "", "", "", "", "", "" ],
-                    "patching_rect": [ 45.0, 285.0, 457.3333333333333, 22.0 ],
-                    "text": "route note slide sub offset lfo"
+                    "patching_rect": [ 45.0, 285.0, 457.33333333333337, 22.0 ],
+                    "text": "route note slide size offset lfo"
                 }
             },
             {
@@ -1627,7 +1649,7 @@
                 "box": {
                     "comment": "(enable)",
                     "id": "obj-1",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -1653,6 +1675,12 @@
                 "patchline": {
                     "destination": [ "obj-22", 0 ],
                     "source": [ "obj-121", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-30", 0 ],
+                    "source": [ "obj-14", 2 ]
                 }
             },
             {
@@ -1807,8 +1835,20 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-32", 0 ],
+                    "source": [ "obj-30", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-57", 0 ],
                     "source": [ "obj-31", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-21", 0 ],
+                    "source": [ "obj-32", 0 ]
                 }
             },
             {
@@ -1825,8 +1865,15 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-36", 1 ],
+                    "destination": [ "obj-30", 1 ],
                     "order": 1,
+                    "source": [ "obj-35", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-36", 1 ],
+                    "order": 2,
                     "source": [ "obj-35", 0 ]
                 }
             },
@@ -1840,7 +1887,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-5", 1 ],
-                    "order": 2,
+                    "order": 3,
                     "source": [ "obj-35", 0 ]
                 }
             },
@@ -2137,7 +2184,6 @@
                 }
             }
         ],
-        "autosave": 0,
         "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager", "Data Knot" ]
     }
 }
