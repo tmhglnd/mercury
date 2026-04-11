@@ -1452,3 +1452,23 @@ All wavetables have been generated from (slightly) adapted code from the Mutable
 
 * url: https://github.com/pichenettes/eurorack/blob/master/plaits/resources/wavetables.py
 * license: MIT License
+
+#### wavetables
+
+* burst
+* comb
+* drawbars
+* drawbars2
+* formant
+* formant_bp
+* formant_sq
+* formant_digi
+* harmonic
+* pair
+* pulsemod
+* quadra
+* sawtri
+* sine_even
+* sine_odd
+* sine_power
+* trisaw
