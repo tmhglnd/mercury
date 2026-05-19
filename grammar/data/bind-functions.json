@@ -163,5 +163,9 @@
 	"cc" : [
 		"change",
 		"control"
+	],
+
+	"program" : [
+		"pgm"
 	]
 }

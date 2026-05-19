@@ -10,7 +10,8 @@
 		"out",
 		"clock",
 		"poly",
-		"cc"
+		"cc",
+		"program"
 	],
 
 	"emitter" : [

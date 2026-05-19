@@ -30,7 +30,8 @@
     "chords": "poly",
     "polyphonic": "poly",
     "change": "cc",
-    "control": "cc"
+    "control": "cc",
+    "pgm": "program"
   },
   "emitter": {
     "id": "name",
