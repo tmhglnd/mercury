@@ -9,7 +9,8 @@
 		"env",
 		"out",
 		"clock",
-		"poly"
+		"poly",
+		"cc"
 	],
 
 	"emitter" : [

@@ -28,7 +28,9 @@
     "midiSync": "clock",
     "chord": "poly",
     "chords": "poly",
-    "polyphonic": "poly"
+    "polyphonic": "poly",
+    "change": "cc",
+    "control": "cc"
   },
   "emitter": {
     "id": "name",
