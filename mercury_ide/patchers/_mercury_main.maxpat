@@ -12855,7 +12855,7 @@
                                 "multi": 0
                             }
                         ],
-                        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager" ]
+                        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager", "Data Knot" ]
                     },
                     "patching_rect": [ 1346.2861736666664, 1477.5, 83.0, 22.0 ],
                     "text": "p osc-settings"
@@ -13481,8 +13481,8 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 134.25, 270.0, 317.0, 35.0 ],
-                                                    "text": ";\rmax launchbrowser https://mercury-playground.pages.dev"
+                                                    "patching_rect": [ 134.25, 270.0, 274.0, 35.0 ],
+                                                    "text": ";\rmax launchbrowser https://mercury-playground.cc"
                                                 }
                                             },
                                             {
@@ -13627,7 +13627,8 @@
                                                     "source": [ "obj-96", 0 ]
                                                 }
                                             }
-                                        ]
+                                        ],
+                                        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager", "Data Knot" ]
                                     },
                                     "patching_rect": [ 1205.0, 91.0, 73.0, 22.0 ],
                                     "text": "p hyperlinks"

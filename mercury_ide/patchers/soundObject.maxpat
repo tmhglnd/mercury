@@ -16187,7 +16187,6 @@
                         },
                         "classnamespace": "box",
                         "rect": [ 34.0, 96.0, 1428.0, 837.0 ],
-                        "visible": 1,
                         "boxes": [
                             {
                                 "box": {
@@ -20779,11 +20778,11 @@
                                     "id": "obj-36",
                                     "linecount": 3,
                                     "maxclass": "newobj",
-                                    "numinlets": 11,
-                                    "numoutlets": 11,
-                                    "outlettype": [ "", "", "", "", "", "", "", "", "", "", "" ],
-                                    "patching_rect": [ 173.0, 193.0, 134.39285714285717, 49.0 ],
-                                    "text": "route group beat time warp ratchet sendOSC set clock once emit"
+                                    "numinlets": 12,
+                                    "numoutlets": 12,
+                                    "outlettype": [ "", "", "", "", "", "", "", "", "", "", "", "" ],
+                                    "patching_rect": [ 173.0, 193.0, 144.36507936507934, 49.0 ],
+                                    "text": "route group beat time warp ratchet sendOSC set clock once emit solo"
                                 }
                             },
                             {
@@ -20793,7 +20792,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 288.39285714285717, 260.0, 95.0, 22.0 ],
+                                    "patching_rect": [ 298.36507936507934, 260.0, 95.0, 22.0 ],
                                     "text": "prepend insert 0"
                                 }
                             },
@@ -21141,7 +21140,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-35", 0 ],
-                                    "source": [ "obj-36", 10 ]
+                                    "source": [ "obj-36", 11 ]
                                 }
                             },
                             {
