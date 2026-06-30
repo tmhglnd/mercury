@@ -16,6 +16,50 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-164",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 877.4458769999999, 1872.5, 147.0, 22.0 ],
+                    "text": "zl.lookup internal linkclock"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-162",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 9,
+                    "outlettype": [ "int", "int", "float", "float", "float", "", "int", "float", "" ],
+                    "patching_rect": [ 877.4458769999999, 1740.0, 250.0, 22.0 ],
+                    "text": "transport @name linkclock @clocksource link"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-146",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 877.4458769999999, 1812.5, 63.0, 22.0 ],
+                    "text": "symbol $1"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-86",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 877.4458769999999, 1782.5, 79.0, 22.0 ],
+                    "text": "r clocksource"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-125",
                     "maxclass": "message",
                     "numinlets": 2,
@@ -97,7 +141,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 948.2861479999999, 1816.0, 75.0, 33.0 ],
+                    "patching_rect": [ 956.4458769999999, 1831.5, 75.0, 33.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 71.0, 274.0, 80.0, 20.0 ],
                     "text": "Clock Source",
@@ -111,7 +155,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 773.4111479999999, 1785.0, 94.0, 47.0 ],
+                    "patching_rect": [ 776.4458769999999, 1762.0, 94.0, 47.0 ],
                     "text": "set the tempo for connected link sessions"
                 }
             },
@@ -122,7 +166,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "float" ],
-                    "patching_rect": [ 798.9458769999999, 1741.0, 19.0, 22.0 ],
+                    "patching_rect": [ 798.9458769999999, 1707.5, 19.0, 22.0 ],
                     "text": "t f"
                 }
             },
@@ -133,7 +177,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 870.0, 1785.0, 71.0, 22.0 ],
+                    "patching_rect": [ 798.9458769999999, 1740.0, 71.0, 22.0 ],
                     "text": "link.session"
                 }
             },
@@ -143,19 +187,8 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 898.4111479999999, 1852.0, 74.0, 22.0 ],
+                    "patching_rect": [ 877.4458769999999, 1902.5, 74.0, 22.0 ],
                     "text": "s mcy_clock"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-97",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
-                    "numoutlets": 9,
-                    "outlettype": [ "int", "int", "float", "float", "float", "", "int", "float", "" ],
-                    "patching_rect": [ 869.4111479999999, 1741.0, 250.0, 22.0 ],
-                    "text": "transport @name linkclock @clocksource link"
                 }
             },
             {
@@ -171,18 +204,18 @@
                     "fontface": 1,
                     "hint": "Enable an external clocksource like Ableton Link to synchronize with other platforms",
                     "id": "obj-65",
-                    "items": [ "internal", ",", "linkclock" ],
+                    "items": [ "internal", ",", "link" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
                     "parameter_enable": 1,
-                    "patching_rect": [ 869.4111479999999, 1815.0, 76.875, 22.0 ],
+                    "patching_rect": [ 877.4458769999999, 1842.5, 76.875, 22.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 15.0, 273.0, 54.0, 22.0 ],
                     "saved_attribute_attributes": {
                         "valueof": {
-                            "parameter_enum": [ "internal", "linkclock" ],
+                            "parameter_enum": [ "internal", "link" ],
                             "parameter_initial": [ 0.0 ],
                             "parameter_initial_enable": 1,
                             "parameter_longname": "umenu[2]",
@@ -500,7 +533,7 @@
                     "outlettype": [ "multichannelsignal" ],
                     "patching_rect": [ 156.3784065000001, 2430.0, 213.0, 22.0 ],
                     "text": "mc.gen~ @t send-channel @chans 16",
-                    "wrapper_uniquekey": "u965008637"
+                    "wrapper_uniquekey": "u639003050"
                 }
             },
             {
@@ -5220,7 +5253,7 @@
                             {
                                 "box": {
                                     "id": "obj-10",
-                                    "items": [ "Alex", ",", "Alice", ",", "Alva", ",", "Amelie", ",", "Anna", ",", "Carmit", ",", "Damayanti", ",", "Daniel", ",", "Diego", ",", "Ellen", ",", "Fiona", ",", "Fred", ",", "Ioana", ",", "Ioana", ",", "Jorge", ",", "Juan", ",", "Kanya", ",", "Karen", ",", "Kyoko", ",", "Laura", ",", "Lekha", ",", "Luca", ",", "Luciana", ",", "Maged", ",", "Mariska", ",", "Mei-Jia", ",", "Melina", ",", "Melina", ",", "Moira", ",", "Monica", ",", "Nora", ",", "Paulina", ",", "Rishi", ",", "Samantha", ",", "Sara", ",", "Satu", ",", "Sin-ji", ",", "Tessa", ",", "Thomas", ",", "Ting-Ting", ",", "Veena", ",", "Victoria", ",", "Xander", ",", "Yelda", ",", "Yuna", ",", "Yuri", ",", "Zosia", ",", "Zuzana" ],
+                                    "items": [ "Alex", ",", "Alice", ",", "Alva", ",", "Amelie", ",", "Anna", ",", "Carmit", ",", "Damayanti", ",", "Daniel", ",", "Diego", ",", "Ellen", ",", "Fiona", ",", "Fred", ",", "Ioana", ",", "Joana", ",", "Jorge", ",", "Juan", ",", "Kanya", ",", "Karen", ",", "Kyoko", ",", "Laura", ",", "Lekha", ",", "Luca", ",", "Luciana", ",", "Maged", ",", "Mariska", ",", "Mei-Jia", ",", "Melina", ",", "Milena", ",", "Moira", ",", "Monica", ",", "Nora", ",", "Paulina", ",", "Paulina", ",", "nglish", ",", "Samantha", ",", "Sara", ",", "Satu", ",", "Sin-ji", ",", "Tessa", ",", "Thomas", ",", "Ting-Ting", ",", "Veena", ",", "Victoria", ",", "Xander", ",", "Yelda", ",", "Yuna", ",", "Yuri", ",", "Zosia", ",", "Zuzana" ],
                                     "maxclass": "umenu",
                                     "numinlets": 1,
                                     "numoutlets": 3,
@@ -5864,7 +5897,7 @@
                                                     "outlettype": [ "multichannelsignal" ],
                                                     "patching_rect": [ 50.0, 705.0, 213.0, 22.0 ],
                                                     "text": "mc.gen~ @t send-channel @chans 16",
-                                                    "wrapper_uniquekey": "u773008813"
+                                                    "wrapper_uniquekey": "u981003251"
                                                 }
                                             },
                                             {
@@ -23322,6 +23355,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-65", 0 ],
+                    "source": [ "obj-146", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-301", 0 ],
                     "source": [ "obj-148", 0 ]
                 }
@@ -23456,6 +23495,12 @@
                     "destination": [ "obj-440", 0 ],
                     "order": 1,
                     "source": [ "obj-161", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-117", 0 ],
+                    "source": [ "obj-164", 0 ]
                 }
             },
             {
@@ -24851,14 +24896,6 @@
             {
                 "patchline": {
                     "destination": [ "obj-55", 0 ],
-                    "order": 1,
-                    "source": [ "obj-477", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-97", 0 ],
-                    "order": 0,
                     "source": [ "obj-477", 0 ]
                 }
             },
@@ -25095,8 +25132,8 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-117", 0 ],
-                    "source": [ "obj-65", 1 ]
+                    "destination": [ "obj-164", 0 ],
+                    "source": [ "obj-65", 0 ]
                 }
             },
             {
@@ -25175,6 +25212,12 @@
                 "patchline": {
                     "destination": [ "obj-47", 0 ],
                     "source": [ "obj-85", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-146", 0 ],
+                    "source": [ "obj-86", 0 ]
                 }
             },
             {
