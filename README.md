@@ -19,7 +19,7 @@ Mercury currently has 2 versions:
 
 [**👾 Start coding directly in the playground!** (recommended for beginners)](https://mercury.timohoogland.com/)
 
-[**🙏 Support Mercury by buying me a coffee on coffee**](https://ko-fi.com/tmhglnd)
+[**🙏 Support Mercury by buying me a coffee**](https://ko-fi.com/tmhglnd)
 
 [**🙏 Support Mercury by becoming a Patron**](https://patreon.com/timohoogland)
 
