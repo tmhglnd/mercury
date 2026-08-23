@@ -1,6 +1,6 @@
 # 🌕 Mercury Live Coding Environment 
 
-Welcome to Mercury
+Welcome to Mercury4Max
 
 **Mercury is a human-made, free/open, beginner-friendly, minimal and readable language for the live coding of algorithmic electronic music performances**
 
@@ -10,7 +10,7 @@ Welcome to Mercury
 
 Mercury currently has 2 versions:
 
-* Original version running in Max8 (Windows/Mac only) (you're in the right place)
+* Original version running in MaxMSP (Windows/Mac only) (you're in the right place)
 * Web version running in the browser (Windows/Mac/Linux) [go to this repo](https://github.com/tmhglnd/mercury-playground)
 
 **🚀 Start coding with the latest version:** 
