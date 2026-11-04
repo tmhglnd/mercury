@@ -38,4 +38,8 @@
 	"noise" : {
 		"default" : [ "noise", 7 ]
 	}
+,
+	"rack" : {
+		"808" : [ "sample_rack", 13 ]
+	}
 }

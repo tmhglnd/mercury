@@ -3,14 +3,47 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
-            "revision": 3,
+            "minor": 2,
+            "revision": 0,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 34.0, 96.0, 1428.0, 837.0 ],
+        "rect": [ 34.0, 96.0, 680.0, 837.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-45",
+                    "linecount": 24,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 807.0, 45.0, 392.0, 342.0 ],
+                    "text": "srcSampleRack\n\nA sampler / samplerack instrument that allows you to play different samples based on the note/midinote/index you provide. The list of samples that can be played is based on a json file where every midi pitch number is mapped to a sound. Pitch numbers that are not mapped will be using nearest samples from other notes with a retuning based on the pitch. If you use the index no tuning is used.\n\nThe name of the instrument is the argument for the rack from the json. \neg:\n\nnew samplerack 909\nnew samplerack marimba\nnew samplerack dnb\n\nSome functions are similar to sample/polySample:\nnote()\nmidinote()\nindex()\n\noffset() - change starting position in sample\nspeed() - change playback speed\nshape() - add an envelope\n"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-42",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 45.0, 391.0, 76.0, 22.0 ],
+                    "text": "syncToScale"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-4",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 45.0, 361.0, 67.0, 22.0 ],
+                    "text": "noteToMidi"
+                }
+            },
             {
                 "box": {
                     "id": "obj-87",
@@ -983,6 +1016,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-42", 0 ],
+                    "source": [ "obj-4", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-35", 0 ],
                     "source": [ "obj-40", 0 ]
                 }
@@ -1211,6 +1250,6 @@
             }
         ],
         "autosave": 0,
-        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager", "Data Knot" ]
+        "toolbaradditions": [ "audiomute", "audiosolo", "packagemanager", "Data Knot", "Vizzie" ]
     }
 }
