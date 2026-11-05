@@ -1,0 +1,15 @@
+set tempo 135
+// set scalar 0
+// new sample hat_po time(1/4)
+
+// list ptn [ [ -1 0 1 ] 7 [2 3] [ 1 7 ] ]
+list ptn cosine(16 7.32 0 12)
+// list ptn add(ptn 36)
+list ptn palin(ptn)
+
+new rack '808' name(rekje)
+  set rekje time(1/16) index(ptn) samplermode(0) ratchet(0 2)
+  set rekje fx(delay 1/62 3/16 0.3) fx(fuzz 2 0.4 0.3)
+  set rekje fx(reverb 1 2) play(0.7)
+
+// new synth square note(0 -1) time(1/4) gain(0.4)

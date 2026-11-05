@@ -40,6 +40,9 @@
 	}
 ,
 	"rack" : {
-		"808" : [ "sample_rack", 13 ]
+		"909" : [ "sample_rack", 13 ],
+		"808" : [ "sample_rack", 13 ],
+		"626" : [ "sample_rack", 13 ],
+		"operator" : [ "sample_rack", 13 ]
 	}
 }
