@@ -56,19 +56,17 @@ function spreadFloat(len=1, lo=1, hi){
 	if (hi === undefined){ var t=lo, lo=0, hi=t; }
 	// calculate the range
 	let r = hi - lo; 
-	// lo is actual lowest value
-	lo = Math.min(lo, hi);
 	// len is minimum of 1 or length of array
 	len = size(len);
 	if (len === 1){ return [lo]; }
 	// stepsize
-	let s = Math.abs(r) / len;
+	let s = r / len;
 	// generate array
 	let arr = [];
 	for (let i=0; i<len; i++){
 		arr[i] = i * s + lo;
 	}
-	return (r < 0)? arr.reverse() : arr;
+	return arr;
 }
 exports.spreadFloat = spreadFloat;
 exports.spreadF = spreadFloat;
@@ -97,8 +95,6 @@ function spreadExpFloat(len=1, lo=1, hi, exp=1){
 	if (hi === undefined){ var t=lo, lo=0, hi=t; }
 	// calculate the range
 	let r = hi - lo; 
-	// lo is actual lowest value
-	lo = Math.min(lo, hi);
 	// len is minimum of 1
 	len = size(len);
 	// len = Math.max(1, len);
@@ -106,9 +102,9 @@ function spreadExpFloat(len=1, lo=1, hi, exp=1){
 	// generate array
 	let arr = [];
 	for (let i=0; i<len; i++){
-		arr[i] = Math.pow((i / len), exp) * Math.abs(r) + lo;
+		arr[i] = Math.pow((i / len), exp) * r + lo;
 	}
-	return (r < 0)? arr.reverse() : arr;
+	return arr;
 }
 exports.spreadFloatExp = spreadExpFloat; // deprecated
 exports.spreadExpFloat = spreadExpFloat;

@@ -1,0 +1,21 @@
+! dudon_meso-iph12.scl
+!
+Partial Meso-Iph fifth transposition of two Iph fractal series (2010)
+ 12
+!
+ 3008/2783
+ 3072/2783 
+ 3184/2783
+ 3440/2783
+ 3712/2783
+ 3936/2783 
+ 4168/2783
+ 4608/2783
+ 4864/2783
+ 4960/2783
+ 224/121
+ 2/1
+! Iph -c recurrent sequence, x^3 = 8x - 8
+! completed by Meso-Iph meantone fifth of (Phi^6 /8)^1/2
+! simulated between Phi-series Phi 96 (96 : 155 ... 1720 : 2783)
+! and 8*P : 18 : 29 : 47 : 76 : 123 : 199 : 322 : 521

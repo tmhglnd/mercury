@@ -1,0 +1,20 @@
+! dudon_bambara.scl
+!
+Typical pentatonic balafon ceremonial tuning from Mali or Burkina Faso  
+ 12
+!
+ 1/1
+ 1448/1273
+ 1448/1273
+ 1688/1273
+ 1688/1273
+ 1688/1273
+ 1920/1273
+ 1920/1273
+ 2184/1273
+ 2184/1273
+ 2/1
+ 2/1
+! Mounos -c sequence  x^3 - 2 = x/4, middle A-M-N slendro, Dudon 2004
+! differential coherence of minor thirds :  F - D = G/8,   ^C - A = D/4
+! extended fifths (711,4963 c.) and tones (roughly 256/225 or 223 c.)

@@ -1,0 +1,18 @@
+! dudon_jamlak.scl
+!
+Cycle of fifths developped around a 19-limit Amlak sequence
+ 12
+!
+ 321/320
+ 9/8
+ 381/320
+ 101/80
+ 107/80
+ 57/40
+ 3/2
+ 127/80
+ 539/320
+ 571/320
+ 19/10
+ 2/1
+! Dudon 1989

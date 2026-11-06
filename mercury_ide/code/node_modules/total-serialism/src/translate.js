@@ -11,13 +11,13 @@
 //==============================================================================
 
 // require API's
-const { Note, Scale } = require('@tonaljs/tonal');
-const { Chord } = require('@tonaljs/tonal');
-const { Progression } = require('@tonaljs/tonal');
+const { Note, Scale } = require('tonal');
+const { Chord } = require('tonal');
+const { Progression } = require('tonal');
 
 // require Scale Mappings
 // const Scales = require('../data/scales.json');
-const ToneSet = require('../data/tones.json');
+// const ToneSet = require('../data/tones.json');
 const chromaSet = { c:0, d:2, e:4, f:5, g:7, a:9, b:11 };
 
 const { unique } = require('./transform');
@@ -26,14 +26,26 @@ const { add, wrap, multiply, toArray } = require('./utility');
 // create a mapping list of scales for 12-TET from Tonal
 let Scales = {};
 
+const scaleNameMapping = {
+	'aeolian' : 'minor',
+	'harmonic_minor' : 'minor_harmonic',
+	'melodic_minor' : 'minor_melodic', 
+	'major_pentatonic' : 'pentatonic_major', 
+	'minor_pentatonic' : 'pentatonic_minor',
+	'hungarian_minor' : 'gypsy',
+	'double_harmonic_major' : 'gypsy_spanish',
+	'whole_tone' : 'hexatonic',
+	'prometheus' : 'hexatonic_prometheus', 
+	'minor_blues' : 'hexatonic_blues'
+}
+
 Scale.names().forEach((s) => {
 	let scl = Scale.get(s);
 	let name = scl.name.replace(/\s+/g, '_').replace(/[#'-]+/g, '');
 	let chroma = scl.chroma.split('').map(x => Number(x));
 
 	// rename aeolian to minor
-	name = (name === 'aeolian')? 'minor' : name;
-
+	// name = (name === 'aeolian')? 'minor' : name;
 	let map = [];
 	for (let i=0; i<chroma.length; i++){
 		if (!chroma[i]){
@@ -43,6 +55,10 @@ Scale.names().forEach((s) => {
 		map.push(i);
 	}
 	Scales[name] = map;
+
+	// also save the scale if the name needs alternation
+	if (scaleNameMapping[name])
+		Scales[scaleNameMapping[name]] = map;
 });
 
 // global settings stored in object

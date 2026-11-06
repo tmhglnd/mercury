@@ -1,0 +1,18 @@
+! dudon_nung-phan2.scl
+!
+7 tones from a Nung-Phan sequence (very low fifths, in theory 679.5604542 c.)
+ 12
+!
+ 3/2
+ 169/150
+ 5/3
+ 37/30
+ 27/20
+ 2/1
+ 3/2
+ 169/75
+ 5/3
+ 37/15
+ 11/6
+ 2/1
+! Nung-Phan recurrent sequence x^4 = 10x - 10, Dudon 2009

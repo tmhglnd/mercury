@@ -1,0 +1,21 @@
+! diamond7_225.scl
+!
+7-limit diamond marvel (225/224) 5-limit convex closure
+15
+! Fokblock([405/256, 1875/1024], [7, 7]) weak Fokker block
+!
+16/15
+256/225
+75/64
+6/5
+5/4
+4/3
+45/32
+64/45
+3/2
+8/5
+5/3
+128/75
+225/128
+15/8
+2/1

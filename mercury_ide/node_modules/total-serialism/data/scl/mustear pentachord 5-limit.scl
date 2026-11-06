@@ -1,0 +1,9 @@
+! mustear pentachord 5-limit.scl
+!
+Mustear pentachord 120:135:144:160:180
+ 4
+!
+ 9/8
+ 6/5
+ 4/3
+ 3/2

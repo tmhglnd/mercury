@@ -1,0 +1,19 @@
+! dudon_gulu-nem.scl
+!
+5 tones Pelog from a sequence of very low "Gulu-nem" fifths (about 5/9 of an octave)
+ 12
+!
+ 1/1
+ 1393/1284
+ 1393/1284
+ 2015/1712
+ 2015/1712
+ 2015/1712
+ 473/321
+ 473/321
+ 4105/2568
+ 4105/2568
+ 4105/2568
+ 2/1
+! Differentially-coherent recurrent sequence, x^3 - 2x = 1/4, Dudon 2007
+! generator is a "Gulu-nem" extremely low fifth of  670.5060969 c.

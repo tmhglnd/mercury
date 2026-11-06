@@ -1,0 +1,19 @@
+! dudon_country_blues.scl
+!
+Differentially-coherent 12 tones country blues scale
+ 12
+!
+ 101/96
+ 9/8
+ 29/24
+ 5/4
+ 4/3
+ 67/48
+ 3/2
+ 19/12
+ 5/3
+ 43/24
+ 15/8
+ 2/1
+! 20 - 15 = 29 - 24 = 32 - 27 = 45 - 40 = 48 - 43 = 72 - 67 = 5, etc.
+! Dudon 2001

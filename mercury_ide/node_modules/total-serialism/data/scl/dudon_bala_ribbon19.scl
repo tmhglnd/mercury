@@ -1,0 +1,29 @@
+! dudon_bala_ribbon19.scl
+!
+Parizekmic scale based on a double Bala sequence 
+ 19
+!
+ 203/192
+ 13/12
+ 9/8
+ 443/384
+ 39/32
+ 5/4
+ 125/96
+ 4/3
+ 45/32
+ 277/192
+ 3/2 
+ 203/128
+ 13/8
+ 5/3
+ 83/48
+ 117/64
+ 15/8
+ 125/64
+ 2/1
+! Interleaved Bala -c recurrent sequences, x^8 - 2 = x = 1.1544230572469 or 248.6064241458 cents (5-29-251 notes MOS)
+! first sequence [609 702 812 936 1080 1248 1440 1664 1920 2216 2560]  
+! second sequence transposed by 1 - (x^3)/4  (~32/13) :
+! [375 432 500 576 664 768 886 1024]
+! Dudon 2011, after Petr Parizek TL 77917 Jul 8, 2008

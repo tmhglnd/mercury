@@ -1,0 +1,21 @@
+! dudon_joged-bumbung.scl
+!
+Typical Balinese grantang and tingklik (bamboo xylophones) slendro tuning
+ 12
+!
+ 1/1
+ 1448/1273
+ 8/7
+ 1688/1273
+ 1688/1273
+ 4/3
+ 3/2
+ 1920/1273
+ 12/7
+ 2184/1273
+ 2/1
+ 2/1
+! Mounos -c sequence  x^3 - 2 = x/4,  quasi-septimal central A-M-N slendro
+! differential coherence of minor thirds :  F - D = G/8,   ^C - A = D/4
+! with added regular fifths and septimal tones (8/7)
+! Dudon 2004

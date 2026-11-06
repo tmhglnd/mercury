@@ -1,0 +1,19 @@
+! dudon_hoomi.scl
+!
+Hoomi singing scale in F/F# (on black keys), or in C or G, CFGAC^equal-beating sequence
+ 12
+!
+ 1/1
+ 857/766
+ 857/766
+ 480/383
+ 512/383
+ 512/383
+ 573/383
+ 573/383
+ 1283/766
+ 1283/766
+ 718/383
+ 2/1
+! Hummy recurrent sequence x^4 - 5 = x(3 - 2x), Dudon 2006
+! 4A - 5F = 6C^ - 8G,   4E - 5C = 6G - 8D, 4B - 5G = 6D^ - 8A

@@ -1,0 +1,15 @@
+! dudon_meso-iph7.scl
+!
+Neutral diatonic variation based on two Iph fractal series
+ 7
+!
+ 3072/2783 
+ 3440/2783
+ 3712/2783
+ 4168/2783
+ 4608/2783
+ 224/121
+ 2/1
+! Iph -c recurrent sequence, x^3 = 8x - 8
+! completed by Meso-Iph meantone fifth of (Phi^6 /8)^1/2
+! simulated between Phi-series  Phi 96 and 8*P

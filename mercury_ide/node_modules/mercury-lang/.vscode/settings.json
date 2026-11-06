@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"*.mcy": "cpp",
+		"*.txt": "c"
+	}
+}

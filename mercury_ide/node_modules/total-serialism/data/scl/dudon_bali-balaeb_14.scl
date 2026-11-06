@@ -1,0 +1,22 @@
+! dudon_bali-balaeb_14.scl
+!
+Bali-Bala[14] (676/675 tempering), equal-beating version
+14
+!
+43.261584366
+205.3907325072
+248.6523168732
+291.9139012392
+454.0430493804
+497.3046337464
+659.4337818876
+702.6953662536
+745.9569506196
+908.0860987608
+951.3476831268
+994.6092674928
+1156.738415634
+2/1
+! Eq-Bala triple equal-beating recurrent sequence, 4^3 = x + 5
+! triple equal-beating of 15/13, 20/13, and the 4/3 in between
+! Dudon 2010

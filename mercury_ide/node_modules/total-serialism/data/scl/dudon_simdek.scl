@@ -1,0 +1,19 @@
+! dudon_simdek.scl
+!
+Heptatonic scale from a sequence of Simdek very low fifths (in theory 676,48557456 c.)
+ 12
+!
+ 769/621
+ 704/621
+ 280/207
+ 769/621
+ 280/207
+ 1040/621
+ 34/23
+ 1136/621
+ 1040/621
+ 2/1
+ 1136/621
+ 2/1
+! Simdek differential-coherent recurrent sequence  8x^2 - 16 = x, Dudon 2007
+! probably near the limit between Thai heptaphone and Indonesian Pelog 

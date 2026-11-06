@@ -1,0 +1,21 @@
+! dudon_mounos.scl
+!
+Mounos extended fifths -c sequence, quasi-septimal minor diatonic scale
+ 12
+!
+ 9/8
+ 1647/1448
+ 211/181
+ 4/3
+ 240/181
+ 3/2
+ 273/181
+ 27/16
+ 9937/5792
+ 1273/724
+ 16/9
+ 2/1
+! Mounos -c sequence  x^3 - 2 = x/4,  Dudon 2004
+! differential coherence of minor thirds : D# - C = F/8 etc. (4 occurrences)
+! extended fifths (711,4963 c.) and tones (roughly 256/225 or 223 c.)
+! -c attempt for some common persian low and plaintive minor thirds

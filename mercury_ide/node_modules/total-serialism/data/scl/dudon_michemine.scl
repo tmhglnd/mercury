@@ -1,0 +1,20 @@
+! dudon_michemine.scl
+!
+Triple equal-beating of all minor triads  meantone sequence 
+ 12
+!
+ 333711/321536
+ 1403/1256
+ 188/157
+ 12547/10048
+ 210/157
+ 112283/80384
+ 469/314
+ 1006387/643072
+ 4191/2512
+ 281/157
+ 37399/20096
+ 2/1
+! Sequence of 11 Michemine fifths (average of 695.8095676 c.) from Eb
+! Triple equal-beating of all minor triads :  3x^3 - 10 = (3/2)x^3 - x^4 = 10 - 2x^4
+! Dudon 2006

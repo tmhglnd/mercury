@@ -1,0 +1,21 @@
+! dudon_comptine.scl
+!
+1/4 pyth. comma meantone sequence between C and E, completed by 8 pure fifths
+ 12
+!
+ 256/243
+ 21995/19683
+ 32/27
+ 8192/6561
+ 4/3
+ 1024/729
+ 9808/6561
+ 128/81
+ 10960/6561
+ 16/9
+ 4096/2187
+ 2/1
+! Quasi well-temperament (except for C:E  a schisma below 5/4)
+! Comptine recurrent sequence x^3 = (3/5)x^2 + 2,   x = 1.494929263,  Dudon 2006  
+! Equal-beating properties :   3A - 5C  =  3D - 2A,    6E - 5G  =  4B - 5G  =  3A - 4E
+! (eq-b Werckmeister III is acheived by raising E to 2740/2187 and B to 1370/729)

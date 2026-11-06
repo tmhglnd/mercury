@@ -1,0 +1,21 @@
+! diamond7_126.scl
+!
+7-limit diamond starling (126/125) 5-limit convex closure
+! Fokblock([972/625, 124416/78125], [7, 7]) weak Fokker block
+15
+!
+25/24
+144/125
+125/108
+6/5
+5/4
+4/3
+25/18
+36/25
+3/2
+8/5
+5/3
+216/125
+125/72
+48/25
+2/1

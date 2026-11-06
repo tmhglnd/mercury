@@ -1,0 +1,82 @@
+{
+	"midi" : [
+		"name",
+		"group",
+		"beat",
+		"time",
+		"amp",
+		"note",
+		"env",
+		"out",
+		"clock",
+		"poly"
+	],
+
+	"emitter" : [
+		"name",
+		"address",
+		"group",
+		"time",
+		"beat"
+	],
+
+	"synth" : [
+		"amp",
+		"beat",
+		"env",
+		"note",
+		"time",
+		"pan",
+		"slide",
+		"sub",
+		"add_fx",
+		"res",
+		"wave2",
+		"group",
+		"name"
+	],
+
+	"polySynth" : [
+		"amp",
+		"beat",
+		"env",
+		"note",
+		"time",
+		"pan",
+		"slide",
+		"sub",
+		"add_fx",
+		"res",
+		"wave2",
+		"group",
+		"name"
+	],
+
+	"sample" : [
+		"amp",
+		"beat",
+		"env",
+		"time",
+		"pan",
+		"speed",
+		"add_fx",
+		"stretch",
+		"group",
+		"name",
+		"offset"
+	],
+	
+	"loop" : [
+		"amp",
+		"beat",
+		"env",
+		"time",
+		"pan",
+		"speed",
+		"add_fx",
+		"stretch",
+		"group",
+		"name",
+		"offset"
+	]
+}

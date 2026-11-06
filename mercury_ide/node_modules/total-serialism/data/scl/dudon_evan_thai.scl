@@ -1,0 +1,20 @@
+! dudon_evan_thai.scl
+Evan differentially-coherent double Thai heptaphone
+ 12
+!
+ 14107/14080
+ 243/220
+ 6235/5632
+ 537/440
+ 74/55
+ 2373/1760
+ 327/220
+ 5243/3520
+ 289/176
+ 23171/14080
+ 3193/1760
+ 2/1
+! Evan recurrent sequence   2x^5 = 16 - x  
+! (592 -537 = 55 etc.)     x = 1.4864447215647
+! the black keys follow a second spiral cycle  x^7 / 16,  or  3.67 c. higher
+! Dudon 2009

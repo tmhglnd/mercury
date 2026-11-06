@@ -1,0 +1,19 @@
+! dudon_saung_gauk.scl
+!
+Typical diatonic heptaphone played on the saung gauk (burmese harp)
+ 12
+!
+ 1/1
+ 3463/3114
+ 3463/3114
+ 623881/504468
+ 232/173
+ 232/173
+ 258/173
+ 258/173
+ 23240/14013
+ 23240/14013
+ 232600/126117
+ 2/1
+! Cazdep recurrent equal-beating sequence 9x^2 - 20 = 3 - 2x
+! Dudon 2007

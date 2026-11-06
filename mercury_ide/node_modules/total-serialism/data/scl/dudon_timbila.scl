@@ -1,0 +1,19 @@
+! dudon_timbila.scl
+!
+Bala tuning whole tone intervals -c heptaphone
+ 12
+!
+ 1/1
+ 107/97
+ 107/97
+ 118/97
+ 130/97
+ 1041/776
+ 287/194
+ 144/97
+ 639/388
+ 639/388
+ 176/97
+ 2/1
+! based on Fong fractal algorithm : x^3 - x^2 = 1/8
+! Dudon 1991

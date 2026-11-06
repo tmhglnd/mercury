@@ -1,0 +1,21 @@
+! mohaj-bala_213.scl
+!
+Parizekmic Mohajira+Bala scale, based on a double Bala sequence
+ 12
+!
+ 16/15
+ 52/45
+ 71/60
+ 13/10
+ 4/3
+ 64/45
+ 3/2 
+ 8/5
+ 26/15
+ 16/9
+ 39/20
+ 2/1
+! Interleaved Bala -c recurrent sequences, x^8 - 2 = x = 1.1544230572469 or 248.6064241458 cents (5-29-251 notes MOS)
+! first sequence [351 (203) 117 135 156 180 208 240 (277) 320 (369) 426... 
+! second sequence transposed by 4 - x^3  (~32/13) :
+! [(216) (250) 288 (332) 384 (443) 512 ... (512 = F#)

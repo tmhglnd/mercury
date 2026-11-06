@@ -1,0 +1,19 @@
+! dudon_lucie.scl
+!
+Sequence of 11 fractal Lucie fifths (exactly 695,5023126 c.) from Eb
+ 12
+!
+ 1477/1424
+ 1789/1602
+ 320/267
+ 111/89
+ 1072/801
+ 1489/1068
+ 133/89
+ 2229/1424
+ 297/178
+ 4304/2403
+ 663/356
+ 2/1
+! Lucie recurrent sequence  x^4 = 15 - 3x^3, Dudon 2006
+! All minor triads are equal-beating :  3x^3 - 10 = 5 - x^4

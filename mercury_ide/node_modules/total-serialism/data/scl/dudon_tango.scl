@@ -1,0 +1,20 @@
+! dudon_tango.scl
+!
+Fractal Melkis lowest numbers HWT fifths sequence, from D
+ 12
+!
+ 203/192
+ 9/8
+ 19/16
+ 241/192
+ 4/3
+ 361/256
+ 3/2
+ 19/12
+ 643/384
+ 57/32
+ 361/192
+ 2/1
+! Melkis recurrent sequence  x^4 = 2x + 1/2  (-c of 9 minor thirds)
+! recommanded diatonic major = in C
+! Dudon 1992

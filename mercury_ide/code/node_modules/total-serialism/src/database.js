@@ -18,7 +18,7 @@ const path = require('path');
 
 const TL = require('./translate.js');
 const Algo = require('./gen-complex');
-const { Note } = require('@tonaljs/tonal');
+const { Note } = require('tonal');
 
 // Build the databases
 buildNoteSet('data/tones.json');

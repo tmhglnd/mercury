@@ -1,0 +1,18 @@
+! dudon_isrep.scl
+!
+Fractal Isrep -c recurrent sequence,  x^2 = 8x - 8  from F=64
+ 12
+!
+ 2/1
+ 75/64
+ 75/32
+ 1/1
+ 11/8
+ 11/4
+ 3/2
+ 3/1
+ 13/8
+ 13/4
+ 75/64
+ 2/1
+! Extension of a diminished seventh chord, TL 15/11/2009 by Jacques Dudon

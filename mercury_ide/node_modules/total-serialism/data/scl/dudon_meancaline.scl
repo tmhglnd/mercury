@@ -1,0 +1,20 @@
+! dudon_meancaline.scl
+!
+12 of 19-tones quasi-equal HT with coherent semifourths on black keys
+ 12
+!
+ 1420/1371
+ 7648/6855
+ 8224/6855
+ 2844/2285
+ 9178/6855
+ 3168/2285
+ 2048/1371
+ 10606/6855
+ 3808/2285
+ 4096/2285
+ 12736/6855
+ 2/1
+! differential coherence of semifourths :
+! F#- Eb = G,   C# - Bb = D,   G# - F = A
+! Meancaline sequence  x^9 - 32 = x^4   Dudon 2009

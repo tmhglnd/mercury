@@ -1,0 +1,23 @@
+! dudon_brazil.scl
+!
+Triple equal-beating 1/5 syntonic comma meantone, limited to 8 tones
+! with extra consonant thirds (505, 675), fifth (405) & subtonic (10155)
+! (suggested chords : Amin7-9, Amin6-9, Dmin7-9, Em7-9, Bdim7th)
+ 12
+!
+ 405/404
+ 1809/1616
+ 5/4
+ 64801/51712
+ 135/101
+ 2321289/1654784
+ 1209/808
+ 10155/6464
+ 10827/6464
+ 6045/3232
+ 387843/206848
+ 2/1
+!
+! Deolia sequence  x^4 = (3/4)x^3 + 5/2, triple eq-b of minor chords, Dudon 2006
+! 8E - 10C   =   6A - 8E   =   3A - 5C    (etc.)
+! with improved -c  dim7th

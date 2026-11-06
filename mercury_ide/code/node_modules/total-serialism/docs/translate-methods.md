@@ -28,9 +28,9 @@ const TL = require('total-serialism').Translate;
 - relativeToMidi (rtom)
 - relativeToFreq (rtof)
 - chromaToRelative (ctor)
+- ratioToCent (rtoc)
 - chordsFromNumerals (chords)
 - chordsFromNames
-- ratioToCent (rtoc)
 - setTempo
 - divisionToMs (dtoms)
 - divisionToRatio (dtor)

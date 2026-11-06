@@ -1,0 +1,20 @@
+! dudon_kellner_eb.scl
+!
+JI version of Anton Kellner 1/5 Pyth.c well-temperament, based on Skisni algorithm
+ 12
+!
+ 256/243
+ 272/243
+ 32/27
+ 2738/2187
+ 4/3
+ 1024/729
+ 3272/2187
+ 128/81
+ 3664/2187
+ 16/9
+ 1369/729
+ 2/1
+! 2 x^4 = x^3 + 4,     4E - 5C   =   3G - 2C   =   (3/8)E - (5/4)G
+! -c and triple equal-beating Skisni recurrent sequence, Dudon 2006
+! (double skisni occurrences attained by changing B to 4096/2187 - see also Skisni_hwt)

@@ -1,0 +1,19 @@
+! dudon_burma.scl
+!
+Burmese typical diatonic scale, compatible with modes Pule, Thanyu, Autpyin
+ 12
+!
+ 1216/1161
+ 48/43
+ 464/387
+ 1448/1161
+ 518/387
+ 536/387
+ 1735/1161
+ 1792/1161
+ 1936/1161
+ 2080/1161
+ 80/43
+ 2/1
+! Cascade recurrent sequence,  32x^2 - 64 = x^5  (average fifth of 695.31005796 c.)
+! E = 8(G - F) etc., differential coherence of 2nds, Dudon 2004

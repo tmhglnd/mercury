@@ -1,0 +1,19 @@
+! dudon_baka.scl
+!
+Baka typical semifourth pentatonic, can also be accepted as a circular Slendro
+ 12
+!
+ 8/7
+ 668/581
+ 768/581
+ 768/581
+ 110/83
+ 880/581
+ 880/581
+ 144/83
+ 144/83
+ 1152/581
+ 1160/581
+ 2/1
+! Slendra and Baka -c recurrent sequences, x^5 = x^4 + 1/4  and 6x^2 - 6x = 1  
+! Fleurs de Lumiere and BB Gamelan, Dudon 1990

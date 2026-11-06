@@ -1,0 +1,13 @@
+! elfleapday7.scl
+!
+Leapday tempering of [9/8, 13/11, 4/3, 3/2, 22/13, 16/9, 2], 46-tET tuning, 13-limit patent val elf
+! generators -3, -2, -1, 0, 1, 2, 3 = Leapday[7]
+7
+!
+208.69565
+286.95652
+495.65217
+704.34783
+913.04348
+991.30435
+2/1

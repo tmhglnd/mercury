@@ -1,0 +1,19 @@
+! dudon_melkis_3f.scl
+!
+Sequence of 6 Melkis fourths from G, then 3 pure fourths between C# and E
+ 12
+!
+ 540/511
+ 573/511
+ 2427/2044
+ 640/511
+ 2727/2044
+ 720/511
+ 766/511
+ 1619/1022
+ 856/511
+ 2079/1168
+ 960/511
+ 2/1
+! Melkis recurrent sequence  x^4 = 2x + 1/2  (-c of minor thirds)
+! Dudon 1992

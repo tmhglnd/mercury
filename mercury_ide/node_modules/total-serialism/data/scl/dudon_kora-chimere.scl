@@ -1,0 +1,19 @@
+! dudon_kora-chimere.scl
+!
+Kora diatonic, slightly neutral
+ 12
+!
+ 635/382
+ 425/382
+ 2/1
+ 945/764
+ 256/191
+ 945/382
+ 285/191
+ 512/191
+ 635/382
+ 1415/764
+ 570/191
+ 2/1
+! equal-beating based on Chimere algorithm : x^3 = 10 - 3x^2
+! Dudon 2007

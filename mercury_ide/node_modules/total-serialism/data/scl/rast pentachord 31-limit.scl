@@ -1,0 +1,9 @@
+! rast pentachord 31-limit.scl
+!
+Rast pentachord 600:675:744:800:900
+ 4
+!
+ 9/8
+ 31/25
+ 4/3
+ 3/2

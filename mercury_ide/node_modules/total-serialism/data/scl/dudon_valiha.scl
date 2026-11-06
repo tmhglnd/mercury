@@ -1,0 +1,20 @@
+! dudon_valiha.scl
+!
+Typical Malagasy scale, neutral diatonic, equal-beating on minor triads
+ 12
+!
+ 1/1
+ 1431/1288
+ 1431/1288
+ 3179/2576
+ 216/161
+ 216/161
+ 240/161
+ 240/161
+ 2133/1288
+ 34191/20608
+ 4737/2576
+ 2/1
+! Sequence of 6 Sireine fifths (average 691.2348426 c.) from F
+! Sireine recurrent sequence   x^4 = 3x^3 - 5     Dudon 2006
+! Triple equal-beating on all minor triads : 10 - 3x^3 = 5 - x^4 = 3x^3 - 2x^4

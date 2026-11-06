@@ -1,0 +1,21 @@
+! dudon_skisni.scl
+!
+Triple equal-beating sequence of 11 quasi-1/5 Pythagorean comma meantone fifths
+ 12
+! 
+ 3480/3321
+ 3716/3321
+ 3968/3321
+ 4158/3321
+4440/3321
+ 9305/6642
+ 4968/3321
+ 5206/3321
+ 5559/3321
+ 5936/3321
+ 6220/3321
+ 2/1
+! 2 x^4 = x^3 + 4
+!  -c and eq-b Skisni meantone recurrent sequence, Dudon 2006
+! triple equal-beating of all possible major triads : 4E - 5C = 3G - 2C = (3/8)E - (5/4)G etc.
+! proportional fifths beatings from Eb = 16 24 36 27 40 60 90 136 200 300 448 

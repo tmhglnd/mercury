@@ -1,0 +1,19 @@
+! dudon_slendro_matrix.scl
+!
+Ten tones for many 7-limit slendros from Lou Harrison, of the five types N, M, A, S, J
+ 12
+!
+ 1/1
+ 8/7
+ 8/7
+ 64/49
+ 21/16
+ 4/3
+ 3/2
+ 32/21
+ 12/7
+ 256/147
+ 7/4
+ 2/1
+! 
+! described in "Seven-Limit Slendro Mutations", Jacques Dudon  1/1  8:2 Jan 1994   

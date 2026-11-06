@@ -1,0 +1,57 @@
+! sparschuh_dyadrat53.scl
+Sparschuh's Dyadic-Rational 53 in Philolaos/Boethius style (2010)
+53
+!  1/1    !  0: C- 256 Hz middle_C-_4
+65/64     !  1: C\ 260
+527/512   !  2: C. 263.5
+533/512   !  3: C/ 266.5
+135/128   !  4: C+ 270
+547/512   !  5: DB 273.5
+277/256   !  6: Db 277
+281/256   !  7: C# 281
+569/512   !  8: C& 284.5
+9/8       !  9: D- 288    !       tone
+73/64     ! 10: D\ 292
+37/32     ! 11: D. 296
+75/64     ! 12: D/ 300  
+19/16     ! 13: D+ 304 
+77/64     ! 14: EB 308 
+39/32     ! 15: Eb 312
+79/64     ! 16: D# 316
+5/4       ! 17: D& 320    ! the "just" 3rd
+81/64     ! 18: E- 324  Pythagorean "ditone"
+657/512   ! 19: E\ 328.5
+333/256   ! 20: E. 333
+675/512   ! 21: E/ 337.5
+171/128   ! 22: E+ 342 = F- (4/3)*(513/512) an 4th: ratio 1.335,937,5
+693/512   ! 23: F\ 346.5
+351/256   ! 24: F. 351
+711/512   ! 25: F/ 355.5
+45/32     ! 26: F+ 360    ! Syntonic 5-limit tritone
+729/512   ! 27: GB 364.5  ! Pythagorean 3-limit tritone
+739/512   ! 28: Gb 369.5 
+749/512   ! 29: F# 374.5
+379/256   ! 30: F& 379 
+3/2       ! 31: G- 384    ! the JI 5th
+195/128   ! 32: G\ 390
+395/256   ! 33: G. 395
+25/16     ! 34: G/ 400 Hz ! Mersenne's "French-opera-tone"
+405/256   ! 35: G+ 405
+821/512   ! 36: AB 410.5  
+13/8      ! 37: Ab 416    ! the 13th partial overtone
+843/512   ! 38: G# 421.5  ! ~Mozart's~Vienna-pitch  
+853/512   ! 39: G& 426.5
+27/16     ! 40: A- 432    ! Sauveur's & Verdi's ; Pythagorean 6th
+219/128   ! 41: A\ 438    ! Pavarotti's abs.-pitch
+111/64    ! 42: A. 444    ! Herbert Karajan's "
+225/128   ! 43: A/ 450    ! (7/4)*(225/224) ~natural~septime~
+57/32     ! 44: A+ 456    ! Werckmeister's ~"Choir~Thon"~
+231/128   ! 45: BB 462
+117/64    ! 46: Bb 468
+237/128   ! 47: A# 474
+15/8      ! 48: A& 480    ! Syntonic 5-limit 7th
+243/128   ! 49: B- 486    ! Pythagoran 7th or octave/limma
+985/512   ! 50: B\ 492.5
+499/256   ! 51: B. 499
+1011/512  ! 52: B/ 505.5
+2/1       ! 53: B+ 512 =C-! tenor_C-_5

@@ -1,0 +1,468 @@
+{
+  "parseTree": {
+    "global": {
+      "volume": [
+        0.8
+      ],
+      "tempo": [
+        90
+      ],
+      "scale": [
+        "chromatic",
+        "c"
+      ],
+      "root": [
+        "c"
+      ],
+      "randomSeed": [
+        0
+      ],
+      "highPass": [
+        20000,
+        0
+      ],
+      "lowPass": [
+        1,
+        0
+      ],
+      "silence": false
+    },
+    "variables": {},
+    "objects": {
+      "9FA4A4AU": {
+        "object": "sample",
+        "type": [
+          "kick_min",
+          "snare_dub"
+        ],
+        "functions": {
+          "group": [],
+          "time": [
+            "1/16"
+          ],
+          "speed": [
+            1
+          ],
+          "env": [
+            1,
+            "1/32",
+            2
+          ],
+          "beat": [
+            0.9
+          ],
+          "amp": [
+            0.9
+          ],
+          "stretch": [
+            0,
+            1,
+            1
+          ],
+          "add_fx": [],
+          "name": [
+            "9FA4A4AU"
+          ]
+        }
+      }
+    },
+    "groups": {},
+    "print": [
+      "lijst",
+      "bassLine",
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3,
+        -3
+      ],
+      "speel",
+      "synth",
+      [
+        "sine",
+        "saw"
+      ],
+      {
+        "@name": "time",
+        "@args": [
+          "1/4",
+          "1/8"
+        ]
+      },
+      {
+        "@name": "note",
+        "@args": [
+          7,
+          1
+        ]
+      },
+      {
+        "@name": "env",
+        "@args": [
+          1,
+          300
+        ]
+      },
+      {
+        "@name": "beat",
+        "@args": [
+          0.2
+        ]
+      },
+      {
+        "@name": "group",
+        "@args": [
+          "sn",
+          "bass"
+        ]
+      },
+      {
+        "@name": "add_fx",
+        "@args": [
+          "reverb",
+          0.9,
+          11
+        ]
+      },
+      {
+        "@name": "add_fx",
+        "@args": [
+          "lfo",
+          "1/4",
+          "up"
+        ]
+      }
+    ],
+    "comments": [
+      "// set volume 0.9 5000",
+      "// set tempo 143",
+      "// set randomSeed 9123",
+      "// set scale pentatonic_minor c",
+      "// set highPass 800 5000",
+      "// set lowPass 5000 100",
+      "// ring notes palin( spread(5 0 12) )",
+      "// ring jnd join(random(4 0 24) spread(4 0 24) urn(4 4))",
+      "// new synth sine name(aSynth)",
+      "// \tset aSynth note(notes 1) timing(1/16) shape(1000 200) play(0.8) aux(sn ld)",
+      "// \tset aSynth gain(0.5 100)",
+      "// \tset aSynth osc2(sine 2) withFX(drive 16) addFX(lfo 1/4 sine)",
+      "// new synth saw name(bSynth)",
+      "// \tset bSynth note(random(4 0 12) 2) time(1/16) env(300 1000) ",
+      "// \tset bSynth pan(random) group(bass intro)",
+      "// \tset bSynth gain(0) beat(0.7)",
+      "// new sample kick_min name(kck)",
+      "// \tset kck time(1/4) fx(drive 1.1) fx(filter low 500 0.3)",
+      "// set all fx(reverb 1 20) fx(chip 0.5)",
+      "// set sn fx(reverb 0.9 17)",
+      "// set bass fx(drive 5)"
+    ]
+  },
+  "syntaxTree": {
+    "@main": [
+      {
+        "@global": {
+          "@comment": "// set volume 0.9 5000"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// set tempo 143"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// set randomSeed 9123"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// set scale pentatonic_minor c"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// set highPass 800 5000"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// set lowPass 5000 100"
+        }
+      },
+      {
+        "@global": {
+          "@print": [
+            {
+              "@identifier": "lijst"
+            },
+            {
+              "@identifier": "bassLine"
+            },
+            {
+              "@function": {
+                "@name": "fill",
+                "@args": [
+                  {
+                    "@number": 0
+                  },
+                  {
+                    "@number": 16
+                  },
+                  {
+                    "@number": -3
+                  },
+                  {
+                    "@number": 16
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// ring notes palin( spread(5 0 12) )"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// ring jnd join(random(4 0 24) spread(4 0 24) urn(4 4))"
+        }
+      },
+      {
+        "@global": {
+          "@print": [
+            {
+              "@identifier": "speel"
+            },
+            {
+              "@identifier": "synth"
+            },
+            {
+              "@array": [
+                {
+                  "@identifier": "sine"
+                },
+                {
+                  "@identifier": "saw"
+                }
+              ]
+            },
+            {
+              "@function": {
+                "@name": "time",
+                "@args": [
+                  "1/4",
+                  "1/8"
+                ]
+              }
+            },
+            {
+              "@function": {
+                "@name": "note",
+                "@args": [
+                  7,
+                  1
+                ]
+              }
+            },
+            {
+              "@function": {
+                "@name": "env",
+                "@args": [
+                  1,
+                  300
+                ]
+              }
+            },
+            {
+              "@function": {
+                "@name": "beat",
+                "@args": [
+                  0.2
+                ]
+              }
+            },
+            {
+              "@function": {
+                "@name": "group",
+                "@args": [
+                  "sn",
+                  "bass"
+                ]
+              }
+            },
+            {
+              "@function": {
+                "@name": "add_fx",
+                "@args": [
+                  "reverb",
+                  0.9,
+                  11
+                ]
+              }
+            },
+            {
+              "@function": {
+                "@name": "add_fx",
+                "@args": [
+                  "lfo",
+                  "1/4",
+                  "up"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@object": {
+          "@new": {
+            "@type": {
+              "@array": [
+                {
+                  "@identifier": "kick_min"
+                },
+                {
+                  "@identifier": "snare_dub"
+                }
+              ]
+            },
+            "@functions": [
+              {
+                "@function": {
+                  "@name": "time",
+                  "@args": [
+                    {
+                      "@division": "1/16"
+                    }
+                  ]
+                }
+              },
+              {
+                "@function": {
+                  "@name": "env",
+                  "@args": [
+                    {
+                      "@number": 1
+                    },
+                    {
+                      "@division": "1/32"
+                    },
+                    {
+                      "@number": 2
+                    }
+                  ]
+                }
+              },
+              {
+                "@function": {
+                  "@name": "beat",
+                  "@args": [
+                    {
+                      "@number": 0.9
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// new synth sine name(aSynth)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// \tset aSynth note(notes 1) timing(1/16) shape(1000 200) play(0.8) aux(sn ld)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// \tset aSynth gain(0.5 100)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// \tset aSynth osc2(sine 2) withFX(drive 16) addFX(lfo 1/4 sine)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// new synth saw name(bSynth)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// \tset bSynth note(random(4 0 12) 2) time(1/16) env(300 1000) "
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// \tset bSynth pan(random) group(bass intro)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// \tset bSynth gain(0) beat(0.7)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// new sample kick_min name(kck)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// \tset kck time(1/4) fx(drive 1.1) fx(filter low 500 0.3)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// set all fx(reverb 1 20) fx(chip 0.5)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// set sn fx(reverb 0.9 17)"
+        }
+      },
+      {
+        "@global": {
+          "@comment": "// set bass fx(drive 5)"
+        }
+      }
+    ]
+  }
+}

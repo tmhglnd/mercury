@@ -1,0 +1,25 @@
+! cycle19.scl
+!
+19-note lesfip scale, 9-limit, 10 cents tolerance
+! major, minor, subminor, supermajor, barbados, and island triads; island tetrads
+ 19
+!
+68.20867
+136.05163
+202.95562
+268.42817
+316.37773
+386.43387
+451.91444
+519.78797
+576.96741
+634.14686
+702.02039
+767.50096
+837.55710
+885.50666
+950.97921
+1017.88320
+1085.72616
+1153.93483
+2/1

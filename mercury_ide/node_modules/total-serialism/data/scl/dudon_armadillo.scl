@@ -1,0 +1,22 @@
+! dudon_armadillo.scl
+!
+Triple equal-beating sequence from C to B, optimal major chords on white keys 
+ 12
+!
+ 8361/7936
+ 555/496
+ 75249/63488
+ 621/496
+ 84655/63488
+ 2787/1984
+ 371/248
+ 25083/15872
+ 3321/1984
+ 112873/63488
+ 929/496
+ 2/1
+! 5 skisni fifths C-G-D-A-E-B, then 3/2 or quasi pure fifths from B to C
+! 2 x^4 = x^3 + 4
+! Skisni triple equal-beating and -c quasi-1/5 Pyth.c meantone sequence, Dudon 2006 :
+! 4E - 5C = 3G - 2C = (3/8)E - (5/4)G,   4B - 5G = 6D - 2G = (3/8)B - (5/2)D
+! proportional fifths beatings from C : 8 12 18 27 40

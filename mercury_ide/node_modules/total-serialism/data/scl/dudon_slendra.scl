@@ -1,0 +1,20 @@
+! dudon_slendra.scl
+!
+Cylf-scale (Baka pentatonic Slendro plus pure fifths)
+ 12
+!
+ 112/111
+ 212/185
+ 644/555
+ 244/185
+ 736/555
+ 4/3
+ 56/37
+ 846/555
+ 322/185
+ 976/555
+ 368/185
+ 2/1
+! Slendra and Baka -c recurrent sequences, x^5 = x^4 + 1/4  and 6x^2 - 6x = 1  
+! original scale : 106 122 140 161 185
+! Fleurs de Lumiere, Dudon 1990

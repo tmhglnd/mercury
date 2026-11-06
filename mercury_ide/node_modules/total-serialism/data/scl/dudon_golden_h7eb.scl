@@ -1,0 +1,22 @@
+! dudon_golden_h7eb.scl
+!
+12 of 19/31/50 etc... Golden meantone harmonic 7-c and eq-b version
+ 12
+!
+ 44603/42752
+ 2987/2672
+ 200/167
+ 3337/2672
+ 447/334
+ 29839/21376
+ 999/668
+ 33339/21376
+ 4465/2672
+ 299/167
+ 2495/1336
+ 2/1
+! Kornerup Golden meantone harmonic 7-c and eq-b (and Woolhouse-close) version
+! Tara recurrent sequence  x^4 = x + 7/2  (approx. 696,143 c.)  Dudon 2004
+! differential coherence of h. 7 in all major triads : 8E - 7C  = G/4,  8B - 7G = D/2, etc.
+! equal-beating property (of all C  G  ^C ^E -type chords) :
+! 3 - 2x = 10 - 2x^4    (3C  - 2G = 5^C - 4^E,   3G - 2^D = 5^G - 4^B, etc.)
