@@ -147,5 +147,20 @@
 		"name",
 		"out",
 		"add_fx"
+	],
+	
+	"rack" : [
+		"amp",
+		"beat",
+		"env",
+		"pan",
+		"speed",
+		"time",
+		"note",
+		"offset",
+		"add_fx",
+		"group",
+		"name",
+		"out"
 	]
 }

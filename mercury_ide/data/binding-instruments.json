@@ -43,6 +43,11 @@
 		"909" : [ "sample_rack", 13 ],
 		"808" : [ "sample_rack", 13 ],
 		"626" : [ "sample_rack", 13 ],
-		"operator" : [ "sample_rack", 13 ]
+		"operator" : [ "sample_rack", 13 ],
+		"tabla" : [ "sample_rack", 13 ],
+		"djembe" : [ "sample_rack", 13 ],
+		"glitch" : [ "sample_rack", 13 ],
+		"stab" : [ "sample_rack", 13 ],
+		"amiga" : [ "sample_rack", 13 ]
 	}
 }

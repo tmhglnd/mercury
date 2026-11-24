@@ -1,0 +1,22 @@
+set scale dorian c
+set tempo 150
+
+new sample kick_ua time(1/4) //play(0.5)
+
+list bt euclid(16 7)
+list idx random(7 2 10)
+new synth fm note(0 1) ratio(0.5) fmShape(1/8) name(bass)
+  set bass fx(chorus) index(idx) shape(1/2) gain(0.9)
+  set bass fx(distort 10 0.3) time(1/8) play(bt)
+
+new sample hat_po time(1/8) gain(0.4)
+new sample snare_dub time(1/2 1/4) //fx(delay 3/8 0.9)
+
+list nts sine(64 17.31 0 24)
+list nts clone(nts 0 3)
+list len random(8 50 250)
+new synth sine note(nts 1) time(1/16) shape(5 len) name(arp)
+  set arp fx(reverb 1 15) fx(delay 3/16 5/16 0.9)
+  set arp fx(distort 15 0.4)
+
+new loop levee time(1/1) //solo(1)

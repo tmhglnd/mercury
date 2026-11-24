@@ -2,7 +2,7 @@
     "name": "mercury_ide",
     "version": 1,
     "creationdate": 3615958543,
-    "modificationdate": 3854436652,
+    "modificationdate": 3877270667,
     "viewrect": [ 47.0, 144.0, 356.0, 590.0 ],
     "autoorganize": 0,
     "hideprojectwindow": 1,

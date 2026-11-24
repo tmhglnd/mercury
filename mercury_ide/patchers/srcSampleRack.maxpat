@@ -600,7 +600,7 @@
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 574.0, 270.0, 153.0, 22.0 ],
+                    "patching_rect": [ 559.0, 270.0, 153.0, 22.0 ],
                     "saved_object_attributes": {
                         "legacy": 0,
                         "parameter_enable": 0,
@@ -616,7 +616,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 550.0, 240.0, 43.0, 22.0 ],
+                    "patching_rect": [ 535.0, 240.0, 43.0, 22.0 ],
                     "text": "slice 1"
                 }
             },
@@ -633,100 +633,18 @@
             },
             {
                 "box": {
-                    "data": {
-                        "808": {
-                            "35": "kick_808_dist",
-                            "36": "kick_808",
-                            "37": "snare_808_dist",
-                            "38": "snare_808",
-                            "39": "clap_808",
-                            "40": "clap_808_short",
-                            "41": "tom_808_low",
-                            "42": "hat_808",
-                            "45": "tom_808_high",
-                            "44": "hat_808_half",
-                            "47": "tom_808",
-                            "46": "hat_808_open",
-                            "49": "cymbal_808",
-                            "56": "cowbell_808",
-                            "60": "bongo",
-                            "61": "bongo_lo",
-                            "70": "maracas_808",
-                            "75": "clave_808",
-                            "76": "block",
-                            "77": "block_lo"
-                        },
-                        "marimba": {
-                            "48": "marimba_c2",
-                            "55": "marimba_g2",
-                            "59": "marimba_b2",
-                            "65": "marimba_f3",
-                            "72": "marimba_c4",
-                            "79": "marimba_g4"
-                        },
-                        "626": {
-                            "35": "kick_626",
-                            "36": "china_626",
-                            "38": "snare_626",
-                            "39": "clap_626",
-                            "40": "snare_626_long",
-                            "41": "tom_626_hi",
-                            "42": "hat_626",
-                            "43": "tom_626_lo",
-                            "44": "hat_626_open",
-                            "45": "tom_626_mid",
-                            "51": "ride_626",
-                            "53": "bell_626",
-                            "56": "cowbell_626"
-                        },
-                        "909": {
-                            "35": "kick_909",
-                            "36": "kick_909_dist",
-                            "37": "clap_909_dist",
-                            "38": "snare_909",
-                            "39": "clap_909",
-                            "40": "snare_909_dist",
-                            "41": "kick_909_hvy",
-                            "42": "hat_909",
-                            "44": "hat_909_open"
-                        },
-                        "operator": {
-                            "35": "kick_po",
-                            "36": "kick_po_click",
-                            "37": "clap_po_2",
-                            "38": "snare_po",
-                            "39": "clap_po",
-                            "40": "snare_po_hi",
-                            "41": "tom_po_hi",
-                            "42": "hat_po",
-                            "43": "tom_po_lo",
-                            "44": "hat_po_hi",
-                            "45": "tom_po_mid",
-                            "46": "kick_po_hi",
-                            "47": "kick_po_dist",
-                            "48": "kick_po_tick",
-                            "49": "perc_po_hi",
-                            "50": "perc_po_lo",
-                            "51": "snare_po_lo",
-                            "63": "hat_po_open_hi",
-                            "71": "snare_po_short",
-                            "72": "kick_po_long",
-                            "74": "snare_po_long"
-                        }
-                    },
                     "id": "obj-50",
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 5,
                     "outlettype": [ "dictionary", "", "", "", "" ],
-                    "patching_rect": [ 495.0, 210.0, 241.0, 22.0 ],
+                    "patching_rect": [ 495.0, 210.0, 179.0, 22.0 ],
                     "saved_object_attributes": {
-                        "embed": 1,
                         "legacy": 0,
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "dict mcy.sampleRacks @embed 1 @quiet 1"
+                    "text": "dict mcy.sampleRacks @quiet 1"
                 }
             },
             {
